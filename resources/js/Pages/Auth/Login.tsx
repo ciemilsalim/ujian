@@ -1,0 +1,150 @@
+import { useEffect, FormEventHandler } from 'react';
+import Checkbox from '@/Components/Checkbox';
+import InputError from '@/Components/InputError';
+import InputLabel from '@/Components/InputLabel';
+import PrimaryButton from '@/Components/PrimaryButton';
+import TextInput from '@/Components/TextInput';
+import GuestLayout from '@/Layouts/GuestLayout';
+import { Head, Link, useForm } from '@inertiajs/react';
+import { Mail, Lock, User, ArrowRight } from 'lucide-react';
+
+export default function Login({
+    status,
+    canResetPassword,
+}: {
+    status?: string;
+    canResetPassword: boolean;
+}) {
+    const { data, setData, post, processing, errors, reset } = useForm({
+        username: '',
+        password: '',
+        remember: false as boolean,
+    });
+
+    useEffect(() => {
+        return () => {
+            reset('password');
+        };
+    }, []);
+
+    const submit: FormEventHandler = (e) => {
+        e.preventDefault();
+        post(route('login'));
+    };
+
+    return (
+        <GuestLayout>
+            <Head title="Premium Login" />
+
+            {status && (
+                <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-xl text-sm font-bold text-green-600 dark:text-green-400 flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4" />
+                    {status}
+                </div>
+            )}
+
+            <form onSubmit={submit} className="space-y-6">
+                <div>
+                    <InputLabel htmlFor="username" value="Username" className="text-gray-700 dark:text-gray-300 font-bold mb-1" />
+
+                    <div className="relative group">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors">
+                            <User className="w-5 h-5" />
+                        </div>
+                        <TextInput
+                            id="username"
+                            type="text"
+                            name="username"
+                            value={data.username}
+                            className="bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 focus:border-blue-500 focus:ring-blue-500/20 rounded-2xl pl-12 h-14 w-full transition-all"
+                            autoComplete="username"
+                            isFocused={true}
+                            onChange={(e) => setData('username', e.target.value)}
+                            placeholder="username anda"
+                        />
+                    </div>
+
+                    <InputError message={errors.username} className="mt-2 text-xs font-bold" />
+                </div>
+
+                <div>
+                    <div className="flex justify-between items-center mb-1">
+                        <InputLabel htmlFor="password" value="Password" className="text-gray-700 dark:text-gray-300 font-bold" />
+                        {canResetPassword && (
+                            <Link
+                                href={route('password.request')}
+                                className="text-xs font-bold text-blue-600 hover:text-blue-500 transition"
+                            >
+                                Forgot?
+                            </Link>
+                        )}
+                    </div>
+
+                    <div className="relative group">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors">
+                            <Lock className="w-5 h-5" />
+                        </div>
+                        <TextInput
+                            id="password"
+                            type="password"
+                            name="password"
+                            value={data.password}
+                            className="bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 focus:border-blue-500 focus:ring-blue-500/20 rounded-2xl pl-12 h-14 w-full transition-all"
+                            autoComplete="current-password"
+                            onChange={(e) => setData('password', e.target.value)}
+                            placeholder="••••••••"
+                        />
+                    </div>
+
+                    <InputError message={errors.password} className="mt-2 text-xs font-bold" />
+                </div>
+
+                <div className="flex items-center justify-between">
+                    <label className="flex items-center group cursor-pointer">
+                        <Checkbox
+                            name="remember"
+                            checked={data.remember}
+                            onChange={(e) =>
+                                setData(
+                                    'remember',
+                                    (e.target.checked || false) as false,
+                                )
+                            }
+                            className="rounded border-gray-300 dark:border-gray-700 text-blue-600 shadow-sm focus:ring-blue-500"
+                        />
+                        <span className="ms-3 text-sm font-bold text-gray-500 dark:text-gray-400 group-hover:text-gray-700 transition">
+                            Remember me
+                        </span>
+                    </label>
+                </div>
+
+                <div className="pt-2">
+                    <PrimaryButton
+                        className="w-full h-14 flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-black rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl disabled:opacity-50"
+                        disabled={processing}
+                    >
+                        Login
+                        <ArrowRight className="w-5 h-5" />
+                    </PrimaryButton>
+                </div>
+
+                <div className="text-center pt-2">
+                    <p className="text-sm font-bold text-gray-400 dark:text-gray-500">
+                        Don't have an account?{' '}
+                        <Link href={route('login')} className="text-blue-600 hover:text-blue-500 underline decoration-2 underline-offset-4">
+                            Contact Admin
+                        </Link>
+                    </p>
+                </div>
+            </form>
+        </GuestLayout>
+    );
+}
+
+function CheckCircle({ className }: { className?: string }) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+    )
+}

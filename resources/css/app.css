@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.glass-dark {
+    @apply bg-gray-900/70 backdrop-blur-lg border border-gray-800/50 shadow-2xl;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 dark:bg-gray-950 text-slate-900 dark:text-slate-100;
+  }
+}
+
+.text-glow {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.bg-glow {
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}

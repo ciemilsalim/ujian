@@ -1,0 +1,275 @@
+import { Link, usePage } from '@inertiajs/react';
+import {
+    LayoutDashboard,
+    Monitor,
+    Users,
+    BookOpen,
+    GraduationCap,
+    ClipboardList,
+    CreditCard,
+    Settings,
+    ChevronLeft,
+    LogOut,
+    Search,
+    Plus,
+    FileText,
+    Briefcase,
+    HelpCircle,
+    ChevronDown,
+    ChevronRight,
+    SearchCode,
+    Database,
+    PlayCircle,
+    Sun,
+    Moon,
+    UserCircle
+} from 'lucide-react';
+import { ReactNode, useState, useEffect } from 'react';
+
+interface SidebarItemProps {
+    href: string;
+    icon: any;
+    label: string;
+    active: boolean;
+    badge?: string;
+    isLive?: boolean;
+}
+
+const SidebarItem = ({ href, icon: Icon, label, active, badge, isLive }: SidebarItemProps) => (
+    <Link
+        href={href}
+        className={`flex items-center justify-between px-3 py-2.5 rounded-xl transition-all duration-200 group ${active
+            ? 'bg-blue-600 text-white shadow-md shadow-blue-200 dark:shadow-none font-semibold'
+            : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-200'
+            }`}
+    >
+        <div className="flex items-center gap-3">
+            <div className="relative">
+                <Icon className={`w-5 h-5 ${active ? 'text-white' : 'text-gray-400 group-hover:text-gray-600'}`} />
+                {isLive && (
+                    <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white dark:border-gray-900 animate-pulse"></span>
+                )}
+            </div>
+            <span className="text-sm">{label}</span>
+        </div>
+        {badge && (
+            <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-bold ${active ? 'bg-blue-500 text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-500'
+                }`}>
+                {badge}
+            </span>
+        )}
+    </Link>
+);
+
+const CollapsibleSection = ({ label, icon: Icon, children, defaultOpen = false }: { label: string, icon: any, children: ReactNode, defaultOpen?: boolean }) => {
+    const [isOpen, setIsOpen] = useState(defaultOpen);
+
+    return (
+        <div className="space-y-1">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex items-center justify-between px-3 py-2.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition group text-sm font-medium"
+            >
+                <div className="flex items-center gap-3">
+                    <Icon className="w-5 h-5 text-gray-400 group-hover:text-gray-600" />
+                    <span>{label}</span>
+                </div>
+                {isOpen ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+            </button>
+            {isOpen && (
+                <div className="ml-9 space-y-1 border-l border-gray-100 dark:border-gray-800 pl-2">
+                    {children}
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default function Sidebar() {
+    const { auth } = usePage().props as any;
+    const user = auth.user;
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const isDark = document.documentElement.classList.contains('dark');
+            setIsDarkMode(isDark);
+        }
+    }, []);
+
+    const toggleDarkMode = () => {
+        const newMode = !isDarkMode;
+        setIsDarkMode(newMode);
+        if (newMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    };
+
+    return (
+        <aside className="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-gray-900 border-r border-gray-100 dark:border-gray-800 flex flex-col z-50">
+            {/* Logo Section */}
+            <div className="p-6 flex items-center justify-between">
+                <Link href="/" className="flex items-center gap-2 group">
+                    <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-200 dark:shadow-none group-hover:scale-105 transition">
+                        e
+                    </div>
+                    <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">exxam.io</span>
+                </Link>
+            </div>
+
+            {/* Navigation Sections */}
+            <div className="flex-1 overflow-y-auto px-4 py-2 space-y-6 custom-scrollbar">
+
+                {/* Dashboard Always Visible */}
+                <div className="space-y-1">
+                    <SidebarItem
+                        href={route('dashboard')}
+                        icon={LayoutDashboard}
+                        label="Dashboard"
+                        active={route().current('dashboard')}
+                    />
+                </div>
+
+                {/* Proktor Menus */}
+                {user.role === 'proktor' && (
+                    <>
+                        <div>
+                            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Academic</p>
+                            <CollapsibleSection label="Master Data" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.classrooms.*') || route().current('proktor.subjects.*')}>
+                                <SidebarItem
+                                    href={route('proktor.users.index')}
+                                    icon={Users}
+                                    label="Users"
+                                    active={route().current('proktor.users.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.classrooms.index')}
+                                    icon={GraduationCap}
+                                    label="Classes"
+                                    active={route().current('proktor.classrooms.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.subjects.index')}
+                                    icon={BookOpen}
+                                    label="Subjects"
+                                    active={route().current('proktor.subjects.*')}
+                                />
+                            </CollapsibleSection>
+                        </div>
+
+                        <div>
+                            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Examination</p>
+                            <div className="space-y-1">
+                                <SidebarItem
+                                    href={route('proktor.exams.index')}
+                                    icon={ClipboardList}
+                                    label="Manage Exams"
+                                    active={route().current('proktor.exams.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.sessions.index')}
+                                    icon={PlayCircle}
+                                    label="Active Sessions"
+                                    active={route().current('proktor.sessions.*')}
+                                    isLive={true}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.results.index')}
+                                    icon={Briefcase}
+                                    label="Hasil Ujian"
+                                    active={route().current('proktor.results.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.exam-cards.index')}
+                                    icon={CreditCard}
+                                    label="Exam Cards"
+                                    active={route().current('proktor.exam-cards.*')}
+                                />
+                            </div>
+                        </div>
+                    </>
+                )}
+
+                {/* Guru Menus */}
+                {user.role === 'guru' && (
+                    <div>
+                        <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Question Bank</p>
+                        <div className="space-y-1">
+                            <SidebarItem
+                                href={route('guru.question-banks.index')}
+                                icon={FileText}
+                                label="Banks Soal"
+                                active={route().current('guru.question-banks.*')}
+                            />
+                            <SidebarItem
+                                href={route('guru.results.index')}
+                                icon={Briefcase}
+                                label="Hasil Ujian"
+                                active={route().current('guru.results.*')}
+                            />
+                        </div>
+                    </div>
+                )}
+
+                {/* Other Menu */}
+                <div>
+                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">General</p>
+                    <div className="space-y-1">
+                        <SidebarItem
+                            href={route('proktor.settings.index')}
+                            icon={Settings}
+                            label="System Settings"
+                            active={route().current('proktor.settings.*')}
+                        />
+                        <button
+                            onClick={toggleDarkMode}
+                            className="w-full flex items-center justify-between px-3 py-2.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition group text-sm font-medium"
+                        >
+                            <div className="flex items-center gap-3">
+                                {isDarkMode ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-indigo-500" />}
+                                <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
+                            </div>
+                        </button>
+                        <SidebarItem
+                            href="#"
+                            icon={HelpCircle}
+                            label="Help Center"
+                            active={false}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Profile Section */}
+            <div className="p-4 border-t border-gray-100 dark:border-gray-800 bg-[#F9FAFB]/50 dark:bg-gray-950/20">
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold border border-blue-200 dark:border-blue-800">
+                            {user.name.charAt(0)}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <p className="text-sm font-bold text-gray-900 dark:text-white truncate">{user.name}</p>
+                            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 font-bold uppercase border border-blue-100 dark:border-blue-800">
+                                {user.role}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <Link
+                    href={route('logout')}
+                    method="post"
+                    as="button"
+                    className="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-xl transition w-full group"
+                >
+                    <LogOut className="w-4 h-4 group-hover:translate-x-0.5 transition" />
+                    <span>Log Out</span>
+                </Link>
+            </div>
+        </aside>
+    );
+}
