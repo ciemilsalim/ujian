@@ -18,8 +18,48 @@ class QuestionController extends Controller
             'score_default' => 'required|integer|min:0',
         ]);
 
-        \App\Models\Question::create($request->all());
+        $q = \App\Models\Question::create($request->all());
 
-        return redirect()->back()->with('success', 'Question added successfully.');
+        \App\Models\AuditLog::log('created', 'Question', $q->id, null, "Menambahkan soal di bank: {$q->question_bank_id}");
+
+        return redirect()->back()->with('success', 'Soal berhasil ditambahkan.');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $question = \App\Models\Question::with('questionBank')->findOrFail($id);
+
+        // Validasi kepemilikan: hanya guru pemilik bank soal yang bisa edit
+        if ($question->questionBank->user_id !== auth()->id()) {
+            abort(403);
+        }
+
+        $request->validate([
+            'type' => 'required|in:pilihan_ganda,essay',
+            'question_text' => 'required|string',
+            'options' => 'required_if:type,pilihan_ganda|nullable|array',
+            'answer_key' => 'required|string',
+            'score_default' => 'required|integer|min:0',
+        ]);
+
+        $question->update($request->only('type', 'question_text', 'options', 'answer_key', 'score_default'));
+
+        \App\Models\AuditLog::log('updated', 'Question', $question->id, null, "Mengubah soal #{$question->id}");
+
+        return redirect()->back()->with('success', 'Soal berhasil diperbarui.');
+    }
+
+    public function destroy($id)
+    {
+        $question = \App\Models\Question::with('questionBank')->findOrFail($id);
+
+        if ($question->questionBank->user_id !== auth()->id()) {
+            abort(403);
+        }
+
+        \App\Models\AuditLog::log('deleted', 'Question', $question->id, null, "Menghapus soal #{$question->id}");
+        $question->delete();
+
+        return redirect()->back()->with('success', 'Soal berhasil dihapus.');
     }
 }

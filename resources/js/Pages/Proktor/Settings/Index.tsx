@@ -9,6 +9,7 @@ export default function Index({ settings }) {
     const { data, setData, post, processing, errors } = useForm({
         school_name: settings.school_name || '',
         school_address: settings.school_address || '',
+        passing_grade: settings.passing_grade || '70',
     });
 
     const submit = (e) => {
@@ -59,6 +60,27 @@ export default function Index({ settings }) {
                                     required
                                 ></textarea>
                                 <InputError message={errors.school_address} className="mt-2" />
+                            </div>
+
+                            <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mt-8 mb-6 border-b pb-2">
+                                Pengaturan Ujian
+                            </h3>
+
+                            <div>
+                                <InputLabel htmlFor="passing_grade" value="KKM (Kriteria Ketuntasan Minimal)" />
+                                <TextInput
+                                    id="passing_grade"
+                                    type="number"
+                                    min="0"
+                                    max="100"
+                                    value={data.passing_grade}
+                                    onChange={(e) => setData('passing_grade', e.target.value)}
+                                    className="mt-1 block w-32"
+                                    placeholder="70"
+                                    required
+                                />
+                                <p className="mt-1 text-sm text-gray-500">Batas nilai kelulusan (0-100). Default: 70</p>
+                                <InputError message={errors.passing_grade} className="mt-2" />
                             </div>
 
                             <div className="mt-8 flex items-center justify-end">

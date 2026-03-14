@@ -10,7 +10,7 @@ export default function Dashboard({ sessions }) {
                 </h2>
             }
         >
-            <Head title="Siswa Dashboard" />
+            <Head title="Dashboard Siswa" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">

@@ -67,7 +67,7 @@ export default function Index({ sessions }: Props) {
                                                 <td className="px-6 py-4 text-center text-sm text-gray-500">
                                                     {new Date(session.start_time).toLocaleDateString()}
                                                 </td>
-                                                <td className="px-6 py-4 text-right space-x-2">
+                                                <td className="px-6 py-4 text-right space-y-2 lg:space-y-0 lg:space-x-2">
                                                     <Link
                                                         href={route('proktor.results.show', session.id)}
                                                         className="inline-flex items-center gap-1 text-sm font-bold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
@@ -81,6 +81,20 @@ export default function Index({ sessions }: Props) {
                                                         className="inline-flex items-center gap-1 text-sm font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 ml-4"
                                                     >
                                                         PDF <Download className="w-4 h-4" />
+                                                    </a>
+                                                    <a
+                                                        href={route('proktor.results.export-excel', session.id)}
+                                                        className="inline-flex items-center gap-1 text-sm font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 ml-4"
+                                                    >
+                                                        Excel <Download className="w-4 h-4" />
+                                                    </a>
+                                                    <a
+                                                        href={route('proktor.attendance.generate', session.id)}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="inline-flex items-center gap-1 text-sm font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 ml-4"
+                                                    >
+                                                        Hadir <Users className="w-4 h-4" />
                                                     </a>
                                                 </td>
                                             </tr>

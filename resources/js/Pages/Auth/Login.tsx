@@ -6,7 +6,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { Mail, Lock, User, ArrowRight } from 'lucide-react';
+import { Lock, User, ArrowRight } from 'lucide-react';
 
 export default function Login({
     status,
@@ -34,7 +34,7 @@ export default function Login({
 
     return (
         <GuestLayout>
-            <Head title="Premium Login" />
+            <Head title="Masuk Ke Sistem" />
 
             {status && (
                 <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-xl text-sm font-bold text-green-600 dark:text-green-400 flex items-center gap-2">
@@ -45,7 +45,7 @@ export default function Login({
 
             <form onSubmit={submit} className="space-y-6">
                 <div>
-                    <InputLabel htmlFor="username" value="Username" className="text-gray-700 dark:text-gray-300 font-bold mb-1" />
+                    <InputLabel htmlFor="username" value="Nama Pengguna" className="text-gray-700 dark:text-gray-300 font-bold mb-1" />
 
                     <div className="relative group">
                         <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors">
@@ -60,7 +60,7 @@ export default function Login({
                             autoComplete="username"
                             isFocused={true}
                             onChange={(e) => setData('username', e.target.value)}
-                            placeholder="username anda"
+                            placeholder="username Anda"
                         />
                     </div>
 
@@ -69,13 +69,13 @@ export default function Login({
 
                 <div>
                     <div className="flex justify-between items-center mb-1">
-                        <InputLabel htmlFor="password" value="Password" className="text-gray-700 dark:text-gray-300 font-bold" />
+                        <InputLabel htmlFor="password" value="Kata Sandi" className="text-gray-700 dark:text-gray-300 font-bold" />
                         {canResetPassword && (
                             <Link
                                 href={route('password.request')}
                                 className="text-xs font-bold text-blue-600 hover:text-blue-500 transition"
                             >
-                                Forgot?
+                                Lupa sandi?
                             </Link>
                         )}
                     </div>
@@ -113,7 +113,7 @@ export default function Login({
                             className="rounded border-gray-300 dark:border-gray-700 text-blue-600 shadow-sm focus:ring-blue-500"
                         />
                         <span className="ms-3 text-sm font-bold text-gray-500 dark:text-gray-400 group-hover:text-gray-700 transition">
-                            Remember me
+                            Ingat saya
                         </span>
                     </label>
                 </div>
@@ -123,16 +123,16 @@ export default function Login({
                         className="w-full h-14 flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-black rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl disabled:opacity-50"
                         disabled={processing}
                     >
-                        Login
+                        Masuk
                         <ArrowRight className="w-5 h-5" />
                     </PrimaryButton>
                 </div>
 
                 <div className="text-center pt-2">
                     <p className="text-sm font-bold text-gray-400 dark:text-gray-500">
-                        Don't have an account?{' '}
+                        Belum punya akun?{' '}
                         <Link href={route('login')} className="text-blue-600 hover:text-blue-500 underline decoration-2 underline-offset-4">
-                            Contact Admin
+                            Hubungi Admin
                         </Link>
                     </p>
                 </div>

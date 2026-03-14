@@ -8,21 +8,17 @@ import {
     ClipboardList,
     CreditCard,
     Settings,
-    ChevronLeft,
     LogOut,
-    Search,
-    Plus,
+    PlayCircle,
+    Sun,
+    Moon,
+    Database,
     FileText,
     Briefcase,
     HelpCircle,
     ChevronDown,
     ChevronRight,
-    SearchCode,
-    Database,
-    PlayCircle,
-    Sun,
-    Moon,
-    UserCircle
+    Zap
 } from 'lucide-react';
 import { ReactNode, useState, useEffect } from 'react';
 
@@ -115,9 +111,9 @@ export default function Sidebar() {
             <div className="p-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-200 dark:shadow-none group-hover:scale-105 transition">
-                        e
+                        <Zap className="w-5 h-5 fill-current" />
                     </div>
-                    <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">exxam.io</span>
+                    <span className="text-xl font-black text-gray-900 dark:text-white tracking-tight">zexam<span className="text-blue-600">.io</span></span>
                 </Link>
             </div>
 
@@ -138,42 +134,42 @@ export default function Sidebar() {
                 {user.role === 'proktor' && (
                     <>
                         <div>
-                            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Academic</p>
-                            <CollapsibleSection label="Master Data" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.classrooms.*') || route().current('proktor.subjects.*')}>
+                            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Master Akademik</p>
+                            <CollapsibleSection label="Data Master" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.classrooms.*') || route().current('proktor.subjects.*')}>
                                 <SidebarItem
                                     href={route('proktor.users.index')}
                                     icon={Users}
-                                    label="Users"
+                                    label="Data Pengguna"
                                     active={route().current('proktor.users.*')}
                                 />
                                 <SidebarItem
                                     href={route('proktor.classrooms.index')}
                                     icon={GraduationCap}
-                                    label="Classes"
+                                    label="Data Kelas"
                                     active={route().current('proktor.classrooms.*')}
                                 />
                                 <SidebarItem
                                     href={route('proktor.subjects.index')}
                                     icon={BookOpen}
-                                    label="Subjects"
+                                    label="Mata Pelajaran"
                                     active={route().current('proktor.subjects.*')}
                                 />
                             </CollapsibleSection>
                         </div>
 
                         <div>
-                            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Examination</p>
+                            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Ujian & Sesi</p>
                             <div className="space-y-1">
                                 <SidebarItem
                                     href={route('proktor.exams.index')}
                                     icon={ClipboardList}
-                                    label="Manage Exams"
+                                    label="Manajemen Ujian"
                                     active={route().current('proktor.exams.*')}
                                 />
                                 <SidebarItem
                                     href={route('proktor.sessions.index')}
                                     icon={PlayCircle}
-                                    label="Active Sessions"
+                                    label="Sesi Aktif"
                                     active={route().current('proktor.sessions.*')}
                                     isLive={true}
                                 />
@@ -186,7 +182,7 @@ export default function Sidebar() {
                                 <SidebarItem
                                     href={route('proktor.exam-cards.index')}
                                     icon={CreditCard}
-                                    label="Exam Cards"
+                                    label="Kartu Ujian"
                                     active={route().current('proktor.exam-cards.*')}
                                 />
                             </div>
@@ -197,7 +193,7 @@ export default function Sidebar() {
                 {/* Guru Menus */}
                 {user.role === 'guru' && (
                     <div>
-                        <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Question Bank</p>
+                        <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Bank Soal</p>
                         <div className="space-y-1">
                             <SidebarItem
                                 href={route('guru.question-banks.index')}
@@ -215,14 +211,29 @@ export default function Sidebar() {
                     </div>
                 )}
 
+                {/* Siswa Menus */}
+                {user.role === 'siswa' && (
+                    <div>
+                        <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Menu Siswa</p>
+                        <div className="space-y-1">
+                            <SidebarItem
+                                href={route('siswa.history')}
+                                icon={ClipboardList}
+                                label="Riwayat Ujian"
+                                active={route().current('siswa.history')}
+                            />
+                        </div>
+                    </div>
+                )}
+
                 {/* Other Menu */}
                 <div>
-                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">General</p>
+                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Pengaturan</p>
                     <div className="space-y-1">
                         <SidebarItem
                             href={route('proktor.settings.index')}
                             icon={Settings}
-                            label="System Settings"
+                            label="Pengaturan Sistem"
                             active={route().current('proktor.settings.*')}
                         />
                         <button
@@ -231,13 +242,13 @@ export default function Sidebar() {
                         >
                             <div className="flex items-center gap-3">
                                 {isDarkMode ? <Sun className="w-5 h-5 text-amber-500" /> : <Moon className="w-5 h-5 text-indigo-500" />}
-                                <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
+                                <span>{isDarkMode ? 'Mode Terang' : 'Mode Gelap'}</span>
                             </div>
                         </button>
                         <SidebarItem
                             href="#"
                             icon={HelpCircle}
-                            label="Help Center"
+                            label="Pusat Bantuan"
                             active={false}
                         />
                     </div>
@@ -248,13 +259,13 @@ export default function Sidebar() {
             <div className="p-4 border-t border-gray-100 dark:border-gray-800 bg-[#F9FAFB]/50 dark:bg-gray-950/20">
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold border border-blue-200 dark:border-blue-800">
+                        <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold border border-blue-200 dark:border-blue-800 text-xs">
                             {user.name.charAt(0)}
                         </div>
                         <div className="flex-1 min-w-0">
                             <p className="text-sm font-bold text-gray-900 dark:text-white truncate">{user.name}</p>
                             <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 font-bold uppercase border border-blue-100 dark:border-blue-800">
-                                {user.role}
+                                {user.role === 'proktor' ? 'Pengawas' : (user.role === 'guru' ? 'Guru' : 'Siswa')}
                             </span>
                         </div>
                     </div>
@@ -267,7 +278,7 @@ export default function Sidebar() {
                     className="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-xl transition w-full group"
                 >
                     <LogOut className="w-4 h-4 group-hover:translate-x-0.5 transition" />
-                    <span>Log Out</span>
+                    <span>Keluar Akun</span>
                 </Link>
             </div>
         </aside>

@@ -95,7 +95,13 @@
                     <p>{{ $schoolName }}</p>
                     <p>{{ $schoolAddress }}</p>
                 </div>
-                <div class="content">
+                <div class="content" style="display:flex;">
+                    @if($student->photo)
+                        <div style="width:80px; margin-right:10px; flex-shrink:0;">
+                            <img src="{{ public_path('storage/' . $student->photo) }}"
+                                style="width:70px; height:90px; object-fit:cover; border:1px solid #ccc;">
+                        </div>
+                    @endif
                     <table>
                         <tr>
                             <td>Nama</td>

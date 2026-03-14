@@ -47,8 +47,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/results', [\App\Http\Controllers\Proktor\ResultController::class, 'index'])->name('results.index');
         Route::get('/results/{id}', [\App\Http\Controllers\Proktor\ResultController::class, 'show'])->name('results.show');
         Route::get('/results/{id}/export-pdf', [\App\Http\Controllers\Proktor\ResultController::class, 'exportPdf'])->name('results.export-pdf');
+        Route::get('/results/{id}/export-excel', [\App\Http\Controllers\Proktor\ResultController::class, 'exportExcel'])->name('results.export-excel');
         Route::post('/results/user/{id}/reset', [\App\Http\Controllers\Proktor\ResultController::class, 'resetResult'])->name('results.reset-user');
         Route::delete('/results/user/{id}/delete', [\App\Http\Controllers\Proktor\ResultController::class, 'deleteResult'])->name('results.delete-user');
+        Route::get('/attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generate'])->name('attendance.generate');
 
         Route::get('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'index'])->name('settings.index');
         Route::post('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'store'])->name('settings.store');
@@ -63,11 +65,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('questions', \App\Http\Controllers\Guru\QuestionController::class);
         Route::get('/results', [\App\Http\Controllers\Guru\ExamResultController::class, 'index'])->name('results.index');
         Route::get('/results/{id}', [\App\Http\Controllers\Guru\ExamResultController::class, 'show'])->name('results.show');
+        Route::get('/question-analysis/{id}', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('question-analysis.show');
     });
 
     // Siswa Routes
     Route::middleware(['role:siswa'])->prefix('siswa')->name('siswa.')->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Siswa\ExamController::class, 'index'])->name('dashboard');
+        Route::get('/history', [\App\Http\Controllers\Siswa\ExamController::class, 'history'])->name('history');
         Route::get('/exams/{id}', [\App\Http\Controllers\Siswa\ExamController::class, 'show'])->name('exams.show');
         Route::post('/exams/submit', [\App\Http\Controllers\Siswa\ExamController::class, 'submitAnswer'])->name('exams.submit');
         Route::post('/exams/report-cheat', [\App\Http\Controllers\Siswa\ExamController::class, 'reportCheat'])->name('exams.report-cheat');

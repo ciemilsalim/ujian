@@ -46,6 +46,11 @@ class User extends Authenticatable
         return $this->belongsTo(Classroom::class);
     }
 
+    public function examSessionUsers()
+    {
+        return $this->hasMany(ExamSessionUser::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -105,13 +105,15 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
             setConnectionStatus('reconnecting');
         };
 
-        window.Echo.connector.pusher.connection.bind('connected', handleConnected);
-        window.Echo.connector.pusher.connection.bind('disconnected', handleDisconnected);
-        window.Echo.connector.pusher.connection.bind('connecting', handleReconnecting);
+        if (window.Echo) {
+            window.Echo.connector.pusher.connection.bind('connected', handleConnected);
+            window.Echo.connector.pusher.connection.bind('disconnected', handleDisconnected);
+            window.Echo.connector.pusher.connection.bind('connecting', handleReconnecting);
+        }
 
         return () => {
             clearInterval(interval);
-            if (window.Echo.connector.pusher.connection) {
+            if (window.Echo && window.Echo.connector.pusher.connection) {
                 window.Echo.connector.pusher.connection.unbind('connected', handleConnected);
                 window.Echo.connector.pusher.connection.unbind('disconnected', handleDisconnected);
                 window.Echo.connector.pusher.connection.unbind('connecting', handleReconnecting);
@@ -119,18 +121,27 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
         };
     }, [connectionStatus]);
 
+    const getConnectionStatusLabel = (status: string) => {
+        switch (status) {
+            case 'connected': return 'Terhubung';
+            case 'disconnected': return 'Terputus';
+            case 'reconnecting': return 'Menghubungkan...';
+            default: return status;
+        }
+    }
+
     return (
         <AuthenticatedLayout
             header={
                 <div>
                     <h2 className="text-2xl font-bold leading-tight text-gray-900 dark:text-gray-100">
-                        Hello, {user.name}
+                        Halo, {user.name}
                     </h2>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Welcome back to Aplikasi Ujian!</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Selamat datang kembali di Zexam!</p>
                 </div>
             }
         >
-            <Head title="Proktor Dashboard" />
+            <Head title="Dashboard Pengawas" />
 
             <div className="py-8">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 space-y-8">
@@ -146,7 +157,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     <div className="relative z-10">
                                         <div className="flex justify-between items-start mb-4">
                                             <div>
-                                                <p className="text-indigo-100 text-xs font-bold uppercase tracking-wider">Active Token</p>
+                                                <p className="text-indigo-100 text-xs font-bold uppercase tracking-wider">Token Aktif</p>
                                                 <h4 className="font-bold truncate pr-8">{session.name}</h4>
                                             </div>
                                             <div className="flex gap-2">
@@ -183,14 +194,14 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                     {/* Metrics Section */}
                     <section>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">Dashboard</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Overview of your exam, students and other resources</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Ringkasan ujian, siswa, dan sumber daya lainnya.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-xl p-6 flex items-center gap-4 border border-gray-100 dark:border-gray-700">
                                 <div className="p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">
                                     <Users className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Students at exams</p>
+                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Siswa Sedang Ujian</p>
                                     <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{metrics.studentsAtExams}</p>
                                 </div>
                             </div>
@@ -199,7 +210,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     <Flag className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Exam Finishes</p>
+                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Ujian Selesai</p>
                                     <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{metrics.examFinishes}</p>
                                 </div>
                             </div>
@@ -208,7 +219,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     <PlayCircle className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Running Exam</p>
+                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Sesi Berjalan</p>
                                     <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{metrics.runningExams}</p>
                                 </div>
                             </div>
@@ -217,7 +228,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     <CheckCircle className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Completed Rate</p>
+                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Tingkat Selesai</p>
                                     <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{metrics.completedRate}%</p>
                                 </div>
                             </div>
@@ -231,9 +242,9 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                             <div className="flex items-center justify-between mb-6">
                                 <div className="flex items-center gap-2">
                                     <TrendingUp className="w-5 h-5 text-blue-500" />
-                                    <h4 className="font-bold text-gray-900 dark:text-white">Participation Trend</h4>
+                                    <h4 className="font-bold text-gray-900 dark:text-white">Tren Partisipasi</h4>
                                 </div>
-                                <div className="text-xs text-gray-400 font-medium bg-gray-50 dark:bg-gray-900 px-2 py-1 rounded-md">Last 7 Days</div>
+                                <div className="text-xs text-gray-400 font-medium bg-gray-50 dark:bg-gray-900 px-2 py-1 rounded-md">7 Hari Terakhir</div>
                             </div>
                             <div className="h-[300px] w-full">
                                 <ResponsiveContainer width="100%" height="100%">
@@ -282,7 +293,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                         <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-2xl p-6 border border-gray-100 dark:border-gray-700">
                             <div className="flex items-center gap-2 mb-6">
                                 <PieIcon className="w-5 h-5 text-indigo-500" />
-                                <h4 className="font-bold text-gray-900 dark:text-white">Status Overview</h4>
+                                <h4 className="font-bold text-gray-900 dark:text-white">Ringkasan Status</h4>
                             </div>
                             <div className="h-[240px] w-full relative">
                                 <ResponsiveContainer width="100%" height="100%">
@@ -305,7 +316,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                 </ResponsiveContainer>
                                 <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                                     <span className="text-2xl font-bold text-gray-900 dark:text-white">{metrics.studentsAtExams + metrics.examFinishes}</span>
-                                    <span className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-bold">Total Active</span>
+                                    <span className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-bold">Total Aktif</span>
                                 </div>
                             </div>
                             <div className="mt-4 space-y-2">
@@ -313,7 +324,9 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     <div key={item.name} className="flex items-center justify-between text-sm">
                                         <div className="flex items-center gap-2">
                                             <div className="w-3 h-3 rounded-full" style={{ backgroundColor: ['#cbd5e1', '#3b82f6', '#10b981'][index] }}></div>
-                                            <span className="text-gray-600 dark:text-gray-400">{item.name}</span>
+                                            <span className="text-gray-600 dark:text-gray-400">
+                                                {item.name === 'Finished' ? 'Selesai' : (item.name === 'Running' ? 'Sedang Ujian' : 'Belum Mulai')}
+                                            </span>
                                         </div>
                                         <span className="font-bold text-gray-900 dark:text-white">{item.value}</span>
                                     </div>
@@ -326,7 +339,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                     <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-2xl p-6 border border-gray-100 dark:border-gray-700">
                         <div className="flex items-center gap-2 mb-6">
                             <BarChart2 className="w-5 h-5 text-emerald-500" />
-                            <h4 className="font-bold text-gray-900 dark:text-white">Score Distribution</h4>
+                            <h4 className="font-bold text-gray-900 dark:text-white">Distribusi Skor</h4>
                         </div>
                         <div className="h-[250px] w-full">
                             <ResponsiveContainer width="100%" height="100%">
@@ -349,23 +362,23 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                     <section>
                         <div className="flex justify-between items-center mb-4">
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Exam History</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Explore our tools that you can use to generate reports, analyze results and more</p>
+                                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Riwayat Ujian</h3>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Lihat hasil, analisis skor, dan manajemen laporan ujian.</p>
                             </div>
                             <Link href={route('proktor.sessions.index')} className="px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
-                                See All ↗
+                                Lihat Semua ↗
                             </Link>
                         </div>
                         <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden">
                             <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                 <thead className="bg-gray-50/80 dark:bg-gray-900/50">
                                     <tr>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Title</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Class</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Code</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Participants</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Submit</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Schedule</th>
+                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Judul</th>
+                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Kelas</th>
+                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Kode</th>
+                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Peserta</th>
+                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Selesai</th>
+                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Jadwal</th>
                                         <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Status</th>
                                         <th scope="col" className="relative px-6 py-4"><span className="sr-only">Actions</span></th>
                                     </tr>
@@ -379,7 +392,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                                     {session.name}
                                                 </td>
                                                 <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    All Classes
+                                                    Semua Kelas
                                                 </td>
                                                 <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 font-mono">
                                                     {session.token}
@@ -399,18 +412,18 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                                 </td>
                                                 <td className="px-6 py-5 whitespace-nowrap text-xs text-gray-500 dark:text-gray-400">
                                                     <div className="flex flex-col gap-1">
-                                                        <span>{new Date(session.start_time).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                                                        <span>{new Date(session.end_time).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                                                        <span>{new Date(session.start_time).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                                                        <span>{new Date(session.end_time).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-5 whitespace-nowrap">
                                                     {session.is_active ? (
                                                         <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
-                                                            Running
+                                                            Berjalan
                                                         </span>
                                                     ) : (
                                                         <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-50 text-gray-700 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                                                            Finished
+                                                            Selesai
                                                         </span>
                                                     )}
                                                 </td>
@@ -427,7 +440,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                             <td colSpan={8} className="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
                                                 <div className="flex flex-col items-center gap-2">
                                                     <Flag className="w-8 h-8 text-gray-300 dark:text-gray-600" />
-                                                    <p>No recent exam history available.</p>
+                                                    <p>Belum ada riwayat ujian terbaru.</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -443,11 +456,11 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                             <div className="flex items-center justify-between mb-6">
                                 <div className="flex items-center gap-2">
                                     <History className="w-5 h-5 text-amber-500" />
-                                    <h4 className="font-bold text-gray-900 dark:text-white">Recent Activity Feed</h4>
+                                    <h4 className="font-bold text-gray-900 dark:text-white">Aktivitas Peserta Terbaru</h4>
                                 </div>
                                 <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-full uppercase tracking-wider">
                                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span>
-                                    Live
+                                    Langsung
                                 </span>
                             </div>
 
@@ -483,7 +496,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                         {activity.score !== null && (
                                             <div className="text-right">
                                                 <div className="text-sm font-black text-indigo-600 dark:text-indigo-400">{activity.score}</div>
-                                                <div className="text-[10px] text-gray-400 uppercase font-bold">Score</div>
+                                                <div className="text-[10px] text-gray-400 uppercase font-bold">Skor</div>
                                             </div>
                                         )}
                                     </div>
@@ -509,28 +522,28 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                         <Activity className={`w-5 h-5 ${connectionStatus === 'connected' ? 'text-emerald-500 animate-pulse' :
                                             connectionStatus === 'reconnecting' ? 'text-amber-500 animate-spin' : 'text-red-500'
                                             }`} />
-                                        <h4 className="font-bold text-gray-900 dark:text-white">Real-time System</h4>
+                                        <h4 className="font-bold text-gray-900 dark:text-white">Sistem Real-time</h4>
                                     </div>
                                     <span className={`text-[10px] font-black uppercase px-2 py-1 rounded-full ${connectionStatus === 'connected' ? 'bg-emerald-100 text-emerald-700' :
                                         connectionStatus === 'reconnecting' ? 'bg-amber-100 text-amber-700' : 'bg-red-100 text-red-700'
                                         }`}>
-                                        {connectionStatus}
+                                        {getConnectionStatusLabel(connectionStatus)}
                                     </span>
                                 </div>
                                 <div className="space-y-3">
                                     <div className="flex justify-between items-center text-xs">
-                                        <span className="text-gray-500">Database Status</span>
+                                        <span className="text-gray-500">Status Database</span>
                                         <span className={`font-bold ${health?.database ? 'text-emerald-600' : 'text-red-600'}`}>
-                                            {health?.database ? 'Healthy' : 'Error'}
+                                            {health?.database ? 'Sehat' : 'Error'}
                                         </span>
                                     </div>
                                     <div className="flex justify-between items-center text-xs">
                                         <span className="text-gray-500">WebSocket</span>
-                                        <span className="text-emerald-600 font-bold">Stable</span>
+                                        <span className="text-emerald-600 font-bold">Stabil</span>
                                     </div>
                                     <div className="pt-3 border-t border-gray-50 dark:border-gray-700 mt-3 grid grid-cols-2 gap-4">
                                         <div>
-                                            <p className="text-[10px] uppercase text-gray-400 font-bold mb-1">CPU Load</p>
+                                            <p className="text-[10px] uppercase text-gray-400 font-bold mb-1">Beban CPU</p>
                                             <div className="flex items-end gap-1">
                                                 <span className="text-lg font-black text-gray-700 dark:text-gray-300">
                                                     {health ? (health.cpu === -1 ? 'N/A' : health.cpu + '%') : '--'}
@@ -539,7 +552,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                             </div>
                                         </div>
                                         <div>
-                                            <p className="text-[10px] uppercase text-gray-400 font-bold mb-1">RAM Used</p>
+                                            <p className="text-[10px] uppercase text-gray-400 font-bold mb-1">RAM Terpakai</p>
                                             <div className="flex items-end gap-1">
                                                 <span className="text-lg font-black text-gray-700 dark:text-gray-300">
                                                     {health ? health.memory.percentage + '%' : '--'}
@@ -554,7 +567,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                             <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-2xl p-6 border border-gray-100 dark:border-gray-700">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Megaphone className="w-5 h-5 text-indigo-500" />
-                                    <h4 className="font-bold text-gray-900 dark:text-white">Global Announcement</h4>
+                                    <h4 className="font-bold text-gray-900 dark:text-white">Pengumuman Global</h4>
                                 </div>
                                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
                                     Kirim pesan ke seluruh siswa di semua sesi aktif sekaligus.
@@ -582,7 +595,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                             <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-2xl p-6 border border-gray-100 dark:border-gray-700">
                                 <div className="flex items-center gap-2 mb-6">
                                     <PlayCircle className="w-5 h-5 text-indigo-500" />
-                                    <h4 className="font-bold text-gray-900 dark:text-white">Running Sessions</h4>
+                                    <h4 className="font-bold text-gray-900 dark:text-white">Sesi Berjalan</h4>
                                 </div>
                                 <div className="space-y-3">
                                     {activeSessions.map((session) => (
@@ -593,7 +606,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                                 href={route('proktor.sessions.monitor', session.id)}
                                                 className="w-full inline-flex items-center justify-center gap-2 py-2 bg-white dark:bg-gray-800 text-xs font-bold text-indigo-600 dark:text-indigo-400 rounded-lg border border-indigo-100 dark:border-indigo-900 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all"
                                             >
-                                                Monitor Live
+                                                Pantau Langsung
                                                 <TrendingUp className="w-3 h-3" />
                                             </Link>
                                         </div>

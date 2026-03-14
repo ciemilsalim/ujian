@@ -1,10 +1,9 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import Dropdown from '@/Components/Dropdown';
 import Sidebar from '@/Components/Sidebar';
 import CommandPalette from '@/Components/CommandPalette';
+import Dropdown from '@/Components/Dropdown';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState, useEffect } from 'react';
-import { Search, Bell, Plus, Menu, X, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Search, Bell, Plus, Menu, X, CheckCircle, AlertTriangle, Zap } from 'lucide-react';
 import { Toaster, toast } from 'sonner';
 
 declare global {
@@ -92,7 +91,7 @@ export default function Authenticated({
                             <Search className="absolute left-3 w-4 h-4 text-gray-400 pointer-events-none group-hover:text-blue-500 transition" />
                             <input
                                 type="text"
-                                placeholder="Press Ctrl + K to search..."
+                                placeholder="Tekan Ctrl + K untuk mencari..."
                                 readOnly
                                 onClick={() => {
                                     window.dispatchEvent(new KeyboardEvent('keydown', { ctrlKey: true, key: 'k' }));
@@ -112,13 +111,15 @@ export default function Authenticated({
                             <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></span>
                         </button>
 
-                        <Link
-                            href={route('proktor.sessions.index')}
-                            className="hidden sm:flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-sm shadow-blue-200 dark:shadow-none transition"
-                        >
-                            <Plus className="w-4 h-4" />
-                            Create Exam
-                        </Link>
+                        {user.role === 'proktor' && (
+                            <Link
+                                href={route('proktor.sessions.index')}
+                                className="hidden sm:flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-sm shadow-blue-200 dark:shadow-none transition"
+                            >
+                                <Plus className="w-4 h-4" />
+                                Buat Ujian
+                            </Link>
+                        )}
 
                         <div className="h-8 w-px bg-gray-100 dark:bg-gray-800 mx-1 hidden sm:block"></div>
 
@@ -136,9 +137,9 @@ export default function Authenticated({
                             </Dropdown.Trigger>
 
                             <Dropdown.Content>
-                                <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
+                                <Dropdown.Link href={route('profile.edit')}>Profil</Dropdown.Link>
                                 <Dropdown.Link href={route('logout')} method="post" as="button">
-                                    Log Out
+                                    Keluar
                                 </Dropdown.Link>
                             </Dropdown.Content>
                         </Dropdown>
@@ -159,9 +160,16 @@ export default function Authenticated({
 
                 {/* Footer */}
                 <footer className="px-4 py-6 sm:px-8 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 text-center">
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                        &copy; {new Date().getFullYear()} exxam.io - Advanced Examination System.
-                    </p>
+                    <div className="flex flex-col items-center gap-2">
+                        <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 font-bold text-sm">
+                            <Zap className="w-4 h-4 text-blue-600 fill-current" />
+                            <span>zexam.v1</span>
+                        </div>
+                        <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">
+                            &copy; {new Date().getFullYear()} zexam.io. Created by <a href="https://www.zahradev.online" target="_blank" className="text-blue-600 hover:underline">ZahraDev</a>
+                        </p>
+                        <p className="text-[10px] text-gray-400 font-bold mt-1 select-all">emilsalimramadhan@gmail.com</p>
+                    </div>
                 </footer>
             </div>
         </div>

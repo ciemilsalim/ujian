@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="D:\laragon\www\ujian\phpunit.xml" tests="25" assertions="6" errors="19" failures="1" skipped="0" time="9.705654">
+    <testsuite name="Unit" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.010250">
+      <testsuite name="Tests\Unit\ExampleTest" file="tests\Unit\ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.010250">
+        <testcase name="that true is true" file="tests\Unit\ExampleTest.php::that true is true" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" assertions="1" time="0.010250"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="24" assertions="5" errors="19" failures="1" skipped="0" time="9.695404">
+      <testsuite name="Tests\Feature\Auth\AuthenticationTest" file="tests\Feature\Auth\AuthenticationTest.php" tests="4" assertions="1" errors="3" failures="0" skipped="0" time="2.813256">
+        <testcase name="login screen can be rendered" file="tests\Feature\Auth\AuthenticationTest.php::login screen can be rendered" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="1" time="2.568932"/>
+        <testcase name="users can authenticate using the login screen" file="tests\Feature\Auth\AuthenticationTest.php::users can authenticate using the login screen" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="0" time="0.196799">
+          <error type="Illuminate\Database\QueryException">users can authenticate using the login screenIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Mr. Trace Hartmann I, adams.michelle@example.net, 2026-03-04 13:26:16, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, rSuAIcqeR9, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\AuthenticationTest.php:12
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\AuthenticationTest.php:12</error>
+        </testcase>
+        <testcase name="users can not authenticate with invalid password" file="tests\Feature\Auth\AuthenticationTest.php::users can not authenticate with invalid password" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="0" time="0.025767">
+          <error type="Illuminate\Database\QueryException">users can not authenticate with invalid passwordIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Vernie Willms, theo.bernier@example.net, 2026-03-04 13:26:16, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, 5imgwE2wRB, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\AuthenticationTest.php:24
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\AuthenticationTest.php:24</error>
+        </testcase>
+        <testcase name="users can logout" file="tests\Feature\Auth\AuthenticationTest.php::users can logout" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="0" time="0.021758">
+          <error type="Illuminate\Database\QueryException">users can logoutIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Vella Roberts DVM, kgleichner@example.com, 2026-03-04 13:26:16, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, PnY60a1N26, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\AuthenticationTest.php:35
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\AuthenticationTest.php:35</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\EmailVerificationTest" file="tests\Feature\Auth\EmailVerificationTest.php" tests="3" assertions="0" errors="3" failures="0" skipped="0" time="0.071689">
+        <testcase name="email verification screen can be rendered" file="tests\Feature\Auth\EmailVerificationTest.php::email verification screen can be rendered" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="0" time="0.030241">
+          <error type="Illuminate\Database\QueryException">email verification screen can be renderedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Sophie Heathcote Jr., cristal.deckow@example.net, ?, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, ixy6ID1O7Z, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\EmailVerificationTest.php:9
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\EmailVerificationTest.php:9</error>
+        </testcase>
+        <testcase name="email can be verified" file="tests\Feature\Auth\EmailVerificationTest.php::email can be verified" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="0" time="0.017903">
+          <error type="Illuminate\Database\QueryException">email can be verifiedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Prof. Gracie Hills, rheidenreich@example.net, ?, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, 20ChrIowXY, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\EmailVerificationTest.php:17
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\EmailVerificationTest.php:17</error>
+        </testcase>
+        <testcase name="email is not verified with invalid hash" file="tests\Feature\Auth\EmailVerificationTest.php::email is not verified with invalid hash" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="0" time="0.023544">
+          <error type="Illuminate\Database\QueryException">email is not verified with invalid hashIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Hazle Schowalter, ghackett@example.com, ?, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, k8K2cjMJBh, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\EmailVerificationTest.php:35
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\EmailVerificationTest.php:35</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordConfirmationTest" file="tests\Feature\Auth\PasswordConfirmationTest.php" tests="3" assertions="0" errors="3" failures="0" skipped="0" time="0.085069">
+        <testcase name="confirm password screen can be rendered" file="tests\Feature\Auth\PasswordConfirmationTest.php::confirm password screen can be rendered" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="0" time="0.038028">
+          <error type="Illuminate\Database\QueryException">confirm password screen can be renderedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Osborne Jakubowski, yost.edmund@example.net, 2026-03-04 13:26:16, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, 1yI7HR97hp, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordConfirmationTest.php:6
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordConfirmationTest.php:6</error>
+        </testcase>
+        <testcase name="password can be confirmed" file="tests\Feature\Auth\PasswordConfirmationTest.php::password can be confirmed" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="0" time="0.022131">
+          <error type="Illuminate\Database\QueryException">password can be confirmedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Emery Ritchie, mclaughlin.brayan@example.net, 2026-03-04 13:26:16, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, 1oYA92qRjJ, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordConfirmationTest.php:14
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordConfirmationTest.php:14</error>
+        </testcase>
+        <testcase name="password is not confirmed with invalid password" file="tests\Feature\Auth\PasswordConfirmationTest.php::password is not confirmed with invalid password" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="0" time="0.024910">
+          <error type="Illuminate\Database\QueryException">password is not confirmed with invalid passwordIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Randy Pfeffer I, rosa.huels@example.net, 2026-03-04 13:26:16, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, Cs8ZlkWXJi, 2026-03-04 13:26:16, 2026-03-04 13:26:16))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordConfirmationTest.php:25
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordConfirmationTest.php:25</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordResetTest" file="tests\Feature\Auth\PasswordResetTest.php" tests="4" assertions="1" errors="3" failures="0" skipped="0" time="2.106902">
+        <testcase name="reset password link screen can be rendered" file="tests\Feature\Auth\PasswordResetTest.php::reset password link screen can be rendered" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="1" time="2.038588"/>
+        <testcase name="reset password link can be requested" file="tests\Feature\Auth\PasswordResetTest.php::reset password link can be requested" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="0" time="0.025103">
+          <error type="Illuminate\Database\QueryException">reset password link can be requestedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Toney Altenwerth II, german.kunze@example.org, 2026-03-04 13:26:18, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, PJJwdot9ko, 2026-03-04 13:26:18, 2026-03-04 13:26:18))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordResetTest.php:16
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordResetTest.php:16</error>
+        </testcase>
+        <testcase name="reset password screen can be rendered" file="tests\Feature\Auth\PasswordResetTest.php::reset password screen can be rendered" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="0" time="0.022762">
+          <error type="Illuminate\Database\QueryException">reset password screen can be renderedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Alexa Kassulke, kreiger.alyson@example.org, 2026-03-04 13:26:18, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, 4rfaJJWDQj, 2026-03-04 13:26:18, 2026-03-04 13:26:18))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordResetTest.php:26
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordResetTest.php:26</error>
+        </testcase>
+        <testcase name="password can be reset with valid token" file="tests\Feature\Auth\PasswordResetTest.php::password can be reset with valid token" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="0" time="0.020449">
+          <error type="Illuminate\Database\QueryException">password can be reset with valid tokenIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Lincoln Kerluke, ronaldo51@example.com, 2026-03-04 13:26:18, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, fyEfFMVt7b, 2026-03-04 13:26:18, 2026-03-04 13:26:18))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordResetTest.php:42
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordResetTest.php:42</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordUpdateTest" file="tests\Feature\Auth\PasswordUpdateTest.php" tests="2" assertions="0" errors="2" failures="0" skipped="0" time="0.050788">
+        <testcase name="password can be updated" file="tests\Feature\Auth\PasswordUpdateTest.php::password can be updated" class="Tests\Feature\Auth\PasswordUpdateTest" classname="Tests.Feature.Auth.PasswordUpdateTest" assertions="0" time="0.024894">
+          <error type="Illuminate\Database\QueryException">password can be updatedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Miguel Heidenreich, zieme.jayce@example.org, 2026-03-04 13:26:18, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, 51uO5Yr2i0, 2026-03-04 13:26:18, 2026-03-04 13:26:18))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordUpdateTest.php:7
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordUpdateTest.php:7</error>
+        </testcase>
+        <testcase name="correct password must be provided to update password" file="tests\Feature\Auth\PasswordUpdateTest.php::correct password must be provided to update password" class="Tests\Feature\Auth\PasswordUpdateTest" classname="Tests.Feature.Auth.PasswordUpdateTest" assertions="0" time="0.025894">
+          <error type="Illuminate\Database\QueryException">correct password must be provided to update passwordIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Miss Arvilla Donnelly, ardella62@example.com, 2026-03-04 13:26:18, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, GbFb6C0tz9, 2026-03-04 13:26:18, 2026-03-04 13:26:18))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordUpdateTest.php:26
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\Auth\PasswordUpdateTest.php:26</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\RegistrationTest" file="tests\Feature\Auth\RegistrationTest.php" tests="2" assertions="2" errors="0" failures="1" skipped="0" time="2.376530">
+        <testcase name="registration screen can be rendered" file="tests\Feature\Auth\RegistrationTest.php::registration screen can be rendered" class="Tests\Feature\Auth\RegistrationTest" classname="Tests.Feature.Auth.RegistrationTest" assertions="1" time="2.043139"/>
+        <testcase name="new users can register" file="tests\Feature\Auth\RegistrationTest.php::new users can register" class="Tests\Feature\Auth\RegistrationTest" classname="Tests.Feature.Auth.RegistrationTest" assertions="1" time="0.333391">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">new users can registerThe user is not authenticated
+Failed asserting that false is true.&#13;
+at vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithAuthentication.php:49
+at tests\Feature\Auth\RegistrationTest.php:17</failure>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\ExampleTest" file="tests\Feature\ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="2.043798">
+        <testcase name="it returns a successful response" file="tests\Feature\ExampleTest.php::it returns a successful response" class="Tests\Feature\ExampleTest" classname="Tests.Feature.ExampleTest" assertions="1" time="2.043798"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ProfileTest" file="tests\Feature\ProfileTest.php" tests="5" assertions="0" errors="5" failures="0" skipped="0" time="0.147374">
+        <testcase name="profile page is displayed" file="tests\Feature\ProfileTest.php::profile page is displayed" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="0" time="0.019539">
+          <error type="Illuminate\Database\QueryException">profile page is displayedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Bonnie Ryan, kevon68@example.org, 2026-03-04 13:26:23, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, n5k1mflJHQ, 2026-03-04 13:26:23, 2026-03-04 13:26:23))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:6
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:6</error>
+        </testcase>
+        <testcase name="profile information can be updated" file="tests\Feature\ProfileTest.php::profile information can be updated" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="0" time="0.023806">
+          <error type="Illuminate\Database\QueryException">profile information can be updatedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Newell Koepp, fbarton@example.net, 2026-03-04 13:26:23, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, D4rqA9KT8d, 2026-03-04 13:26:23, 2026-03-04 13:26:23))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:16
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:16</error>
+        </testcase>
+        <testcase name="email verification status is unchanged when the email address is unchanged" file="tests\Feature\ProfileTest.php::email verification status is unchanged when the email address is unchanged" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="0" time="0.024137">
+          <error type="Illuminate\Database\QueryException">email verification status is unchanged when the email address is unchangedIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Ron Pacocha, elubowitz@example.org, 2026-03-04 13:26:23, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, eT4OSQE1eZ, 2026-03-04 13:26:23, 2026-03-04 13:26:23))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:37
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:37</error>
+        </testcase>
+        <testcase name="user can delete their account" file="tests\Feature\ProfileTest.php::user can delete their account" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="0" time="0.036302">
+          <error type="Illuminate\Database\QueryException">user can delete their accountIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Daron D'Amore, dlangworth@example.com, 2026-03-04 13:26:23, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, iEEvFSPs2R, 2026-03-04 13:26:23, 2026-03-04 13:26:23))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:54
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:54</error>
+        </testcase>
+        <testcase name="correct password must be provided to delete account" file="tests\Feature\ProfileTest.php::correct password must be provided to delete account" class="Tests\Feature\ProfileTest" classname="Tests.Feature.ProfileTest" assertions="0" time="0.043590">
+          <error type="Illuminate\Database\QueryException">correct password must be provided to delete accountIlluminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "updated_at", "created_at") values (Lucile Beier, cummings.percival@example.net, 2026-03-04 13:26:23, $2y$04$7zUFoIVYh7RqzX.ex9jDpO/BYaVqSSxrmtElq5UwpPCAd4Hi6ZzWi, aBpVAdrzio, 2026-03-04 13:26:23, 2026-03-04 13:26:23))&#13;
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:71
+Caused by
+PDOException: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username
+
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:571
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:812
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:779
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:560
+at vendor\laravel\framework\src\Illuminate\Database\Connection.php:524
+at vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php:32
+at vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:3766
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php:2120
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1359
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1324
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:1163
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:352
+at vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:261
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:347
+at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Factories\Factory.php:303
+at tests\Feature\ProfileTest.php:71</error>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

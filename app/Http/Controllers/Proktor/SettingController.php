@@ -20,6 +20,7 @@ class SettingController extends Controller
         $request->validate([
             'school_name' => 'required|string|max:255',
             'school_address' => 'required|string',
+            'passing_grade' => 'required|integer|min:0|max:100',
         ]);
 
         \App\Models\Setting::updateOrCreate(
@@ -32,6 +33,11 @@ class SettingController extends Controller
             ['value' => $request->school_address]
         );
 
-        return redirect()->back()->with('success', 'Settings updated successfully.');
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'passing_grade'],
+            ['value' => $request->passing_grade]
+        );
+
+        return redirect()->back()->with('success', 'Pengaturan berhasil disimpan.');
     }
 }

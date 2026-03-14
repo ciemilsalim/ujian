@@ -32,9 +32,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Create example Classroom
-        \App\Models\Classroom::create([
+        $classroom = \App\Models\Classroom::create([
             'name' => 'X-MIPA-1',
             'description' => 'Kelas Sepuluh MIPA Satu',
+        ]);
+
+        // Create Siswa
+        \App\Models\User::create([
+            'username' => 'siswa',
+            'name' => 'Siswa Percobaan',
+            'email' => 'siswa@example.com',
+            'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            'role' => 'siswa',
+            'classroom_id' => $classroom->id,
         ]);
     }
 }

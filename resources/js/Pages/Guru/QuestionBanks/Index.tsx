@@ -1,30 +1,128 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, router } from '@inertiajs/react';
 import { useState } from 'react';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import PrimaryButton from '@/Components/PrimaryButton';
+import DangerButton from '@/Components/DangerButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
 
 export default function Index({ questionBanks, subjects }) {
     const [showCreateModal, setShowCreateModal] = useState(false);
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [selectedBank, setSelectedBank] = useState(null);
+
+    const createForm = useForm({
         subject_id: '',
         name: '',
         description: '',
     });
 
-    const submit = (e) => {
+    const editForm = useForm({
+        subject_id: '',
+        name: '',
+        description: '',
+    });
+
+    const submitCreate = (e) => {
         e.preventDefault();
-        post(route('guru.question-banks.store'), {
+        createForm.post(route('guru.question-banks.store'), {
             onSuccess: () => {
                 setShowCreateModal(false);
-                reset();
+                createForm.reset();
             },
         });
     };
+
+    const openEditModal = (bank) => {
+        setSelectedBank(bank);
+        editForm.setData({
+            subject_id: bank.subject_id || '',
+            name: bank.name || '',
+            description: bank.description || '',
+        });
+        setShowEditModal(true);
+    };
+
+    const submitEdit = (e) => {
+        e.preventDefault();
+        editForm.put(route('guru.question-banks.update', selectedBank.id), {
+            onSuccess: () => {
+                setShowEditModal(false);
+                setSelectedBank(null);
+            },
+        });
+    };
+
+    const openDeleteModal = (bank) => {
+        setSelectedBank(bank);
+        setShowDeleteModal(true);
+    };
+
+    const confirmDelete = () => {
+        router.delete(route('guru.question-banks.destroy', selectedBank.id), {
+            onSuccess: () => {
+                setShowDeleteModal(false);
+                setSelectedBank(null);
+            },
+        });
+    };
+
+    const renderBankForm = (form, onSubmit, title, onClose) => (
+        <form onSubmit={onSubmit} className="p-6">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                {title}
+            </h2>
+
+            <div className="mt-4">
+                <InputLabel htmlFor="subject_id" value="Mata Pelajaran" />
+                <select
+                    id="subject_id"
+                    value={form.data.subject_id}
+                    onChange={(e) => form.setData('subject_id', e.target.value)}
+                    className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
+                    required
+                >
+                    <option value="">Pilih Mata Pelajaran</option>
+                    {subjects.map((subject) => (
+                        <option key={subject.id} value={subject.id}>{subject.name}</option>
+                    ))}
+                </select>
+                <InputError message={form.errors.subject_id} className="mt-2" />
+            </div>
+
+            <div className="mt-4">
+                <InputLabel htmlFor="name" value="Nama Bank Soal" />
+                <TextInput
+                    id="name"
+                    value={form.data.name}
+                    onChange={(e) => form.setData('name', e.target.value)}
+                    className="mt-1 block w-full"
+                    required
+                />
+                <InputError message={form.errors.name} className="mt-2" />
+            </div>
+
+            <div className="mt-4">
+                <InputLabel htmlFor="description" value="Deskripsi (Opsional)" />
+                <TextInput
+                    id="description"
+                    value={form.data.description}
+                    onChange={(e) => form.setData('description', e.target.value)}
+                    className="mt-1 block w-full"
+                />
+                <InputError message={form.errors.description} className="mt-2" />
+            </div>
+
+            <div className="mt-6 flex justify-end">
+                <SecondaryButton onClick={onClose}>Batal</SecondaryButton>
+                <PrimaryButton className="ml-3" disabled={form.processing}>Simpan</PrimaryButton>
+            </div>
+        </form>
+    );
 
     return (
         <AuthenticatedLayout
@@ -63,9 +161,11 @@ export default function Index({ questionBanks, subjects }) {
                                             <td className="px-6 py-4 whitespace-nowrap">{bank.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{bank.subject?.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{bank.user?.name}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <Link href={route('guru.question-banks.show', bank.id)} className="text-indigo-600 hover:text-indigo-900 mr-3">Detail & Soal</Link>
-                                                <button className="text-red-600 hover:text-red-900">Hapus</button>
+                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-3">
+                                                <Link href={route('guru.question-banks.show', bank.id)} className="text-indigo-600 hover:text-indigo-900">Detail & Soal</Link>
+                                                <Link href={route('guru.question-analysis.show', bank.id)} className="text-green-600 hover:text-green-900">Analisis</Link>
+                                                <button onClick={() => openEditModal(bank)} className="text-yellow-600 hover:text-yellow-900">Edit</button>
+                                                <button onClick={() => openDeleteModal(bank)} className="text-red-600 hover:text-red-900">Hapus</button>
                                             </td>
                                         </tr>
                                     ))}
@@ -76,57 +176,30 @@ export default function Index({ questionBanks, subjects }) {
                 </div>
             </div>
 
+            {/* Create Modal */}
             <Modal show={showCreateModal} onClose={() => setShowCreateModal(false)}>
-                <form onSubmit={submit} className="p-6">
+                {renderBankForm(createForm, submitCreate, 'Tambah Bank Soal', () => setShowCreateModal(false))}
+            </Modal>
+
+            {/* Edit Modal */}
+            <Modal show={showEditModal} onClose={() => setShowEditModal(false)}>
+                {renderBankForm(editForm, submitEdit, 'Edit Bank Soal', () => setShowEditModal(false))}
+            </Modal>
+
+            {/* Delete Confirmation Modal */}
+            <Modal show={showDeleteModal} onClose={() => setShowDeleteModal(false)}>
+                <div className="p-6">
                     <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                        Tambah Bank Soal
+                        Hapus Bank Soal
                     </h2>
-
-                    <div className="mt-4">
-                        <InputLabel htmlFor="subject_id" value="Mata Pelajaran" />
-                        <select
-                            id="subject_id"
-                            value={data.subject_id}
-                            onChange={(e) => setData('subject_id', e.target.value)}
-                            className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
-                            required
-                        >
-                            <option value="">Pilih Mata Pelajaran</option>
-                            {subjects.map((subject) => (
-                                <option key={subject.id} value={subject.id}>{subject.name}</option>
-                            ))}
-                        </select>
-                        <InputError message={errors.subject_id} className="mt-2" />
-                    </div>
-
-                    <div className="mt-4">
-                        <InputLabel htmlFor="name" value="Nama Bank Soal" />
-                        <TextInput
-                            id="name"
-                            value={data.name}
-                            onChange={(e) => setData('name', e.target.value)}
-                            className="mt-1 block w-full"
-                            required
-                        />
-                        <InputError message={errors.name} className="mt-2" />
-                    </div>
-
-                    <div className="mt-4">
-                        <InputLabel htmlFor="description" value="Deskripsi (Opsional)" />
-                        <TextInput
-                            id="description"
-                            value={data.description}
-                            onChange={(e) => setData('description', e.target.value)}
-                            className="mt-1 block w-full"
-                        />
-                        <InputError message={errors.description} className="mt-2" />
-                    </div>
-
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Apakah Anda yakin ingin menghapus bank soal <strong>{selectedBank?.name}</strong>? Semua soal di dalamnya juga akan dihapus. Tindakan ini tidak dapat dibatalkan.
+                    </p>
                     <div className="mt-6 flex justify-end">
-                        <SecondaryButton onClick={() => setShowCreateModal(false)}>Batal</SecondaryButton>
-                        <PrimaryButton className="ml-3" disabled={processing}>Simpan</PrimaryButton>
+                        <SecondaryButton onClick={() => setShowDeleteModal(false)}>Batal</SecondaryButton>
+                        <DangerButton className="ml-3" onClick={confirmDelete}>Hapus</DangerButton>
                     </div>
-                </form>
+                </div>
             </Modal>
         </AuthenticatedLayout>
     );

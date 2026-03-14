@@ -15,39 +15,39 @@ export default function Welcome({ auth }: PageProps) {
     const features = [
         {
             icon: <Shield className="w-6 h-6 text-blue-500" />,
-            title: "Anti-Cheat System",
-            desc: "Advanced AI-powered monitoring with tab-lock and window tracking technology."
+            title: "Sistem Anti-Curang",
+            desc: "Pemantauan berbasis AI tingkat lanjut dengan teknologi penguncian tab dan pelacakan jendela."
         },
         {
             icon: <Zap className="w-6 h-6 text-amber-500" />,
-            title: "Real-time Monitoring",
-            desc: "Proctors can track student progress second-by-second with live status updates."
+            title: "Pemantauan Real-time",
+            desc: "Proktor dapat melacak kemajuan siswa detik demi detik dengan pembaruan status langsung."
         },
         {
             icon: <BarChart3 className="w-6 h-6 text-emerald-500" />,
-            title: "Advanced Analytics",
-            desc: "Comprehensive result analysis with interactive charts and automated grading."
+            title: "Analitik Tingkat Lanjut",
+            desc: "Analisis hasil yang komprehensif dengan grafik interaktif dan penilaian otomatis."
         },
         {
             icon: <Monitor className="w-6 h-6 text-purple-500" />,
-            title: "Modern Interface",
-            desc: "A beautiful, responsive 'Glass Hologram' UI designed for clarity and focus."
+            title: "Antarmuka Modern",
+            desc: "UI 'Glass Hologram' yang indah dan responsif, dirancang untuk kejelasan dan fokus."
         },
         {
             icon: <Clock className="w-6 h-6 text-rose-500" />,
-            title: "Smart Scheduling",
-            desc: "Effortlessly manage multiple exam sessions, classes, and time extensions."
+            title: "Penjadwalan Cerdas",
+            desc: "Kelola sesi ujian, kelas, dan perpanjangan waktu dengan sangat mudah."
         },
         {
             icon: <Globe className="w-6 h-6 text-cyan-500" />,
-            title: "Enterprise Ready",
-            desc: "Scalable architecture designed to handle thousands of concurrent participants."
+            title: "Siap Skala Besar",
+            desc: "Arsitektur skalabel yang dirancang untuk menangani ribuan peserta secara bersamaan."
         }
     ];
 
     return (
         <div className="min-h-screen relative overflow-hidden selection:bg-blue-500 selection:text-white">
-            <Head title="Premium Examination System" />
+            <Head title="Sistem Ujian Digital Premium" />
 
             {/* Background Decorative Elements */}
             <div className="fixed inset-0 pointer-events-none z-0">
@@ -64,7 +64,7 @@ export default function Welcome({ auth }: PageProps) {
                             <Zap className="text-white w-6 h-6 fill-current" />
                         </div>
                         <span className="text-xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-                            exxam<span className="text-blue-600">.io</span>
+                            zexam<span className="text-blue-600">.v1</span>
                         </span>
                     </div>
 
@@ -82,13 +82,13 @@ export default function Welcome({ auth }: PageProps) {
                                     href={route('login')}
                                     className="text-gray-600 dark:text-gray-400 font-bold hover:text-blue-600 transition"
                                 >
-                                    Login
+                                    Masuk
                                 </Link>
                                 <Link
-                                    href={route('login')} // Map to login/register depending on flow
+                                    href={route('login')}
                                     className="px-6 py-2.5 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 hover:scale-105 transition active:scale-95 shadow-lg shadow-blue-200 dark:shadow-none"
                                 >
-                                    Get Started
+                                    Mulai Sekarang
                                 </Link>
                             </>
                         )}
@@ -104,18 +104,18 @@ export default function Welcome({ auth }: PageProps) {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                         </span>
-                        New Version 2.0 is Live
+                        Versi 1.0 Telah Rilis
                     </div>
 
                     <h1 className="text-5xl lg:text-7xl font-black tracking-tighter leading-tight mb-8">
-                        The Next Generation of<br />
+                        Generasi Baru<br />
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-gradient-x">
-                            Digital Examination.
+                            Ujian Digital.
                         </span>
                     </h1>
 
                     <p className="max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-12 font-medium">
-                        Powerful, secure, and incredibly beautiful. Empowering proctors and students with the world's most advanced examination platform.
+                        Kuat, aman, dan memukau. Memberdayakan proktor dan siswa dengan platform ujian digital paling canggih di dunia.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
@@ -123,14 +123,14 @@ export default function Welcome({ auth }: PageProps) {
                             href={route('login')}
                             className="w-full sm:w-auto px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-black rounded-2xl hover:scale-105 transition active:scale-95 flex items-center justify-center gap-2 group shadow-xl"
                         >
-                            Start Now for Free
+                            Mulai Sekarang Gratis
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <a
                             href="#features"
                             className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-gray-950 dark:text-white text-lg font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition shadow-sm"
                         >
-                            View Features
+                            Lihat Fitur
                         </a>
                     </div>
 
@@ -139,11 +139,10 @@ export default function Welcome({ auth }: PageProps) {
                         <div className="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-[32px] -z-10 group-hover:bg-blue-500/30 transition-all duration-500"></div>
                         <div className="glass dark:glass-dark rounded-[32px] p-2 sm:p-4 border shadow-2xl overflow-hidden">
                             <img
-                                src="/assets/hero-preview.png" // We'll assume the generated image is placed here or similar
+                                src="/assets/hero-preview.png"
                                 alt="Dashboard Preview"
                                 className="w-full h-auto rounded-[24px]"
                                 onError={(e) => {
-                                    // Fallback if image not yet generated/moved
                                     e.currentTarget.src = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070";
                                 }}
                             />
@@ -156,7 +155,7 @@ export default function Welcome({ auth }: PageProps) {
                                     <CheckCircle2 className="w-6 h-6 text-green-600 dark:text-green-400" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-bold opacity-50 uppercase tracking-wider">Reliability</p>
+                                    <p className="text-sm font-bold opacity-50 uppercase tracking-wider">Reliabilitas</p>
                                     <p className="text-xl font-black">99.9% Uptime</p>
                                 </div>
                             </div>
@@ -168,8 +167,8 @@ export default function Welcome({ auth }: PageProps) {
                                     <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-bold opacity-50 uppercase tracking-wider">Active Users</p>
-                                    <p className="text-xl font-black">10K+ Sessions</p>
+                                    <p className="text-sm font-bold opacity-50 uppercase tracking-wider">Pengguna Aktif</p>
+                                    <p className="text-xl font-black">10K+ Sesi</p>
                                 </div>
                             </div>
                         </div>
@@ -181,8 +180,8 @@ export default function Welcome({ auth }: PageProps) {
             <section id="features" className="py-32 relative z-10 bg-white/50 dark:bg-gray-950/50 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-20">
-                        <h2 className="text-4xl font-black mb-4">Engineered for Excellence.</h2>
-                        <p className="text-gray-500 dark:text-gray-400 font-medium">Every tool you need to conduct professional examinations at scale.</p>
+                        <h2 className="text-4xl font-black mb-4">Dirancang untuk Keunggulan.</h2>
+                        <p className="text-gray-500 dark:text-gray-400 font-medium">Setiap alat yang Anda butuhkan untuk mengadakan ujian profesional dalam skala besar.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -208,13 +207,16 @@ export default function Welcome({ auth }: PageProps) {
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg flex items-center justify-center">
                             <Zap className="text-white w-5 h-5 fill-current" />
                         </div>
-                        <span className="text-lg font-black tracking-tight">exxam.io</span>
+                        <span className="text-lg font-black tracking-tight">zexam.io</span>
                     </div>
-                    <p className="text-gray-400 text-sm font-medium">© 2024 exxam.io. Built with passion for better education.</p>
+                    <div className="text-center">
+                        <p className="text-gray-400 text-sm font-medium">© {new Date().getFullYear()} zexam.io. Created by <a href="https://www.zahradev.online" target="_blank" className="text-blue-600 hover:underline">ZahraDev</a></p>
+                        <p className="text-gray-400 text-xs mt-2 font-bold select-all">emilsalimramadhan@gmail.com</p>
+                    </div>
                     <div className="flex gap-6 text-gray-400 text-sm font-bold">
                         <a href="#" className="hover:text-blue-600 transition">Twitter</a>
-                        <a href="#" className="hover:text-blue-600 transition">Documentation</a>
-                        <a href="#" className="hover:text-blue-600 transition">Privacy Policy</a>
+                        <a href="#" className="hover:text-blue-600 transition">Dokumentasi</a>
+                        <a href="#" className="hover:text-blue-600 transition">Kebijakan Privasi</a>
                     </div>
                 </div>
             </footer>
@@ -241,7 +243,6 @@ export default function Welcome({ auth }: PageProps) {
     );
 }
 
-// Minimal Users icon since it wasn't imported from lucide
 function Users({ className }: { className?: string }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>

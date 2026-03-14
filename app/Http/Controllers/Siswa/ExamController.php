@@ -11,8 +11,11 @@ class ExamController extends Controller
     {
         $user = auth()->user();
         $sessions = \App\Models\ExamSession::with('exam')
-            ->whereHas('exam.questionBank.subject', function ($q) {}) // Can refine based on classroom
             ->where('is_active', true)
+            ->where(function ($q) use ($user) {
+                $q->where('classroom_id', $user->classroom_id)
+                    ->orWhereNull('classroom_id');
+            })
             ->latest()
             ->get();
 
@@ -55,6 +58,23 @@ class ExamController extends Controller
             'examUser' => $examUser
         ]);
     }
+
+    public function history()
+    {
+        $user = auth()->user();
+        $passingGrade = (int) (\App\Models\Setting::where('key', 'passing_grade')->first()->value ?? 70);
+
+        $examHistory = \App\Models\ExamSessionUser::with(['examSession.exam', 'examSession.classroom'])
+            ->where('user_id', $user->id)
+            ->where('status', 'finished')
+            ->latest('finished_at')
+            ->get();
+
+        return \Inertia\Inertia::render('Siswa/History', [
+            'examHistory' => $examHistory,
+            'passingGrade' => $passingGrade,
+        ]);
+    }
     public function reportCheat(Request $request)
     {
         $request->validate([
@@ -90,12 +110,14 @@ class ExamController extends Controller
             );
         }
 
-        $examSessionUser->update(['status' => ($request->has('finish') && $request->finish) ? 'finished' : 'working']);
+        $isFinishing = $request->has('finish') && $request->finish;
+        $examSessionUser->update(['status' => $isFinishing ? 'finished' : 'working']);
 
-        if ($request->has('finish') && $request->finish) {
-            $examSessionUser->update([
-                'finished_at' => now()
-            ]);
+        if ($isFinishing) {
+            $examSessionUser->update(['finished_at' => now()]);
+
+            // === Auto-Scoring untuk Pilihan Ganda ===
+            $this->calculateScore($examSessionUser);
 
             \App\Events\StudentExamUpdated::dispatch(
                 $examSessionUser->exam_session_id,
@@ -115,5 +137,51 @@ class ExamController extends Controller
         );
 
         return redirect()->back();
+    }
+
+    /**
+     * Hitung skor otomatis untuk pilihan ganda.
+     * Essay tidak dinilai otomatis (perlu koreksi manual oleh Guru).
+     */
+    private function calculateScore(\App\Models\ExamSessionUser $examSessionUser): void
+    {
+        $answers = $examSessionUser->answers()->with('question')->get();
+
+        if ($answers->isEmpty()) {
+            return;
+        }
+
+        $totalScore = 0;
+        $maxScore = 0;
+
+        foreach ($answers as $studentAnswer) {
+            $question = $studentAnswer->question;
+            if (!$question) {
+                continue;
+            }
+
+            $maxScore += $question->score_default;
+
+            if ($question->type === 'pilihan_ganda') {
+                // Bandingkan jawaban siswa dengan kunci jawaban (case-insensitive, trim)
+                $isCorrect = strtolower(trim($studentAnswer->answer_text ?? ''))
+                    === strtolower(trim($question->answer_key ?? ''));
+
+                $studentAnswer->update([
+                    'is_correct' => $isCorrect,
+                    'score' => $isCorrect ? $question->score_default : 0,
+                ]);
+
+                if ($isCorrect) {
+                    $totalScore += $question->score_default;
+                }
+            }
+            // Essay: is_correct dan score tetap null/0, perlu koreksi manual
+        }
+
+        // Hitung skor persentase (0-100)
+        $percentageScore = $maxScore > 0 ? round(($totalScore / $maxScore) * 100) : 0;
+
+        $examSessionUser->update(['score' => $percentageScore]);
     }
 }

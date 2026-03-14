@@ -11,9 +11,9 @@ class ExamResultController extends Controller
 {
     public function index()
     {
-        // Get all sessions related to the exams authored by this Guru
-        // Assuming Question Bank belongs to Guru (currently simple setup: just all sessions)
+        // Only show sessions that use question banks owned by this Guru
         $sessions = ExamSession::with(['exam.questionBank'])
+            ->whereHas('exam.questionBank', fn($q) => $q->where('user_id', auth()->id()))
             ->latest()
             ->get();
 

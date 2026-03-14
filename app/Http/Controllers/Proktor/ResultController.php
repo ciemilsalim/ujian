@@ -36,13 +36,16 @@ class ResultController extends Controller
         $scores = $session->examUsers->pluck('score')->filter(fn($s) => !is_null($s));
         $count = $scores->count();
 
+        $passingGrade = (int) (\App\Models\Setting::where('key', 'passing_grade')->first()->value ?? 70);
+
         $stats = [
             'average' => $count > 0 ? round($scores->avg(), 2) : 0,
             'max' => $count > 0 ? $scores->max() : 0,
             'min' => $count > 0 ? $scores->min() : 0,
             'median' => $count > 0 ? $this->calculateMedian($scores->toArray()) : 0,
-            'pass_count' => $session->examUsers->where('score', '>=', 70)->count(), // Assuming 70 is pass
-            'fail_count' => $session->examUsers->where('score', '<', 70)->whereNotNull('score')->count(),
+            'pass_count' => $session->examUsers->where('score', '>=', $passingGrade)->count(),
+            'fail_count' => $session->examUsers->where('score', '<', $passingGrade)->whereNotNull('score')->count(),
+            'passing_grade' => $passingGrade,
         ];
 
         // Distribution data for charts
@@ -68,6 +71,17 @@ class ResultController extends Controller
 
         $pdf = Pdf::loadView('pdf.results', compact('session'));
         return $pdf->download("hasil_ujian_{$session->name}.pdf");
+    }
+
+    public function exportExcel($id)
+    {
+        $session = ExamSession::with(['exam', 'classroom', 'examUsers.user'])
+            ->findOrFail($id);
+
+        return \Maatwebsite\Excel\Facades\Excel::download(
+            new \App\Exports\ResultExport($session),
+            "hasil_ujian_{$session->name}.xlsx"
+        );
     }
 
     public function resetResult($id)

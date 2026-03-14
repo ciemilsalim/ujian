@@ -18,7 +18,7 @@
 
         .school-name {
             font-size: 24px;
-            font-bold: bold;
+            font-weight: bold;
             text-transform: uppercase;
         }
 
@@ -40,7 +40,7 @@
         }
 
         th {
-            bg-color: #f5f5f5;
+            background-color: #f5f5f5;
         }
 
         .footer {
