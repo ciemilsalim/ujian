@@ -40,6 +40,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/sessions/{session}/extend-time', [\App\Http\Controllers\Proktor\SessionController::class, 'extendTime'])->name('sessions.extend-time');
         Route::post('/sessions/user/{id}/reset-login', [\App\Http\Controllers\Proktor\SessionController::class, 'resetLogin'])->name('sessions.reset-login');
         Route::post('/sessions/user/{id}/force-logout', [\App\Http\Controllers\Proktor\SessionController::class, 'forceLogoutParticipant'])->name('sessions.force-logout-user');
+        Route::post('/sessions/{id}/toggle-status', [\App\Http\Controllers\Proktor\SessionController::class, 'toggleActive'])->name('sessions.toggle-status');
         Route::resource('sessions', \App\Http\Controllers\Proktor\SessionController::class);
         Route::post('/classrooms/{classroom}/seating', [\App\Http\Controllers\Proktor\ClassroomController::class, 'updateSeating'])->name('classrooms.update-seating');
         Route::resource('classrooms', \App\Http\Controllers\Proktor\ClassroomController::class);

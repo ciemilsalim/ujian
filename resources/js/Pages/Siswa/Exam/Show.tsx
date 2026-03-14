@@ -6,25 +6,49 @@ import TextInput from '@/Components/TextInput';
 import InputLabel from '@/Components/InputLabel';
 import ExamEngine from './Engine';
 
-export default function Show({ session, examUser }) {
+export default function Show({
+    session,
+    examUser,
+    serverTimeLeft,
+    existingAnswers
+}: {
+    session: any,
+    examUser: any,
+    serverTimeLeft: number,
+    existingAnswers: Record<number, string>
+}) {
     const [isStarted, setIsStarted] = useState(false);
     const [tokenError, setTokenError] = useState('');
     const { data, setData, post, processing } = useForm({
         token: '',
     });
 
-    const startExam = (e) => {
+    const startExam = async (e: React.FormEvent) => {
         e.preventDefault();
         if (data.token !== session.token) {
             setTokenError('Token yang Anda masukkan salah.');
             return;
         }
 
+        try {
+            if (document.documentElement.requestFullscreen) {
+                await document.documentElement.requestFullscreen();
+            }
+        } catch (err) {
+            console.log("Error attempting to enable fullscreen:", err);
+        }
+
         setIsStarted(true);
     };
 
     if (isStarted) {
-        return <ExamEngine session={session} questions={session.exam.question_bank.questions} examUser={examUser} />;
+        return <ExamEngine
+            session={session}
+            questions={session.exam.question_bank.questions}
+            examUser={examUser}
+            serverTimeLeft={serverTimeLeft}
+            existingAnswers={existingAnswers}
+        />;
     }
 
     return (

@@ -2,40 +2,116 @@ import { useState, useEffect } from 'react';
 import { Head, useForm, router } from '@inertiajs/react';
 import { Toaster, toast } from 'sonner';
 import { Megaphone } from 'lucide-react';
+import axios from 'axios';
 
-export default function ExamEngine({ session, questions, examUser }: { session: any, questions: any[], examUser: any }) {
+export default function ExamEngine({
+    session,
+    questions,
+    examUser,
+    serverTimeLeft,
+    existingAnswers
+}: {
+    session: any,
+    questions: any[],
+    examUser: any,
+    serverTimeLeft: number,
+    existingAnswers: Record<number, string>
+}) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [timeLeft, setTimeLeft] = useState(session.exam.duration * 60);
+    const [timeLeft, setTimeLeft] = useState(serverTimeLeft);
+    const [isTimeWarningShown, setIsTimeWarningShown] = useState(false);
     const currentQuestion: any = questions[currentQuestionIndex];
 
     const { data, setData, post, processing } = useForm({
-        answers: {} as Record<number, string>, // question_id: answer
+        answers: existingAnswers || {} as Record<number, string>, // question_id: answer
     });
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+            setTimeLeft((prev) => {
+                if (prev <= 1) {
+                    clearInterval(timer);
+                    // Trigger auto submit when time's up using global router since useForm might be rendering
+                    router.post(route('siswa.exams.submit'), {
+                        exam_session_id: session.id,
+                        answers: data.answers,
+                        finish: true
+                    }, {
+                        preserveScroll: true,
+                        onSuccess: () => {
+                            window.location.href = route('siswa.dashboard');
+                        }
+                    });
+                    return 0;
+                }
+
+                // Show warning when time is less than 5 minutes (300 seconds)
+                if (prev === 300 && !isTimeWarningShown) {
+                    toast.warning('WAKTU HAMPIR HABIS!', {
+                        description: 'Waktu ujian Anda tersisa 5 menit lagi.',
+                        icon: <Megaphone className="w-5 h-5 text-orange-500" />
+                    });
+                    setIsTimeWarningShown(true);
+                }
+                return prev - 1;
+            });
         }, 1000);
 
-        // Security: Tab switch detection
+        // Anti-Cheat Handlers
+        const reportViolation = (type: string) => {
+            axios.post(route('siswa.exams.report-cheat'), {
+                exam_session_id: session.id,
+                type: type
+            }).then(response => {
+                const resData = response.data;
+                if (resData.status === 'disqualified') {
+                    toast.error('DISKUALIFIKASI', { description: resData.message, duration: 5000 });
+                    setTimeout(() => window.location.href = route('siswa.dashboard'), 3000);
+                } else if (resData.status === 'success') {
+                    toast.warning('PERINGATAN KECURANGAN!', {
+                        description: `Aktivitas mencurigakan terdeteksi. (Peringatan ke-${resData.warnings})`,
+                        duration: 5000
+                    });
+                }
+            }).catch(console.error);
+        };
+
         const handleVisibilityChange = () => {
-            if (document.hidden) {
-                router.post(route('siswa.exams.report-cheat'), {
-                    exam_session_id: session.id,
-                    type: 'tab_switch'
-                }, { preserveState: true, preserveScroll: true });
-            }
+            if (document.hidden) reportViolation('tab_switch');
         };
 
         const handleBlur = () => {
-            router.post(route('siswa.exams.report-cheat'), {
-                exam_session_id: session.id,
-                type: 'window_blur'
-            }, { preserveState: true, preserveScroll: true });
+            reportViolation('window_blur');
+        };
+
+        const handleContextMenu = (e: Event) => e.preventDefault();
+
+        const handleCopyPaste = (e: Event) => {
+            e.preventDefault();
+            reportViolation('copy_paste_attempt');
+        };
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'F12' || (e.ctrlKey && (e.key.toLowerCase() === 'u' || (e.shiftKey && e.key.toLowerCase() === 'i')))) {
+                e.preventDefault();
+                reportViolation('developer_tools_attempt');
+            }
+        };
+
+        const handleFullscreenChange = () => {
+            if (!document.fullscreenElement) {
+                reportViolation('exited_fullscreen');
+            }
         };
 
         document.addEventListener('visibilitychange', handleVisibilityChange);
         window.addEventListener('blur', handleBlur);
+        document.addEventListener('contextmenu', handleContextMenu);
+        document.addEventListener('copy', handleCopyPaste);
+        document.addEventListener('cut', handleCopyPaste);
+        document.addEventListener('paste', handleCopyPaste);
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
 
         // Real-time Broadcast Listeners
         const sessionChannel = window.Echo.private(`exam.session.${session.id}`);
@@ -97,6 +173,13 @@ export default function ExamEngine({ session, questions, examUser }: { session: 
             clearInterval(timer);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
             window.removeEventListener('blur', handleBlur);
+            document.removeEventListener('contextmenu', handleContextMenu);
+            document.removeEventListener('copy', handleCopyPaste);
+            document.removeEventListener('cut', handleCopyPaste);
+            document.removeEventListener('paste', handleCopyPaste);
+            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('fullscreenchange', handleFullscreenChange);
+
             sessionChannel.stopListening('.proktor.announcement');
             globalChannel.stopListening('.proktor.announcement');
             window.Echo.leave(`exam.session.${session.id}`);

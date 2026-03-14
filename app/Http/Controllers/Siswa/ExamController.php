@@ -53,9 +53,26 @@ class ExamController extends Controller
             'working'
         );
 
+        // Initialize started_at if null to start the absolute timer
+        if (!$examUser->started_at) {
+            $examUser->update(['started_at' => now()]);
+        }
+
+        // Calculate absolute time left in seconds
+        $durationInSeconds = ($session->exam->duration ?? 0) * 60;
+        $elapsedSeconds = $examUser->started_at->diffInSeconds(now());
+        $timeLeft = max(0, $durationInSeconds - $elapsedSeconds);
+
+        // Fetch existing answers to restore the state if student refreshes the tab
+        $existingAnswers = \App\Models\StudentAnswer::where('exam_session_user_id', $examUser->id)
+            ->pluck('answer_text', 'question_id')
+            ->toArray();
+
         return \Inertia\Inertia::render('Siswa/Exam/Show', [
             'session' => $session,
-            'examUser' => $examUser
+            'examUser' => $examUser,
+            'serverTimeLeft' => $timeLeft,
+            'existingAnswers' => $existingAnswers
         ]);
     }
 
@@ -82,14 +99,48 @@ class ExamController extends Controller
             'type' => 'required|string',
         ]);
 
+        $examSessionUser = \App\Models\ExamSessionUser::where('exam_session_id', $request->exam_session_id)
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
+
+        if ($examSessionUser->status === 'finished') {
+            return response()->json(['status' => 'ignored']);
+        }
+
+        // Increment cheat warnings
+        $examSessionUser->increment('cheat_warnings');
+        $examSessionUser->refresh();
+
         \App\Events\StudentCheatDetected::dispatch(
             $request->exam_session_id,
             auth()->id(),
             auth()->user()->name,
-            $request->type
+            $request->type . ' (Peringatan ke-' . $examSessionUser->cheat_warnings . ')'
         );
 
-        return response()->json(['status' => 'success']);
+        // Auto Disqualification if 3 or more warnings
+        if ($examSessionUser->cheat_warnings >= 3) {
+            $examSessionUser->update([
+                'status' => 'finished',
+                'finished_at' => now(),
+            ]);
+
+            $this->calculateScore($examSessionUser);
+
+            \App\Events\StudentExamUpdated::dispatch(
+                $examSessionUser->exam_session_id,
+                $examSessionUser->user_id,
+                auth()->user()->name,
+                'finished'
+            );
+
+            return response()->json([
+                'status' => 'disqualified',
+                'message' => 'Anda didiskualifikasi karena terlalu banyak indikasi kecurangan.'
+            ]);
+        }
+
+        return response()->json(['status' => 'success', 'warnings' => $examSessionUser->cheat_warnings]);
     }
 
     public function submitAnswer(Request $request)
