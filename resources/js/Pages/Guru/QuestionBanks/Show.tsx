@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, useForm, router } from '@inertiajs/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -8,33 +8,34 @@ import DangerButton from '@/Components/DangerButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
+import { QuestionBank, Question } from '@/types';
 
 const defaultOptions = { a: '', b: '', c: '', d: '', e: '' };
 
-export default function Show({ questionBank }) {
+export default function Show({ questionBank }: { questionBank: QuestionBank }) {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
-    const [selectedQuestion, setSelectedQuestion] = useState(null);
+    const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
 
     const createForm = useForm({
         question_bank_id: questionBank.id,
-        type: 'pilihan_ganda',
+        type: 'pilihan_ganda' as 'pilihan_ganda' | 'essay',
         question_text: '',
-        options: { ...defaultOptions },
+        options: { ...defaultOptions } as Record<string, string>,
         answer_key: '',
         score_default: 1,
     });
 
     const editForm = useForm({
-        type: 'pilihan_ganda',
+        type: 'pilihan_ganda' as 'pilihan_ganda' | 'essay',
         question_text: '',
-        options: { ...defaultOptions },
+        options: { ...defaultOptions } as Record<string, string>,
         answer_key: '',
         score_default: 1,
     });
 
-    const submitCreate = (e) => {
+    const submitCreate = (e: React.FormEvent) => {
         e.preventDefault();
         createForm.post(route('guru.questions.store'), {
             onSuccess: () => {
@@ -45,20 +46,21 @@ export default function Show({ questionBank }) {
         });
     };
 
-    const openEditModal = (question) => {
+    const openEditModal = (question: Question) => {
         setSelectedQuestion(question);
         editForm.setData({
             type: question.type || 'pilihan_ganda',
             question_text: question.question_text || '',
-            options: question.options || { ...defaultOptions },
+            options: (question.options as Record<string, string>) || { ...defaultOptions },
             answer_key: question.answer_key || '',
             score_default: question.score_default || 1,
         });
         setShowEditModal(true);
     };
 
-    const submitEdit = (e) => {
+    const submitEdit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (!selectedQuestion) return;
         editForm.put(route('guru.questions.update', selectedQuestion.id), {
             onSuccess: () => {
                 setShowEditModal(false);
@@ -67,12 +69,13 @@ export default function Show({ questionBank }) {
         });
     };
 
-    const openDeleteModal = (question) => {
+    const openDeleteModal = (question: Question) => {
         setSelectedQuestion(question);
         setShowDeleteModal(true);
     };
 
     const confirmDelete = () => {
+        if (!selectedQuestion) return;
         router.delete(route('guru.questions.destroy', selectedQuestion.id), {
             onSuccess: () => {
                 setShowDeleteModal(false);
@@ -81,7 +84,7 @@ export default function Show({ questionBank }) {
         });
     };
 
-    const renderQuestionForm = (form, onSubmit, title, onClose) => (
+    const renderQuestionForm = (form: any, onSubmit: (e: React.FormEvent) => void, title: string, onClose: () => void) => (
         <form onSubmit={onSubmit} className="p-6">
             <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                 {title}
@@ -92,9 +95,8 @@ export default function Show({ questionBank }) {
                 <select
                     id="type"
                     value={form.data.type}
-                    onChange={(e) => form.setData('type', e.target.value)}
+                    onChange={(e) => form.setData('type', e.target.value as 'pilihan_ganda' | 'essay')}
                     className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
-                    required
                 >
                     <option value="pilihan_ganda">Pilihan Ganda</option>
                     <option value="essay">Essay</option>
@@ -108,22 +110,26 @@ export default function Show({ questionBank }) {
                     value={form.data.question_text}
                     onChange={(e) => form.setData('question_text', e.target.value)}
                     className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
-                    rows="4"
+                    rows={4}
                     required
-                ></textarea>
+                />
+                <InputError message={form.errors.question_text} className="mt-2" />
             </div>
 
             {form.data.type === 'pilihan_ganda' && (
-                <div className="mt-4 space-y-2">
+                <div className="mt-4 space-y-4">
                     <InputLabel value="Opsi Jawaban" />
-                    {['a', 'b', 'c', 'd', 'e'].map((opt) => (
-                        <div key={opt} className="flex items-center space-x-2">
-                            <span className="uppercase font-bold w-6">{opt}</span>
+                    {Object.keys(defaultOptions).map((option) => (
+                        <div key={option} className="flex items-center gap-2">
+                            <span className="uppercase font-bold w-6">{option}.</span>
                             <TextInput
-                                value={form.data.options[opt] || ''}
-                                onChange={(e) => form.setData('options', { ...form.data.options, [opt]: e.target.value })}
-                                className="block w-full"
-                                placeholder={`Opsi ${opt.toUpperCase()}`}
+                                value={form.data.options[option]}
+                                onChange={(e) => {
+                                    const newOptions = { ...form.data.options, [option]: e.target.value };
+                                    form.setData('options', newOptions);
+                                }}
+                                className="flex-1"
+                                placeholder={`Opsi ${option.toUpperCase()}`}
                                 required={form.data.type === 'pilihan_ganda'}
                             />
                         </div>
@@ -132,41 +138,26 @@ export default function Show({ questionBank }) {
             )}
 
             <div className="mt-4">
-                <InputLabel htmlFor="answer_key" value={form.data.type === 'pilihan_ganda' ? 'Kunci Jawaban (Pilih Huruf)' : 'Kunci Jawaban (Teks)'} />
-                {form.data.type === 'pilihan_ganda' ? (
-                    <select
-                        id="answer_key"
-                        value={form.data.answer_key}
-                        onChange={(e) => form.setData('answer_key', e.target.value)}
-                        className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
-                        required
-                    >
-                        <option value="">Pilih Kunci</option>
-                        {['a', 'b', 'c', 'd', 'e'].map((opt) => (
-                            <option key={opt} value={opt}>{opt.toUpperCase()}</option>
-                        ))}
-                    </select>
-                ) : (
-                    <TextInput
-                        id="answer_key"
-                        value={form.data.answer_key}
-                        onChange={(e) => form.setData('answer_key', e.target.value)}
-                        className="mt-1 block w-full"
-                        required
-                    />
-                )}
+                <InputLabel htmlFor="answer_key" value={form.data.type === 'pilihan_ganda' ? 'Kunci Jawaban (a, b, c, d, atau e)' : 'Kata Kunci Jawaban (Opsional)'} />
+                <TextInput
+                    id="answer_key"
+                    value={form.data.answer_key}
+                    onChange={(e) => form.setData('answer_key', e.target.value)}
+                    className="mt-1 block w-full"
+                    required={form.data.type === 'pilihan_ganda'}
+                    placeholder={form.data.type === 'pilihan_ganda' ? 'a' : 'Contoh: kemerdekaan, proklamasi'}
+                />
                 <InputError message={form.errors.answer_key} className="mt-2" />
             </div>
 
             <div className="mt-4">
-                <InputLabel htmlFor="score_default" value="Skor Default" />
+                <InputLabel htmlFor="score_default" value="Skor Bawaan" />
                 <TextInput
                     id="score_default"
                     type="number"
-                    min="0"
                     value={form.data.score_default}
-                    onChange={(e) => form.setData('score_default', parseInt(e.target.value) || 0)}
-                    className="mt-1 block w-32"
+                    onChange={(e) => form.setData('score_default', parseInt(e.target.value))}
+                    className="mt-1 block w-full"
                     required
                 />
                 <InputError message={form.errors.score_default} className="mt-2" />
@@ -174,7 +165,7 @@ export default function Show({ questionBank }) {
 
             <div className="mt-6 flex justify-end">
                 <SecondaryButton onClick={onClose}>Batal</SecondaryButton>
-                <PrimaryButton className="ml-3" disabled={form.processing}>Simpan</PrimaryButton>
+                <PrimaryButton className="ml-3" disabled={form.processing}>Simpan Soal</PrimaryButton>
             </div>
         </form>
     );
@@ -195,69 +186,70 @@ export default function Show({ questionBank }) {
                 </div>
             }
         >
-            <Head title={`Detail Bank Soal - ${questionBank.name}`} />
+            <Head title={`Bank Soal: ${questionBank.name}`} />
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    {/* Bank Soal Info */}
-                    <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-6">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">
-                            <div className="grid grid-cols-3 gap-4 text-sm">
-                                <div>
-                                    <span className="font-semibold text-gray-500">Mata Pelajaran:</span>
-                                    <p>{questionBank.subject?.name}</p>
-                                </div>
-                                <div>
-                                    <span className="font-semibold text-gray-500">Total Soal:</span>
-                                    <p>{questionBank.questions.length} soal</p>
-                                </div>
-                                <div>
-                                    <span className="font-semibold text-gray-500">Deskripsi:</span>
-                                    <p>{questionBank.description || '-'}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Questions List */}
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
-                            <h3 className="text-lg font-bold mb-4">Daftar Soal</h3>
-                            {questionBank.questions.length === 0 ? (
-                                <p className="text-gray-500 italic">Belum ada soal dalam bank soal ini.</p>
-                            ) : (
-                                <div className="space-y-6">
-                                    {questionBank.questions.map((q, index) => (
-                                        <div key={q.id} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                                            <div className="flex justify-between items-start">
-                                                <span className="font-bold text-indigo-600">
-                                                    Soal #{index + 1} ({q.type === 'pilihan_ganda' ? 'Pilihan Ganda' : 'Essay'}) — Skor: {q.score_default}
-                                                </span>
-                                                <div className="space-x-2 flex-shrink-0">
-                                                    <button onClick={() => openEditModal(q)} className="text-sm text-yellow-600 hover:underline">Edit</button>
-                                                    <button onClick={() => openDeleteModal(q)} className="text-sm text-red-600 hover:underline">Hapus</button>
-                                                </div>
-                                            </div>
-                                            <div className="mt-2 prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: q.question_text }} />
-                                            {q.type === 'pilihan_ganda' && q.options && (
-                                                <ul className="mt-3 space-y-1 ml-4 list-disc">
-                                                    {Object.entries(q.options).map(([key, val]) => (
-                                                        <li key={key} className={q.answer_key === key ? 'font-bold text-green-600' : ''}>
-                                                            {key.toUpperCase()}. {val}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                            {q.type === 'essay' && (
-                                                <div className="mt-3 p-2 bg-gray-50 dark:bg-gray-900 rounded">
-                                                    <span className="text-sm font-semibold">Kunci Jawaban:</span>
-                                                    <p className="mt-1 text-sm">{q.answer_key}</p>
-                                                </div>
-                                            )}
+                            <div className="mb-6">
+                                <h3 className="text-lg font-bold">Informasi Bank Soal</h3>
+                                <p className="text-gray-600 dark:text-gray-400">Mata Pelajaran: {questionBank.subject?.name}</p>
+                                <p className="text-gray-600 dark:text-gray-400">Deskripsi: {questionBank.description || '-'}</p>
+                            </div>
+
+                            <hr className="my-6 border-gray-200 dark:border-gray-700" />
+
+                            <h3 className="text-lg font-bold mb-4">Daftar Pertanyaan ({questionBank.questions.length})</h3>
+
+                            <div className="space-y-6">
+                                {questionBank.questions.map((question, index) => (
+                                    <div key={question.id} className="p-4 border rounded-lg dark:border-gray-700 relative group">
+                                        <div className="absolute top-4 right-4 space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button onClick={() => openEditModal(question)} className="text-indigo-600 hover:text-indigo-900 text-sm font-bold">Edit</button>
+                                            <button onClick={() => openDeleteModal(question)} className="text-red-600 hover:text-red-900 text-sm font-bold">Hapus</button>
                                         </div>
-                                    ))}
-                                </div>
-                            )}
+
+                                        <div className="flex items-start gap-4">
+                                            <span className="font-bold text-lg text-gray-400">#{index + 1}</span>
+                                            <div className="flex-1">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full uppercase ${question.type === 'pilihan_ganda' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'}`}>
+                                                        {question.type.replace('_', ' ')}
+                                                    </span>
+                                                    <span className="text-xs text-gray-500">Skor: {question.score_default}</span>
+                                                </div>
+                                                <p className="text-gray-900 dark:text-gray-100 mb-4 whitespace-pre-wrap">{question.question_text}</p>
+
+                                                {question.type === 'pilihan_ganda' && question.options && (
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                                        {Object.entries(question.options as Record<string, string>).map(([key, value]) => (
+                                                            <div key={key} className={`p-2 rounded border text-sm flex gap-2 ${question.answer_key === key ? 'bg-emerald-50 border-emerald-200 dark:bg-emerald-900/20 dark:border-emerald-800' : 'dark:border-gray-700'}`}>
+                                                                <span className="font-bold uppercase">{key}.</span>
+                                                                <span>{value}</span>
+                                                                {question.answer_key === key && <span className="ml-auto text-emerald-600 font-bold text-[10px] uppercase">Kunci</span>}
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                )}
+
+                                                {question.type === 'essay' && (
+                                                    <div className="p-2 bg-gray-50 dark:bg-gray-900 rounded border dark:border-gray-700 text-sm">
+                                                        <span className="font-bold text-gray-500 uppercase text-[10px] block mb-1">Kata Kunci:</span>
+                                                        {question.answer_key || '-'}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {questionBank.questions.length === 0 && (
+                                    <div className="text-center py-12 text-gray-500">
+                                        Belum ada soal di bank soal ini.
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,18 +262,14 @@ export default function Show({ questionBank }) {
 
             {/* Edit Modal */}
             <Modal show={showEditModal} onClose={() => setShowEditModal(false)}>
-                {renderQuestionForm(editForm, submitEdit, 'Edit Soal', () => setShowEditModal(false))}
+                {renderQuestionForm(editForm, submitEdit, 'Edit Pertanyaan', () => setShowEditModal(false))}
             </Modal>
 
-            {/* Delete Confirmation Modal */}
+            {/* Delete Modal */}
             <Modal show={showDeleteModal} onClose={() => setShowDeleteModal(false)}>
                 <div className="p-6">
-                    <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                        Hapus Soal
-                    </h2>
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Apakah Anda yakin ingin menghapus soal ini? Tindakan ini tidak dapat dibatalkan.
-                    </p>
+                    <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">Hapus Pertanyaan</h2>
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Apakah Anda yakin ingin menghapus pertanyaan ini? Tindakan ini tidak dapat dibatalkan.</p>
                     <div className="mt-6 flex justify-end">
                         <SecondaryButton onClick={() => setShowDeleteModal(false)}>Batal</SecondaryButton>
                         <DangerButton className="ml-3" onClick={confirmDelete}>Hapus</DangerButton>

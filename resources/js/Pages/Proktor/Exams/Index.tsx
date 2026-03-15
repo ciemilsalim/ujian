@@ -9,17 +9,23 @@ import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
 import Checkbox from '@/Components/Checkbox';
+import { Exam, QuestionBank, PaginationData } from '@/types';
 
-export default function Index({ exams, questionBanks }) {
+interface IndexProps {
+    exams: PaginationData<Exam>;
+    questionBanks: QuestionBank[];
+}
+
+export default function Index({ exams, questionBanks }: IndexProps) {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
-    const [selectedExam, setSelectedExam] = useState(null);
+    const [selectedExam, setSelectedExam] = useState<Exam | null>(null);
 
     const createForm = useForm({
         title: '',
-        question_bank_id: '',
-        duration: '',
+        question_bank_id: '' as string | number,
+        duration: '' as string | number,
         random_question: false,
         random_option: false,
         show_result: false,
@@ -28,15 +34,15 @@ export default function Index({ exams, questionBanks }) {
 
     const editForm = useForm({
         title: '',
-        question_bank_id: '',
-        duration: '',
+        question_bank_id: '' as string | number,
+        duration: '' as string | number,
         random_question: false,
         random_option: false,
         show_result: false,
         is_practice: false,
     });
 
-    const submitCreate = (e) => {
+    const submitCreate = (e: React.FormEvent) => {
         e.preventDefault();
         createForm.post(route('proktor.exams.store'), {
             onSuccess: () => {
@@ -46,7 +52,7 @@ export default function Index({ exams, questionBanks }) {
         });
     };
 
-    const openEditModal = (exam) => {
+    const openEditModal = (exam: Exam) => {
         setSelectedExam(exam);
         editForm.setData({
             title: exam.title || '',
@@ -60,8 +66,9 @@ export default function Index({ exams, questionBanks }) {
         setShowEditModal(true);
     };
 
-    const submitEdit = (e) => {
+    const submitEdit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (!selectedExam) return;
         editForm.put(route('proktor.exams.update', selectedExam.id), {
             onSuccess: () => {
                 setShowEditModal(false);
@@ -70,12 +77,13 @@ export default function Index({ exams, questionBanks }) {
         });
     };
 
-    const openDeleteModal = (exam) => {
+    const openDeleteModal = (exam: Exam) => {
         setSelectedExam(exam);
         setShowDeleteModal(true);
     };
 
     const confirmDelete = () => {
+        if (!selectedExam) return;
         router.delete(route('proktor.exams.destroy', selectedExam.id), {
             onSuccess: () => {
                 setShowDeleteModal(false);
@@ -84,7 +92,7 @@ export default function Index({ exams, questionBanks }) {
         });
     };
 
-    const renderExamForm = (form, onSubmit, title, onClose) => (
+    const renderExamForm = (form: any, onSubmit: (e: React.FormEvent) => void, title: string, onClose: () => void) => (
         <form onSubmit={onSubmit} className="p-6">
             <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                 {title}
@@ -230,7 +238,7 @@ export default function Index({ exams, questionBanks }) {
                                     ))}
                                     {exams.data.length === 0 && (
                                         <tr>
-                                            <td colSpan="6" className="px-6 py-4 text-center text-gray-500">Belum ada ujian yang dibuat.</td>
+                                            <td colSpan={6} className="px-6 py-4 text-center text-gray-500">Belum ada ujian yang dibuat.</td>
                                         </tr>
                                     )}
                                 </tbody>

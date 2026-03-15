@@ -4,15 +4,12 @@ import InputLabel from '@/Components/InputLabel';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
 import { PrinterIcon } from 'lucide-react';
+import { Classroom } from '@/types';
 
-export default function Index({ classrooms }) {
-    const { data, setData, post, processing, errors } = useForm({
+export default function Index({ classrooms }: { classrooms: Classroom[] }) {
+    const { data, setData, processing, errors } = useForm({
         classroom_id: '',
     });
-
-    const submit = (e) => {
-        // Native form submission will happen since we removed e.preventDefault()
-    };
 
     return (
         <AuthenticatedLayout

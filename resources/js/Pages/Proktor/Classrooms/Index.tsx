@@ -7,20 +7,9 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
+import { Classroom, PaginationData } from '@/types';
 
-interface Classroom {
-    id: number;
-    name: string;
-    description: string | null;
-}
-
-interface Props {
-    classrooms: {
-        data: Classroom[];
-    };
-}
-
-export default function Index({ classrooms }: Props) {
+export default function Index({ classrooms }: { classrooms: PaginationData<Classroom> }) {
     const [showModal, setShowModal] = useState(false);
     const [editingClassroom, setEditingClassroom] = useState<Classroom | null>(null);
 

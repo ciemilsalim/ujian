@@ -1,49 +1,10 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router } from '@inertiajs/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft, PenLine, CheckCircle, Clock, AlertCircle, X, BookOpen, Eye, Check, X as XIcon } from 'lucide-react';
+import { ExamSession, ExamUser, Answer } from '@/types';
 
-interface Question {
-    id: number;
-    type: 'pilihan_ganda' | 'essay';
-    question_text: string;
-    answer_key: string | null;
-    options: string[] | Record<string, string> | null;
-    score_default: number;
-}
-
-interface Answer {
-    id: number;
-    question_id: number;
-    answer_text: string | null;
-    is_correct: boolean | null;
-    score: number | null;
-    question: Question;
-}
-
-interface ExamUser {
-    id: number;
-    status: string;
-    score: number | null;
-    started_at: string | null;
-    finished_at: string | null;
-    cheat_warnings: number;
-    user: { id: number; name: string; username: string } | null;
-    answers: Answer[];
-}
-
-interface Session {
-    id: number;
-    name: string;
-    exam: {
-        title: string;
-        question_bank: { questions: Question[] };
-    };
-    classroom: { name: string } | null;
-    exam_users: ExamUser[];
-}
-
-export default function Show({ session }: { session: Session }) {
+export default function Show({ session }: { session: ExamSession }) {
     const [gradingModal, setGradingModal] = useState<{
         examUserId: number;
         studentName: string;
@@ -140,7 +101,7 @@ export default function Show({ session }: { session: Session }) {
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-5 flex flex-wrap gap-6">
                         <div>
                             <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Ujian</p>
-                            <p className="font-semibold text-gray-900 dark:text-gray-100">{session.exam.title}</p>
+                            <p className="font-semibold text-gray-900 dark:text-gray-100">{session.exam?.title}</p>
                         </div>
                         <div>
                             <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Sesi</p>
@@ -154,7 +115,7 @@ export default function Show({ session }: { session: Session }) {
                         )}
                         <div>
                             <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Peserta</p>
-                            <p className="font-semibold text-gray-900 dark:text-gray-100">{session.exam_users.length} siswa</p>
+                            <p className="font-semibold text-gray-900 dark:text-gray-100">{session.exam_users?.length || 0} siswa</p>
                         </div>
                     </div>
 
@@ -177,14 +138,14 @@ export default function Show({ session }: { session: Session }) {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                                    {session.exam_users.length === 0 && (
+                                    {(!session.exam_users || session.exam_users.length === 0) && (
                                         <tr>
                                             <td colSpan={6} className="px-6 py-8 text-center text-gray-400">
                                                 Belum ada peserta yang mengikuti sesi ini.
                                             </td>
                                         </tr>
                                     )}
-                                    {session.exam_users.map((eu) => (
+                                    {session.exam_users?.map((eu) => (
                                         <tr key={eu.id} className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
                                             <td className="px-6 py-4 font-medium text-gray-900 dark:text-white">
                                                 <div>{eu.user?.name ?? '-'}</div>
@@ -224,7 +185,7 @@ export default function Show({ session }: { session: Session }) {
                                                         <Eye className="w-3.5 h-3.5" />
                                                         Lihat Jawaban
                                                     </button>
-                                                    {eu.status === 'finished' && eu.answers.some(a => a.question.type === 'essay') && (
+                                                    {eu.status === 'finished' && eu.answers?.some(a => a.question.type === 'essay') && (
                                                         <button
                                                             onClick={() => openGradingModal(eu)}
                                                             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${hasUngradedEssays(eu)
@@ -273,7 +234,7 @@ export default function Show({ session }: { session: Session }) {
                             {gradingModal.essays.length === 0 && (
                                 <p className="text-center text-gray-400 py-8">Tidak ada soal essay.</p>
                             )}
-                            {gradingModal.essays.map((answer, idx) => {
+                            {gradingModal.essays.map((answer, idx: number) => {
                                 const val = gradingValues[answer.id];
                                 const isGraded = answer.is_correct !== null;
 
@@ -294,9 +255,9 @@ export default function Show({ session }: { session: Session }) {
                                         {/* Jawaban Siswa */}
                                         <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 mb-4 border border-gray-100 dark:border-gray-700">
                                             <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Jawaban Siswa</p>
-                                            <p className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+                                            <div className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
                                                 {answer.answer_text || <span className="italic text-gray-400">Tidak ada jawaban</span>}
-                                            </p>
+                                            </div>
                                         </div>
 
                                         {/* Form Penilaian */}

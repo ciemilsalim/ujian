@@ -1,25 +1,13 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
-import { FileBarChart, ArrowRight, Download, Users, CheckCircle } from 'lucide-react';
+import { FileBarChart, Download, Users } from 'lucide-react';
+import { ExamSession, PaginationData } from '@/types';
 
-interface Session {
-    id: number;
-    name: string;
-    exam: { title: string };
-    classroom: { name: string } | null;
-    participants_count: number;
-    finished_count: number;
-    start_time: string;
+interface IndexProps {
+    sessions: PaginationData<ExamSession>;
 }
 
-interface Props {
-    sessions: {
-        data: Session[];
-        links: any;
-    };
-}
-
-export default function Index({ sessions }: Props) {
+export default function Index({ sessions }: IndexProps) {
     return (
         <AuthenticatedLayout
             header={<h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Hasil Ujian & Analitik</h2>}
@@ -48,18 +36,18 @@ export default function Index({ sessions }: Props) {
                                                     <div className="font-bold text-gray-900 dark:text-white">{session.name}</div>
                                                 </td>
                                                 <td className="px-6 py-4">
-                                                    <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{session.exam.title}</div>
+                                                    <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{session.exam?.title}</div>
                                                     <div className="text-xs text-gray-500">{session.classroom?.name || 'Semua Kelas'}</div>
                                                 </td>
                                                 <td className="px-6 py-4">
                                                     <div className="flex flex-col items-center">
                                                         <div className="text-sm font-bold text-indigo-600 dark:text-indigo-400">
-                                                            {session.finished_count} / {session.participants_count}
+                                                            {session.finished_count || 0} / {session.participants_count}
                                                         </div>
                                                         <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1 overflow-hidden">
                                                             <div
                                                                 className="bg-indigo-600 h-1.5 rounded-full"
-                                                                style={{ width: `${(session.finished_count / (session.participants_count || 1)) * 100}%` }}
+                                                                style={{ width: `${((session.finished_count || 0) / (session.participants_count || 1)) * 100}%` }}
                                                             ></div>
                                                         </div>
                                                     </div>
@@ -109,4 +97,3 @@ export default function Index({ sessions }: Props) {
         </AuthenticatedLayout>
     );
 }
-

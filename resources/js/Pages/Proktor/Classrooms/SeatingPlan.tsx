@@ -1,28 +1,17 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, useForm, router } from '@inertiajs/react';
-import { useState, useEffect } from 'react';
-import { ArrowLeft, Save, Grid, Plus, Minus, User as UserIcon, X } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, Save, Grid, Plus, Minus, User as UserIcon } from 'lucide-react';
 import { toast } from 'sonner';
+import { User, Classroom } from '@/types';
 
-interface Student {
-    id: number;
-    name: string;
-}
-
-interface Classroom {
-    id: number;
-    name: string;
-    seating_plan: Record<string, number> | null; // "row-col": student_id
-    seating_grid: { rows: number; cols: number } | null;
-}
-
-export default function SeatingPlan({ classroom, students }: { classroom: Classroom, students: Student[] }) {
+export default function SeatingPlan({ classroom, students }: { classroom: Classroom, students: User[] }) {
     const [rows, setRows] = useState(classroom.seating_grid?.rows || 5);
     const [cols, setCols] = useState(classroom.seating_grid?.cols || 4);
     const [plan, setPlan] = useState<Record<string, number>>(classroom.seating_plan || {});
     const [selectedStudent, setSelectedStudent] = useState<number | null>(null);
 
-    const { post, processing } = useForm({
+    const { processing } = useForm({
         seating_plan: plan,
         seating_grid: { rows, cols }
     });

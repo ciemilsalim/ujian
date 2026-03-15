@@ -1,24 +1,17 @@
+import React, { useState, useEffect } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import { ArrowLeft, Users, CheckCircle, Clock, Megaphone, Send, Layout, Table, User as UserIcon, LogOut, RotateCcw, PlusCircle, AlertCircle } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 import axios from 'axios';
+import { ExamSession, ExamUser } from '@/types';
 
-interface Participant {
-    id: number;
-    user_id: number;
-    status: string;
-    score: number | null;
-    user: { name: string };
-}
-
-export default function Monitor({ session }: { session: any }) {
+export default function Monitor({ session }: { session: ExamSession }) {
     // Local state for real-time participants data
-    const [participants, setParticipants] = useState<Participant[]>(session.exam_users);
+    const [participants, setParticipants] = useState<ExamUser[]>(session.exam_users || []);
     const [broadcastMessage, setBroadcastMessage] = useState('');
     const [isSending, setIsSending] = useState(false);
-    const [viewMode, setViewMode] = useState<'table' | 'visual'>(session.classroom?.seating_plan ? 'visual' : 'table');
+    const [viewMode, setViewMode] = useState<'table' | 'visual'>(session.classroom?.id ? 'visual' : 'table');
     const [currentTime, setCurrentTime] = useState(session.end_time);
 
     const handleForceLogoutAll = () => {
@@ -68,30 +61,38 @@ export default function Monitor({ session }: { session: any }) {
     };
 
     useEffect(() => {
+        if (!window.Echo) return;
+
         // Listen to Reverb private channel
         const channel = window.Echo.private(`exam.session.${session.id}`);
 
         channel.listen('.student.updated', (e: any) => {
             console.log('Real-time event received:', e);
-            setParticipants((prevParticipants: Participant[]) => {
+            setParticipants((prevParticipants: ExamUser[]) => {
                 const existing = prevParticipants.find(p => p.user_id === e.userId);
 
                 if (existing) {
                     // Update existing participant
                     return prevParticipants.map(p =>
                         p.user_id === e.userId
-                            ? { ...p, status: e.status, score: e.score || p.score }
+                            ? { ...p, status: e.status, score: e.score ?? p.score }
                             : p
                     );
                 } else {
                     // New participant joined
-                    return [...prevParticipants, {
-                        id: Math.random(), // Temporary ID just for React key mapping if needed
+                    const newUser: ExamUser = {
+                        id: e.participantId || Math.random(),
                         user_id: e.userId,
+                        exam_session_id: session.id,
                         status: e.status,
                         score: e.score,
-                        user: { name: e.name }
-                    }];
+                        user: { name: e.name } as any,
+                        cheat_warnings: 0,
+                        answers: [],
+                        started_at: null,
+                        finished_at: null,
+                    };
+                    return [...prevParticipants, newUser];
                 }
             });
         });
@@ -113,8 +114,8 @@ export default function Monitor({ session }: { session: any }) {
         };
     }, [session.id, currentTime]);
 
-    const activeCount = participants.filter((p: Participant) => p.status === 'working').length;
-    const finishedCount = participants.filter((p: Participant) => p.status === 'finished').length;
+    const activeCount = participants.filter((p: ExamUser) => p.status === 'working').length;
+    const finishedCount = participants.filter((p: ExamUser) => p.status === 'finished').length;
 
     return (
         <AuthenticatedLayout
@@ -232,7 +233,7 @@ export default function Monitor({ session }: { session: any }) {
                             <div className="flex justify-between items-center mb-4">
                                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">Status Peserta Sesi Secara Live</h3>
                                 <div className="flex items-center gap-4">
-                                    {session.classroom?.seating_plan && (
+                                    {session.classroom?.id && (
                                         <div className="flex bg-gray-100 dark:bg-gray-700 p-1 rounded-xl">
                                             <button
                                                 onClick={() => setViewMode('table')}
@@ -269,7 +270,7 @@ export default function Monitor({ session }: { session: any }) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {participants.map((eu: Participant) => (
+                                            {participants.map((eu: ExamUser) => (
                                                 <tr key={eu.user_id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
                                                     <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-3">
                                                         <div className={`w-2 h-2 rounded-full ${eu.status === 'finished' ? 'bg-green-500' : 'bg-yellow-400'}`}></div>
@@ -280,7 +281,7 @@ export default function Monitor({ session }: { session: any }) {
                                                             <span className="text-green-600 flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Selesai</span>
                                                         ) : (
                                                             <div className="flex items-center gap-2">
-                                                                <span className="text-blue-600 flex items-center gap-1"><Clock className="w-4 h-4" /> Mengerjakan</span>
+                                                                 <span className="text-blue-600 flex items-center gap-1"><Clock className="w-4 h-4" /> Mengerjakan</span>
                                                                 <div className="flex bg-amber-50 dark:bg-amber-900/20 px-2 py-0.5 rounded border border-amber-100 dark:border-amber-800 text-[10px] text-amber-700 dark:text-amber-400 font-bold items-center gap-1">
                                                                     <AlertCircle className="w-3 h-3" /> Online
                                                                 </div>
@@ -330,15 +331,15 @@ export default function Monitor({ session }: { session: any }) {
                                         <div
                                             className="grid gap-3"
                                             style={{
-                                                gridTemplateColumns: `repeat(${session.classroom.seating_grid?.cols || 4}, minmax(0, 1fr))`,
+                                                gridTemplateColumns: `repeat(${(session.classroom as any)?.seating_grid?.cols || 4}, minmax(0, 1fr))`,
                                                 width: 'fit-content'
                                             }}
                                         >
-                                            {Array.from({ length: session.classroom.seating_grid?.rows || 5 }).map((_, r) => (
-                                                Array.from({ length: session.classroom.seating_grid?.cols || 4 }).map((_, c) => {
+                                            {Array.from({ length: (session.classroom as any)?.seating_grid?.rows || 5 }).map((_, r) => (
+                                                Array.from({ length: (session.classroom as any)?.seating_grid?.cols || 4 }).map((_, c) => {
                                                     const key = `${r}-${c}`;
-                                                    const studentId = session.classroom.seating_plan[key];
-                                                    const participant = participants.find((p: Participant) => p.user_id === studentId);
+                                                    const studentId = (session.classroom as any)?.seating_plan?.[key];
+                                                    const participant = participants.find((p: ExamUser) => p.user_id === studentId);
 
                                                     return (
                                                         <div

@@ -1,29 +1,10 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 import { CheckCircle, XCircle, Clock, Calendar, ChevronRight, Award, AlertCircle, Search, BookOpen, ShieldAlert } from 'lucide-react';
+import { ExamUser } from '@/types';
 
-interface ExamHistoryItem {
-    id: number;
-    score: number | null;
-    cheat_warnings: number;
-    finished_at: string;
-    exam_session?: {
-        name: string;
-        exam?: {
-            title: string;
-        }
-    };
-    // Mendukung penamaan field camelCase atau snake_case dari server
-    session?: {
-        name: string;
-        exam?: {
-            title: string;
-        }
-    };
-}
-
-export default function History({ examHistory, passingGrade, maxCheatWarnings }: { examHistory: ExamHistoryItem[], passingGrade: number, maxCheatWarnings: number }) {
-    const formatDate = (dateStr: string) => {
+export default function History({ examHistory, passingGrade, maxCheatWarnings }: { examHistory: ExamUser[], passingGrade: number, maxCheatWarnings: number }) {
+    const formatDate = (dateStr: string | null) => {
         if (!dateStr) return '—';
         return new Date(dateStr).toLocaleDateString('id-ID', {
             day: '2-digit',
@@ -76,7 +57,7 @@ export default function History({ examHistory, passingGrade, maxCheatWarnings }:
                     ) : (
                         <div className="grid grid-cols-1 gap-6">
                             {examHistory.map((item) => {
-                                const session = item.exam_session || item.session;
+                                const session = item.exam_session;
                                 const isDisqualified = item.cheat_warnings >= maxCheatWarnings;
                                 const isPassed = !isDisqualified && item.score !== null && item.score >= passingGrade;
                                 const isPending = item.score === null && !isDisqualified;
@@ -133,7 +114,7 @@ export default function History({ examHistory, passingGrade, maxCheatWarnings }:
                                                             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Waktu Selesai</p>
                                                             <div className="flex items-center gap-2 text-xs font-bold text-gray-600 dark:text-gray-300 whitespace-nowrap">
                                                                 <Calendar className="w-3.5 h-3.5 text-indigo-400" />
-                                                                {formatDate(item.finished_at)}
+                                                                {formatDate(item.finished_at || null)}
                                                             </div>
                                                         </div>
                                                         <div className="space-y-1">

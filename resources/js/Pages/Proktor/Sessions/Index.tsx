@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { Plus, Play, Pause, Trash2, Monitor, Edit, Calendar, BookOpen, Users, Clock, Search, Filter, MoreVertical, CheckCircle, XCircle } from 'lucide-react';
-import { useState } from 'react';
 import { toast } from 'sonner';
 import Modal from '@/Components/Modal';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -9,14 +9,15 @@ import SecondaryButton from '@/Components/SecondaryButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
+import { ExamSession, Exam, Classroom, PaginationData } from '@/types';
 
-export default function Index({ sessions, exams, classrooms }: { sessions: any, exams: any[], classrooms: any[] }) {
+export default function Index({ sessions, exams, classrooms }: { sessions: PaginationData<ExamSession>, exams: Exam[], classrooms: Classroom[] }) {
     const [search, setSearch] = useState('');
     const { delete: destroy, post } = useForm();
 
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
-    const [selectedSession, setSelectedSession] = useState<any>(null);
+    const [selectedSession, setSelectedSession] = useState<ExamSession | null>(null);
 
     const createForm = useForm({
         exam_id: '',
@@ -33,6 +34,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
         start_time: '',
         end_time: '',
     });
+
     const handleDelete = (id: number) => {
         if (confirm('Apakah Anda yakin ingin menghapus sesi ujian ini?')) {
             destroy(route('proktor.sessions.destroy', id), {
@@ -57,7 +59,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
         });
     };
 
-    const openEditModal = (session: any) => {
+    const openEditModal = (session: ExamSession) => {
         setSelectedSession(session);
         const formatForInput = (dateString: string) => {
             if (!dateString) return '';
@@ -66,8 +68,8 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
         };
 
         editForm.setData({
-            exam_id: session.exam_id,
-            classroom_id: session.classroom_id || '',
+            exam_id: session.exam_id.toString(),
+            classroom_id: session.classroom?.id?.toString() || '',
             name: session.name,
             start_time: formatForInput(session.start_time),
             end_time: formatForInput(session.end_time),
@@ -77,6 +79,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
 
     const submitEdit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (!selectedSession) return;
         editForm.put(route('proktor.sessions.update', selectedSession.id), {
             onSuccess: () => {
                 setShowEditModal(false);
@@ -84,12 +87,12 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
         });
     };
 
-    const filteredSessions = sessions.data.filter((s: any) =>
+    const filteredSessions = sessions.data.filter((s: ExamSession) =>
         s.name.toLowerCase().includes(search.toLowerCase()) ||
-        s.exam.title.toLowerCase().includes(search.toLowerCase())
+        s.exam?.title.toLowerCase().includes(search.toLowerCase())
     );
 
-    const renderForm = (form: any, onSubmit: any, title: string, onClose: () => void) => (
+    const renderForm = (form: any, onSubmit: (e: React.FormEvent) => void, title: string, onClose: () => void) => (
         <form onSubmit={onSubmit} className="p-6">
             <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
                 {title}
@@ -219,7 +222,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
                             <div>
                                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Sesi Aktif</p>
                                 <p className="text-2xl font-black text-gray-900 dark:text-white">
-                                    {sessions.data.filter((s: any) => s.is_active).length}
+                                    {sessions.data.filter((s: ExamSession) => s.is_active).length}
                                 </p>
                             </div>
                         </div>
@@ -230,7 +233,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
                             <div>
                                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Total Peserta</p>
                                 <p className="text-2xl font-black text-gray-900 dark:text-white">
-                                    {sessions.data.reduce((acc: number, s: any) => acc + (s.participants_count || 0), 0)}
+                                    {sessions.data.reduce((acc: number, s: ExamSession) => acc + (s.participants_count || 0), 0)}
                                 </p>
                             </div>
                         </div>
@@ -272,7 +275,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                                    {filteredSessions.map((session: any) => (
+                                    {filteredSessions.map((session: ExamSession) => (
                                         <tr key={session.id} className="group hover:bg-gray-50/50 dark:hover:bg-gray-900/20 transition-colors">
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center gap-3">
@@ -286,8 +289,8 @@ export default function Index({ sessions, exams, classrooms }: { sessions: any, 
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">
-                                                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{session.exam.title}</div>
-                                                <div className="text-[10px] text-indigo-500 font-black uppercase">{session.exam.subject?.name}</div>
+                                                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{session.exam?.title}</div>
+                                                <div className="text-[10px] text-indigo-500 font-black uppercase">{session.exam?.subject?.name}</div>
                                             </td>
                                             <td className="px-6 py-5">
                                                 <div className="flex flex-col gap-1">

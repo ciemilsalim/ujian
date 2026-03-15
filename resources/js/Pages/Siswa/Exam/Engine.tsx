@@ -4,6 +4,8 @@ import { Toaster, toast } from 'sonner';
 import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen } from 'lucide-react';
 import axios from 'axios';
 
+import { ExamSession, Question, ExamUser } from '@/types';
+
 export default function ExamEngine({
     session,
     questions,
@@ -11,19 +13,19 @@ export default function ExamEngine({
     serverTimeLeft,
     existingAnswers
 }: {
-    session: any,
-    questions: any[],
-    examUser: any,
+    session: ExamSession,
+    questions: Question[],
+    examUser: ExamUser,
     serverTimeLeft: number,
-    existingAnswers: Record<number, string>
+    existingAnswers: Record<string, string>
 }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [timeLeft, setTimeLeft] = useState(serverTimeLeft);
     const [isTimeWarningShown, setIsTimeWarningShown] = useState(false);
-    const currentQuestion: any = questions[currentQuestionIndex];
+    const currentQuestion = questions[currentQuestionIndex];
 
     const { data, setData, post, processing } = useForm({
-        answers: existingAnswers || {} as Record<number, string>, // question_id: answer
+        answers: existingAnswers || {} as Record<string, string>, // question_id: answer
     });
 
     // Debounce timer ref untuk auto-save agar tidak spam request per klik/karakter
@@ -122,60 +124,69 @@ export default function ExamEngine({
         document.addEventListener('fullscreenchange', handleFullscreenChange);
 
         // Real-time Broadcast Listeners
-        const sessionChannel = window.Echo.private(`exam.session.${session.id}`);
-        const globalChannel = window.Echo.private(`proktor.broadcast.global`);
+        if (window.Echo) {
+            const sessionChannel = window.Echo.private(`exam.session.${session.id}`);
+            const globalChannel = window.Echo.private(`proktor.broadcast.global`);
 
-        const handleAnnouncement = (e: any) => {
-            console.log('Announcement received:', e);
+            const handleAnnouncement = (e: any) => {
+                console.log('Announcement received:', e);
 
-            // Handle technical commands
-            if (e.message === 'force_logout') {
-                toast.error('SESI DIHENTIKAN', { description: 'Proktor telah menghentikan sesi ini. Anda akan diarahkan keluar.' });
-                setTimeout(() => window.location.href = route('siswa.dashboard'), 3000);
-                return;
-            }
-
-            if (e.message.startsWith('force_logout_user:')) {
-                const targetUserId = parseInt(e.message.split(':')[1]);
-                if (targetUserId === examUser.user_id) {
-                    toast.error('AKSES DICABUT', { description: 'Akses Anda ke sesi ini telah dicabut oleh Proktor.' });
+                // Handle technical commands
+                if (e.message === 'force_logout') {
+                    toast.error('SESI DIHENTIKAN', { description: 'Proktor telah menghentikan sesi ini. Anda akan diarahkan keluar.' });
                     setTimeout(() => window.location.href = route('siswa.dashboard'), 3000);
+                    return;
                 }
-                return;
-            }
 
-            if (e.message.startsWith('extend_time|')) {
-                const minutes = parseInt(e.message.split('|')[1]);
-                setTimeLeft(prev => prev + (minutes * 60));
-                toast.success('WAKTU BERTAMBAH!', {
-                    description: `Proktor menambah waktu ujian sebanyak ${minutes} menit.`,
-                    duration: 10000
+                if (e.message.startsWith('force_logout_user:')) {
+                    const targetUserId = parseInt(e.message.split(':')[1]);
+                    if (targetUserId === examUser.user_id) {
+                        toast.error('AKSES DICABUT', { description: 'Akses Anda ke sesi ini telah dicabut oleh Proktor.' });
+                        setTimeout(() => window.location.href = route('siswa.dashboard'), 3000);
+                    }
+                    return;
+                }
+
+                if (e.message.startsWith('extend_time|')) {
+                    const minutes = parseInt(e.message.split('|')[1]);
+                    setTimeLeft(prev => prev + (minutes * 60));
+                    toast.success('WAKTU BERTAMBAH!', {
+                        description: `Proktor menambah waktu ujian sebanyak ${minutes} menit.`,
+                        duration: 10000
+                    });
+                    return;
+                }
+
+                // Normal announcement
+                toast(e.message, {
+                    duration: 10000,
+                    icon: <Megaphone className="w-5 h-5 text-indigo-600" />,
+                    description: `Pesan dari Proktor (${e.senderName})`,
+                    style: {
+                        background: '#f0f4ff',
+                        border: '2px solid #4f46e5',
+                    }
                 });
-                return;
-            }
 
-            // Normal announcement
-            toast(e.message, {
-                duration: 10000,
-                icon: <Megaphone className="w-5 h-5 text-indigo-600" />,
-                description: `Pesan dari Proktor (${e.senderName})`,
-                style: {
-                    background: '#f0f4ff',
-                    border: '2px solid #4f46e5',
+                // Audio alert
+                try {
+                    const audio = new Audio('/audio/notification.mp3');
+                    audio.play();
+                } catch (err) {
+                    console.log('Audio play failed');
                 }
-            });
+            };
 
-            // Audio alert — gunakan file lokal agar tidak bergantung CDN eksternal
-            try {
-                const audio = new Audio('/audio/notification.mp3');
-                audio.play();
-            } catch (err) {
-                console.log('Audio play failed');
-            }
-        };
+            sessionChannel.listen('.proktor.announcement', handleAnnouncement);
+            globalChannel.listen('.proktor.announcement', handleAnnouncement);
 
-        sessionChannel.listen('.proktor.announcement', handleAnnouncement);
-        globalChannel.listen('.proktor.announcement', handleAnnouncement);
+            return () => {
+                sessionChannel.stopListening('.proktor.announcement');
+                globalChannel.stopListening('.proktor.announcement');
+                window.Echo.leave(`exam.session.${session.id}`);
+                window.Echo.leave(`proktor.broadcast.global`);
+            };
+        }
 
         return () => {
             clearInterval(timer);
@@ -187,11 +198,6 @@ export default function ExamEngine({
             document.removeEventListener('paste', handleCopyPaste);
             document.removeEventListener('keydown', handleKeyDown);
             document.removeEventListener('fullscreenchange', handleFullscreenChange);
-
-            sessionChannel.stopListening('.proktor.announcement');
-            globalChannel.stopListening('.proktor.announcement');
-            window.Echo.leave(`exam.session.${session.id}`);
-            window.Echo.leave(`proktor.broadcast.global`);
         };
     }, []);
 
@@ -256,7 +262,7 @@ export default function ExamEngine({
 
     return (
         <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col font-sans selection:bg-indigo-100 dark:selection:bg-indigo-900/40">
-            <Head title={`Ujian: ${session.exam.title}`} />
+            <Head title={`Ujian: ${session.exam?.title || 'Ujian'}`} />
 
             {/* Sticky Header Baru */}
             <header className="fixed top-0 inset-x-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 z-40 transition-all duration-300">
@@ -266,7 +272,7 @@ export default function ExamEngine({
                             E
                         </div>
                         <div className="hidden sm:block">
-                            <h1 className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate max-w-[200px]">{session.exam.title}</h1>
+                            <h1 className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate max-w-[200px]">{session.exam?.title}</h1>
                             <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">{session.name}</p>
                         </div>
                     </div>
@@ -329,7 +335,7 @@ export default function ExamEngine({
                     <div className="mt-auto space-y-4">
                         <div className="p-4 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/20 border border-indigo-100/50 dark:border-indigo-800/30">
                             <p className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-1">Mata Pelajaran</p>
-                            <p className="text-sm font-bold text-gray-900 dark:text-gray-100 leading-tight">{session.exam.title}</p>
+                            <p className="text-sm font-bold text-gray-900 dark:text-gray-100 leading-tight">{session.exam?.title}</p>
                         </div>
                         <button
                             onClick={finishExam}
@@ -366,7 +372,7 @@ export default function ExamEngine({
                         <div className="space-y-4">
                             {currentQuestion.type === 'pilihan_ganda' ? (
                                 <div className="grid grid-cols-1 gap-3">
-                                    {currentQuestion.options && Object.entries(typeof currentQuestion.options === 'string' ? JSON.parse(currentQuestion.options) : currentQuestion.options).map(([key, value]) => (
+                                    {currentQuestion.options && Object.entries(typeof currentQuestion.options === 'string' ? JSON.parse(currentQuestion.options) : (currentQuestion.options as object)).map(([key, value]) => (
                                         <button
                                             key={key}
                                             onClick={() => handleAnswer(currentQuestion.id, key)}
@@ -577,5 +583,3 @@ export default function ExamEngine({
         </div>
     );
 }
-
-

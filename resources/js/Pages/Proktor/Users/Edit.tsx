@@ -4,18 +4,24 @@ import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
+import { User, Classroom } from '@/types';
 
-export default function Edit({ user, classrooms }) {
+interface EditProps {
+    user: User;
+    classrooms: Classroom[];
+}
+
+export default function Edit({ user, classrooms }: EditProps) {
     const { data, setData, put, processing, errors } = useForm({
         username: user.username || '',
         name: user.name || '',
         email: user.email || '',
         password: '',
-        role: user.role || 'siswa',
-        classroom_id: user.classroom_id || '',
+        role: (user.role || 'siswa') as 'siswa' | 'guru' | 'proktor',
+        classroom_id: user.classroom_id?.toString() || '',
     });
 
-    const submit = (e) => {
+    const submit = (e: React.FormEvent) => {
         e.preventDefault();
         put(route('proktor.users.update', user.id));
     };
@@ -88,7 +94,7 @@ export default function Edit({ user, classrooms }) {
                                     <select
                                         id="role"
                                         value={data.role}
-                                        onChange={(e) => setData('role', e.target.value)}
+                                        onChange={(e) => setData('role', e.target.value as any)}
                                         className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
                                         required
                                     >

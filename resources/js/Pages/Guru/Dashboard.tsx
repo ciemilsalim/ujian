@@ -1,7 +1,8 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, usePage } from '@inertiajs/react';
+import { RecentSession, GuruStats } from '@/types';
 
-export default function Dashboard({ stats, recentSessions }) {
+export default function Dashboard({ stats, recentSessions }: { stats: GuruStats, recentSessions: RecentSession[] }) {
     const user = usePage().props.auth.user;
 
     const statCards = [

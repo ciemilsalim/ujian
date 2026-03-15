@@ -1,8 +1,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 import { BarChart3, ChevronRight, Calendar, Users, BookOpen } from 'lucide-react';
+import { ExamSession } from '@/types';
 
-export default function Index({ sessions }) {
+export default function Index({ sessions }: { sessions: ExamSession[] }) {
     return (
         <AuthenticatedLayout
             header={

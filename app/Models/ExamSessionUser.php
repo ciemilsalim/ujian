@@ -8,6 +8,11 @@ class ExamSessionUser extends Model
 {
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'started_at' => 'datetime',
+        'finished_at' => 'datetime',
+    ];
+
     public function examSession()
     {
         return $this->belongsTo(ExamSession::class);

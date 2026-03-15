@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, usePage, router } from '@inertiajs/react';
-import { Users, Flag, PlayCircle, CheckCircle, Sparkles, BarChart2, MoreHorizontal, TrendingUp, PieChart as PieIcon, Zap, RefreshCw, History, User, Copy, Megaphone, Send, Server, Cpu, Activity, Database, ShieldCheck, Wifi, WifiOff } from 'lucide-react';
+import { Users, Flag, PlayCircle, CheckCircle, Sparkles, BarChart2, MoreHorizontal, TrendingUp, PieChart as PieIcon, Zap, RefreshCw, History, User as UserIcon, Copy, Megaphone, Send, Server, Cpu, Activity, Database, ShieldCheck, Wifi, WifiOff } from 'lucide-react';
 import { toast } from 'sonner';
 import axios from 'axios';
+import { ProktorMetrics, ExamSession, ActivityFeedItem, ChartData } from '@/types';
 import {
     AreaChart,
     Area,
@@ -19,16 +20,19 @@ import {
     Bar
 } from 'recharts';
 
+declare global {
+    interface Window {
+        Echo: any;
+    }
+}
+
 interface DashboardProps {
-    metrics: any;
-    recentSessions: any[];
-    activeSessions: any[];
-    activityFeed: any[];
-    charts: {
-        participation: any[];
-        status: any[];
-        scores: any[];
-    };
+    metrics: ProktorMetrics;
+    recentSessions: ExamSession[];
+    activeSessions: ExamSession[];
+    activityFeed: ActivityFeedItem[];
+    charts: ChartData;
+    [key: string]: any;
 }
 
 export default function Dashboard({ metrics, recentSessions, activeSessions, activityFeed, charts }: DashboardProps) {
@@ -55,7 +59,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
 
         setIsGlobalSending(true);
         try {
-            await router.post(route('proktor.sessions.broadcast-global'), {
+            router.post(route('proktor.sessions.broadcast-global'), {
                 message: globalMessage
             }, {
                 onSuccess: () => {
@@ -370,83 +374,85 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                             </Link>
                         </div>
                         <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden">
-                            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                                <thead className="bg-gray-50/80 dark:bg-gray-900/50">
-                                    <tr>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Judul</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Kelas</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Kode</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Peserta</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Selesai</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Jadwal</th>
-                                        <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Status</th>
-                                        <th scope="col" className="relative px-6 py-4"><span className="sr-only">Actions</span></th>
-                                    </tr>
-                                </thead>
-                                <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-100 dark:divide-gray-700">
-                                    {recentSessions.map((session) => {
-                                        const progressPercent = session.participants_count > 0 ? (session.submitted_count / session.participants_count) * 100 : 0;
-                                        return (
-                                            <tr key={session.id} className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                                                <td className="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">
-                                                    {session.name}
-                                                </td>
-                                                <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    Semua Kelas
-                                                </td>
-                                                <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 font-mono">
-                                                    {session.token}
-                                                </td>
-                                                <td className="px-6 py-5 whitespace-nowrap text-sm font-medium text-purple-600 dark:text-purple-400">
-                                                    {session.participants_count}
-                                                </td>
-                                                <td className="px-6 py-5 whitespace-nowrap">
-                                                    <div className="flex flex-col gap-1.5 w-32">
-                                                        <div className="flex justify-start text-xs font-semibold text-indigo-600 dark:text-indigo-400">
-                                                            {session.submitted_count}/{session.participants_count}
+                            <div className="overflow-x-auto">
+                                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                    <thead className="bg-gray-50/80 dark:bg-gray-900/50">
+                                        <tr>
+                                            <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Judul</th>
+                                            <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Kelas</th>
+                                            <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Kode</th>
+                                            <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Peserta</th>
+                                            <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Selesai</th>
+                                            <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Jadwal</th>
+                                            <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-gray-600 dark:text-gray-400 capitalize tracking-wider">Status</th>
+                                            <th scope="col" className="relative px-6 py-4"><span className="sr-only">Actions</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-100 dark:divide-gray-700">
+                                        {recentSessions.map((session) => {
+                                            const progressPercent = session.participants_count > 0 ? (session.submitted_count / session.participants_count) * 100 : 0;
+                                            return (
+                                                <tr key={session.id} className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+                                                    <td className="px-6 py-5 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">
+                                                        {session.name}
+                                                    </td>
+                                                    <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                        Semua Kelas
+                                                    </td>
+                                                    <td className="px-6 py-5 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300 font-mono">
+                                                        {session.token}
+                                                    </td>
+                                                    <td className="px-6 py-5 whitespace-nowrap text-sm font-medium text-purple-600 dark:text-purple-400">
+                                                        {session.participants_count}
+                                                    </td>
+                                                    <td className="px-6 py-5 whitespace-nowrap">
+                                                        <div className="flex flex-col gap-1.5 w-32">
+                                                            <div className="flex justify-start text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+                                                                {session.submitted_count}/{session.participants_count}
+                                                            </div>
+                                                            <div className="w-full bg-gray-100 rounded-full h-2 dark:bg-gray-700 overflow-hidden">
+                                                                <div className="bg-blue-500 h-2 rounded-full dark:bg-blue-400 transition-all duration-500" style={{ width: `${progressPercent}%` }}></div>
+                                                            </div>
                                                         </div>
-                                                        <div className="w-full bg-gray-100 rounded-full h-2 dark:bg-gray-700 overflow-hidden">
-                                                            <div className="bg-blue-500 h-2 rounded-full dark:bg-blue-400 transition-all duration-500" style={{ width: `${progressPercent}%` }}></div>
+                                                    </td>
+                                                    <td className="px-6 py-5 whitespace-nowrap text-xs text-gray-500 dark:text-gray-400">
+                                                        <div className="flex flex-col gap-1">
+                                                            <span>{new Date(session.start_time).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                                                            <span>{new Date(session.end_time).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                                                         </div>
+                                                    </td>
+                                                    <td className="px-6 py-5 whitespace-nowrap">
+                                                        {session.is_active ? (
+                                                            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                                                                Berjalan
+                                                            </span>
+                                                        ) : (
+                                                            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-50 text-gray-700 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                                                                Selesai
+                                                            </span>
+                                                        )}
+                                                    </td>
+                                                    <td className="px-6 py-5 whitespace-nowrap text-right text-sm font-medium">
+                                                        <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 border border-transparent hover:border-gray-200 dark:hover:border-gray-600 rounded-md transition">
+                                                            <MoreHorizontal className="w-5 h-5" />
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        })}
+                                        {recentSessions.length === 0 && (
+                                            <tr>
+                                                <td colSpan={8} className="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
+                                                    <div className="flex flex-col items-center gap-2">
+                                                        <Flag className="w-8 h-8 text-gray-300 dark:text-gray-600" />
+                                                        <p>Belum ada riwayat ujian terbaru.</p>
                                                     </div>
-                                                </td>
-                                                <td className="px-6 py-5 whitespace-nowrap text-xs text-gray-500 dark:text-gray-400">
-                                                    <div className="flex flex-col gap-1">
-                                                        <span>{new Date(session.start_time).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                                                        <span>{new Date(session.end_time).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                                                    </div>
-                                                </td>
-                                                <td className="px-6 py-5 whitespace-nowrap">
-                                                    {session.is_active ? (
-                                                        <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
-                                                            Berjalan
-                                                        </span>
-                                                    ) : (
-                                                        <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-50 text-gray-700 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                                                            Selesai
-                                                        </span>
-                                                    )}
-                                                </td>
-                                                <td className="px-6 py-5 whitespace-nowrap text-right text-sm font-medium">
-                                                    <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 border border-transparent hover:border-gray-200 dark:hover:border-gray-600 rounded-md transition">
-                                                        <MoreHorizontal className="w-5 h-5" />
-                                                    </button>
                                                 </td>
                                             </tr>
-                                        )
-                                    })}
-                                    {recentSessions.length === 0 && (
-                                        <tr>
-                                            <td colSpan={8} className="px-6 py-12 text-center text-gray-500 dark:text-gray-400">
-                                                <div className="flex flex-col items-center gap-2">
-                                                    <Flag className="w-8 h-8 text-gray-300 dark:text-gray-600" />
-                                                    <p>Belum ada riwayat ujian terbaru.</p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    )}
-                                </tbody>
-                            </table>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </section>
                     {/* Student Activity Feed & Status Overview */}
@@ -469,7 +475,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     <div key={activity.id} className="flex items-center gap-4 p-3 hover:bg-gray-50 dark:hover:bg-gray-900/50 rounded-xl transition-colors border border-transparent hover:border-gray-100 dark:hover:border-gray-800">
                                         <div className="relative">
                                             <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-500">
-                                                <User className="w-5 h-5" />
+                                                <UserIcon className="w-5 h-5" />
                                             </div>
                                             <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center ${activity.status === 'finished' ? 'bg-emerald-500' : 'bg-blue-500'
                                                 }`}>
@@ -490,7 +496,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                                 </span>
                                             </div>
                                             <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                                                {activity.status === 'finished' ? 'Telah menyelesaikan' : 'Sedang mengerjakan'} {activity.exam_session.exam.title}
+                                                {activity.status === 'finished' ? 'Telah menyelesaikan' : 'Sedang mengerjakan'} {activity.exam_session.exam?.title}
                                             </p>
                                         </div>
                                         {activity.score !== null && (
@@ -601,7 +607,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     {activeSessions.map((session) => (
                                         <div key={session.id} className="p-4 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800">
                                             <h5 className="text-sm font-bold text-gray-900 dark:text-white mb-1 truncate">{session.name}</h5>
-                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-bold mb-3">{session.exam.title}</p>
+                                            <p className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-bold mb-3">{session.exam?.title}</p>
                                             <Link
                                                 href={route('proktor.sessions.monitor', session.id)}
                                                 className="w-full inline-flex items-center justify-center gap-2 py-2 bg-white dark:bg-gray-800 text-xs font-bold text-indigo-600 dark:text-indigo-400 rounded-lg border border-indigo-100 dark:border-indigo-900 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all"

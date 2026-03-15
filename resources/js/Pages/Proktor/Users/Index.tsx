@@ -1,21 +1,27 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, router } from '@inertiajs/react';
 import { useState } from 'react';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import PrimaryButton from '@/Components/PrimaryButton';
 import InputLabel from '@/Components/InputLabel';
 import InputError from '@/Components/InputError';
+import { User, Classroom, PaginationData } from '@/types';
 
-export default function Index({ users, classrooms }) {
+interface IndexProps {
+    users: PaginationData<User>;
+    classrooms: Classroom[];
+}
+
+export default function Index({ users, classrooms }: IndexProps) {
     const [showImportModal, setShowImportModal] = useState(false);
 
     const { data, setData, post, processing, errors, reset } = useForm({
-        file: null,
+        file: null as File | null,
         classroom_id: '',
     });
 
-    const submitImport = (e) => {
+    const submitImport = (e: React.FormEvent) => {
         e.preventDefault();
         post(route('proktor.users.import'), {
             onSuccess: () => {
@@ -24,6 +30,17 @@ export default function Index({ users, classrooms }) {
             },
         });
     };
+
+    const handleDelete = (id: number) => {
+        if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
+            router.delete(route('proktor.users.destroy', id), {
+                onSuccess: () => {
+                    // Success handling
+                }
+            });
+        }
+    };
+
     return (
         <AuthenticatedLayout
             header={
@@ -70,34 +87,15 @@ export default function Index({ users, classrooms }) {
                                             <td className="px-6 py-4 whitespace-nowrap">{user.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{user.username}</td>
                                             <td className="px-6 py-4 whitespace-nowrap capitalize">{user.role}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap">{user.classroom?.name || '-'}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">{user.classroom_id ? classrooms.find(c => c.id === user.classroom_id)?.name : '-'}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <Link href={route('proktor.users.edit', user.id)} className="text-indigo-600 hover:text-indigo-900 mr-3">Edit</Link>
-                                                <button onClick={() => {
-                                                    if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
-                                                        const form = document.createElement('form');
-                                                        form.method = 'POST';
-                                                        form.action = route('proktor.users.destroy', user.id);
-                                                        const methodInput = document.createElement('input');
-                                                        methodInput.type = 'hidden';
-                                                        methodInput.name = '_method';
-                                                        methodInput.value = 'DELETE';
-                                                        const tokenInput = document.createElement('input');
-                                                        tokenInput.type = 'hidden';
-                                                        tokenInput.name = '_token';
-                                                        tokenInput.value = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
-                                                        form.appendChild(methodInput);
-                                                        form.appendChild(tokenInput);
-                                                        document.body.appendChild(form);
-                                                        form.submit();
-                                                    }
-                                                }} className="text-red-600 hover:text-red-900">Hapus</button>
+                                                <button onClick={() => handleDelete(user.id)} className="text-red-600 hover:text-red-900">Hapus</button>
                                             </td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
-                            {/* Pagination would go here */}
                         </div>
                     </div>
                 </div>
@@ -134,7 +132,7 @@ export default function Index({ users, classrooms }) {
                             type="file"
                             id="file"
                             className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
-                            onChange={(e) => setData('file', e.target.files[0])}
+                            onChange={(e) => setData('file', e.target.files ? e.target.files[0] : null)}
                             required
                         />
                         <InputError message={errors.file} className="mt-2" />

@@ -5,7 +5,14 @@ import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
 
-export default function Index({ settings }) {
+interface Settings {
+    school_name: string;
+    school_address: string;
+    passing_grade: string | number;
+    max_cheat_warnings: string | number;
+}
+
+export default function Index({ settings }: { settings: Settings }) {
     const { data, setData, post, processing, errors } = useForm({
         school_name: settings.school_name || '',
         school_address: settings.school_address || '',
@@ -13,7 +20,7 @@ export default function Index({ settings }) {
         max_cheat_warnings: settings.max_cheat_warnings || '3',
     });
 
-    const submit = (e) => {
+    const submit = (e: React.FormEvent) => {
         e.preventDefault();
         post(route('proktor.settings.store'));
     };

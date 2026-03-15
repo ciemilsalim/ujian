@@ -1,24 +1,26 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link } from '@inertiajs/react';
-import { ArrowLeft, Download, TrendingUp, Filter, Users, Star, Award, AlertCircle, FileBarChart, CheckCircle, RotateCcw, Trash2 } from 'lucide-react';
-import { router } from '@inertiajs/react';
+import { Head, Link, router } from '@inertiajs/react';
+import { ArrowLeft, Download, TrendingUp, Star, Award, AlertCircle, FileBarChart, CheckCircle, RotateCcw, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie } from 'recharts';
+import { ExamSession, ExamUser } from '@/types';
 
-interface Props {
-    session: any;
-    stats: {
-        average: number;
-        max: number;
-        min: number;
-        median: number;
-        pass_count: number;
-        fail_count: number;
-    };
+interface AnalysisStats {
+    average: number;
+    max: number;
+    min: number;
+    median: number;
+    pass_count: number;
+    fail_count: number;
+}
+
+interface IndexProps {
+    session: ExamSession & { exam_users: ExamUser[] };
+    stats: AnalysisStats;
     distribution: Record<string, number>;
 }
 
-export default function Analysis({ session, stats, distribution }: Props) {
+export default function Analysis({ session, stats, distribution }: IndexProps) {
     const barData = Object.entries(distribution).map(([range, count]) => ({
         range,
         count
@@ -106,7 +108,7 @@ export default function Analysis({ session, stats, distribution }: Props) {
                                             contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
                                         />
                                         <Bar dataKey="count" radius={[6, 6, 0, 0]}>
-                                            {barData.map((entry, index) => (
+                                            {barData.map((_entry, index) => (
                                                 <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#4f46e5' : '#818cf8'} />
                                             ))}
                                         </Bar>
@@ -167,10 +169,10 @@ export default function Analysis({ session, stats, distribution }: Props) {
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-                                        {session.exam_users.map((eu: any) => (
+                                        {session.exam_users.map((eu) => (
                                             <tr key={eu.id}>
                                                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                                    {eu.user.name}
+                                                    {eu.user?.name}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     {eu.status === 'finished' ? (
@@ -185,7 +187,7 @@ export default function Analysis({ session, stats, distribution }: Props) {
                                                 <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
                                                     <button
                                                         onClick={() => {
-                                                            if (confirm(`Reset hasil ujian ${eu.user.name}? Semua jawaban akan dihapus.`)) {
+                                                            if (confirm(`Reset hasil ujian ${eu.user?.name}? Semua jawaban akan dihapus.`)) {
                                                                 router.post(route('proktor.results.reset-user', eu.id), {}, {
                                                                     onSuccess: () => toast.success('Hasil berhasil direset.')
                                                                 });
@@ -198,7 +200,7 @@ export default function Analysis({ session, stats, distribution }: Props) {
                                                     </button>
                                                     <button
                                                         onClick={() => {
-                                                            if (confirm(`Hapus data ujian ${eu.user.name} dari sesi ini?`)) {
+                                                            if (confirm(`Hapus data ujian ${eu.user?.name} dari sesi ini?`)) {
                                                                 router.delete(route('proktor.results.delete-user', eu.id), {
                                                                     onSuccess: () => toast.success('Data berhasil dihapus.')
                                                                 });

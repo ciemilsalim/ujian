@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, useForm, router } from '@inertiajs/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -8,12 +8,13 @@ import DangerButton from '@/Components/DangerButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
+import { QuestionBank, Subject, PaginationData } from '@/types';
 
-export default function Index({ questionBanks, subjects }) {
+export default function Index({ questionBanks, subjects }: { questionBanks: PaginationData<QuestionBank>, subjects: Subject[] }) {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
-    const [selectedBank, setSelectedBank] = useState(null);
+    const [selectedBank, setSelectedBank] = useState<QuestionBank | null>(null);
 
     const createForm = useForm({
         subject_id: '',
@@ -27,7 +28,7 @@ export default function Index({ questionBanks, subjects }) {
         description: '',
     });
 
-    const submitCreate = (e) => {
+    const submitCreate = (e: React.FormEvent) => {
         e.preventDefault();
         createForm.post(route('guru.question-banks.store'), {
             onSuccess: () => {
@@ -37,18 +38,19 @@ export default function Index({ questionBanks, subjects }) {
         });
     };
 
-    const openEditModal = (bank) => {
+    const openEditModal = (bank: QuestionBank) => {
         setSelectedBank(bank);
         editForm.setData({
-            subject_id: bank.subject_id || '',
+            subject_id: bank.subject_id?.toString() || '',
             name: bank.name || '',
             description: bank.description || '',
         });
         setShowEditModal(true);
     };
 
-    const submitEdit = (e) => {
+    const submitEdit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (!selectedBank) return;
         editForm.put(route('guru.question-banks.update', selectedBank.id), {
             onSuccess: () => {
                 setShowEditModal(false);
@@ -57,12 +59,13 @@ export default function Index({ questionBanks, subjects }) {
         });
     };
 
-    const openDeleteModal = (bank) => {
+    const openDeleteModal = (bank: QuestionBank) => {
         setSelectedBank(bank);
         setShowDeleteModal(true);
     };
 
     const confirmDelete = () => {
+        if (!selectedBank) return;
         router.delete(route('guru.question-banks.destroy', selectedBank.id), {
             onSuccess: () => {
                 setShowDeleteModal(false);
@@ -71,7 +74,7 @@ export default function Index({ questionBanks, subjects }) {
         });
     };
 
-    const renderBankForm = (form, onSubmit, title, onClose) => (
+    const renderBankForm = (form: any, onSubmit: (e: React.FormEvent) => void, title: string, onClose: () => void) => (
         <form onSubmit={onSubmit} className="p-6">
             <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                 {title}
@@ -99,7 +102,7 @@ export default function Index({ questionBanks, subjects }) {
                 <TextInput
                     id="name"
                     value={form.data.name}
-                    onChange={(e) => form.setData('name', e.target.value)}
+                    onChange={(e: any) => form.setData('name', e.target.value)}
                     className="mt-1 block w-full"
                     required
                 />
@@ -111,7 +114,7 @@ export default function Index({ questionBanks, subjects }) {
                 <TextInput
                     id="description"
                     value={form.data.description}
-                    onChange={(e) => form.setData('description', e.target.value)}
+                    onChange={(e: any) => form.setData('description', e.target.value)}
                     className="mt-1 block w-full"
                 />
                 <InputError message={form.errors.description} className="mt-2" />
@@ -164,7 +167,7 @@ export default function Index({ questionBanks, subjects }) {
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-3">
                                                 <Link href={route('guru.question-banks.show', bank.id)} className="text-indigo-600 hover:text-indigo-900">Detail & Soal</Link>
                                                 <Link href={route('guru.question-analysis.show', bank.id)} className="text-green-600 hover:text-green-900">Analisis</Link>
-                                                <button onClick={() => openEditModal(bank)} className="text-yellow-600 hover:text-yellow-900">Edit</button>
+                                                <button onClick={() => openEditModal(bank)} className="text-yellow-600 hover:Yellow-900">Edit</button>
                                                 <button onClick={() => openDeleteModal(bank)} className="text-red-600 hover:text-red-900">Hapus</button>
                                             </td>
                                         </tr>

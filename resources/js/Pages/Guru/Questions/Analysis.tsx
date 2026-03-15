@@ -1,7 +1,8 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
+import { QuestionBank, QuestionAnalysis } from '@/types';
 
-export default function Analysis({ questionBank, analysis }) {
+export default function Analysis({ questionBank, analysis }: { questionBank: QuestionBank, analysis: QuestionAnalysis[] }) {
     return (
         <AuthenticatedLayout
             header={
@@ -55,7 +56,7 @@ export default function Analysis({ questionBank, analysis }) {
                                                 {/* Option Distribution */}
                                                 <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
                                                     <p className="text-sm text-gray-500 mb-2">Distribusi Jawaban</p>
-                                                    {item.option_distribution && Object.entries(item.option_distribution).map(([key, count]) => {
+                                                    {item.option_distribution && Object.entries(item.option_distribution).map(([key, count]: [string, number]) => {
                                                         const pct = item.total_answers > 0 ? Math.round((count / item.total_answers) * 100) : 0;
                                                         const isCorrect = key === item.answer_key;
                                                         return (

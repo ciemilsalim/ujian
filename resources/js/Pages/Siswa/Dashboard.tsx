@@ -2,8 +2,9 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import { Clock, BookOpen, ChevronRight, RefreshCw, AlertCircle, Calendar } from 'lucide-react';
+import { ExamSession } from '@/types';
 
-export default function Dashboard({ sessions }) {
+export default function Dashboard({ sessions }: { sessions: ExamSession[] }) {
     const [lastRefresh, setLastRefresh] = useState(new Date());
     const [countdown, setCountdown] = useState(30);
 

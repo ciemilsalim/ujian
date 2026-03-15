@@ -7,10 +7,11 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
+import { Subject, PaginationData } from '@/types';
 
-export default function Index({ subjects }) {
+export default function Index({ subjects }: { subjects: PaginationData<Subject> }) {
     const [showModal, setShowModal] = useState(false);
-    const [editingSubject, setEditingSubject] = useState(null);
+    const [editingSubject, setEditingSubject] = useState<Subject | null>(null);
 
     const { data, setData, post, put, delete: destroy, processing, errors, reset } = useForm({
         name: '',
@@ -23,7 +24,7 @@ export default function Index({ subjects }) {
         setShowModal(true);
     };
 
-    const openEditModal = (subject) => {
+    const openEditModal = (subject: Subject) => {
         setEditingSubject(subject);
         setData({
             name: subject.name,
@@ -32,7 +33,7 @@ export default function Index({ subjects }) {
         setShowModal(true);
     };
 
-    const submit = (e) => {
+    const submit = (e: React.FormEvent) => {
         e.preventDefault();
         const config = {
             onSuccess: () => {
@@ -48,7 +49,7 @@ export default function Index({ subjects }) {
         }
     };
 
-    const deleteSubject = (id) => {
+    const deleteSubject = (id: number) => {
         if (confirm('Apakah Anda yakin ingin menghapus mata pelajaran ini?')) {
             destroy(route('proktor.subjects.destroy', id));
         }

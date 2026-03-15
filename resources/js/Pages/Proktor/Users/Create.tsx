@@ -4,18 +4,19 @@ import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
+import { Classroom } from '@/types';
 
-export default function Create({ classrooms }) {
+export default function Create({ classrooms }: { classrooms: Classroom[] }) {
     const { data, setData, post, processing, errors } = useForm({
         username: '',
         name: '',
         email: '',
         password: '',
-        role: 'siswa',
+        role: 'siswa' as 'siswa' | 'guru' | 'proktor',
         classroom_id: '',
     });
 
-    const submit = (e) => {
+    const submit = (e: React.FormEvent) => {
         e.preventDefault();
         post(route('proktor.users.store'));
     };
@@ -89,7 +90,7 @@ export default function Create({ classrooms }) {
                                     <select
                                         id="role"
                                         value={data.role}
-                                        onChange={(e) => setData('role', e.target.value)}
+                                        onChange={(e) => setData('role', e.target.value as any)}
                                         className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
                                         required
                                     >
