@@ -13,7 +13,9 @@ class AttendanceController extends Controller
         $session = ExamSession::with(['exam', 'classroom', 'examUsers.user.classroom'])
             ->findOrFail($id);
 
-        $pdf = Pdf::loadView('pdf.attendance', compact('session'));
+        $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
+
+        $pdf = Pdf::loadView('pdf.attendance', compact('session', 'settings'));
         return $pdf->download("daftar_hadir_{$session->name}.pdf");
     }
 }

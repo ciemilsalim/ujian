@@ -10,6 +10,7 @@ export default function Index({ settings }) {
         school_name: settings.school_name || '',
         school_address: settings.school_address || '',
         passing_grade: settings.passing_grade || '70',
+        max_cheat_warnings: settings.max_cheat_warnings || '3',
     });
 
     const submit = (e) => {
@@ -81,6 +82,23 @@ export default function Index({ settings }) {
                                 />
                                 <p className="mt-1 text-sm text-gray-500">Batas nilai kelulusan (0-100). Default: 70</p>
                                 <InputError message={errors.passing_grade} className="mt-2" />
+                            </div>
+
+                            <div className="mt-6">
+                                <InputLabel htmlFor="max_cheat_warnings" value="Batas Peringatan Kecurangan" />
+                                <TextInput
+                                    id="max_cheat_warnings"
+                                    type="number"
+                                    min="1"
+                                    max="50"
+                                    value={data.max_cheat_warnings}
+                                    onChange={(e) => setData('max_cheat_warnings', e.target.value)}
+                                    className="mt-1 block w-32"
+                                    placeholder="3"
+                                    required
+                                />
+                                <p className="mt-1 text-sm text-gray-500">Jumlah maksimal peringatan sebelum siswa didiskualifikasi otomatis. Default: 3</p>
+                                <InputError message={errors.max_cheat_warnings} className="mt-2" />
                             </div>
 
                             <div className="mt-8 flex items-center justify-end">

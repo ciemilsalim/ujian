@@ -64,6 +64,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Guru\DashboardController::class, 'index'])->name('dashboard');
         Route::resource('question-banks', \App\Http\Controllers\Guru\QuestionBankController::class);
         Route::resource('questions', \App\Http\Controllers\Guru\QuestionController::class);
+        Route::post('/results/grade-essay', [\App\Http\Controllers\Guru\ExamResultController::class, 'gradeEssay'])->name('results.grade-essay');
         Route::get('/results', [\App\Http\Controllers\Guru\ExamResultController::class, 'index'])->name('results.index');
         Route::get('/results/{id}', [\App\Http\Controllers\Guru\ExamResultController::class, 'show'])->name('results.show');
         Route::get('/question-analysis/{id}', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('question-analysis.show');

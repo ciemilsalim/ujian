@@ -90,6 +90,7 @@ class ExamController extends Controller
         return \Inertia\Inertia::render('Siswa/History', [
             'examHistory' => $examHistory,
             'passingGrade' => $passingGrade,
+            'maxCheatWarnings' => (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3),
         ]);
     }
     public function reportCheat(Request $request)
@@ -118,8 +119,10 @@ class ExamController extends Controller
             $request->type . ' (Peringatan ke-' . $examSessionUser->cheat_warnings . ')'
         );
 
-        // Auto Disqualification if 3 or more warnings
-        if ($examSessionUser->cheat_warnings >= 3) {
+        // Auto Disqualification based on max_cheat_warnings setting
+        $maxWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);
+
+        if ($examSessionUser->cheat_warnings >= $maxWarnings) {
             $examSessionUser->update([
                 'status' => 'finished',
                 'finished_at' => now(),
@@ -153,6 +156,23 @@ class ExamController extends Controller
         $examSessionUser = \App\Models\ExamSessionUser::where('exam_session_id', $request->exam_session_id)
             ->where('user_id', auth()->id())
             ->firstOrFail();
+
+        // Guard: Jangan proses apapun jika ujian siswa sudah selesai
+        if ($examSessionUser->status === 'finished') {
+            if ($request->expectsJson()) {
+                return response()->json(['status' => 'already_finished']);
+            }
+            return redirect()->route('siswa.dashboard');
+        }
+
+        // Validasi sesi masih aktif sebelum menyimpan jawaban
+        $session = \App\Models\ExamSession::find($request->exam_session_id);
+        if (!$session || !$session->is_active) {
+            if ($request->expectsJson()) {
+                return response()->json(['status' => 'session_inactive', 'message' => 'Sesi ujian sudah tidak aktif. Hubungi Proktor.'], 403);
+            }
+            return redirect()->route('siswa.dashboard')->with('error', 'Sesi ujian sudah tidak aktif.');
+        }
 
         foreach ($request->answers as $questionId => $answer) {
             \App\Models\StudentAnswer::updateOrCreate(

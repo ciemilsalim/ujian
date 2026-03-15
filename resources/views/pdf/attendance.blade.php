@@ -5,99 +5,203 @@
     <meta charset="utf-8">
     <title>Daftar Hadir - {{ $session->name }}</title>
     <style>
-        body {
-            font-family: 'DejaVu Sans', sans-serif;
-            font-size: 12px;
+        @page {
+            margin: 1cm;
         }
 
-        .header {
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 11pt;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* Kop Surat */
+        .kop-surat {
+            border-bottom: 3px double #000;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
             text-align: center;
+        }
+
+        .kop-surat h1 {
+            font-size: 16pt;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .kop-surat p {
+            font-size: 10pt;
+            margin: 2px 0;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14pt;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+
+        /* Metadata Table */
+        .meta-table {
+            width: 100%;
             margin-bottom: 20px;
         }
 
-        .header h2 {
-            margin: 0;
+        .meta-table td {
+            vertical-align: top;
+            padding: 2px 0;
         }
 
-        .header p {
-            margin: 5px 0;
-            color: #555;
+        .label {
+            width: 120px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th,
-        td {
-            border: 1px solid #333;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f0f0f0;
-            font-size: 11px;
-        }
-
-        .signature-area {
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .sign-box {
-            width: 45%;
+        .separator {
+            width: 15px;
             text-align: center;
         }
 
-        .sign-line {
-            margin-top: 60px;
-            border-bottom: 1px solid #333;
+        /* Main Table */
+        table.main-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.main-table th,
+        table.main-table td {
+            border: 1px solid #000;
+            padding: 8px 5px;
+        }
+
+        table.main-table th {
+            background-color: #f2f2f2;
+            text-transform: uppercase;
+            font-size: 9pt;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Signature Columns */
+        .sign-col {
+            position: relative;
+            height: 45px;
+            font-size: 8pt;
+            vertical-align: top;
+            padding: 5px !important;
+        }
+
+        .sign-placeholder {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            border-bottom: 1px dotted #999;
+            width: 80%;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .footer td {
+            width: 50%;
+        }
+
+        .signature-box {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .name-line {
+            margin-top: 70px;
+            font-weight: bold;
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <h2>DAFTAR HADIR PESERTA UJIAN</h2>
-        <p><strong>{{ $session->exam->title ?? 'Ujian' }}</strong></p>
-        <p>Sesi: {{ $session->name }} | Kelas: {{ $session->classroom->name ?? '-' }}</p>
-        <p>Tanggal: {{ \Carbon\Carbon::parse($session->start_time)->format('d F Y') }}</p>
+    <!-- Kop Surat -->
+    <div class="kop-surat">
+        <h1>{{ $settings['school_name'] ?? 'INSTANSI PENDIDIKAN' }}</h1>
+        <p>{{ $settings['school_address'] ?? 'Alamat instansi belum dikonfigurasi di menu pengaturan proktor.' }}</p>
     </div>
 
-    <table>
+    <div class="title">DAFTAR HADIR PESERTA UJIAN</div>
+
+    <!-- Info Sesi -->
+    <table class="meta-table">
+        <tr>
+            <td class="label">Mata Pelajaran</td>
+            <td class="separator">:</td>
+            <td><strong>{{ $session->exam->title ?? '-' }}</strong></td>
+            
+            <td class="label" style="padding-left: 40px;">Sesi / Ruang</td>
+            <td class="separator">:</td>
+            <td>{{ $session->name }} / {{ $session->classroom->name ?? '-' }}</td>
+        </tr>
+        <tr>
+            <td class="label">Hari, Tanggal</td>
+            <td class="separator">:</td>
+            <td>{{ \Carbon\Carbon::parse($session->start_time)->translatedFormat('l, d F Y') }}</td>
+            
+            <td class="label" style="padding-left: 40px;">Waktu</td>
+            <td class="separator">:</td>
+            <td>{{ \Carbon\Carbon::parse($session->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($session->end_time)->format('H:i') }} WIB</td>
+        </tr>
+    </table>
+
+    <!-- Tabel Utama -->
+    <table class="main-table">
         <thead>
             <tr>
-                <th style="width:5%; text-align:center;">No</th>
-                <th style="width:30%;">Nama Siswa</th>
-                <th style="width:15%;">Username</th>
-                <th style="width:15%;">Kelas</th>
-                <th style="width:20%; text-align:center;">Tanda Tangan</th>
-                <th style="width:15%; text-align:center;">Keterangan</th>
+                <th width="5%">No</th>
+                <th width="15%">NIS / Username</th>
+                <th>Nama Peserta</th>
+                <th width="12%">Kelas</th>
+                <th width="25%">Tanda Tangan</th>
+                <th width="12%">Ket</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($session->examUsers as $i => $eu)
+            @foreach ($session->examUsers as $index => $eu)
                 <tr>
-                    <td style="text-align:center;">{{ $i + 1 }}</td>
+                    <td class="text-center">{{ $index + 1 }}</td>
+                    <td class="text-center">{{ $eu->user->username ?? '-' }}</td>
                     <td>{{ $eu->user->name ?? '-' }}</td>
-                    <td>{{ $eu->user->username ?? '-' }}</td>
-                    <td>{{ $eu->user->classroom->name ?? '-' }}</td>
-                    <td style="height:35px;"></td>
+                    <td class="text-center">{{ $eu->user->classroom->name ?? ($session->classroom->name ?? '-') }}</td>
+                    <td class="sign-col">
+                        <span style="color: #ccc;">{{ $index + 1 }}.</span>
+                        @if($index % 2 == 0)
+                            <div style="margin-left: 10px; margin-top: 5px;">..........................</div>
+                        @else
+                            <div style="margin-left: 50px; margin-top: 5px;">..........................</div>
+                        @endif
+                    </td>
                     <td></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-    <div style="margin-top:50px; float:right; text-align:center; width:200px;">
-        <p>Proktor/Pengawas,</p>
-        <br><br><br>
-        <p style="border-top:1px solid #333; padding-top:5px;">(_________________)</p>
-    </div>
+    <!-- Footer / Tanda Tangan -->
+    <table class="footer">
+        <tr>
+            <td></td>
+            <td class="signature-box">
+                <p>Kota, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
+                <p>Proktor/Pengawas,</p>
+                <div class="name-line">( ___________________________ )</div>
+                <p style="font-size: 9pt; margin-top: 5px;">NIP. ...........................</p>
+            </td>
+        </tr>
+    </table>
+
 </body>
 
 </html>

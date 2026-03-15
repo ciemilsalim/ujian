@@ -21,6 +21,7 @@ class SettingController extends Controller
             'school_name' => 'required|string|max:255',
             'school_address' => 'required|string',
             'passing_grade' => 'required|integer|min:0|max:100',
+            'max_cheat_warnings' => 'required|integer|min:1|max:50',
         ]);
 
         \App\Models\Setting::updateOrCreate(
@@ -36,6 +37,11 @@ class SettingController extends Controller
         \App\Models\Setting::updateOrCreate(
             ['key' => 'passing_grade'],
             ['value' => $request->passing_grade]
+        );
+
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'max_cheat_warnings'],
+            ['value' => $request->max_cheat_warnings]
         );
 
         return redirect()->back()->with('success', 'Pengaturan berhasil disimpan.');

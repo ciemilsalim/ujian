@@ -38,7 +38,7 @@ class SessionController
             'token' => strtoupper(\Illuminate\Support\Str::random(6)),
         ]);
 
-        return redirect()->back()->with('success', 'Session created successfully.');
+        return redirect()->back()->with('success', 'Sesi ujian berhasil dibuat.');
     }
 
     public function update(Request $request, $id)
@@ -60,7 +60,7 @@ class SessionController
             'end_time' => $request->end_time,
         ]);
 
-        return redirect()->back()->with('success', 'Session updated successfully.');
+        return redirect()->back()->with('success', 'Sesi ujian berhasil diperbarui.');
     }
 
     public function toggleActive($id)
