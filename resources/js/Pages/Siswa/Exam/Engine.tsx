@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { Head, useForm, router } from '@inertiajs/react';
 import { Toaster, toast } from 'sonner';
 import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen } from 'lucide-react';
@@ -23,6 +23,36 @@ export default function ExamEngine({
     const [timeLeft, setTimeLeft] = useState(serverTimeLeft);
     const [isTimeWarningShown, setIsTimeWarningShown] = useState(false);
     const currentQuestion = questions[currentQuestionIndex];
+
+    // Seeded shuffle for options to keep them consistent per user/session
+    const shuffledOptions = useMemo(() => {
+        if (!currentQuestion || currentQuestion.type !== 'pilihan_ganda') return [];
+        
+        const opts = currentQuestion.options;
+        if (!opts) return [];
+        
+        const entries = Object.entries(typeof opts === 'string' ? JSON.parse(opts) : opts);
+        
+        if (!session.exam?.random_option) return entries;
+        
+        const seed = currentQuestion.id + session.id;
+        const result = [...entries];
+        
+        let seedValue = seed;
+        const seededRandom = () => {
+            seedValue = (seedValue * 9301 + 49297) % 233280;
+            return seedValue / 233280;
+        };
+        
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(seededRandom() * (i + 1));
+            const temp = result[i];
+            result[i] = result[j];
+            result[j] = temp;
+        }
+        
+        return result;
+    }, [currentQuestion, session.id]);
 
     const { data, setData, post, processing } = useForm({
         answers: existingAnswers || {} as Record<string, string>, // question_id: answer
@@ -372,7 +402,7 @@ export default function ExamEngine({
                         <div className="space-y-4">
                             {currentQuestion.type === 'pilihan_ganda' ? (
                                 <div className="grid grid-cols-1 gap-3">
-                                    {currentQuestion.options && Object.entries(typeof currentQuestion.options === 'string' ? JSON.parse(currentQuestion.options) : (currentQuestion.options as object)).map(([key, value]) => (
+                                    {shuffledOptions.map(([key, value]) => (
                                         <button
                                             key={key}
                                             onClick={() => handleAnswer(currentQuestion.id, key)}

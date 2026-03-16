@@ -231,11 +231,19 @@ export default function Sidebar() {
                     <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Pengaturan</p>
                     <div className="space-y-1">
                         <SidebarItem
-                            href={route('proktor.settings.index')}
-                            icon={Settings}
-                            label="Pengaturan Sistem"
-                            active={route().current('proktor.settings.*')}
+                            href={route('profile.edit')}
+                            icon={Users}
+                            label="Profil Saya"
+                            active={route().current('profile.edit')}
                         />
+                        {user.role === 'proktor' && (
+                            <SidebarItem
+                                href={route('proktor.settings.index')}
+                                icon={Settings}
+                                label="Pengaturan Sistem"
+                                active={route().current('proktor.settings.*')}
+                            />
+                        )}
                         <button
                             onClick={toggleDarkMode}
                             className="w-full flex items-center justify-between px-3 py-2.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition group text-sm font-medium"

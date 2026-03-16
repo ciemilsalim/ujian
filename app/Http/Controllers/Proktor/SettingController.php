@@ -46,4 +46,24 @@ class SettingController extends Controller
 
         return redirect()->back()->with('success', 'Pengaturan berhasil disimpan.');
     }
+
+    public function clearData(Request $request)
+    {
+        if (!$request->confirm_wipe) {
+            return redirect()->back()->with('error', 'Konfirmasi pembersihan data diperlukan.');
+        }
+
+        \Illuminate\Support\Facades\DB::transaction(function () {
+            // Delete answers first (foreign key constraint)
+            \App\Models\StudentAnswer::query()->delete();
+            
+            // Delete exam session users
+            \App\Models\ExamSessionUser::query()->delete();
+            
+            // Delete exam sessions
+            \App\Models\ExamSession::query()->delete();
+        });
+
+        return redirect()->back()->with('success', 'Seluruh data ujian, jawaban, dan sesi telah berhasil dibersihkan.');
+    }
 }

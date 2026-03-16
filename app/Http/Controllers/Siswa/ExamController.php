@@ -28,6 +28,12 @@ class ExamController extends Controller
     {
         $session = \App\Models\ExamSession::with(['exam.questionBank.questions'])->findOrFail($id);
 
+        // Randomize questions if enabled
+        if ($session->exam->random_question) {
+            $shuffledQuestions = $session->exam->questionBank->questions->shuffle(auth()->id());
+            $session->exam->questionBank->setRelation('questions', $shuffledQuestions);
+        }
+
         // Initializing session record for user if not exists
         $examUser = \App\Models\ExamSessionUser::with('user')->firstOrCreate(
             ['exam_session_id' => $id, 'user_id' => auth()->id()],

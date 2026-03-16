@@ -55,6 +55,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'index'])->name('settings.index');
         Route::post('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'store'])->name('settings.store');
+        Route::post('/settings/clear-data', [\App\Http\Controllers\Proktor\SettingController::class, 'clearData'])->name('settings.clear-data');
         Route::get('/exam-cards', [\App\Http\Controllers\Proktor\ExamCardController::class, 'index'])->name('exam-cards.index');
         Route::post('/exam-cards/generate', [\App\Http\Controllers\Proktor\ExamCardController::class, 'generate'])->name('exam-cards.generate');
     });
