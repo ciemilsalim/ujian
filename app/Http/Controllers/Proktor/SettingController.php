@@ -22,27 +22,31 @@ class SettingController extends Controller
             'school_address' => 'required|string',
             'passing_grade' => 'required|integer|min:0|max:100',
             'max_cheat_warnings' => 'required|integer|min:1|max:50',
+            'enable_anti_cheat' => 'required|boolean',
+            'block_context_menu' => 'required|boolean',
+            'block_copy_paste' => 'required|boolean',
+            'detect_tab_switch' => 'required|boolean',
+            'force_fullscreen' => 'required|boolean',
         ]);
 
-        \App\Models\Setting::updateOrCreate(
-            ['key' => 'school_name'],
-            ['value' => $request->school_name]
-        );
+        $settings = [
+            'school_name' => $request->school_name,
+            'school_address' => $request->school_address,
+            'passing_grade' => $request->passing_grade,
+            'max_cheat_warnings' => $request->max_cheat_warnings,
+            'enable_anti_cheat' => $request->enable_anti_cheat,
+            'block_context_menu' => $request->block_context_menu,
+            'block_copy_paste' => $request->block_copy_paste,
+            'detect_tab_switch' => $request->detect_tab_switch,
+            'force_fullscreen' => $request->force_fullscreen,
+        ];
 
-        \App\Models\Setting::updateOrCreate(
-            ['key' => 'school_address'],
-            ['value' => $request->school_address]
-        );
-
-        \App\Models\Setting::updateOrCreate(
-            ['key' => 'passing_grade'],
-            ['value' => $request->passing_grade]
-        );
-
-        \App\Models\Setting::updateOrCreate(
-            ['key' => 'max_cheat_warnings'],
-            ['value' => $request->max_cheat_warnings]
-        );
+        foreach ($settings as $key => $value) {
+            \App\Models\Setting::updateOrCreate(
+                ['key' => $key],
+                ['value' => $value]
+            );
+        }
 
         return redirect()->back()->with('success', 'Pengaturan berhasil disimpan.');
     }

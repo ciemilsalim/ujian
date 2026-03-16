@@ -11,14 +11,22 @@ export default function ExamEngine({
     questions,
     examUser,
     serverTimeLeft,
-    existingAnswers
+    existingAnswers,
+    settings
 }: {
     session: ExamSession,
     questions: Question[],
     examUser: ExamUser,
     serverTimeLeft: number,
-    existingAnswers: Record<string, string>
+    existingAnswers: Record<string, string>,
+    settings?: Record<string, string | boolean>
 }) {
+    const isAntiCheatEnabled = settings?.enable_anti_cheat === '1' || settings?.enable_anti_cheat === true;
+    const isBlockContextMenu = settings?.block_context_menu === '1' || settings?.block_context_menu === true;
+    const isBlockCopyPaste = settings?.block_copy_paste === '1' || settings?.block_copy_paste === true;
+    const isDetectTabSwitch = settings?.detect_tab_switch === '1' || settings?.detect_tab_switch === true;
+    const isForceFullscreen = settings?.force_fullscreen === '1' || settings?.force_fullscreen === true;
+
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [timeLeft, setTimeLeft] = useState(serverTimeLeft);
     const [isTimeWarningShown, setIsTimeWarningShown] = useState(false);
@@ -99,6 +107,8 @@ export default function ExamEngine({
 
         // Anti-Cheat Handlers
         const reportViolation = (type: string) => {
+            if (!isAntiCheatEnabled) return;
+
             axios.post(route('siswa.exams.report-cheat'), {
                 exam_session_id: session.id,
                 type: type
@@ -117,29 +127,35 @@ export default function ExamEngine({
         };
 
         const handleVisibilityChange = () => {
-            if (document.hidden) reportViolation('tab_switch');
+            if (document.hidden && isDetectTabSwitch) reportViolation('tab_switch');
         };
 
         const handleBlur = () => {
-            reportViolation('window_blur');
+            if (isDetectTabSwitch) reportViolation('window_blur');
         };
 
-        const handleContextMenu = (e: Event) => e.preventDefault();
+        const handleContextMenu = (e: Event) => {
+            if (isBlockContextMenu) e.preventDefault();
+        };
 
         const handleCopyPaste = (e: Event) => {
-            e.preventDefault();
-            reportViolation('copy_paste_attempt');
+            if (isBlockCopyPaste) {
+                e.preventDefault();
+                reportViolation('copy_paste_attempt');
+            }
         };
 
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'F12' || (e.ctrlKey && (e.key.toLowerCase() === 'u' || (e.shiftKey && e.key.toLowerCase() === 'i')))) {
-                e.preventDefault();
-                reportViolation('developer_tools_attempt');
+                if (isAntiCheatEnabled) {
+                    e.preventDefault();
+                    reportViolation('developer_tools_attempt');
+                }
             }
         };
 
         const handleFullscreenChange = () => {
-            if (!document.fullscreenElement) {
+            if (!document.fullscreenElement && isForceFullscreen) {
                 reportViolation('exited_fullscreen');
             }
         };

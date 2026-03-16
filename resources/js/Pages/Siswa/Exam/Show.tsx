@@ -10,12 +10,14 @@ export default function Show({
     session,
     examUser,
     serverTimeLeft,
-    existingAnswers
+    existingAnswers,
+    settings
 }: {
     session: any,
     examUser: any,
     serverTimeLeft: number,
-    existingAnswers: Record<number, string>
+    existingAnswers: Record<number, string>,
+    settings: any
 }) {
     const [isStarted, setIsStarted] = useState(false);
     const [tokenError, setTokenError] = useState('');
@@ -48,6 +50,7 @@ export default function Show({
             examUser={examUser}
             serverTimeLeft={serverTimeLeft}
             existingAnswers={existingAnswers}
+            settings={settings}
         />;
     }
 

@@ -11,21 +11,37 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 class StudentsImport implements ToModel, WithHeadingRow
 {
     protected $classroomId;
+    protected $classrooms;
 
-    public function __construct($classroomId)
+    public function __construct($classroomId = null)
     {
         $this->classroomId = $classroomId;
+        $this->classrooms = \App\Models\Classroom::all()->pluck('id', 'name')->mapWithKeys(function ($id, $name) {
+            return [strtolower(trim($name)) => $id];
+        });
     }
 
     public function model(array $row)
     {
+        $name = $row['nama'] ?? ($row['name'] ?? null);
+        $username = $row['nis'] ?? ($row['username'] ?? null);
+        $className = strtolower(trim($row['kelas'] ?? ($row['classroom'] ?? '')));
+        
+        $finalClassroomId = $this->classroomId ?: ($this->classrooms[$className] ?? null);
+
+        if (!$name || !$username) return null;
+
+        // Cek jika user sudah ada (berdasarkan username/NIS)
+        $existing = User::where('username', $username)->first();
+        if ($existing) return null;
+
         return new User([
-            'username' => $row['username'],
-            'name' => $row['nama'],
+            'username' => $username,
+            'name' => $name,
             'email' => $row['email'] ?? null,
-            'password' => Hash::make($row['password'] ?? 'password123'),
+            'password' => Hash::make($row['password'] ?? 'siswa123'),
             'role' => 'siswa',
-            'classroom_id' => $this->classroomId,
+            'classroom_id' => $finalClassroomId,
         ]);
     }
 }

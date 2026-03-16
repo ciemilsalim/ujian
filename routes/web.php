@@ -28,6 +28,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['role:proktor'])->prefix('proktor')->name('proktor.')->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Proktor\DashboardController::class, 'index'])->name('dashboard');
         Route::get('/dashboard/health', [\App\Http\Controllers\Proktor\DashboardController::class, 'health'])->name('dashboard.health');
+        Route::get('/users/template-excel', [\App\Http\Controllers\Proktor\UserController::class, 'downloadTemplateExcel'])->name('users.template-excel');
+        Route::get('/users/template-word', [\App\Http\Controllers\Proktor\UserController::class, 'downloadTemplateWord'])->name('users.template-word');
         Route::post('/users/import', [\App\Http\Controllers\Proktor\UserController::class, 'importStudents'])->name('users.import');
         Route::resource('users', \App\Http\Controllers\Proktor\UserController::class);
         Route::resource('exams', \App\Http\Controllers\Proktor\ExamController::class);
@@ -63,7 +65,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Guru Routes
     Route::middleware(['role:guru'])->prefix('guru')->name('guru.')->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Guru\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/question-banks/template-excel', [\App\Http\Controllers\Guru\QuestionBankController::class, 'downloadTemplateExcel'])->name('question-banks.template-excel');
+        Route::get('/question-banks/template-word', [\App\Http\Controllers\Guru\QuestionBankController::class, 'downloadTemplateWord'])->name('question-banks.template-word');
         Route::resource('question-banks', \App\Http\Controllers\Guru\QuestionBankController::class);
+        Route::post('/question-banks/{id}/import-excel', [\App\Http\Controllers\Guru\QuestionBankController::class, 'importExcel'])->name('question-banks.import-excel');
+        Route::post('/question-banks/{id}/import-word', [\App\Http\Controllers\Guru\QuestionBankController::class, 'importWord'])->name('question-banks.import-word');
         Route::resource('questions', \App\Http\Controllers\Guru\QuestionController::class);
         Route::post('/results/grade-essay', [\App\Http\Controllers\Guru\ExamResultController::class, 'gradeEssay'])->name('results.grade-essay');
         Route::get('/results', [\App\Http\Controllers\Guru\ExamResultController::class, 'index'])->name('results.index');

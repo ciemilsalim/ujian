@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, useForm, router } from '@inertiajs/react';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -9,6 +9,7 @@ import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
 import { QuestionBank, Question } from '@/types';
+import { FileSpreadsheet, FileText, Upload, ChevronDown } from 'lucide-react';
 
 const defaultOptions = { a: '', b: '', c: '', d: '', e: '' };
 
@@ -16,7 +17,35 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [showImportDropdown, setShowImportDropdown] = useState(false);
     const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
+
+    const excelInputRef = useRef<HTMLInputElement>(null);
+    const wordInputRef = useRef<HTMLInputElement>(null);
+
+    const handleImportExcel = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files?.[0]) return;
+        const formData = new FormData();
+        formData.append('file', e.target.files[0]);
+        router.post(route('guru.question-banks.import-excel', questionBank.id), formData, {
+            onSuccess: () => {
+                setShowImportDropdown(false);
+                if (excelInputRef.current) excelInputRef.current.value = '';
+            },
+        });
+    };
+
+    const handleImportWord = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files?.[0]) return;
+        const formData = new FormData();
+        formData.append('file', e.target.files[0]);
+        router.post(route('guru.question-banks.import-word', questionBank.id), formData, {
+            onSuccess: () => {
+                setShowImportDropdown(false);
+                if (wordInputRef.current) wordInputRef.current.value = '';
+            },
+        });
+    };
 
     const createForm = useForm({
         question_bank_id: questionBank.id,
@@ -177,12 +206,49 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                     <h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
                         Detail Bank Soal: {questionBank.name}
                     </h2>
-                    <button
-                        onClick={() => setShowCreateModal(true)}
-                        className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
-                    >
-                        Tambah Soal
-                    </button>
+                    <div className="flex gap-2 relative">
+                        <div className="relative">
+                            <button
+                                onClick={() => setShowImportDropdown(!showImportDropdown)}
+                                className="flex items-center gap-2 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                            >
+                                <Upload className="w-4 h-4" />
+                                Import
+                                <ChevronDown className="w-4 h-4" />
+                            </button>
+                            
+                            {showImportDropdown && (
+                                <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                    <div className="py-1">
+                                        <button
+                                            onClick={() => excelInputRef.current?.click()}
+                                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
+                                        >
+                                            <FileSpreadsheet className="w-4 h-4 text-green-600" />
+                                            Import Excel
+                                        </button>
+                                        <button
+                                            onClick={() => wordInputRef.current?.click()}
+                                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
+                                        >
+                                            <FileText className="w-4 h-4 text-blue-600" />
+                                            Import Word
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        <button
+                            onClick={() => setShowCreateModal(true)}
+                            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+                        >
+                            Tambah Soal
+                        </button>
+
+                        <input type="file" ref={excelInputRef} onChange={handleImportExcel} className="hidden" accept=".xlsx,.xls" />
+                        <input type="file" ref={wordInputRef} onChange={handleImportWord} className="hidden" accept=".docx" />
+                    </div>
                 </div>
             }
         >
@@ -192,10 +258,23 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
-                            <div className="mb-6">
-                                <h3 className="text-lg font-bold">Informasi Bank Soal</h3>
-                                <p className="text-gray-600 dark:text-gray-400">Mata Pelajaran: {questionBank.subject?.name}</p>
-                                <p className="text-gray-600 dark:text-gray-400">Deskripsi: {questionBank.description || '-'}</p>
+                            <div className="mb-6 flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-lg font-bold">Informasi Bank Soal</h3>
+                                    <p className="text-gray-600 dark:text-gray-400">Mata Pelajaran: {questionBank.subject?.name}</p>
+                                    <p className="text-gray-600 dark:text-gray-400">Deskripsi: {questionBank.description || '-'}</p>
+                                </div>
+                                <div className="text-right">
+                                    <p className="text-xs text-gray-500 font-bold uppercase mb-2">Download Template</p>
+                                    <div className="flex gap-2">
+                                        <a href={route('guru.question-banks.template-excel')} className="p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-1 text-xs" title="Excel Template">
+                                            <FileSpreadsheet className="w-4 h-4 text-green-600" /> XLSX
+                                        </a>
+                                        <a href={route('guru.question-banks.template-word')} className="p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-1 text-xs" title="Word Template">
+                                            <FileText className="w-4 h-4 text-blue-600" /> DOCX
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
 
                             <hr className="my-6 border-gray-200 dark:border-gray-700" />
@@ -219,7 +298,10 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                     </span>
                                                     <span className="text-xs text-gray-500">Skor: {question.score_default}</span>
                                                 </div>
-                                                <p className="text-gray-900 dark:text-gray-100 mb-4 whitespace-pre-wrap">{question.question_text}</p>
+                                                <div 
+                                                    className="text-gray-900 dark:text-gray-100 mb-4 prose dark:prose-invert max-w-full"
+                                                    dangerouslySetInnerHTML={{ __html: question.question_text }}
+                                                />
 
                                                 {question.type === 'pilihan_ganda' && question.options && (
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

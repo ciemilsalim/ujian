@@ -7,6 +7,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import InputLabel from '@/Components/InputLabel';
 import InputError from '@/Components/InputError';
 import { User, Classroom, PaginationData } from '@/types';
+import { FileSpreadsheet, FileText, Upload, Download } from 'lucide-react';
 
 interface IndexProps {
     users: PaginationData<User>;
@@ -48,12 +49,13 @@ export default function Index({ users, classrooms }: IndexProps) {
                     <h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
                         Manajemen User
                     </h2>
-                    <div className="space-x-2">
+                    <div className="flex gap-2">
                         <button
                             onClick={() => setShowImportModal(true)}
-                            className="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500"
+                            className="flex items-center gap-2 rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500"
                         >
-                            Import Siswa (Excel)
+                            <Upload className="w-4 h-4" />
+                            Import Siswa
                         </button>
                         <Link
                             href={route('proktor.users.create')}
@@ -103,20 +105,47 @@ export default function Index({ users, classrooms }: IndexProps) {
 
             <Modal show={showImportModal} onClose={() => setShowImportModal(false)}>
                 <form onSubmit={submitImport} className="p-6">
-                    <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                        Import Siswa dari Excel
-                    </h2>
+                    <div className="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                                Import Siswa Massal
+                            </h2>
+                            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                Mendukung file Excel (.xlsx) dan Word (.docx)
+                            </p>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <span className="text-[10px] font-bold text-gray-500 uppercase text-right">Template</span>
+                            <div className="flex gap-2">
+                                <a href={route('proktor.users.template-excel')} className="flex items-center gap-1 p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 text-xs" title="Excel Template">
+                                    <FileSpreadsheet className="w-4 h-4 text-green-600" /> XLSX
+                                </a>
+                                <a href={route('proktor.users.template-word')} className="flex items-center gap-1 p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 text-xs" title="Word Template">
+                                    <FileText className="w-4 h-4 text-blue-600" /> DOCX
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div className="mt-4">
-                        <InputLabel htmlFor="classroom_id_import" value="Pilih Kelas" />
+                    <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-lg">
+                        <h4 className="text-xs font-bold text-blue-800 dark:text-blue-300 uppercase mb-2">Panduan Import:</h4>
+                        <ul className="text-xs text-blue-700 dark:text-blue-400 space-y-1 list-disc ml-4">
+                            <li>Gunakan kolom: <b>Nama, NIS, Kelas, Email, Password</b>.</li>
+                            <li><b>NIS</b> akan digunakan sebagai username login unik.</li>
+                            <li>Jika kolom <b>Kelas</b> kosong, silakan pilih kelas di bawah ini.</li>
+                            <li>Jika mengunggah <b>Word</b>, pastikan data berada di dalam tabel.</li>
+                        </ul>
+                    </div>
+
+                    <div className="mt-6">
+                        <InputLabel htmlFor="classroom_id_import" value="Tentukan Kelas (Jika di file tidak ada)" />
                         <select
                             id="classroom_id_import"
                             value={data.classroom_id}
                             onChange={(e) => setData('classroom_id', e.target.value)}
                             className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
-                            required
                         >
-                            <option value="">Pilih Kelas</option>
+                            <option value="">Deteksi dari File (Otomatis)</option>
                             {classrooms.map((classroom) => (
                                 <option key={classroom.id} value={classroom.id}>
                                     {classroom.name}
@@ -127,24 +156,26 @@ export default function Index({ users, classrooms }: IndexProps) {
                     </div>
 
                     <div className="mt-4">
-                        <InputLabel htmlFor="file" value="File Excel (.xlsx, .xls)" />
+                        <InputLabel htmlFor="file" value="Pilih File (.xlsx, .xls, .docx)" />
                         <input
                             type="file"
                             id="file"
                             className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
                             onChange={(e) => setData('file', e.target.files ? e.target.files[0] : null)}
                             required
+                            accept=".xlsx,.xls,.docx"
                         />
                         <InputError message={errors.file} className="mt-2" />
                     </div>
 
-                    <div className="mt-6 flex justify-end">
+                    <div className="mt-8 flex justify-end">
                         <SecondaryButton onClick={() => setShowImportModal(false)}>
                             Batal
                         </SecondaryButton>
 
                         <PrimaryButton className="ml-3" disabled={processing}>
-                            Import
+                            <Upload className="w-4 h-4 mr-2" />
+                            Mulai Import
                         </PrimaryButton>
                     </div>
                 </form>

@@ -28,16 +28,31 @@ class UserController
     public function importStudents(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:xlsx,xls,csv',
-            'classroom_id' => 'required|exists:classrooms,id',
+            'file' => 'required',
         ]);
 
-        \Maatwebsite\Excel\Facades\Excel::import(
-            new \App\Imports\StudentsImport($request->classroom_id),
-            $request->file('file')
-        );
+        $file = $request->file('file');
+        $extension = $file->getClientOriginalExtension();
 
-        return redirect()->route('proktor.users.index')->with('success', 'Students imported successfully.');
+        try {
+            if (in_array($extension, ['xlsx', 'xls'])) {
+                \Maatwebsite\Excel\Facades\Excel::import(
+                    new \App\Imports\StudentsImport($request->classroom_id),
+                    $file
+                );
+                $message = 'Siswa berhasil diimport dari Excel.';
+            } elseif ($extension === 'docx') {
+                $service = new \App\Services\StudentWordImportService();
+                $count = $service->import($file->getRealPath());
+                $message = "Berhasil mengimport {$count} siswa dari Word.";
+            } else {
+                return redirect()->back()->with('error', 'Format file harus Excel (.xlsx, .xls) atau Word (.docx).');
+            }
+
+            return redirect()->route('proktor.users.index')->with('success', $message);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal import: ' . $e->getMessage());
+        }
     }
 
     public function store(Request $request)
@@ -101,5 +116,58 @@ class UserController
         $user->delete();
 
         return redirect()->route('proktor.users.index')->with('success', 'User deleted successfully.');
+    }
+
+    public function downloadTemplateExcel()
+    {
+        $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        
+        $headers = ['Nama', 'NIS', 'Kelas', 'Email', 'Password'];
+        foreach ($headers as $col => $header) {
+            $sheet->setCellValueByColumnAndRow($col + 1, 1, $header);
+        }
+
+        // Sample Data
+        $sheet->setCellValue('A2', 'Andi Siswa');
+        $sheet->setCellValue('B2', '123456');
+        $sheet->setCellValue('C2', 'X IPA 1');
+        $sheet->setCellValue('D2', 'andi@example.com');
+        $sheet->setCellValue('E2', 'password123');
+
+        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
+        $fileName = 'Template_Import_Siswa.xlsx';
+        
+        return response()->streamDownload(function() use ($writer) {
+            $writer->save('php://output');
+        }, $fileName);
+    }
+
+    public function downloadTemplateWord()
+    {
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
+        $section = $phpWord->addSection();
+        
+        $section->addText('TEMPLATE IMPORT SISWA', ['bold' => true, 'size' => 16]);
+        $section->addText('Pastikan data berada dalam tabel seperti contoh di bawah ini:', ['italic' => true]);
+        $section->addTextBreak(1);
+        
+        $table = $section->addTable(['borderSize' => 6, 'borderColor' => '000000', 'cellMargin' => 80]);
+        $table->addRow();
+        $table->addCell(4000)->addText('Nama', ['bold' => true]);
+        $table->addCell(2000)->addText('NIS', ['bold' => true]);
+        $table->addCell(2000)->addText('Kelas', ['bold' => true]);
+
+        $table->addRow();
+        $table->addCell(4000)->addText('Andi Siswa');
+        $table->addCell(2000)->addText('123456');
+        $table->addCell(2000)->addText('X IPA 1');
+
+        $fileName = 'Template_Import_Siswa.docx';
+        $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+
+        return response()->streamDownload(function() use ($writer) {
+            $writer->save('php://output');
+        }, $fileName);
     }
 }

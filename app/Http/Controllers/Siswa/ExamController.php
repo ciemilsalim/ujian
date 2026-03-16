@@ -74,11 +74,15 @@ class ExamController extends Controller
             ->pluck('answer_text', 'question_id')
             ->toArray();
 
+        // Fetch all application settings
+        $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
+
         return \Inertia\Inertia::render('Siswa/Exam/Show', [
             'session' => $session,
             'examUser' => $examUser,
             'serverTimeLeft' => $timeLeft,
-            'existingAnswers' => $existingAnswers
+            'existingAnswers' => $existingAnswers,
+            'settings' => $settings
         ]);
     }
 
