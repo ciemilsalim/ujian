@@ -27,7 +27,7 @@ class ExamController extends Controller
 
     public function show($id)
     {
-        $session = \App\Models\ExamSession::with(['exam.questionBank.questions'])->findOrFail($id);
+        $session = \App\Models\ExamSession::with(['exam.questionBank.subject', 'classroom', 'exam.questionBank.questions'])->findOrFail($id);
 
         // Validasi waktu akses
         $now = now();
@@ -46,7 +46,7 @@ class ExamController extends Controller
         }
 
         // Initializing session record for user if not exists
-        $examUser = \App\Models\ExamSessionUser::with('user')->firstOrCreate(
+        $examUser = \App\Models\ExamSessionUser::with(['user.classroom'])->firstOrCreate(
             ['exam_session_id' => $id, 'user_id' => auth()->id()],
             ['status' => 'working']
         );

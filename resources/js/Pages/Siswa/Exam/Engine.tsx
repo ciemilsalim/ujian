@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Head, useForm, router } from '@inertiajs/react';
 import { Toaster, toast } from 'sonner';
-import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen } from 'lucide-react';
+import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen, User, Home, Type } from 'lucide-react';
 import axios from 'axios';
 
 import { ExamSession, Question, ExamUser } from '@/types';
@@ -28,6 +28,15 @@ export default function ExamEngine({
     const isForceFullscreen = settings?.force_fullscreen === '1' || settings?.force_fullscreen === true;
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [fontSize, setFontSize] = useState<'small' | 'medium' | 'large'>('medium');
+    
+    // Log state changes (development only)
+    /*
+    useEffect(() => {
+        console.log(`[DEBUG] currentQuestionIndex changed to: ${currentQuestionIndex}`);
+    }, [currentQuestionIndex]);
+    */
+
     const [timeLeft, setTimeLeft] = useState(serverTimeLeft);
     const [isTimeWarningShown, setIsTimeWarningShown] = useState(false);
     const currentQuestion = questions[currentQuestionIndex];
@@ -249,13 +258,15 @@ export default function ExamEngine({
     }, []);
 
     const formatTime = (seconds: number) => {
-        const h = Math.floor(seconds / 3600);
-        const m = Math.floor((seconds % 3600) / 60);
-        const s = seconds % 60;
+        const totalSeconds = Math.max(0, Math.floor(seconds));
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
         return `${h > 0 ? h + ':' : ''}${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
     };
 
     const handleAnswer = (questionId: number, answer: string) => {
+        // console.log(`[DEBUG] handleAnswer called for question ${questionId}. currentQuestionIndex is ${currentQuestionIndex}`);
         const newAnswers = { ...data.answers, [questionId]: answer };
         setData('answers', newAnswers);
 
@@ -263,6 +274,7 @@ export default function ExamEngine({
         if (autoSaveDebounceRef.current) clearTimeout(autoSaveDebounceRef.current);
         const delay = currentQuestion?.type === 'essay' ? 1000 : 500;
         autoSaveDebounceRef.current = setTimeout(() => {
+            // console.log(`[DEBUG] Debounce auto-save triggered. Sending to server. answers count: ${Object.keys(newAnswers).length}`);
             router.post(route('siswa.exams.submit'), {
                 exam_session_id: session.id,
                 answers: newAnswers
@@ -270,6 +282,12 @@ export default function ExamEngine({
                 preserveScroll: true,
                 preserveState: true,
                 only: [],
+                onStart: () => {
+                    // console.log('[DEBUG] Auto-save request started');
+                },
+                onFinish: () => {
+                    // console.log('[DEBUG] Auto-save request finished');
+                },
                 onError: () => {
                     // Sesi sudah tidak aktif atau sudah finished — tidak perlu lakukan apapun
                 }
@@ -313,28 +331,74 @@ export default function ExamEngine({
 
             {/* Sticky Header Baru */}
             <header className="fixed top-0 inset-x-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 z-40 transition-all duration-300">
-                <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-200 dark:shadow-none rotate-3 group-hover:rotate-0 transition-transform">
+                <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                        <div className="hidden sm:flex w-12 h-12 bg-indigo-600 rounded-2xl items-center justify-center text-white font-black text-xl shadow-lg shadow-indigo-200 dark:shadow-none rotate-3">
                             E
                         </div>
-                        <div className="hidden sm:block">
-                            <h1 className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate max-w-[200px]">{session.exam?.title}</h1>
-                            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">{session.name}</p>
+                        <div className="flex flex-col">
+                            <h1 className="text-sm sm:text-base font-black text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                                <span className="truncate max-w-[150px] sm:max-w-[300px]">{session.exam?.title}</span>
+                                <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></span>
+                                <span className="hidden sm:inline-block text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-0.5 rounded-lg uppercase">
+                                    {session.exam?.question_bank?.subject?.name || 'Mata Pelajaran'}
+                                </span>
+                            </h1>
+                            <div className="flex items-center gap-3 mt-0.5">
+                                <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+                                    <User className="w-3 h-3" /> {examUser.user?.name}
+                                </p>
+                                <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
+                                <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+                                    <Home className="w-3 h-3" /> {session.classroom?.name || examUser.user?.classroom?.name || 'Semua Kelas'}
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
-                        <div className={`flex items-center gap-2 px-4 py-2 rounded-2xl border-2 transition-all ${timeLeft < 300 ? 'border-red-500 bg-red-50 dark:bg-red-900/20 text-red-600' : 'border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300'}`}>
-                            <Clock className={`w-4 h-4 ${timeLeft < 300 ? 'animate-pulse' : ''}`} />
-                            <span className="font-mono font-bold text-lg leading-none">{formatTime(timeLeft)}</span>
+                    <div className="flex items-center gap-3 sm:gap-4">
+                        {/* Font Size Toggle */}
+                        <div className="flex items-center bg-gray-50 dark:bg-gray-800 rounded-2xl p-1 border border-gray-100 dark:border-gray-700 shadow-sm">
+                            <button
+                                type="button"
+                                onClick={() => setFontSize('small')}
+                                className={`p-2 rounded-xl transition-all ${fontSize === 'small' ? 'bg-white dark:bg-gray-700 text-indigo-600 shadow-sm' : 'text-gray-400 hover:text-gray-600'}`}
+                                title="Font Kecil"
+                            >
+                                <Type className="w-4 h-4" />
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setFontSize('medium')}
+                                className={`p-2 rounded-xl transition-all ${fontSize === 'medium' ? 'bg-white dark:bg-gray-700 text-indigo-600 shadow-sm' : 'text-gray-400 hover:text-gray-600'}`}
+                                title="Font Sedang"
+                            >
+                                <Type className="w-5 h-5" />
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setFontSize('large')}
+                                className={`p-2 rounded-xl transition-all ${fontSize === 'large' ? 'bg-white dark:bg-gray-700 text-indigo-600 shadow-sm' : 'text-gray-400 hover:text-gray-600'}`}
+                                title="Font Besar"
+                            >
+                                <Type className="w-6 h-6" />
+                            </button>
+                        </div>
+
+                        <div className={`flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-2xl border-2 transition-all shadow-sm ${timeLeft < 300 ? 'border-red-500 bg-red-50 dark:bg-red-900/20 text-red-600 animate-pulse' : 'border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300'}`}>
+                            <Clock className="w-4 h-4 sm:w-5 h-5" />
+                            <div className="flex flex-col items-center leading-none">
+                                <span className="text-[10px] uppercase font-black tracking-tighter opacity-50 mb-0.5">Sisa Waktu</span>
+                                <span className="font-mono font-bold text-base sm:text-xl">{formatTime(timeLeft)}</span>
+                            </div>
                         </div>
                         
                         <button 
+                            type="button"
                             onClick={() => setIsDrawerOpen(true)}
-                            className="lg:hidden p-2 rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-100 dark:border-gray-700"
+                            className="lg:hidden p-3 rounded-2xl bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-100 dark:border-gray-700 shadow-sm hover:bg-gray-50 transition-colors"
                         >
-                            <LayoutGrid className="w-5 h-5" />
+                            <LayoutGrid className="w-6 h-6" />
                         </button>
                     </div>
                 </div>
@@ -348,7 +412,7 @@ export default function ExamEngine({
                 </div>
             </header>
 
-            <main className="flex-1 flex pt-20 pb-24 lg:pb-0 overflow-hidden">
+            <main className="flex-1 flex pt-24 lg:pb-0 overflow-hidden">
                 {/* Side Navigation for Desktop */}
                 <aside className="hidden lg:flex w-80 flex-col border-r border-gray-100 dark:border-gray-800 bg-gray-50/30 dark:bg-gray-900/30 p-6 overflow-y-auto">
                     <div className="mb-6 flex items-center justify-between">
@@ -361,6 +425,7 @@ export default function ExamEngine({
                     <div className="grid grid-cols-5 gap-2 pb-6">
                         {questions.map((q, idx) => (
                             <button
+                                type="button"
                                 key={q.id}
                                 onClick={() => {
                                     setCurrentQuestionIndex(idx);
@@ -412,7 +477,9 @@ export default function ExamEngine({
 
                         {/* Question Text */}
                         <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-100 dark:border-gray-800">
-                            <div className="prose dark:prose-invert max-w-none text-lg sm:text-xl font-medium leading-relaxed text-gray-800 dark:text-gray-200" dangerouslySetInnerHTML={{ __html: currentQuestion.question_text }} />
+                            <div className={`prose dark:prose-invert max-w-none font-medium leading-relaxed text-gray-800 dark:text-gray-200 transition-all duration-300 ${
+                                fontSize === 'small' ? 'text-base' : fontSize === 'large' ? 'text-2xl sm:text-3xl' : 'text-lg sm:text-xl'
+                            }`} dangerouslySetInnerHTML={{ __html: currentQuestion.question_text }} />
                         </div>
 
                         {/* Options / Answer Area */}
@@ -421,6 +488,7 @@ export default function ExamEngine({
                                 <div className="grid grid-cols-1 gap-3">
                                     {shuffledOptions.map(([key, value]) => (
                                         <button
+                                            type="button"
                                             key={key}
                                             onClick={() => handleAnswer(currentQuestion.id, key)}
                                             className={`group relative flex items-start gap-4 p-5 rounded-2xl border-2 text-left transition-all duration-200 ${
@@ -436,7 +504,9 @@ export default function ExamEngine({
                                             }`}>
                                                 {key.toUpperCase()}
                                             </div>
-                                            <div className="flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium" dangerouslySetInnerHTML={{ __html: value as string }} />
+                                            <div className={`flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 ${
+                                                fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg'
+                                            }`} dangerouslySetInnerHTML={{ __html: value as string }} />
                                             {data.answers[currentQuestion.id] === key && (
                                                 <div className="absolute right-4 top-1/2 -translate-y-1/2">
                                                     <div className="w-5 h-5 bg-indigo-600 rounded-full flex items-center justify-center">
@@ -454,6 +524,7 @@ export default function ExamEngine({
                                         const isSelected = currentAnswers.includes(key);
                                         return (
                                             <button
+                                                type="button"
                                                 key={key}
                                                 onClick={() => {
                                                     let nextAnswers = [...currentAnswers];
@@ -475,7 +546,9 @@ export default function ExamEngine({
                                                 }`}>
                                                     {isSelected ? <CheckCircle className="w-5 h-5" /> : key.toUpperCase()}
                                                 </div>
-                                                <div className="flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium" dangerouslySetInnerHTML={{ __html: value as string }} />
+                                                <div className={`flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 ${
+                                                    fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg'
+                                                }`} dangerouslySetInnerHTML={{ __html: value as string }} />
                                             </button>
                                         );
                                     })}
@@ -484,7 +557,9 @@ export default function ExamEngine({
                                 <div className="relative">
                                     <input
                                         type="text"
-                                        className="w-full p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition text-lg"
+                                        className={`w-full p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition-all duration-300 ${
+                                            fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-2xl' : 'text-lg'
+                                        }`}
                                         placeholder="Ketik jawaban singkat Anda di sini..."
                                         value={data.answers[currentQuestion.id] || ''}
                                         onChange={(e) => handleAnswer(currentQuestion.id, e.target.value)}
@@ -500,7 +575,9 @@ export default function ExamEngine({
                                         
                                         return (
                                             <div key={opt} className="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                                                <div className="flex-1 font-medium text-gray-700 dark:text-gray-300">{leftVal}</div>
+                                                <div className={`flex-1 font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 ${
+                                                    fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl' : 'text-base'
+                                                }`}>{leftVal}</div>
                                                 <div className="w-8 flex items-center justify-center text-gray-400">→</div>
                                                 <select
                                                     className="flex-1 p-2 rounded-xl border-gray-200 dark:bg-gray-900 dark:border-gray-700 text-sm"
@@ -525,7 +602,9 @@ export default function ExamEngine({
                             ) : (
                                 <div className="relative">
                                     <textarea
-                                        className="w-full p-6 sm:p-8 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 dark:focus:ring-indigo-900/20 outline-none transition text-lg dark:text-gray-200 min-h-[300px]"
+                                        className={`w-full p-6 sm:p-8 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 dark:focus:ring-indigo-900/20 outline-none transition-all duration-300 dark:text-gray-200 min-h-[300px] ${
+                                            fontSize === 'small' ? 'text-base' : fontSize === 'large' ? 'text-2xl' : 'text-lg'
+                                        }`}
                                         placeholder="Tuliskan jawaban lengkap Anda di sini..."
                                         value={data.answers[currentQuestion.id] || ''}
                                         onChange={(e) => handleAnswer(currentQuestion.id, e.target.value)}
@@ -540,6 +619,7 @@ export default function ExamEngine({
                         {/* Desktop Navigation Buttons */}
                         <div className="hidden lg:flex items-center justify-between pt-6">
                             <button
+                                type="button"
                                 onClick={prevQuestion}
                                 disabled={currentQuestionIndex === 0}
                                 className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-2xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
@@ -550,6 +630,7 @@ export default function ExamEngine({
                             <div className="flex items-center gap-4">
                                 {currentQuestionIndex < questions.length - 1 ? (
                                     <button
+                                        type="button"
                                         onClick={nextQuestion}
                                         className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-600 text-white font-bold rounded-2xl shadow-lg shadow-indigo-100 dark:shadow-none hover:bg-indigo-700 hover:translate-x-1 transition-all"
                                     >
@@ -572,6 +653,7 @@ export default function ExamEngine({
             {/* Mobile Bottom Navigation Bar */}
             <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 p-4 pb-safe flex items-center justify-between z-40 pointer-events-auto">
                 <button
+                    type="button"
                     onClick={prevQuestion}
                     disabled={currentQuestionIndex === 0}
                     className="p-3 bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-2xl disabled:opacity-30"
@@ -589,6 +671,7 @@ export default function ExamEngine({
 
                 {currentQuestionIndex < questions.length - 1 ? (
                     <button
+                        type="button"
                         onClick={nextQuestion}
                         className="p-3 bg-indigo-600 text-white rounded-2xl shadow-lg shadow-indigo-100 dark:shadow-none"
                     >
@@ -622,6 +705,7 @@ export default function ExamEngine({
                         <div className="grid grid-cols-5 sm:grid-cols-6 gap-3 mb-8 max-h-[40vh] overflow-y-auto pr-2 custom-scrollbar">
                             {questions.map((q, idx) => (
                                 <button
+                                    type="button"
                                     key={q.id}
                                     onClick={() => {
                                         setCurrentQuestionIndex(idx);
@@ -642,6 +726,7 @@ export default function ExamEngine({
                         </div>
 
                         <button
+                            type="button"
                             onClick={() => {
                                 setIsDrawerOpen(false);
                                 finishExam();

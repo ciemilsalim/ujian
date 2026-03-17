@@ -42,6 +42,14 @@ export default function Monitor({ session }: { session: ExamSession }) {
         }
     };
 
+    const handleResetExam = (participantId: number, studentName: string) => {
+        if (confirm(`Hapus SELURUH progres dan jawaban ${studentName}? Siswa akan mengulang dari nol.`)) {
+            router.post(route('proktor.sessions.reset-exam', participantId), {}, {
+                onSuccess: () => toast.success('Progres ujian siswa berhasil di-reset.')
+            });
+        }
+    };
+
     const handleBroadcast = async (e: React.FormEvent) => {
         if (e) e.preventDefault();
         if (!broadcastMessage.trim()) return;
@@ -113,6 +121,15 @@ export default function Monitor({ session }: { session: ExamSession }) {
             window.Echo.leave(`exam.session.${session.id}`);
         };
     }, [session.id, currentTime]);
+
+    // Sort and Filter: Show finished first, then working. Hide waiting.
+    const filteredParticipants = participants
+        .filter(p => p.status !== 'waiting')
+        .sort((a, b) => {
+            if (a.status === 'finished' && b.status !== 'finished') return -1;
+            if (a.status !== 'finished' && b.status === 'finished') return 1;
+            return 0;
+        });
 
     const activeCount = participants.filter((p: ExamUser) => p.status === 'working').length;
     const finishedCount = participants.filter((p: ExamUser) => p.status === 'finished').length;
@@ -270,15 +287,20 @@ export default function Monitor({ session }: { session: ExamSession }) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {participants.map((eu: ExamUser) => (
-                                                <tr key={eu.user_id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 transition-colors duration-300">
+                                            {filteredParticipants.map((eu: ExamUser, index) => (
+                                                <tr 
+                                                    key={eu.id} 
+                                                    className={`border-b border-gray-50 dark:border-gray-800/50 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors ${index % 2 === 0 ? 'bg-white dark:bg-gray-900/40' : 'bg-gray-50/20 dark:bg-gray-800/10'}`}
+                                                >
                                                     <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-3">
-                                                        <div className={`w-2 h-2 rounded-full ${eu.status === 'finished' ? 'bg-green-500' : 'bg-yellow-400'}`}></div>
+                                                        <div className={`w-2 h-2 rounded-full ${eu.status === 'finished' ? 'bg-green-500' : eu.status === 'working' ? 'bg-yellow-400' : 'bg-gray-400'}`}></div>
                                                         {eu.user?.name}
                                                     </td>
                                                     <td className="px-6 py-4 font-medium">
                                                         {eu.status === 'finished' ? (
                                                             <span className="text-green-600 flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Selesai</span>
+                                                        ) : eu.status === 'waiting' ? (
+                                                            <span className="text-gray-400 flex items-center gap-1"><Clock className="w-4 h-4" /> Belum Mulai</span>
                                                         ) : (
                                                             <div className="flex items-center gap-2">
                                                                  <span className="text-blue-600 flex items-center gap-1"><Clock className="w-4 h-4" /> Mengerjakan</span>
@@ -298,6 +320,13 @@ export default function Monitor({ session }: { session: ExamSession }) {
                                                                 <RotateCcw className="w-4 h-4" />
                                                             </button>
                                                             <button
+                                                                onClick={() => handleResetExam(eu.id, eu.user?.name || 'Siswa')}
+                                                                className="p-1.5 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-lg hover:bg-amber-600 hover:text-white transition shadow-sm"
+                                                                title="Reset Progress (Delete all answers and restart)"
+                                                            >
+                                                                <RotateCcw className="w-4 h-4" />
+                                                            </button>
+                                                            <button
                                                                 onClick={() => handleForceLogoutUser(eu.id)}
                                                                 className="p-1.5 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-600 hover:text-white transition shadow-sm"
                                                                 title="Force Logout this student"
@@ -308,7 +337,7 @@ export default function Monitor({ session }: { session: ExamSession }) {
                                                     </td>
                                                 </tr>
                                             ))}
-                                            {participants.length === 0 && (
+                                            {filteredParticipants.length === 0 && (
                                                 <tr>
                                                     <td colSpan={3} className="px-6 py-4 text-center text-gray-500">
                                                         Belum ada peserta yang memulai ujian.
@@ -351,7 +380,7 @@ export default function Monitor({ session }: { session: ExamSession }) {
                                                                 : 'bg-gray-100/50 dark:bg-gray-800/30 border-dashed border-gray-200 dark:border-gray-700'
                                                                 }`}
                                                         >
-                                                            {participant ? (
+                                                            {participant && participant.status !== 'waiting' ? (
                                                                 <>
                                                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center mb-1 ${participant.status === 'finished' ? 'bg-emerald-100 text-emerald-600' : 'bg-indigo-50 text-indigo-600'
                                                                         }`}>

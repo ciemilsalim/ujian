@@ -61,7 +61,7 @@ export interface ExamUser {
     user_id: number;
     score: number | null;
     cheat_warnings: number;
-    status: 'pending' | 'working' | 'finished';
+    status: 'waiting' | 'working' | 'finished';
     started_at: string | null;
     finished_at: string | null;
     user?: User;

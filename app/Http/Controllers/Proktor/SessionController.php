@@ -161,4 +161,39 @@ class SessionController
 
         return redirect()->back()->with('success', "Waktu ujian berhasil ditambah {$request->minutes} menit.");
     }
+
+    public function resetExam($id)
+    {
+        $eu = \App\Models\ExamSessionUser::findOrFail($id);
+
+        // Delete all student answers
+        \App\Models\StudentAnswer::where('exam_session_user_id', $eu->id)->delete();
+
+        // Reset status, score, times, warnings, and session_id
+        $eu->update([
+            'status' => 'waiting',
+            'score' => null,
+            'started_at' => null,
+            'finished_at' => null,
+            'cheat_warnings' => 0,
+            'session_id' => null, // Clear session to ensure they have to re-login to exam
+        ]);
+
+        // Broadcast status update to Monitor
+        \App\Events\StudentExamUpdated::dispatch(
+            $eu->exam_session_id,
+            $eu->user_id,
+            $eu->user->name,
+            'waiting'
+        );
+
+        // Also broadcast force logout specifically for this user
+        \App\Events\ProktorBroadcast::dispatch(
+            $eu->exam_session_id,
+            'force_logout_user:' . $eu->user_id,
+            auth()->user()->name
+        );
+
+        return redirect()->back()->with('success', 'Ujian siswa berhasil di-reset. Siswa dapat memulai dari awal.');
+    }
 }

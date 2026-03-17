@@ -41,6 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/sessions/{session}/force-logout', [\App\Http\Controllers\Proktor\SessionController::class, 'forceLogout'])->name('sessions.force-logout');
         Route::post('/sessions/{session}/extend-time', [\App\Http\Controllers\Proktor\SessionController::class, 'extendTime'])->name('sessions.extend-time');
         Route::post('/sessions/user/{id}/reset-login', [\App\Http\Controllers\Proktor\SessionController::class, 'resetLogin'])->name('sessions.reset-login');
+        Route::post('/sessions/user/{id}/reset-exam', [\App\Http\Controllers\Proktor\SessionController::class, 'resetExam'])->name('sessions.reset-exam');
         Route::post('/sessions/user/{id}/force-logout', [\App\Http\Controllers\Proktor\SessionController::class, 'forceLogoutParticipant'])->name('sessions.force-logout-user');
         Route::post('/sessions/{id}/toggle-status', [\App\Http\Controllers\Proktor\SessionController::class, 'toggleActive'])->name('sessions.toggle-status');
         Route::resource('sessions', \App\Http\Controllers\Proktor\SessionController::class);
