@@ -36,16 +36,25 @@ class ResultController extends Controller
         $scores = $session->examUsers->pluck('score')->filter(fn($s) => !is_null($s));
         $count = $scores->count();
 
+        $maxCheatWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);
         $passingGrade = (int) (\App\Models\Setting::where('key', 'passing_grade')->first()->value ?? 70);
 
+        // Filter out disqualified students from base scores for pure stats if needed, 
+        // but typically they should count as 0. Since we set them to 0 in ExamController, 
+        // we just need to make sure pass_count doesn't count them if they somehow had scores.
+        
         $stats = [
             'average' => $count > 0 ? round($scores->avg(), 2) : 0,
             'max' => $count > 0 ? $scores->max() : 0,
             'min' => $count > 0 ? $scores->min() : 0,
             'median' => $count > 0 ? $this->calculateMedian($scores->toArray()) : 0,
-            'pass_count' => $session->examUsers->where('score', '>=', $passingGrade)->count(),
-            'fail_count' => $session->examUsers->where('score', '<', $passingGrade)->whereNotNull('score')->count(),
+            'pass_count' => $session->examUsers->where('cheat_warnings', '<', $maxCheatWarnings)
+                                             ->where('score', '>=', $passingGrade)->count(),
+            'fail_count' => $session->examUsers->filter(function($eu) use ($maxCheatWarnings, $passingGrade) {
+                                return ($eu->cheat_warnings >= $maxCheatWarnings) || ($eu->score !== null && $eu->score < $passingGrade);
+                            })->count(),
             'passing_grade' => $passingGrade,
+            'max_cheat_warnings' => $maxCheatWarnings,
         ];
 
         // Distribution data for charts
@@ -69,7 +78,10 @@ class ResultController extends Controller
         $session = ExamSession::with(['exam', 'classroom', 'examUsers.user'])
             ->findOrFail($id);
 
-        $pdf = Pdf::loadView('pdf.results', compact('session'));
+        $maxCheatWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);
+        $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
+
+        $pdf = Pdf::loadView('pdf.results', compact('session', 'maxCheatWarnings', 'settings'));
         return $pdf->download("hasil_ujian_{$session->name}.pdf");
     }
 

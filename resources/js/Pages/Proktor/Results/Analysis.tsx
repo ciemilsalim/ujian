@@ -12,6 +12,7 @@ interface AnalysisStats {
     median: number;
     pass_count: number;
     fail_count: number;
+    max_cheat_warnings: number;
 }
 
 interface IndexProps {
@@ -181,9 +182,13 @@ export default function Analysis({ session, stats, distribution }: IndexProps) {
                                                         <span className="px-2 py-1 text-[10px] font-bold text-amber-700 bg-amber-100 rounded-full uppercase">Mengerjakan</span>
                                                     )}
                                                 </td>
-                                                <td className="px-6 py-4 whitespace-nowrap text-center text-lg font-black text-indigo-600 dark:text-indigo-400">
-                                                    {eu.score || 0}
-                                                </td>
+                                                 <td className="px-6 py-4 whitespace-nowrap text-center text-lg font-black">
+                                                     {eu.cheat_warnings >= stats.max_cheat_warnings ? (
+                                                         <span className="text-red-500 text-xs font-black uppercase tracking-widest">Diskualifikasi</span>
+                                                     ) : (
+                                                         <span className="text-indigo-600 dark:text-indigo-400">{eu.score || 0}</span>
+                                                     )}
+                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-right space-x-2">
                                                     <button
                                                         onClick={() => {

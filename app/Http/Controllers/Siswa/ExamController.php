@@ -41,7 +41,14 @@ class ExamController extends Controller
 
         // Randomize questions if enabled
         if ($session->exam->random_question) {
-            $shuffledQuestions = $session->exam->questionBank->questions->shuffle(auth()->id());
+            $userId = auth()->id();
+            $sessionId = $session->id;
+            
+            $shuffledQuestions = $session->exam->questionBank->questions->sortBy(function ($question) use ($userId, $sessionId) {
+                // Menggunakan md5 untuk pengacakan deterministik yang konsisten per user & session
+                return md5($question->id . '_' . $userId . '_' . $sessionId);
+            })->values();
+            
             $session->exam->questionBank->setRelation('questions', $shuffledQuestions);
         }
 
@@ -79,6 +86,15 @@ class ExamController extends Controller
         $durationInSeconds = ($session->exam->duration ?? 0) * 60;
         $elapsedSeconds = $examUser->started_at->diffInSeconds(now());
         $timeLeft = max(0, $durationInSeconds - $elapsedSeconds);
+
+        if ($timeLeft <= 0 && $examUser->status !== 'finished') {
+            $examUser->update(['status' => 'finished', 'finished_at' => now()]);
+            return redirect()->route('siswa.dashboard')->with('error', 'Waktu ujian Anda telah habis.');
+        }
+
+        if ($examUser->status === 'finished') {
+            return redirect()->route('siswa.dashboard')->with('info', 'Anda telah menyelesaikan ujian ini.');
+        }
 
         // Fetch existing answers to restore the state if student refreshes the tab
         $existingAnswers = \App\Models\StudentAnswer::where('exam_session_user_id', $examUser->id)
@@ -147,9 +163,8 @@ class ExamController extends Controller
             $examSessionUser->update([
                 'status' => 'finished',
                 'finished_at' => now(),
+                'score' => 0, // Set skor ke 0 jika diskualifikasi
             ]);
-
-            $this->calculateScore($examSessionUser);
 
             \App\Events\StudentExamUpdated::dispatch(
                 $examSessionUser->exam_session_id,
@@ -184,6 +199,17 @@ class ExamController extends Controller
                 return response()->json(['status' => 'already_finished']);
             }
             return redirect()->route('siswa.dashboard');
+        }
+
+        // Server-side time check
+        $durationInSeconds = ($examSessionUser->examSession->exam->duration ?? 0) * 60;
+        $elapsedSeconds = $examSessionUser->started_at->diffInSeconds(now());
+        if ($elapsedSeconds > $durationInSeconds + 30) { // Beri toleransi 30 detik untuk network lag
+            $examSessionUser->update(['status' => 'finished', 'finished_at' => now()]);
+            if ($request->expectsJson()) {
+                return response()->json(['status' => 'time_up', 'message' => 'Waktu ujian telah habis.']);
+            }
+            return redirect()->route('siswa.dashboard')->with('error', 'Waktu ujian telah habis.');
         }
 
         // Validasi sesi masih aktif sebelum menyimpan jawaban

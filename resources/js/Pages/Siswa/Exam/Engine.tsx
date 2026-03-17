@@ -325,9 +325,28 @@ export default function ExamEngine({
         }
     };
 
+    const isTimeSpent = timeLeft <= 0;
+
     return (
         <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col font-sans selection:bg-indigo-100 dark:selection:bg-indigo-900/40">
             <Head title={`Ujian: ${session.exam?.title || 'Ujian'}`} />
+
+            {/* Overlay Waktu Habis */}
+            {isTimeSpent && (
+                <div className="fixed inset-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl z-[100] flex flex-col items-center justify-center p-6 text-center animate-in fade-in duration-500">
+                    <div className="w-24 h-24 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-6 animate-pulse">
+                        <Clock className="w-12 h-12 text-red-600 dark:text-red-400" />
+                    </div>
+                    <h2 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-2">WAKTU UJIAN HABIS!</h2>
+                    <p className="text-gray-500 dark:text-gray-400 max-w-md mb-8">
+                        Batas waktu pengerjaan Anda telah berakhir. Jawaban Anda sedang disimpan secara otomatis ke server.
+                    </p>
+                    <div className="flex items-center gap-3 px-6 py-3 bg-gray-100 dark:bg-gray-800 rounded-2xl font-bold text-gray-600 dark:text-gray-300">
+                        <div className="w-4 h-4 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+                        Menyimpan Progress...
+                    </div>
+                </div>
+            )}
 
             {/* Sticky Header Baru */}
             <header className="fixed top-0 inset-x-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 z-40 transition-all duration-300">

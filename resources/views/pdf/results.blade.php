@@ -4,108 +4,224 @@
 <head>
     <title>Hasil Ujian - {{ $session->name }}</title>
     <style>
-        body {
-            font-family: sans-serif;
-            color: #333;
+        @page {
+            margin: 2cm;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #444;
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.5;
+            font-size: 11pt;
+        }
+
+        /* Kop Surat Styles */
+        .kop-surat {
+            border-bottom: 3px double #000;
+            margin-bottom: 25px;
             padding-bottom: 10px;
+            text-align: center;
         }
 
         .school-name {
-            font-size: 24px;
+            font-size: 18pt;
             font-weight: bold;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .school-address {
+            font-size: 9pt;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 0;
+        }
+
+        .report-title {
+            text-align: center;
+            font-size: 14pt;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
 
-        .session-info {
+        /* Info Section */
+        .info-container {
+            width: 100%;
             margin-bottom: 20px;
         }
 
-        table {
+        .info-table {
+            width: 100%;
+            border: none;
+        }
+
+        .info-table td {
+            border: none;
+            padding: 3px 0;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .info-colon {
+            width: 15px;
+        }
+
+        /* Main Table */
+        table.main-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
-        th,
-        td {
-            border: 1px solid #ddd;
+        table.main-table th {
+            background-color: #f2f2f2;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
             padding: 10px;
-            text-align: left;
+            border: 1px solid #000;
+            text-transform: uppercase;
+            font-size: 10pt;
         }
 
-        th {
-            background-color: #f5f5f5;
+        table.main-table td {
+            border: 1px solid #000;
+            padding: 8px 10px;
+            vertical-align: middle;
         }
 
-        .footer {
-            margin-top: 50px;
-            text-align: right;
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .font-bold { font-weight: bold; }
+
+        /* Badge-like styles for PDF */
+        .status-finished { color: #059669; }
+        .status-working { color: #d97706; }
+        .status-disqualified { color: #dc2626; font-weight: bold; }
+
+        /* Footer / Tanda Tangan */
+        .footer-sign {
+            margin-top: 40px;
+            width: 100%;
         }
 
-        .status-finished {
-            color: green;
-            font-weight: bold;
+        .sign-box {
+            float: right;
+            width: 250px;
+            text-align: center;
         }
 
-        .status-working {
-            color: orange;
-            font-weight: bold;
+        .sign-space {
+            height: 70px;
         }
+
+        .clear { clear: both; }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class="school-name">{{ config('app.name', 'EXXAM.IO') }}</div>
-        <div>LAPORAN HASIL UJIAN</div>
+    <div class="kop-surat">
+        <div class="school-name">{{ $settings['school_name'] ?? config('app.name') }}</div>
+        <div class="school-address">{{ $settings['school_address'] ?? '-' }}</div>
     </div>
 
-    <div class="session-info">
-        <p><strong>Nama Sesi:</strong> {{ $session->name }}</p>
-        <p><strong>Mata Pelajaran:</strong> {{ $session->exam->title }}</p>
-        <p><strong>Kelas:</strong> {{ $session->classroom->name ?? '-' }}</p>
-        <p><strong>Waktu:</strong> {{ $session->start_time }} - {{ $session->end_time }}</p>
+    <div class="report-title">LAPORAN HASIL UJIAN SISWA</div>
+
+    <div class="info-container">
+        <table class="info-table">
+            <tr>
+                <td class="info-label">Nama Sesi</td>
+                <td class="info-colon">:</td>
+                <td class="font-bold">{{ $session->name }}</td>
+            </tr>
+            <tr>
+                <td class="info-label">Mata Pelajaran</td>
+                <td class="info-colon">:</td>
+                <td>{{ $session->exam->title }}</td>
+            </tr>
+            <tr>
+                <td class="info-label">Kelas</td>
+                <td class="info-colon">:</td>
+                <td>{{ $session->classroom->name ?? 'Semua Kelas' }}</td>
+            </tr>
+            <tr>
+                <td class="info-label">Waktu Pelaksanaan</td>
+                <td class="info-colon">:</td>
+                <td>{{ date('d-m-Y H:i', strtotime($session->start_time)) }} s/d {{ date('H:i', strtotime($session->end_time)) }}</td>
+            </tr>
+        </table>
     </div>
 
-    <table>
+    <table class="main-table">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Nama Siswa</th>
-                <th>Status</th>
-                <th>Nilai</th>
+                <th width="5%">NO</th>
+                <th>NAMA PESERTA</th>
+                <th width="15%">STATUS</th>
+                <th width="15%">NILAI AKHIR</th>
+                <th width="20%">KETERANGAN</th>
             </tr>
         </thead>
         <tbody>
+            @php $passingGrade = (int) ($settings['passing_grade'] ?? 70); @endphp
             @foreach($session->examUsers as $index => $eu)
+                @php 
+                    $isDisqualified = $eu->cheat_warnings >= $maxCheatWarnings;
+                    $score = $isDisqualified ? 0 : ($eu->score ?? 0);
+                    $isPassed = $score >= $passingGrade && !$isDisqualified;
+                @endphp
                 <tr>
-                    <td>{{ $index + 1 }}</td>
+                    <td class="text-center">{{ $index + 1 }}</td>
                     <td>{{ $eu->user->name }}</td>
-                    <td>
-                        <span class="status-{{ $eu->status }}">
-                            {{ strtoupper($eu->status) }}
-                        </span>
+                    <td class="text-center">
+                        @if($isDisqualified)
+                            <span class="status-disqualified">DISKUALIFIKASI</span>
+                        @else
+                            <span class="status-{{ $eu->status }}">{{ strtoupper($eu->status) }}</span>
+                        @endif
                     </td>
-                    <td style="font-weight: bold; font-size: 16px;">
-                        {{ $eu->score ?? '0' }}
+                    <td class="text-center font-bold" style="font-size: 13pt;">
+                        @if($isDisqualified)
+                            <span style="color: #dc2626;">0</span>
+                        @else
+                            {{ $eu->score ?? '0' }}
+                        @endif
+                    </td>
+                    <td class="text-center font-bold">
+                        @if($isDisqualified)
+                            <span style="color: #dc2626;">TIDAK LULUS</span>
+                        @elseif($eu->status === 'finished')
+                            @if($isPassed)
+                                <span style="color: #059669;">LULUS</span>
+                            @else
+                                <span style="color: #dc2626;">TIDAK LULUS</span>
+                            @endif
+                        @else
+                            -
+                        @endif
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-    <div class="footer">
-        <p>Dicetak pada: {{ date('d/m/Y H:i:s') }}</p>
-        <br><br><br>
-        <p>( __________________________ )</p>
-        <p>Proktor / Panitia</p>
+    <div class="footer-sign">
+        <div class="sign-box">
+            <p>{{ $settings['location'] ?? 'Dicetak' }}, {{ date('d F Y') }}</p>
+            <p>Proktor / Panitia Ujian</p>
+            <div class="sign-space"></div>
+            <p><strong>( __________________________ )</strong></p>
+            <p>NIP. ......................................</p>
+        </div>
+        <div class="clear"></div>
     </div>
 </body>
 
-</html>
+</html>

@@ -42,14 +42,16 @@ class ResultExport implements FromCollection, WithHeadings, WithMapping, WithTit
         static $no = 0;
         $no++;
         $passingGrade = (int) (\App\Models\Setting::where('key', 'passing_grade')->first()->value ?? 70);
+        $maxCheatWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);
+        $isDisqualified = $examUser->cheat_warnings >= $maxCheatWarnings;
 
         return [
             $no,
             $examUser->user->name ?? '-',
             $examUser->user->username ?? '-',
             $examUser->user->classroom->name ?? '-',
-            $examUser->score ?? '-',
-            $examUser->score !== null ? ($examUser->score >= $passingGrade ? 'LULUS' : 'TIDAK LULUS') : 'Belum Dinilai',
+            $isDisqualified ? 'DISKUALIFIKASI' : ($examUser->score ?? '-'),
+            $isDisqualified ? 'DISKUALIFIKASI' : ($examUser->score !== null ? ($examUser->score >= $passingGrade ? 'LULUS' : 'TIDAK LULUS') : 'Belum Dinilai'),
             $examUser->started_at ? date('d/m/Y H:i', strtotime($examUser->started_at)) : '-',
             $examUser->finished_at ? date('d/m/Y H:i', strtotime($examUser->finished_at)) : '-',
         ];
