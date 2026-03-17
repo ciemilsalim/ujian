@@ -29,24 +29,51 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
             $actualRowNumber = $index + 2; 
 
             $questionText = $row['pertanyaan'] ?? '';
-            $type = ($row['tipe'] ?? 'pilihan_ganda') === 'essay' ? 'essay' : 'pilihan_ganda';
+            $type = $row['tipe'] ?? 'pilihan_ganda';
+            if (!in_array($type, ['pilihan_ganda', 'pilihan_ganda_kompleks', 'isian_singkat', 'menjodohkan', 'essay'])) {
+                $type = 'pilihan_ganda';
+            }
             
             // Handle Images for this row if any
             if (isset($this->drawings[$actualRowNumber])) {
                 foreach ($this->drawings[$actualRowNumber] as $imagePath) {
-                    $questionText .= '<br><img src="' . asset('storage/' . $imagePath) . '" class="max-w-full h-auto mt-2 rounded-lg py-2 block">';
+                    $questionText .= '<br><img src="/storage/' . $imagePath . '" class="max-w-full h-auto mt-2 rounded-lg py-2 block">';
                 }
             }
 
             $options = null;
-            if ($type === 'pilihan_ganda') {
-                $options = [
+            if ($type === 'pilihan_ganda' || $type === 'pilihan_ganda_kompleks') {
+                $options = array_filter([
                     'a' => $row['opsi_a'] ?? '',
                     'b' => $row['opsi_b'] ?? '',
                     'c' => $row['opsi_c'] ?? '',
                     'd' => $row['opsi_d'] ?? '',
                     'e' => $row['opsi_e'] ?? '',
-                ];
+                ], function($value) {
+                    return !is_null($value) && trim($value) !== '';
+                });
+            } elseif ($type === 'menjodohkan') {
+                $options = [];
+                foreach (['a', 'b', 'c', 'd', 'e'] as $opt) {
+                    $raw = $row["opsi_$opt"] ?? '';
+                    if (strpos($raw, '|') !== false) {
+                        [$left, $right] = explode('|', $raw, 2);
+                        $options["left_$opt"] = trim($left);
+                        $options["right_$opt"] = trim($right);
+                    }
+                }
+            }
+
+            // For Menjodohkan, build the default answer key if empty
+            $answerKey = strtolower(trim($row['kunci'] ?? ''));
+            if ($type === 'menjodohkan' && empty($answerKey)) {
+                $answerMap = [];
+                foreach (['a', 'b', 'c', 'd', 'e'] as $opt) {
+                    if (isset($options["left_$opt"])) {
+                        $answerMap[$opt] = $opt; // Default assume same index match
+                    }
+                }
+                $answerKey = json_encode($answerMap);
             }
 
             Question::create([
@@ -54,7 +81,7 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
                 'type' => $type,
                 'question_text' => $questionText,
                 'options' => $options,
-                'answer_key' => strtolower(trim($row['kunci'] ?? '')),
+                'answer_key' => $answerKey,
                 'score_default' => (int) ($row['skor'] ?? 1),
             ]);
         }

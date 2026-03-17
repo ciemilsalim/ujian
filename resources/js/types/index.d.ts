@@ -118,7 +118,7 @@ export interface ChartData {
 export interface Question {
     id: number;
     question_bank_id: number;
-    type: 'pilihan_ganda' | 'essay';
+    type: 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'isian_singkat' | 'menjodohkan' | 'essay';
     question_text: string;
     options: Record<string, string> | null;
     answer_key: string;
@@ -137,7 +137,7 @@ export interface QuestionBank {
 
 export interface QuestionAnalysis {
     id: number;
-    type: 'pilihan_ganda' | 'essay';
+    type: 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'isian_singkat' | 'menjodohkan' | 'essay';
     question_text: string;
     total_answers: number;
     difficulty_level?: number;

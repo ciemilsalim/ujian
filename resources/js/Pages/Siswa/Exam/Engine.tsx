@@ -39,7 +39,8 @@ export default function ExamEngine({
         const opts = currentQuestion.options;
         if (!opts) return [];
         
-        const entries = Object.entries(typeof opts === 'string' ? JSON.parse(opts) : opts);
+        const entries = Object.entries(typeof opts === 'string' ? JSON.parse(opts) : opts)
+            .filter(([_, value]) => value && (value as string).trim() !== '');
         
         if (!session.exam?.random_option) return entries;
         
@@ -445,6 +446,81 @@ export default function ExamEngine({
                                             )}
                                         </button>
                                     ))}
+                                </div>
+                            ) : currentQuestion.type === 'pilihan_ganda_kompleks' ? (
+                                <div className="grid grid-cols-1 gap-3">
+                                    {shuffledOptions.map(([key, value]) => {
+                                        const currentAnswers = data.answers[currentQuestion.id]?.split(',') || [];
+                                        const isSelected = currentAnswers.includes(key);
+                                        return (
+                                            <button
+                                                key={key}
+                                                onClick={() => {
+                                                    let nextAnswers = [...currentAnswers];
+                                                    if (isSelected) {
+                                                        nextAnswers = nextAnswers.filter(a => a !== key);
+                                                    } else {
+                                                        nextAnswers.push(key);
+                                                    }
+                                                    handleAnswer(currentQuestion.id, nextAnswers.filter(a => a !== '').join(','));
+                                                }}
+                                                className={`group relative flex items-start gap-4 p-5 rounded-2xl border-2 text-left transition-all duration-200 ${
+                                                    isSelected
+                                                        ? 'border-indigo-600 bg-indigo-50/50 dark:bg-indigo-900/20 shadow-md translate-x-1'
+                                                        : 'border-white dark:border-gray-800 bg-white dark:bg-gray-800 hover:border-gray-200 shadow-sm'
+                                                }`}
+                                            >
+                                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0 transition-colors ${
+                                                    isSelected ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-500'
+                                                }`}>
+                                                    {isSelected ? <CheckCircle className="w-5 h-5" /> : key.toUpperCase()}
+                                                </div>
+                                                <div className="flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium" dangerouslySetInnerHTML={{ __html: value as string }} />
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            ) : currentQuestion.type === 'isian_singkat' ? (
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        className="w-full p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition text-lg"
+                                        placeholder="Ketik jawaban singkat Anda di sini..."
+                                        value={data.answers[currentQuestion.id] || ''}
+                                        onChange={(e) => handleAnswer(currentQuestion.id, e.target.value)}
+                                    />
+                                </div>
+                            ) : currentQuestion.type === 'menjodohkan' ? (
+                                <div className="space-y-4">
+                                    {['a', 'b', 'c', 'd', 'e'].map((opt) => {
+                                        const leftVal = (currentQuestion.options as any)?.[`left_${opt}`];
+                                        if (!leftVal) return null;
+                                        
+                                        const currentMap = data.answers[currentQuestion.id] ? JSON.parse(data.answers[currentQuestion.id]) : {};
+                                        
+                                        return (
+                                            <div key={opt} className="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                                                <div className="flex-1 font-medium text-gray-700 dark:text-gray-300">{leftVal}</div>
+                                                <div className="w-8 flex items-center justify-center text-gray-400">→</div>
+                                                <select
+                                                    className="flex-1 p-2 rounded-xl border-gray-200 dark:bg-gray-900 dark:border-gray-700 text-sm"
+                                                    value={currentMap[opt] || ''}
+                                                    onChange={(e) => {
+                                                        const nextMap = { ...currentMap, [opt]: e.target.value };
+                                                        handleAnswer(currentQuestion.id, JSON.stringify(nextMap));
+                                                    }}
+                                                >
+                                                    <option value="">Pilih Pasangan...</option>
+                                                    {['a', 'b', 'c', 'd', 'e'].map(target => {
+                                                        const rightVal = (currentQuestion.options as any)?.[`right_${target}`];
+                                                        return rightVal ? (
+                                                            <option key={target} value={target}>{rightVal}</option>
+                                                        ) : null;
+                                                    })}
+                                                </select>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             ) : (
                                 <div className="relative">

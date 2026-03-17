@@ -151,16 +151,39 @@ class QuestionBankController
             $sheet->setCellValueByColumnAndRow($col + 1, 1, $header);
         }
 
-        // Sample Data
-        $sheet->setCellValue('A2', 'Contoh pertanyaan pilihan ganda (Bisa masukkan gambar di sini)');
+        // Sample Data 1: Pilihan Ganda
+        $sheet->setCellValue('A2', 'Apa ibukota Indonesia?');
         $sheet->setCellValue('B2', 'pilihan_ganda');
-        $sheet->setCellValue('C2', 'Jawaban A');
-        $sheet->setCellValue('D2', 'Jawaban B');
-        $sheet->setCellValue('E2', 'Jawaban C');
-        $sheet->setCellValue('F2', 'Jawaban D');
-        $sheet->setCellValue('G2', 'Jawaban E');
+        $sheet->setCellValue('C2', 'Jakarta');
+        $sheet->setCellValue('D2', 'Bandung');
+        $sheet->setCellValue('E2', 'Surabaya');
+        $sheet->setCellValue('F2', 'Medan');
         $sheet->setCellValue('H2', 'a');
         $sheet->setCellValue('I2', '1');
+
+        // Sample Data 2: PG Kompleks
+        $sheet->setCellValue('A3', 'Pilih kota yang ada di pulau Jawa?');
+        $sheet->setCellValue('B3', 'pilihan_ganda_kompleks');
+        $sheet->setCellValue('C3', 'Jakarta');
+        $sheet->setCellValue('D3', 'Bandung');
+        $sheet->setCellValue('E3', 'Medan');
+        $sheet->setCellValue('F3', 'Makassar');
+        $sheet->setCellValue('H3', 'a,b');
+        $sheet->setCellValue('I3', '1');
+
+        // Sample Data 3: Isian Singkat
+        $sheet->setCellValue('A4', 'Presiden pertama Indonesia adalah...');
+        $sheet->setCellValue('B4', 'isian_singkat');
+        $sheet->setCellValue('H4', 'Soekarno');
+        $sheet->setCellValue('I4', '1');
+
+        // Sample Data 4: Menjodohkan
+        $sheet->setCellValue('A5', 'Jodohkan negara dengan ibukotanya?');
+        $sheet->setCellValue('B5', 'menjodohkan');
+        $sheet->setCellValue('C5', 'Indonesia|Jakarta');
+        $sheet->setCellValue('D5', 'Jepang|Tokyo');
+        $sheet->setCellValue('E5', 'Inggris|London');
+        $sheet->setCellValue('I5', '1');
 
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $fileName = 'Template_Import_Soal.xlsx';
@@ -178,17 +201,35 @@ class QuestionBankController
         $section->addText('FORMAT IMPORT SOAL WORD', ['bold' => true, 'size' => 16]);
         $section->addTextBreak(1);
         
-        $section->addText('1. Ini adalah contoh pertanyaan pertama?');
-        $section->addText('A. Pilihan jawaban A');
-        $section->addText('B. Pilihan jawaban B');
-        $section->addText('C. Pilihan jawaban C');
-        $section->addText('D. Pilihan jawaban D');
-        $section->addText('E. Pilihan jawaban E');
+        $section->addText('1. Contoh Pilihan Ganda biasa?');
+        $section->addText('A. Opsi 1');
+        $section->addText('B. Opsi 2');
         $section->addText('Kunci: A');
         $section->addTextBreak(1);
 
-        $section->addText('2. Ini adalah contoh pertanyaan essay?');
-        $section->addText('Kunci: keyword, kemerdekaan');
+        $section->addText('2. Contoh PG Kompleks (Beberapa jawaban benar)?');
+        $section->addText('Tipe: PGK');
+        $section->addText('A. Jawaban Benar 1');
+        $section->addText('B. Jawaban Salah');
+        $section->addText('C. Jawaban Benar 2');
+        $section->addText('Kunci: A, C');
+        $section->addTextBreak(1);
+
+        $section->addText('3. Contoh Soal Isian Singkat?');
+        $section->addText('Tipe: Isian');
+        $section->addText('Kunci: Jawaban yang Benar');
+        $section->addTextBreak(1);
+
+        $section->addText('4. Contoh Menjodohkan?');
+        $section->addText('Tipe: Menjodohkan');
+        $section->addText('A. Indonesia|Jakarta');
+        $section->addText('B. Malaysia|Kuala Lumpur');
+        $section->addText('C. Thailand|Bangkok');
+        $section->addTextBreak(1);
+
+        $section->addText('5. Contoh Soal Essay?');
+        $section->addText('Tipe: Essay');
+        $section->addText('Kunci: keyword1, keyword2');
 
         $fileName = 'Template_Import_Soal.docx';
         $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');

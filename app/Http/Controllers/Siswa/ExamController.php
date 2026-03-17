@@ -12,11 +12,12 @@ class ExamController extends Controller
         $user = auth()->user();
         $sessions = \App\Models\ExamSession::with('exam')
             ->where('is_active', true)
+            ->where('end_time', '>', now()) // Hanya tampilkan yang belum berakhir
             ->where(function ($q) use ($user) {
                 $q->where('classroom_id', $user->classroom_id)
                     ->orWhereNull('classroom_id');
             })
-            ->latest()
+            ->orderBy('start_time', 'asc') // Urutkan yang terdekat lebih dulu
             ->get();
 
         return \Inertia\Inertia::render('Siswa/Dashboard', [
@@ -27,6 +28,16 @@ class ExamController extends Controller
     public function show($id)
     {
         $session = \App\Models\ExamSession::with(['exam.questionBank.questions'])->findOrFail($id);
+
+        // Validasi waktu akses
+        $now = now();
+        if ($now->lt($session->start_time)) {
+            return redirect()->route('siswa.dashboard')->with('error', 'Ujian ini belum dimulai. Silakan tunggu hingga waktu yang ditentukan.');
+        }
+
+        if ($now->gt($session->end_time)) {
+            return redirect()->route('siswa.dashboard')->with('error', 'Maaf, batas waktu untuk memulai ujian ini telah berakhir.');
+        }
 
         // Randomize questions if enabled
         if ($session->exam->random_question) {
@@ -248,6 +259,49 @@ class ExamController extends Controller
                 $isCorrect = strtolower(trim($studentAnswer->answer_text ?? ''))
                     === strtolower(trim($question->answer_key ?? ''));
 
+                $studentAnswer->update([
+                    'is_correct' => $isCorrect,
+                    'score' => $isCorrect ? $question->score_default : 0,
+                ]);
+
+                if ($isCorrect) {
+                    $totalScore += $question->score_default;
+                }
+            } elseif ($question->type === 'pilihan_ganda_kompleks') {
+                // PGK: Jawaban dan Kunci biasanya format "a,c,d"
+                $studentAnswers = explode(',', strtolower(trim($studentAnswer->answer_text ?? '')));
+                $correctKeys = explode(',', strtolower(trim($question->answer_key ?? '')));
+                
+                sort($studentAnswers);
+                sort($correctKeys);
+                
+                $isCorrect = ($studentAnswers === $correctKeys);
+                
+                $studentAnswer->update([
+                    'is_correct' => $isCorrect,
+                    'score' => $isCorrect ? $question->score_default : 0,
+                ]);
+
+                if ($isCorrect) {
+                    $totalScore += $question->score_default;
+                }
+            } elseif ($question->type === 'isian_singkat') {
+                // Isian Singkat: Case-insensitive match
+                $isCorrect = strtolower(trim($studentAnswer->answer_text ?? ''))
+                    === strtolower(trim($question->answer_key ?? ''));
+                
+                $studentAnswer->update([
+                    'is_correct' => $isCorrect,
+                    'score' => $isCorrect ? $question->score_default : 0,
+                ]);
+
+                if ($isCorrect) {
+                    $totalScore += $question->score_default;
+                }
+            } elseif ($question->type === 'menjodohkan') {
+                // Menjodohkan: Jawaban disimpan dalam format JSON pasangan
+                $isCorrect = (trim($studentAnswer->answer_text ?? '') === trim($question->answer_key ?? ''));
+                
                 $studentAnswer->update([
                     'is_correct' => $isCorrect,
                     'score' => $isCorrect ? $question->score_default : 0,
