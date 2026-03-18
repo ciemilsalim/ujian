@@ -24,6 +24,7 @@ class User extends Authenticatable
         'role',
         'classroom_id',
         'photo',
+        'password_plain',
     ];
 
     public function isProktor(): bool
@@ -39,6 +40,11 @@ class User extends Authenticatable
     public function isSiswa(): bool
     {
         return $this->role === 'siswa';
+    }
+
+    public static function generatePassword(): string
+    {
+        return \Illuminate\Support\Str::random(8);
     }
 
     public function classroom()

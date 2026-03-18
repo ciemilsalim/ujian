@@ -108,21 +108,45 @@
 
         /* Footer / Tanda Tangan */
         .footer-sign {
-            margin-top: 40px;
+            margin-top: 50px;
             width: 100%;
         }
 
         .sign-box {
             float: right;
-            width: 250px;
+            width: 280px;
             text-align: center;
         }
 
-        .sign-space {
-            height: 70px;
+        .sign-date {
+            margin-bottom: 60px;
+        }
+
+        .sign-name {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 2px;
+        }
+
+        .sign-nip {
+            font-size: 10pt;
         }
 
         .clear { clear: both; }
+
+        /* QR Code placeholder style */
+        .qr-placeholder {
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: #999;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -213,12 +237,16 @@
     </table>
 
     <div class="footer-sign">
+        <div class="qr-placeholder">
+            VALID DOCUMENT
+        </div>
         <div class="sign-box">
-            <p>{{ $settings['location'] ?? 'Dicetak' }}, {{ date('d F Y') }}</p>
-            <p>Proktor / Panitia Ujian</p>
-            <div class="sign-space"></div>
-            <p><strong>( __________________________ )</strong></p>
-            <p>NIP. ......................................</p>
+            <div class="sign-date">
+                {{ $settings['location'] ?? 'Dicetak' }}, {{ date('d F Y') }}
+            </div>
+            <p>Proktor / Panitia Ujian,</p>
+            <div class="sign-name">( __________________________ )</div>
+            <div class="sign-nip">NIP. ......................................</div>
         </div>
         <div class="clear"></div>
     </div>

@@ -83,6 +83,7 @@ export default function ExamEngine({
     const [isFinishModalOpen, setIsFinishModalOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -273,6 +274,8 @@ export default function ExamEngine({
         // Debounce auto-save: 500ms untuk PG, 1000ms untuk essay
         if (autoSaveDebounceRef.current) clearTimeout(autoSaveDebounceRef.current);
         const delay = currentQuestion?.type === 'essay' ? 1000 : 500;
+        
+        setIsSaving(true);
         autoSaveDebounceRef.current = setTimeout(() => {
             // console.log(`[DEBUG] Debounce auto-save triggered. Sending to server. answers count: ${Object.keys(newAnswers).length}`);
             router.post(route('siswa.exams.submit'), {
@@ -287,9 +290,11 @@ export default function ExamEngine({
                 },
                 onFinish: () => {
                     // console.log('[DEBUG] Auto-save request finished');
+                    setIsSaving(false);
                 },
                 onError: () => {
                     // Sesi sudah tidak aktif atau sudah finished — tidak perlu lakukan apapun
+                    setIsSaving(false);
                 }
             });
         }, delay);
@@ -369,13 +374,19 @@ export default function ExamEngine({
                                 </p>
                                 <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
                                 <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
-                                    <Home className="w-3 h-3" /> {session.classroom?.name || examUser.user?.classroom?.name || 'Semua Kelas'}
+                                    <Home className="w-3 h-3" /> {session.classroom?.name || (examUser.user as any)?.classroom?.name || 'Semua Kelas'}
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-3 sm:gap-4">
+                        {/* Auto-Save Indicator */}
+                        <div className={`hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all duration-300 ${isSaving ? 'bg-amber-50 text-amber-600 animate-pulse' : 'bg-green-50 text-green-600'}`}>
+                            <div className={`w-1.5 h-1.5 rounded-full ${isSaving ? 'bg-amber-500' : 'bg-green-500'}`} />
+                            {isSaving ? 'Menyimpan...' : 'Tersimpan'}
+                        </div>
+
                         {/* Font Size Toggle */}
                         <div className="flex items-center bg-gray-50 dark:bg-gray-800 rounded-2xl p-1 border border-gray-100 dark:border-gray-700 shadow-sm">
                             <button

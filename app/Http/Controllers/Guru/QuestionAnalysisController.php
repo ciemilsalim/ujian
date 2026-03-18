@@ -21,65 +21,65 @@ class QuestionAnalysisController extends Controller
         $analysis = [];
 
         foreach ($questionBank->questions as $question) {
-            $totalAnswers = StudentAnswer::where('question_id', $question->id)->count();
+            $answers = StudentAnswer::where('question_id', $question->id)
+                ->with('examSessionUser')
+                ->get();
+            
+            $totalAnswers = $answers->count();
 
-            if ($question->type === 'pilihan_ganda') {
-                $correctCount = StudentAnswer::where('question_id', $question->id)
-                    ->where('is_correct', true)
-                    ->count();
-
-                // Tingkat kesulitan: persentase siswa yang menjawab benar
-                $difficultyLevel = $totalAnswers > 0 ? round(($correctCount / $totalAnswers) * 100, 1) : 0;
-
-                // Klasifikasi tingkat kesulitan
+            if ($question->type === 'pilihan_ganda' && $totalAnswers > 0) {
+                // 1. Tingkat Kesukaran (P)
+                $correctCount = $answers->where('is_correct', true)->count();
+                $difficultyLevel = round($correctCount / $totalAnswers, 2);
+                
                 $difficultyLabel = match (true) {
-                    $difficultyLevel >= 70 => 'Mudah',
-                    $difficultyLevel >= 30 => 'Sedang',
-                    default => 'Sulit',
+                    $difficultyLevel >= 0.7 => 'Mudah',
+                    $difficultyLevel >= 0.3 => 'Sedang',
+                    default => 'Sukar',
                 };
 
-                // Distribusi jawaban per opsi
-                $optionDistribution = [];
-                if ($question->options) {
-                    foreach (array_keys($question->options) as $opt) {
-                        $optionDistribution[$opt] = StudentAnswer::where('question_id', $question->id)
-                            ->where('answer_text', $opt)
-                            ->count();
-                    }
-                }
+                // 2. Daya Pembeda (D) - Sederhana (Kelompok Atas - Kelompok Bawah)
+                // Kita ambil 27% atas dan 27% bawah berdasarkan skor total sesi (jika ada data cukup)
+                // Untuk kesederhanaan di MVP ini, kita bagi 50/50 jika data sedikit
+                $sortedAnswers = $answers->sortByDesc(function($a) {
+                    return $a->examSessionUser->score ?? 0;
+                });
+                
+                $n = floor($totalAnswers * 0.27) ?: 1;
+                $upperGroup = $sortedAnswers->take($n);
+                $lowerGroup = $sortedAnswers->take(-$n);
+                
+                $upperCorrect = $upperGroup->where('is_correct', true)->count();
+                $lowerCorrect = $lowerGroup->where('is_correct', true)->count();
+                
+                $discriminationIndex = round(($upperCorrect - $lowerCorrect) / $n, 2);
+                
+                $discriminationLabel = match (true) {
+                    $discriminationIndex >= 0.4 => 'Sangat Baik',
+                    $discriminationIndex >= 0.3 => 'Baik',
+                    $discriminationIndex >= 0.2 => 'Cukup (Perlu Revisi)',
+                    default => 'Buruk (Buang/Ganti)',
+                };
 
                 $analysis[] = [
                     'id' => $question->id,
                     'question_text' => $question->question_text,
                     'type' => $question->type,
-                    'answer_key' => $question->answer_key,
+                    'difficulty' => [
+                        'index' => $difficultyLevel,
+                        'label' => $difficultyLabel
+                    ],
+                    'discrimination' => [
+                        'index' => $discriminationIndex,
+                        'label' => $discriminationLabel
+                    ],
                     'total_answers' => $totalAnswers,
-                    'correct_count' => $correctCount,
-                    'difficulty_level' => $difficultyLevel,
-                    'difficulty_label' => $difficultyLabel,
-                    'option_distribution' => $optionDistribution,
-                ];
-            } else {
-                // Essay — hanya tampilkan total yang telah dinilai
-                $scoredCount = StudentAnswer::where('question_id', $question->id)
-                    ->whereNotNull('is_correct')
-                    ->count();
-                $avgScore = StudentAnswer::where('question_id', $question->id)
-                    ->whereNotNull('score')
-                    ->avg('score');
-
-                $analysis[] = [
-                    'id' => $question->id,
-                    'question_text' => $question->question_text,
-                    'type' => $question->type,
-                    'total_answers' => $totalAnswers,
-                    'scored_count' => $scoredCount,
-                    'avg_score' => $avgScore ? round($avgScore, 1) : 0,
+                    'correct_count' => $correctCount
                 ];
             }
         }
 
-        return Inertia::render('Guru/Questions/Analysis', [
+        return Inertia::render('Proktor/Results/ItemAnalysis', [
             'questionBank' => $questionBank,
             'analysis' => $analysis,
         ]);

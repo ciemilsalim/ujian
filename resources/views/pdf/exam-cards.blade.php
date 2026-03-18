@@ -2,81 +2,176 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <title>Kartu Login Ujian</title>
     <style>
+        @page {
+            margin: 0.5cm;
+        }
+
         body {
-            font-family: sans-serif;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: #334155;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
         }
 
         .grid-container {
             width: 100%;
         }
 
-        .card {
-            width: 48%;
-            /* Adjust for 2 columns */
+        .card-wrapper {
+            width: 50%;
             display: inline-block;
-            margin-bottom: 20px;
-            border: 2px solid #333;
-            padding: 15px;
             box-sizing: border-box;
-            border-radius: 8px;
+            padding: 5px;
             vertical-align: top;
         }
 
+        .card {
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .card-accent {
+            height: 4px;
+            background-color: #4f46e5;
+        }
+
         .header {
+            padding: 10px;
             text-align: center;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            border-bottom: 1px dashed #e2e8f0;
+            background-color: #f8fafc;
         }
 
         .header h3 {
             margin: 0;
-            font-size: 16px;
+            font-size: 13px;
             font-weight: bold;
+            color: #1e293b;
+            text-transform: uppercase;
         }
 
         .header p {
-            margin: 2px 0;
-            font-size: 12px;
+            margin: 1px 0;
+            font-size: 9px;
+            color: #64748b;
         }
 
-        .content table {
+        .content-table {
             width: 100%;
-            font-size: 14px;
+            border-collapse: collapse;
         }
 
-        .content table td {
-            padding: 4px 0;
+        .photo-cell {
+            width: 65px;
+            padding: 10px;
             vertical-align: top;
         }
 
-        .content table td:first-child {
-            width: 80px;
+        .photo-box {
+            width: 60px;
+            height: 75px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            background-color: #f8fafc;
+            text-align: center;
+            line-height: 75px;
+            color: #cbd5e1;
+            font-size: 20px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-cell {
+            padding: 10px 10px 10px 0;
+            vertical-align: top;
+        }
+
+        .student-details {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .student-details td {
+            font-size: 10px;
+            padding: 2px 0;
+            vertical-align: top;
+        }
+
+        .label {
+            width: 55px;
+            color: #64748b;
+            font-weight: normal;
+        }
+
+        .value {
+            color: #1e293b;
             font-weight: bold;
         }
 
-        .qr-code {
+        .highlight {
+            font-family: monospace;
+            font-size: 11px;
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        .qr-cell {
+            width: 55px;
+            padding: 10px;
+            vertical-align: middle;
             text-align: center;
-            margin-top: 15px;
         }
 
-        .qr-code img {
-            width: 80px;
-            height: 80px;
+        .qr-box img {
+            width: 45px;
+            height: 45px;
         }
 
-        .footer {
-            margin-top: 10px;
+        .rules-section {
+            background-color: #f8fafc;
+            padding: 8px 12px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .rules-title {
+            font-size: 8px;
+            font-weight: bold;
+            color: #475569;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .rules-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 7px;
+            color: #64748b;
+        }
+
+        .rules-list li {
+            margin-bottom: 1px;
+        }
+
+        .footer-tag {
             text-align: center;
-            font-size: 10px;
-            font-style: italic;
-        }
-
-        /* 5px gap adjustment logic using nth-child */
-        .card:nth-child(odd) {
-            margin-right: 2%;
+            font-size: 7px;
+            color: #94a3b8;
+            padding: 4px 0;
+            background-color: #fff;
         }
 
         .page-break {
@@ -89,49 +184,72 @@
 
     <div class="grid-container">
         @foreach($students as $index => $student)
-            <div class="card">
-                <div class="header">
-                    <h3>KARTU LOGIN UJIAN</h3>
-                    <p>{{ $schoolName }}</p>
-                    <p>{{ $schoolAddress }}</p>
-                </div>
-                <div class="content" style="display:flex;">
-                    @if($student->photo)
-                        <div style="width:80px; margin-right:10px; flex-shrink:0;">
-                            <img src="{{ public_path('storage/' . $student->photo) }}"
-                                style="width:70px; height:90px; object-fit:cover; border:1px solid #ccc;">
-                        </div>
-                    @endif
-                    <table>
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="card-accent"></div>
+                    <div class="header">
+                        <h3>KARTU PESERTA UJIAN</h3>
+                        <p><strong>{{ strtoupper($schoolName) }}</strong></p>
+                        <p>{{ $schoolAddress }}</p>
+                    </div>
+                    
+                    <table class="content-table">
                         <tr>
-                            <td>Nama</td>
-                            <td>: {{ $student->name }}</td>
-                        </tr>
-                        <tr>
-                            <td>Username</td>
-                            <td>: {{ $student->username }}</td>
-                        </tr>
-                        <tr>
-                            <td>Kelas</td>
-                            <td>: {{ $classroom->name }}</td>
-                        </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td>: <b>*** (Hubungi Proktor)</b></td>
+                            <td class="photo-cell">
+                                <div class="photo-box">
+                                    @if($student->photo)
+                                        <img src="{{ public_path('storage/' . $student->photo) }}">
+                                    @else
+                                        {{ substr($student->name, 0, 1) }}
+                                    @endif
+                                </div>
+                            </td>
+                            <td class="info-cell">
+                                <table class="student-details">
+                                    <tr>
+                                        <td class="label">Nama</td>
+                                        <td class="value">: {{ $student->name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Kelas</td>
+                                        <td class="value">: {{ $classroom->name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Username</td>
+                                        <td class="value">: <span class="highlight">{{ $student->username }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Password</td>
+                                        <td class="value">: <span class="highlight text-black" style="color: #000;">{{ $student->password_plain ?? $student->username }}</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="qr-cell">
+                                <div class="qr-box">
+                                    <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(100)->generate($student->username)) !!}">
+                                    <div style="font-size: 5px; color: #94a3b8; margin-top: 2px;">SCAN LOGIN</div>
+                                </div>
+                            </td>
                         </tr>
                     </table>
-                </div>
-                <div class="qr-code">
-                    <img
-                        src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(100)->generate($student->username)) !!} ">
+
+                    <div class="rules-section">
+                        <span class="rules-title">Tata Tertib Peserta:</span>
+                        <ul class="rules-list">
+                            <li>1. Dilarang membuka tab lain selama ujian berlangsung.</li>
+                            <li>2. Jaga kerahasiaan username dan password Anda.</li>
+                            <li>3. Laporkan kendala teknis segera kepada pengawas.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-tag">
+                        CBT SYSTEM V2.0 • {{ date('d/m/Y H:i') }}
+                    </div>
                 </div>
             </div>
 
-            {{-- 1 page = 8 cards (4 rows, 2 columns) --}}
-            @if (($index + 1) % 8 == 0)
-                </div>
+            @if (($index + 1) % 8 == 0 && !$loop->last)
                 <div class="page-break"></div>
-                <div class="grid-container">
             @endif
         @endforeach
     </div>

@@ -7,13 +7,32 @@ use Illuminate\Http\Request;
 
 class UserController
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = \App\Models\User::with('classroom')->latest()->paginate(10);
+        $query = \App\Models\User::with('classroom')->latest();
+
+        if ($request->filled('search')) {
+            $query->where(function($q) use ($request) {
+                $q->where('name', 'like', '%' . $request->search . '%')
+                  ->orWhere('username', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        if ($request->filled('role')) {
+            $query->where('role', $request->role);
+        }
+
+        if ($request->filled('classroom_id')) {
+            $query->where('classroom_id', $request->classroom_id);
+        }
+
+        $users = $query->paginate(10)->withQueryString();
         $classrooms = \App\Models\Classroom::all();
+
         return \Inertia\Inertia::render('Proktor/Users/Index', [
             'users' => $users,
-            'classrooms' => $classrooms
+            'classrooms' => $classrooms,
+            'filters' => $request->only(['search', 'role', 'classroom_id'])
         ]);
     }
 
@@ -61,16 +80,19 @@ class UserController
             'username' => 'required|string|max:255|unique:users',
             'name' => 'required|string|max:255',
             'email' => 'nullable|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
+            'password' => 'nullable|string|min:8',
             'role' => 'required|in:proktor,guru,siswa',
             'classroom_id' => 'required_if:role,siswa|nullable|exists:classrooms,id',
         ]);
+
+        $password = $request->password ?: \App\Models\User::generatePassword();
 
         \App\Models\User::create([
             'username' => $request->username,
             'name' => $request->name,
             'email' => $request->email,
-            'password' => \Illuminate\Support\Facades\Hash::make($request->password),
+            'password' => \Illuminate\Support\Facades\Hash::make($password),
+            'password_plain' => $password,
             'role' => $request->role,
             'classroom_id' => $request->classroom_id,
         ]);
@@ -103,6 +125,7 @@ class UserController
         $data = $request->only('username', 'name', 'email', 'role', 'classroom_id');
         if ($request->filled('password')) {
             $data['password'] = \Illuminate\Support\Facades\Hash::make($request->password);
+            $data['password_plain'] = $request->password;
         }
 
         $user->update($data);
@@ -116,6 +139,18 @@ class UserController
         $user->delete();
 
         return redirect()->route('proktor.users.index')->with('success', 'User deleted successfully.');
+    }
+
+    public function bulkDestroy(Request $request)
+    {
+        $request->validate([
+            'ids' => 'required|array',
+            'ids.*' => 'exists:users,id'
+        ]);
+
+        \App\Models\User::whereIn('id', $request->ids)->delete();
+
+        return redirect()->route('proktor.users.index')->with('success', count($request->ids) . ' user(s) deleted successfully.');
     }
 
     public function downloadTemplateExcel()

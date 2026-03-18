@@ -20,12 +20,16 @@ class ExamController extends Controller
             ->orderBy('start_time', 'asc') // Urutkan yang terdekat lebih dulu
             ->get();
 
+        // Security: Clear exam tokens when returning to dashboard
+        // Student must re-enter token to resume or start an exam
+        session()->forget('exam_tokens');
+
         return \Inertia\Inertia::render('Siswa/Dashboard', [
             'sessions' => $sessions
         ]);
     }
 
-    public function show($id)
+    public function show($id, Request $request)
     {
         $session = \App\Models\ExamSession::with(['exam.questionBank.subject', 'classroom', 'exam.questionBank.questions'])->findOrFail($id);
 
@@ -37,6 +41,39 @@ class ExamController extends Controller
 
         if ($now->gt($session->end_time)) {
             return redirect()->route('siswa.dashboard')->with('error', 'Maaf, batas waktu untuk memulai ujian ini telah berakhir.');
+        }
+
+        // Initialize session record for user if not exists
+        $examUser = \App\Models\ExamSessionUser::with(['user.classroom'])->firstOrCreate(
+            ['exam_session_id' => $id, 'user_id' => auth()->id()],
+            ['status' => 'working']
+        );
+
+        // Clear Information for Finished Exams
+        if ($examUser->status === 'finished') {
+            return \Inertia\Inertia::render('Siswa/Exam/Finished', [
+                'session' => [
+                    'id' => $session->id,
+                    'name' => $session->name,
+                    'exam' => ['title' => $session->exam->title]
+                ],
+                'examUser' => $examUser,
+                'maxCheatWarnings' => (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3),
+            ]);
+        }
+
+        // Token Protection Check
+        $tokens = session('exam_tokens', []);
+        $tokenVerified = $tokens[$id] ?? false;
+        
+        if (!$tokenVerified && $session->token) {
+            return \Inertia\Inertia::render('Siswa/Exam/EnterToken', [
+                'session' => [
+                    'id' => $session->id,
+                    'name' => $session->name,
+                    'exam' => ['title' => $session->exam->title]
+                ]
+            ]);
         }
 
         // Randomize questions if enabled
@@ -52,11 +89,7 @@ class ExamController extends Controller
             $session->exam->questionBank->setRelation('questions', $shuffledQuestions);
         }
 
-        // Initializing session record for user if not exists
-        $examUser = \App\Models\ExamSessionUser::with(['user.classroom'])->firstOrCreate(
-            ['exam_session_id' => $id, 'user_id' => auth()->id()],
-            ['status' => 'working']
-        );
+        // Initializing session record handled above
 
         // Session tracking logic
         $currentSessionId = session()->getId();
@@ -93,7 +126,8 @@ class ExamController extends Controller
         }
 
         if ($examUser->status === 'finished') {
-            return redirect()->route('siswa.dashboard')->with('info', 'Anda telah menyelesaikan ujian ini.');
+            // Repetition handled by the check at the top
+            return redirect()->route('siswa.dashboard');
         }
 
         // Fetch existing answers to restore the state if student refreshes the tab
@@ -124,11 +158,35 @@ class ExamController extends Controller
             ->latest('finished_at')
             ->get();
 
+        // Security: Clear exam tokens when viewing history
+        session()->forget('exam_tokens');
+
         return \Inertia\Inertia::render('Siswa/History', [
             'examHistory' => $examHistory,
             'passingGrade' => $passingGrade,
             'maxCheatWarnings' => (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3),
         ]);
+    }
+
+    public function verifyToken(Request $request)
+    {
+        $request->validate([
+            'exam_session_id' => 'required|exists:exam_sessions,id',
+            'token' => 'required|string|size:6',
+        ]);
+
+        $session = \App\Models\ExamSession::findOrFail($request->exam_session_id);
+
+        if (strtoupper($request->token) !== $session->token) {
+            return back()->withErrors(['token' => 'Token yang Anda masukkan tidak valid atau sudah kedaluwarsa.']);
+        }
+
+        // Store verification in user session
+        $tokens = session('exam_tokens', []);
+        $tokens[$session->id] = true;
+        session(['exam_tokens' => $tokens]);
+
+        return redirect()->route('siswa.exams.show', $session->id)->with('success', 'Token berhasil diverifikasi.');
     }
     public function reportCheat(Request $request)
     {

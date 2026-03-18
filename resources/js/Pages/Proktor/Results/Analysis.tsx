@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router } from '@inertiajs/react';
-import { ArrowLeft, Download, TrendingUp, Star, Award, AlertCircle, FileBarChart, CheckCircle, RotateCcw, Trash2 } from 'lucide-react';
+import { ArrowLeft, Download, TrendingUp, Star, Award, AlertCircle, FileBarChart, CheckCircle, RotateCcw, Trash2, BarChart3 } from 'lucide-react';
 import { toast } from 'sonner';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie } from 'recharts';
 import { ExamSession, ExamUser } from '@/types';
@@ -50,6 +50,12 @@ export default function Analysis({ session, stats, distribution }: IndexProps) {
                         >
                             <Download className="w-4 h-4" /> Unduh Laporan PDF
                         </a>
+                        <Link
+                            href={route('proktor.results.item-analysis', session.id)}
+                            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition shadow-lg shadow-indigo-200 dark:shadow-none"
+                        >
+                            <BarChart3 className="w-4 h-4" /> Analisis Butir Soal
+                        </Link>
                     </div>
 
                     {/* Summary Cards */}

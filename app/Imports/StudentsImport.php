@@ -35,11 +35,14 @@ class StudentsImport implements ToModel, WithHeadingRow
         $existing = User::where('username', $username)->first();
         if ($existing) return null;
 
+        $password = $row['password'] ?? User::generatePassword();
+
         return new User([
             'username' => $username,
             'name' => $name,
             'email' => $row['email'] ?? null,
-            'password' => Hash::make($row['password'] ?? 'siswa123'),
+            'password' => Hash::make($password),
+            'password_plain' => $password,
             'role' => 'siswa',
             'classroom_id' => $finalClassroomId,
         ]);
