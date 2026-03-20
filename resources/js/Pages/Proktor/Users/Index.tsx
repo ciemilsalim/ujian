@@ -11,7 +11,8 @@ import { User, Classroom, PaginationData } from '@/types';
 import { 
     FileSpreadsheet, FileText, Upload, Plus, Search, 
     Filter, Trash2, CheckSquare, Square, MoreVertical, 
-    UserPlus, ShieldCheck, Users, GraduationCap, Key, Eye, EyeOff
+    UserPlus, ShieldCheck, Users, GraduationCap, Key, Eye, EyeOff,
+    Copy, CheckCircle2, MoreHorizontal, Mail, UserCircle, Pencil
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -44,6 +45,11 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
 
     const togglePassword = (id: number) => {
         setShowPasswords(prev => ({ ...prev, [id]: !prev[id] }));
+    };
+
+    const copyToClipboard = (text: string, label: string) => {
+        navigator.clipboard.writeText(text);
+        toast.success(`${label} berhasil disalin ke clipboard`);
     };
 
     const handleFilter = (e: React.FormEvent) => {
@@ -272,52 +278,85 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                                                 </button>
                                             </td>
                                             <td className="px-6 py-4">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-700 dark:text-indigo-300 font-bold text-lg border border-indigo-200 dark:border-indigo-800">
+                                                <div className="flex items-center gap-4">
+                                                    <div className={`relative w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 ${
+                                                        user.role === 'proktor' ? 'bg-gradient-to-br from-rose-500 to-red-600 border-rose-200 dark:border-rose-900/50' :
+                                                        user.role === 'guru' ? 'bg-gradient-to-br from-blue-500 to-indigo-600 border-blue-200 dark:border-indigo-900/50' :
+                                                        'bg-gradient-to-br from-emerald-500 to-teal-600 border-emerald-200 dark:border-emerald-900/50'
+                                                    }`}>
                                                         {user.name.charAt(0).toUpperCase()}
+                                                        <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center border border-gray-100 dark:border-gray-700 shadow-sm">
+                                                            {user.role === 'proktor' ? <ShieldCheck className="w-3 h-3 text-rose-500" /> :
+                                                             user.role === 'guru' ? <Users className="w-3 h-3 text-blue-500" /> :
+                                                             <GraduationCap className="w-3 h-3 text-emerald-500" />}
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <div className="text-sm font-bold text-gray-900 dark:text-white capitalize">{user.name}</div>
-                                                        <div className="text-xs text-gray-500 dark:text-gray-400">{user.email || 'Tidak ada email'}</div>
+                                                    <div className="flex flex-col">
+                                                        <div className="text-sm font-extrabold text-gray-900 dark:text-white capitalize tracking-tight group-hover:text-indigo-600 transition-colors">
+                                                            {user.name}
+                                                        </div>
+                                                        <div className="flex items-center gap-1 text-[11px] text-gray-500 dark:text-gray-400 font-medium">
+                                                            <Mail className="w-3 h-3" />
+                                                            {user.email || 'tanpa email'}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4">
-                                                <div className="space-y-1.5">
-                                                    <div className="flex items-center gap-2 text-xs">
-                                                        <span className="text-gray-400 uppercase font-semibold text-[10px] w-14">User:</span>
-                                                        <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 rounded font-mono text-indigo-600 dark:text-indigo-400 font-bold">
-                                                            {user.username}
-                                                        </code>
+                                                <div className="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100 dark:border-gray-800 space-y-2 max-w-[200px]">
+                                                    <div className="flex items-center justify-between group/item">
+                                                        <div className="flex flex-col">
+                                                            <span className="text-[9px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest leading-none mb-1">Username</span>
+                                                            <code className="text-xs font-bold text-indigo-600 dark:text-indigo-400 font-mono tracking-tight">
+                                                                {user.username}
+                                                            </code>
+                                                        </div>
+                                                        <button 
+                                                            onClick={() => copyToClipboard(user.username, 'Username')}
+                                                            className="p-1.5 text-gray-400 hover:text-indigo-600 hover:bg-white dark:hover:bg-gray-800 rounded-md transition-all opacity-0 group-hover/item:opacity-100 shadow-sm"
+                                                            title="Salin Username"
+                                                        >
+                                                            <Copy className="w-3 h-3" />
+                                                        </button>
                                                     </div>
+
                                                     {user.role === 'siswa' && (
-                                                        <div className="flex items-center gap-2 text-xs">
-                                                            <span className="text-gray-400 uppercase font-semibold text-[10px] w-14">Pass:</span>
-                                                            <div className="flex items-center gap-2 group">
-                                                                <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 rounded font-mono text-gray-600 dark:text-gray-400">
-                                                                    {showPasswords[user.id] ? (user.password_plain || '********') : '••••••••'}
-                                                                </code>
-                                                                <button 
-                                                                    onClick={() => togglePassword(user.id)}
-                                                                    className="text-gray-400 hover:text-indigo-600 transition-colors opacity-0 group-hover:opacity-100"
-                                                                >
-                                                                    {showPasswords[user.id] ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
-                                                                </button>
+                                                        <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between group/item">
+                                                            <div className="flex flex-col">
+                                                                <span className="text-[9px] font-black text-rose-400 dark:text-rose-500 uppercase tracking-widest leading-none mb-1">Password</span>
+                                                                <div className="flex items-center gap-1.5">
+                                                                    <code className="text-xs font-bold text-gray-700 dark:text-gray-300 font-mono tracking-tighter">
+                                                                        {showPasswords[user.id] ? (user.password_plain || '********') : '••••••••'}
+                                                                    </code>
+                                                                    <button 
+                                                                        onClick={() => togglePassword(user.id)}
+                                                                        className="text-gray-400 hover:text-rose-500 transition-colors"
+                                                                    >
+                                                                        {showPasswords[user.id] ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
+                                                                    </button>
+                                                                </div>
                                                             </div>
+                                                            <button 
+                                                                onClick={() => copyToClipboard(user.password_plain || '', 'Password')}
+                                                                className="p-1.5 text-gray-400 hover:text-rose-600 hover:bg-white dark:hover:bg-gray-800 rounded-md transition-all opacity-0 group-hover/item:opacity-100 shadow-sm"
+                                                                title="Salin Password"
+                                                            >
+                                                                <Copy className="w-3 h-3" />
+                                                            </button>
                                                         </div>
                                                     )}
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4">
-                                                <div className="flex flex-col gap-1.5 items-start">
-                                                    {getRoleBadge(user.role)}
+                                                <div className="flex flex-col gap-2">
+                                                    <div>{getRoleBadge(user.role)}</div>
                                                     {user.classroom_id ? (
-                                                        <span className="inline-flex items-center text-xs font-semibold text-gray-600 dark:text-gray-400">
-                                                            <GraduationCap className="w-3 h-3 mr-1" />
+                                                        <div className="inline-flex items-center px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-800 text-[10px] font-black text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 uppercase tracking-tighter">
+                                                            <GraduationCap className="w-3 h-3 mr-1 text-indigo-500" />
                                                             {classrooms.find(c => c.id === user.classroom_id)?.name}
-                                                        </span>
+                                                        </div>
                                                     ) : (
-                                                        <span className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">Tanpa Kelas</span>
+                                                        <span className="text-[9px] text-gray-400 uppercase font-black tracking-widest opacity-50">Tanpa Kelas</span>
                                                     )}
                                                 </div>
                                             </td>
@@ -328,8 +367,7 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                                                         className="p-2 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 rounded-lg transition-all"
                                                         title="Edit User"
                                                     >
-                                                        <Plus className="w-5 h-5 rotate-45" /> {/* Just using Plus as an example to keep it simple, or use a proper Edit icon if needed */}
-                                                        {/* Reusing icons since it's cleaner */}
+                                                        <Pencil className="w-4 h-4" />
                                                     </Link>
                                                     <button 
                                                         onClick={() => handleDelete(user.id)}

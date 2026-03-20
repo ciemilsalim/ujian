@@ -141,7 +141,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                     <h2 className="text-2xl font-bold leading-tight text-gray-900 dark:text-gray-100">
                         Halo, {user.name}
                     </h2>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Selamat datang kembali di Zexam!</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Selamat datang kembali di ZEXAM-CBT!</p>
                 </div>
             }
         >
@@ -319,7 +319,9 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                     </PieChart>
                                 </ResponsiveContainer>
                                 <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                                    <span className="text-2xl font-bold text-gray-900 dark:text-white">{metrics.studentsAtExams + metrics.examFinishes}</span>
+                                    <span className="text-2xl font-bold text-gray-900 dark:text-white">
+                                        {charts.status.reduce((sum, item) => sum + item.value, 0)}
+                                    </span>
                                     <span className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-bold">Total Aktif</span>
                                 </div>
                             </div>
@@ -329,7 +331,7 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                         <div className="flex items-center gap-2">
                                             <div className="w-3 h-3 rounded-full" style={{ backgroundColor: ['#cbd5e1', '#3b82f6', '#10b981'][index] }}></div>
                                             <span className="text-gray-600 dark:text-gray-400">
-                                                {item.name === 'Finished' ? 'Selesai' : (item.name === 'Running' ? 'Sedang Ujian' : 'Belum Mulai')}
+                                                {item.name === 'Finished' ? 'Selesai' : (item.name === 'Working' ? 'Sedang Ujian' : 'Belum Mulai')}
                                             </span>
                                         </div>
                                         <span className="font-bold text-gray-900 dark:text-white">{item.value}</span>

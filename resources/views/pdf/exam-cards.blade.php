@@ -7,59 +7,62 @@
     <style>
         @page {
             margin: 0.5cm;
+            size: A4 portrait;
         }
 
         body {
             font-family: 'Helvetica', 'Arial', sans-serif;
-            color: #334155;
+            color: #1e293b;
             margin: 0;
             padding: 0;
             background-color: #fff;
         }
 
-        .grid-container {
+        .main-table {
             width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
         }
 
-        .card-wrapper {
+        .card-cell {
             width: 50%;
-            display: inline-block;
-            box-sizing: border-box;
-            padding: 5px;
+            height: 7.1cm; /* Total page height / 4 rows */
             vertical-align: top;
+            padding: 3px;
+            box-sizing: border-box;
         }
 
         .card {
-            border: 1px solid #cbd5e1;
-            border-radius: 12px;
+            border: 1px solid #94a3b8;
+            border-radius: 8px;
+            height: 6.9cm; /* Slightly less than cell height */
             overflow: hidden;
             background-color: #fff;
-        }
-
-        .card-accent {
-            height: 4px;
-            background-color: #4f46e5;
+            position: relative;
+            box-sizing: border-box;
         }
 
         .header {
-            padding: 10px;
+            background-color: #f1f5f9;
+            padding: 6px 10px;
             text-align: center;
-            border-bottom: 1px dashed #e2e8f0;
-            background-color: #f8fafc;
+            border-bottom: 2px solid #4f46e5;
         }
 
         .header h3 {
             margin: 0;
-            font-size: 13px;
-            font-weight: bold;
-            color: #1e293b;
+            font-size: 11px;
+            font-weight: 800;
+            color: #4f46e5;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .header p {
             margin: 1px 0;
-            font-size: 9px;
+            font-size: 8px;
             color: #64748b;
+            font-weight: bold;
         }
 
         .content-table {
@@ -68,22 +71,18 @@
         }
 
         .photo-cell {
-            width: 65px;
-            padding: 10px;
+            width: 1.8cm;
+            padding: 8px;
             vertical-align: top;
         }
 
         .photo-box {
-            width: 60px;
-            height: 75px;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
+            width: 1.8cm;
+            height: 2.4cm;
+            border: 1px solid #cbd5e1;
             background-color: #f8fafc;
             text-align: center;
-            line-height: 75px;
-            color: #cbd5e1;
-            font-size: 20px;
-            font-weight: bold;
+            position: relative;
             overflow: hidden;
         }
 
@@ -93,8 +92,15 @@
             object-fit: cover;
         }
 
+        .photo-placeholder {
+            font-size: 30px;
+            color: #e2e8f0;
+            line-height: 2.4cm;
+            font-weight: bold;
+        }
+
         .info-cell {
-            padding: 10px 10px 10px 0;
+            padding: 8px 5px 8px 0;
             vertical-align: top;
         }
 
@@ -104,54 +110,67 @@
         }
 
         .student-details td {
-            font-size: 10px;
-            padding: 2px 0;
+            font-size: 9px;
+            padding: 3px 0;
             vertical-align: top;
         }
 
         .label {
-            width: 55px;
+            width: 50px;
             color: #64748b;
             font-weight: normal;
         }
 
         .value {
-            color: #1e293b;
-            font-weight: bold;
-        }
-
-        .highlight {
-            font-family: monospace;
-            font-size: 11px;
-            color: #4f46e5;
+            color: #0f172a;
             font-weight: bold;
         }
 
         .qr-cell {
-            width: 55px;
-            padding: 10px;
+            width: 1.6cm;
+            padding: 8px;
             vertical-align: middle;
             text-align: center;
         }
 
         .qr-box img {
-            width: 45px;
-            height: 45px;
+            width: 1.4cm;
+            height: 1.4cm;
+        }
+
+        .qr-label {
+            font-size: 5px;
+            color: #94a3b8;
+            margin-top: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .highlight-box {
+            background-color: #f1f5f9;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 10px;
+            color: #1e293b;
         }
 
         .rules-section {
+            padding: 5px 10px;
             background-color: #f8fafc;
-            padding: 8px 12px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px dashed #e2e8f0;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
         }
 
         .rules-title {
-            font-size: 8px;
+            font-size: 7px;
             font-weight: bold;
             color: #475569;
-            text-transform: uppercase;
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .rules-list {
@@ -162,16 +181,18 @@
             color: #64748b;
         }
 
-        .rules-list li {
-            margin-bottom: 1px;
-        }
-
-        .footer-tag {
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background-color: #4f46e5;
+            color: #ffffff;
+            font-size: 6px;
             text-align: center;
-            font-size: 7px;
-            color: #94a3b8;
-            padding: 4px 0;
-            background-color: #fff;
+            line-height: 15px;
+            font-weight: bold;
         }
 
         .page-break {
@@ -182,78 +203,83 @@
 
 <body>
 
-    <div class="grid-container">
-        @foreach($students as $index => $student)
-            <div class="card-wrapper">
-                <div class="card">
-                    <div class="card-accent"></div>
-                    <div class="header">
-                        <h3>KARTU PESERTA UJIAN</h3>
-                        <p><strong>{{ strtoupper($schoolName) }}</strong></p>
-                        <p>{{ $schoolAddress }}</p>
-                    </div>
-                    
-                    <table class="content-table">
-                        <tr>
-                            <td class="photo-cell">
-                                <div class="photo-box">
-                                    @if($student->photo)
-                                        <img src="{{ public_path('storage/' . $student->photo) }}">
-                                    @else
-                                        {{ substr($student->name, 0, 1) }}
-                                    @endif
-                                </div>
-                            </td>
-                            <td class="info-cell">
-                                <table class="student-details">
-                                    <tr>
-                                        <td class="label">Nama</td>
-                                        <td class="value">: {{ $student->name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Kelas</td>
-                                        <td class="value">: {{ $classroom->name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Username</td>
-                                        <td class="value">: <span class="highlight">{{ $student->username }}</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Password</td>
-                                        <td class="value">: <span class="highlight text-black" style="color: #000;">{{ $student->password_plain ?? $student->username }}</span></td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td class="qr-cell">
-                                <div class="qr-box">
-                                    <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(100)->generate($student->username)) !!}">
-                                    <div style="font-size: 5px; color: #94a3b8; margin-top: 2px;">SCAN LOGIN</div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+    <table class="main-table">
+        @foreach($students->chunk(2) as $rowGroupIndex => $row)
+            <tr>
+                @foreach($row as $student)
+                    <td class="card-cell">
+                        <div class="card">
+                            <div class="header">
+                                <h3>KARTU LOGIN PESERTA</h3>
+                                <p>{{ strtoupper($schoolName) }}</p>
+                            </div>
+                            
+                            <table class="content-table">
+                                <tr>
+                                    <td class="photo-cell">
+                                        <div class="photo-box">
+                                            @if($student->photo)
+                                                <img src="{{ public_path('storage/' . $student->photo) }}">
+                                            @else
+                                                <div class="photo-placeholder">{{ substr($student->name, 0, 1) }}</div>
+                                            @endif
+                                        </div>
+                                    </td>
+                                    <td class="info-cell">
+                                        <table class="student-details">
+                                            <tr>
+                                                <td class="label">Nama</td>
+                                                <td class="value">: {{ $student->name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Kelas</td>
+                                                <td class="value">: {{ $classroom->name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Username</td>
+                                                <td class="value">: <span class="highlight-box">{{ $student->username }}</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Password</td>
+                                                <td class="value">: <span class="highlight-box">{{ $student->password_plain ?? $student->username }}</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="qr-cell">
+                                        <div class="qr-box">
+                                            <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(100)->errorCorrection('H')->generate($student->username)) !!}">
+                                            <div class="qr-label">SCAN LOGIN</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
 
-                    <div class="rules-section">
-                        <span class="rules-title">Tata Tertib Peserta:</span>
-                        <ul class="rules-list">
-                            <li>1. Dilarang membuka tab lain selama ujian berlangsung.</li>
-                            <li>2. Jaga kerahasiaan username dan password Anda.</li>
-                            <li>3. Laporkan kendala teknis segera kepada pengawas.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-tag">
-                        CBT SYSTEM V2.0 • {{ date('d/m/Y H:i') }}
-                    </div>
-                </div>
-            </div>
+                            <div class="rules-section">
+                                <span class="rules-title">CATATAN:</span>
+                                <ul class="rules-list">
+                                    <li>• Login ke: <strong>{{ request()->getSchemeAndHttpHost() }}</strong></li>
+                                    <li>• Dilarang membuka tab lain / aplikasi lain.</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </td>
+                @endforeach
+                @if($row->count() == 1)
+                    <td class="card-cell"></td>
+                @endif
+            </tr>
 
-            @if (($index + 1) % 8 == 0 && !$loop->last)
+            @if (($rowGroupIndex + 1) % 4 == 0 && !$loop->last)
+                </table>
                 <div class="page-break"></div>
+                <table class="main-table">
             @endif
         @endforeach
+    </table>
+
+    <div style="position: fixed; bottom: -0.5cm; left: 0; right: 0; text-align: center; font-size: 7pt; color: #999; text-transform: uppercase;">
+        Printed by ZEXAM-CBT V.1.0. | {{ date('d/m/Y H:i') }}
     </div>
-
 </body>
-
-</html>
+</html>

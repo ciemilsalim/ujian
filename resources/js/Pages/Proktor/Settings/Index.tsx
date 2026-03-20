@@ -9,6 +9,8 @@ import { Database, AlertTriangle } from 'lucide-react';
 interface Settings {
     school_name: string;
     school_address: string;
+    principal_name: string;
+    principal_nip: string;
     passing_grade: string | number;
     max_cheat_warnings: string | number;
     enable_anti_cheat: boolean | string;
@@ -16,12 +18,15 @@ interface Settings {
     block_copy_paste: boolean | string;
     detect_tab_switch: boolean | string;
     force_fullscreen: boolean | string;
+    app_mode: 'online' | 'offline';
 }
 
 export default function Index({ settings }: { settings: Settings }) {
     const { data, setData, post, processing, errors } = useForm({
         school_name: settings.school_name || '',
         school_address: settings.school_address || '',
+        principal_name: settings.principal_name || '',
+        principal_nip: settings.principal_nip || '',
         passing_grade: settings.passing_grade || '70',
         max_cheat_warnings: settings.max_cheat_warnings || '3',
         enable_anti_cheat: settings.enable_anti_cheat === '1' || settings.enable_anti_cheat === true,
@@ -29,6 +34,7 @@ export default function Index({ settings }: { settings: Settings }) {
         block_copy_paste: settings.block_copy_paste === '1' || settings.block_copy_paste === true,
         detect_tab_switch: settings.detect_tab_switch === '1' || settings.detect_tab_switch === true,
         force_fullscreen: settings.force_fullscreen === '1' || settings.force_fullscreen === true,
+        app_mode: settings.app_mode || 'online',
     });
 
     const submit = (e: React.FormEvent) => {
@@ -90,6 +96,31 @@ export default function Index({ settings }: { settings: Settings }) {
                                                     required
                                                 ></textarea>
                                                 <InputError message={errors.school_address} className="mt-2" />
+                                            </div>
+
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <div>
+                                                    <InputLabel htmlFor="principal_name" value="Nama Kepala Sekolah" className="font-bold text-xs uppercase tracking-widest text-gray-500" />
+                                                    <TextInput
+                                                        id="principal_name"
+                                                        value={data.principal_name}
+                                                        onChange={(e) => setData('principal_name', e.target.value)}
+                                                        className="mt-1 block w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 focus:border-indigo-500 rounded-2xl h-12"
+                                                        placeholder="Santi S.Pd, M.Pd"
+                                                    />
+                                                    <InputError message={errors.principal_name} className="mt-2" />
+                                                </div>
+                                                <div>
+                                                    <InputLabel htmlFor="principal_nip" value="NIP Kepala Sekolah" className="font-bold text-xs uppercase tracking-widest text-gray-500" />
+                                                    <TextInput
+                                                        id="principal_nip"
+                                                        value={data.principal_nip}
+                                                        onChange={(e) => setData('principal_nip', e.target.value)}
+                                                        className="mt-1 block w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 focus:border-indigo-500 rounded-2xl h-12"
+                                                        placeholder="19800101..."
+                                                    />
+                                                    <InputError message={errors.principal_nip} className="mt-2" />
+                                                </div>
                                             </div>
                                         </div>
                                     </section>
@@ -206,6 +237,52 @@ export default function Index({ settings }: { settings: Settings }) {
                                                 </div>
                                             </div>
                                         </div>
+                                    </section>
+
+                                    <section>
+                                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+                                            <span className="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-900/30 text-green-600 flex items-center justify-center text-sm">4</span>
+                                            Mode Aplikasi
+                                        </h3>
+
+                                        <div className="grid grid-cols-2 gap-4">
+                                            <button
+                                                type="button"
+                                                onClick={() => setData('app_mode', 'online')}
+                                                className={`p-4 rounded-3xl border-2 transition-all flex flex-col gap-2 items-center text-center ${
+                                                    data.app_mode === 'online'
+                                                        ? 'border-green-600 bg-green-50 dark:bg-green-900/20'
+                                                        : 'border-gray-100 dark:border-gray-800 hover:border-green-200'
+                                                }`}
+                                            >
+                                                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${data.app_mode === 'online' ? 'bg-green-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-400'}`}>
+                                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                                                </div>
+                                                <div>
+                                                    <p className={`font-bold ${data.app_mode === 'online' ? 'text-green-700 dark:text-green-400' : 'text-gray-500'}`}>Online</p>
+                                                    <p className="text-[10px] text-gray-400 uppercase font-black tracking-tighter">Hosting / CPANEL</p>
+                                                </div>
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                onClick={() => setData('app_mode', 'offline')}
+                                                className={`p-4 rounded-3xl border-2 transition-all flex flex-col gap-2 items-center text-center ${
+                                                    data.app_mode === 'offline'
+                                                        ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-900/20'
+                                                        : 'border-gray-100 dark:border-gray-800 hover:border-indigo-200'
+                                                }`}
+                                            >
+                                                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${data.app_mode === 'offline' ? 'bg-indigo-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-400'}`}>
+                                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                                                </div>
+                                                <div>
+                                                    <p className={`font-bold ${data.app_mode === 'offline' ? 'text-indigo-700 dark:text-indigo-400' : 'text-gray-500'}`}>Offline</p>
+                                                    <p className="text-[10px] text-gray-400 uppercase font-black tracking-tighter">Localhost / Server</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        <InputError message={errors.app_mode} className="mt-2" />
                                     </section>
                                 </div>
                             </div>

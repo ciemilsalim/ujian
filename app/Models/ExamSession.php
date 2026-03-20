@@ -27,4 +27,9 @@ class ExamSession extends Model
     {
         return $this->hasMany(ExamSessionUser::class);
     }
+
+    public function proctors()
+    {
+        return $this->hasMany(ExamSessionProctor::class);
+    }
 }

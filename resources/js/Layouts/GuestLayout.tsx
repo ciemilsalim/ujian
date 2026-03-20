@@ -21,7 +21,7 @@ export default function Guest({ children }: PropsWithChildren) {
                     <h1 className="mt-4 text-2xl font-black tracking-tight text-gray-900 dark:text-white">
                         Selamat Datang
                     </h1>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Masuk ke akun zexam.io Anda</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Masuk ke akun ZEXAM-CBT Anda</p>
                 </div>
 
                 <div className="glass dark:glass-dark rounded-[32px] p-8 shadow-2xl border border-white/20 dark:border-gray-800/50">
@@ -29,7 +29,7 @@ export default function Guest({ children }: PropsWithChildren) {
                 </div>
 
                 <p className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400 font-medium">
-                    &copy; {new Date().getFullYear()} zexam.io. Aman & Elegan.
+                    &copy; {new Date().getFullYear()} ZEXAM-CBT. Aman & Elegan.
                 </p>
             </div>
 

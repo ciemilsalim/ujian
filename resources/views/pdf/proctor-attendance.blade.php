@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Daftar Hadir - {{ $session->name }}</title>
+    <title>Daftar Hadir Pengawas - {{ $session->name }}</title>
     <style>
         @page {
             margin: 1cm;
@@ -16,7 +16,6 @@
             line-height: 1.4;
         }
 
-        /* Kop Surat */
         .kop-surat {
             border-bottom: 3px double #000;
             padding-bottom: 5px;
@@ -43,7 +42,6 @@
             text-decoration: underline;
         }
 
-        /* Metadata Table */
         .meta-table {
             width: 100%;
             margin-bottom: 20px;
@@ -63,7 +61,6 @@
             text-align: center;
         }
 
-        /* Main Table */
         table.main-table {
             width: 100%;
             border-collapse: collapse;
@@ -72,7 +69,7 @@
         table.main-table th,
         table.main-table td {
             border: 1px solid #000;
-            padding: 8px 5px;
+            padding: 10px 5px;
         }
 
         table.main-table th {
@@ -85,31 +82,9 @@
             text-align: center;
         }
 
-        /* Signature Columns */
-        .sign-col {
-            position: relative;
-            height: 45px;
-            font-size: 8pt;
-            vertical-align: top;
-            padding: 5px !important;
-        }
-
-        .sign-placeholder {
-            position: absolute;
-            bottom: 5px;
-            left: 5px;
-            border-bottom: 1px dotted #999;
-            width: 80%;
-        }
-
-        /* Footer */
         .footer {
             margin-top: 30px;
             width: 100%;
-        }
-
-        .footer td {
-            width: 50%;
         }
 
         .signature-box {
@@ -126,24 +101,22 @@
 </head>
 
 <body>
-    <!-- Kop Surat -->
     <div class="kop-surat">
         <h1>{{ $settings['school_name'] ?? 'INSTANSI PENDIDIKAN' }}</h1>
-        <p>{{ $settings['school_address'] ?? 'Alamat instansi belum dikonfigurasi di menu pengaturan proktor.' }}</p>
+        <p>{{ $settings['school_address'] ?? '-' }}</p>
     </div>
 
-    <div class="title">DAFTAR HADIR PESERTA UJIAN</div>
+    <div class="title">DAFTAR HADIR PENGAWAS UJIAN</div>
 
-    <!-- Info Sesi -->
     <table class="meta-table">
         <tr>
             <td class="label">Mata Pelajaran</td>
             <td class="separator">:</td>
             <td><strong>{{ $session->exam->title ?? '-' }}</strong></td>
             
-            <td class="label" style="padding-left: 40px;">Sesi / Ruang</td>
+            <td class="label" style="padding-left: 40px;">Sesi</td>
             <td class="separator">:</td>
-            <td>{{ $session->name }} / {{ $room->name ?? ($session->classroom->name ?? '-') }}</td>
+            <td>{{ $session->name }}</td>
         </tr>
         <tr>
             <td class="label">Hari, Tanggal</td>
@@ -156,60 +129,41 @@
         </tr>
     </table>
 
-    <!-- Tabel Utama -->
     <table class="main-table">
         <thead>
             <tr>
                 <th width="5%">No</th>
-                <th width="15%">NIS / Username</th>
-                <th>Nama Peserta</th>
-                <th width="12%">Kelas</th>
+                <th>Nama Pengawas</th>
+                <th width="20%">Ruang</th>
                 <th width="25%">Tanda Tangan</th>
-                <th width="12%">Ket</th>
+                <th width="15%">Ket</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($session->examUsers as $index => $eu)
-                <tr>
-                    <td class="text-center">{{ $index + 1 }}</td>
-                    <td class="text-center">{{ $eu->user->username ?? '-' }}</td>
-                    <td>{{ $eu->user->name ?? '-' }}</td>
-                    <td class="text-center">{{ $eu->user->classroom->name ?? ($session->classroom->name ?? '-') }}</td>
-                    <td class="sign-col">
-                        <span style="color: #ccc;">{{ $index + 1 }}.</span>
-                        @if($index % 2 == 0)
-                            <div style="margin-left: 10px; margin-top: 5px;">..........................</div>
-                        @else
-                            <div style="margin-left: 50px; margin-top: 5px;">..........................</div>
-                        @endif
-                    </td>
-                    <td></td>
-                </tr>
+            @php $no = 1; @endphp
+            @foreach ($roomProctors as $roomId => $proctors)
+                @foreach ($proctors as $p)
+                    <tr>
+                        <td class="text-center">{{ $no++ }}</td>
+                        <td>{{ $p->proctor->name }}</td>
+                        <td class="text-center">{{ $p->room->name }}</td>
+                        <td style="height: 40px;">
+                             <span style="color: #ccc; font-size: 8pt;">{{ $no - 1 }}. ......................</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                @endforeach
             @endforeach
         </tbody>
     </table>
 
-    <!-- Footer / Tanda Tangan -->
     <table class="footer">
         <tr>
-            <td class="signature-box">
-                <p>Mengetahui,</p>
-                <p>Kepala Sekolah,</p>
-                <div class="name-line">{{ $settings['principal_name'] ?? '...........................' }}</div>
-                <p style="font-size: 9pt; margin-top: 5px;">NIP. {{ $settings['principal_nip'] ?? '...........................' }}</p>
-            </td>
+            <td class="signature-box" style="width: 60%"></td>
             <td class="signature-box">
                 <p>Kota, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
-                <p>Pengawas,</p>
-                @if(isset($proctors) && count($proctors) > 0)
-                    @foreach($proctors as $p)
-                        <div class="name-line">{{ $p->proctor->name }}</div>
-                        <p style="font-size: 8pt; margin-top: 2px;">NIS/NIP: {{ $p->proctor->nip ?? '-' }}</p>
-                    @endforeach
-                @else
-                    <div class="name-line">( ___________________________ )</div>
-                    <p style="font-size: 9pt; margin-top: 5px;">NIP. ...........................</p>
-                @endif
+                <p>Ketua Panitia,</p>
+                <div class="name-line">( ___________________________ )</div>
             </td>
         </tr>
     </table>

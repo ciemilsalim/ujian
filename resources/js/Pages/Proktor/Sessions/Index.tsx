@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { Plus, Play, Pause, Trash2, Monitor, Edit, Calendar, BookOpen, Users, Clock, Search, Filter, MoreVertical, CheckCircle, XCircle } from 'lucide-react';
+import { Plus, Play, Pause, Trash2, Monitor, Edit, Calendar, BookOpen, Users, Clock, Search, Filter, MoreVertical, CheckCircle, XCircle, AlertTriangle, Home } from 'lucide-react';
 import { toast } from 'sonner';
 import Modal from '@/Components/Modal';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -17,7 +17,9 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
 
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [selectedSession, setSelectedSession] = useState<ExamSession | null>(null);
+    const [sessionToDelete, setSessionToDelete] = useState<ExamSession | null>(null);
 
     const createForm = useForm({
         exam_id: '',
@@ -35,12 +37,20 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
         end_time: '',
     });
 
-    const handleDelete = (id: number) => {
-        if (confirm('Apakah Anda yakin ingin menghapus sesi ujian ini?')) {
-            destroy(route('proktor.sessions.destroy', id), {
-                onSuccess: () => toast.success('Sesi berhasil dihapus')
-            });
-        }
+    const handleDelete = (session: ExamSession) => {
+        setSessionToDelete(session);
+        setShowDeleteModal(true);
+    };
+
+    const confirmDelete = () => {
+        if (!sessionToDelete) return;
+        destroy(route('proktor.sessions.destroy', sessionToDelete.id), {
+            onSuccess: () => {
+                toast.success('Sesi berhasil dihapus');
+                setShowDeleteModal(false);
+                setSessionToDelete(null);
+            }
+        });
     };
 
     const handleToggleStatus = (id: number, currentStatus: boolean) => {
@@ -335,6 +345,13 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
                                             <td className="px-6 py-5 text-right">
                                                 <div className="flex items-center justify-end gap-2">
                                                     <Link
+                                                        href={route('proktor.sessions.room-assignment', session.id)}
+                                                        className="p-2 bg-emerald-50 text-emerald-600 rounded-lg hover:bg-emerald-600 hover:text-white transition-all shadow-sm border border-emerald-100"
+                                                        title="Bagi Ruang"
+                                                    >
+                                                        <Home className="w-4 h-4" />
+                                                    </Link>
+                                                    <Link
                                                         href={route('proktor.sessions.monitor', session.id)}
                                                         className="p-2 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-600 hover:text-white transition-all shadow-sm border border-indigo-100"
                                                         title="Pantau Live"
@@ -349,7 +366,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
                                                         <Edit className="w-4 h-4" />
                                                     </button>
                                                     <button
-                                                        onClick={() => handleDelete(session.id)}
+                                                        onClick={() => handleDelete(session)}
                                                         className="p-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all shadow-sm border border-red-100"
                                                         title="Hapus Sesi"
                                                     >
@@ -385,6 +402,44 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
 
             <Modal show={showEditModal} onClose={() => setShowEditModal(false)}>
                 {renderForm(editForm, submitEdit, 'Edit Sesi Ujian', () => setShowEditModal(false))}
+            </Modal>
+
+            {/* Delete Confirmation Modal */}
+            <Modal show={showDeleteModal} onClose={() => setShowDeleteModal(false)} maxWidth="md">
+                <div className="p-6">
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="p-3 bg-red-100 text-red-600 rounded-full">
+                            <AlertTriangle className="w-6 h-6" />
+                        </div>
+                        <div>
+                            <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                                Konfirmasi Hapus Sesi
+                            </h2>
+                            <p className="text-sm text-gray-500">
+                                Tindakan ini tidak dapat dibatalkan. Seluruh data terkait pendaftaran siswa dan jawaban pada sesi ini akan ikut terhapus.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800 mb-6">
+                        <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Sesi yang akan dihapus:</div>
+                        <div className="text-sm font-bold text-gray-900 dark:text-white">{sessionToDelete?.name}</div>
+                        <div className="text-[10px] text-indigo-500 font-black uppercase mt-1">{sessionToDelete?.exam?.title}</div>
+                    </div>
+
+                    <div className="flex justify-end gap-3">
+                        <SecondaryButton onClick={() => setShowDeleteModal(false)}>
+                            Batal
+                        </SecondaryButton>
+                        <button
+                            onClick={confirmDelete}
+                            disabled={createForm.processing}
+                            className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-red-200 dark:shadow-none disabled:opacity-50"
+                        >
+                            Hapus Sesi
+                        </button>
+                    </div>
+                </div>
             </Modal>
         </AuthenticatedLayout>
     );

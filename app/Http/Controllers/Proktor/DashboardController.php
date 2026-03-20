@@ -9,9 +9,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $studentsAtExams = \App\Models\ExamSessionUser::where('status', 'working')->count();
+        $activeSessionIds = \App\Models\ExamSession::where('is_active', true)->pluck('id');
+
+        $studentsAtExams = \App\Models\ExamSessionUser::whereIn('exam_session_id', $activeSessionIds)->where('status', 'working')->count();
         $examFinishes = \App\Models\ExamSessionUser::where('status', 'finished')->count();
-        $runningExams = \App\Models\ExamSession::where('is_active', true)->count();
+        $runningExams = count($activeSessionIds);
         $totalParticipants = \App\Models\ExamSessionUser::count();
         $completedRate = $totalParticipants > 0 ? round(($examFinishes / $totalParticipants) * 100) : 0;
 
@@ -44,13 +46,13 @@ class DashboardController extends Controller
             ['name' => 'Finished', 'value' => \App\Models\ExamSessionUser::where('status', 'finished')->count()],
         ];
 
-        // Score Distribution (Fake/Mock logic since we might not have many scores yet)
+        // Score Distribution
         $scoreDistribution = [
-            ['range' => '0-20', 'count' => \App\Models\ExamSessionUser::whereBetween('score', [0, 20])->count()],
-            ['range' => '21-40', 'count' => \App\Models\ExamSessionUser::whereBetween('score', [21, 40])->count()],
-            ['range' => '41-60', 'count' => \App\Models\ExamSessionUser::whereBetween('score', [41, 60])->count()],
-            ['range' => '61-80', 'count' => \App\Models\ExamSessionUser::whereBetween('score', [61, 80])->count()],
-            ['range' => '81-100', 'count' => \App\Models\ExamSessionUser::whereBetween('score', [81, 100])->count()],
+            ['range' => '0-20', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>=', 0)->where('score', '<=', 20)->count()],
+            ['range' => '21-40', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 20)->where('score', '<=', 40)->count()],
+            ['range' => '41-60', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 40)->where('score', '<=', 60)->count()],
+            ['range' => '61-80', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 60)->where('score', '<=', 80)->count()],
+            ['range' => '81-100', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 80)->where('score', '<=', 100)->count()],
         ];
 
         $activeSessions = \App\Models\ExamSession::with(['exam'])
@@ -58,6 +60,7 @@ class DashboardController extends Controller
             ->get();
 
         $activityFeed = \App\Models\ExamSessionUser::with(['user', 'examSession.exam'])
+            ->whereIn('exam_session_id', $activeSessionIds)
             ->latest('updated_at')
             ->take(10)
             ->get();

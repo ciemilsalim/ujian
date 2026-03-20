@@ -10,6 +10,7 @@ import {
     Settings,
     LogOut,
     PlayCircle,
+    Home,
     Sun,
     Moon,
     Database,
@@ -18,7 +19,8 @@ import {
     HelpCircle,
     ChevronDown,
     ChevronRight,
-    Zap
+    Zap,
+    ShieldCheck
 } from 'lucide-react';
 import { ReactNode, useState, useEffect } from 'react';
 
@@ -113,7 +115,7 @@ export default function Sidebar() {
                     <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-200 dark:shadow-none group-hover:scale-105 transition">
                         <Zap className="w-5 h-5 fill-current" />
                     </div>
-                    <span className="text-xl font-black text-gray-900 dark:text-white tracking-tight">zexam<span className="text-blue-600">.io</span></span>
+                    <span className="text-xl font-black text-gray-900 dark:text-white tracking-tight">ZEXAM<span className="text-blue-600">-CBT</span></span>
                 </Link>
             </div>
 
@@ -154,6 +156,18 @@ export default function Sidebar() {
                                     label="Mata Pelajaran"
                                     active={route().current('proktor.subjects.*')}
                                 />
+                                <SidebarItem
+                                    href={route('proktor.rooms.index')}
+                                    icon={Home}
+                                    label="Ruang Ujian"
+                                    active={route().current('proktor.rooms.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.proctors.index')}
+                                    icon={ShieldCheck}
+                                    label="Manajemen Pengawas"
+                                    active={route().current('proktor.proctors.*')}
+                                />
                             </CollapsibleSection>
                         </div>
 
@@ -179,11 +193,23 @@ export default function Sidebar() {
                                     label="Hasil Ujian"
                                     active={route().current('proktor.results.*')}
                                 />
+                            </div>
+                        </div>
+
+                        <div>
+                            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Administrasi</p>
+                            <div className="space-y-1">
                                 <SidebarItem
-                                    href={route('proktor.exam-cards.index')}
-                                    icon={CreditCard}
-                                    label="Kartu Ujian"
-                                    active={route().current('proktor.exam-cards.*')}
+                                    href={route('proktor.administration.index')}
+                                    icon={ShieldCheck}
+                                    label="Administrasi Ujian"
+                                    active={route().current('proktor.administration.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.sync.index')}
+                                    icon={Database}
+                                    label="Sinkronisasi Data"
+                                    active={route().current('proktor.sync.*')}
                                 />
                             </div>
                         </div>

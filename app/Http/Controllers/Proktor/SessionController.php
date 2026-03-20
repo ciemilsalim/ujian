@@ -196,4 +196,12 @@ class SessionController
 
         return redirect()->back()->with('success', 'Ujian siswa berhasil di-reset. Siswa dapat memulai dari awal.');
     }
+
+    public function destroy($id)
+    {
+        $session = \App\Models\ExamSession::findOrFail($id);
+        $session->delete();
+
+        return redirect()->back()->with('success', 'Sesi ujian berhasil dihapus.');
+    }
 }

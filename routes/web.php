@@ -56,13 +56,34 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/results/user/{id}/reset', [\App\Http\Controllers\Proktor\ResultController::class, 'resetResult'])->name('results.reset-user');
         Route::delete('/results/user/{id}/delete', [\App\Http\Controllers\Proktor\ResultController::class, 'deleteResult'])->name('results.delete-user');
         Route::get('/attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generate'])->name('attendance.generate');
+        Route::get('/proctor-attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generateProctorAttendance'])->name('attendance.proctor');
         Route::get('/results/{id}/item-analysis', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('results.item-analysis');
 
         Route::get('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'index'])->name('settings.index');
         Route::post('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'store'])->name('settings.store');
         Route::post('/settings/clear-data', [\App\Http\Controllers\Proktor\SettingController::class, 'clearData'])->name('settings.clear-data');
+
+        // Synchronization Routes
+        Route::get('/sync', [\App\Http\Controllers\Proktor\SyncController::class, 'index'])->name('sync.index');
+        Route::get('/sync/export-exam', [\App\Http\Controllers\Proktor\SyncController::class, 'exportExam'])->name('sync.export-exam');
+        Route::post('/sync/import-exam', [\App\Http\Controllers\Proktor\SyncController::class, 'importExam'])->name('sync.import-exam');
+        Route::get('/sync/export-results', [\App\Http\Controllers\Proktor\SyncController::class, 'exportResults'])->name('sync.export-results');
+        Route::post('/sync/import-results', [\App\Http\Controllers\Proktor\SyncController::class, 'importResults'])->name('sync.import-results');
         Route::get('/exam-cards', [\App\Http\Controllers\Proktor\ExamCardController::class, 'index'])->name('exam-cards.index');
         Route::post('/exam-cards/generate', [\App\Http\Controllers\Proktor\ExamCardController::class, 'generate'])->name('exam-cards.generate');
+
+        // Administration Routes
+        Route::get('/administration', [\App\Http\Controllers\Proktor\AdministrativeController::class, 'index'])->name('administration.index');
+        Route::post('/administration/official-report/{id}', [\App\Http\Controllers\Proktor\OfficialReportController::class, 'generate'])->name('administration.official-report');
+        Route::get('/administration/exam-rules', [\App\Http\Controllers\Proktor\RulesController::class, 'examRules'])->name('administration.exam-rules');
+        Route::get('/administration/proctor-rules', [\App\Http\Controllers\Proktor\RulesController::class, 'proctorRules'])->name('administration.proctor-rules');
+
+        // Rooms
+        Route::resource('rooms', \App\Http\Controllers\Proktor\RoomController::class);
+        Route::resource('proctors', \App\Http\Controllers\Proktor\ProctorController::class);
+        Route::get('/sessions/{session}/assign-rooms', [\App\Http\Controllers\Proktor\RoomController::class, 'roomAssignment'])->name('sessions.room-assignment');
+        Route::post('/sessions/{session}/assign-rooms', [\App\Http\Controllers\Proktor\RoomController::class, 'assignStudents'])->name('sessions.assign-rooms');
+        Route::post('/sessions/{session}/assign-proctors', [\App\Http\Controllers\Proktor\RoomController::class, 'assignProctors'])->name('sessions.assign-proctors');
     });
 
     // Guru Routes

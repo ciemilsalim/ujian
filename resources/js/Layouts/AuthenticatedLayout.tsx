@@ -163,10 +163,10 @@ export default function Authenticated({
                     <div className="flex flex-col items-center gap-2">
                         <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 font-bold text-sm">
                             <Zap className="w-4 h-4 text-blue-600 fill-current" />
-                            <span>zexam.v1</span>
+                            <span>ZEXAM-CBT V1.0</span>
                         </div>
                         <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">
-                            &copy; {new Date().getFullYear()} zexam.io. Created by <a href="https://www.zahradev.online" target="_blank" className="text-blue-600 hover:underline">ZahraDev</a>
+                            &copy; {new Date().getFullYear()} ZEXAM-CBT. Created by <a href="https://www.zahradev.online" target="_blank" className="text-blue-600 hover:underline">ZahraDev</a>
                         </p>
                         <p className="text-[10px] text-gray-400 font-bold mt-1 select-all">emilsalimramadhan@gmail.com</p>
                     </div>

@@ -64,7 +64,7 @@ export default function Welcome({ auth }: PageProps) {
                             <Zap className="text-white w-6 h-6 fill-current" />
                         </div>
                         <span className="text-xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-                            zexam<span className="text-blue-600">.v1</span>
+                            ZEXAM<span className="text-blue-600">-CBT</span>
                         </span>
                     </div>
 
@@ -207,10 +207,10 @@ export default function Welcome({ auth }: PageProps) {
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg flex items-center justify-center">
                             <Zap className="text-white w-5 h-5 fill-current" />
                         </div>
-                        <span className="text-lg font-black tracking-tight">zexam.io</span>
+                        <span className="text-lg font-black tracking-tight">ZEXAM-CBT</span>
                     </div>
                     <div className="text-center">
-                        <p className="text-gray-400 text-sm font-medium">© {new Date().getFullYear()} zexam.io. Created by <a href="https://www.zahradev.online" target="_blank" className="text-blue-600 hover:underline">ZahraDev</a></p>
+                        <p className="text-gray-400 text-sm font-medium">© {new Date().getFullYear()} ZEXAM-CBT. Created by <a href="https://www.zahradev.online" target="_blank" className="text-blue-600 hover:underline">ZahraDev</a></p>
                         <p className="text-gray-400 text-xs mt-2 font-bold select-all">emilsalimramadhan@gmail.com</p>
                     </div>
                     <div className="flex gap-6 text-gray-400 text-sm font-bold">

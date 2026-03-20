@@ -9,6 +9,7 @@ export interface User {
     role: 'proktor' | 'guru' | 'siswa';
     classroom_id: number | null;
     photo: string | null;
+    password_plain?: string;
 }
 
 export interface Subject {
@@ -155,6 +156,8 @@ export interface PaginationData<T> {
     current_page: number;
     last_page: number;
     total: number;
+    from?: number;
+    to?: number;
 }
 
 export type PageProps<

@@ -20,6 +20,8 @@ class SettingController extends Controller
         $request->validate([
             'school_name' => 'required|string|max:255',
             'school_address' => 'required|string',
+            'principal_name' => 'nullable|string|max:255',
+            'principal_nip' => 'nullable|string|max:255',
             'passing_grade' => 'required|integer|min:0|max:100',
             'max_cheat_warnings' => 'required|integer|min:1|max:50',
             'enable_anti_cheat' => 'required|boolean',
@@ -27,11 +29,14 @@ class SettingController extends Controller
             'block_copy_paste' => 'required|boolean',
             'detect_tab_switch' => 'required|boolean',
             'force_fullscreen' => 'required|boolean',
+            'app_mode' => 'required|string|in:online,offline',
         ]);
 
         $settings = [
             'school_name' => $request->school_name,
             'school_address' => $request->school_address,
+            'principal_name' => $request->principal_name,
+            'principal_nip' => $request->principal_nip,
             'passing_grade' => $request->passing_grade,
             'max_cheat_warnings' => $request->max_cheat_warnings,
             'enable_anti_cheat' => $request->enable_anti_cheat,
@@ -39,6 +44,7 @@ class SettingController extends Controller
             'block_copy_paste' => $request->block_copy_paste,
             'detect_tab_switch' => $request->detect_tab_switch,
             'force_fullscreen' => $request->force_fullscreen,
+            'app_mode' => $request->app_mode,
         ];
 
         foreach ($settings as $key => $value) {

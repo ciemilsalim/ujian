@@ -23,6 +23,11 @@ class ExamSessionUser extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function room()
+    {
+        return $this->belongsTo(ExamRoom::class, 'exam_room_id');
+    }
+
     public function answers()
     {
         return $this->hasMany(StudentAnswer::class);

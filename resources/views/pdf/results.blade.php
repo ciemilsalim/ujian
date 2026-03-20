@@ -250,6 +250,9 @@
         </div>
         <div class="clear"></div>
     </div>
+    <div style="position: fixed; bottom: -0.5cm; left: 0; right: 0; text-align: center; font-size: 8pt; color: #999; border-top: 1px solid #eee; padding-top: 5px;">
+        Printed by ZEXAM-CBT V.1.0. | {{ date('d/m/Y H:i') }}
+    </div>
 </body>
 
 </html>
