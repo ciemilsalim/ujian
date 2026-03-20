@@ -33,8 +33,8 @@ class DatabaseSeeder extends Seeder
 
         // Create example Classroom
         $classroom = \App\Models\Classroom::create([
-            'name' => 'X-MIPA-1',
-            'description' => 'Kelas Sepuluh MIPA Satu',
+            'name' => 'VII',
+            'description' => 'Kelas Tujuh',
         ]);
 
         // Create Siswa

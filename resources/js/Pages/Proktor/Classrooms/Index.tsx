@@ -91,6 +91,7 @@ export default function Index({ classrooms }: { classrooms: PaginationData<Class
                                             <td className="px-6 py-4 whitespace-nowrap">{classroom.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-gray-500">{classroom.description}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <Link href={route('proktor.classrooms.manage-students', classroom.id)} className="text-blue-600 hover:text-blue-900 mr-3">Kelola Siswa</Link>
                                                 <Link href={route('proktor.classrooms.show', classroom.id)} className="text-emerald-600 hover:text-emerald-900 mr-3">Tata Letak</Link>
                                                 <button onClick={() => openEditModal(classroom)} className="text-indigo-600 hover:text-indigo-900 mr-3">Edit</button>
                                                 <button onClick={() => deleteClassroom(classroom.id)} className="text-red-600 hover:text-red-900">Hapus</button>

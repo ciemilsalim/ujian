@@ -1,10 +1,11 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, useForm, router } from '@inertiajs/react';
-import { Users, Home, ShieldCheck, ChevronRight, Save, UserPlus, Trash2 } from 'lucide-react';
+import { Users, Home, ShieldCheck, ChevronRight, Save, UserPlus, Trash2, ArrowLeft, Grid } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
 import { toast } from 'sonner';
+import { Link } from '@inertiajs/react';
 
 interface Student {
     id: number;
@@ -12,7 +13,6 @@ interface Student {
     classroom?: { id: number, name: string };
     classroom_id?: number | null;
     exam_room_id: number | null;
-    default_exam_room_id: number | null;
 }
 
 interface Classroom {
@@ -26,22 +26,15 @@ interface Room {
     capacity: number;
 }
 
-interface Proctor {
-    id: number;
-    name: string;
-}
-
-export default function RoomAssignment({ session, students, rooms, proctors, currentProctors, classrooms }: { session: any, students: Student[], rooms: Room[], proctors: Proctor[], currentProctors: any[], classrooms: Classroom[] }) {
+export default function GlobalAssignment({ students, rooms, classrooms }: { students: Student[], rooms: Room[], classrooms: Classroom[] }) {
     const [selectedRoomId, setSelectedRoomId] = useState<number | null>(rooms.length > 0 ? rooms[0].id : null);
+    
     const [selectedClassroomId, setSelectedClassroomId] = useState<number | string>('all');
     
     // Group students by room
     const [roomAssignments, setRoomAssignments] = useState<Record<number, number[]>>({});
     const [unassignedStudents, setUnassignedStudents] = useState<number[]>([]);
     
-    // Group proctors by room
-    const [roomProctors, setRoomProctors] = useState<Record<number, number[]>>({});
-
     const [unassignedSearch, setUnassignedSearch] = useState('');
     const [selectedUnassigned, setSelectedUnassigned] = useState<number[]>([]);
 
@@ -61,17 +54,7 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
         
         setRoomAssignments(initialAssignments);
         setUnassignedStudents(initialUnassigned);
-
-        const initialProctors: Record<number, number[]> = {};
-        rooms.forEach(r => initialProctors[r.id] = []);
-        currentProctors.forEach(cp => {
-            if (initialProctors[cp.exam_room_id]) {
-                initialProctors[cp.exam_room_id].push(cp.proctor_id);
-            }
-        });
-        setRoomProctors(initialProctors);
-
-    }, [students, rooms, currentProctors]);
+    }, [students, rooms]);
 
     const handleAssign = (count: number) => {
         if (!selectedRoomId) return;
@@ -180,53 +163,19 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
             student_ids: studentIds
         }));
 
-        router.post(route('proktor.sessions.assign-rooms', session.id), {
+        router.post(route('proktor.rooms.global-assignment.save'), {
             assignments: payload
         }, {
             onSuccess: () => {
-                toast.success('Pembagian ruang berhasil disimpan');
+                toast.success('Pengaturan ruang permanen berhasil disimpan');
                 setIsSaving(false);
             },
             onError: (errors) => {
                 const errorMsg = Object.values(errors).flat().join(', ');
-                toast.error('Gagal menyimpan pembagian: ' + (errorMsg || 'Terjadi kesalahan validasi'));
+                toast.error('Gagal menyimpan: ' + (errorMsg || 'Terjadi kesalahan validasi'));
                 setIsSaving(false);
             },
             onFinish: () => setIsSaving(false)
-        });
-    };
-
-    const syncFromDefault = () => {
-        if (!confirm('Sinkronkan pembagian ruang dari pengaturan permanen? Ini akan menimpa pembagian saat ini.')) return;
-        
-        router.post(route('proktor.sessions.sync-rooms', session.id), {}, {
-            onSuccess: () => {
-                toast.success('Berhasil disinkronkan dari ruang default');
-                // Optional: refresh local state or let Inertia handle it
-            },
-        });
-    };
-
-    const toggleProctor = (roomId: number, proctorId: number) => {
-        let current = [...(roomProctors[roomId] || [])];
-        if (current.includes(proctorId)) {
-            current = current.filter(id => id !== proctorId);
-        } else {
-            if (current.length >= 2) {
-                toast.error('Maksimal 2 pengawas per ruang');
-                return;
-            }
-            current.push(proctorId);
-        }
-        setRoomProctors({ ...roomProctors, [roomId]: current });
-    };
-
-    const saveProctor = (roomId: number) => {
-        router.post(route('proktor.sessions.assign-proctors', session.id), {
-            room_id: roomId,
-            proctor_ids: roomProctors[roomId]
-        }, {
-            onSuccess: () => toast.success('Pengawas berhasil disimpan')
         });
     };
 
@@ -235,28 +184,28 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
             header={
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col gap-1">
+                        <Link href={route('proktor.rooms.index')} className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1 mb-1">
+                            <ArrowLeft className="w-3 h-3" /> Kembali ke Daftar Ruang
+                        </Link>
                         <h2 className="text-2xl font-black tracking-tight text-gray-950 dark:text-white uppercase flex items-center gap-2">
                             <Home className="w-6 h-6 text-indigo-600" />
-                            Pembagian Ruang - {session.name}
+                            Pengaturan Ruang Permanen
                         </h2>
                         <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                            Atur distribusi siswa dan pengawas per ruang.
+                            Atur ruang default untuk setiap siswa. Data ini akan otomatis digunakan saat membuat sesi ujian baru.
                         </p>
                     </div>
                     <div className="flex gap-2">
-                        <SecondaryButton onClick={syncFromDefault} title="Gunakan pengaturan ruang permanen">
-                            Sinkronkan dari Ruang Default
-                        </SecondaryButton>
                         <SecondaryButton onClick={handleReset}>Reset Semua</SecondaryButton>
                         <PrimaryButton onClick={saveAssignments} className="bg-indigo-600 hover:bg-indigo-700" disabled={isSaving}>
                             <Save className={`w-4 h-4 mr-2 ${isSaving ? 'animate-spin' : ''}`} /> 
-                            {isSaving ? 'Menyimpan...' : 'Simpan Pembagian'}
+                            {isSaving ? 'Menyimpan...' : 'Simpan Perubahan'}
                         </PrimaryButton>
                     </div>
                 </div>
             }
         >
-            <Head title="Pembagian Ruang" />
+            <Head title="Pengaturan Ruang Permanen" />
 
             <div className="py-8">
                 <div className="mx-auto max-w-[90rem] sm:px-6 lg:px-8 space-y-8">
@@ -268,7 +217,7 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
                                     <Users className="w-4 h-4" /> Belum Terbagi
                                 </h3>
                                 <div className="text-4xl font-black text-gray-900 dark:text-white mb-2">{unassignedStudents.length}</div>
-                                <p className="text-xs text-gray-500 font-medium">Siswa belum memiliki ruang.</p>
+                                <p className="text-xs text-gray-500 font-medium">Siswa belum memiliki ruang default.</p>
 
                                 <div className="mt-8 space-y-4">
                                     <div>
@@ -299,7 +248,7 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
                                                 value={selectedClassroomId} 
                                                 onChange={(e) => {
                                                     setSelectedClassroomId(e.target.value === 'all' ? 'all' : Number(e.target.value));
-                                                    setSelectedUnassigned([]);
+                                                    setSelectedUnassigned([]); // Clear selection when filter changes to avoid confusion
                                                 }}
                                                 className="w-full rounded-xl border-gray-100 dark:border-gray-800 dark:bg-gray-800 text-[10px] font-bold"
                                             >
@@ -368,27 +317,27 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="bg-blue-50 dark:bg-blue-900/10 rounded-[2.5rem] p-6 border border-blue-100 dark:border-blue-900/30">
-                                <h4 className="text-sm font-bold text-blue-700 dark:text-blue-400 flex items-center gap-2 mb-2">
-                                    <ShieldCheck className="w-4 h-4" /> Info
-                                </h4>
-                                <p className="text-xs text-blue-800/70 dark:text-blue-400/70 leading-relaxed italic">
-                                    Daftar hadir siswa akan otomatis dikelompokkan berdasarkan pembagian ruang di halaman ini.
-                                </p>
-                            </div>
                         </div>
 
                         {/* Room Grid */}
                         <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
                             {rooms.map(room => (
-                                <div key={room.id} className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col">
+                                <div key={room.id} className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col min-h-[400px]">
                                     <div className="flex justify-between items-center mb-6">
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center font-black">
                                                 {room.name.charAt(0)}
                                             </div>
-                                            <h4 className="font-bold text-gray-900 dark:text-white uppercase tracking-tight">{room.name}</h4>
+                                            <div className="flex flex-col">
+                                                <h4 className="font-bold text-gray-900 dark:text-white uppercase tracking-tight">{room.name}</h4>
+                                                <Link 
+                                                    href={route('proktor.rooms.seating', room.id)}
+                                                    className="text-[8px] font-black text-indigo-600 uppercase tracking-widest hover:text-indigo-700 flex items-center gap-1 transition-colors"
+                                                >
+                                                    <Grid className="w-2.5 h-2.5" />
+                                                    Atur Tata Letak
+                                                </Link>
+                                            </div>
                                         </div>
                                         <div className="text-right">
                                             <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Kapasitas</p>
@@ -396,31 +345,8 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
                                         </div>
                                     </div>
 
-                                    {/* Proctors per Room */}
-                                    <div className="mb-6 p-4 rounded-3xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800">
-                                        <div className="flex justify-between items-center mb-3">
-                                            <h5 className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Pengawas (Max 2)</h5>
-                                            <button onClick={() => saveProctor(room.id)} className="text-[10px] font-black text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded-lg">Update</button>
-                                        </div>
-                                        <div className="flex flex-wrap gap-2">
-                                            {proctors.map(p => (
-                                                <button 
-                                                    key={p.id} 
-                                                    onClick={() => toggleProctor(room.id, p.id)}
-                                                    className={`px-3 py-1.5 rounded-xl text-[10px] font-bold transition ${
-                                                        roomProctors[room.id]?.includes(p.id)
-                                                            ? 'bg-indigo-600 text-white'
-                                                            : 'bg-white dark:bg-gray-800 text-gray-500 border border-gray-200 dark:border-gray-700'
-                                                    }`}
-                                                >
-                                                    {p.name}
-                                                </button>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {/* Student List Preview? */}
-                                    <div className="flex-1 overflow-y-auto max-h-48 custom-scrollbar mb-4 pr-1">
+                                    {/* Student List Preview */}
+                                    <div className="flex-1 overflow-y-auto custom-scrollbar mb-4 pr-1">
                                         <div className="space-y-1">
                                             {roomAssignments[room.id]?.map(studentId => {
                                                 const student = students.find(s => s.id === studentId);

@@ -15,6 +15,8 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
 {
     protected $questionBankId;
     protected $drawings = [];
+    public $successCount = 0;
+    public $errorCount = 0;
 
     public function __construct($questionBankId)
     {
@@ -65,7 +67,8 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
             }
 
             // For Menjodohkan, build the default answer key if empty
-            $answerKey = strtolower(trim($row['kunci'] ?? ''));
+            // Normalize answer key: lower case and remove all spaces for multiple response
+            $answerKey = str_replace(' ', '', strtolower(trim($row['kunci'] ?? '')));
             if ($type === 'menjodohkan' && empty($answerKey)) {
                 $answerMap = [];
                 foreach (['a', 'b', 'c', 'd', 'e'] as $opt) {
@@ -76,14 +79,24 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
                 $answerKey = json_encode($answerMap);
             }
 
-            Question::create([
-                'question_bank_id' => $this->questionBankId,
-                'type' => $type,
-                'question_text' => $questionText,
-                'options' => $options,
-                'answer_key' => $answerKey,
-                'score_default' => (int) ($row['skor'] ?? 1),
-            ]);
+            try {
+                if (empty(trim($questionText))) {
+                    $this->errorCount++;
+                    continue;
+                }
+
+                Question::create([
+                    'question_bank_id' => $this->questionBankId,
+                    'type' => $type,
+                    'question_text' => $questionText,
+                    'options' => $options,
+                    'answer_key' => $answerKey,
+                    'score_default' => (int) ($row['skor'] ?? 1),
+                ]);
+                $this->successCount++;
+            } catch (\Exception $e) {
+                $this->errorCount++;
+            }
         }
     }
 

@@ -9,7 +9,12 @@ class ExamRoom extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'capacity'];
+    protected $fillable = ['name', 'capacity', 'seating_plan', 'seating_grid'];
+    
+    protected $casts = [
+        'seating_plan' => 'array',
+        'seating_grid' => 'array',
+    ];
 
     public function sessionParticipants()
     {

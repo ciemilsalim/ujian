@@ -16,7 +16,8 @@ export default function Authenticated({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
-    const user = usePage().props.auth.user;
+    const { auth, flash } = usePage<any>().props;
+    const user = auth.user;
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -47,6 +48,15 @@ export default function Authenticated({
             };
         }
     }, [user]);
+
+    useEffect(() => {
+        if (flash?.success) {
+            toast.success(flash.success);
+        }
+        if (flash?.error) {
+            toast.error(flash.error);
+        }
+    }, [flash]);
 
     return (
         <div className="min-h-screen bg-[#F9FAFB] dark:bg-gray-950 font-sans antialiased text-gray-900">

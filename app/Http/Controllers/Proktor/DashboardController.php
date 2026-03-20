@@ -59,6 +59,8 @@ class DashboardController extends Controller
             ->where('is_active', true)
             ->get();
 
+        $maxCheatWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);
+
         $activityFeed = \App\Models\ExamSessionUser::with(['user', 'examSession.exam'])
             ->whereIn('exam_session_id', $activeSessionIds)
             ->latest('updated_at')
@@ -75,6 +77,7 @@ class DashboardController extends Controller
             'recentSessions' => $recentSessions,
             'activeSessions' => $activeSessions,
             'activityFeed' => $activityFeed,
+            'maxCheatWarnings' => $maxCheatWarnings,
             'charts' => [
                 'participation' => $participationChart,
                 'status' => $statusDistribution,

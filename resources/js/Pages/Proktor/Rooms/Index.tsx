@@ -1,5 +1,5 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, useForm, router } from '@inertiajs/react';
+import { Head, useForm, router, Link } from '@inertiajs/react';
 import { Plus, Edit, Trash2, Home, Users, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 import Modal from '@/Components/Modal';
@@ -92,12 +92,19 @@ export default function Index({ rooms }: { rooms: Room[] }) {
                             Kelola ruang dan kapasitas kursi ujian.
                         </p>
                     </div>
-                    <PrimaryButton 
-                        onClick={() => setShowCreateModal(true)}
-                        className="h-12 px-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl flex items-center gap-2 shadow-lg shadow-indigo-100 dark:shadow-none"
-                    >
-                        <Plus className="w-5 h-5" /> Tambah Ruang
-                    </PrimaryButton>
+                    <div className="flex gap-2">
+                        <Link href={route('proktor.rooms.global-assignment')}>
+                            <SecondaryButton className="h-12 px-6 rounded-2xl flex items-center gap-2 border-indigo-100 text-indigo-600 hover:bg-indigo-50">
+                                <Users className="w-5 h-5" /> Atur Ruang Siswa (Permanen)
+                            </SecondaryButton>
+                        </Link>
+                        <PrimaryButton 
+                            onClick={() => setShowCreateModal(true)}
+                            className="h-12 px-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl flex items-center gap-2 shadow-lg shadow-indigo-100 dark:shadow-none"
+                        >
+                            <Plus className="w-5 h-5" /> Tambah Ruang
+                        </PrimaryButton>
+                    </div>
                 </div>
             }
         >

@@ -13,4 +13,9 @@ class Question extends Model
     {
         return $this->belongsTo(QuestionBank::class);
     }
+
+    protected function setAnswerKeyAttribute($value)
+    {
+        $this->attributes['answer_key'] = str_replace(' ', '', strtolower(trim($value)));
+    }
 }

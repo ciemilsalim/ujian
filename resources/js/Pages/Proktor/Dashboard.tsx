@@ -31,11 +31,12 @@ interface DashboardProps {
     recentSessions: ExamSession[];
     activeSessions: ExamSession[];
     activityFeed: ActivityFeedItem[];
+    maxCheatWarnings: number;
     charts: ChartData;
     [key: string]: any;
 }
 
-export default function Dashboard({ metrics, recentSessions, activeSessions, activityFeed, charts }: DashboardProps) {
+export default function Dashboard({ metrics, recentSessions, activeSessions, activityFeed, maxCheatWarnings, charts }: DashboardProps) {
     const user = usePage().props.auth.user;
 
     const copyToClipboard = (text: string) => {
@@ -479,12 +480,19 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                             <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-500">
                                                 <UserIcon className="w-5 h-5" />
                                             </div>
-                                            <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center ${activity.status === 'finished' ? 'bg-emerald-500' : 'bg-blue-500'
+                                            <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center ${
+                                                activity.cheat_warnings >= maxCheatWarnings ? 'bg-red-500' :
+                                                activity.status === 'finished' ? 'bg-emerald-500' : 
+                                                activity.status === 'working' ? 'bg-blue-500' : 'bg-gray-300'
                                                 }`}>
-                                                {activity.status === 'finished' ? (
+                                                {activity.cheat_warnings >= maxCheatWarnings ? (
+                                                    <Flag className="w-2 h-2 text-white" />
+                                                ) : activity.status === 'finished' ? (
                                                     <CheckCircle className="w-2 h-2 text-white" />
-                                                ) : (
+                                                ) : activity.status === 'working' ? (
                                                     <PlayCircle className="w-2 h-2 text-white" />
+                                                ) : (
+                                                    <UserIcon className="w-2 h-2 text-white" />
                                                 )}
                                             </div>
                                         </div>
@@ -497,8 +505,18 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                                                     {new Date(activity.updated_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                                                 </span>
                                             </div>
-                                            <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                                                {activity.status === 'finished' ? 'Telah menyelesaikan' : 'Sedang mengerjakan'} {activity.exam_session.exam?.title}
+                                            <p className="text-xs text-gray-500 dark:text-gray-400 truncate font-medium">
+                                                {activity.cheat_warnings >= maxCheatWarnings ? (
+                                                    <span className="text-red-600 dark:text-red-400 font-bold">Diskualifikasi (Curang)</span>
+                                                ) : activity.status === 'finished' ? (
+                                                    <span className="text-emerald-600 dark:text-emerald-400 font-bold">Menyelesaikan Ujian</span>
+                                                ) : activity.status === 'working' ? (
+                                                    <span className="text-blue-600 dark:text-blue-400 font-bold">Sedang Mengerjakan</span>
+                                                ) : (
+                                                    <span className="text-gray-400 dark:text-gray-500">Belum Login Ujian</span>
+                                                )}
+                                                <span className="mx-1 text-gray-300">•</span>
+                                                {activity.exam_session.exam?.title}
                                             </p>
                                         </div>
                                         {activity.score !== null && (

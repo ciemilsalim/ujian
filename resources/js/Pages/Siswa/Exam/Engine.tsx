@@ -43,7 +43,7 @@ export default function ExamEngine({
 
     // Seeded shuffle for options to keep them consistent per user/session
     const shuffledOptions = useMemo(() => {
-        if (!currentQuestion || currentQuestion.type !== 'pilihan_ganda') return [];
+        if (!currentQuestion || (currentQuestion.type !== 'pilihan_ganda' && currentQuestion.type !== 'pilihan_ganda_kompleks')) return [];
         
         const opts = currentQuestion.options;
         if (!opts) return [];
@@ -501,7 +501,10 @@ export default function ExamEngine({
                                 <h3 className="text-sm font-black text-gray-900 dark:text-gray-100 uppercase tracking-tighter">PERTANYAAN</h3>
                             </div>
                             <div className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-800 rounded-full text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                                {currentQuestion.type === 'essay' ? 'Uraian' : 'Pilihan Ganda'}
+                                {currentQuestion.type === 'essay' ? 'Uraian' : 
+                                 currentQuestion.type === 'pilihan_ganda_kompleks' ? 'Pilihan Ganda Kompleks' :
+                                 currentQuestion.type === 'isian_singkat' ? 'Isian Singkat' :
+                                 currentQuestion.type === 'menjodohkan' ? 'Menjodohkan' : 'Pilihan Ganda'}
                             </div>
                         </div>
 

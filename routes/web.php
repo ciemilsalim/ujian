@@ -45,9 +45,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/sessions/user/{id}/reset-exam', [\App\Http\Controllers\Proktor\SessionController::class, 'resetExam'])->name('sessions.reset-exam');
         Route::post('/sessions/user/{id}/force-logout', [\App\Http\Controllers\Proktor\SessionController::class, 'forceLogoutParticipant'])->name('sessions.force-logout-user');
         Route::post('/sessions/{id}/toggle-status', [\App\Http\Controllers\Proktor\SessionController::class, 'toggleActive'])->name('sessions.toggle-status');
+        Route::post('/sessions/{session}/sync', [\App\Http\Controllers\Proktor\SessionController::class, 'syncParticipants'])->name('sessions.sync');
+        Route::get('/sessions/{session}/participants', [\App\Http\Controllers\Proktor\SessionController::class, 'manageParticipants'])->name('sessions.participants');
+        Route::post('/sessions/{session}/participants', [\App\Http\Controllers\Proktor\SessionController::class, 'addParticipants'])->name('sessions.add-participants');
+        Route::delete('/sessions/{session}/participants/{user}', [\App\Http\Controllers\Proktor\SessionController::class, 'removeParticipant'])->name('sessions.remove-participant');
         Route::resource('sessions', \App\Http\Controllers\Proktor\SessionController::class);
+        
+        Route::get('/classrooms/{classroom}/manage-students', [\App\Http\Controllers\Proktor\ClassroomController::class, 'manageStudents'])->name('classrooms.manage-students');
+        Route::post('/classrooms/{classroom}/add-students', [\App\Http\Controllers\Proktor\ClassroomController::class, 'addStudents'])->name('classrooms.add-students');
+        Route::delete('/classrooms/{classroom}/students/{student}', [\App\Http\Controllers\Proktor\ClassroomController::class, 'removeStudent'])->name('classrooms.remove-student');
         Route::post('/classrooms/{classroom}/seating', [\App\Http\Controllers\Proktor\ClassroomController::class, 'updateSeating'])->name('classrooms.update-seating');
         Route::resource('classrooms', \App\Http\Controllers\Proktor\ClassroomController::class);
+        
         Route::resource('subjects', \App\Http\Controllers\Proktor\SubjectController::class);
         Route::get('/results', [\App\Http\Controllers\Proktor\ResultController::class, 'index'])->name('results.index');
         Route::get('/results/{id}', [\App\Http\Controllers\Proktor\ResultController::class, 'show'])->name('results.show');
@@ -80,10 +89,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         // Rooms
         Route::resource('rooms', \App\Http\Controllers\Proktor\RoomController::class);
+        Route::get('/rooms-assignment/global', [\App\Http\Controllers\Proktor\RoomController::class, 'globalStudentAssignment'])->name('rooms.global-assignment');
+        Route::post('/rooms-assignment/global', [\App\Http\Controllers\Proktor\RoomController::class, 'assignStudentsGlobal'])->name('rooms.global-assignment.save');
+        Route::get('/rooms/{room}/seating', [\App\Http\Controllers\Proktor\RoomController::class, 'roomSeatingPlan'])->name('rooms.seating');
+        Route::post('/rooms/{room}/seating', [\App\Http\Controllers\Proktor\RoomController::class, 'updateRoomSeating'])->name('rooms.update-seating');
+        Route::get('/rooms/{room}/pdf', [\App\Http\Controllers\Proktor\RoomController::class, 'exportSeatingPdf'])->name('rooms.pdf');
         Route::resource('proctors', \App\Http\Controllers\Proktor\ProctorController::class);
         Route::get('/sessions/{session}/assign-rooms', [\App\Http\Controllers\Proktor\RoomController::class, 'roomAssignment'])->name('sessions.room-assignment');
         Route::post('/sessions/{session}/assign-rooms', [\App\Http\Controllers\Proktor\RoomController::class, 'assignStudents'])->name('sessions.assign-rooms');
         Route::post('/sessions/{session}/assign-proctors', [\App\Http\Controllers\Proktor\RoomController::class, 'assignProctors'])->name('sessions.assign-proctors');
+        Route::post('/sessions/{session}/sync-rooms', [\App\Http\Controllers\Proktor\RoomController::class, 'syncFromDefault'])->name('sessions.sync-rooms');
     });
 
     // Guru Routes

@@ -49,6 +49,49 @@ class ClassroomController extends Controller
         ]);
     }
 
+    public function manageStudents($id)
+    {
+        $classroom = \App\Models\Classroom::findOrFail($id);
+        $currentStudents = \App\Models\User::where('classroom_id', $id)
+            ->where('role', 'siswa')
+            ->get();
+        
+        $availableStudents = \App\Models\User::whereNull('classroom_id')
+            ->where('role', 'siswa')
+            ->get();
+
+        return \Inertia\Inertia::render('Proktor/Classrooms/ManageStudents', [
+            'classroom' => $classroom,
+            'currentStudents' => $currentStudents,
+            'availableStudents' => $availableStudents
+        ]);
+    }
+
+    public function addStudents(Request $request, $id)
+    {
+        $request->validate([
+            'student_ids' => 'required|array',
+            'student_ids.*' => 'exists:users,id'
+        ]);
+
+        \App\Models\User::whereIn('id', $request->student_ids)
+            ->where('role', 'siswa')
+            ->update(['classroom_id' => $id]);
+
+        return redirect()->back()->with('success', count($request->student_ids) . ' siswa berhasil ditambahkan ke kelas.');
+    }
+
+    public function removeStudent($id, $studentId)
+    {
+        $student = \App\Models\User::where('id', $studentId)
+            ->where('classroom_id', $id)
+            ->firstOrFail();
+        
+        $student->update(['classroom_id' => null]);
+
+        return redirect()->back()->with('success', "{$student->name} berhasil dikeluarkan dari kelas.");
+    }
+
     public function updateSeating(Request $request, $id)
     {
         $classroom = \App\Models\Classroom::findOrFail($id);

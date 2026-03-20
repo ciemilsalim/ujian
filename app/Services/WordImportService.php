@@ -32,35 +32,48 @@ class WordImportService
             $questions[] = $currentQuestion;
         }
 
-        $count = 0;
+        $successCount = 0;
+        $errorCount = 0;
         foreach ($questions as $qData) {
-            $options = null;
-            if ($qData['type'] === 'pilihan_ganda' || $qData['type'] === 'pilihan_ganda_kompleks') {
-                $options = array_filter($qData['options'], function($val) {
-                    return !is_null($val) && trim($val) !== '';
-                });
-            } elseif ($qData['type'] === 'menjodohkan') {
-                $options = $qData['options'];
-            }
+            try {
+                if (empty(trim($qData['text']))) {
+                    $errorCount++;
+                    continue;
+                }
 
-            // Auto-detect PGK if answer key has multiple options
-            $type = $qData['type'];
-            if ($type === 'pilihan_ganda' && strpos($qData['answer_key'], ',') !== false) {
-                $type = 'pilihan_ganda_kompleks';
-            }
+                $options = null;
+                if ($qData['type'] === 'pilihan_ganda' || $qData['type'] === 'pilihan_ganda_kompleks') {
+                    $options = array_filter($qData['options'], function($val) {
+                        return !is_null($val) && trim($val) !== '';
+                    });
+                } elseif ($qData['type'] === 'menjodohkan') {
+                    $options = $qData['options'];
+                }
 
-            Question::create([
-                'question_bank_id' => $questionBankId,
-                'type' => $type,
-                'question_text' => $qData['text'],
-                'options' => $options,
-                'answer_key' => $qData['answer_key'] ?? 'a',
-                'score_default' => 1,
-            ]);
-            $count++;
+                // Auto-detect PGK if answer key has multiple options
+                $type = $qData['type'];
+                if ($type === 'pilihan_ganda' && strpos($qData['answer_key'], ',') !== false) {
+                    $type = 'pilihan_ganda_kompleks';
+                }
+
+                Question::create([
+                    'question_bank_id' => $questionBankId,
+                    'type' => $type,
+                    'question_text' => $qData['text'],
+                    'options' => $options,
+                    'answer_key' => $qData['answer_key'] ?? 'a',
+                    'score_default' => 1,
+                ]);
+                $successCount++;
+            } catch (\Exception $e) {
+                $errorCount++;
+            }
         }
 
-        return $count;
+        return [
+            'success' => $successCount,
+            'failed' => $errorCount
+        ];
     }
 
     protected function processElement($element, &$currentQuestion, &$questions)
@@ -149,7 +162,7 @@ class WordImportService
         }
         // Detect Answer Key
         elseif ($isAnswerKeyMatch) {
-            $currentQuestion['answer_key'] = strtolower(trim($matchesKey[2]));
+            $currentQuestion['answer_key'] = str_replace(' ', '', strtolower(trim($matchesKey[2])));
             $currentQuestion['is_complete'] = true; // Mark as potentially finished
         }
         // Otherwise append to current question text

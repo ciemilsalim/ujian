@@ -105,14 +105,17 @@ class QuestionBankController
         }
 
         try {
-            \Maatwebsite\Excel\Facades\Excel::import(
-                new \App\Imports\QuestionsImport($id),
-                $request->file('file')
-            );
+            $import = new \App\Imports\QuestionsImport($id);
+            \Maatwebsite\Excel\Facades\Excel::import($import, $request->file('file'));
 
             \App\Models\AuditLog::log('imported', 'QuestionBank', $id, null, "Import soal Excel ke bank: {$questionBank->name}");
 
-            return redirect()->back()->with('success', 'Soal berhasil diimport dari Excel.');
+            $msg = "Soal berhasil diiimport: {$import->successCount} berhasil";
+            if ($import->errorCount > 0) {
+                $msg .= ", {$import->errorCount} gagal (cek format file)";
+            }
+
+            return redirect()->back()->with('success', $msg);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Gagal import Excel: ' . $e->getMessage());
         }
@@ -131,11 +134,16 @@ class QuestionBankController
 
         try {
             $service = new \App\Services\WordImportService();
-            $count = $service->import($request->file('file')->getRealPath(), $id);
+            $result = $service->import($request->file('file')->getRealPath(), $id);
 
-            \App\Models\AuditLog::log('imported', 'QuestionBank', $id, null, "Import {$count} soal Word ke bank: {$questionBank->name}");
+            \App\Models\AuditLog::log('imported', 'QuestionBank', $id, null, "Import {$result['success']} soal Word ke bank: {$questionBank->name}");
 
-            return redirect()->back()->with('success', "Berhasil mengimport {$count} soal dari Word.");
+            $msg = "Berhasil mengimport {$result['success']} soal dari Word";
+            if ($result['failed'] > 0) {
+                $msg .= ", {$result['failed']} gagal diuraikan";
+            }
+
+            return redirect()->back()->with('success', $msg);
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Gagal import Word: ' . $e->getMessage());
         }

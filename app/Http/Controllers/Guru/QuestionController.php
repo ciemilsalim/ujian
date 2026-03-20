@@ -11,9 +11,9 @@ class QuestionController extends Controller
     {
         $request->validate([
             'question_bank_id' => 'required|exists:question_banks,id',
-            'type' => 'required|in:pilihan_ganda,essay',
+            'type' => 'required|in:pilihan_ganda,pilihan_ganda_kompleks,isian_singkat,menjodohkan,essay',
             'question_text' => 'required|string',
-            'options' => 'required_if:type,pilihan_ganda|nullable|array',
+            'options' => 'required_if:type,pilihan_ganda,pilihan_ganda_kompleks,menjodohkan|nullable|array',
             'answer_key' => 'required|string',
             'score_default' => 'required|integer|min:0',
         ]);
@@ -35,9 +35,9 @@ class QuestionController extends Controller
         }
 
         $request->validate([
-            'type' => 'required|in:pilihan_ganda,essay',
+            'type' => 'required|in:pilihan_ganda,pilihan_ganda_kompleks,isian_singkat,menjodohkan,essay',
             'question_text' => 'required|string',
-            'options' => 'required_if:type,pilihan_ganda|nullable|array',
+            'options' => 'required_if:type,pilihan_ganda,pilihan_ganda_kompleks,menjodohkan|nullable|array',
             'answer_key' => 'required|string',
             'score_default' => 'required|integer|min:0',
         ]);

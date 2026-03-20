@@ -25,6 +25,7 @@ class User extends Authenticatable
         'classroom_id',
         'photo',
         'password_plain',
+        'exam_room_id',
     ];
 
     public function isProktor(): bool
@@ -55,6 +56,11 @@ class User extends Authenticatable
     public function examSessionUsers()
     {
         return $this->hasMany(ExamSessionUser::class);
+    }
+
+    public function examRoom()
+    {
+        return $this->belongsTo(ExamRoom::class);
     }
 
     /**

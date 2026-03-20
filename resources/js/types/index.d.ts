@@ -104,6 +104,7 @@ export interface ActivityFeedItem {
     user_id: number;
     exam_session_id: number;
     status: string;
+    cheat_warnings: number;
     score: number | null;
     updated_at: string;
     user: User;

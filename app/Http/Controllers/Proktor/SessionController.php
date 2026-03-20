@@ -9,7 +9,10 @@ class SessionController
 {
     public function index()
     {
-        $sessions = \App\Models\ExamSession::with(['exam', 'classroom'])->latest()->paginate(10);
+        $sessions = \App\Models\ExamSession::with(['exam', 'classroom'])
+            ->withCount('examUsers as participants_count')
+            ->latest()
+            ->paginate(10);
         $exams = \App\Models\Exam::all();
         $classrooms = \App\Models\Classroom::all();
         return \Inertia\Inertia::render('Proktor/Sessions/Index', [
@@ -23,20 +26,36 @@ class SessionController
     {
         $request->validate([
             'exam_id' => 'required|exists:exams,id',
-            'classroom_id' => 'nullable|exists:classrooms,id',
             'name' => 'required|string|max:255',
+            'classroom_ids' => 'nullable|array',
+            'classroom_ids.*' => 'exists:classrooms,id',
             'start_time' => 'required|date',
             'end_time' => 'required|date|after:start_time',
         ]);
 
-        \App\Models\ExamSession::create([
+        $session = \App\Models\ExamSession::create([
             'exam_id' => $request->exam_id,
-            'classroom_id' => $request->classroom_id,
             'name' => $request->name,
+            'classroom_id' => count($request->classroom_ids ?? []) === 1 ? $request->classroom_ids[0] : null,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
             'token' => strtoupper(\Illuminate\Support\Str::random(6)),
         ]);
+
+        if ($request->classroom_ids && count($request->classroom_ids) > 0) {
+            $students = \App\Models\User::whereIn('classroom_id', $request->classroom_ids)
+                ->where('role', 'siswa')
+                ->get();
+            
+            foreach ($students as $student) {
+                \App\Models\ExamSessionUser::create([
+                    'exam_session_id' => $session->id,
+                    'user_id' => $student->id,
+                    'exam_room_id' => $student->exam_room_id,
+                    'status' => 'waiting'
+                ]);
+            }
+        }
 
         return redirect()->back()->with('success', 'Sesi ujian berhasil dibuat.');
     }
@@ -46,19 +65,43 @@ class SessionController
         $session = \App\Models\ExamSession::findOrFail($id);
         $request->validate([
             'exam_id' => 'required|exists:exams,id',
-            'classroom_id' => 'nullable|exists:classrooms,id',
             'name' => 'required|string|max:255',
+            'classroom_ids' => 'nullable|array',
+            'classroom_ids.*' => 'exists:classrooms,id',
             'start_time' => 'required|date',
             'end_time' => 'required|date|after:start_time',
         ]);
 
         $session->update([
             'exam_id' => $request->exam_id,
-            'classroom_id' => $request->classroom_id,
             'name' => $request->name,
+            'classroom_id' => count($request->classroom_ids ?? []) === 1 ? $request->classroom_ids[0] : null,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
         ]);
+
+        // Auto sync new participants
+        if ($request->classroom_ids && count($request->classroom_ids) > 0) {
+            $studentIds = \App\Models\User::whereIn('classroom_id', $request->classroom_ids)
+                ->where('role', 'siswa')
+                ->pluck('id');
+
+            $existingUsers = \App\Models\ExamSessionUser::where('exam_session_id', $session->id)
+                ->pluck('user_id')
+                ->toArray();
+
+            foreach ($studentIds as $studentId) {
+                if (!in_array($studentId, $existingUsers)) {
+                    $student = \App\Models\User::find($studentId);
+                    \App\Models\ExamSessionUser::create([
+                        'exam_session_id' => $session->id,
+                        'user_id' => $studentId,
+                        'exam_room_id' => $student?->exam_room_id,
+                        'status' => 'waiting'
+                    ]);
+                }
+            }
+        }
 
         return redirect()->back()->with('success', 'Sesi ujian berhasil diperbarui.');
     }
@@ -195,6 +238,93 @@ class SessionController
         );
 
         return redirect()->back()->with('success', 'Ujian siswa berhasil di-reset. Siswa dapat memulai dari awal.');
+    }
+
+    public function syncParticipants($id)
+    {
+        $session = \App\Models\ExamSession::findOrFail($id);
+        if (!$session->classroom_id) {
+            return redirect()->back()->with('error', 'Sesi ini tidak terhubung ke kelas manapun.');
+        }
+
+        $classroomStudents = \App\Models\User::where('classroom_id', $session->classroom_id)
+            ->where('role', 'siswa')
+            ->pluck('id');
+
+        $existingUsers = \App\Models\ExamSessionUser::where('exam_session_id', $session->id)
+            ->pluck('user_id')
+            ->toArray();
+
+        $newCount = 0;
+        foreach ($classroomStudents as $studentId) {
+            if (!in_array($studentId, $existingUsers)) {
+                $student = \App\Models\User::find($studentId);
+                \App\Models\ExamSessionUser::create([
+                    'exam_session_id' => $session->id,
+                    'user_id' => $studentId,
+                    'exam_room_id' => $student?->exam_room_id,
+                    'status' => 'waiting'
+                ]);
+                $newCount++;
+            }
+        }
+
+        return redirect()->back()->with('success', "Sinkronisasi berhasil. {$newCount} peserta baru ditambahkan.");
+    }
+
+    public function manageParticipants($id)
+    {
+        $session = \App\Models\ExamSession::with(['exam', 'classroom'])->findOrFail($id);
+        $participants = \App\Models\ExamSessionUser::with('user.classroom')
+            ->where('exam_session_id', $id)
+            ->get();
+        
+        $classrooms = \App\Models\Classroom::with(['users' => function($q) {
+            $q->where('role', 'siswa');
+        }])->get();
+
+        return \Inertia\Inertia::render('Proktor/Sessions/ManageParticipants', [
+            'session' => $session,
+            'participants' => $participants,
+            'classrooms' => $classrooms
+        ]);
+    }
+
+    public function addParticipants(Request $request, $id)
+    {
+        $request->validate([
+            'user_ids' => 'required|array',
+            'user_ids.*' => 'exists:users,id'
+        ]);
+
+        $existingUsers = \App\Models\ExamSessionUser::where('exam_session_id', $id)
+            ->pluck('user_id')
+            ->toArray();
+
+        $addedCount = 0;
+        foreach ($request->user_ids as $userId) {
+            if (!in_array($userId, $existingUsers)) {
+                $student = \App\Models\User::find($userId);
+                \App\Models\ExamSessionUser::create([
+                    'exam_session_id' => $id,
+                    'user_id' => $userId,
+                    'exam_room_id' => $student?->exam_room_id,
+                    'status' => 'waiting'
+                ]);
+                $addedCount++;
+            }
+        }
+
+        return redirect()->back()->with('success', "{$addedCount} peserta berhasil ditambahkan ke sesi.");
+    }
+
+    public function removeParticipant($id, $userId)
+    {
+        \App\Models\ExamSessionUser::where('exam_session_id', $id)
+            ->where('user_id', $userId)
+            ->delete();
+
+        return redirect()->back()->with('success', 'Peserta berhasil dihapus dari sesi.');
     }
 
     public function destroy($id)
