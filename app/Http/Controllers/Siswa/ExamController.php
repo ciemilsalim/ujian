@@ -143,7 +143,8 @@ class ExamController extends Controller
             'examUser' => $examUser,
             'serverTimeLeft' => $timeLeft,
             'existingAnswers' => $existingAnswers,
-            'settings' => $settings
+            'settings' => $settings,
+            'isPractice' => (bool) ($session->exam->is_practice ?? false),
         ]);
     }
 
@@ -155,6 +156,8 @@ class ExamController extends Controller
         $examHistory = \App\Models\ExamSessionUser::with(['examSession.exam', 'examSession.classroom'])
             ->where('user_id', $user->id)
             ->where('status', 'finished')
+            // Hanya tampilkan ujian resmi (bukan mode latihan)
+            ->whereHas('examSession.exam', fn($q) => $q->where('is_practice', false))
             ->latest('finished_at')
             ->get();
 
@@ -198,6 +201,12 @@ class ExamController extends Controller
         $examSessionUser = \App\Models\ExamSessionUser::where('exam_session_id', $request->exam_session_id)
             ->where('user_id', auth()->id())
             ->firstOrFail();
+
+        // Mode Latihan: tidak ada pencatatan kecurangan
+        $session = \App\Models\ExamSession::with('exam')->find($request->exam_session_id);
+        if ($session && $session->exam && $session->exam->is_practice) {
+            return response()->json(['status' => 'practice_mode']);
+        }
 
         if ($examSessionUser->status === 'finished') {
             return response()->json(['status' => 'ignored']);
@@ -292,7 +301,24 @@ class ExamController extends Controller
         if ($isFinishing) {
             $examSessionUser->update(['finished_at' => now()]);
 
-            // === Auto-Scoring untuk Pilihan Ganda ===
+            // === Mode Latihan: Reset sesi agar bisa diulang, tidak simpan skor ===
+            $isLatihan = $examSessionUser->examSession->exam->is_practice ?? false;
+            if ($isLatihan) {
+                // Hapus semua jawaban
+                \App\Models\StudentAnswer::where('exam_session_user_id', $examSessionUser->id)->delete();
+                // Reset status ke waiting agar siswa bisa mengikuti lagi
+                $examSessionUser->update([
+                    'status' => 'waiting',
+                    'started_at' => null,
+                    'finished_at' => null,
+                    'score' => null,
+                    'cheat_warnings' => 0,
+                    'session_id' => null,
+                ]);
+                return redirect()->route('siswa.dashboard')->with('success', 'Sesi latihan selesai! Hasil tidak disimpan. Anda bisa mengulang kapan saja.');
+            }
+
+            // === Auto-Scoring untuk Pilihan Ganda (ujian resmi) ===
             $this->calculateScore($examSessionUser);
 
             \App\Events\StudentExamUpdated::dispatch(

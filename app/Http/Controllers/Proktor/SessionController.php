@@ -80,17 +80,25 @@ class SessionController
             'end_time' => $request->end_time,
         ]);
 
-        // Auto sync new participants
-        if ($request->classroom_ids && count($request->classroom_ids) > 0) {
-            $studentIds = \App\Models\User::whereIn('classroom_id', $request->classroom_ids)
+        $classroomIds = $request->classroom_ids ?? [];
+
+        if (count($classroomIds) > 0) {
+            $validStudentIds = \App\Models\User::whereIn('classroom_id', $classroomIds)
                 ->where('role', 'siswa')
                 ->pluck('id');
 
+            // Hapus peserta (yang masih 'waiting') dari kelas yang sudah dihapus dari sesi
+            \App\Models\ExamSessionUser::where('exam_session_id', $session->id)
+                ->whereNotIn('user_id', $validStudentIds)
+                ->where('status', 'waiting')
+                ->delete();
+
+            // Tambahkan peserta baru dari kelas yang baru ditambahkan
             $existingUsers = \App\Models\ExamSessionUser::where('exam_session_id', $session->id)
                 ->pluck('user_id')
                 ->toArray();
 
-            foreach ($studentIds as $studentId) {
+            foreach ($validStudentIds as $studentId) {
                 if (!in_array($studentId, $existingUsers)) {
                     $student = \App\Models\User::find($studentId);
                     \App\Models\ExamSessionUser::create([

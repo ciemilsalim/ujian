@@ -1,7 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
-import { Clock, BookOpen, ChevronRight, RefreshCw, AlertCircle, Calendar } from 'lucide-react';
+import { Clock, BookOpen, ChevronRight, RefreshCw, AlertCircle, Calendar, FlaskConical } from 'lucide-react';
 import { ExamSession } from '@/types';
 
 export default function Dashboard({ sessions }: { sessions: ExamSession[] }) {
@@ -121,12 +121,24 @@ export default function Dashboard({ sessions }: { sessions: ExamSession[] }) {
                                     return (
                                         <div
                                             key={session.id}
-                                            className={`group bg-white dark:bg-gray-800 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent ${isActive ? 'hover:border-indigo-100 dark:hover:border-indigo-900/50' : 'opacity-80'} overflow-hidden`}
+                                            className={`group bg-white dark:bg-gray-800 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent ${
+                                                isActive
+                                                    ? session.exam?.is_practice
+                                                        ? 'hover:border-emerald-100 dark:hover:border-emerald-900/50'
+                                                        : 'hover:border-indigo-100 dark:hover:border-indigo-900/50'
+                                                    : 'opacity-80'
+                                            } overflow-hidden`}
                                         >
                                             <div className="p-7">
                                                 <div className="flex items-start justify-between mb-6">
                                                     <div className="flex-1 min-w-0">
                                                         <div className="flex items-center gap-2 mb-2">
+                                                            {session.exam?.is_practice && (
+                                                                <span className="px-2 py-0.5 bg-emerald-50 dark:bg-emerald-900/20 text-[9px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest rounded-full border border-emerald-100 dark:border-emerald-900/50 flex items-center gap-1">
+                                                                    <FlaskConical className="w-2.5 h-2.5" />
+                                                                    Latihan
+                                                                </span>
+                                                            )}
                                                             {isUpcoming && (
                                                                 <span className="px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-[9px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest rounded-full border border-amber-100 dark:border-amber-900/50 flex items-center gap-1">
                                                                     <Calendar className="w-2.5 h-2.5" />
@@ -192,10 +204,17 @@ export default function Dashboard({ sessions }: { sessions: ExamSession[] }) {
                                                 {isActive ? (
                                                     <Link
                                                         href={route('siswa.exams.show', session.id)}
-                                                        className="w-full py-4 px-6 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-100 dark:shadow-none translate-y-0 active:translate-y-1"
+                                                        className={`w-full py-4 px-6 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all text-white shadow-lg translate-y-0 active:translate-y-1 ${
+                                                            session.exam?.is_practice
+                                                                ? 'bg-emerald-500 hover:bg-emerald-600 shadow-emerald-100 dark:shadow-none'
+                                                                : 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-100 dark:shadow-none'
+                                                        }`}
                                                     >
-                                                        Mulai Ujian Sekarang
-                                                        <ChevronRight className="w-4 h-4" />
+                                                        {session.exam?.is_practice ? (
+                                                            <><FlaskConical className="w-4 h-4" /> Mulai Latihan<ChevronRight className="w-4 h-4" /></>
+                                                        ) : (
+                                                            <>Mulai Ujian Sekarang<ChevronRight className="w-4 h-4" /></>
+                                                        )}
                                                     </Link>
                                                 ) : (
                                                     <div className="w-full py-4 px-6 rounded-2xl font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed">

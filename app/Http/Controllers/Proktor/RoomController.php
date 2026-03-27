@@ -59,11 +59,11 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'capacity' => 'required|integer|min:0',
+            'name' => 'required|string|max:255|unique:exam_rooms,name',
+            'capacity' => 'required|integer|min:1',
         ]);
 
-        ExamRoom::create($request->all());
+        ExamRoom::create($request->only(['name', 'capacity']));
 
         return redirect()->back()->with('success', 'Ruang berhasil dibuat.');
     }
@@ -71,17 +71,25 @@ class RoomController extends Controller
     public function update(Request $request, ExamRoom $room)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'capacity' => 'required|integer|min:0',
+            'name' => 'required|string|max:255|unique:exam_rooms,name,' . $room->id,
+            'capacity' => 'required|integer|min:1',
         ]);
 
-        $room->update($request->all());
+        $room->update($request->only(['name', 'capacity']));
 
         return redirect()->back()->with('success', 'Ruang berhasil diperbarui.');
     }
 
     public function destroy(ExamRoom $room)
     {
+        // Cegah hapus ruang jika masih ada siswa yang terdaftar di sesi apapun
+        $hasActiveParticipants = ExamSessionUser::where('exam_room_id', $room->id)->exists();
+        if ($hasActiveParticipants) {
+            return redirect()->back()->withErrors([
+                'room' => "Ruang {$room->name} tidak dapat dihapus karena masih digunakan oleh peserta sesi ujian."
+            ]);
+        }
+
         $room->delete();
         return redirect()->back()->with('success', 'Ruang berhasil dihapus.');
     }
@@ -91,23 +99,44 @@ class RoomController extends Controller
      */
     public function assignStudents(Request $request, ExamSession $session)
     {
+        // Guard: tidak boleh mengubah pembagian ruang saat sesi sedang aktif
+        if ($session->is_active) {
+            return back()->withErrors([
+                'session' => 'Tidak dapat mengubah pembagian ruang saat sesi ujian sedang aktif.'
+            ]);
+        }
+
         $request->validate([
             'assignments' => 'required|array',
             'assignments.*.room_id' => 'required|exists:exam_rooms,id',
             'assignments.*.student_ids' => 'nullable|array',
         ]);
 
-        // First, clear all room assignments for this session
-        ExamSessionUser::where('exam_session_id', $session->id)
-            ->update(['exam_room_id' => null]);
-
+        // Validasi kapasitas sebelum menyimpan
         foreach ($request->assignments as $assignment) {
             if (!empty($assignment['student_ids'])) {
-                ExamSessionUser::where('exam_session_id', $session->id)
-                    ->whereIn('user_id', $assignment['student_ids'])
-                    ->update(['exam_room_id' => $assignment['room_id']]);
+                $room = ExamRoom::find($assignment['room_id']);
+                if ($room && count($assignment['student_ids']) > $room->capacity) {
+                    return back()->withErrors([
+                        'assignments' => "Ruang {$room->name} melebihi kapasitas ({$room->capacity} kursi)."
+                    ]);
+                }
             }
         }
+
+        DB::transaction(function() use ($request, $session) {
+            // Clear semua assignment ruang untuk sesi ini
+            ExamSessionUser::where('exam_session_id', $session->id)
+                ->update(['exam_room_id' => null]);
+
+            foreach ($request->assignments as $assignment) {
+                if (!empty($assignment['student_ids'])) {
+                    ExamSessionUser::where('exam_session_id', $session->id)
+                        ->whereIn('user_id', $assignment['student_ids'])
+                        ->update(['exam_room_id' => $assignment['room_id']]);
+                }
+            }
+        });
 
         return redirect()->back()->with('success', 'Sesi ' . $session->name . ': Siswa berhasil dibagikan ke ruang.');
     }
@@ -117,11 +146,34 @@ class RoomController extends Controller
      */
     public function assignProctors(Request $request, ExamSession $session)
     {
+        // Guard: tidak boleh mengubah pengawas saat sesi sedang aktif
+        if ($session->is_active) {
+            return back()->withErrors([
+                'session' => 'Tidak dapat mengubah pengawas saat sesi ujian sedang aktif.'
+            ]);
+        }
+
         $request->validate([
             'room_id' => 'required|exists:exam_rooms,id',
             'proctor_ids' => 'required|array|max:2',
             'proctor_ids.*' => 'exists:proctors,id'
         ]);
+
+        // Validasi: pengawas tidak boleh bertugas di ruang lain dalam sesi yang sama
+        foreach ($request->proctor_ids as $pId) {
+            $conflict = ExamSessionProctor::where('exam_session_id', $session->id)
+                ->where('proctor_id', $pId)
+                ->where('exam_room_id', '!=', $request->room_id)
+                ->first();
+
+            if ($conflict) {
+                $proctor = Proctor::find($pId);
+                $conflictRoom = ExamRoom::find($conflict->exam_room_id);
+                return back()->withErrors([
+                    'proctor_ids' => "Pengawas {$proctor->name} sudah bertugas di ruang {$conflictRoom->name} untuk sesi ini."
+                ]);
+            }
+        }
 
         // Clear existing proctors for this room-session
         ExamSessionProctor::where('exam_session_id', $session->id)
@@ -176,21 +228,16 @@ class RoomController extends Controller
         ]);
 
         DB::transaction(function() use ($request) {
-            // First, clear all room assignments for the students mentioned in THIS request 
-            // OR just clear everything? User wants "set precisely".
-            // Let's clear for the students being re-assigned.
-            
-            $allMentionedStudentIds = [];
-            foreach ($request->assignments as $assignment) {
-                if (!empty($assignment['student_ids'])) {
-                    $allMentionedStudentIds = array_merge($allMentionedStudentIds, $assignment['student_ids']);
-                }
-            }
+            // Ambil semua ID ruang yang terlibat dalam request
+            $roomIds = collect($request->assignments)->pluck('room_id')->filter()->unique()->values();
 
-            if (!empty($allMentionedStudentIds)) {
-                User::whereIn('id', $allMentionedStudentIds)->update(['exam_room_id' => null]);
-            }
+            // Clear semua siswa yang saat ini terdaftar di ruang-ruang tersebut
+            // Ini memastikan siswa yang di-unassign di frontend juga ter-clear di database
+            User::where('role', 'siswa')
+                ->whereIn('exam_room_id', $roomIds)
+                ->update(['exam_room_id' => null]);
 
+            // Set ulang assignment sesuai payload
             foreach ($request->assignments as $assignment) {
                 if (!empty($assignment['student_ids'])) {
                     User::whereIn('id', $assignment['student_ids'])
@@ -207,17 +254,30 @@ class RoomController extends Controller
      */
     public function syncFromDefault(ExamSession $session)
     {
-        $sessionUsers = ExamSessionUser::where('exam_session_id', $session->id)
-            ->with('user')
-            ->get();
-            
-        foreach ($sessionUsers as $su) {
-            if ($su->user && $su->user->exam_room_id) {
-                DB::table('exam_session_users')
-                    ->where('id', $su->id)
-                    ->update(['exam_room_id' => $su->user->exam_room_id]);
-            }
+        // Guard: tidak boleh menyinkronkan saat sesi sedang aktif
+        if ($session->is_active) {
+            return back()->withErrors([
+                'session' => 'Tidak dapat menyinkronkan ruang saat sesi ujian sedang aktif.'
+            ]);
         }
+
+        DB::transaction(function() use ($session) {
+            // Clear semua assignment ruang di sesi ini terlebih dahulu
+            ExamSessionUser::where('exam_session_id', $session->id)
+                ->update(['exam_room_id' => null]);
+
+            // Kemudian sync dari ruang default masing-masing siswa
+            $sessionUsers = ExamSessionUser::where('exam_session_id', $session->id)
+                ->with('user')
+                ->get();
+
+            foreach ($sessionUsers as $su) {
+                if ($su->user && $su->user->exam_room_id) {
+                    ExamSessionUser::where('id', $su->id)
+                        ->update(['exam_room_id' => $su->user->exam_room_id]);
+                }
+            }
+        });
         
         return redirect()->back()->with('success', 'Ruang disinkronkan dari pengaturan permanen.');
     }

@@ -280,10 +280,10 @@ export default function Sidebar() {
                             </div>
                         </button>
                         <SidebarItem
-                            href="#"
+                            href={route('help.index')}
                             icon={HelpCircle}
                             label="Pusat Bantuan"
-                            active={false}
+                            active={route().current('help.index')}
                         />
                     </div>
                 </div>

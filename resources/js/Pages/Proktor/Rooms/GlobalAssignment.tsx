@@ -64,15 +64,18 @@ export default function GlobalAssignment({ students, rooms, classrooms }: { stud
 
         const currentInRoom = roomAssignments[selectedRoomId].length;
         const availableSpace = room.capacity - currentInRoom;
-        const toMoveCount = Math.min(count, availableSpace, unassignedStudents.length);
+
+        // Ambil dari daftar yang sudah difilter agar sesuai dengan kelas yang dipilih
+        const filteredIds = getFilteredUnassigned().map(s => s.id);
+        const toMoveCount = Math.min(count, availableSpace, filteredIds.length);
 
         if (toMoveCount <= 0) {
-            toast.error('Ruang sudah penuh atau tidak ada siswa tersisa');
+            toast.error('Ruang sudah penuh atau tidak ada siswa tersisa di filter ini');
             return;
         }
 
-        const moving = unassignedStudents.slice(0, toMoveCount);
-        const remaining = unassignedStudents.slice(toMoveCount);
+        const moving = filteredIds.slice(0, toMoveCount);
+        const remaining = unassignedStudents.filter(id => !moving.includes(id));
 
         setUnassignedStudents(remaining);
         setRoomAssignments({
@@ -147,6 +150,7 @@ export default function GlobalAssignment({ students, rooms, classrooms }: { stud
     };
 
     const handleReset = () => {
+        if (!confirm('Yakin ingin mereset semua pembagian ruang permanen? Semua siswa akan kembali ke daftar belum terbagi.')) return;
         const allStudentIds = students.map(s => s.id);
         setUnassignedStudents(allStudentIds);
         const resetAssignments: Record<number, number[]> = {};

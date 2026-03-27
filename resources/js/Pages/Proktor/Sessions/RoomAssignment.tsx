@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, useForm, router } from '@inertiajs/react';
-import { Users, Home, ShieldCheck, ChevronRight, Save, UserPlus, Trash2 } from 'lucide-react';
+import { Users, Home, ShieldCheck, ChevronRight, Save, UserPlus, Trash2, AlertTriangle, Lock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import PrimaryButton from '@/Components/PrimaryButton';
 import SecondaryButton from '@/Components/SecondaryButton';
@@ -32,6 +32,8 @@ interface Proctor {
 }
 
 export default function RoomAssignment({ session, students, rooms, proctors, currentProctors, classrooms }: { session: any, students: Student[], rooms: Room[], proctors: Proctor[], currentProctors: any[], classrooms: Classroom[] }) {
+    const isSessionActive = session.is_active === true;
+
     const [selectedRoomId, setSelectedRoomId] = useState<number | null>(rooms.length > 0 ? rooms[0].id : null);
     const [selectedClassroomId, setSelectedClassroomId] = useState<number | string>('all');
     
@@ -81,15 +83,18 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
 
         const currentInRoom = roomAssignments[selectedRoomId].length;
         const availableSpace = room.capacity - currentInRoom;
-        const toMoveCount = Math.min(count, availableSpace, unassignedStudents.length);
+
+        // Ambil dari daftar yang sudah difilter agar sesuai dengan kelas yang dipilih
+        const filteredIds = getFilteredUnassigned().map(s => s.id);
+        const toMoveCount = Math.min(count, availableSpace, filteredIds.length);
 
         if (toMoveCount <= 0) {
-            toast.error('Ruang sudah penuh atau tidak ada siswa tersisa');
+            toast.error('Ruang sudah penuh atau tidak ada siswa tersisa di filter ini');
             return;
         }
 
-        const moving = unassignedStudents.slice(0, toMoveCount);
-        const remaining = unassignedStudents.slice(toMoveCount);
+        const moving = filteredIds.slice(0, toMoveCount);
+        const remaining = unassignedStudents.filter(id => !moving.includes(id));
 
         setUnassignedStudents(remaining);
         setRoomAssignments({
@@ -164,6 +169,7 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
     };
 
     const handleReset = () => {
+        if (!confirm('Yakin ingin mereset semua pembagian ruang? Semua siswa akan kembali ke daftar belum terbagi.')) return;
         const allStudentIds = students.map(s => s.id);
         setUnassignedStudents(allStudentIds);
         const resetAssignments: Record<number, number[]> = {};
@@ -244,11 +250,15 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
                         </p>
                     </div>
                     <div className="flex gap-2">
-                        <SecondaryButton onClick={syncFromDefault} title="Gunakan pengaturan ruang permanen">
+                        <SecondaryButton 
+                            onClick={syncFromDefault} 
+                            title="Gunakan pengaturan ruang permanen"
+                            disabled={isSessionActive}
+                        >
                             Sinkronkan dari Ruang Default
                         </SecondaryButton>
-                        <SecondaryButton onClick={handleReset}>Reset Semua</SecondaryButton>
-                        <PrimaryButton onClick={saveAssignments} className="bg-indigo-600 hover:bg-indigo-700" disabled={isSaving}>
+                        <SecondaryButton onClick={handleReset} disabled={isSessionActive}>Reset Semua</SecondaryButton>
+                        <PrimaryButton onClick={saveAssignments} className="bg-indigo-600 hover:bg-indigo-700" disabled={isSaving || isSessionActive}>
                             <Save className={`w-4 h-4 mr-2 ${isSaving ? 'animate-spin' : ''}`} /> 
                             {isSaving ? 'Menyimpan...' : 'Simpan Pembagian'}
                         </PrimaryButton>
@@ -257,6 +267,19 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
             }
         >
             <Head title="Pembagian Ruang" />
+
+            {/* Banner peringatan sesi aktif */}
+            {isSessionActive && (
+                <div className="mx-auto max-w-[90rem] sm:px-6 lg:px-8 pt-6">
+                    <div className="flex items-center gap-3 px-5 py-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-300 dark:border-amber-700 rounded-2xl text-amber-800 dark:text-amber-300">
+                        <Lock className="w-5 h-5 flex-shrink-0" />
+                        <div>
+                            <p className="text-sm font-bold">Sesi Sedang Aktif — Mode Hanya Baca</p>
+                            <p className="text-xs font-medium opacity-75">Pembagian ruang tidak dapat diubah selama sesi ujian berlangsung. Nonaktifkan sesi terlebih dahulu untuk melakukan perubahan.</p>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <div className="py-8">
                 <div className="mx-auto max-w-[90rem] sm:px-6 lg:px-8 space-y-8">

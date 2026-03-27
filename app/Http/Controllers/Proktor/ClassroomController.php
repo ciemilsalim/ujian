@@ -40,15 +40,6 @@ class ClassroomController extends Controller
         return redirect()->back()->with('success', 'Classroom updated successfully.');
     }
 
-    public function show($id)
-    {
-        $classroom = \App\Models\Classroom::with('users')->findOrFail($id);
-        return \Inertia\Inertia::render('Proktor/Classrooms/SeatingPlan', [
-            'classroom' => $classroom,
-            'students' => $classroom->users()->where('role', 'siswa')->get()
-        ]);
-    }
-
     public function manageStudents($id)
     {
         $classroom = \App\Models\Classroom::findOrFail($id);
@@ -90,22 +81,6 @@ class ClassroomController extends Controller
         $student->update(['classroom_id' => null]);
 
         return redirect()->back()->with('success', "{$student->name} berhasil dikeluarkan dari kelas.");
-    }
-
-    public function updateSeating(Request $request, $id)
-    {
-        $classroom = \App\Models\Classroom::findOrFail($id);
-        $request->validate([
-            'seating_plan' => 'nullable|array',
-            'seating_grid' => 'nullable|array',
-        ]);
-
-        $classroom->update([
-            'seating_plan' => $request->seating_plan,
-            'seating_grid' => $request->seating_grid,
-        ]);
-
-        return redirect()->back()->with('success', 'Seating plan updated successfully.');
     }
 
     public function destroy($id)

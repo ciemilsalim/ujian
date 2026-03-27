@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Head, useForm, router } from '@inertiajs/react';
 import { Toaster, toast } from 'sonner';
-import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen, User, Home, Type } from 'lucide-react';
+import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen, User, Home, Type, FlaskConical } from 'lucide-react';
 import axios from 'axios';
 
 import { ExamSession, Question, ExamUser } from '@/types';
@@ -12,20 +12,23 @@ export default function ExamEngine({
     examUser,
     serverTimeLeft,
     existingAnswers,
-    settings
+    settings,
+    isPractice = false,
 }: {
     session: ExamSession,
     questions: Question[],
     examUser: ExamUser,
     serverTimeLeft: number,
     existingAnswers: Record<string, string>,
-    settings?: Record<string, string | boolean>
+    settings?: Record<string, string | boolean>,
+    isPractice?: boolean,
 }) {
-    const isAntiCheatEnabled = settings?.enable_anti_cheat === '1' || settings?.enable_anti_cheat === true;
-    const isBlockContextMenu = settings?.block_context_menu === '1' || settings?.block_context_menu === true;
-    const isBlockCopyPaste = settings?.block_copy_paste === '1' || settings?.block_copy_paste === true;
-    const isDetectTabSwitch = settings?.detect_tab_switch === '1' || settings?.detect_tab_switch === true;
-    const isForceFullscreen = settings?.force_fullscreen === '1' || settings?.force_fullscreen === true;
+    // Mode Latihan: nonaktifkan semua anti-cheat di client-side
+    const isAntiCheatEnabled = !isPractice && (settings?.enable_anti_cheat === '1' || settings?.enable_anti_cheat === true);
+    const isBlockContextMenu = !isPractice && (settings?.block_context_menu === '1' || settings?.block_context_menu === true);
+    const isBlockCopyPaste = !isPractice && (settings?.block_copy_paste === '1' || settings?.block_copy_paste === true);
+    const isDetectTabSwitch = !isPractice && (settings?.detect_tab_switch === '1' || settings?.detect_tab_switch === true);
+    const isForceFullscreen = !isPractice && (settings?.force_fullscreen === '1' || settings?.force_fullscreen === true);
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [fontSize, setFontSize] = useState<'small' | 'medium' | 'large'>('medium');
@@ -367,6 +370,11 @@ export default function ExamEngine({
                                 <span className="hidden sm:inline-block text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-0.5 rounded-lg uppercase">
                                     {session.exam?.question_bank?.subject?.name || 'Mata Pelajaran'}
                                 </span>
+                                {isPractice && (
+                                    <span className="hidden sm:inline-flex items-center gap-1 text-xs font-black text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-0.5 rounded-lg uppercase">
+                                        <FlaskConical className="w-3 h-3" /> Latihan
+                                    </span>
+                                )}
                             </h1>
                             <div className="flex items-center gap-3 mt-0.5">
                                 <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">

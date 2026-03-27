@@ -54,8 +54,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/classrooms/{classroom}/manage-students', [\App\Http\Controllers\Proktor\ClassroomController::class, 'manageStudents'])->name('classrooms.manage-students');
         Route::post('/classrooms/{classroom}/add-students', [\App\Http\Controllers\Proktor\ClassroomController::class, 'addStudents'])->name('classrooms.add-students');
         Route::delete('/classrooms/{classroom}/students/{student}', [\App\Http\Controllers\Proktor\ClassroomController::class, 'removeStudent'])->name('classrooms.remove-student');
-        Route::post('/classrooms/{classroom}/seating', [\App\Http\Controllers\Proktor\ClassroomController::class, 'updateSeating'])->name('classrooms.update-seating');
-        Route::resource('classrooms', \App\Http\Controllers\Proktor\ClassroomController::class);
+        Route::resource('classrooms', \App\Http\Controllers\Proktor\ClassroomController::class)->except(['show']);
         
         Route::resource('subjects', \App\Http\Controllers\Proktor\SubjectController::class);
         Route::get('/results', [\App\Http\Controllers\Proktor\ResultController::class, 'index'])->name('results.index');
@@ -125,6 +124,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/exams/submit', [\App\Http\Controllers\Siswa\ExamController::class, 'submitAnswer'])->name('exams.submit');
         Route::post('/exams/report-cheat', [\App\Http\Controllers\Siswa\ExamController::class, 'reportCheat'])->name('exams.report-cheat');
     });
+
+    Route::get('/help', [\App\Http\Controllers\HelpController::class, 'index'])->name('help.index');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
