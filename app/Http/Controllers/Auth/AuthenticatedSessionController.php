@@ -14,7 +14,7 @@ use Inertia\Response;
 class AuthenticatedSessionController extends Controller
 {
     /**
-     * Display the login view.
+     * Display the staff/proctor login view.
      */
     public function create(): Response
     {
@@ -25,13 +25,29 @@ class AuthenticatedSessionController extends Controller
     }
 
     /**
+     * Display the student login view.
+     */
+    public function createStudent(): Response
+    {
+        return Inertia::render('Auth/LoginSiswa', [
+            'status' => session('status'),
+        ]);
+    }
+
+    /**
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
+
+        $user = auth()->user();
+
+        // Redirect siswa kembali ke portal siswa jika login dari sana
+        if ($user->role === 'siswa' && $request->headers->get('referer') && str_contains($request->headers->get('referer'), 'login/siswa')) {
+            return redirect()->intended(route('siswa.dashboard'));
+        }
 
         return redirect()->intended(route('dashboard', absolute: false));
     }
