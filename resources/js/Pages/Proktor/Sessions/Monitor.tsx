@@ -16,37 +16,27 @@ export default function Monitor({ session }: { session: ExamSession }) {
 
     const handleForceLogoutAll = () => {
         if (confirm('Apakah Anda yakin ingin mengeluarkan PAKSA seluruh siswa di sesi ini?')) {
-            router.post(route('proktor.sessions.force-logout', session.id), {}, {
-                onSuccess: () => toast.success('Perintah Logout paksa dikirim.')
-            });
+            router.post(route('proktor.sessions.force-logout', session.id));
         }
     };
 
     const handleExtendTime = (minutes: number) => {
-        router.post(route('proktor.sessions.extend-time', session.id), { minutes }, {
-            onSuccess: () => toast.success(`Waktu berhasil ditambah ${minutes} menit.`)
-        });
+        router.post(route('proktor.sessions.extend-time', session.id), { minutes });
     };
 
     const handleResetLogin = (participantId: number) => {
-        router.post(route('proktor.sessions.reset-login', participantId), {}, {
-            onSuccess: () => toast.success('Login siswa berhasil di-reset.')
-        });
+        router.post(route('proktor.sessions.reset-login', participantId));
     };
 
     const handleForceLogoutUser = (participantId: number) => {
         if (confirm('Keluarkan siswa ini secara paksa?')) {
-            router.post(route('proktor.sessions.force-logout-user', participantId), {}, {
-                onSuccess: () => toast.success('Perintah Logout paksa dikirim.')
-            });
+            router.post(route('proktor.sessions.force-logout-user', participantId));
         }
     };
 
     const handleResetExam = (participantId: number, studentName: string) => {
         if (confirm(`Hapus SELURUH progres dan jawaban ${studentName}? Siswa akan mengulang dari nol.`)) {
-            router.post(route('proktor.sessions.reset-exam', participantId), {}, {
-                onSuccess: () => toast.success('Progres ujian siswa berhasil di-reset.')
-            });
+            router.post(route('proktor.sessions.reset-exam', participantId));
         }
     };
 

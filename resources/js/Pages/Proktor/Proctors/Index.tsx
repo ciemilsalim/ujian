@@ -44,7 +44,6 @@ export default function Index({ proctors }: { proctors: Proctor[] }) {
             onSuccess: () => {
                 setShowCreateModal(false);
                 createForm.reset();
-                toast.success('Pengawas berhasil ditambahkan');
             }
         });
     };
@@ -64,7 +63,6 @@ export default function Index({ proctors }: { proctors: Proctor[] }) {
         editForm.put(route('proktor.proctors.update', selectedProctor.id), {
             onSuccess: () => {
                 setShowEditModal(false);
-                toast.success('Data pengawas diperbarui');
             }
         });
     };
@@ -79,7 +77,6 @@ export default function Index({ proctors }: { proctors: Proctor[] }) {
         router.delete(route('proktor.proctors.destroy', selectedProctor.id), {
             onSuccess: () => {
                 setShowDeleteModal(false);
-                toast.success('Pengawas berhasil dihapus');
             }
         });
     };

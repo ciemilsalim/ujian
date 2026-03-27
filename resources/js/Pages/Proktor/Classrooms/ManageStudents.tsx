@@ -43,7 +43,6 @@ export default function ManageStudents({ classroom, currentStudents, availableSt
             student_ids: selectedStudents
         }, {
             onSuccess: () => {
-                toast.success('Siswa berhasil ditambahkan');
                 setSelectedStudents([]);
                 setShowAddModal(false);
             }
@@ -52,9 +51,7 @@ export default function ManageStudents({ classroom, currentStudents, availableSt
 
     const removeStudent = (studentId: number) => {
         if (confirm('Apakah Anda yakin ingin mengeluarkan siswa ini dari kelas?')) {
-            router.delete(route('proktor.classrooms.remove-student', [classroom.id, studentId]), {
-                onSuccess: () => toast.success('Siswa berhasil dikeluarkan')
-            });
+            router.delete(route('proktor.classrooms.remove-student', [classroom.id, studentId]));
         }
     };
 

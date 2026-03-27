@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Head, useForm, router } from '@inertiajs/react';
-import { Toaster, toast } from 'sonner';
+import { toast } from 'sonner';
 import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen, User, Home, Type, FlaskConical } from 'lucide-react';
 import axios from 'axios';
 
@@ -827,7 +827,7 @@ export default function ExamEngine({
                     </div>
                 </div>
             )}
-            <Toaster position="top-center" expand={true} richColors />
+
         </div>
     );
 }

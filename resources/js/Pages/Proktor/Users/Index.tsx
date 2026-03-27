@@ -70,16 +70,13 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
             onSuccess: () => {
                 setShowImportModal(false);
                 reset();
-                toast.success('Siswa berhasil diimport.');
             },
         });
     };
 
     const handleDelete = (id: number) => {
         if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
-            router.delete(route('proktor.users.destroy', id), {
-                onSuccess: () => toast.success('User berhasil dihapus.')
-            });
+            router.delete(route('proktor.users.destroy', id));
         }
     };
 
@@ -105,7 +102,6 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                 data: { ids: selectedIds },
                 onSuccess: () => {
                     setSelectedIds([]);
-                    toast.success('User massal berhasil dihapus.');
                 }
             });
         }

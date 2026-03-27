@@ -47,7 +47,6 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
     const handleRefreshToken = (sessionId: number) => {
         router.post(route('proktor.sessions.refresh-token', sessionId), {}, {
             preserveScroll: true,
-            onSuccess: () => toast.success('Token berhasil diperbarui!')
         });
     };
 
@@ -64,10 +63,8 @@ export default function Dashboard({ metrics, recentSessions, activeSessions, act
                 message: globalMessage
             }, {
                 onSuccess: () => {
-                    toast.success('Pengumuman global berhasil dikirim!');
                     setGlobalMessage('');
                 },
-                onError: () => toast.error('Gagal mengirim pengumuman.'),
                 onFinish: () => setIsGlobalSending(false),
             });
         } catch (error) {

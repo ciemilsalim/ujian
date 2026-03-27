@@ -65,7 +65,6 @@ export default function ManageParticipants({ session, participants, classrooms }
             user_ids: selectedUsers
         }, {
             onSuccess: () => {
-                toast.success('Peserta berhasil ditambahkan');
                 setSelectedUsers([]);
                 setShowAddModal(false);
             }
@@ -74,9 +73,7 @@ export default function ManageParticipants({ session, participants, classrooms }
 
     const removeParticipant = (userId: number) => {
         if (confirm('Apakah Anda yakin ingin menghapus peserta ini dari sesi?')) {
-            router.delete(route('proktor.sessions.remove-participant', [session.id, userId]), {
-                onSuccess: () => toast.success('Peserta berhasil dihapus')
-            });
+            router.delete(route('proktor.sessions.remove-participant', [session.id, userId]));
         }
     };
 
@@ -170,7 +167,7 @@ export default function ManageParticipants({ session, participants, classrooms }
             </div>
 
             {/* Add Participant Modal */}
-            <Modal show={showAddModal} onClose={() => setShowAddModal(false)} maxWidth="3xl">
+            <Modal show={showAddModal} onClose={() => setShowAddModal(false)} maxWidth="2xl">
                 <div className="p-8">
                     <div className="flex justify-between items-start mb-6">
                         <div>

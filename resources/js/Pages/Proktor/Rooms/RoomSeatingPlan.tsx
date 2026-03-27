@@ -51,7 +51,6 @@ export default function RoomSeatingPlan({ room, students }: { room: Room, studen
             seating_grid: { rows, cols }
         }, {
             onSuccess: () => {
-                toast.success(`Tata letak kursi ruang ${room.name} berhasil disimpan!`);
                 setIsSaving(false);
             },
             onError: () => setIsSaving(false),

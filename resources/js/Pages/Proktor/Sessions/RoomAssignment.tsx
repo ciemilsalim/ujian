@@ -190,7 +190,6 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
             assignments: payload
         }, {
             onSuccess: () => {
-                toast.success('Pembagian ruang berhasil disimpan');
                 setIsSaving(false);
             },
             onError: (errors) => {
@@ -207,8 +206,7 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
         
         router.post(route('proktor.sessions.sync-rooms', session.id), {}, {
             onSuccess: () => {
-                toast.success('Berhasil disinkronkan dari ruang default');
-                // Optional: refresh local state or let Inertia handle it
+                // Berhasil disinkronkan, flash message akan dihandle global
             },
         });
     };
@@ -231,8 +229,6 @@ export default function RoomAssignment({ session, students, rooms, proctors, cur
         router.post(route('proktor.sessions.assign-proctors', session.id), {
             room_id: roomId,
             proctor_ids: roomProctors[roomId]
-        }, {
-            onSuccess: () => toast.success('Pengawas berhasil disimpan')
         });
     };
 

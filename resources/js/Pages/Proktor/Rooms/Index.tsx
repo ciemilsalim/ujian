@@ -39,7 +39,6 @@ export default function Index({ rooms }: { rooms: Room[] }) {
             onSuccess: () => {
                 setShowCreateModal(false);
                 createForm.reset();
-                toast.success('Ruang berhasil dibuat');
             }
         });
     };
@@ -59,7 +58,6 @@ export default function Index({ rooms }: { rooms: Room[] }) {
         editForm.put(route('proktor.rooms.update', selectedRoom.id), {
             onSuccess: () => {
                 setShowEditModal(false);
-                toast.success('Ruang berhasil diperbarui');
             }
         });
     };
@@ -74,7 +72,6 @@ export default function Index({ rooms }: { rooms: Room[] }) {
         router.delete(route('proktor.rooms.destroy', selectedRoom.id), {
             onSuccess: () => {
                 setShowDeleteModal(false);
-                toast.success('Ruang berhasil dihapus');
             }
         });
     };

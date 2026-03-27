@@ -199,9 +199,7 @@ export default function Analysis({ session, stats, distribution }: IndexProps) {
                                                     <button
                                                         onClick={() => {
                                                             if (confirm(`Reset hasil ujian ${eu.user?.name}? Semua jawaban akan dihapus.`)) {
-                                                                router.post(route('proktor.results.reset-user', eu.id), {}, {
-                                                                    onSuccess: () => toast.success('Hasil berhasil direset.')
-                                                                });
+                                                                router.post(route('proktor.results.reset-user', eu.id));
                                                             }
                                                         }}
                                                         className="p-2 text-amber-600 hover:bg-amber-50 rounded-lg transition"
@@ -212,9 +210,7 @@ export default function Analysis({ session, stats, distribution }: IndexProps) {
                                                     <button
                                                         onClick={() => {
                                                             if (confirm(`Hapus data ujian ${eu.user?.name} dari sesi ini?`)) {
-                                                                router.delete(route('proktor.results.delete-user', eu.id), {
-                                                                    onSuccess: () => toast.success('Data berhasil dihapus.')
-                                                                });
+                                                                router.delete(route('proktor.results.delete-user', eu.id));
                                                             }
                                                         }}
                                                         className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"

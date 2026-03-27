@@ -122,7 +122,7 @@ class SessionController
         ]);
 
         $status = $session->is_active ? 'diaktifkan' : 'dinonaktifkan';
-        return redirect()->back()->with('success', "Session berhasil $status.");
+        return redirect()->back()->with('success', "Sesi berhasil $status.");
     }
 
     public function refreshToken($id)

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, useForm, router } from '@inertiajs/react';
 import { Plus, Play, Pause, Trash2, Monitor, Edit, Calendar, BookOpen, Users, UserPlus, Clock, Search, Filter, MoreVertical, CheckCircle, XCircle, AlertTriangle, Home } from 'lucide-react';
 import { toast } from 'sonner';
 import Modal from '@/Components/Modal';
@@ -46,7 +46,6 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
         if (!sessionToDelete) return;
         destroy(route('proktor.sessions.destroy', sessionToDelete.id), {
             onSuccess: () => {
-                toast.success('Sesi berhasil dihapus');
                 setShowDeleteModal(false);
                 setSessionToDelete(null);
             }
@@ -54,9 +53,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
     };
 
     const handleToggleStatus = (id: number, currentStatus: boolean) => {
-        post(route('proktor.sessions.toggle-status', id), {
-            onSuccess: () => toast.success(`Sesi berhasil ${currentStatus ? 'dinonaktifkan' : 'diaktifkan'}`)
-        });
+        post(route('proktor.sessions.toggle-status', id));
     };
 
     const submitCreate = (e: React.FormEvent) => {
@@ -355,9 +352,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
                                                     <button
                                                         onClick={() => {
                                                             if (confirm('Sinkronkan seluruh siswa di kelas ke sesi ini?')) {
-                                                                router.post(route('proktor.sessions.sync', session.id), {}, {
-                                                                    onSuccess: () => toast.success('Sinkronisasi selesai')
-                                                                });
+                                                                router.post(route('proktor.sessions.sync', session.id));
                                                             }
                                                         }}
                                                         className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all shadow-sm border border-blue-100"

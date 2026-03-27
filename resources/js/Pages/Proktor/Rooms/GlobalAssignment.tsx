@@ -171,7 +171,6 @@ export default function GlobalAssignment({ students, rooms, classrooms }: { stud
             assignments: payload
         }, {
             onSuccess: () => {
-                toast.success('Pengaturan ruang permanen berhasil disimpan');
                 setIsSaving(false);
             },
             onError: (errors) => {
