@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', ['proktor', 'guru', 'siswa'])->default('siswa');
-            $table->foreignId('classroom_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('classroom_id')->nullable();
             $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();

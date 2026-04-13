@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         Schema::create('student_answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('exam_session_user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('question_id')->constrained()->onDelete('cascade');
+            $table->foreignId('exam_session_user_id');
+            $table->foreignId('question_id');
             $table->text('answer_text')->nullable(); // For essay or selected option key
             $table->boolean('is_correct')->nullable();
             $table->integer('score')->default(0);

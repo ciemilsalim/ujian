@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('question_bank_id')->constrained()->onDelete('cascade');
+            $table->foreignId('question_bank_id');
             $table->enum('type', ['pilihan_ganda', 'essay']);
             $table->text('question_text');
             $table->string('question_image')->nullable();

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('exam_session_proctors', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('exam_session_id')->constrained()->onDelete('cascade');
-            $table->foreignId('exam_room_id')->constrained()->onDelete('cascade');
-            $table->foreignId('proctor_id')->constrained()->onDelete('cascade');
+            $table->foreignId('exam_session_id');
+            $table->foreignId('exam_room_id');
+            $table->foreignId('proctor_id');
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('question_bank_id')->constrained()->onDelete('cascade');
+            $table->foreignId('question_bank_id');
             $table->string('title');
             $table->integer('duration'); // In minutes
             $table->dateTime('start_time')->nullable();

@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         Schema::create('question_banks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('subject_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Guru who created it
+            $table->foreignId('subject_id');
+            $table->foreignId('user_id'); // Guru who created it
             $table->string('name');
             $table->text('description')->nullable();
             $table->timestamps();

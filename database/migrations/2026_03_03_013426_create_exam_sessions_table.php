@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('exam_sessions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('exam_id')->constrained()->onDelete('cascade');
+            $table->foreignId('exam_id');
             $table->string('name');
             $table->dateTime('start_time');
             $table->dateTime('end_time');

@@ -14,37 +14,45 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Create Proktor
-        \App\Models\User::create([
-            'username' => 'proktor',
-            'name' => 'Administrator Proktor',
-            'email' => 'proktor@example.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('password'),
-            'role' => 'proktor',
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['username' => 'proktor'],
+            [
+                'name' => 'Administrator Proktor',
+                'email' => 'proktor@example.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                'role' => 'proktor',
+            ]
+        );
 
         // Create Guru
-        \App\Models\User::create([
-            'username' => 'guru',
-            'name' => 'Guru Pengampu',
-            'email' => 'guru@example.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('password'),
-            'role' => 'guru',
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['username' => 'guru'],
+            [
+                'name' => 'Guru Pengampu',
+                'email' => 'guru@example.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                'role' => 'guru',
+            ]
+        );
 
         // Create example Classroom
-        $classroom = \App\Models\Classroom::create([
-            'name' => 'VII',
-            'description' => 'Kelas Tujuh',
-        ]);
+        $classroom = \App\Models\Classroom::firstOrCreate(
+            ['name' => 'VII'],
+            [
+                'description' => 'Kelas Tujuh',
+            ]
+        );
 
         // Create Siswa
-        \App\Models\User::create([
-            'username' => 'siswa',
-            'name' => 'Siswa Percobaan',
-            'email' => 'siswa@example.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('password'),
-            'role' => 'siswa',
-            'classroom_id' => $classroom->id,
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['username' => 'siswa'],
+            [
+                'name' => 'Siswa Percobaan',
+                'email' => 'siswa@example.com',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                'role' => 'siswa',
+                'classroom_id' => $classroom->id,
+            ]
+        );
     }
 }
