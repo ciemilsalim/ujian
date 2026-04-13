@@ -114,7 +114,7 @@ export default function EnterToken({ session }: Props) {
                 </div>
 
                 <p className="text-center mt-8 text-sm font-bold text-gray-400 uppercase tracking-widest">
-                    CBT SYSTEM V2.0
+                    ZEXAM-CBT Versi 1.0
                 </p>
             </div>
         </div>

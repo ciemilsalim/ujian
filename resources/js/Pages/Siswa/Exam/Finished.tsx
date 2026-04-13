@@ -91,7 +91,7 @@ export default function Finished({ session, examUser, maxCheatWarnings }: Props)
                     </div>
 
                     <p className="text-center mt-8 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                        CBT SYSTEM V2.0 • {new Date(examUser.finished_at).toLocaleString('id-ID')}
+                        ZEXAM-CBT Versi 1.0 • {new Date(examUser.finished_at).toLocaleString('id-ID')}
                     </p>
                 </div>
             </div>
