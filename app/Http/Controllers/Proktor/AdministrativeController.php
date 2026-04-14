@@ -14,11 +14,13 @@ class AdministrativeController extends Controller
     {
         $sessions = ExamSession::with(['exam', 'classroom'])->latest()->get();
         $classrooms = Classroom::withCount('users')->orderBy('name')->get();
+        $proctors = \App\Models\Proctor::orderBy('name')->get();
 
         return Inertia::render('Proktor/Administration/Index', [
             'sessions' => $sessions,
             'classrooms' => $classrooms,
             'rooms' => ExamRoom::all(),
+            'proctors' => $proctors,
         ]);
     }
 }

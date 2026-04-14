@@ -27,15 +27,20 @@ interface Room {
     name: string;
 }
 
-export default function Index({ sessions, classrooms, rooms }: { sessions: Session[], classrooms: Classroom[], rooms: Room[] }) {
+interface Proctor {
+    id: number;
+    name: string;
+    nip: string | null;
+}
+
+export default function Index({ sessions, classrooms, rooms, proctors }: { sessions: Session[], classrooms: Classroom[], rooms: Room[], proctors: Proctor[] }) {
     const [activeTab, setActiveTab] = useState<'sessions' | 'classrooms' | 'rules'>('sessions');
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedSession, setSelectedSession] = useState<Session | null>(null);
     const [isBAModalOpen, setIsBAModalOpen] = useState(false);
 
     const { data, setData, post, processing, reset } = useForm({
-        proctor_name: '',
-        proctor_nip: '',
+        proctor_id: '',
     });
 
     const filteredSessions = sessions.filter(s => 
@@ -66,17 +71,11 @@ export default function Index({ sessions, classrooms, rooms }: { sessions: Sessi
             form.appendChild(csrfInput);
         }
 
-        const nameInput = document.createElement('input');
-        nameInput.type = 'hidden';
-        nameInput.name = 'proctor_name';
-        nameInput.value = data.proctor_name;
-        form.appendChild(nameInput);
-
-        const nipInput = document.createElement('input');
-        nipInput.type = 'hidden';
-        nipInput.name = 'proctor_nip';
-        nipInput.value = data.proctor_nip;
-        form.appendChild(nipInput);
+        const idInput = document.createElement('input');
+        idInput.type = 'hidden';
+        idInput.name = 'proctor_id';
+        idInput.value = data.proctor_id;
+        form.appendChild(idInput);
 
         document.body.appendChild(form);
         form.submit();
@@ -279,25 +278,19 @@ export default function Index({ sessions, classrooms, rooms }: { sessions: Sessi
 
                     <div className="space-y-4">
                         <div>
-                            <InputLabel htmlFor="proctor_name" value="Nama Pengawas" className="font-bold text-[10px] uppercase tracking-widest text-gray-400" />
-                            <TextInput
-                                id="proctor_name"
-                                value={data.proctor_name}
-                                onChange={(e) => setData('proctor_name', e.target.value)}
+                            <InputLabel htmlFor="proctor_id" value="Pilih Pengawas" className="font-bold text-[10px] uppercase tracking-widest text-gray-400" />
+                            <select
+                                id="proctor_id"
+                                value={data.proctor_id}
+                                onChange={(e) => setData('proctor_id', e.target.value)}
                                 className="mt-1 block w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 rounded-xl h-12"
-                                placeholder="Masukkan nama pengawas..."
                                 required
-                            />
-                        </div>
-                        <div>
-                            <InputLabel htmlFor="proctor_nip" value="NIP Pengawas (Opsional)" className="font-bold text-[10px] uppercase tracking-widest text-gray-400" />
-                            <TextInput
-                                id="proctor_nip"
-                                value={data.proctor_nip}
-                                onChange={(e) => setData('proctor_nip', e.target.value)}
-                                className="mt-1 block w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 rounded-xl h-12"
-                                placeholder="Masukkan NIP pengawas..."
-                            />
+                            >
+                                <option value="">-- Silakan Pilih Pengawas --</option>
+                                {proctors?.map(p => (
+                                    <option key={p.id} value={p.id}>{p.name} {p.nip ? `(NIP: ${p.nip})` : ''}</option>
+                                ))}
+                            </select>
                         </div>
                     </div>
 

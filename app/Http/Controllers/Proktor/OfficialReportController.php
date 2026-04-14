@@ -15,8 +15,9 @@ class OfficialReportController extends Controller
         $session = ExamSession::with(['exam', 'classroom', 'examUsers'])
             ->findOrFail($id);
             
-        $proctor_name = $request->proctor_name ?? '...........................';
-        $proctor_nip = $request->proctor_nip ?? '-';
+        $proctor = \App\Models\Proctor::find($request->proctor_id);
+        $proctor_name = $proctor ? $proctor->name : '...........................';
+        $proctor_nip = $proctor && $proctor->nip ? $proctor->nip : '-';
         
         $settings = Setting::pluck('value', 'key')->toArray();
         
