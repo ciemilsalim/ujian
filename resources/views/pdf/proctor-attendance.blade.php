@@ -146,7 +146,7 @@
                     <tr>
                         <td class="text-center">{{ $no++ }}</td>
                         <td>{{ $p->proctor->name }}</td>
-                        <td class="text-center">{{ $p->room->name }}</td>
+                        <td class="text-center">{{ $p->room->name ?? 'Semua Ruang' }}</td>
                         <td style="height: 40px;">
                              <span style="color: #ccc; font-size: 8pt;">{{ $no - 1 }}. ......................</span>
                         </td>
