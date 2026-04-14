@@ -42,19 +42,22 @@ class SessionController
             'token' => strtoupper(\Illuminate\Support\Str::random(6)),
         ]);
 
-        if ($request->classroom_ids && count($request->classroom_ids) > 0) {
-            $students = \App\Models\User::whereIn('classroom_id', $request->classroom_ids)
+        $classroomIds = $request->classroom_ids ?? [];
+        if (empty($classroomIds)) {
+            $students = \App\Models\User::where('role', 'siswa')->get();
+        } else {
+            $students = \App\Models\User::whereIn('classroom_id', $classroomIds)
                 ->where('role', 'siswa')
                 ->get();
+        }
             
-            foreach ($students as $student) {
-                \App\Models\ExamSessionUser::create([
-                    'exam_session_id' => $session->id,
-                    'user_id' => $student->id,
-                    'exam_room_id' => $student->exam_room_id,
-                    'status' => 'waiting'
-                ]);
-            }
+        foreach ($students as $student) {
+            \App\Models\ExamSessionUser::create([
+                'exam_session_id' => $session->id,
+                'user_id' => $student->id,
+                'exam_room_id' => $student->exam_room_id,
+                'status' => 'waiting'
+            ]);
         }
 
         return redirect()->back()->with('success', 'Sesi ujian berhasil dibuat.');
@@ -82,10 +85,13 @@ class SessionController
 
         $classroomIds = $request->classroom_ids ?? [];
 
-        if (count($classroomIds) > 0) {
+        if (empty($classroomIds)) {
+            $validStudentIds = \App\Models\User::where('role', 'siswa')->pluck('id');
+        } else {
             $validStudentIds = \App\Models\User::whereIn('classroom_id', $classroomIds)
                 ->where('role', 'siswa')
                 ->pluck('id');
+        }
 
             // Hapus peserta (yang masih 'waiting') dari kelas yang sudah dihapus dari sesi
             \App\Models\ExamSessionUser::where('exam_session_id', $session->id)
@@ -109,7 +115,6 @@ class SessionController
                     ]);
                 }
             }
-        }
 
         return redirect()->back()->with('success', 'Sesi ujian berhasil diperbarui.');
     }
@@ -281,13 +286,14 @@ class SessionController
     public function syncParticipants($id)
     {
         $session = \App\Models\ExamSession::findOrFail($id);
-        if (!$session->classroom_id) {
-            return redirect()->back()->with('error', 'Sesi ini tidak terhubung ke kelas manapun.');
+        if ($session->classroom_id) {
+            $classroomStudents = \App\Models\User::where('classroom_id', $session->classroom_id)
+                ->where('role', 'siswa')
+                ->pluck('id');
+        } else {
+            // Assume it's a global active session (Semua Kelas)
+            $classroomStudents = \App\Models\User::where('role', 'siswa')->pluck('id');
         }
-
-        $classroomStudents = \App\Models\User::where('classroom_id', $session->classroom_id)
-            ->where('role', 'siswa')
-            ->pluck('id');
 
         $existingUsers = \App\Models\ExamSessionUser::where('exam_session_id', $session->id)
             ->pluck('user_id')
