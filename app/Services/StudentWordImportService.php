@@ -44,10 +44,13 @@ class StudentWordImportService
             $className = strtolower(trim($data['kelas'] ?? ''));
             $classroomId = $this->classrooms[$className] ?? null;
 
+            $password = !empty($data['password']) ? $data['password'] : $data['nis'];
+
             User::create([
                 'username' => $data['nis'],
                 'name' => $data['name'],
-                'password' => Hash::make($data['password'] ?? 'siswa123'),
+                'password' => Hash::make($password),
+                'password_plain' => $password,
                 'role' => 'siswa',
                 'classroom_id' => $classroomId,
             ]);
