@@ -103,12 +103,17 @@ class ExamController extends Controller
             $examUser->update(['status' => 'working']);
         }
 
-        \App\Events\StudentExamUpdated::dispatch(
-            $session->id,
-            auth()->id(),
-            auth()->user()->name,
-            'working'
-        );
+        try {
+            \App\Events\StudentExamUpdated::dispatch(
+                $session->id,
+                auth()->id(),
+                auth()->user()->name,
+                'working'
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with exam
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         // Initialize started_at if null to start the absolute timer
         if (!$examUser->started_at) {
@@ -216,12 +221,17 @@ class ExamController extends Controller
         $examSessionUser->increment('cheat_warnings');
         $examSessionUser->refresh();
 
-        \App\Events\StudentCheatDetected::dispatch(
-            $request->exam_session_id,
-            auth()->id(),
-            auth()->user()->name,
-            $request->type . ' (Peringatan ke-' . $examSessionUser->cheat_warnings . ')'
-        );
+        try {
+            \App\Events\StudentCheatDetected::dispatch(
+                $request->exam_session_id,
+                auth()->id(),
+                auth()->user()->name,
+                $request->type . ' (Peringatan ke-' . $examSessionUser->cheat_warnings . ')'
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with cheat detection
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         // Auto Disqualification based on max_cheat_warnings setting
         $maxWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);
@@ -233,12 +243,17 @@ class ExamController extends Controller
                 'score' => 0, // Set skor ke 0 jika diskualifikasi
             ]);
 
-            \App\Events\StudentExamUpdated::dispatch(
-                $examSessionUser->exam_session_id,
-                $examSessionUser->user_id,
-                auth()->user()->name,
-                'finished'
-            );
+            try {
+                \App\Events\StudentExamUpdated::dispatch(
+                    $examSessionUser->exam_session_id,
+                    $examSessionUser->user_id,
+                    auth()->user()->name,
+                    'finished'
+                );
+            } catch (\Exception $e) {
+                // Broadcast failed, but continue with disqualification
+                \Log::warning('Broadcast failed: ' . $e->getMessage());
+            }
 
             return response()->json([
                 'status' => 'disqualified',
@@ -321,22 +336,32 @@ class ExamController extends Controller
             // === Auto-Scoring untuk Pilihan Ganda (ujian resmi) ===
             $this->calculateScore($examSessionUser);
 
-            \App\Events\StudentExamUpdated::dispatch(
-                $examSessionUser->exam_session_id,
-                $examSessionUser->user_id,
-                auth()->user()->name,
-                'finished'
-            );
+            try {
+                \App\Events\StudentExamUpdated::dispatch(
+                    $examSessionUser->exam_session_id,
+                    $examSessionUser->user_id,
+                    auth()->user()->name,
+                    'finished'
+                );
+            } catch (\Exception $e) {
+                // Broadcast failed, but continue with exam submission
+                \Log::warning('Broadcast failed: ' . $e->getMessage());
+            }
 
             return redirect()->route('siswa.dashboard')->with('success', 'Ujian telah diselesaikan.');
         }
 
-        \App\Events\StudentExamUpdated::dispatch(
-            $examSessionUser->exam_session_id,
-            $examSessionUser->user_id,
-            auth()->user()->name,
-            'working'
-        );
+        try {
+            \App\Events\StudentExamUpdated::dispatch(
+                $examSessionUser->exam_session_id,
+                $examSessionUser->user_id,
+                auth()->user()->name,
+                'working'
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with answer submission
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         return redirect()->back();
     }

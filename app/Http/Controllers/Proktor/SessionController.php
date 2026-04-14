@@ -141,11 +141,16 @@ class SessionController
             'message' => 'required|string|max:500',
         ]);
 
-        \App\Events\ProktorBroadcast::dispatch(
-            $id,
-            $request->message,
-            auth()->user()->name
-        );
+        try {
+            \App\Events\ProktorBroadcast::dispatch(
+                $id,
+                $request->message,
+                auth()->user()->name
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with broadcast
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         return response()->json(['status' => 'success']);
     }
@@ -172,11 +177,16 @@ class SessionController
         $session = \App\Models\ExamSession::findOrFail($id);
 
         // Broadcast force logout to all participants in this session
-        \App\Events\ProktorBroadcast::dispatch(
-            $id,
-            'force_logout',
-            auth()->user()->name
-        );
+        try {
+            \App\Events\ProktorBroadcast::dispatch(
+                $id,
+                'force_logout',
+                auth()->user()->name
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with force logout
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         return redirect()->back()->with('success', 'Perintah Logout paksa telah dikirim ke seluruh siswa di sesi ini.');
     }
@@ -186,11 +196,16 @@ class SessionController
         $eu = \App\Models\ExamSessionUser::findOrFail($id);
 
         // Broadcast force logout to specific participant
-        \App\Events\ProktorBroadcast::dispatch(
-            $eu->exam_session_id,
-            'force_logout_user:' . $eu->user_id,
-            auth()->user()->name
-        );
+        try {
+            \App\Events\ProktorBroadcast::dispatch(
+                $eu->exam_session_id,
+                'force_logout_user:' . $eu->user_id,
+                auth()->user()->name
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with force logout
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         return redirect()->back()->with('success', "Perintah Logout paksa dikirim ke {$eu->user->name}.");
     }
@@ -204,11 +219,16 @@ class SessionController
         $session->update(['end_time' => $newEndTime]);
 
         // Broadcast time update to students
-        \App\Events\ProktorBroadcast::dispatch(
-            $id,
-            'extend_time|' . $request->minutes,
-            auth()->user()->name
-        );
+        try {
+            \App\Events\ProktorBroadcast::dispatch(
+                $id,
+                'extend_time|' . $request->minutes,
+                auth()->user()->name
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with time extension
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         return redirect()->back()->with('success', "Waktu ujian berhasil ditambah {$request->minutes} menit.");
     }
@@ -231,19 +251,29 @@ class SessionController
         ]);
 
         // Broadcast status update to Monitor
-        \App\Events\StudentExamUpdated::dispatch(
-            $eu->exam_session_id,
-            $eu->user_id,
-            $eu->user->name,
-            'waiting'
-        );
+        try {
+            \App\Events\StudentExamUpdated::dispatch(
+                $eu->exam_session_id,
+                $eu->user_id,
+                $eu->user->name,
+                'waiting'
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with exam reset
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         // Also broadcast force logout specifically for this user
-        \App\Events\ProktorBroadcast::dispatch(
-            $eu->exam_session_id,
-            'force_logout_user:' . $eu->user_id,
-            auth()->user()->name
-        );
+        try {
+            \App\Events\ProktorBroadcast::dispatch(
+                $eu->exam_session_id,
+                'force_logout_user:' . $eu->user_id,
+                auth()->user()->name
+            );
+        } catch (\Exception $e) {
+            // Broadcast failed, but continue with exam reset
+            \Log::warning('Broadcast failed: ' . $e->getMessage());
+        }
 
         return redirect()->back()->with('success', 'Ujian siswa berhasil di-reset. Siswa dapat memulai dari awal.');
     }
