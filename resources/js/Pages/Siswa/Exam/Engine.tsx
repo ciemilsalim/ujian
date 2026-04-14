@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Head, useForm, router } from '@inertiajs/react';
-import { toast } from 'sonner';
+import { Toaster, toast } from 'sonner';
 import { Megaphone, AlertTriangle, CheckCircle, ChevronLeft, ChevronRight, LayoutGrid, Menu, X as XIcon, Clock, BookOpen, User, Home, Type, FlaskConical } from 'lucide-react';
 import axios from 'axios';
 
@@ -338,6 +338,7 @@ export default function ExamEngine({
     return (
         <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col font-sans selection:bg-indigo-100 dark:selection:bg-indigo-900/40">
             <Head title={`Ujian: ${session.exam?.title || 'Ujian'}`} />
+            <Toaster position="top-center" richColors />
 
             {/* Overlay Waktu Habis */}
             {isTimeSpent && (
