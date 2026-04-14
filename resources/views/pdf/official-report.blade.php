@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td class="label">Kelas</td>
-                <td>: {{ $session->classroom->name }}</td>
+                <td>: {{ $session->classroom->name ?? 'Semua Kelas' }}</td>
             </tr>
             <tr>
                 <td class="label">Waktu Mulai</td>
