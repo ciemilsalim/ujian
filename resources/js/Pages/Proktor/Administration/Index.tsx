@@ -12,7 +12,7 @@ interface Session {
     id: number;
     name: string;
     exam: { title: string };
-    classroom: { name: string };
+    classroom: { name: string } | null;
     start_time: string;
 }
 
@@ -40,7 +40,7 @@ export default function Index({ sessions, classrooms, rooms }: { sessions: Sessi
 
     const filteredSessions = sessions.filter(s => 
         s.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        s.exam.title.toLowerCase().includes(searchQuery.toLowerCase())
+        (s.exam?.title || '').toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     const filteredClassrooms = classrooms.filter(c => 
@@ -144,8 +144,8 @@ export default function Index({ sessions, classrooms, rooms }: { sessions: Sessi
                             <div key={session.id} className="bg-white dark:bg-gray-900 p-6 rounded-[2rem] border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition group">
                                 <div className="flex justify-between items-start mb-4">
                                     <div>
-                                        <h3 className="font-black text-gray-900 dark:text-white uppercase tracking-tight">{session.exam.title}</h3>
-                                        <p className="text-sm text-gray-500 font-bold">{session.name} • {session.classroom.name}</p>
+                                        <h3 className="font-black text-gray-900 dark:text-white uppercase tracking-tight">{session.exam?.title || 'Ujian Tidak Diketahui'}</h3>
+                                        <p className="text-sm text-gray-500 font-bold">{session.name} • {session.classroom?.name || 'Semua Kelas'}</p>
                                     </div>
                                     <div className="bg-blue-50 dark:bg-blue-900/30 p-2 rounded-xl">
                                         <ClipboardCheck className="w-5 h-5 text-blue-600" />
