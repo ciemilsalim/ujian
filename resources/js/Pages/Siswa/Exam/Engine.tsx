@@ -24,7 +24,7 @@ export default function ExamEngine({
     isPractice?: boolean,
 }) {
     // Mode Latihan: nonaktifkan semua anti-cheat di client-side
-    const checkSetting = (key: string) => settings?.[key] === '1' || settings?.[key] === 1 || settings?.[key] === 'true' || settings?.[key] === true;
+    const checkSetting = (key: string) => String(settings?.[key]) === '1' || String(settings?.[key]) === 'true';
     
     const isAntiCheatEnabled = !isPractice && checkSetting('enable_anti_cheat');
     const isBlockContextMenu = !isPractice && checkSetting('block_context_menu');
