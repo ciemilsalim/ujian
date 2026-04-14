@@ -16,8 +16,14 @@ class OfficialReportController extends Controller
             ->findOrFail($id);
             
         $proctor = \App\Models\Proctor::find($request->proctor_id);
-        $proctor_name = $proctor ? $proctor->name : '...........................';
-        $proctor_nip = $proctor && $proctor->nip ? $proctor->nip : '-';
+        if ($proctor) {
+            $session->update(['proctor_id' => $proctor->id]);
+            $proctor_name = $proctor->name;
+            $proctor_nip = $proctor->nip ?? '-';
+        } else {
+            $proctor_name = '...........................';
+            $proctor_nip = '-';
+        }
         
         $settings = Setting::pluck('value', 'key')->toArray();
         

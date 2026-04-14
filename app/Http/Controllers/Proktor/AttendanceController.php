@@ -33,6 +33,15 @@ class AttendanceController extends Controller
                 ->get();
         }
 
+        if (count($proctors) == 0 && $session->proctor_id) {
+            $globalProctor = \App\Models\Proctor::find($session->proctor_id);
+            if ($globalProctor) {
+                $proctorWrapper = new \App\Models\ExamSessionProctor();
+                $proctorWrapper->setRelation('proctor', $globalProctor);
+                $proctors = collect([$proctorWrapper]);
+            }
+        }
+
         $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
 
         $pdf = Pdf::loadView('pdf.attendance', compact('session', 'settings', 'room', 'proctors'));
@@ -48,6 +57,15 @@ class AttendanceController extends Controller
 
         // Group proctors by room
         $roomProctors = $session->proctors->groupBy('exam_room_id');
+
+        if ($roomProctors->isEmpty() && $session->proctor_id) {
+            $globalProctor = \App\Models\Proctor::find($session->proctor_id);
+            if ($globalProctor) {
+                $proctorWrapper = new \App\Models\ExamSessionProctor();
+                $proctorWrapper->setRelation('proctor', $globalProctor);
+                $roomProctors = collect([ 'Semua Ruang' => collect([$proctorWrapper]) ]);
+            }
+        }
 
         $pdf = Pdf::loadView('pdf.proctor-attendance', compact('session', 'settings', 'roomProctors'));
         return $pdf->download("daftar_hadir_pengawas_{$session->name}.pdf");
