@@ -24,11 +24,13 @@ export default function ExamEngine({
     isPractice?: boolean,
 }) {
     // Mode Latihan: nonaktifkan semua anti-cheat di client-side
-    const isAntiCheatEnabled = !isPractice && (settings?.enable_anti_cheat === '1' || settings?.enable_anti_cheat === true);
-    const isBlockContextMenu = !isPractice && (settings?.block_context_menu === '1' || settings?.block_context_menu === true);
-    const isBlockCopyPaste = !isPractice && (settings?.block_copy_paste === '1' || settings?.block_copy_paste === true);
-    const isDetectTabSwitch = !isPractice && (settings?.detect_tab_switch === '1' || settings?.detect_tab_switch === true);
-    const isForceFullscreen = !isPractice && (settings?.force_fullscreen === '1' || settings?.force_fullscreen === true);
+    const checkSetting = (key: string) => settings?.[key] === '1' || settings?.[key] === 1 || settings?.[key] === 'true' || settings?.[key] === true;
+    
+    const isAntiCheatEnabled = !isPractice && checkSetting('enable_anti_cheat');
+    const isBlockContextMenu = !isPractice && checkSetting('block_context_menu');
+    const isBlockCopyPaste = !isPractice && checkSetting('block_copy_paste');
+    const isDetectTabSwitch = !isPractice && checkSetting('detect_tab_switch');
+    const isForceFullscreen = !isPractice && checkSetting('force_fullscreen');
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [fontSize, setFontSize] = useState<'small' | 'medium' | 'large'>('medium');
