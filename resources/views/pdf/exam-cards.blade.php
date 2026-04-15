@@ -28,20 +28,20 @@
             width: 50%;
             height: 57.4mm; /* ~ 287mm / 5 rows */
             vertical-align: top;
-            padding: 2mm;
+            padding: 2mm; 
             box-sizing: border-box;
         }
 
         .card {
             width: 90mm;
             height: 55mm;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px; /* sharp enough for ID, not too round */
             overflow: hidden;
-            background-color: #fff;
+            background-color: #ffffff;
             position: relative;
             box-sizing: border-box;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* very subtle box shadow */
         }
 
         .card-inner {
@@ -50,34 +50,47 @@
             position: relative;
         }
 
+        /* Modern Corporate Header */
         .header {
-            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
-            padding: 8px 12px;
-            color: white;
-            text-align: center;
-            border-bottom: 3px solid #facc15;
+            background-color: #1e1b4b; /* dark navy/indigo */
+            position: relative;
+            padding: 6px 12px;
+            border-bottom: 2px solid #3b82f6; /* energetic blue accent */
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 35%;
+            height: 2px;
+            background-color: #facc15; /* energetic yellow accent line */
         }
 
         .header h3 {
             margin: 0;
-            font-size: 10pt;
+            font-size: 8.5pt;
             font-weight: 800;
+            color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .header p {
-            margin: 2px 0 0 0;
-            font-size: 7pt;
-            opacity: 0.9;
+            margin: 1px 0 0 0;
+            font-size: 5pt;
+            color: #cbd5e1;
             font-weight: 600;
+            text-transform: uppercase;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            letter-spacing: 0.5px;
         }
 
         .content {
-            padding: 10px;
+            padding: 8px 10px;
             display: block;
             width: 100%;
         }
@@ -88,15 +101,15 @@
         }
 
         .photo-cell {
-            width: 20mm;
+            width: 22mm;
             vertical-align: top;
-            padding-top: 2px;
+            padding-right: 10px;
         }
 
         .photo-box {
-            width: 18mm;
-            height: 24mm;
-            border: 1.5px solid #e2e8f0;
+            width: 20mm;
+            height: 26mm;
+            border: 2px solid #f1f5f9;
             background-color: #f8fafc;
             border-radius: 4px;
             text-align: center;
@@ -110,84 +123,114 @@
         }
 
         .photo-placeholder {
-            font-size: 24pt;
+            font-size: 16pt;
             color: #cbd5e1;
-            line-height: 24mm;
+            line-height: 26mm;
             font-weight: bold;
         }
 
         .info-cell {
-            padding-left: 10px;
             vertical-align: top;
         }
 
         .field {
-            margin-bottom: 5px;
-        }
-
-        .label {
-            font-size: 6pt;
-            color: #64748b;
-            text-transform: uppercase;
-            font-weight: 800;
-            display: block;
-            margin-bottom: 1px;
-        }
-
-        .value {
-            font-size: 9pt;
-            color: #0f172a;
-            font-weight: 700;
-            display: block;
-        }
-
-        .login-box {
-            margin-top: 8px;
-            background-color: #f1f5f9;
-            padding: 6px;
-            border-radius: 8px;
-            border: 1px dashed #cbd5e1;
-        }
-
-        .login-field {
             margin-bottom: 4px;
         }
 
-        .login-label {
+        .field-label {
             font-size: 5pt;
-            color: #475569;
-            font-weight: 800;
+            color: #64748b;
             text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 2px;
         }
 
-        .login-value {
-            font-size: 10pt;
-            color: #4f46e5;
+        .field-value {
+            font-size: 7.5pt;
+            color: #334155;
+            font-weight: 700;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .name-value {
+            font-size: 8.5pt;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #0f172a;
+        }
+
+        /* Credentials Section */
+        .credentials-wrapper {
+            margin-top: 6px;
+            width: 85%; /* Make it not reach the QR code */
+        }
+
+        .credentials-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+
+        .credentials-table td {
+            padding: 3px 5px;
+        }
+
+        .credentials-table tr:first-child td {
+            border-bottom: 1px dashed #cbd5e1; /* dashed separator */
+        }
+
+        .cred-label {
+            font-size: 5pt;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #64748b;
+            width: 40%;
+            vertical-align: middle;
+        }
+
+        .cred-value {
+            font-size: 8pt;
             font-weight: 800;
             font-family: 'Courier New', Courier, monospace;
+            text-align: right;
+            width: 60%;
+            vertical-align: middle;
         }
 
-        .password-value {
-            color: #e11d48;
+        .cred-username {
+            color: #0284c7; /* deep sky blue */
+        }
+
+        .cred-password {
+            color: #e11d48; /* rose */
         }
 
         .watermark {
             position: absolute;
-            bottom: 4px;
-            right: 8px;
-            font-size: 5pt;
-            color: #e2e8f0;
+            bottom: 6px;
+            left: 10px;
+            font-size: 5.5pt;
+            color: #94a3b8;
             font-weight: 900;
-            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
         }
 
         .qr-small {
             position: absolute;
-            bottom: 8px;
+            bottom: 6px;
             right: 8px;
-            width: 12mm;
-            height: 12mm;
-            opacity: 0.8;
+            width: 14mm;
+            height: 14mm;
+            background-color: #ffffff;
+            padding: 1.5mm;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
         }
 
         .page-break {
@@ -224,23 +267,25 @@
                                             </td>
                                             <td class="info-cell">
                                                 <div class="field">
-                                                    <span class="label">Nama Lengkap</span>
-                                                    <span class="value">{{ $student->name }}</span>
+                                                    <span class="field-label">Nama Lengkap</span>
+                                                    <span class="field-value name-value">{{ $student->name }}</span>
                                                 </div>
-                                                <div class="field">
-                                                    <span class="label">Kelas / Rombel</span>
-                                                    <span class="value">{{ $classroom->name }}</span>
+                                                <div class="field" style="margin-bottom: 0;">
+                                                    <span class="field-label">Kelas / Rombel</span>
+                                                    <span class="field-value">{{ $classroom->name }}</span>
                                                 </div>
 
-                                                <div class="login-box">
-                                                    <div class="login-field">
-                                                        <span class="login-label">Username</span><br>
-                                                        <span class="login-value">{{ $student->username }}</span>
-                                                    </div>
-                                                    <div class="login-field" style="margin-bottom: 0;">
-                                                        <span class="login-label">Password</span><br>
-                                                        <span class="login-value password-value">{{ $student->password_plain ?? $student->username }}</span>
-                                                    </div>
+                                                <div class="credentials-wrapper">
+                                                    <table class="credentials-table">
+                                                        <tr>
+                                                            <td class="cred-label">Username</td>
+                                                            <td class="cred-value cred-username">{{ $student->username }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="cred-label">Password</td>
+                                                            <td class="cred-value cred-password">{{ $student->password_plain ?? $student->username }}</td>
+                                                        </tr>
+                                                    </table>
                                                 </div>
                                             </td>
                                         </tr>
@@ -250,7 +295,7 @@
                                 <div class="watermark">ZEXAM-CBT</div>
                                 
                                 <div class="qr-small">
-                                    <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(50)->margin(0)->generate($student->username)) !!}" style="width: 100%; height: 100%;">
+                                    <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(55)->margin(0)->generate($student->username)) !!}" style="width: 100%; height: 100%;">
                                 </div>
                             </div>
                         </div>
