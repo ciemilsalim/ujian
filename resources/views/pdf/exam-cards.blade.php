@@ -6,7 +6,7 @@
     <title>Kartu Login Ujian</title>
     <style>
         @page {
-            margin: 0.5cm;
+            margin: 0;
             size: A4 portrait;
         }
 
@@ -14,7 +14,7 @@
             font-family: 'Helvetica', 'Arial', sans-serif;
             color: #1e293b;
             margin: 0;
-            padding: 0;
+            padding: 5mm;
             background-color: #fff;
         }
 
@@ -26,63 +26,80 @@
 
         .card-cell {
             width: 50%;
-            height: 7.1cm; /* Total page height / 4 rows */
+            height: 57.4mm; /* ~ 287mm / 5 rows */
             vertical-align: top;
-            padding: 3px;
+            padding: 2mm;
             box-sizing: border-box;
         }
 
         .card {
-            border: 1px solid #94a3b8;
-            border-radius: 8px;
-            height: 6.9cm; /* Slightly less than cell height */
+            width: 90mm;
+            height: 55mm;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
             overflow: hidden;
             background-color: #fff;
             position: relative;
             box-sizing: border-box;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-inner {
+            padding: 0;
+            height: 100%;
+            position: relative;
         }
 
         .header {
-            background-color: #f1f5f9;
-            padding: 6px 10px;
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+            padding: 8px 12px;
+            color: white;
             text-align: center;
-            border-bottom: 2px solid #4f46e5;
+            border-bottom: 3px solid #facc15;
         }
 
         .header h3 {
             margin: 0;
-            font-size: 11px;
+            font-size: 10pt;
             font-weight: 800;
-            color: #4f46e5;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .header p {
-            margin: 1px 0;
-            font-size: 8px;
-            color: #64748b;
-            font-weight: bold;
+            margin: 2px 0 0 0;
+            font-size: 7pt;
+            opacity: 0.9;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .content-table {
+        .content {
+            padding: 10px;
+            display: block;
+            width: 100%;
+        }
+
+        .layout-table {
             width: 100%;
             border-collapse: collapse;
         }
 
         .photo-cell {
-            width: 1.8cm;
-            padding: 8px;
+            width: 20mm;
             vertical-align: top;
+            padding-top: 2px;
         }
 
         .photo-box {
-            width: 1.8cm;
-            height: 2.4cm;
-            border: 1px solid #cbd5e1;
+            width: 18mm;
+            height: 24mm;
+            border: 1.5px solid #e2e8f0;
             background-color: #f8fafc;
+            border-radius: 4px;
             text-align: center;
-            position: relative;
             overflow: hidden;
         }
 
@@ -93,106 +110,84 @@
         }
 
         .photo-placeholder {
-            font-size: 30px;
-            color: #e2e8f0;
-            line-height: 2.4cm;
+            font-size: 24pt;
+            color: #cbd5e1;
+            line-height: 24mm;
             font-weight: bold;
         }
 
         .info-cell {
-            padding: 8px 5px 8px 0;
+            padding-left: 10px;
             vertical-align: top;
         }
 
-        .student-details {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .student-details td {
-            font-size: 9px;
-            padding: 3px 0;
-            vertical-align: top;
+        .field {
+            margin-bottom: 5px;
         }
 
         .label {
-            width: 50px;
+            font-size: 6pt;
             color: #64748b;
-            font-weight: normal;
-        }
-
-        .value {
-            color: #0f172a;
-            font-weight: bold;
-        }
-
-        .qr-cell {
-            width: 1.6cm;
-            padding: 8px;
-            vertical-align: middle;
-            text-align: center;
-        }
-
-        .qr-box img {
-            width: 1.4cm;
-            height: 1.4cm;
-        }
-
-        .qr-label {
-            font-size: 5px;
-            color: #94a3b8;
-            margin-top: 2px;
-            font-weight: bold;
             text-transform: uppercase;
-        }
-
-        .highlight-box {
-            background-color: #f1f5f9;
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 10px;
-            color: #1e293b;
-        }
-
-        .rules-section {
-            padding: 5px 10px;
-            background-color: #f8fafc;
-            border-top: 1px dashed #e2e8f0;
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            right: 0;
-        }
-
-        .rules-title {
-            font-size: 7px;
-            font-weight: bold;
-            color: #475569;
+            font-weight: 800;
             display: block;
             margin-bottom: 1px;
         }
 
-        .rules-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-size: 7px;
-            color: #64748b;
+        .value {
+            font-size: 9pt;
+            color: #0f172a;
+            font-weight: 700;
+            display: block;
         }
 
-        .footer {
+        .login-box {
+            margin-top: 8px;
+            background-color: #f1f5f9;
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .login-field {
+            margin-bottom: 4px;
+        }
+
+        .login-label {
+            font-size: 5pt;
+            color: #475569;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .login-value {
+            font-size: 10pt;
+            color: #4f46e5;
+            font-weight: 800;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .password-value {
+            color: #e11d48;
+        }
+
+        .watermark {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 15px;
-            background-color: #4f46e5;
-            color: #ffffff;
-            font-size: 6px;
-            text-align: center;
-            line-height: 15px;
-            font-weight: bold;
+            bottom: 4px;
+            right: 8px;
+            font-size: 5pt;
+            color: #e2e8f0;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .qr-small {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 12mm;
+            height: 12mm;
+            opacity: 0.8;
         }
 
         .page-break {
@@ -209,59 +204,55 @@
                 @foreach($row as $student)
                     <td class="card-cell">
                         <div class="card">
-                            <div class="header">
-                                <h3>KARTU LOGIN PESERTA</h3>
-                                <p>{{ strtoupper($schoolName) }}</p>
-                            </div>
-                            
-                            <table class="content-table">
-                                <tr>
-                                    <td class="photo-cell">
-                                        <div class="photo-box">
-                                            @if($student->photo)
-                                                <img src="{{ public_path('storage/' . $student->photo) }}">
-                                            @else
-                                                <div class="photo-placeholder">{{ substr($student->name, 0, 1) }}</div>
-                                            @endif
-                                        </div>
-                                    </td>
-                                    <td class="info-cell">
-                                        <table class="student-details">
-                                            <tr>
-                                                <td class="label">Nama</td>
-                                                <td class="value">: {{ $student->name }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="label">Kelas</td>
-                                                <td class="value">: {{ $classroom->name }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="label">Username</td>
-                                                <td class="value">: <span class="highlight-box">{{ $student->username }}</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="label">Password</td>
-                                                <td class="value">: <span class="highlight-box">{{ $student->password_plain ?? $student->username }}</span></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td class="qr-cell">
-                                        <div class="qr-box">
-                                            <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(100)->errorCorrection('H')->generate($student->username)) !!}">
-                                            <div class="qr-label">SCAN LOGIN</div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="card-inner">
+                                <div class="header">
+                                    <h3>KARTU PESERTA UJIAN</h3>
+                                    <p>{{ strtoupper($schoolName) }}</p>
+                                </div>
+                                
+                                <div class="content">
+                                    <table class="layout-table">
+                                        <tr>
+                                            <td class="photo-cell">
+                                                <div class="photo-box">
+                                                    @if($student->photo)
+                                                        <img src="{{ public_path('storage/' . $student->photo) }}">
+                                                    @else
+                                                        <div class="photo-placeholder">{{ substr($student->name, 0, 1) }}</div>
+                                                    @endif
+                                                </div>
+                                            </td>
+                                            <td class="info-cell">
+                                                <div class="field">
+                                                    <span class="label">Nama Lengkap</span>
+                                                    <span class="value">{{ $student->name }}</span>
+                                                </div>
+                                                <div class="field">
+                                                    <span class="label">Kelas / Rombel</span>
+                                                    <span class="value">{{ $classroom->name }}</span>
+                                                </div>
 
-                            <div class="rules-section">
-                                <span class="rules-title">CATATAN:</span>
-                                <ul class="rules-list">
-                                    <li>• Login ke: <strong>{{ request()->getSchemeAndHttpHost() }}</strong></li>
-                                    <li>• Dilarang membuka tab lain / aplikasi lain.</li>
-                                </ul>
+                                                <div class="login-box">
+                                                    <div class="login-field">
+                                                        <span class="login-label">Username</span><br>
+                                                        <span class="login-value">{{ $student->username }}</span>
+                                                    </div>
+                                                    <div class="login-field" style="margin-bottom: 0;">
+                                                        <span class="login-label">Password</span><br>
+                                                        <span class="login-value password-value">{{ $student->password_plain ?? $student->username }}</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="watermark">ZEXAM-CBT</div>
+                                
+                                <div class="qr-small">
+                                    <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(50)->margin(0)->generate($student->username)) !!}" style="width: 100%; height: 100%;">
+                                </div>
                             </div>
-                            
                         </div>
                     </td>
                 @endforeach
@@ -270,7 +261,7 @@
                 @endif
             </tr>
 
-            @if (($rowGroupIndex + 1) % 4 == 0 && !$loop->last)
+            @if (($rowGroupIndex + 1) % 5 == 0 && !$loop->last)
                 </table>
                 <div class="page-break"></div>
                 <table class="main-table">
@@ -278,8 +269,5 @@
         @endforeach
     </table>
 
-    <div style="position: fixed; bottom: -0.5cm; left: 0; right: 0; text-align: center; font-size: 7pt; color: #999; text-transform: uppercase;">
-        Printed by ZEXAM-CBT V.1.0. | {{ date('d/m/Y H:i') }}
-    </div>
 </body>
-</html>
+</html>
