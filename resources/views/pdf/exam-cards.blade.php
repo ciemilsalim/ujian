@@ -26,7 +26,7 @@
 
         .card-cell {
             width: 50%;
-            height: 71.5mm; /* ~ 286mm / 4 rows */
+            height: 68mm; /* Reduced to leave safety margin for dompdf auto-pagebreak */
             vertical-align: top;
             padding: 2mm; 
             box-sizing: border-box;
