@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title inertia>{{ config('app.name', 'ZEXAM-CBT') }}</title>
+    <link rel="icon" href="/images/logo.png" type="image/png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

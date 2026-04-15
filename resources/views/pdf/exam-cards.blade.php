@@ -10,81 +10,84 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica', 'Arial', sans-serif;
             color: #1e293b;
             margin: 0;
-            padding: 6mm 10mm; /* 6mm top/bot, 10mm left/right */
+            padding: 8mm 12mm; /* Give enough margin */
             background-color: #fff;
         }
 
         .main-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 4mm 6mm; /* Space between cards */
             table-layout: fixed;
         }
 
         .card-cell {
             width: 50%;
-            height: 65mm; /* 5 rows = 325mm (max Legal is 356) */
-            vertical-align: middle;
+            height: 60mm;
+            vertical-align: top;
             text-align: center;
         }
 
         .card {
-            width: 92mm;
-            height: 54mm;
-            margin: 0 auto; /* Center horizontally in td */
-            border: 1px solid #94a3b8;
-            border-radius: 5px;
+            width: 90mm;
+            height: 56mm;
+            margin: 0 auto;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
             overflow: hidden;
-            background-color: #ffffff;
+            background: #ffffff;
             position: relative;
             box-sizing: border-box;
             text-align: left;
         }
 
-        .header {
+        /* Top Header */
+        .header-table {
+            width: 100%;
             background-color: #1e1b4b;
-            position: relative;
-            padding: 4px 10px;
-            border-bottom: 2px solid #3b82f6;
-            height: 9mm;
-            box-sizing: border-box;
+            border-bottom: 3px solid #3b82f6;
+            border-collapse: collapse;
         }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 30mm;
-            height: 2px;
-            background-color: #facc15;
+        
+        .header-table td {
+            padding: 5px 10px;
+            vertical-align: middle;
         }
 
         .header h3 {
             margin: 0;
-            font-size: 8pt;
-            font-weight: bold;
+            font-size: 9pt;
+            font-weight: 900;
             color: #ffffff;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
         .header p {
-            margin: 0;
-            font-size: 5pt;
-            color: #cbd5e1;
+            margin: 1px 0 0 0;
+            font-size: 5.5pt;
+            color: #94a3b8;
             font-weight: bold;
             text-transform: uppercase;
             white-space: nowrap;
             overflow: hidden;
         }
 
+        /* Yellow Accent Line below blue */
+        .accent-line {
+            height: 2px;
+            background-color: #facc15;
+            width: 35mm;
+        }
+
+        /* Main Content */
         .content {
-            padding: 6px 8px;
+            padding: 8px 10px;
             width: 100%;
             box-sizing: border-box;
-            height: 45mm;
         }
 
         .layout-table {
@@ -94,16 +97,16 @@
         }
 
         .photo-cell {
-            width: 22mm;
+            width: 20mm;
             vertical-align: top;
         }
 
         .photo-box {
-            width: 20mm;
-            height: 25mm;
-            border: 1px solid #cbd5e1;
+            width: 18mm;
+            height: 24mm;
+            border: 2px solid #e2e8f0;
             background-color: #f8fafc;
-            border-radius: 4px;
+            border-radius: 8px;
             text-align: center;
             overflow: hidden;
         }
@@ -115,29 +118,30 @@
         }
 
         .photo-placeholder {
-            font-size: 16pt;
+            font-size: 14pt;
             color: #cbd5e1;
-            line-height: 25mm;
+            line-height: 24mm;
             font-weight: bold;
         }
 
         .info-cell {
             vertical-align: top;
-            padding-left: 6px;
+            padding-left: 8px;
         }
 
         .field {
-            margin-bottom: 3px;
-            line-height: 1;
+            margin-bottom: 4px;
+            line-height: 1.1;
         }
 
         .field-label {
             font-size: 5pt;
             color: #64748b;
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 900;
             display: block;
-            margin-bottom: 1px;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
         }
 
         .field-value {
@@ -148,7 +152,7 @@
         }
 
         .name-value {
-            font-size: 8pt;
+            font-size: 8.5pt;
             font-weight: 900;
             text-transform: uppercase;
             color: #0f172a;
@@ -156,21 +160,24 @@
             overflow: hidden;
         }
 
+        /* Credentials Section */
         .credentials-wrapper {
-            margin-top: 4px;
-            width: 82%; 
+            margin-top: 6px;
+            width: 85%;
         }
 
         .credentials-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 3px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            overflow: hidden;
         }
 
         .credentials-table td {
-            padding: 3px 5px;
+            padding: 4px 6px;
         }
 
         .credentials-table tr:first-child td {
@@ -180,41 +187,45 @@
         .cred-label {
             font-size: 5pt;
             text-transform: uppercase;
-            font-weight: bold;
-            color: #64748b;
-            width: 40%;
+            font-weight: 900;
+            color: #475569;
+            width: 35%;
+            background-color: #f1f5f9;
+            border-right: 1px solid #e2e8f0;
         }
 
         .cred-value {
-            font-size: 8pt;
-            font-weight: bold;
+            font-size: 8.5pt;
+            font-weight: 900;
             font-family: 'Courier New', Courier, monospace;
-            text-align: right;
-            width: 60%;
+            text-align: center;
+            width: 65%;
+            letter-spacing: 1px;
         }
 
-        .cred-username { color: #0284c7; }
-        .cred-password { color: #e11d48; }
+        .cred-username { color: #0369a1; }
+        .cred-password { color: #be123c; }
 
+        /* Bottom Assets */
         .watermark {
             position: absolute;
-            bottom: 4px;
-            left: 8px;
+            bottom: 5px;
+            left: 10px;
             font-size: 5pt;
             color: #94a3b8;
-            font-weight: bold;
-            opacity: 0.8;
+            font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .qr-small {
             position: absolute;
-            bottom: 6px;
-            right: 6px;
+            bottom: 5px;
+            right: 5px;
             width: 14mm;
             height: 14mm;
             background-color: #ffffff;
-            padding: 1mm;
-            border-radius: 3px;
+            padding: 1.5mm;
+            border-radius: 6px;
             border: 1px solid #e2e8f0;
         }
 
@@ -224,16 +235,34 @@
     </style>
 </head>
 <body>
+    @php
+        $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
+        $logoPath = isset($settings['school_logo']) && $settings['school_logo'] 
+            ? public_path($settings['school_logo']) 
+            : public_path('images/logo.png');
+    @endphp
+
     <table class="main-table">
         @foreach($students->chunk(2) as $rowGroupIndex => $row)
             <tr>
                 @foreach($row as $student)
                     <td class="card-cell">
                         <div class="card">
-                            <div class="header">
-                                <h3>KARTU PESERTA UJIAN</h3>
-                                <p>{{ strtoupper($schoolName) }}</p>
-                            </div>
+                            <table class="header-table">
+                                <tr>
+                                    <td style="width: 15%; text-align: center;">
+                                        @if(file_exists($logoPath))
+                                            <img src="{{ $logoPath }}" style="max-height: 24px; max-width: 40px; object-fit: contain;">
+                                        @endif
+                                    </td>
+                                    <td class="header" style="width: 85%;">
+                                        <h3>KARTU PESERTA UJIAN</h3>
+                                        <p>{{ strtoupper($schoolName) }}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="accent-line"></div>
+                            
                             <div class="content">
                                 <table class="layout-table">
                                     <tr>
@@ -272,7 +301,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="watermark">ZEXAM-CBT</div>
+                            <div class="watermark">ZEXAM-CBT VERSI 1.0</div>
                             <div class="qr-small">
                                 <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(60)->margin(0)->generate($student->username)) !!}" style="width: 100%; height: 100%;">
                             </div>

@@ -9,6 +9,7 @@ import { Database, AlertTriangle } from 'lucide-react';
 interface Settings {
     school_name: string;
     school_address: string;
+    school_logo?: string;
     principal_name: string;
     principal_nip: string;
     passing_grade: string | number;
@@ -25,6 +26,7 @@ export default function Index({ settings }: { settings: Settings }) {
     const { data, setData, post, processing, errors } = useForm({
         school_name: settings.school_name || '',
         school_address: settings.school_address || '',
+        school_logo: null as File | null,
         principal_name: settings.principal_name || '',
         principal_nip: settings.principal_nip || '',
         passing_grade: settings.passing_grade || '70',
@@ -39,7 +41,9 @@ export default function Index({ settings }: { settings: Settings }) {
 
     const submit = (e: React.FormEvent) => {
         e.preventDefault();
-        post(route('proktor.settings.store'));
+        post(route('proktor.settings.store'), {
+            forceFormData: true,
+        });
     };
 
     return (
@@ -82,6 +86,26 @@ export default function Index({ settings }: { settings: Settings }) {
                                                     required
                                                 />
                                                 <InputError message={errors.school_name} className="mt-2" />
+                                            </div>
+
+                                            <div>
+                                                <InputLabel value="Logo Sekolah (Kop Surat)" className="font-bold text-xs uppercase tracking-widest text-gray-500 mb-2" />
+                                                <div className="flex items-center gap-4">
+                                                    {settings.school_logo && (
+                                                        <div className="shrink-0">
+                                                            <img src={`/${settings.school_logo}`} alt="Logo" className="w-16 h-16 object-contain rounded-xl border border-gray-200 bg-white p-1" />
+                                                        </div>
+                                                    )}
+                                                    <div className="flex-1">
+                                                        <input
+                                                            type="file"
+                                                            accept="image/*"
+                                                            onChange={(e) => setData('school_logo', e.target.files ? e.target.files[0] : null)}
+                                                            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 transition border border-gray-200 rounded-xl"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <InputError message={errors.school_logo} className="mt-2" />
                                             </div>
 
                                             <div>

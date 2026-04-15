@@ -21,10 +21,20 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h2>{{ $settings['school_name'] ?? 'NAMA SEKOLAH' }}</h2>
-        <p>{{ $settings['school_address'] ?? 'ALAMAT SEKOLAH' }}</p>
-    </div>
+    <table style="width: 100%; border-bottom: 3px double #000; padding-bottom: 10px; margin-bottom: 20px;">
+        <tr>
+            <td style="width: 15%; text-align: left; vertical-align: middle;">
+                @if(isset($settings['school_logo']) && $settings['school_logo'])
+                    <img src="{{ public_path($settings['school_logo']) }}" style="max-height: 80px; max-width: 100px; object-fit: contain;">
+                @endif
+            </td>
+            <td style="width: 70%; text-align: center; vertical-align: middle;">
+                <h2 style="margin: 0; text-transform: uppercase; font-size: 14pt;">{{ $settings['school_name'] ?? 'NAMA SEKOLAH' }}</h2>
+                <p style="margin: 5px 0; font-size: 10pt;">{{ $settings['school_address'] ?? 'ALAMAT SEKOLAH' }}</p>
+            </td>
+            <td style="width: 15%;"></td>
+        </tr>
+    </table>
 
     <div class="title">BERITA ACARA PELAKSANAAN UJIAN</div>
 

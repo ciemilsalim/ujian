@@ -372,7 +372,7 @@ export default function Index({ proctors }: { proctors: Proctor[] }) {
                                         level="H"
                                         includeMargin={false}
                                         imageSettings={{
-                                            src: '/favicon.ico',
+                                            src: '/images/logo.png',
                                             height: 36,
                                             width: 36,
                                             excavate: true,
@@ -400,7 +400,7 @@ export default function Index({ proctors }: { proctors: Proctor[] }) {
                                         level="H"
                                         includeMargin={false}
                                         imageSettings={{
-                                            src: '/favicon.ico',
+                                            src: '/images/logo.png',
                                             height: 36,
                                             width: 36,
                                             excavate: true,

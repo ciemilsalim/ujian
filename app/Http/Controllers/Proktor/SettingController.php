@@ -20,6 +20,7 @@ class SettingController extends Controller
         $request->validate([
             'school_name' => 'required|string|max:255',
             'school_address' => 'required|string',
+            'school_logo' => 'nullable|image|max:2048',
             'principal_name' => 'nullable|string|max:255',
             'principal_nip' => 'nullable|string|max:255',
             'passing_grade' => 'required|integer|min:0|max:100',
@@ -46,6 +47,13 @@ class SettingController extends Controller
             'force_fullscreen' => $request->force_fullscreen,
             'app_mode' => $request->app_mode,
         ];
+
+        if ($request->hasFile('school_logo')) {
+            $file = $request->file('school_logo');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/logos'), $filename);
+            $settings['school_logo'] = 'uploads/logos/' . $filename;
+        }
 
         foreach ($settings as $key => $value) {
             \App\Models\Setting::updateOrCreate(

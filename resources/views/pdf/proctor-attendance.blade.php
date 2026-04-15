@@ -101,10 +101,20 @@
 </head>
 
 <body>
-    <div class="kop-surat">
-        <h1>{{ $settings['school_name'] ?? 'INSTANSI PENDIDIKAN' }}</h1>
-        <p>{{ $settings['school_address'] ?? '-' }}</p>
-    </div>
+    <table style="width: 100%; border-bottom: 3px double #000; padding-bottom: 10px; margin-bottom: 20px;">
+        <tr>
+            <td style="width: 15%; text-align: left; vertical-align: middle;">
+                @if(isset($settings['school_logo']) && $settings['school_logo'])
+                    <img src="{{ public_path($settings['school_logo']) }}" style="max-height: 80px; max-width: 100px; object-fit: contain;">
+                @endif
+            </td>
+            <td style="width: 70%; text-align: center; vertical-align: middle;">
+                <h1 style="font-size: 16pt; margin: 0; text-transform: uppercase;">{{ $settings['school_name'] ?? 'INSTANSI PENDIDIKAN' }}</h1>
+                <p style="font-size: 10pt; margin: 5px 0;">{{ $settings['school_address'] ?? '-' }}</p>
+            </td>
+            <td style="width: 15%;"></td>
+        </tr>
+    </table>
 
     <div class="title">DAFTAR HADIR PENGAWAS UJIAN</div>
 
