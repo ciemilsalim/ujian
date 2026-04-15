@@ -34,7 +34,7 @@ class ExamCardController extends Controller
         $schoolName = $settings['school_name'] ?? 'Nama Sekolah Belum Diatur';
         $schoolAddress = $settings['school_address'] ?? 'Alamat Sekolah Belum Diatur';
 
-        $pdf = Pdf::loadView('pdf.exam-cards', compact('students', 'classroom', 'schoolName', 'schoolAddress'))->setPaper('a4', 'portrait');
+        $pdf = Pdf::loadView('pdf.exam-cards', compact('students', 'classroom', 'schoolName', 'schoolAddress'))->setPaper('legal', 'portrait');
 
         return $pdf->stream('Kartu_Ujian_' . str_replace(' ', '_', $classroom->name) . '.pdf');
     }

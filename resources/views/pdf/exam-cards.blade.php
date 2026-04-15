@@ -6,7 +6,7 @@
     <style>
         @page {
             margin: 0;
-            size: 210mm 297mm; /* A4 exactly */
+            size: 216mm 356mm; /* Legal exactly */
         }
 
         body {
@@ -25,7 +25,7 @@
 
         .card-cell {
             width: 50%;
-            height: 57mm; /* 5 rows = 285mm (max A4 is 297) */
+            height: 65mm; /* 5 rows = 325mm (max Legal is 356) */
             vertical-align: middle;
             text-align: center;
         }
