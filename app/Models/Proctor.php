@@ -9,7 +9,7 @@ class Proctor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'nip'];
+    protected $fillable = ['name', 'nip', 'pin'];
 
     public function sessionAssignments()
     {
