@@ -41,6 +41,7 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
 
     const { data, setData, post, processing, reset } = useForm({
         proctor_id: '',
+        room_id: '',
     });
 
     const filteredSessions = sessions.filter(s => 
@@ -52,14 +53,17 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
         c.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    const handleGenerateBA = (e: React.FormEvent) => {
-        e.preventDefault();
+    const handlePrint = (type: 'ba' | 'student' | 'proctor') => {
         if (!selectedSession) return;
         
-        // Manual form submit for PDF stream
+        let action = '';
+        if (type === 'ba') action = route('proktor.administration.official-report', selectedSession.id);
+        else if (type === 'student') action = route('proktor.attendance.generate', selectedSession.id);
+        else if (type === 'proctor') action = route('proktor.attendance.proctor', selectedSession.id);
+
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = route('proktor.administration.official-report', selectedSession.id);
+        form.action = action;
         form.target = '_blank';
 
         const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
@@ -71,18 +75,21 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
             form.appendChild(csrfInput);
         }
 
-        const idInput = document.createElement('input');
-        idInput.type = 'hidden';
-        idInput.name = 'proctor_id';
-        idInput.value = data.proctor_id;
-        form.appendChild(idInput);
+        const pInput = document.createElement('input');
+        pInput.type = 'hidden';
+        pInput.name = 'proctor_id';
+        pInput.value = data.proctor_id;
+        form.appendChild(pInput);
+
+        const rInput = document.createElement('input');
+        rInput.type = 'hidden';
+        rInput.name = 'room_id';
+        rInput.value = data.room_id;
+        form.appendChild(rInput);
 
         document.body.appendChild(form);
         form.submit();
         document.body.removeChild(form);
-        
-        setIsBAModalOpen(false);
-        reset();
     };
 
     return (
@@ -150,51 +157,14 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
                                         <ClipboardCheck className="w-5 h-5 text-blue-600" />
                                     </div>
                                 </div>
-                                <div className="mt-6 flex flex-col gap-4">
-                                    <div className="flex items-center gap-2">
-                                        <select 
-                                            id={`room_select_${session.id}`}
-                                            className="h-10 text-xs font-bold rounded-xl border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 flex-1"
-                                            onChange={(e) => {
-                                                const val = e.target.value;
-                                                const btn = document.getElementById(`btn_attendance_${session.id}`) as HTMLAnchorElement;
-                                                if (btn) {
-                                                    btn.href = route('proktor.attendance.generate', session.id) + (val ? `?room_id=${val}` : '');
-                                                }
-                                            }}
-                                        >
-                                            <option value="">-- Semua Ruang --</option>
-                                            {rooms.map(r => (
-                                                <option key={r.id} value={r.id}>{r.name}</option>
-                                            ))}
-                                        </select>
-                                        <a 
-                                            id={`btn_attendance_${session.id}`}
-                                            href={route('proktor.attendance.generate', session.id)} 
-                                            target="_blank"
-                                            className="flex items-center justify-center gap-2 px-4 h-10 bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] font-black uppercase rounded-xl transition"
-                                        >
-                                            <Users className="w-3.5 h-3.5" />
-                                            Hadir Siswa
-                                        </a>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <button 
-                                            onClick={() => { setSelectedSession(session); setIsBAModalOpen(true); }}
-                                            className="flex items-center justify-center gap-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-[10px] font-black uppercase rounded-xl transition"
-                                        >
-                                            <FileText className="w-3.5 h-3.5" />
-                                            Berita Acara
-                                        </button>
-                                        <a 
-                                            href={route('proktor.attendance.proctor', session.id)} 
-                                            target="_blank"
-                                            className="flex items-center justify-center gap-2 px-4 py-3 bg-amber-600 hover:bg-amber-700 text-white text-[10px] font-black uppercase rounded-xl transition"
-                                        >
-                                            <ShieldCheck className="w-3.5 h-3.5" />
-                                            Hadir Pengawas
-                                        </a>
-                                    </div>
+                                <div className="mt-8">
+                                    <button 
+                                        onClick={() => { setSelectedSession(session); setIsBAModalOpen(true); }}
+                                        className="w-full h-14 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black uppercase rounded-2xl transition flex items-center justify-center gap-3 shadow-lg shadow-indigo-200 dark:shadow-none"
+                                    >
+                                        <Download className="w-5 h-5" />
+                                        Cetak Dokumen Administrasi
+                                    </button>
                                 </div>
                             </div>
                         ))}
@@ -264,29 +234,43 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
             </div>
 
             {/* Berit Acara Proctor Input Modal */}
-            <Modal show={isBAModalOpen} onClose={() => setIsBAModalOpen(false)} maxWidth="md">
-                <form onSubmit={handleGenerateBA} className="p-8">
+            <Modal show={isBAModalOpen} onClose={() => setIsBAModalOpen(false)} maxWidth="lg">
+                <div className="p-8">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600">
-                            <FileText className="w-6 h-6" />
+                            <Download className="w-6 h-6" />
                         </div>
                         <div>
-                            <h3 className="text-lg font-black text-gray-900 dark:text-white uppercase tracking-tight">Cetak Berita Acara</h3>
-                            <p className="text-xs font-bold text-gray-500">Input data pengawas untuk sesi {selectedSession?.name}</p>
+                            <h3 className="text-lg font-black text-gray-900 dark:text-white uppercase tracking-tight">Sentral Dokumen Administrasi</h3>
+                            <p className="text-xs font-bold text-gray-500">Sesi: {selectedSession?.name} • {selectedSession?.exam?.title}</p>
                         </div>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <InputLabel htmlFor="room_id" value="Pilih Ruangan" className="font-bold text-[10px] uppercase tracking-widest text-gray-400" />
+                            <select
+                                id="room_id"
+                                value={data.room_id}
+                                onChange={(e) => setData('room_id', e.target.value)}
+                                className="mt-1 block w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 rounded-xl h-12 font-bold text-sm"
+                            >
+                                <option value="">-- Semua Ruang (Global) --</option>
+                                {rooms.map(r => (
+                                    <option key={r.id} value={r.id}>{r.name}</option>
+                                ))}
+                            </select>
+                            <p className="mt-2 text-[10px] text-gray-400 font-medium italic">* Kosongkan jika ingin mencetak untuk seluruh ruangan.</p>
+                        </div>
                         <div>
                             <InputLabel htmlFor="proctor_id" value="Pilih Pengawas" className="font-bold text-[10px] uppercase tracking-widest text-gray-400" />
                             <select
                                 id="proctor_id"
                                 value={data.proctor_id}
                                 onChange={(e) => setData('proctor_id', e.target.value)}
-                                className="mt-1 block w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 rounded-xl h-12"
-                                required
+                                className="mt-1 block w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 rounded-xl h-12 font-bold text-sm"
                             >
-                                <option value="">-- Silakan Pilih Pengawas --</option>
+                                <option value="">-- Pengawas Default --</option>
                                 {proctors?.map(p => (
                                     <option key={p.id} value={p.id}>{p.name} {p.nip ? `(NIP: ${p.nip})` : ''}</option>
                                 ))}
@@ -294,13 +278,43 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
                         </div>
                     </div>
 
-                    <div className="mt-8 flex items-center justify-end gap-3">
-                        <SecondaryButton onClick={() => setIsBAModalOpen(false)} className="rounded-xl h-11 px-6 font-bold">Batal</SecondaryButton>
-                        <PrimaryButton className="rounded-xl h-11 px-8 bg-indigo-600 font-black uppercase text-xs tracking-widest" disabled={processing}>
-                            Cetak Sekarang
-                        </PrimaryButton>
+                    <div className="bg-blue-50 dark:bg-blue-900/10 p-4 rounded-2xl mb-8 border border-blue-100 dark:border-blue-900/30">
+                        <div className="flex gap-3">
+                            <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+                            <p className="text-xs text-blue-700 dark:text-blue-400 font-medium leading-relaxed">
+                                Nama Pengawas dan Ruangan yang Anda pilih di atas akan otomatis disinkronkan ke dalam seluruh dokumen PDF di bawah ini agar laporan Anda tetap konsisten.
+                            </p>
+                        </div>
                     </div>
-                </form>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button 
+                            onClick={() => handlePrint('ba')}
+                            className="flex flex-col items-center justify-center p-6 bg-indigo-600 hover:bg-indigo-700 text-white rounded-[2rem] transition shadow-lg shadow-indigo-100 dark:shadow-none"
+                        >
+                            <FileText className="w-8 h-8 mb-3" />
+                            <span className="text-[10px] font-black uppercase tracking-widest">Berita Acara</span>
+                        </button>
+                        <button 
+                            onClick={() => handlePrint('student')}
+                            className="flex flex-col items-center justify-center p-6 bg-emerald-600 hover:bg-emerald-700 text-white rounded-[2rem] transition shadow-lg shadow-emerald-100 dark:shadow-none"
+                        >
+                            <Users className="w-8 h-8 mb-3" />
+                            <span className="text-[10px] font-black uppercase tracking-widest text-center">Kehadiran Siswa</span>
+                        </button>
+                        <button 
+                            onClick={() => handlePrint('proctor')}
+                            className="flex flex-col items-center justify-center p-6 bg-amber-600 hover:bg-amber-700 text-white rounded-[2rem] transition shadow-lg shadow-amber-100 dark:shadow-none"
+                        >
+                            <ShieldCheck className="w-8 h-8 mb-3" />
+                            <span className="text-[10px] font-black uppercase tracking-widest text-center">Kehadiran Pengawas</span>
+                        </button>
+                    </div>
+
+                    <div className="mt-8 flex justify-center">
+                        <button onClick={() => setIsBAModalOpen(false)} className="text-sm font-bold text-gray-400 hover:text-gray-600 transition">Tutup Jendela</button>
+                    </div>
+                </div>
             </Modal>
         </AuthenticatedLayout>
     );

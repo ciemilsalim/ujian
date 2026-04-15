@@ -26,8 +26,9 @@ class OfficialReportController extends Controller
         }
         
         $settings = Setting::pluck('value', 'key')->toArray();
+        $room = $request->room_id ? \App\Models\ExamRoom::find($request->room_id) : null;
         
-        $pdf = Pdf::loadView('pdf.official-report', compact('session', 'settings', 'proctor_name', 'proctor_nip'));
+        $pdf = Pdf::loadView('pdf.official-report', compact('session', 'settings', 'proctor_name', 'proctor_nip', 'room'));
         // Set paper to F4/Legal or A4. User asked for A4 cards, but reports are usually A4/F4.
         $pdf->setPaper('a4', 'portrait');
         

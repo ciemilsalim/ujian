@@ -63,8 +63,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/results/{id}/export-excel', [\App\Http\Controllers\Proktor\ResultController::class, 'exportExcel'])->name('results.export-excel');
         Route::post('/results/user/{id}/reset', [\App\Http\Controllers\Proktor\ResultController::class, 'resetResult'])->name('results.reset-user');
         Route::delete('/results/user/{id}/delete', [\App\Http\Controllers\Proktor\ResultController::class, 'deleteResult'])->name('results.delete-user');
-        Route::get('/attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generate'])->name('attendance.generate');
-        Route::get('/proctor-attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generateProctorAttendance'])->name('attendance.proctor');
+        Route::post('/attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generate'])->name('attendance.generate');
+        Route::post('/proctor-attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generateProctorAttendance'])->name('attendance.proctor');
         Route::get('/results/{id}/item-analysis', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('results.item-analysis');
 
         Route::get('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'index'])->name('settings.index');

@@ -40,6 +40,12 @@
                 <td class="label">Kelas</td>
                 <td>: {{ $session->classroom->name ?? 'Semua Kelas' }}</td>
             </tr>
+            @if(isset($room))
+            <tr>
+                <td class="label">Ruang</td>
+                <td>: {{ $room->name }}</td>
+            </tr>
+            @endif
             <tr>
                 <td class="label">Waktu Mulai</td>
                 <td>: {{ $session->start_time->format('H:i') }} WIB</td>

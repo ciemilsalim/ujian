@@ -11,7 +11,8 @@ class AttendanceController extends Controller
 {
     public function generate($id, Request $request)
     {
-        $roomId = $request->query('room_id');
+        $roomId = $request->input('room_id');
+        $proctorId = $request->input('proctor_id');
         
         $query = ExamSession::with(['exam', 'classroom', 'examUsers' => function($q) use ($roomId) {
             if ($roomId) {
@@ -24,15 +25,24 @@ class AttendanceController extends Controller
         
         $room = $roomId ? \App\Models\ExamRoom::find($roomId) : null;
         
-        // Load proctors for this room
-        $proctors = [];
-        if ($roomId) {
+        // Priority 1: From Request (Selected in Modal)
+        if ($proctorId) {
+            $selectedProctor = \App\Models\Proctor::find($proctorId);
+            if ($selectedProctor) {
+                $proctorWrapper = new \App\Models\ExamSessionProctor();
+                $proctorWrapper->setRelation('proctor', $selectedProctor);
+                $proctors = collect([$proctorWrapper]);
+            }
+        } 
+        // Priority 2: Room specific (Assigned in DB)
+        elseif ($roomId) {
             $proctors = \App\Models\ExamSessionProctor::where('exam_session_id', $id)
                 ->where('exam_room_id', $roomId)
                 ->with('proctor')
                 ->get();
         }
 
+        // Priority 3: Global Session Proctor (Stored in Session)
         if (count($proctors) == 0 && $session->proctor_id) {
             $globalProctor = \App\Models\Proctor::find($session->proctor_id);
             if ($globalProctor) {
@@ -55,10 +65,21 @@ class AttendanceController extends Controller
         $session = ExamSession::with(['exam', 'proctors.proctor', 'proctors.room'])->findOrFail($id);
         $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
 
+        $roomId = $request->input('room_id');
+        $proctorId = $request->input('proctor_id');
+
         // Group proctors by room
         $roomProctors = $session->proctors->groupBy('exam_room_id');
 
-        if ($roomProctors->isEmpty() && $session->proctor_id) {
+        if ($proctorId) {
+            $selectedProctor = \App\Models\Proctor::find($proctorId);
+            if ($selectedProctor) {
+                $proctorWrapper = new \App\Models\ExamSessionProctor();
+                $proctorWrapper->setRelation('proctor', $selectedProctor);
+                $roomLabel = $roomId ? (\App\Models\ExamRoom::find($roomId)->name ?? 'Semua Ruang') : 'Semua Ruang';
+                $roomProctors = collect([ $roomLabel => collect([$proctorWrapper]) ]);
+            }
+        } elseif ($roomProctors->isEmpty() && $session->proctor_id) {
             $globalProctor = \App\Models\Proctor::find($session->proctor_id);
             if ($globalProctor) {
                 $proctorWrapper = new \App\Models\ExamSessionProctor();
