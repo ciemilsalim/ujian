@@ -1,7 +1,8 @@
 import { FormEventHandler, useEffect } from 'react';
 import InputError from '@/Components/InputError';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { Lock, User, ArrowRight, FlaskConical, BookOpen, Zap } from 'lucide-react';
+import { Lock, User, ArrowRight, FlaskConical, BookOpen } from 'lucide-react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 
 export default function LoginSiswa({ status }: { status?: string }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -33,9 +34,7 @@ export default function LoginSiswa({ status }: { status?: string }) {
                 {/* Logo & Title */}
                 <div className="flex flex-col items-center mb-8">
                     <Link href="/" className="group transition-transform hover:scale-110 active:scale-95">
-                        <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-200 dark:shadow-none">
-                            <Zap className="text-white w-10 h-10 fill-current" />
-                        </div>
+                        <ApplicationLogo className="w-24 h-24 object-contain drop-shadow-2xl" />
                     </Link>
                     <div className="mt-4 text-center">
                         <h1 className="text-2xl font-black tracking-tight text-gray-900 dark:text-white">

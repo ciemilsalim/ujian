@@ -19,9 +19,9 @@ import {
     HelpCircle,
     ChevronDown,
     ChevronRight,
-    Zap,
     ShieldCheck
 } from 'lucide-react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 import { ReactNode, useState, useEffect } from 'react';
 
 interface SidebarItemProps {
@@ -112,9 +112,7 @@ export default function Sidebar() {
             {/* Logo Section */}
             <div className="p-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-200 dark:shadow-none group-hover:scale-105 transition">
-                        <Zap className="w-5 h-5 fill-current" />
-                    </div>
+                    <ApplicationLogo className="w-9 h-9 object-contain drop-shadow-md group-hover:scale-105 transition" />
                     <span className="text-xl font-black text-gray-900 dark:text-white tracking-tight">ZEXAM<span className="text-blue-600">-CBT</span></span>
                 </Link>
             </div>

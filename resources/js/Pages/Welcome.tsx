@@ -4,6 +4,7 @@ import {
     Shield, Zap, Monitor, BarChart3, Clock, ArrowRight,
     CheckCircle2, GraduationCap, ShieldCheck, BookOpen, Users
 } from 'lucide-react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 import { useState, useEffect } from 'react';
 
 export default function Welcome({ auth }: PageProps) {
@@ -62,9 +63,7 @@ export default function Welcome({ auth }: PageProps) {
             <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 py-4' : 'bg-transparent py-6'}`}>
                 <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                        <div className="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200 dark:shadow-none">
-                            <Zap className="text-white w-5 h-5 fill-current" />
-                        </div>
+                        <ApplicationLogo className="w-9 h-9 object-contain" />
                         <span className="text-xl font-black tracking-tight text-gray-900 dark:text-white">
                             ZEXAM<span className="text-blue-600">-CBT</span>
                         </span>
@@ -283,9 +282,7 @@ export default function Welcome({ auth }: PageProps) {
             <footer className="py-10 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950">
                 <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <Zap className="text-white w-4 h-4 fill-current" />
-                        </div>
+                        <ApplicationLogo className="w-7 h-7 object-contain" />
                         <span className="text-sm font-black tracking-tight text-gray-900 dark:text-white">ZEXAM-CBT</span>
                     </div>
                     <p className="text-gray-400 text-xs font-medium">

@@ -1,6 +1,6 @@
 import { Link } from '@inertiajs/react';
 import { PropsWithChildren } from 'react';
-import { Zap } from 'lucide-react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 
 export default function Guest({ children }: PropsWithChildren) {
     return (
@@ -14,9 +14,7 @@ export default function Guest({ children }: PropsWithChildren) {
             <div className="relative z-10 w-full max-w-md">
                 <div className="flex flex-col items-center mb-8">
                     <Link href="/" className="group transition-transform hover:scale-110 active:scale-95">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center shadow-xl shadow-blue-200 dark:shadow-none">
-                            <Zap className="text-white w-10 h-10 fill-current" />
-                        </div>
+                        <ApplicationLogo className="w-24 h-24 object-contain drop-shadow-2xl" />
                     </Link>
                     <h1 className="mt-4 text-2xl font-black tracking-tight text-gray-900 dark:text-white">
                         Selamat Datang

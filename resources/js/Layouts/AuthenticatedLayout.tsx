@@ -3,7 +3,8 @@ import CommandPalette from '@/Components/CommandPalette';
 import Dropdown from '@/Components/Dropdown';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState, useEffect } from 'react';
-import { Search, Bell, Plus, Menu, X, CheckCircle, AlertTriangle, Zap } from 'lucide-react';
+import { Search, Bell, Plus, Menu, X, CheckCircle, AlertTriangle } from 'lucide-react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
 import { Toaster, toast } from 'sonner';
 
 declare global {
@@ -172,7 +173,7 @@ export default function Authenticated({
                 <footer className="px-4 py-6 sm:px-8 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 text-center">
                     <div className="flex flex-col items-center gap-2">
                         <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 font-bold text-sm">
-                            <Zap className="w-4 h-4 text-blue-600 fill-current" />
+                            <ApplicationLogo className="w-4 h-4 object-contain" />
                             <span>ZEXAM-CBT Versi 1.0</span>
                         </div>
                         <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">
