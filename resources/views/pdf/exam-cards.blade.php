@@ -11,7 +11,7 @@
         }
 
         body {
-            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif;
             color: #1e293b;
             margin: 0;
             padding: 5mm;
@@ -26,7 +26,7 @@
 
         .card-cell {
             width: 50%;
-            height: 57.4mm; /* ~ 287mm / 5 rows */
+            height: 71.5mm; /* ~ 286mm / 4 rows */
             vertical-align: top;
             padding: 2mm; 
             box-sizing: border-box;
@@ -306,7 +306,7 @@
                 @endif
             </tr>
 
-            @if (($rowGroupIndex + 1) % 5 == 0 && !$loop->last)
+            @if (($rowGroupIndex + 1) % 4 == 0 && !$loop->last)
                 </table>
                 <div class="page-break"></div>
                 <table class="main-table">
