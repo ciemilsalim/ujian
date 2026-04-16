@@ -129,15 +129,7 @@ export default function LoginSiswa({ status }: { status?: string }) {
                     </p>
                 </div>
 
-                {/* Link ke Portal Staff */}
-                <div className="mt-6 text-center">
-                    <Link
-                        href={route('login')}
-                        className="inline-flex items-center gap-2 text-xs font-bold text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-                    >
-                        Saya Guru / Pengawas →
-                    </Link>
-                </div>
+                {/* Link dihapus atas permintaan user */}
 
                 <p className="text-center mt-6 text-xs text-gray-400 font-medium">
                     © {new Date().getFullYear()} ZEXAM-CBT. Aman & Terpercaya.
