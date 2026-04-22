@@ -18,10 +18,20 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h2>{{ $settings['school_name'] ?? 'NAMA SEKOLAH' }}</h2>
-        <p>{{ $settings['school_address'] ?? 'ALAMAT SEKOLAH' }}</p>
-    </div>
+    <table style="width: 100%; border-bottom: 3px double #000; padding-bottom: 10px; margin-bottom: 20px;">
+        <tr>
+            <td style="width: 15%; text-align: left; vertical-align: middle;">
+                @if(isset($settings['school_logo']) && $settings['school_logo'])
+                    <img src="{{ public_path($settings['school_logo']) }}" style="max-height: 80px; max-width: 100px; object-fit: contain;">
+                @endif
+            </td>
+            <td style="width: 70%; text-align: center; vertical-align: middle;">
+                <h1 style="font-size: 16pt; margin: 0; text-transform: uppercase;">{{ $settings['school_name'] ?? 'INSTANSI PENDIDIKAN' }}</h1>
+                <p style="font-size: 10pt; margin: 5px 0;">{{ $settings['school_address'] ?? 'ALAMAT SEKOLAH' }}</p>
+            </td>
+            <td style="width: 15%;"></td>
+        </tr>
+    </table>
 
     <div class="title">TATA TERTIB PESERTA UJIAN BERBASIS KOMPUTER (CBT)</div>
 
@@ -42,7 +52,7 @@
 
     <div class="footer">
         <div class="sig-container">
-            Ditetapkan di: .......................<br>
+            Ditetapkan di: Buol<br>
             Tanggal: {{ date('d F Y') }}<br>
             Kepala Sekolah,
             <div class="sig-box"></div>

@@ -205,7 +205,7 @@ export default function Index({ exams, questionBanks }: IndexProps) {
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">
+                        <div className="p-6 text-gray-900 dark:text-gray-100 overflow-x-auto">
                             <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                 <thead className="bg-gray-50 dark:bg-gray-700">
                                     <tr>
@@ -214,7 +214,7 @@ export default function Index({ exams, questionBanks }: IndexProps) {
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Mata Pelajaran</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Durasi (Menit)</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Pengaturan</th>
-                                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Aksi</th>
+                                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider sticky right-0 bg-gray-50 dark:bg-gray-700 z-10 shadow-[-8px_0_8px_-8px_rgba(0,0,0,0.1)]">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -230,7 +230,7 @@ export default function Index({ exams, questionBanks }: IndexProps) {
                                                 {exam.show_result && <span className="px-2 py-1 bg-green-100 text-green-800 rounded">Tampil Nilai</span>}
                                                 {!exam.random_question && !exam.random_option && !exam.show_result && <span className="text-gray-500">-</span>}
                                             </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-3">
+                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-3 sticky right-0 bg-white dark:bg-gray-800 z-10 shadow-[-8px_0_8px_-8px_rgba(0,0,0,0.1)]">
                                                 <button onClick={() => openEditModal(exam)} className="text-yellow-600 hover:text-yellow-900">Edit</button>
                                                 <button onClick={() => openDeleteModal(exam)} className="text-red-600 hover:text-red-900">Hapus</button>
                                             </td>

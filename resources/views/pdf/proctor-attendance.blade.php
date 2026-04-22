@@ -171,7 +171,7 @@
         <tr>
             <td class="signature-box" style="width: 60%"></td>
             <td class="signature-box">
-                <p>Kota, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
+                <p>Buol, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
                 <p>Ketua Panitia,</p>
                 <div class="name-line">( ___________________________ )</div>
             </td>

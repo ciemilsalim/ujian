@@ -171,7 +171,7 @@
         <thead>
             <tr>
                 <th width="5%">No</th>
-                <th width="15%">NIS / Username</th>
+                <th width="15%">NIS</th>
                 <th>Nama Peserta</th>
                 <th width="12%">Kelas</th>
                 <th width="25%">Tanda Tangan</th>
@@ -209,7 +209,7 @@
                 <p style="font-size: 9pt; margin-top: 5px;">NIP. {{ $settings['principal_nip'] ?? '...........................' }}</p>
             </td>
             <td class="signature-box">
-                <p>Kota, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
+                <p>Buol, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
                 <p>Pengawas,</p>
                 @if(isset($proctors) && count($proctors) > 0)
                     @foreach($proctors as $p)

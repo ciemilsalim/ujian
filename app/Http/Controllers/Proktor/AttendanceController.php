@@ -76,8 +76,17 @@ class AttendanceController extends Controller
             if ($selectedProctor) {
                 $proctorWrapper = new \App\Models\ExamSessionProctor();
                 $proctorWrapper->setRelation('proctor', $selectedProctor);
-                $roomLabel = $roomId ? (\App\Models\ExamRoom::find($roomId)->name ?? 'Semua Ruang') : 'Semua Ruang';
-                $roomProctors = collect([ $roomLabel => collect([$proctorWrapper]) ]);
+                
+                $room = null;
+                if ($roomId) {
+                    $room = \App\Models\ExamRoom::find($roomId);
+                    if ($room) {
+                        $proctorWrapper->setRelation('room', $room);
+                    }
+                }
+                
+                $roomKey = $room ? $room->name : 'Semua Ruang';
+                $roomProctors = collect([ $roomKey => collect([$proctorWrapper]) ]);
             }
         } elseif ($roomProctors->isEmpty() && $session->proctor_id) {
             $globalProctor = \App\Models\Proctor::find($session->proctor_id);

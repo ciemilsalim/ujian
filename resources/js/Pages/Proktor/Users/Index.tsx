@@ -253,14 +253,14 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                                         <th className="px-6 py-4">Data Pengguna</th>
                                         <th className="px-6 py-4">Informasi Login</th>
                                         <th className="px-6 py-4">Role & Kelas</th>
-                                        <th className="px-6 py-4 text-right">Aksi</th>
+                                        <th className="px-6 py-4 text-right sticky right-0 bg-gray-50 dark:bg-gray-900/50 z-10 shadow-[-8px_0_8px_-8px_rgba(0,0,0,0.1)]">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                                     {users.data.length > 0 ? users.data.map((user) => (
                                         <tr 
                                             key={user.id} 
-                                            className={`transition-colors hover:bg-gray-50/50 dark:hover:bg-gray-700/30 ${selectedIds.includes(user.id) ? 'bg-indigo-50/30 dark:bg-indigo-900/10' : ''}`}
+                                            className={`group transition-colors hover:bg-gray-50/50 dark:hover:bg-gray-700/30 ${selectedIds.includes(user.id) ? 'bg-indigo-50/30 dark:bg-indigo-900/10' : ''}`}
                                         >
                                             <td className="px-6 py-4">
                                                 <button 
@@ -356,7 +356,7 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                                                     )}
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-4 text-right">
+                                            <td className={`px-6 py-4 text-right sticky right-0 z-10 shadow-[-8px_0_8px_-8px_rgba(0,0,0,0.1)] transition-colors ${selectedIds.includes(user.id) ? 'bg-[#f4f7ff] dark:bg-[#1e1b4b]' : 'bg-white dark:bg-gray-800 group-hover:bg-gray-50/50 dark:group-hover:bg-gray-700/30'}`}>
                                                 <div className="flex justify-end gap-2">
                                                     <Link 
                                                         href={route('proktor.users.edit', user.id)} 
