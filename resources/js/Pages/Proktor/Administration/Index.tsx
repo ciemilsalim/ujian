@@ -56,40 +56,16 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
     const handlePrint = (type: 'ba' | 'student' | 'proctor') => {
         if (!selectedSession) return;
         
-        let action = '';
-        if (type === 'ba') action = route('proktor.administration.official-report', selectedSession.id);
-        else if (type === 'student') action = route('proktor.attendance.generate', selectedSession.id);
-        else if (type === 'proctor') action = route('proktor.attendance.proctor', selectedSession.id);
+        let baseUrl = '';
+        if (type === 'ba') baseUrl = route('proktor.administration.official-report', selectedSession.id);
+        else if (type === 'student') baseUrl = route('proktor.attendance.generate', selectedSession.id);
+        else if (type === 'proctor') baseUrl = route('proktor.attendance.proctor', selectedSession.id);
 
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = action;
-        form.target = '_blank';
+        const url = new URL(baseUrl);
+        if (data.proctor_id) url.searchParams.append('proctor_id', data.proctor_id);
+        if (data.room_id) url.searchParams.append('room_id', data.room_id);
 
-        const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
-        if (csrfToken) {
-            const csrfInput = document.createElement('input');
-            csrfInput.type = 'hidden';
-            csrfInput.name = '_token';
-            csrfInput.value = csrfToken;
-            form.appendChild(csrfInput);
-        }
-
-        const pInput = document.createElement('input');
-        pInput.type = 'hidden';
-        pInput.name = 'proctor_id';
-        pInput.value = data.proctor_id;
-        form.appendChild(pInput);
-
-        const rInput = document.createElement('input');
-        rInput.type = 'hidden';
-        rInput.name = 'room_id';
-        rInput.value = data.room_id;
-        form.appendChild(rInput);
-
-        document.body.appendChild(form);
-        form.submit();
-        document.body.removeChild(form);
+        window.open(url.toString(), '_blank');
     };
 
     return (
@@ -181,8 +157,7 @@ export default function Index({ sessions, classrooms, rooms, proctors }: { sessi
                                 <h3 className="font-black text-gray-900 dark:text-white text-lg">{classroom.name}</h3>
                                 <p className="text-xs text-gray-500 font-bold mb-6">{classroom.users_count} Siswa</p>
                                 
-                                <form action={route('proktor.exam-cards.generate')} method="POST" target="_blank">
-                                    <input type="hidden" name="_token" value={document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''} />
+                                <form action={route('proktor.exam-cards.generate')} method="GET" target="_blank">
                                     <input type="hidden" name="classroom_id" value={classroom.id} />
                                     <button className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs font-black rounded-xl hover:scale-105 transition">
                                         <CreditCard className="w-4 h-4" />

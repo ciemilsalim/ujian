@@ -63,8 +63,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/results/{id}/export-excel', [\App\Http\Controllers\Proktor\ResultController::class, 'exportExcel'])->name('results.export-excel');
         Route::post('/results/user/{id}/reset', [\App\Http\Controllers\Proktor\ResultController::class, 'resetResult'])->name('results.reset-user');
         Route::delete('/results/user/{id}/delete', [\App\Http\Controllers\Proktor\ResultController::class, 'deleteResult'])->name('results.delete-user');
-        Route::post('/attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generate'])->name('attendance.generate');
-        Route::post('/proctor-attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generateProctorAttendance'])->name('attendance.proctor');
+        Route::get('/attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generate'])->name('attendance.generate');
+        Route::get('/proctor-attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generateProctorAttendance'])->name('attendance.proctor');
         Route::get('/results/{id}/item-analysis', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('results.item-analysis');
 
         Route::get('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'index'])->name('settings.index');
@@ -78,11 +78,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/sync/export-results', [\App\Http\Controllers\Proktor\SyncController::class, 'exportResults'])->name('sync.export-results');
         Route::post('/sync/import-results', [\App\Http\Controllers\Proktor\SyncController::class, 'importResults'])->name('sync.import-results');
         Route::get('/exam-cards', [\App\Http\Controllers\Proktor\ExamCardController::class, 'index'])->name('exam-cards.index');
-        Route::post('/exam-cards/generate', [\App\Http\Controllers\Proktor\ExamCardController::class, 'generate'])->name('exam-cards.generate');
+        Route::get('/exam-cards/generate', [\App\Http\Controllers\Proktor\ExamCardController::class, 'generate'])->name('exam-cards.generate');
 
         // Administration Routes
         Route::get('/administration', [\App\Http\Controllers\Proktor\AdministrativeController::class, 'index'])->name('administration.index');
-        Route::post('/administration/official-report/{id}', [\App\Http\Controllers\Proktor\OfficialReportController::class, 'generate'])->name('administration.official-report');
+        Route::get('/administration/official-report/{id}', [\App\Http\Controllers\Proktor\OfficialReportController::class, 'generate'])->name('administration.official-report');
         Route::get('/administration/exam-rules', [\App\Http\Controllers\Proktor\RulesController::class, 'examRules'])->name('administration.exam-rules');
         Route::get('/administration/proctor-rules', [\App\Http\Controllers\Proktor\RulesController::class, 'proctorRules'])->name('administration.proctor-rules');
 
