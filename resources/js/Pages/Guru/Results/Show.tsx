@@ -1,7 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link, router } from '@inertiajs/react';
 import React, { useState } from 'react';
-import { ArrowLeft, PenLine, CheckCircle, Clock, AlertCircle, X, BookOpen, Eye, Check, X as XIcon } from 'lucide-react';
+import { ArrowLeft, PenLine, CheckCircle, Clock, AlertCircle, X, BookOpen, Eye, Check, X as XIcon, Download } from 'lucide-react';
 import { ExamSession, ExamUser, Answer } from '@/types';
 
 export default function Show({ session }: { session: ExamSession }) {
