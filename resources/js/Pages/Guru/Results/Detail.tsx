@@ -110,36 +110,56 @@ export default function Detail({ examSessionUser }: Props) {
                                     <p className="text-[10px] text-gray-400 uppercase tracking-widest font-black mb-2">Jawaban Siswa:</p>
                                     {answer.question.type === 'pilihan_ganda' ? (
                                         <div className="flex flex-col gap-2">
-                                            {['a', 'b', 'c', 'd', 'e'].map(opt => {
-                                                const options = typeof answer.question.options === 'string' 
-                                                    ? JSON.parse(answer.question.options) 
-                                                    : answer.question.options;
-                                                
-                                                const optText = options?.[opt];
-                                                if (!optText) return null;
-                                                
-                                                const isStudentChoice = answer.answer_text === opt;
-                                                const isCorrectAnswer = answer.question.answer_key === opt;
+                                            {(() => {
+                                                try {
+                                                    const options = typeof answer.question.options === 'string' 
+                                                        ? JSON.parse(answer.question.options) 
+                                                        : (answer.question.options || {});
+                                                    
+                                                    // Fallback jika options kosong atau format tidak sesuai
+                                                    if (!options || typeof options !== 'object' || Object.keys(options).length === 0) {
+                                                        return (
+                                                            <div className="text-sm text-red-500 p-2 bg-red-50 rounded border border-red-100">
+                                                                [Data Pilihan Jawaban Kosong atau Gagal Dimuat]
+                                                                <br />
+                                                                Debug Data: {JSON.stringify(answer.question.options)}
+                                                            </div>
+                                                        );
+                                                    }
 
-                                                return (
-                                                    <div 
-                                                        key={opt}
-                                                        className={`flex items-center gap-3 p-2 rounded-lg border text-sm ${
-                                                            isStudentChoice 
-                                                                ? (isCorrectAnswer ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-red-500 bg-red-50 dark:bg-red-900/20')
-                                                                : (isCorrectAnswer ? 'border-green-200 bg-green-50/30 dark:bg-green-900/10' : 'border-transparent')
-                                                        }`}
-                                                    >
-                                                        <span className={`w-6 h-6 flex items-center justify-center rounded-md font-bold uppercase ${
-                                                            isStudentChoice ? 'bg-indigo-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'
-                                                        }`}>
-                                                            {opt}
-                                                        </span>
-                                                        <span className={`${isStudentChoice ? 'font-bold' : ''} prose-sm dark:prose-invert`} dangerouslySetInnerHTML={{ __html: optText }} />
-                                                        {isCorrectAnswer && <CheckCircle2 className="w-4 h-4 text-green-500 ml-auto" />}
-                                                    </div>
-                                                );
-                                            })}
+                                                    return ['a', 'b', 'c', 'd', 'e'].map(opt => {
+                                                        const optText = options[opt];
+                                                        // Tampilkan opsi hanya jika ada teksnya
+                                                        if (!optText || String(optText).trim() === '') return null;
+                                                        
+                                                        const isStudentChoice = answer.answer_text === opt;
+                                                        const isCorrectAnswer = answer.question.answer_key === opt;
+
+                                                        return (
+                                                            <div 
+                                                                key={opt}
+                                                                className={`flex items-center gap-3 p-2 rounded-lg border text-sm ${
+                                                                    isStudentChoice 
+                                                                        ? (isCorrectAnswer ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-red-500 bg-red-50 dark:bg-red-900/20')
+                                                                        : (isCorrectAnswer ? 'border-green-200 bg-green-50/30 dark:bg-green-900/10' : 'border-transparent')
+                                                                }`}
+                                                            >
+                                                                <span className={`w-6 h-6 flex items-center justify-center rounded-md font-bold uppercase ${
+                                                                    isStudentChoice ? 'bg-indigo-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'
+                                                                }`}>
+                                                                    {opt}
+                                                                </span>
+                                                                <span className={`${isStudentChoice ? 'font-bold' : ''} prose-sm dark:prose-invert`} dangerouslySetInnerHTML={{ __html: String(optText) }} />
+                                                                {isCorrectAnswer && <CheckCircle2 className="w-4 h-4 text-green-500 ml-auto" />}
+                                                            </div>
+                                                        );
+                                                    });
+                                                } catch (e: any) {
+                                                    return (
+                                                        <div className="text-sm text-red-500">Error rendering options: {e.message}</div>
+                                                    );
+                                                }
+                                            })()}
                                         </div>
                                     ) : (
                                         <div className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
