@@ -17,28 +17,7 @@
             font-size: 11pt;
         }
 
-        /* Kop Surat Styles */
-        .kop-surat {
-            border-bottom: 3px double #000;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            text-align: center;
-        }
 
-        .school-name {
-            font-size: 18pt;
-            font-weight: bold;
-            margin-bottom: 2px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .school-address {
-            font-size: 9pt;
-            font-style: italic;
-            color: #444;
-            margin-bottom: 0;
-        }
 
         .report-title {
             text-align: center;
@@ -153,10 +132,23 @@
 </head>
 
 <body>
-    <div class="kop-surat">
-        <div class="school-name">{{ $settings['school_name'] ?? config('app.name') }}</div>
-        <div class="school-address">{{ $settings['school_address'] ?? '-' }}</div>
-    </div>
+    <!-- Kop Surat -->
+    <table style="width: 100%; border-bottom: 3px double #000; padding-bottom: 10px; margin-bottom: 20px;">
+        <tr>
+            <td style="width: 15%; text-align: left; vertical-align: middle;">
+                @if(isset($settings['school_logo']) && $settings['school_logo'])
+                    <img src="{{ public_path($settings['school_logo']) }}" style="max-height: 80px; max-width: 100px; object-fit: contain;">
+                @else
+                    <img src="{{ public_path('images/logo.png') }}" style="max-height: 80px; max-width: 100px; object-fit: contain;">
+                @endif
+            </td>
+            <td style="width: 70%; text-align: center; vertical-align: middle;">
+                <h1 style="font-size: 18pt; margin: 0; text-transform: uppercase;">{{ $settings['school_name'] ?? config('app.name') }}</h1>
+                <p style="font-size: 10pt; margin: 5px 0;">{{ $settings['school_address'] ?? '-' }}</p>
+            </td>
+            <td style="width: 15%;"></td>
+        </tr>
+    </table>
 
     <div class="report-title">LAPORAN HASIL UJIAN SISWA</div>
 
