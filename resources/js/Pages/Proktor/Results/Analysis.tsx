@@ -44,18 +44,26 @@ export default function Analysis({ session, stats, distribution }: IndexProps) {
                         <Link href={route('proktor.results.index')} className="text-indigo-600 hover:underline flex items-center gap-1 font-medium">
                             <ArrowLeft className="w-4 h-4" /> Kembali ke Daftar Hasil
                         </Link>
-                        <a
-                            href={route('proktor.results.export-pdf', session.id)}
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition shadow-lg shadow-emerald-200 dark:shadow-none"
-                        >
-                            <Download className="w-4 h-4" /> Unduh Laporan PDF
-                        </a>
-                        <Link
-                            href={route('proktor.results.item-analysis', session.id)}
-                            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition shadow-lg shadow-indigo-200 dark:shadow-none"
-                        >
-                            <BarChart3 className="w-4 h-4" /> Analisis Butir Soal
-                        </Link>
+                        <div className="flex gap-2">
+                            <a
+                                href={route('proktor.results.export-pdf', session.id)}
+                                className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition shadow-lg shadow-emerald-200 dark:shadow-none"
+                            >
+                                <Download className="w-4 h-4" /> Unduh Laporan PDF
+                            </a>
+                            <a
+                                href={route('proktor.results.export-word', session.id)}
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition shadow-lg shadow-blue-200 dark:shadow-none"
+                            >
+                                <Download className="w-4 h-4" /> Unduh DOCX
+                            </a>
+                            <Link
+                                href={route('proktor.results.item-analysis', session.id)}
+                                className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition shadow-lg shadow-indigo-200 dark:shadow-none"
+                            >
+                                <BarChart3 className="w-4 h-4" /> Analisis Butir Soal
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Summary Cards */}
