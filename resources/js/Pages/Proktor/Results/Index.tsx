@@ -76,14 +76,6 @@ export default function Index({ sessions }: IndexProps) {
                                                     >
                                                         Excel <Download className="w-4 h-4" />
                                                     </a>
-                                                    <a
-                                                        href={route('proktor.attendance.generate', session.id)}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="inline-flex items-center gap-1 text-sm font-bold text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 ml-4"
-                                                    >
-                                                        Hadir <Users className="w-4 h-4" />
-                                                    </a>
                                                 </td>
                                             </tr>
                                         ))}

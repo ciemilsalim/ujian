@@ -10,21 +10,33 @@ use Inertia\Inertia;
 
 class QuestionAnalysisController extends Controller
 {
-    public function show($questionBankId)
+    public function show($id)
     {
-        $questionBank = QuestionBank::with('questions')->findOrFail($questionBankId);
-
-        if ($questionBank->user_id !== auth()->id()) {
-            abort(403);
+        $sessionId = null;
+        if (request()->routeIs('proktor.results.item-analysis')) {
+            $sessionId = $id;
+            $session = \App\Models\ExamSession::with('exam.questionBank.questions')->findOrFail($sessionId);
+            $questionBank = $session->exam->questionBank;
+        } else {
+            $questionBank = QuestionBank::with('questions')->findOrFail($id);
+            // Only allow owner or proctor
+            if ($questionBank->user_id !== auth()->id() && !auth()->user()->isProktor()) {
+                abort(403);
+            }
         }
 
         $analysis = [];
 
         foreach ($questionBank->questions as $question) {
-            $answers = StudentAnswer::where('question_id', $question->id)
-                ->with('examSessionUser')
-                ->get();
+            $query = StudentAnswer::where('question_id', $question->id);
             
+            if ($sessionId) {
+                $query->whereHas('examSessionUser', function($q) use ($sessionId) {
+                    $q->where('exam_session_id', $sessionId);
+                });
+            }
+
+            $answers = $query->with('examSessionUser')->get();
             $totalAnswers = $answers->count();
 
             if ($question->type === 'pilihan_ganda' && $totalAnswers > 0) {
@@ -38,9 +50,8 @@ class QuestionAnalysisController extends Controller
                     default => 'Sukar',
                 };
 
-                // 2. Daya Pembeda (D) - Sederhana (Kelompok Atas - Kelompok Bawah)
-                // Kita ambil 27% atas dan 27% bawah berdasarkan skor total sesi (jika ada data cukup)
-                // Untuk kesederhanaan di MVP ini, kita bagi 50/50 jika data sedikit
+                // 2. Daya Pembeda (D)
+                // We use simplified discrimination index (Upper 27% - Lower 27%)
                 $sortedAnswers = $answers->sortByDesc(function($a) {
                     return $a->examSessionUser->score ?? 0;
                 });
@@ -82,6 +93,7 @@ class QuestionAnalysisController extends Controller
         return Inertia::render('Proktor/Results/ItemAnalysis', [
             'questionBank' => $questionBank,
             'analysis' => $analysis,
+            'session' => isset($session) ? $session : null,
         ]);
     }
 }

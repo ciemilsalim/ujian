@@ -88,45 +88,21 @@
         .status-disqualified { color: #dc2626; font-weight: bold; }
 
         /* Footer / Tanda Tangan */
-        .footer-sign {
-            margin-top: 50px;
+        .footer-table {
             width: 100%;
+            margin-top: 50px;
         }
 
-        .sign-box {
-            float: right;
-            width: 280px;
+        .footer-table td {
+            width: 50%;
             text-align: center;
+            vertical-align: top;
         }
 
-        .sign-date {
-            margin-bottom: 60px;
-        }
-
-        .sign-name {
+        .name-line {
+            margin-top: 60px;
             font-weight: bold;
             text-decoration: underline;
-            margin-bottom: 2px;
-        }
-
-        .sign-nip {
-            font-size: 10pt;
-        }
-
-        .clear { clear: both; }
-
-        /* QR Code placeholder style */
-        .qr-placeholder {
-            float: left;
-            width: 80px;
-            height: 80px;
-            border: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8pt;
-            color: #999;
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -230,20 +206,27 @@
         </tbody>
     </table>
 
-    <div class="footer-sign">
-        <div class="qr-placeholder">
-            VALID DOCUMENT
-        </div>
-        <div class="sign-box">
-            <div class="sign-date">
-                {{ $settings['location'] ?? 'Dicetak' }}, {{ date('d F Y') }}
-            </div>
-            <p>Proktor / Panitia Ujian,</p>
-            <div class="sign-name">( __________________________ )</div>
-            <div class="sign-nip">NIP. ......................................</div>
-        </div>
-        <div class="clear"></div>
-    </div>
+    <!-- Signature Section -->
+    <table class="footer-table">
+        <tr>
+            <td>
+                <p>Mengetahui,</p>
+                <p>Kepala Sekolah,</p>
+                <div class="name-line">
+                    {{ $settings['principal_name'] ?? '...........................' }}
+                </div>
+                <p style="font-size: 10pt; margin-top: 5px;">NIP. {{ $settings['principal_nip'] ?? '...........................' }}</p>
+            </td>
+            <td>
+                <p>{{ $settings['location'] ?? 'Buol' }}, {{ date('d F Y') }}</p>
+                <p>Proktor / Panitia Ujian,</p>
+                <div class="name-line">
+                    ( __________________________ )
+                </div>
+                <p style="font-size: 10pt; margin-top: 5px;">NIP. ......................................</p>
+            </td>
+        </tr>
+    </table>
     <div style="position: fixed; bottom: -0.5cm; left: 0; right: 0; text-align: center; font-size: 8pt; color: #999; border-top: 1px solid #eee; padding-top: 5px;">
         Printed by ZEXAM-CBT V.1.0. | {{ date('d/m/Y H:i') }}
     </div>

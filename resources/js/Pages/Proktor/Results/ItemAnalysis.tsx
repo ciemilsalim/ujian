@@ -23,20 +23,24 @@ interface Props {
         name: string;
     };
     analysis: AnalysisItem[];
+    session?: any;
 }
 
-export default function ItemAnalysis({ questionBank, analysis }: Props) {
+export default function ItemAnalysis({ questionBank, analysis, session }: Props) {
     return (
         <AuthenticatedLayout
-            header={<h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Analisis Butir Soal: {questionBank.name}</h2>}
+            header={<h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200 uppercase tracking-tight">Analisis Butir Soal: {session ? session.name : questionBank.name}</h2>}
         >
             <Head title="Analisis Butir Soal" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="mb-6">
-                        <Link href={route('proktor.results.index')} className="text-indigo-600 hover:underline flex items-center gap-1 font-medium">
-                            <ArrowLeft className="w-4 h-4" /> Kembali ke Hasil
+                        <Link 
+                            href={session ? route('proktor.results.show', session.id) : route('proktor.results.index')} 
+                            className="text-indigo-600 hover:underline flex items-center gap-1 font-medium transition-all hover:gap-2"
+                        >
+                            <ArrowLeft className="w-4 h-4" /> Kembali ke {session ? 'Hasil Sesi' : 'Daftar Hasil'}
                         </Link>
                     </div>
 

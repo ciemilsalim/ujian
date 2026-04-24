@@ -24,6 +24,7 @@ class AttendanceController extends Controller
         $session = $query->findOrFail($id);
         
         $room = $roomId ? \App\Models\ExamRoom::find($roomId) : null;
+        $proctors = collect();
         
         // Priority 1: From Request (Selected in Modal)
         if ($proctorId) {
