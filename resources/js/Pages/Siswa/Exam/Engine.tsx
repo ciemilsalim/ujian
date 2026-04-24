@@ -501,7 +501,7 @@ export default function ExamEngine({
                 </aside>
 
                 {/* Question Area */}
-                <div className="flex-1 overflow-y-auto px-4 py-8 sm:px-6 lg:px-12 bg-gray-50/30 dark:bg-gray-950/30">
+                <div className="flex-1 overflow-y-auto px-4 pt-8 pb-32 sm:px-6 lg:px-12 lg:pb-8 bg-gray-50/30 dark:bg-gray-950/30">
                     <div className="max-w-3xl mx-auto space-y-8">
                         {/* Question Badge */}
                         <div className="flex items-center justify-between">
