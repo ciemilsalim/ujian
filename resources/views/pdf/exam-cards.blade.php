@@ -7,109 +7,186 @@
     <style>
         @page {
             margin: 0;
-            size: 216mm 356mm; /* Legal exactly */
+            size: 216mm 356mm; /* Legal */
         }
 
         body {
             font-family: 'Helvetica', 'Arial', sans-serif;
-            color: #1e293b;
+            color: #1a1a1a;
             margin: 0;
-            padding: 8mm 12mm; /* Give enough margin */
+            padding: 10mm;
             background-color: #fff;
         }
 
         .main-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 4mm 6mm; /* Space between cards */
-            table-layout: fixed;
+            border-spacing: 5mm 8mm;
         }
 
         .card-cell {
             width: 50%;
-            height: 60mm;
             vertical-align: top;
-            text-align: center;
         }
 
         .card {
-            width: 90mm;
-            height: 56mm;
+            width: 100mm;
+            height: 65mm;
             margin: 0 auto;
-            border: 2px solid #cbd5e1;
-            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
             overflow: hidden;
             background: #ffffff;
             position: relative;
             box-sizing: border-box;
-            text-align: left;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        /* Top Header */
-        .header-table {
+        /* Diagonal Accents */
+        .accent-top-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40mm;
+            height: 6mm;
+            background-color: #0038a8;
+            z-index: 1;
+        }
+
+        .accent-top-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30mm;
+            height: 6mm;
+            z-index: 1;
+        }
+
+        .stripe-light {
+            float: right;
+            width: 8mm;
+            height: 6mm;
+            background-color: #3abff8;
+            margin-left: 2mm;
+        }
+
+        .accent-bottom-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 6mm;
+            z-index: 1;
+        }
+
+        .stripe-dark-bottom {
+            float: right;
+            width: 15mm;
+            height: 6mm;
+            background-color: #0038a8;
+            margin-left: 2mm;
+        }
+
+        .stripe-light-bottom {
+            float: right;
+            width: 8mm;
+            height: 6mm;
+            background-color: #3abff8;
+            margin-left: 2mm;
+        }
+
+        /* Header */
+        .header-section {
+            padding: 8mm 5mm 2mm 5mm;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-box {
+            float: left;
+            width: 12mm;
+            height: 12mm;
+            margin-right: 3mm;
+        }
+
+        .logo-box img {
             width: 100%;
-            background-color: #1e1b4b;
-            border-bottom: 3px solid #3b82f6;
-            border-collapse: collapse;
-        }
-        
-        .header-table td {
-            padding: 5px 10px;
-            vertical-align: middle;
+            height: 100%;
+            object-fit: contain;
         }
 
-        .header h3 {
+        .title-box {
+            float: left;
+        }
+
+        .title-box h1 {
             margin: 0;
-            font-size: 9pt;
+            font-size: 14pt;
             font-weight: 900;
-            color: #ffffff;
-            letter-spacing: 0.5px;
+            color: #000;
             text-transform: uppercase;
+            line-height: 1;
         }
 
-        .header p {
-            margin: 1px 0 0 0;
-            font-size: 5.5pt;
-            color: #94a3b8;
+        .title-box p {
+            margin: 2px 0 0 0;
+            font-size: 10pt;
             font-weight: bold;
+            color: #444;
             text-transform: uppercase;
-            white-space: nowrap;
-            overflow: hidden;
         }
 
-        /* Yellow Accent Line below blue */
-        .accent-line {
-            height: 2px;
-            background-color: #facc15;
-            width: 35mm;
+        /* Content */
+        .content-section {
+            padding: 2mm 5mm;
+            clear: both;
+            z-index: 2;
         }
 
-        /* Main Content */
-        .content {
-            padding: 8px 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .layout-table {
-            width: 100%;
+        .info-table {
+            width: 65%;
+            float: left;
             border-collapse: collapse;
-            table-layout: fixed;
         }
 
-        .photo-cell {
-            width: 20mm;
+        .info-table td {
+            padding: 2px 0;
             vertical-align: top;
+            font-size: 10pt;
+        }
+
+        .label {
+            width: 22mm;
+            color: #1a1a1a;
+        }
+
+        .colon {
+            width: 3mm;
+        }
+
+        .value {
+            font-weight: 500;
+            color: #000;
+        }
+
+        .value-bold {
+            font-weight: 900;
+        }
+
+        /* Right Side: Photo & QR */
+        .media-section {
+            width: 30%;
+            float: right;
+            text-align: center;
         }
 
         .photo-box {
-            width: 18mm;
+            width: 20mm;
             height: 24mm;
-            border: 2px solid #e2e8f0;
-            background-color: #f8fafc;
-            border-radius: 8px;
-            text-align: center;
+            border: 2.5px solid #000;
+            border-radius: 12px;
+            margin: 0 auto 3mm auto;
             overflow: hidden;
+            background-color: #f8fafc;
         }
 
         .photo-box img {
@@ -119,119 +196,40 @@
         }
 
         .photo-placeholder {
-            font-size: 14pt;
-            color: #cbd5e1;
             line-height: 24mm;
+            font-size: 18pt;
             font-weight: bold;
+            color: #cbd5e1;
         }
 
-        .info-cell {
-            vertical-align: top;
-            padding-left: 8px;
+        .qr-box {
+            width: 16mm;
+            height: 16mm;
+            margin: 0 auto;
         }
 
-        .field {
-            margin-bottom: 4px;
-            line-height: 1.1;
-        }
-
-        .field-label {
-            font-size: 5pt;
-            color: #64748b;
-            text-transform: uppercase;
-            font-weight: 900;
-            display: block;
-            margin-bottom: 2px;
-            letter-spacing: 0.5px;
-        }
-
-        .field-value {
-            font-size: 7.5pt;
-            color: #334155;
-            font-weight: bold;
-            display: block;
-        }
-
-        .name-value {
-            font-size: 8.5pt;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: #0f172a;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        /* Credentials Section */
-        .credentials-wrapper {
-            margin-top: 6px;
-            width: 85%;
-        }
-
-        .credentials-table {
+        .qr-box img {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            background-color: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            overflow: hidden;
+            height: 100%;
         }
 
-        .credentials-table td {
-            padding: 4px 6px;
-        }
-
-        .credentials-table tr:first-child td {
-            border-bottom: 1px dashed #cbd5e1;
-        }
-
-        .cred-label {
-            font-size: 5pt;
-            text-transform: uppercase;
-            font-weight: 900;
-            color: #475569;
-            width: 35%;
-            background-color: #f1f5f9;
-            border-right: 1px solid #e2e8f0;
-        }
-
-        .cred-value {
-            font-size: 8.5pt;
-            font-weight: 900;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            width: 65%;
-            letter-spacing: 1px;
-        }
-
-        .cred-username { color: #0369a1; }
-        .cred-password { color: #be123c; }
-
-        /* Bottom Assets */
-        .watermark {
+        /* Footer */
+        .footer-text {
             position: absolute;
-            bottom: 5px;
-            left: 10px;
-            font-size: 5pt;
+            bottom: 2mm;
+            left: 5mm;
+            font-size: 8pt;
             color: #94a3b8;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .qr-small {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 14mm;
-            height: 14mm;
-            background-color: #ffffff;
-            padding: 1.5mm;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
+            font-weight: bold;
+            z-index: 2;
         }
 
         .page-break {
             page-break-after: always;
+        }
+
+        .clear {
+            clear: both;
         }
     </style>
 </head>
@@ -249,63 +247,77 @@
                 @foreach($row as $student)
                     <td class="card-cell">
                         <div class="card">
-                            <table class="header-table">
-                                <tr>
-                                    <td style="width: 15%; text-align: center;">
-                                        @if(file_exists($logoPath))
-                                            <img src="{{ $logoPath }}" style="max-height: 24px; max-width: 40px; object-fit: contain;">
-                                        @endif
-                                    </td>
-                                    <td class="header" style="width: 85%;">
-                                        <h3>KARTU PESERTA UJIAN</h3>
-                                        <p>{{ strtoupper($schoolName) }}</p>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="accent-line"></div>
-                            
-                            <div class="content">
-                                <table class="layout-table">
-                                    <tr>
-                                        <td class="photo-cell">
-                                            <div class="photo-box">
-                                                @if($student->photo)
-                                                    <img src="{{ public_path('storage/' . $student->photo) }}">
-                                                @else
-                                                    <div class="photo-placeholder">{{ substr($student->name, 0, 1) }}</div>
-                                                @endif
-                                            </div>
-                                        </td>
-                                        <td class="info-cell">
-                                            <div class="field">
-                                                <span class="field-label">Nama Lengkap</span>
-                                                <span class="field-value name-value">{{ $student->name }}</span>
-                                            </div>
-                                            <div class="field">
-                                                <span class="field-label">Kelas / Rombel</span>
-                                                <span class="field-value">{{ $classroom->name }}</span>
-                                            </div>
+                            <!-- Top Accents -->
+                            <div class="accent-top-left"></div>
+                            <div class="accent-top-right">
+                                <div class="stripe-light"></div>
+                                <div class="stripe-light" style="margin-right: 2mm;"></div>
+                            </div>
 
-                                            <div class="credentials-wrapper">
-                                                <table class="credentials-table">
-                                                    <tr>
-                                                        <td class="cred-label">Username</td>
-                                                        <td class="cred-value cred-username">{{ $student->username }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="cred-label">Password</td>
-                                                        <td class="cred-value cred-password">{{ $student->password_plain ?? $student->username }}</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                            <!-- Header -->
+                            <div class="header-section">
+                                <div class="logo-box">
+                                    @if(file_exists($logoPath))
+                                        <img src="{{ $logoPath }}">
+                                    @endif
+                                </div>
+                                <div class="title-box">
+                                    <h1>KARTU PESERTA UJIAN</h1>
+                                    <p>{{ $schoolName }}</p>
+                                </div>
+                                <div class="clear"></div>
                             </div>
-                            <div class="watermark">ZEXAM-CBT VERSI 1.0</div>
-                            <div class="qr-small">
-                                <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(60)->margin(0)->generate($student->username)) !!}" style="width: 100%; height: 100%;">
+
+                            <!-- Content -->
+                            <div class="content-section">
+                                <div class="info-table">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td class="label">Nama</td>
+                                            <td class="colon">:</td>
+                                            <td class="value">{{ $student->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Kelas</td>
+                                            <td class="colon">:</td>
+                                            <td class="value">{{ $classroom->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">USERNAME</td>
+                                            <td class="colon">:</td>
+                                            <td class="value value-bold">{{ $student->username }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label">Password</td>
+                                            <td class="colon">:</td>
+                                            <td class="value value-bold">{{ $student->password_plain ?? $student->username }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="media-section">
+                                    <div class="photo-box">
+                                        @if($student->photo)
+                                            <img src="{{ public_path('storage/' . $student->photo) }}">
+                                        @else
+                                            <div class="photo-placeholder">{{ substr($student->name, 0, 1) }}</div>
+                                        @endif
+                                    </div>
+                                    <div class="qr-box">
+                                        <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(60)->margin(0)->generate($student->username)) !!}">
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
                             </div>
+
+                            <!-- Bottom Accents -->
+                            <div class="accent-bottom-right">
+                                <div class="stripe-dark-bottom"></div>
+                                <div class="stripe-light-bottom"></div>
+                                <div class="stripe-light-bottom"></div>
+                            </div>
+
+                            <div class="footer-text">zexam-cbt v.1.0</div>
                         </div>
                     </td>
                 @endforeach
@@ -313,7 +325,7 @@
                     <td class="card-cell"></td>
                 @endif
             </tr>
-            @if (($rowGroupIndex + 1) % 5 == 0 && !$loop->last)
+            @if (($rowGroupIndex + 1) % 4 == 0 && !$loop->last)
                 </table>
                 <div class="page-break"></div>
                 <table class="main-table">
