@@ -14,14 +14,14 @@
             font-family: 'Helvetica', 'Arial', sans-serif;
             color: #1a1a1a;
             margin: 0;
-            padding: 10mm;
+            padding: 5mm;
             background-color: #fff;
         }
 
         .main-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 5mm 8mm;
+            border-spacing: 4mm 8mm;
         }
 
         .card-cell {
@@ -30,7 +30,7 @@
         }
 
         .card {
-            width: 100mm;
+            width: 95mm;
             height: 65mm;
             margin: 0 auto;
             border: 1px solid #e2e8f0;
@@ -182,9 +182,9 @@
         .photo-box {
             width: 20mm;
             height: 24mm;
-            border: 2.5px solid #000;
+            border: 3px solid #000;
             border-radius: 12px;
-            margin: 0 auto 3mm auto;
+            margin: 3mm auto 0 auto;
             overflow: hidden;
             background-color: #f8fafc;
         }
@@ -200,17 +200,6 @@
             font-size: 18pt;
             font-weight: bold;
             color: #cbd5e1;
-        }
-
-        .qr-box {
-            width: 16mm;
-            height: 16mm;
-            margin: 0 auto;
-        }
-
-        .qr-box img {
-            width: 100%;
-            height: 100%;
         }
 
         /* Footer */
@@ -302,9 +291,6 @@
                                         @else
                                             <div class="photo-placeholder">{{ substr($student->name, 0, 1) }}</div>
                                         @endif
-                                    </div>
-                                    <div class="qr-box">
-                                        <img src="data:image/svg+xml;base64, {!! base64_encode(QrCode::format('svg')->size(60)->margin(0)->generate($student->username)) !!}">
                                     </div>
                                 </div>
                                 <div class="clear"></div>
