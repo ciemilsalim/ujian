@@ -1,5 +1,5 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import { ArrowLeft, BarChart3, Info, CheckCircle2, AlertCircle, HelpCircle, Download } from 'lucide-react';
 
 interface AnalysisItem {
@@ -28,6 +28,17 @@ interface Props {
 }
 
 export default function ItemAnalysis({ questionBank, analysis, session }: Props) {
+    const { auth } = usePage().props as any;
+    const isGuru = auth.user.role === 'guru';
+
+    const backUrl = session 
+        ? route('proktor.results.show', session.id) 
+        : (isGuru ? route('guru.question-banks.index') : route('proktor.results.index'));
+
+    const backLabel = session 
+        ? 'Hasil Sesi' 
+        : (isGuru ? 'Bank Soal' : 'Daftar Hasil');
+
     return (
         <AuthenticatedLayout
             header={<h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200 uppercase tracking-tight">Analisis Butir Soal: {session ? session.name : questionBank.name}</h2>}
@@ -38,10 +49,10 @@ export default function ItemAnalysis({ questionBank, analysis, session }: Props)
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="mb-6 flex justify-between items-center">
                         <Link 
-                            href={session ? route('proktor.results.show', session.id) : route('proktor.results.index')} 
+                            href={backUrl} 
                             className="text-indigo-600 hover:underline flex items-center gap-1 font-medium transition-all hover:gap-2"
                         >
-                            <ArrowLeft className="w-4 h-4" /> Kembali ke {session ? 'Hasil Sesi' : 'Daftar Hasil'}
+                            <ArrowLeft className="w-4 h-4" /> Kembali ke {backLabel}
                         </Link>
                         <a
                             href={session ? route('proktor.results.item-analysis-export', session.id) : route('guru.question-analysis.export', questionBank.id)}

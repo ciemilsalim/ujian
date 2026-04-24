@@ -11,8 +11,6 @@ export default function Show({ session }: { session: ExamSession }) {
         essays: Answer[];
     } | null>(null);
 
-    const [detailModal, setDetailModal] = useState<ExamUser | null>(null);
-
     const [gradingValues, setGradingValues] = useState<Record<number, { score: string; is_correct: boolean }>>({});
     const [processing, setProcessing] = useState(false);
 
@@ -178,13 +176,13 @@ export default function Show({ session }: { session: ExamSession }) {
                                             </td>
                                             <td className="px-6 py-4">
                                                 <div className="flex items-center gap-2">
-                                                    <button
-                                                        onClick={() => setDetailModal(eu)}
+                                                    <Link
+                                                        href={route('guru.results.detail', eu.id)}
                                                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-indigo-50 text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-400 transition-colors"
                                                     >
                                                         <Eye className="w-3.5 h-3.5" />
                                                         Lihat Jawaban
-                                                    </button>
+                                                    </Link>
                                                     {eu.status === 'finished' && eu.answers?.some(a => a.question.type === 'essay') && (
                                                         <button
                                                             onClick={() => openGradingModal(eu)}

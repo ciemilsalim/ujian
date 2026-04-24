@@ -44,6 +44,24 @@ class ExamResultController extends Controller
         ]);
     }
 
+    public function detail($id)
+    {
+        $examSessionUser = ExamSessionUser::with([
+            'user',
+            'examSession.exam.questionBank',
+            'answers.question'
+        ])->findOrFail($id);
+
+        // Otorisasi: pastikan bank soal milik guru yang login
+        if ($examSessionUser->examSession->exam->questionBank->user_id !== auth()->id()) {
+            abort(403, 'Anda tidak memiliki akses ke data ini.');
+        }
+
+        return Inertia::render('Guru/Results/Detail', [
+            'examSessionUser' => $examSessionUser
+        ]);
+    }
+
     /**
      * Koreksi manual jawaban essay oleh Guru.
      * Setelah koreksi, skor total siswa dihitung ulang secara otomatis.
