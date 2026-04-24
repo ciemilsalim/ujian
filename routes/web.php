@@ -66,6 +66,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generate'])->name('attendance.generate');
         Route::get('/proctor-attendance/{id}', [\App\Http\Controllers\Proktor\AttendanceController::class, 'generateProctorAttendance'])->name('attendance.proctor');
         Route::get('/results/{id}/item-analysis', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('results.item-analysis');
+        Route::get('/results/{id}/item-analysis-export', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'exportWord'])->name('results.item-analysis-export');
 
         Route::get('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'index'])->name('settings.index');
         Route::post('/settings', [\App\Http\Controllers\Proktor\SettingController::class, 'store'])->name('settings.store');
@@ -113,6 +114,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/results', [\App\Http\Controllers\Guru\ExamResultController::class, 'index'])->name('results.index');
         Route::get('/results/{id}', [\App\Http\Controllers\Guru\ExamResultController::class, 'show'])->name('results.show');
         Route::get('/question-analysis/{id}', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('question-analysis.show');
+        Route::get('/question-analysis/{id}/export', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'exportWord'])->name('question-analysis.export');
     });
 
     // Siswa Routes

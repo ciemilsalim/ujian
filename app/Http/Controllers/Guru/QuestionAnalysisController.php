@@ -12,14 +12,96 @@ class QuestionAnalysisController extends Controller
 {
     public function show($id)
     {
+        $data = $this->getAnalysisData($id);
+        
+        return Inertia::render('Proktor/Results/ItemAnalysis', [
+            'questionBank' => $data['questionBank'],
+            'analysis' => $data['analysis'],
+            'session' => $data['session'],
+        ]);
+    }
+
+    public function exportWord($id)
+    {
+        $data = $this->getAnalysisData($id);
+        $questionBank = $data['questionBank'];
+        $analysis = $data['analysis'];
+        $session = $data['session'];
+
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
+        $section = $phpWord->addSection([
+            'marginTop' => 1200,
+            'marginBottom' => 1200,
+            'marginLeft' => 1200,
+            'marginRight' => 1200,
+        ]);
+
+        // Header
+        $section->addText('LAPORAN ANALISIS BUTIR SOAL', ['bold' => true, 'size' => 16], ['alignment' => 'center']);
+        $section->addText($session ? $session->name : $questionBank->name, ['bold' => true, 'size' => 12], ['alignment' => 'center']);
+        if ($session) {
+            $section->addText($session->exam->title, ['size' => 10], ['alignment' => 'center']);
+        }
+        $section->addTextBreak(1);
+
+        // Info Table
+        $table = $section->addTable(['cellMargin' => 80]);
+        $table->addRow();
+        $table->addCell(2000)->addText('Mata Pelajaran');
+        $table->addCell(100)->addText(':');
+        $table->addCell(6000)->addText($questionBank->subject->name ?? '-', ['bold' => true]);
+        
+        $table->addRow();
+        $table->addCell(2000)->addText('Jumlah Soal');
+        $table->addCell(100)->addText(':');
+        $table->addCell(6000)->addText(count($analysis) . ' Butir');
+
+        $section->addTextBreak(1);
+
+        // Analysis Table
+        $styleTable = ['borderSize' => 6, 'borderColor' => '000000', 'cellMargin' => 80];
+        $styleHeader = ['bold' => true, 'fill' => 'F2F2F2'];
+        $phpWord->addTableStyle('AnalysisTable', $styleTable);
+        $table = $section->addTable('AnalysisTable');
+
+        $table->addRow();
+        $table->addCell(800, $styleHeader)->addText('No', ['bold' => true], ['alignment' => 'center']);
+        $table->addCell(4000, $styleHeader)->addText('Butir Soal', ['bold' => true]);
+        $table->addCell(1500, $styleHeader)->addText('Kesukaran (P)', ['bold' => true], ['alignment' => 'center']);
+        $table->addCell(1500, $styleHeader)->addText('Daya Pembeda (D)', ['bold' => true], ['alignment' => 'center']);
+        $table->addCell(1200, $styleHeader)->addText('Respon', ['bold' => true], ['alignment' => 'center']);
+
+        foreach ($analysis as $index => $item) {
+            $table->addRow();
+            $table->addCell(800)->addText($index + 1, null, ['alignment' => 'center']);
+            
+            // Clean HTML from question text
+            $text = strip_tags($item['question_text']);
+            $table->addCell(4000)->addText($text);
+            
+            $table->addCell(1500)->addText($item['difficulty']['index'] . "\n(" . $item['difficulty']['label'] . ")", null, ['alignment' => 'center']);
+            $table->addCell(1500)->addText($item['discrimination']['index'] . "\n(" . $item['discrimination']['label'] . ")", null, ['alignment' => 'center']);
+            $table->addCell(1200)->addText($item['total_answers'], null, ['alignment' => 'center']);
+        }
+
+        $fileName = 'Analisis_Butir_Soal_' . ($session ? $session->name : $questionBank->name) . '.docx';
+        $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+
+        return response()->streamDownload(function() use ($writer) {
+            $writer->save('php://output');
+        }, $fileName);
+    }
+
+    private function getAnalysisData($id)
+    {
         $sessionId = null;
-        if (request()->routeIs('proktor.results.item-analysis')) {
+        $session = null;
+        if (request()->routeIs('proktor.results.item-analysis') || request()->routeIs('proktor.results.item-analysis-export')) {
             $sessionId = $id;
-            $session = \App\Models\ExamSession::with('exam.questionBank.questions')->findOrFail($sessionId);
+            $session = \App\Models\ExamSession::with(['exam.questionBank.questions', 'exam.questionBank.subject'])->findOrFail($sessionId);
             $questionBank = $session->exam->questionBank;
         } else {
-            $questionBank = QuestionBank::with('questions')->findOrFail($id);
-            // Only allow owner or proctor
+            $questionBank = QuestionBank::with(['questions', 'subject'])->findOrFail($id);
             if ($questionBank->user_id !== auth()->id() && !auth()->user()->isProktor()) {
                 abort(403);
             }
@@ -40,7 +122,6 @@ class QuestionAnalysisController extends Controller
             $totalAnswers = $answers->count();
 
             if ($question->type === 'pilihan_ganda' && $totalAnswers > 0) {
-                // 1. Tingkat Kesukaran (P)
                 $correctCount = $answers->where('is_correct', true)->count();
                 $difficultyLevel = round($correctCount / $totalAnswers, 2);
                 
@@ -50,8 +131,6 @@ class QuestionAnalysisController extends Controller
                     default => 'Sukar',
                 };
 
-                // 2. Daya Pembeda (D)
-                // We use simplified discrimination index (Upper 27% - Lower 27%)
                 $sortedAnswers = $answers->sortByDesc(function($a) {
                     return $a->examSessionUser->score ?? 0;
                 });
@@ -68,8 +147,8 @@ class QuestionAnalysisController extends Controller
                 $discriminationLabel = match (true) {
                     $discriminationIndex >= 0.4 => 'Sangat Baik',
                     $discriminationIndex >= 0.3 => 'Baik',
-                    $discriminationIndex >= 0.2 => 'Cukup (Perlu Revisi)',
-                    default => 'Buruk (Buang/Ganti)',
+                    $discriminationIndex >= 0.2 => 'Cukup',
+                    default => 'Buruk',
                 };
 
                 $analysis[] = [
@@ -90,10 +169,10 @@ class QuestionAnalysisController extends Controller
             }
         }
 
-        return Inertia::render('Proktor/Results/ItemAnalysis', [
+        return [
             'questionBank' => $questionBank,
             'analysis' => $analysis,
-            'session' => isset($session) ? $session : null,
-        ]);
+            'session' => $session
+        ];
     }
 }

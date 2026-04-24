@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
-import { ArrowLeft, BarChart3, Info, CheckCircle2, AlertCircle, HelpCircle } from 'lucide-react';
+import { ArrowLeft, BarChart3, Info, CheckCircle2, AlertCircle, HelpCircle, Download } from 'lucide-react';
 
 interface AnalysisItem {
     id: number;
@@ -20,6 +20,7 @@ interface AnalysisItem {
 
 interface Props {
     questionBank: {
+        id: number;
         name: string;
     };
     analysis: AnalysisItem[];
@@ -35,13 +36,19 @@ export default function ItemAnalysis({ questionBank, analysis, session }: Props)
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="mb-6">
+                    <div className="mb-6 flex justify-between items-center">
                         <Link 
                             href={session ? route('proktor.results.show', session.id) : route('proktor.results.index')} 
                             className="text-indigo-600 hover:underline flex items-center gap-1 font-medium transition-all hover:gap-2"
                         >
                             <ArrowLeft className="w-4 h-4" /> Kembali ke {session ? 'Hasil Sesi' : 'Daftar Hasil'}
                         </Link>
+                        <a
+                            href={session ? route('proktor.results.item-analysis-export', session.id) : route('guru.question-analysis.export', questionBank.id)}
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 transition shadow-lg shadow-blue-200 dark:shadow-none"
+                        >
+                            <Download className="w-4 h-4" /> Ekspor DOCX
+                        </a>
                     </div>
 
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 mb-8">
