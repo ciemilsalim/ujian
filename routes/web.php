@@ -78,7 +78,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/sync/export-results', [\App\Http\Controllers\Proktor\SyncController::class, 'exportResults'])->name('sync.export-results');
         Route::post('/sync/import-results', [\App\Http\Controllers\Proktor\SyncController::class, 'importResults'])->name('sync.import-results');
         Route::get('/exam-cards', [\App\Http\Controllers\Proktor\ExamCardController::class, 'index'])->name('exam-cards.index');
-        Route::get('/exam-cards/generate', [\App\Http\Controllers\Proktor\ExamCardController::class, 'generate'])->name('exam-cards.generate');
+        Route::match(['get', 'post'], '/exam-cards/generate', [\App\Http\Controllers\Proktor\ExamCardController::class, 'generate'])->name('exam-cards.generate');
 
         // Administration Routes
         Route::get('/administration', [\App\Http\Controllers\Proktor\AdministrativeController::class, 'index'])->name('administration.index');

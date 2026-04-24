@@ -23,8 +23,7 @@ export default function Index({ classrooms }: { classrooms: Classroom[] }) {
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                             <h3 className="text-lg font-medium mb-4">Pilih Kelas untuk Mencetak Kartu</h3>
 
-                            <form method="POST" action={route('proktor.exam-cards.generate')} target="_blank" className="max-w-md">
-                                <input type="hidden" name="_token" value={document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''} />
+                            <form method="GET" action={route('proktor.exam-cards.generate')} target="_blank" className="max-w-md">
                                 <div>
                                     <InputLabel htmlFor="classroom_id" value="Kelas" />
                                     <select
