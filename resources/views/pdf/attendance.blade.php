@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
     <title>Daftar Hadir - {{ $session->name }}</title>
     <style>
         @page {

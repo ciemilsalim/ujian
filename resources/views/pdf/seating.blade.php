@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
     <title>Denah Ruang - {{ $room->name }}</title>
     <style>
         body { font-family: sans-serif; margin: 0; padding: 0; font-size: 12px; }

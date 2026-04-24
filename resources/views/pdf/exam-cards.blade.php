@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
     <title>Kartu Login Ujian</title>
     <style>
         @page {
