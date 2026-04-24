@@ -114,6 +114,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/results/grade-essay', [\App\Http\Controllers\Guru\ExamResultController::class, 'gradeEssay'])->name('results.grade-essay');
         Route::get('/results', [\App\Http\Controllers\Guru\ExamResultController::class, 'index'])->name('results.index');
         Route::get('/results/{id}', [\App\Http\Controllers\Guru\ExamResultController::class, 'show'])->name('results.show');
+        Route::get('/results/{id}/export-pdf', [\App\Http\Controllers\Guru\ExamResultController::class, 'exportPdf'])->name('results.export-pdf');
+        Route::get('/results/{id}/export-word', [\App\Http\Controllers\Guru\ExamResultController::class, 'exportWord'])->name('results.export-word');
         Route::get('/results/detail/{id}', [\App\Http\Controllers\Guru\ExamResultController::class, 'detail'])->name('results.detail');
         Route::get('/question-analysis/{id}', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'show'])->name('question-analysis.show');
         Route::get('/question-analysis/{id}/export', [\App\Http\Controllers\Guru\QuestionAnalysisController::class, 'exportWord'])->name('question-analysis.export');
