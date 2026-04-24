@@ -111,7 +111,11 @@ export default function Detail({ examSessionUser }: Props) {
                                     {answer.question.type === 'pilihan_ganda' ? (
                                         <div className="flex flex-col gap-2">
                                             {['a', 'b', 'c', 'd', 'e'].map(opt => {
-                                                const optText = (answer.question as any)[`option_${opt}`];
+                                                const options = typeof answer.question.options === 'string' 
+                                                    ? JSON.parse(answer.question.options) 
+                                                    : answer.question.options;
+                                                
+                                                const optText = options?.[opt];
                                                 if (!optText) return null;
                                                 
                                                 const isStudentChoice = answer.answer_text === opt;
@@ -131,7 +135,7 @@ export default function Detail({ examSessionUser }: Props) {
                                                         }`}>
                                                             {opt}
                                                         </span>
-                                                        <span className={isStudentChoice ? 'font-bold' : ''}>{optText}</span>
+                                                        <span className={`${isStudentChoice ? 'font-bold' : ''} prose-sm dark:prose-invert`} dangerouslySetInnerHTML={{ __html: optText }} />
                                                         {isCorrectAnswer && <CheckCircle2 className="w-4 h-4 text-green-500 ml-auto" />}
                                                     </div>
                                                 );
