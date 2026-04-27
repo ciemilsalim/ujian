@@ -619,9 +619,12 @@ export default function ExamEngine({
                                         
                                         return (
                                             <div key={opt} className="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                                                <div className={`flex-1 font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 ${
-                                                    fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl' : 'text-base'
-                                                }`}>{leftVal}</div>
+                                                <div 
+                                                    className={`flex-1 font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 ${
+                                                        fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl' : 'text-base'
+                                                    }`}
+                                                    dangerouslySetInnerHTML={{ __html: leftVal }}
+                                                />
                                                 <div className="w-8 flex items-center justify-center text-gray-400">→</div>
                                                 <select
                                                     className="flex-1 p-2 rounded-xl border-gray-200 dark:bg-gray-900 dark:border-gray-700 text-sm"
@@ -635,7 +638,7 @@ export default function ExamEngine({
                                                     {['a', 'b', 'c', 'd', 'e'].map(target => {
                                                         const rightVal = (currentQuestion.options as any)?.[`right_${target}`];
                                                         return rightVal ? (
-                                                            <option key={target} value={target}>{rightVal}</option>
+                                                            <option key={target} value={target}>{rightVal.replace(/<[^>]*>/g, '')}</option>
                                                         ) : null;
                                                     })}
                                                 </select>

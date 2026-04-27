@@ -263,9 +263,10 @@ export default function Show({ session }: { session: ExamSession }) {
                                         </div>
 
                                         {/* Pertanyaan */}
-                                        <p className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-3 leading-relaxed">
-                                            {answer.question.question_text}
-                                        </p>
+                                        <div 
+                                            className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-3 leading-relaxed"
+                                            dangerouslySetInnerHTML={{ __html: answer.question.question_text }} 
+                                        />
 
                                         {/* Jawaban Siswa */}
                                         <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-3 mb-4 border border-gray-100 dark:border-gray-700">

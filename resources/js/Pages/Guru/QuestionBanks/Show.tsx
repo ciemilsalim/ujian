@@ -415,7 +415,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                                     }`}
                                                                 >
                                                                     <span className="font-bold uppercase text-xs w-4">{key}.</span>
-                                                                    <span>{value}</span>
+                                                                    <span dangerouslySetInnerHTML={{ __html: value }} />
                                                                     {question.answer_key.split(',').includes(key) && (
                                                                         <CheckCircle className="w-3 h-3 text-emerald-600 ml-auto" />
                                                                     )}
@@ -435,13 +435,15 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                                 if (!left) return null;
                                                                 return (
                                                                     <div key={opt} className="flex items-stretch gap-2">
-                                                                        <div className="flex-1 p-2 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 rounded text-sm text-center">
-                                                                            {left}
-                                                                        </div>
+                                                                        <div 
+                                                                            className="flex-1 p-2 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 rounded text-sm text-center"
+                                                                            dangerouslySetInnerHTML={{ __html: left }}
+                                                                        />
                                                                         <div className="flex items-center text-gray-400">↔</div>
-                                                                        <div className="flex-1 p-2 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 rounded text-sm text-center font-bold">
-                                                                            {right}
-                                                                        </div>
+                                                                        <div 
+                                                                            className="flex-1 p-2 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 rounded text-sm text-center font-bold"
+                                                                            dangerouslySetInnerHTML={{ __html: right }}
+                                                                        />
                                                                     </div>
                                                                 );
                                                             })}
