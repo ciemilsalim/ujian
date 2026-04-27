@@ -17,12 +17,43 @@ use PhpOffice\PhpWord\Element\ListItemRun;
 use PhpOffice\PhpWord\Element\TextBreak;
 use PhpOffice\PhpWord\Element\Formula;
 use PhpOffice\Math\Writer\MathML;
+use PhpOffice\Math\Reader\OfficeMathML;
 
 class WordImportService
 {
+    /**
+     * Store the original file path for direct XML extraction fallback.
+     */
+    protected $docxFilePath;
+
+    /**
+     * Raw oMath XML elements extracted directly from DOCX, with proper namespaces.
+     * These are extracted before PHPWord loads the file, so namespace context is preserved.
+     */
+    protected $rawOmathElements = [];
+
+    /**
+     * Counter to match Formula elements from PHPWord to the raw XML array.
+     */
+    protected $formulaIndex = 0;
+
     public function import($filePath, $questionBankId)
     {
+        $this->docxFilePath = $filePath;
+        $this->formulaIndex = 0;
+        $this->rawOmathElements = [];
+
+        // PRE-STEP: Extract all oMath elements directly from DOCX zip with full namespace context.
+        // This is needed because PHPWord extracts XML fragments that lose their namespace
+        // declarations, causing 'Namespace prefix m on oMath is not defined' errors.
+        $this->extractRawOmathElements($filePath);
+
+        // Suppress libxml errors during load to prevent any remaining namespace warnings
+        // from crashing the import (PHPWord's OfficeMathML reader uses DOMDocument internally).
+        $prevLibxmlErrors = libxml_use_internal_errors(true);
         $phpWord = IOFactory::load($filePath);
+        libxml_clear_errors();
+        libxml_use_internal_errors($prevLibxmlErrors);
         $questions = [];
         $currentQuestion = $this->resetQuestion();
 
@@ -138,12 +169,161 @@ class WordImportService
 
     protected function processFormulaElement($formulaElement)
     {
+        // First try: use our pre-extracted raw oMath XML with proper namespace context.
+        // This is far more reliable than PHPWord's MathML writer for complex equations.
+        if (isset($this->rawOmathElements[$this->formulaIndex])) {
+            $mathXml = $this->rawOmathElements[$this->formulaIndex];
+            $this->formulaIndex++;
+            return $this->parseMathXmlToHtml($mathXml);
+        }
+        $this->formulaIndex++;
+
+        // Second try: use PHPWord's built-in MathML writer.
         try {
             $writer = new MathML();
             return $writer->write($formulaElement->getMath());
         } catch (\Exception $e) {
-            return '';
+            return '[Rumus]';
         }
+    }
+
+    /**
+     * Pre-extract all oMath nodes from the DOCX zip file with full namespace context.
+     * Stored in $this->rawOmathElements[] indexed by position (0-based).
+     */
+    protected function extractRawOmathElements($filePath)
+    {
+        try {
+            $zip = new \ZipArchive();
+            if ($zip->open($filePath) !== true) return;
+
+            $documentXml = $zip->getFromName('word/document.xml');
+            $zip->close();
+
+            if (!$documentXml) return;
+
+            $prevErrors = libxml_use_internal_errors(true);
+            $dom = new \DOMDocument();
+            $dom->loadXML($documentXml);
+            libxml_clear_errors();
+            libxml_use_internal_errors($prevErrors);
+
+            $xpath = new \DOMXPath($dom);
+            $xpath->registerNamespace('m', 'http://schemas.openxmlformats.org/officeDocument/2006/math');
+
+            // Get all top-level oMath nodes (not nested ones inside oMathPara)
+            $oMathNodes = $xpath->query('//m:oMath');
+            if (!$oMathNodes) return;
+
+            foreach ($oMathNodes as $node) {
+                // Save the node XML — it already has full namespace context from the parent document.
+                $this->rawOmathElements[] = $dom->saveXML($node);
+            }
+        } catch (\Exception $e) {
+            // Silently fail - formulaElement MathML writer will be used as fallback
+        }
+    }
+
+    /**
+     * Parse oMath XML string into readable HTML (with sup/sub tags).
+     * We add required namespace declarations to the fragment before parsing.
+     */
+    protected function parseMathXmlToHtml($mathXml)
+    {
+        try {
+            // Inject namespace declarations if missing (common with extracted fragments)
+            if (strpos($mathXml, 'xmlns:m') === false) {
+                $mathXml = str_replace(
+                    '<m:oMath>',
+                    '<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">',
+                    $mathXml
+                );
+            }
+
+            $prevErrors = libxml_use_internal_errors(true);
+            $dom = new \DOMDocument();
+            $dom->loadXML($mathXml);
+            libxml_clear_errors();
+            libxml_use_internal_errors($prevErrors);
+
+            $xpath = new \DOMXPath($dom);
+            $xpath->registerNamespace('m', 'http://schemas.openxmlformats.org/officeDocument/2006/math');
+
+            $root = $dom->documentElement;
+            return $this->extractTextFromMathNode($root, $xpath);
+        } catch (\Exception $e) {
+            return '[Rumus]';
+        }
+    }
+
+    /**
+     * Extract readable text from an oMath DOM node.
+     * Handles fractions, superscripts, subscripts and basic math runs.
+     */
+    protected function extractTextFromMathNode(\DOMNode $node, \DOMXPath $xpath)
+    {
+        $result = '';
+
+        foreach ($node->childNodes as $child) {
+            if (!($child instanceof \DOMElement)) continue;
+
+            $localName = $child->localName;
+
+            switch ($localName) {
+                case 'f': // Fraction: m:f
+                    $num = $xpath->query('m:num//m:t', $child);
+                    $den = $xpath->query('m:den//m:t', $child);
+                    $numText = $num && $num->length ? trim($num->item(0)->nodeValue) : '?';
+                    $denText = $den && $den->length ? trim($den->item(0)->nodeValue) : '?';
+                    $result .= "({$numText}/{$denText})";
+                    break;
+
+                case 'sSup': // Superscript: m:sSup
+                    $base = $xpath->query('m:e//m:t', $child);
+                    $sup  = $xpath->query('m:sup//m:t', $child);
+                    $baseText = $base && $base->length ? trim($base->item(0)->nodeValue) : '';
+                    $supText  = $sup && $sup->length ? trim($sup->item(0)->nodeValue) : '';
+                    $result .= "<sup>{$supText}</sup>" ? "{$baseText}<sup>{$supText}</sup>" : $baseText;
+                    break;
+
+                case 'sSub': // Subscript: m:sSub
+                    $base = $xpath->query('m:e//m:t', $child);
+                    $sub  = $xpath->query('m:sub//m:t', $child);
+                    $baseText = $base && $base->length ? trim($base->item(0)->nodeValue) : '';
+                    $subText  = $sub && $sub->length ? trim($sub->item(0)->nodeValue) : '';
+                    $result .= "{$baseText}<sub>{$subText}</sub>";
+                    break;
+
+                case 'sSubSup': // Sub-superscript: m:sSubSup
+                    $base = $xpath->query('m:e//m:t', $child);
+                    $sub  = $xpath->query('m:sub//m:t', $child);
+                    $sup  = $xpath->query('m:sup//m:t', $child);
+                    $baseText = $base && $base->length ? trim($base->item(0)->nodeValue) : '';
+                    $subText  = $sub && $sub->length ? trim($sub->item(0)->nodeValue) : '';
+                    $supText  = $sup && $sup->length ? trim($sup->item(0)->nodeValue) : '';
+                    $result .= "{$baseText}<sub>{$subText}</sub><sup>{$supText}</sup>";
+                    break;
+
+                case 'r': // Math run: m:r contains m:t
+                    $t = $xpath->query('m:t', $child);
+                    if ($t && $t->length) {
+                        $result .= trim($t->item(0)->nodeValue);
+                    }
+                    break;
+
+                case 'oMath': // Nested oMath
+                case 'oMathPara':
+                    $result .= $this->extractTextFromMathNode($child, $xpath);
+                    break;
+
+                default:
+                    // For any other math container, recurse into it
+                    $result .= $this->extractTextFromMathNode($child, $xpath);
+                    break;
+            }
+        }
+
+        return $result;
     }
 
     protected function parseLine($line, &$currentQuestion, &$questions)
