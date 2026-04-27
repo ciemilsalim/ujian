@@ -159,9 +159,11 @@ class WordImportService
             $oMathNodes = $xpath->query('//m:oMath');
 
             if (!$oMathNodes || $oMathNodes->length === 0) {
-                // No math equations - no need for temp file
+                \Illuminate\Support\Facades\Log::info('WordImport: No m:oMath nodes found in document.xml');
                 return null;
             }
+
+            \Illuminate\Support\Facades\Log::info('WordImport: Found ' . $oMathNodes->length . ' math nodes.');
 
             $index = 0;
             $nodesToReplace = [];
@@ -469,6 +471,14 @@ class WordImportService
                 $text = '<em>' . $text . '</em>';
             }
         }
+
+        // Regex Fallback for plain text fractions: (3/4) -> math-frac
+        $text = preg_replace(
+            '/\((\d+)\/(\d+)\)/', 
+            '<span class="math-frac"><span class="math-num">$1</span><span class="math-den">$2</span></span>', 
+            $text
+        );
+
         return $text;
     }
 
