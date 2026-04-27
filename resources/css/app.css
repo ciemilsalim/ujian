@@ -23,3 +23,25 @@
 .bg-glow {
     background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
 }
+
+/* Math Fraction Styles */
+.math-frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.8em;
+    line-height: 1.1;
+    margin: 0 2px;
+    position: relative;
+    top: -0.1em;
+}
+.math-num {
+    border-bottom: 1px solid currentColor;
+    padding: 0 2px;
+    display: block;
+}
+.math-den {
+    padding: 0 2px;
+    display: block;
+}

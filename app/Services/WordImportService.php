@@ -251,7 +251,7 @@ class WordImportService
                         $this->getFirstChild($child, 'den', $xpath),
                         $xpath
                     );
-                    $result .= "({$numText}/{$denText})";
+                    $result .= "<span class=\"math-frac\"><span class=\"math-num\">{$numText}</span><span class=\"math-den\">{$denText}</span></span>";
                     break;
 
                 case 'sSup': // Superscript: m:sSup > m:e (base), m:sup (exponent)
