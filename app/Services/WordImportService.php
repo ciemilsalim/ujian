@@ -12,6 +12,11 @@ use PhpOffice\PhpWord\Element\Image;
 use PhpOffice\PhpWord\Element\Table;
 use PhpOffice\PhpWord\Element\Row;
 use PhpOffice\PhpWord\Element\Cell;
+use PhpOffice\PhpWord\Element\ListItem;
+use PhpOffice\PhpWord\Element\ListItemRun;
+use PhpOffice\PhpWord\Element\TextBreak;
+use PhpOffice\PhpWord\Element\Formula;
+use PhpOffice\Math\Writer\MathML;
 
 class WordImportService
 {
@@ -78,22 +83,23 @@ class WordImportService
 
     protected function processElement($element, &$currentQuestion, &$questions)
     {
-        if ($element instanceof TextRun) {
+        if ($element instanceof TextRun || $element instanceof ListItemRun) {
             $text = '';
-            $hasImage = false;
             foreach ($element->getElements() as $child) {
                 if ($child instanceof Text) {
-                    $text .= $child->getText();
+                    $text .= $this->processTextElement($child);
                 } elseif ($child instanceof Image) {
                     $imagePath = $this->saveImage($child);
                     $text .= '<br><img src="/storage/' . $imagePath . '" class="max-w-full h-auto mt-2 rounded-lg py-2 block">';
-                    $hasImage = true;
+                } elseif ($child instanceof Formula) {
+                    $text .= $this->processFormulaElement($child);
                 }
             }
-
             $this->parseLine($text, $currentQuestion, $questions);
         } elseif ($element instanceof Text) {
-            $this->parseLine($element->getText(), $currentQuestion, $questions);
+            $this->parseLine($this->processTextElement($element), $currentQuestion, $questions);
+        } elseif ($element instanceof ListItem) {
+            $this->processElement($element->getTextObject(), $currentQuestion, $questions);
         } elseif ($element instanceof Table) {
             foreach ($element->getRows() as $row) {
                 foreach ($row->getCells() as $cell) {
@@ -102,6 +108,41 @@ class WordImportService
                     }
                 }
             }
+        } elseif ($element instanceof TextBreak) {
+            $this->parseLine(' ', $currentQuestion, $questions);
+        } elseif ($element instanceof Formula) {
+            $this->parseLine($this->processFormulaElement($element), $currentQuestion, $questions);
+        }
+    }
+
+    protected function processTextElement($textElement)
+    {
+        $text = $textElement->getText();
+        $fontStyle = $textElement->getFontStyle();
+        
+        if ($fontStyle) {
+            if ($fontStyle->isSuperScript()) {
+                $text = '<sup>' . $text . '</sup>';
+            } elseif ($fontStyle->isSubScript()) {
+                $text = '<sub>' . $text . '</sub>';
+            }
+            if ($fontStyle->isBold()) {
+                $text = '<strong>' . $text . '</strong>';
+            }
+            if ($fontStyle->isItalic()) {
+                $text = '<em>' . $text . '</em>';
+            }
+        }
+        return $text;
+    }
+
+    protected function processFormulaElement($formulaElement)
+    {
+        try {
+            $writer = new MathML();
+            return $writer->write($formulaElement->getMath());
+        } catch (\Exception $e) {
+            return '';
         }
     }
 
@@ -113,7 +154,7 @@ class WordImportService
         $isDigitMatch = preg_match('/^\d+[\.\)]\s*(.*)/i', $line, $matches);
         $isOptionMatch = preg_match('/^([A-E])[\.\)]\s*(.*)/i', $line, $matchesOption);
         $isTypeMatch = preg_match('/^(Tipe|Jenis):\s*(.*)/i', $line, $matchesType);
-        $isAnswerKeyMatch = preg_match('/^(Kunci|Jawab|Answer):\s*(.*)/i', $line, $matchesKey);
+        $isAnswerKeyMatch = preg_match('/^(Kunci|Jawaban|Jawab|Answer):\s*(.*)/i', $line, $matchesKey);
 
         // Detect New Question
         // Case 1: Starts with Digit (1. or 1))
