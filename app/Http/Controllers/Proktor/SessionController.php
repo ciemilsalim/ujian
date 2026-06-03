@@ -12,11 +12,19 @@ class SessionController
         $sessions = \App\Models\ExamSession::with(['exam', 'classroom'])
             ->withCount('examUsers as participants_count')
             ->latest()
-            ->paginate(10);
+            ->get();
         $exams = \App\Models\Exam::all();
         $classrooms = \App\Models\Classroom::all();
         return \Inertia\Inertia::render('Proktor/Sessions/Index', [
-            'sessions' => $sessions,
+            'sessions' => [
+                'data' => $sessions,
+                'total' => $sessions->count(),
+                'current_page' => 1,
+                'last_page' => 1,
+                'from' => 1,
+                'to' => $sessions->count(),
+                'links' => [],
+            ],
             'exams' => $exams,
             'classrooms' => $classrooms
         ]);
