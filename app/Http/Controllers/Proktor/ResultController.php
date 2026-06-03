@@ -90,7 +90,8 @@ class ResultController extends Controller
         $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
 
         $pdf = Pdf::loadView('pdf.results', compact('session', 'maxCheatWarnings', 'settings'));
-        return $pdf->download("hasil_ujian_{$session->name}.pdf");
+        $safeName = str_replace(['/', '\\'], '-', $session->name);
+        return $pdf->download("hasil_ujian_{$safeName}.pdf");
     }
 
     public function exportExcel($id)
@@ -98,9 +99,10 @@ class ResultController extends Controller
         $session = ExamSession::with(['exam', 'classroom', 'examUsers.user'])
             ->findOrFail($id);
 
+        $safeName = str_replace(['/', '\\'], '-', $session->name);
         return \Maatwebsite\Excel\Facades\Excel::download(
             new \App\Exports\ResultExport($session),
-            "hasil_ujian_{$session->name}.xlsx"
+            "hasil_ujian_{$safeName}.xlsx"
         );
     }
 
@@ -238,7 +240,8 @@ class ResultController extends Controller
         $rightCell->addText('( __________________________ )', ['bold' => true], ['alignment' => 'center']);
         $rightCell->addText('NIP. ......................................', ['size' => 10], ['alignment' => 'center']);
 
-        $fileName = "Hasil_Ujian_{$session->name}.docx";
+        $safeName = str_replace(['/', '\\'], '-', $session->name);
+        $fileName = "Hasil_Ujian_{$safeName}.docx";
         $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
 
         return response()->streamDownload(function() use ($writer) {
