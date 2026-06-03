@@ -21,10 +21,18 @@ class ResultController extends Controller
                 }
             ])
             ->latest()
-            ->paginate(10);
+            ->get();
 
         return Inertia::render('Proktor/Results/Index', [
-            'sessions' => $sessions
+            'sessions' => [
+                'data' => $sessions,
+                'total' => $sessions->count(),
+                'current_page' => 1,
+                'last_page' => 1,
+                'from' => 1,
+                'to' => $sessions->count(),
+                'links' => [],
+            ]
         ]);
     }
 
