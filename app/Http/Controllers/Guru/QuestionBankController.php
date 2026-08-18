@@ -9,7 +9,7 @@ class QuestionBankController
 {
     public function index(Request $request)
     {
-        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $activeYear = \App\Models\AcademicYear::getActive();
         $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
 
         $query = \App\Models\QuestionBank::with(['subject', 'user', 'academicYear'])
@@ -54,7 +54,7 @@ class QuestionBankController
             'academic_year_id' => 'nullable|exists:academic_years,id',
         ]);
 
-        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $activeYear = \App\Models\AcademicYear::getActive();
         $academicYearId = $request->academic_year_id ?? ($activeYear ? $activeYear->id : null);
 
         $qb = \App\Models\QuestionBank::create([

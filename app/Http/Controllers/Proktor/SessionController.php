@@ -7,14 +7,26 @@ use Illuminate\Http\Request;
 
 class SessionController
 {
-    public function index()
+    public function index(Request $request)
     {
-        $sessions = \App\Models\ExamSession::with(['exam', 'classroom'])
+        $activeYear = \App\Models\AcademicYear::getActive();
+        $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
+
+        $query = \App\Models\ExamSession::with(['exam.academicYear', 'classroom'])
             ->withCount('examUsers as participants_count')
-            ->latest()
-            ->get();
+            ->latest();
+
+        if ($academicYearId && $academicYearId !== 'all') {
+            $query->whereHas('exam', function ($q) use ($academicYearId) {
+                $q->where('academic_year_id', $academicYearId);
+            });
+        }
+
+        $sessions = $query->get();
         $exams = \App\Models\Exam::all();
         $classrooms = \App\Models\Classroom::all();
+        $academicYears = \App\Models\AcademicYear::orderBy('id', 'desc')->get();
+
         return \Inertia\Inertia::render('Proktor/Sessions/Index', [
             'sessions' => [
                 'data' => $sessions,
@@ -26,7 +38,9 @@ class SessionController
                 'links' => [],
             ],
             'exams' => $exams,
-            'classrooms' => $classrooms
+            'classrooms' => $classrooms,
+            'academicYears' => $academicYears,
+            'selectedAcademicYearId' => $academicYearId ? (string)$academicYearId : 'all',
         ]);
     }
 

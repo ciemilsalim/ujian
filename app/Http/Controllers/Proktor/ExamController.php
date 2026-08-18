@@ -11,7 +11,7 @@ class ExamController extends Controller
 {
     public function index(Request $request)
     {
-        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $activeYear = \App\Models\AcademicYear::getActive();
         $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
 
         $query = Exam::with(['questionBank.subject', 'academicYear'])->latest();
@@ -45,7 +45,7 @@ class ExamController extends Controller
             'is_practice' => 'boolean',
         ]);
 
-        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $activeYear = \App\Models\AcademicYear::getActive();
         $academicYearId = $request->academic_year_id ?? ($activeYear ? $activeYear->id : null);
 
         $exam = Exam::create([

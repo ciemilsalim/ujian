@@ -13,7 +13,7 @@ class ExamResultController extends Controller
 {
     public function index(Request $request)
     {
-        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $activeYear = \App\Models\AcademicYear::getActive();
         $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
 
         $query = ExamSession::with(['exam.questionBank.academicYear', 'classroom'])

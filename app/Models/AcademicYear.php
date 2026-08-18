@@ -31,6 +31,11 @@ class AcademicYear extends Model
 
     public static function getActive()
     {
+        if (request()->hasSession() && $switchedId = request()->session()->get('view_academic_year_id')) {
+            if ($year = static::find($switchedId)) {
+                return $year;
+            }
+        }
         return static::where('is_active', true)->first();
     }
 }

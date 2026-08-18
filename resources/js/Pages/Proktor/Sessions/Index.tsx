@@ -9,9 +9,17 @@ import SecondaryButton from '@/Components/SecondaryButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
-import { ExamSession, Exam, Classroom, PaginationData } from '@/types';
+import { ExamSession, Exam, Classroom, AcademicYear, PaginationData } from '@/types';
 
-export default function Index({ sessions, exams, classrooms }: { sessions: PaginationData<ExamSession>, exams: Exam[], classrooms: Classroom[] }) {
+interface IndexProps {
+    sessions: PaginationData<ExamSession>;
+    exams: Exam[];
+    classrooms: Classroom[];
+    academicYears: AcademicYear[];
+    selectedAcademicYearId: string;
+}
+
+export default function Index({ sessions, exams, classrooms, academicYears, selectedAcademicYearId }: IndexProps) {
     const [search, setSearch] = useState('');
     const { delete: destroy, post } = useForm();
 
@@ -48,12 +56,18 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
             onSuccess: () => {
                 setShowDeleteModal(false);
                 setSessionToDelete(null);
+                toast.success('Sesi ujian berhasil dihapus');
             }
         });
     };
 
-    const handleToggleStatus = (id: number, currentStatus: boolean) => {
-        post(route('proktor.sessions.toggle-status', id));
+    const toggleSessionStatus = (session: ExamSession) => {
+        post(route('proktor.sessions.toggle-status', session.id), {
+            preserveScroll: true,
+            onSuccess: () => {
+                toast.success(`Sesi ujian berhasil ${session.is_active ? 'dihentikan' : 'diaktifkan'}`);
+            }
+        });
     };
 
     const submitCreate = (e: React.FormEvent) => {
@@ -62,24 +76,19 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
             onSuccess: () => {
                 setShowCreateModal(false);
                 createForm.reset();
+                toast.success('Sesi ujian berhasil dibuat');
             }
         });
     };
 
     const openEditModal = (session: ExamSession) => {
         setSelectedSession(session);
-        const formatForInput = (dateString: string) => {
-            if (!dateString) return '';
-            const d = new Date(dateString);
-            return new Date(d.getTime() - (d.getTimezoneOffset() * 60000)).toISOString().slice(0, 16);
-        };
-
         editForm.setData({
-            exam_id: session.exam_id.toString(),
+            exam_id: session.exam_id ? String(session.exam_id) : '',
             classroom_ids: session.classroom ? [session.classroom.id] : [],
             name: session.name,
-            start_time: formatForInput(session.start_time as string),
-            end_time: formatForInput(session.end_time as string),
+            start_time: session.start_time.replace(' ', 'T').slice(0, 16),
+            end_time: session.end_time.replace(' ', 'T').slice(0, 16),
         });
         setShowEditModal(true);
     };
@@ -87,9 +96,11 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
     const submitEdit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!selectedSession) return;
-        editForm.patch(route('proktor.sessions.update', selectedSession.id), {
+        editForm.put(route('proktor.sessions.update', selectedSession.id), {
             onSuccess: () => {
                 setShowEditModal(false);
+                setSelectedSession(null);
+                toast.success('Sesi ujian berhasil diperbarui');
             }
         });
     };
@@ -101,18 +112,20 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
 
     const renderForm = (form: any, onSubmit: (e: React.FormEvent) => void, title: string, onClose: () => void) => (
         <form onSubmit={onSubmit} className="p-6">
-            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-indigo-600" />
                 {title}
             </h2>
 
             <div className="space-y-4">
                 <div>
-                    <InputLabel htmlFor="name" value="Nama Sesi" />
+                    <InputLabel htmlFor="name" value="Nama Sesi (Contoh: Sesi 1 - Pagi)" />
                     <TextInput
                         id="name"
                         value={form.data.name}
                         onChange={(e) => form.setData('name', e.target.value)}
                         className="mt-1 block w-full"
+                        placeholder="Masukkan nama sesi..."
                         required
                     />
                     <InputError message={form.errors.name} className="mt-2" />
@@ -187,9 +200,11 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
                 </div>
             </div>
 
-            <div className="mt-6 flex justify-end">
+            <div className="mt-8 flex justify-end gap-3">
                 <SecondaryButton onClick={onClose}>Batal</SecondaryButton>
-                <PrimaryButton className="ml-3" disabled={form.processing}>Simpan</PrimaryButton>
+                <PrimaryButton disabled={form.processing}>
+                    {form.processing ? 'Menyimpan...' : 'Simpan Sesi'}
+                </PrimaryButton>
             </div>
         </form>
     );
@@ -218,6 +233,30 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 space-y-6">
+
+                    {/* Academic Year Filter Bar */}
+                    <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                            <span className="text-sm font-bold text-gray-700 dark:text-gray-300">Filter Tahun Ajaran & Semester:</span>
+                        </div>
+                        <div className="w-full sm:w-auto flex items-center gap-3">
+                            <select
+                                value={selectedAcademicYearId}
+                                onChange={(e) => {
+                                    router.get(route('proktor.sessions.index'), { academic_year_id: e.target.value }, { preserveState: true, replace: true });
+                                }}
+                                className="w-full sm:w-64 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 text-sm focus:ring-indigo-500 font-medium"
+                            >
+                                <option value="all">Semua Tahun Ajaran</option>
+                                {(academicYears || []).map((ay) => (
+                                    <option key={ay.id} value={ay.id}>
+                                        {ay.name} - {ay.semester} {ay.is_active ? '(Aktif)' : ''}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
 
                     {/* Stats Overview */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -334,7 +373,7 @@ export default function Index({ sessions, exams, classrooms }: { sessions: Pagin
                                             </td>
                                             <td className="px-6 py-5">
                                                 <button
-                                                    onClick={() => handleToggleStatus(session.id, session.is_active)}
+                                                    onClick={() => toggleSessionStatus(session)}
                                                     className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider transition-all ${session.is_active
                                                         ? 'bg-emerald-50 text-emerald-600 border border-emerald-100 hover:bg-emerald-100'
                                                         : 'bg-red-50 text-red-600 border border-red-100 hover:bg-red-100'
