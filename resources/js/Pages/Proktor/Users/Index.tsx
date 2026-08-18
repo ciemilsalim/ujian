@@ -74,25 +74,39 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
         });
     };
 
-    const handleDelete = (id: number) => {
+    const isProktorAccount = (username: string) => username.toLowerCase() === 'proktor';
+
+    const handleDelete = (user: User) => {
+        if (isProktorAccount(user.username)) {
+            toast.error('Akun default "Proktor" tidak dapat dihapus.');
+            return;
+        }
         if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
-            router.delete(route('proktor.users.destroy', id));
+            router.delete(route('proktor.users.destroy', user.id));
         }
     };
+
+    const selectableUsers = useMemo(() => {
+        return users.data.filter(u => !isProktorAccount(u.username));
+    }, [users.data]);
 
     const toggleSelectAll = () => {
-        if (selectedIds.length === users.data.length) {
+        if (selectedIds.length === selectableUsers.length && selectableUsers.length > 0) {
             setSelectedIds([]);
         } else {
-            setSelectedIds(users.data.map(u => u.id));
+            setSelectedIds(selectableUsers.map(u => u.id));
         }
     };
 
-    const toggleSelect = (id: number) => {
-        if (selectedIds.includes(id)) {
-            setSelectedIds(selectedIds.filter(i => i !== id));
+    const toggleSelect = (user: User) => {
+        if (isProktorAccount(user.username)) {
+            toast.error('Akun default "Proktor" tidak dapat dipilih untuk dihapus.');
+            return;
+        }
+        if (selectedIds.includes(user.id)) {
+            setSelectedIds(selectedIds.filter(i => i !== user.id));
         } else {
-            setSelectedIds([...selectedIds, id]);
+            setSelectedIds([...selectedIds, user.id]);
         }
     };
 
@@ -243,8 +257,9 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                                             <button 
                                                 onClick={toggleSelectAll}
                                                 className="text-gray-400 hover:text-indigo-600 transition-colors"
+                                                title="Pilih Semua (Kecuali Akun Default Proktor)"
                                             >
-                                                {selectedIds.length === users.data.length && users.data.length > 0 
+                                                {selectedIds.length === selectableUsers.length && selectableUsers.length > 0 
                                                     ? <CheckSquare className="w-5 h-5 text-indigo-600" /> 
                                                     : <Square className="w-5 h-5" />
                                                 }
@@ -263,15 +278,21 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                                             className={`group transition-colors hover:bg-gray-50/50 dark:hover:bg-gray-700/30 ${selectedIds.includes(user.id) ? 'bg-indigo-50/30 dark:bg-indigo-900/10' : ''}`}
                                         >
                                             <td className="px-6 py-4">
-                                                <button 
-                                                    onClick={() => toggleSelect(user.id)}
-                                                    className="text-gray-400 hover:text-indigo-600 transition-colors"
-                                                >
-                                                    {selectedIds.includes(user.id) 
-                                                        ? <CheckSquare className="w-5 h-5 text-indigo-600" /> 
-                                                        : <Square className="w-5 h-5" />
-                                                    }
-                                                </button>
+                                                {isProktorAccount(user.username) ? (
+                                                    <span className="text-gray-300 dark:text-gray-600 cursor-not-allowed inline-block" title="Akun default Proktor tidak dapat dihapus">
+                                                        <Square className="w-5 h-5 opacity-40" />
+                                                    </span>
+                                                ) : (
+                                                    <button 
+                                                        onClick={() => toggleSelect(user)}
+                                                        className="text-gray-400 hover:text-indigo-600 transition-colors"
+                                                    >
+                                                        {selectedIds.includes(user.id) 
+                                                            ? <CheckSquare className="w-5 h-5 text-indigo-600" /> 
+                                                            : <Square className="w-5 h-5" />
+                                                        }
+                                                    </button>
+                                                )}
                                             </td>
                                             <td className="px-6 py-4">
                                                 <div className="flex items-center gap-4">
@@ -365,13 +386,22 @@ export default function Index({ users, classrooms, filters }: IndexProps) {
                                                     >
                                                         <Pencil className="w-4 h-4" />
                                                     </Link>
-                                                    <button 
-                                                        onClick={() => handleDelete(user.id)}
-                                                        className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-all"
-                                                        title="Hapus User"
-                                                    >
-                                                        <Trash2 className="w-5 h-5" />
-                                                    </button>
+                                                    {isProktorAccount(user.username) ? (
+                                                        <span 
+                                                            className="p-2 text-gray-300 dark:text-gray-600 cursor-not-allowed rounded-lg inline-block"
+                                                            title="Akun default Proktor tidak dapat dihapus"
+                                                        >
+                                                            <Trash2 className="w-5 h-5 opacity-30" />
+                                                        </span>
+                                                    ) : (
+                                                        <button 
+                                                            onClick={() => handleDelete(user)}
+                                                            className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-all"
+                                                            title="Hapus User"
+                                                        >
+                                                            <Trash2 className="w-5 h-5" />
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </td>
                                         </tr>

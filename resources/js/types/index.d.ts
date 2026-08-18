@@ -26,6 +26,17 @@ export interface Classroom {
     seating_grid?: { rows: number; cols: number } | null;
 }
 
+export interface AcademicYear {
+    id: number;
+    name: string;
+    semester: 'Ganjil' | 'Genap';
+    is_active: boolean;
+    created_at?: string;
+    updated_at?: string;
+    question_banks_count?: number;
+    exams_count?: number;
+}
+
 export interface Exam {
     id: number;
     title: string;
@@ -37,6 +48,8 @@ export interface Exam {
     subject?: Subject;
     question_bank?: QuestionBank;
     question_bank_id?: number;
+    academic_year_id?: number;
+    academic_year?: AcademicYear;
 }
 
 export interface ExamSession {
@@ -134,6 +147,8 @@ export interface QuestionBank {
     description: string | null;
     subject?: Subject;
     user?: User;
+    academic_year_id?: number;
+    academic_year?: AcademicYear;
     questions: Question[];
 }
 
@@ -167,5 +182,11 @@ export type PageProps<
     auth: {
         user: User;
     };
+    active_academic_year?: AcademicYear | null;
+    academic_years?: AcademicYear[];
     ziggy: Config & { location: string };
+    flash?: {
+        success?: string;
+        error?: string;
+    };
 };

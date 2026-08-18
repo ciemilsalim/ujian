@@ -136,6 +136,11 @@ class UserController
     public function destroy($id)
     {
         $user = \App\Models\User::findOrFail($id);
+
+        if (strtolower($user->username) === 'proktor') {
+            return redirect()->route('proktor.users.index')->with('error', 'Akun default "Proktor" tidak dapat dihapus.');
+        }
+
         $user->delete();
 
         return redirect()->route('proktor.users.index')->with('success', 'User deleted successfully.');
@@ -148,9 +153,31 @@ class UserController
             'ids.*' => 'exists:users,id'
         ]);
 
-        \App\Models\User::whereIn('id', $request->ids)->delete();
+        $usersToDelete = \App\Models\User::whereIn('id', $request->ids)->get();
+        $allowedIds = [];
+        $hasProktor = false;
 
-        return redirect()->route('proktor.users.index')->with('success', count($request->ids) . ' user(s) deleted successfully.');
+        foreach ($usersToDelete as $user) {
+            if (strtolower($user->username) === 'proktor') {
+                $hasProktor = true;
+            } else {
+                $allowedIds[] = $user->id;
+            }
+        }
+
+        if (!empty($allowedIds)) {
+            \App\Models\User::whereIn('id', $allowedIds)->delete();
+        }
+
+        if ($hasProktor && empty($allowedIds)) {
+            return redirect()->route('proktor.users.index')->with('error', 'Akun default "Proktor" tidak dapat dihapus.');
+        }
+
+        if ($hasProktor) {
+            return redirect()->route('proktor.users.index')->with('success', count($allowedIds) . ' user(s) deleted successfully. Akun default "Proktor" diabaikan.');
+        }
+
+        return redirect()->route('proktor.users.index')->with('success', count($allowedIds) . ' user(s) deleted successfully.');
     }
 
     public function downloadTemplateExcel()

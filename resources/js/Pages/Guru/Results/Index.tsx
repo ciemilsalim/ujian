@@ -1,9 +1,15 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, router } from '@inertiajs/react';
 import { BarChart3, ChevronRight, Calendar, Users, BookOpen } from 'lucide-react';
-import { ExamSession } from '@/types';
+import { ExamSession, AcademicYear } from '@/types';
 
-export default function Index({ sessions }: { sessions: ExamSession[] }) {
+interface IndexProps {
+    sessions: ExamSession[];
+    academicYears: AcademicYear[];
+    selectedAcademicYearId: string;
+}
+
+export default function Index({ sessions, academicYears, selectedAcademicYearId }: IndexProps) {
     return (
         <AuthenticatedLayout
             header={
@@ -16,6 +22,31 @@ export default function Index({ sessions }: { sessions: ExamSession[] }) {
 
             <div className="py-10">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+
+                    {/* Filter Section */}
+                    <div className="mb-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                            <span className="text-sm font-bold text-gray-700 dark:text-gray-300">Filter Tahun Ajaran & Semester:</span>
+                        </div>
+                        <div className="w-full sm:w-auto flex items-center gap-3">
+                            <select
+                                value={selectedAcademicYearId}
+                                onChange={(e) => {
+                                    router.get(route('guru.results.index'), { academic_year_id: e.target.value }, { preserveState: true, replace: true });
+                                }}
+                                className="w-full sm:w-64 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 text-sm focus:ring-indigo-500 font-medium"
+                            >
+                                <option value="all">Semua Tahun Ajaran</option>
+                                {academicYears.map((ay) => (
+                                    <option key={ay.id} value={ay.id}>
+                                        {ay.name} - {ay.semester} {ay.is_active ? '(Aktif)' : ''}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
                     <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div>
                             <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">Daftar Sesi Ujian</h3>

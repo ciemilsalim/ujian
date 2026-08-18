@@ -9,14 +9,26 @@ use App\Models\QuestionBank;
 
 class ExamController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $exams = Exam::with('questionBank.subject')->latest()->paginate(10);
+        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
+
+        $query = Exam::with(['questionBank.subject', 'academicYear'])->latest();
+
+        if ($academicYearId && $academicYearId !== 'all') {
+            $query->where('academic_year_id', $academicYearId);
+        }
+
+        $exams = $query->paginate(10)->withQueryString();
         $questionBanks = QuestionBank::with('subject')->latest()->get();
+        $academicYears = \App\Models\AcademicYear::orderBy('id', 'desc')->get();
 
         return \Inertia\Inertia::render('Proktor/Exams/Index', [
             'exams' => $exams,
-            'questionBanks' => $questionBanks
+            'questionBanks' => $questionBanks,
+            'academicYears' => $academicYears,
+            'selectedAcademicYearId' => $academicYearId ? (string)$academicYearId : 'all',
         ]);
     }
 
@@ -25,6 +37,7 @@ class ExamController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'question_bank_id' => 'required|exists:question_banks,id',
+            'academic_year_id' => 'nullable|exists:academic_years,id',
             'duration' => 'required|integer|min:1',
             'random_question' => 'boolean',
             'random_option' => 'boolean',
@@ -32,9 +45,13 @@ class ExamController extends Controller
             'is_practice' => 'boolean',
         ]);
 
+        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $academicYearId = $request->academic_year_id ?? ($activeYear ? $activeYear->id : null);
+
         $exam = Exam::create([
             'title' => $request->title,
             'question_bank_id' => $request->question_bank_id,
+            'academic_year_id' => $academicYearId,
             'duration' => $request->duration,
             'random_question' => $request->random_question ?? false,
             'random_option' => $request->random_option ?? false,

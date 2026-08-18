@@ -11,17 +11,28 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class ResultController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $sessions = ExamSession::with(['exam', 'classroom'])
+        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
+
+        $query = ExamSession::with(['exam.academicYear', 'classroom'])
             ->withCount(['examUsers as participants_count'])
             ->withCount([
-                'examUsers as finished_count' => function ($query) {
-                    $query->where('status', 'finished');
+                'examUsers as finished_count' => function ($q) {
+                    $q->where('status', 'finished');
                 }
             ])
-            ->latest()
-            ->get();
+            ->latest();
+
+        if ($academicYearId && $academicYearId !== 'all') {
+            $query->whereHas('exam', function ($q) use ($academicYearId) {
+                $q->where('academic_year_id', $academicYearId);
+            });
+        }
+
+        $sessions = $query->get();
+        $academicYears = \App\Models\AcademicYear::orderBy('id', 'desc')->get();
 
         return Inertia::render('Proktor/Results/Index', [
             'sessions' => [
@@ -32,7 +43,9 @@ class ResultController extends Controller
                 'from' => 1,
                 'to' => $sessions->count(),
                 'links' => [],
-            ]
+            ],
+            'academicYears' => $academicYears,
+            'selectedAcademicYearId' => $academicYearId ? (string)$academicYearId : 'all',
         ]);
     }
 

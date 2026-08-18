@@ -57,6 +57,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('classrooms', \App\Http\Controllers\Proktor\ClassroomController::class)->except(['show']);
         
         Route::resource('subjects', \App\Http\Controllers\Proktor\SubjectController::class);
+        Route::patch('/academic-years/{academicYear}/set-active', [\App\Http\Controllers\Proktor\AcademicYearController::class, 'setActive'])->name('academic-years.set-active');
+        Route::resource('academic-years', \App\Http\Controllers\Proktor\AcademicYearController::class);
         Route::get('/results', [\App\Http\Controllers\Proktor\ResultController::class, 'index'])->name('results.index');
         Route::get('/results/{id}', [\App\Http\Controllers\Proktor\ResultController::class, 'show'])->name('results.show');
         Route::get('/results/{id}/export-pdf', [\App\Http\Controllers\Proktor\ResultController::class, 'exportPdf'])->name('results.export-pdf');

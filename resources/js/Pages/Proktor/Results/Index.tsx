@@ -1,13 +1,15 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head, Link } from '@inertiajs/react';
-import { FileBarChart, Download, Users } from 'lucide-react';
-import { ExamSession, PaginationData } from '@/types';
+import { Head, Link, router } from '@inertiajs/react';
+import { FileBarChart, Download, Users, Calendar } from 'lucide-react';
+import { ExamSession, AcademicYear, PaginationData } from '@/types';
 
 interface IndexProps {
     sessions: PaginationData<ExamSession>;
+    academicYears: AcademicYear[];
+    selectedAcademicYearId: string;
 }
 
-export default function Index({ sessions }: IndexProps) {
+export default function Index({ sessions, academicYears, selectedAcademicYearId }: IndexProps) {
     return (
         <AuthenticatedLayout
             header={<h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Hasil Ujian & Analitik</h2>}
@@ -16,6 +18,30 @@ export default function Index({ sessions }: IndexProps) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+
+                    {/* Academic Year Filter Bar */}
+                    <div className="mb-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                            <span className="text-sm font-bold text-gray-700 dark:text-gray-300">Filter Tahun Ajaran & Semester:</span>
+                        </div>
+                        <div className="w-full sm:w-auto flex items-center gap-3">
+                            <select
+                                value={selectedAcademicYearId}
+                                onChange={(e) => {
+                                    router.get(route('proktor.results.index'), { academic_year_id: e.target.value }, { preserveState: true, replace: true });
+                                }}
+                                className="w-full sm:w-64 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 text-sm focus:ring-indigo-500 font-medium"
+                            >
+                                <option value="all">Semua Tahun Ajaran</option>
+                                {academicYears.map((ay) => (
+                                    <option key={ay.id} value={ay.id}>
+                                        {ay.name} - {ay.semester} {ay.is_active ? '(Aktif)' : ''}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                             <div className="overflow-x-auto">

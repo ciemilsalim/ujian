@@ -39,7 +39,7 @@ export default function Edit({
                         <UpdatePasswordForm className="max-w-xl" />
                     </div>
 
-                    {auth.user.role !== 'siswa' && (
+                    {auth.user.role !== 'siswa' && auth.user.username.toLowerCase() !== 'proktor' && (
                         <div className="bg-white dark:bg-gray-900 p-6 sm:p-8 shadow-sm border border-gray-100 dark:border-gray-800 rounded-3xl">
                             <DeleteUserForm className="max-w-xl" />
                         </div>

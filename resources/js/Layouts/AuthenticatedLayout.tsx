@@ -17,7 +17,7 @@ export default function Authenticated({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
-    const { auth, flash } = usePage<any>().props;
+    const { auth, flash, active_academic_year } = usePage<any>().props;
     const user = auth.user;
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -117,6 +117,13 @@ export default function Authenticated({
                     </div>
 
                     <div className="flex items-center gap-2 sm:gap-4">
+                        {active_academic_year && (
+                            <div className="hidden md:flex items-center gap-1.5 px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-800 rounded-xl text-xs font-bold text-indigo-700 dark:text-indigo-300">
+                                <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                                <span>TA: {active_academic_year.name} ({active_academic_year.semester})</span>
+                            </div>
+                        )}
+
                         <button className="p-2 text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 bg-gray-50 dark:bg-gray-800 rounded-xl transition relative">
                             <Bell className="w-5 h-5" />
                             <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></span>

@@ -28,6 +28,15 @@ class User extends Authenticatable
         'exam_room_id',
     ];
 
+    protected static function booted(): void
+    {
+        static::deleting(function (User $user) {
+            if (strtolower($user->username) === 'proktor') {
+                return false;
+            }
+        });
+    }
+
     public function isProktor(): bool
     {
         return $this->role === 'proktor';

@@ -51,6 +51,10 @@ class ProfileController extends Controller
 
         $user = $request->user();
 
+        if (strtolower($user->username) === 'proktor') {
+            return redirect()->back()->with('error', 'Akun default "Proktor" tidak dapat dihapus.');
+        }
+
         Auth::logout();
 
         $user->delete();

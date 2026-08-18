@@ -7,22 +7,34 @@ use Illuminate\Http\Request;
 
 class QuestionBankController
 {
-    public function index()
+    public function index(Request $request)
     {
-        $questionBanks = \App\Models\QuestionBank::with(['subject', 'user'])
+        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
+
+        $query = \App\Models\QuestionBank::with(['subject', 'user', 'academicYear'])
             ->where('user_id', auth()->id())
-            ->latest()
-            ->paginate(10);
+            ->latest();
+
+        if ($academicYearId && $academicYearId !== 'all') {
+            $query->where('academic_year_id', $academicYearId);
+        }
+
+        $questionBanks = $query->paginate(10)->withQueryString();
         $subjects = \App\Models\Subject::all();
+        $academicYears = \App\Models\AcademicYear::orderBy('id', 'desc')->get();
+
         return \Inertia\Inertia::render('Guru/QuestionBanks/Index', [
             'questionBanks' => $questionBanks,
-            'subjects' => $subjects
+            'subjects' => $subjects,
+            'academicYears' => $academicYears,
+            'selectedAcademicYearId' => $academicYearId ? (string)$academicYearId : 'all',
         ]);
     }
 
     public function show($id)
     {
-        $questionBank = \App\Models\QuestionBank::with(['subject', 'questions'])->findOrFail($id);
+        $questionBank = \App\Models\QuestionBank::with(['subject', 'questions', 'academicYear'])->findOrFail($id);
 
         if ($questionBank->user_id !== auth()->id()) {
             abort(403);
@@ -39,11 +51,16 @@ class QuestionBankController
             'subject_id' => 'required|exists:subjects,id',
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'academic_year_id' => 'nullable|exists:academic_years,id',
         ]);
+
+        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $academicYearId = $request->academic_year_id ?? ($activeYear ? $activeYear->id : null);
 
         $qb = \App\Models\QuestionBank::create([
             'subject_id' => $request->subject_id,
             'user_id' => auth()->id(),
+            'academic_year_id' => $academicYearId,
             'name' => $request->name,
             'description' => $request->description,
         ]);

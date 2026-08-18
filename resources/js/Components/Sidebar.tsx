@@ -19,7 +19,8 @@ import {
     HelpCircle,
     ChevronDown,
     ChevronRight,
-    ShieldCheck
+    ShieldCheck,
+    Calendar
 } from 'lucide-react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import { ReactNode, useState, useEffect } from 'react';
@@ -135,12 +136,18 @@ export default function Sidebar() {
                     <>
                         <div>
                             <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Master Akademik</p>
-                            <CollapsibleSection label="Data Master" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.classrooms.*') || route().current('proktor.subjects.*')}>
+                            <CollapsibleSection label="Data Master" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.academic-years.*') || route().current('proktor.classrooms.*') || route().current('proktor.subjects.*')}>
                                 <SidebarItem
                                     href={route('proktor.users.index')}
                                     icon={Users}
                                     label="Data Pengguna"
                                     active={route().current('proktor.users.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.academic-years.index')}
+                                    icon={Calendar}
+                                    label="Tahun Ajaran"
+                                    active={route().current('proktor.academic-years.*')}
                                 />
                                 <SidebarItem
                                     href={route('proktor.classrooms.index')}

@@ -8,9 +8,17 @@ import DangerButton from '@/Components/DangerButton';
 import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
-import { QuestionBank, Subject, PaginationData } from '@/types';
+import { QuestionBank, Subject, AcademicYear, PaginationData } from '@/types';
+import { Calendar, Filter } from 'lucide-react';
 
-export default function Index({ questionBanks, subjects }: { questionBanks: PaginationData<QuestionBank>, subjects: Subject[] }) {
+interface IndexProps {
+    questionBanks: PaginationData<QuestionBank>;
+    subjects: Subject[];
+    academicYears: AcademicYear[];
+    selectedAcademicYearId: string;
+}
+
+export default function Index({ questionBanks, subjects, academicYears, selectedAcademicYearId }: IndexProps) {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -147,6 +155,31 @@ export default function Index({ questionBanks, subjects }: { questionBanks: Pagi
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+
+                    {/* Filter Section */}
+                    <div className="mb-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                            <span className="text-sm font-bold text-gray-700 dark:text-gray-300">Filter Tahun Ajaran & Semester:</span>
+                        </div>
+                        <div className="w-full sm:w-auto flex items-center gap-3">
+                            <select
+                                value={selectedAcademicYearId}
+                                onChange={(e) => {
+                                    router.get(route('guru.question-banks.index'), { academic_year_id: e.target.value }, { preserveState: true, replace: true });
+                                }}
+                                className="w-full sm:w-64 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 text-sm focus:ring-indigo-500 font-medium"
+                            >
+                                <option value="all">Semua Tahun Ajaran</option>
+                                {academicYears.map((ay) => (
+                                    <option key={ay.id} value={ay.id}>
+                                        {ay.name} - {ay.semester} {ay.is_active ? '(Aktif)' : ''}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100 overflow-x-auto">
                             <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -154,6 +187,7 @@ export default function Index({ questionBanks, subjects }: { questionBanks: Pagi
                                     <tr>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Nama Bank Soal</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Mata Pelajaran</th>
+                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Tahun Ajaran</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Dibuat Oleh</th>
                                         <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider sticky right-0 bg-gray-50 dark:bg-gray-700 z-10 shadow-[-8px_0_8px_-8px_rgba(0,0,0,0.1)]">Aksi</th>
                                     </tr>
@@ -163,6 +197,13 @@ export default function Index({ questionBanks, subjects }: { questionBanks: Pagi
                                         <tr key={bank.id}>
                                             <td className="px-6 py-4 whitespace-nowrap">{bank.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{bank.subject?.name}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                {bank.academic_year ? (
+                                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
+                                                        {bank.academic_year.name} ({bank.academic_year.semester})
+                                                    </span>
+                                                ) : '-'}
+                                            </td>
                                             <td className="px-6 py-4 whitespace-nowrap">{bank.user?.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-3 sticky right-0 bg-white dark:bg-gray-800 z-10 shadow-[-8px_0_8px_-8px_rgba(0,0,0,0.1)]">
                                                 <Link href={route('guru.question-banks.show', bank.id)} className="text-indigo-600 hover:text-indigo-900">Detail & Soal</Link>

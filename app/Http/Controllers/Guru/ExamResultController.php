@@ -11,16 +11,28 @@ use Inertia\Inertia;
 
 class ExamResultController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Hanya tampilkan sesi yang menggunakan bank soal milik Guru ini
-        $sessions = ExamSession::with(['exam.questionBank', 'classroom'])
+        $activeYear = \App\Models\AcademicYear::where('is_active', true)->first();
+        $academicYearId = $request->input('academic_year_id', $activeYear ? $activeYear->id : null);
+
+        $query = ExamSession::with(['exam.questionBank.academicYear', 'classroom'])
             ->whereHas('exam.questionBank', fn($q) => $q->where('user_id', auth()->id()))
-            ->latest()
-            ->get();
+            ->latest();
+
+        if ($academicYearId && $academicYearId !== 'all') {
+            $query->whereHas('exam', function ($q) use ($academicYearId) {
+                $q->where('academic_year_id', $academicYearId);
+            });
+        }
+
+        $sessions = $query->get();
+        $academicYears = \App\Models\AcademicYear::orderBy('id', 'desc')->get();
 
         return Inertia::render('Guru/Results/Index', [
-            'sessions' => $sessions
+            'sessions' => $sessions,
+            'academicYears' => $academicYears,
+            'selectedAcademicYearId' => $academicYearId ? (string)$academicYearId : 'all',
         ]);
     }
 

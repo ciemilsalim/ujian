@@ -22,4 +22,9 @@ class QuestionBank extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function academicYear()
+    {
+        return $this->belongsTo(AcademicYear::class);
+    }
 }

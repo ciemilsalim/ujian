@@ -9,14 +9,17 @@ import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
 import Checkbox from '@/Components/Checkbox';
-import { Exam, QuestionBank, PaginationData } from '@/types';
+import { Exam, QuestionBank, AcademicYear, PaginationData } from '@/types';
+import { Calendar } from 'lucide-react';
 
 interface IndexProps {
     exams: PaginationData<Exam>;
     questionBanks: QuestionBank[];
+    academicYears: AcademicYear[];
+    selectedAcademicYearId: string;
 }
 
-export default function Index({ exams, questionBanks }: IndexProps) {
+export default function Index({ exams, questionBanks, academicYears, selectedAcademicYearId }: IndexProps) {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -204,12 +207,38 @@ export default function Index({ exams, questionBanks }: IndexProps) {
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+
+                    {/* Academic Year Filter */}
+                    <div className="mb-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                            <span className="text-sm font-bold text-gray-700 dark:text-gray-300">Filter Tahun Ajaran & Semester:</span>
+                        </div>
+                        <div className="w-full sm:w-auto flex items-center gap-3">
+                            <select
+                                value={selectedAcademicYearId}
+                                onChange={(e) => {
+                                    router.get(route('proktor.exams.index'), { academic_year_id: e.target.value }, { preserveState: true, replace: true });
+                                }}
+                                className="w-full sm:w-64 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 text-sm focus:ring-indigo-500 font-medium"
+                            >
+                                <option value="all">Semua Tahun Ajaran</option>
+                                {academicYears.map((ay) => (
+                                    <option key={ay.id} value={ay.id}>
+                                        {ay.name} - {ay.semester} {ay.is_active ? '(Aktif)' : ''}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100 overflow-x-auto">
                             <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                 <thead className="bg-gray-50 dark:bg-gray-700">
                                     <tr>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Judul Ujian</th>
+                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Tahun Ajaran</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Bank Soal</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Mata Pelajaran</th>
                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Durasi (Menit)</th>
@@ -221,6 +250,13 @@ export default function Index({ exams, questionBanks }: IndexProps) {
                                     {exams.data.map((exam) => (
                                         <tr key={exam.id}>
                                             <td className="px-6 py-4 whitespace-nowrap">{exam.title}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                {exam.academic_year ? (
+                                                    <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
+                                                        {exam.academic_year.name} ({exam.academic_year.semester})
+                                                    </span>
+                                                ) : '-'}
+                                            </td>
                                             <td className="px-6 py-4 whitespace-nowrap">{exam.question_bank?.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap">{exam.question_bank?.subject?.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap font-bold text-indigo-600">{exam.duration}</td>

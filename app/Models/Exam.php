@@ -12,4 +12,9 @@ class Exam extends Model
     {
         return $this->belongsTo(QuestionBank::class);
     }
+
+    public function academicYear()
+    {
+        return $this->belongsTo(AcademicYear::class);
+    }
 }

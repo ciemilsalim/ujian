@@ -43,6 +43,8 @@ class HandleInertiaRequests extends Middleware
                 'success' => $request->session()->get('success'),
                 'error' => $request->session()->get('error'),
             ],
+            'active_academic_year' => fn () => \App\Models\AcademicYear::where('is_active', true)->first(),
+            'academic_years' => fn () => $request->user() ? \App\Models\AcademicYear::orderBy('id', 'desc')->get() : [],
         ];
     }
 }
