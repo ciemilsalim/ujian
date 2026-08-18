@@ -9,15 +9,35 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $activeSessionIds = \App\Models\ExamSession::where('is_active', true)->pluck('id');
+        $activeYear = \App\Models\AcademicYear::getActive();
+        $academicYearId = $activeYear?->id;
+
+        $sessionScope = function ($q) use ($academicYearId) {
+            if ($academicYearId) {
+                $q->whereHas('exam', fn($sq) => $sq->where('academic_year_id', $academicYearId));
+            }
+        };
+
+        $userScope = function ($q) use ($academicYearId) {
+            if ($academicYearId) {
+                $q->whereHas('examSession.exam', fn($sq) => $sq->where('academic_year_id', $academicYearId));
+            }
+        };
+
+        $activeSessionQuery = \App\Models\ExamSession::where('is_active', true);
+        if ($academicYearId) {
+            $activeSessionQuery->whereHas('exam', fn($q) => $q->where('academic_year_id', $academicYearId));
+        }
+        $activeSessionIds = $activeSessionQuery->pluck('id');
 
         $studentsAtExams = \App\Models\ExamSessionUser::whereIn('exam_session_id', $activeSessionIds)->where('status', 'working')->count();
-        $examFinishes = \App\Models\ExamSessionUser::where('status', 'finished')->count();
+        $examFinishes = \App\Models\ExamSessionUser::where($userScope)->where('status', 'finished')->count();
         $runningExams = count($activeSessionIds);
-        $totalParticipants = \App\Models\ExamSessionUser::count();
+        $totalParticipants = \App\Models\ExamSessionUser::where($userScope)->count();
         $completedRate = $totalParticipants > 0 ? round(($examFinishes / $totalParticipants) * 100) : 0;
 
-        $recentSessions = \App\Models\ExamSession::with(['exam'])
+        $recentSessions = \App\Models\ExamSession::with(['exam.academicYear'])
+            ->where($sessionScope)
             ->withCount('examUsers as participants_count')
             ->withCount([
                 'examUsers as submitted_count' => function ($q) {
@@ -32,7 +52,7 @@ class DashboardController extends Controller
         $participationChart = [];
         for ($i = 6; $i >= 0; $i--) {
             $date = now()->subDays($i)->format('Y-m-d');
-            $count = \App\Models\ExamSessionUser::whereDate('created_at', $date)->count();
+            $count = \App\Models\ExamSessionUser::where($userScope)->whereDate('created_at', $date)->count();
             $participationChart[] = [
                 'name' => now()->subDays($i)->format('d M'),
                 'students' => $count,
@@ -41,22 +61,23 @@ class DashboardController extends Controller
 
         // Status Distribution
         $statusDistribution = [
-            ['name' => 'Waiting', 'value' => \App\Models\ExamSessionUser::where('status', 'waiting')->count()],
-            ['name' => 'Working', 'value' => \App\Models\ExamSessionUser::where('status', 'working')->count()],
-            ['name' => 'Finished', 'value' => \App\Models\ExamSessionUser::where('status', 'finished')->count()],
+            ['name' => 'Waiting', 'value' => \App\Models\ExamSessionUser::where($userScope)->where('status', 'waiting')->count()],
+            ['name' => 'Working', 'value' => \App\Models\ExamSessionUser::where($userScope)->where('status', 'working')->count()],
+            ['name' => 'Finished', 'value' => \App\Models\ExamSessionUser::where($userScope)->where('status', 'finished')->count()],
         ];
 
         // Score Distribution
         $scoreDistribution = [
-            ['range' => '0-20', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>=', 0)->where('score', '<=', 20)->count()],
-            ['range' => '21-40', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 20)->where('score', '<=', 40)->count()],
-            ['range' => '41-60', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 40)->where('score', '<=', 60)->count()],
-            ['range' => '61-80', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 60)->where('score', '<=', 80)->count()],
-            ['range' => '81-100', 'count' => \App\Models\ExamSessionUser::whereNotNull('score')->where('score', '>', 80)->where('score', '<=', 100)->count()],
+            ['range' => '0-20', 'count' => \App\Models\ExamSessionUser::where($userScope)->whereNotNull('score')->where('score', '>=', 0)->where('score', '<=', 20)->count()],
+            ['range' => '21-40', 'count' => \App\Models\ExamSessionUser::where($userScope)->whereNotNull('score')->where('score', '>', 20)->where('score', '<=', 40)->count()],
+            ['range' => '41-60', 'count' => \App\Models\ExamSessionUser::where($userScope)->whereNotNull('score')->where('score', '>', 40)->where('score', '<=', 60)->count()],
+            ['range' => '61-80', 'count' => \App\Models\ExamSessionUser::where($userScope)->whereNotNull('score')->where('score', '>', 60)->where('score', '<=', 80)->count()],
+            ['range' => '81-100', 'count' => \App\Models\ExamSessionUser::where($userScope)->whereNotNull('score')->where('score', '>', 80)->where('score', '<=', 100)->count()],
         ];
 
-        $activeSessions = \App\Models\ExamSession::with(['exam'])
+        $activeSessions = \App\Models\ExamSession::with(['exam.academicYear'])
             ->where('is_active', true)
+            ->where($sessionScope)
             ->get();
 
         $maxCheatWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);

@@ -25,7 +25,7 @@ return new class extends Migration {
         if (!$defaultYearId) {
             $defaultYearId = DB::table('academic_years')->insertGetId([
                 'name' => '2025/2026',
-                'semester' => 'Ganjil',
+                'semester' => 'Genap',
                 'is_active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
