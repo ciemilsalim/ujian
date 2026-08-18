@@ -20,7 +20,8 @@ import {
     ChevronDown,
     ChevronRight,
     ShieldCheck,
-    Calendar
+    Calendar,
+    TrendingUp
 } from 'lucide-react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import { ReactNode, useState, useEffect } from 'react';
@@ -136,7 +137,7 @@ export default function Sidebar() {
                     <>
                         <div>
                             <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Master Akademik</p>
-                            <CollapsibleSection label="Data Master" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.academic-years.*') || route().current('proktor.classrooms.*') || route().current('proktor.subjects.*')}>
+                            <CollapsibleSection label="Data Master" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.academic-years.*') || route().current('proktor.classrooms.*') || route().current('proktor.class-promotions.*') || route().current('proktor.subjects.*')}>
                                 <SidebarItem
                                     href={route('proktor.users.index')}
                                     icon={Users}
@@ -154,6 +155,12 @@ export default function Sidebar() {
                                     icon={GraduationCap}
                                     label="Data Kelas"
                                     active={route().current('proktor.classrooms.*')}
+                                />
+                                <SidebarItem
+                                    href={route('proktor.class-promotions.index')}
+                                    icon={TrendingUp}
+                                    label="Kenaikan Kelas"
+                                    active={route().current('proktor.class-promotions.*')}
                                 />
                                 <SidebarItem
                                     href={route('proktor.subjects.index')}

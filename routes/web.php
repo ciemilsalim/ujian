@@ -57,6 +57,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('classrooms', \App\Http\Controllers\Proktor\ClassroomController::class)->except(['show']);
         
         Route::resource('subjects', \App\Http\Controllers\Proktor\SubjectController::class);
+        Route::get('/class-promotions', [\App\Http\Controllers\Proktor\ClassPromotionController::class, 'index'])->name('class-promotions.index');
+        Route::post('/class-promotions/promote', [\App\Http\Controllers\Proktor\ClassPromotionController::class, 'promoteClass'])->name('class-promotions.promote');
+        Route::post('/class-promotions/bulk', [\App\Http\Controllers\Proktor\ClassPromotionController::class, 'promoteBulk'])->name('class-promotions.bulk');
         Route::post('/academic-years/switch', [\App\Http\Controllers\Proktor\AcademicYearController::class, 'switchYear'])->name('academic-years.switch');
         Route::patch('/academic-years/{academicYear}/set-active', [\App\Http\Controllers\Proktor\AcademicYearController::class, 'setActive'])->name('academic-years.set-active');
         Route::resource('academic-years', \App\Http\Controllers\Proktor\AcademicYearController::class);
