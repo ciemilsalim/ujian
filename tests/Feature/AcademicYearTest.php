@@ -64,3 +64,24 @@ test('new question bank and exam automatically associate with active academic ye
     $exam = Exam::where('title', 'UTS Matematika')->first();
     expect($exam->academic_year_id)->toBe($activeYear->id);
 });
+
+test('user can switch viewing academic year via session', function () {
+    $proktor = User::factory()->create(['role' => 'proktor']);
+    $yearOld = AcademicYear::create(['name' => '2023/2024', 'semester' => 'Ganjil', 'is_active' => false]);
+
+    $response = $this
+        ->actingAs($proktor)
+        ->post(route('proktor.academic-years.switch'), [
+            'academic_year_id' => $yearOld->id,
+        ]);
+
+    $response->assertSessionHas('view_academic_year_id', $yearOld->id);
+
+    $resetResponse = $this
+        ->actingAs($proktor)
+        ->post(route('proktor.academic-years.switch'), [
+            'academic_year_id' => 'system',
+        ]);
+
+    $resetResponse->assertSessionMissing('view_academic_year_id');
+});

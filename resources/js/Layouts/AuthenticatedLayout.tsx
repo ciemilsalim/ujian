@@ -1,7 +1,7 @@
 import Sidebar from '@/Components/Sidebar';
 import CommandPalette from '@/Components/CommandPalette';
 import Dropdown from '@/Components/Dropdown';
-import { Link, usePage } from '@inertiajs/react';
+import { Link, usePage, router } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState, useEffect } from 'react';
 import { Search, Bell, Plus, Menu, X, CheckCircle, AlertTriangle } from 'lucide-react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
@@ -17,7 +17,7 @@ export default function Authenticated({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
-    const { auth, flash, active_academic_year } = usePage<any>().props;
+    const { auth, flash, active_academic_year, is_view_switched, academic_years } = usePage<any>().props;
     const user = auth.user;
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -118,9 +118,45 @@ export default function Authenticated({
 
                     <div className="flex items-center gap-2 sm:gap-4">
                         {active_academic_year && (
-                            <div className="hidden md:flex items-center gap-1.5 px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-800 rounded-xl text-xs font-bold text-indigo-700 dark:text-indigo-300">
-                                <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-                                <span>TA: {active_academic_year.name} ({active_academic_year.semester})</span>
+                            <div className="hidden md:flex items-center gap-2">
+                                <div className={`flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold border transition-all ${
+                                    is_view_switched
+                                        ? 'bg-amber-50 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700 text-amber-800 dark:text-amber-300 shadow-sm'
+                                        : 'bg-indigo-50 dark:bg-indigo-900/30 border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300'
+                                }`}>
+                                    <span className={`w-2 h-2 rounded-full ${is_view_switched ? 'bg-amber-500 animate-bounce' : 'bg-indigo-500 animate-pulse'}`}></span>
+                                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-gray-400 dark:text-gray-500 mr-0.5">TA:</span>
+                                    <select
+                                        value={active_academic_year.id}
+                                        onChange={(e) => {
+                                            router.post(route('proktor.academic-years.switch'), {
+                                                academic_year_id: e.target.value
+                                            }, { preserveState: false });
+                                        }}
+                                        className="bg-transparent border-none p-0 text-xs font-bold focus:ring-0 cursor-pointer text-gray-900 dark:text-white"
+                                        title="Klik untuk beralih tampilan Tahun Ajaran"
+                                    >
+                                        {(academic_years || []).map((ay: any) => (
+                                            <option key={ay.id} value={ay.id} className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+                                                {ay.name} ({ay.semester}) {ay.is_active ? '★ Aktif Sistem' : ''}
+                                            </option>
+                                        ))}
+                                    </select>
+
+                                    {is_view_switched && (
+                                        <button
+                                            onClick={() => {
+                                                router.post(route('proktor.academic-years.switch'), {
+                                                    academic_year_id: 'system'
+                                                }, { preserveState: false });
+                                            }}
+                                            className="ml-1 text-[10px] underline font-semibold text-amber-700 hover:text-amber-900 dark:text-amber-400"
+                                            title="Kembali ke Tahun Ajaran Aktif Sistem"
+                                        >
+                                            Reset
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         )}
 

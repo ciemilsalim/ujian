@@ -43,7 +43,15 @@ class HandleInertiaRequests extends Middleware
                 'success' => $request->session()->get('success'),
                 'error' => $request->session()->get('error'),
             ],
-            'active_academic_year' => fn () => \App\Models\AcademicYear::where('is_active', true)->first(),
+            'active_academic_year' => function () use ($request) {
+                $sessionYearId = $request->session()->get('view_academic_year_id');
+                if ($sessionYearId && $year = \App\Models\AcademicYear::find($sessionYearId)) {
+                    return $year;
+                }
+                return \App\Models\AcademicYear::where('is_active', true)->first();
+            },
+            'system_academic_year' => fn () => \App\Models\AcademicYear::where('is_active', true)->first(),
+            'is_view_switched' => fn () => $request->session()->has('view_academic_year_id'),
             'academic_years' => fn () => $request->user() ? \App\Models\AcademicYear::orderBy('id', 'desc')->get() : [],
         ];
     }

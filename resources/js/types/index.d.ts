@@ -183,6 +183,8 @@ export type PageProps<
         user: User;
     };
     active_academic_year?: AcademicYear | null;
+    system_academic_year?: AcademicYear | null;
+    is_view_switched?: boolean;
     academic_years?: AcademicYear[];
     ziggy: Config & { location: string };
     flash?: {

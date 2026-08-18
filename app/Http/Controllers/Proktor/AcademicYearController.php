@@ -63,7 +63,27 @@ class AcademicYearController extends Controller
         AcademicYear::query()->update(['is_active' => false]);
         $academicYear->update(['is_active' => true]);
 
-        return redirect()->back()->with('success', 'Tahun Ajaran "' . $academicYear->name . ' - ' . $academicYear->semester . '" berhasil diaktifkan.');
+        // Clear session override if setting system active
+        session()->forget('view_academic_year_id');
+
+        return redirect()->back()->with('success', 'Tahun Ajaran "' . $academicYear->name . ' - ' . $academicYear->semester . '" berhasil diaktifkan secara sistem.');
+    }
+
+    public function switchYear(Request $request)
+    {
+        $request->validate([
+            'academic_year_id' => 'required',
+        ]);
+
+        if ($request->academic_year_id === 'default' || $request->academic_year_id === 'system') {
+            $request->session()->forget('view_academic_year_id');
+            return redirect()->back()->with('success', 'Tampilan berhasil dikembalikan ke Tahun Ajaran aktif sistem.');
+        }
+
+        $academicYear = AcademicYear::findOrFail($request->academic_year_id);
+        $request->session()->put('view_academic_year_id', $academicYear->id);
+
+        return redirect()->back()->with('success', 'Beralih tampilan ke Tahun Ajaran ' . $academicYear->name . ' (' . $academicYear->semester . ').');
     }
 
     public function destroy(AcademicYear $academicYear)
