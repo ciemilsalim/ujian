@@ -120,3 +120,4 @@ test('non-proktor users cannot access classroom management', function () {
 
     $response->assertForbidden();
 });
+
