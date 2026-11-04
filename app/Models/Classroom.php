@@ -17,4 +17,9 @@ class Classroom extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function examSessions()
+    {
+        return $this->hasMany(ExamSession::class);
+    }
 }

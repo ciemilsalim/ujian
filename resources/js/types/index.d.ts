@@ -24,6 +24,8 @@ export interface Classroom {
     description?: string | null;
     seating_plan?: Record<string, number> | null;
     seating_grid?: { rows: number; cols: number } | null;
+    students_count?: number;
+    users_count?: number;
 }
 
 export interface AcademicYear {
