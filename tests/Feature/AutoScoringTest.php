@@ -67,6 +67,7 @@ beforeEach(function () {
         'exam_session_id' => $this->session->id,
         'user_id' => $this->siswa->id,
         'status' => 'working',
+        'started_at' => now(),
     ]);
 });
 

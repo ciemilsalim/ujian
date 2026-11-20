@@ -61,7 +61,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
 
     const createForm = useForm({
         question_bank_id: questionBank.id,
-        type: 'pilihan_ganda' as 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'isian_singkat' | 'menjodohkan' | 'essay',
+        type: 'pilihan_ganda' as 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'benar_salah' | 'isian_singkat' | 'menjodohkan' | 'essay',
         question_text: '',
         options: { ...defaultOptions } as Record<string, string>,
         answer_key: '',
@@ -69,7 +69,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
     });
 
     const editForm = useForm({
-        type: 'pilihan_ganda' as 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'isian_singkat' | 'menjodohkan' | 'essay',
+        type: 'pilihan_ganda' as 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'benar_salah' | 'isian_singkat' | 'menjodohkan' | 'essay',
         question_text: '',
         options: { ...defaultOptions } as Record<string, string>,
         answer_key: '',
@@ -136,11 +136,18 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                 <select
                     id="type"
                     value={form.data.type}
-                    onChange={(e) => form.setData('type', e.target.value as 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'isian_singkat' | 'menjodohkan' | 'essay')}
+                    onChange={(e) => {
+                        const newType = e.target.value as 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'benar_salah' | 'isian_singkat' | 'menjodohkan' | 'essay';
+                        form.setData('type', newType);
+                        if (newType === 'benar_salah' && (!form.data.answer_key || !form.data.answer_key.startsWith('{'))) {
+                            form.setData('answer_key', JSON.stringify({ a: 'benar', b: 'salah' }));
+                        }
+                    }}
                     className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
                 >
                     <option value="pilihan_ganda">Pilihan Ganda</option>
                     <option value="pilihan_ganda_kompleks">Pilihan Ganda Kompleks</option>
+                    <option value="benar_salah">Pernyataan Benar / Salah</option>
                     <option value="isian_singkat">Isian Singkat</option>
                     <option value="menjodohkan">Menjodohkan</option>
                     <option value="essay">Essay</option>
@@ -224,6 +231,78 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                 </div>
             )}
 
+            {form.data.type === 'benar_salah' && (
+                <div className="mt-4 space-y-4">
+                    <div className="flex justify-between items-center">
+                        <InputLabel value="Daftar Pernyataan & Nilai Kebenaran" />
+                        <span className="text-[10px] bg-purple-100 text-purple-700 font-bold px-2 py-1 rounded">Tentukan Benar / Salah untuk setiap pernyataan</span>
+                    </div>
+                    {Object.keys(defaultOptions).map((option) => {
+                        let answerMap: Record<string, string> = {};
+                        try {
+                            if (form.data.answer_key && form.data.answer_key.startsWith('{')) {
+                                answerMap = JSON.parse(form.data.answer_key);
+                            }
+                        } catch (e) {}
+                        const currentVal = answerMap[option] || 'benar';
+
+                        const updateKey = (newOptionVal: string) => {
+                            const newMap = { ...answerMap, [option]: newOptionVal };
+                            form.setData('answer_key', JSON.stringify(newMap));
+                        };
+
+                        return (
+                            <div key={option} className="flex items-center gap-2">
+                                <span className="uppercase font-bold w-6">{option}.</span>
+                                <TextInput
+                                    value={form.data.options[option] || ''}
+                                    onChange={(e) => {
+                                        const newOptions = { ...form.data.options, [option]: e.target.value };
+                                        form.setData('options', newOptions);
+                                        let curMap: Record<string, string> = {};
+                                        try { curMap = JSON.parse(form.data.answer_key); } catch(err) {}
+                                        if (e.target.value.trim() !== '') {
+                                            if (!curMap[option]) curMap[option] = 'benar';
+                                        } else {
+                                            delete curMap[option];
+                                        }
+                                        form.setData('answer_key', JSON.stringify(curMap));
+                                    }}
+                                    className="flex-1"
+                                    placeholder={`Pernyataan ${option.toUpperCase()} ${option !== 'a' && option !== 'b' ? '(Opsional)' : ''}`}
+                                    required={option === 'a' || option === 'b'}
+                                />
+                                <div className="flex rounded-md shadow-sm border border-gray-300 dark:border-gray-700 overflow-hidden">
+                                    <button
+                                        type="button"
+                                        onClick={() => updateKey('benar')}
+                                        className={`px-3 py-2 text-xs font-bold transition-colors ${
+                                            currentVal === 'benar'
+                                                ? 'bg-emerald-600 text-white'
+                                                : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                                        }`}
+                                    >
+                                        Benar
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => updateKey('salah')}
+                                        className={`px-3 py-2 text-xs font-bold transition-colors border-l border-gray-300 dark:border-gray-700 ${
+                                            currentVal === 'salah'
+                                                ? 'bg-rose-600 text-white'
+                                                : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                                        }`}
+                                    >
+                                        Salah
+                                    </button>
+                                </div>
+                            </div>
+                        );
+                    })}
+                    <p className="text-[10px] text-gray-500 italic">* Masukkan minimal 2 pernyataan (A dan B). Klik tombol Benar / Salah untuk menentukan kunci jawaban.</p>
+                </div>
+            )}
+
             <div className="mt-4">
                 <InputLabel 
                     htmlFor="answer_key" 
@@ -231,6 +310,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                         form.data.type === 'pilihan_ganda' ? 'Kunci Jawaban (a, b, c, d, atau e)' : 
                         form.data.type === 'pilihan_ganda_kompleks' ? 'Kunci Jawaban (Otomatis terisi saat memilih di atas)' :
                         form.data.type === 'menjodohkan' ? 'Kunci Jawaban (Otomatis: Mengikuti kolom kanan)' :
+                        form.data.type === 'benar_salah' ? 'Kunci Jawaban (Otomatis: Mengikuti pilihan Benar/Salah di atas)' :
                         'Kunci Jawaban / Kata Kunci'
                     } 
                 />
@@ -239,9 +319,9 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                     value={form.data.answer_key}
                     onChange={(e) => form.setData('answer_key', e.target.value)}
                     className="mt-1 block w-full"
-                    required={form.data.type !== 'essay' && form.data.type !== 'menjodohkan' && form.data.type !== 'pilihan_ganda_kompleks'}
-                    readOnly={form.data.type === 'pilihan_ganda_kompleks' || form.data.type === 'menjodohkan'}
-                    placeholder={form.data.type === 'pilihan_ganda' ? 'a' : form.data.type === 'pilihan_ganda_kompleks' ? 'a,c' : 'Contoh: kemerdekaan'}
+                    required={form.data.type !== 'essay' && form.data.type !== 'menjodohkan' && form.data.type !== 'pilihan_ganda_kompleks' && form.data.type !== 'benar_salah'}
+                    readOnly={form.data.type === 'pilihan_ganda_kompleks' || form.data.type === 'menjodohkan' || form.data.type === 'benar_salah'}
+                    placeholder={form.data.type === 'pilihan_ganda' ? 'a' : form.data.type === 'pilihan_ganda_kompleks' ? 'a,c' : form.data.type === 'benar_salah' ? '{"a":"benar","b":"salah"}' : 'Contoh: kemerdekaan'}
                 />
                 <InputError message={form.errors.answer_key} className="mt-2" />
             </div>
@@ -388,11 +468,12 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                     <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full uppercase ${
                                                         question.type === 'pilihan_ganda' ? 'bg-blue-100 text-blue-800' : 
                                                         question.type === 'pilihan_ganda_kompleks' ? 'bg-indigo-100 text-indigo-800' :
+                                                        question.type === 'benar_salah' ? 'bg-purple-100 text-purple-800' :
                                                         question.type === 'isian_singkat' ? 'bg-emerald-100 text-emerald-800' :
                                                         question.type === 'menjodohkan' ? 'bg-orange-100 text-orange-800' :
                                                         'bg-gray-100 text-gray-800'
                                                     }`}>
-                                                        {question.type.replace(/_/g, ' ')}
+                                                        {question.type === 'benar_salah' ? 'Benar / Salah' : question.type.replace(/_/g, ' ')}
                                                     </span>
                                                     <span className="text-xs text-gray-500 font-medium">Skor Default: {question.score_default}</span>
                                                 </div>
@@ -447,6 +528,36 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                                     </div>
                                                                 );
                                                             })}
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                {question.type === 'benar_salah' && question.options && (
+                                                    <div className="space-y-2">
+                                                        <span className="font-bold text-gray-500 uppercase text-[10px] block mb-2">Pernyataan & Kunci Kebenaran:</span>
+                                                        <div className="space-y-2">
+                                                            {(() => {
+                                                                let keyMap: Record<string, string> = {};
+                                                                try { keyMap = JSON.parse(question.answer_key || '{}'); } catch (e) {}
+                                                                return Object.entries(question.options as Record<string, string>)
+                                                                    .filter(([_, value]) => value && value.trim() !== '')
+                                                                    .map(([optKey, val]) => {
+                                                                        const isBenar = (keyMap[optKey] || 'benar') === 'benar';
+                                                                        return (
+                                                                            <div key={optKey} className="flex items-center justify-between p-2.5 rounded-lg border bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800 text-sm">
+                                                                                <div className="flex items-start gap-2 flex-1">
+                                                                                    <span className="font-bold uppercase text-xs w-5">{optKey}.</span>
+                                                                                    <span dangerouslySetInnerHTML={{ __html: val }} />
+                                                                                </div>
+                                                                                <span className={`px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider ${
+                                                                                    isBenar ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300'
+                                                                                }`}>
+                                                                                    {isBenar ? 'Benar' : 'Salah'}
+                                                                                </span>
+                                                                            </div>
+                                                                        );
+                                                                    });
+                                                            })()}
                                                         </div>
                                                     </div>
                                                 )}
@@ -533,8 +644,9 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                 </div>
                                 <ul className="mt-3 text-[10px] text-gray-500 space-y-1">
                                     <li>&bull; Nomor soal opsional.</li>
-                                    <li>&bull; Tambahkan <strong>Tipe: [Jenis]</strong> jika bukan PG biasa.</li>
+                                    <li>&bull; Tambahkan <strong>Tipe: [Jenis]</strong> jika bukan PG biasa (PGK, Benar Salah, Isian, Menjodohkan, Essay).</li>
                                     <li>&bull; Menjodohkan gunakan format <strong>A. Kiri|Kanan</strong>.</li>
+                                    <li>&bull; Benar / Salah gunakan format <strong>Kunci: A:Benar, B:Salah</strong>.</li>
                                 </ul>
                             </div>
 
@@ -564,7 +676,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                 </div>
                                 <ul className="mt-3 text-[10px] text-gray-500 space-y-1">
                                     <li>&bull; Gunakan template yang disediakan.</li>
-                                    <li>&bull; Kolom Tipe diisi: pilihan_ganda, pilihan_ganda_kompleks, isian_singkat, menjodohkan, atau essay.</li>
+                                    <li>&bull; Kolom Tipe diisi: pilihan_ganda, pilihan_ganda_kompleks, benar_salah, isian_singkat, menjodohkan, atau essay.</li>
                                 </ul>
                             </div>
                         </div>

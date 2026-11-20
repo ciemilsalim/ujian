@@ -135,7 +135,7 @@ export interface ChartData {
 export interface Question {
     id: number;
     question_bank_id: number;
-    type: 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'isian_singkat' | 'menjodohkan' | 'essay';
+    type: 'pilihan_ganda' | 'pilihan_ganda_kompleks' | 'benar_salah' | 'isian_singkat' | 'menjodohkan' | 'essay';
     question_text: string;
     options: Record<string, string> | null;
     answer_key: string;

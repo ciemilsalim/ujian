@@ -32,8 +32,12 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
 
             $questionText = $row['pertanyaan'] ?? '';
             $type = $row['tipe'] ?? 'pilihan_ganda';
-            if (!in_array($type, ['pilihan_ganda', 'pilihan_ganda_kompleks', 'isian_singkat', 'menjodohkan', 'essay'])) {
-                $type = 'pilihan_ganda';
+            if (!in_array($type, ['pilihan_ganda', 'pilihan_ganda_kompleks', 'benar_salah', 'isian_singkat', 'menjodohkan', 'essay'])) {
+                if (in_array(strtolower($type), ['bs', 'benar-salah', 'pernyataan_benar_salah', 'true_false'])) {
+                    $type = 'benar_salah';
+                } else {
+                    $type = 'pilihan_ganda';
+                }
             }
             
             // Handle Images for this row if any
@@ -44,7 +48,7 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
             }
 
             $options = null;
-            if ($type === 'pilihan_ganda' || $type === 'pilihan_ganda_kompleks') {
+            if ($type === 'pilihan_ganda' || $type === 'pilihan_ganda_kompleks' || $type === 'benar_salah') {
                 $options = array_filter([
                     'a' => $row['opsi_a'] ?? '',
                     'b' => $row['opsi_b'] ?? '',
@@ -66,8 +70,8 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
                 }
             }
 
-            // For Menjodohkan, build the default answer key if empty
-            // Normalize answer key: lower case and remove all spaces for multiple response
+            // For Menjodohkan / Benar-Salah, build normalized answer key
+            // Normalize answer key: lower case and remove all spaces
             $answerKey = str_replace(' ', '', strtolower(trim($row['kunci'] ?? '')));
             if ($type === 'menjodohkan' && empty($answerKey)) {
                 $answerMap = [];
@@ -77,6 +81,26 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
                     }
                 }
                 $answerKey = json_encode($answerMap);
+            } elseif ($type === 'benar_salah' && !empty($answerKey)) {
+                $decoded = json_decode($answerKey, true);
+                if (!is_array($decoded) && is_array($options) && count($options) > 0) {
+                    $parts = explode(',', $answerKey);
+                    $ansMap = [];
+                    $optKeys = array_keys($options);
+                    foreach ($parts as $idx => $val) {
+                        $val = trim($val);
+                        if (str_contains($val, ':')) {
+                            [$k, $v] = explode(':', $val, 2);
+                            $ansMap[trim($k)] = in_array(strtolower(trim($v)), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                        } else {
+                            $k = $optKeys[$idx] ?? chr(97 + $idx);
+                            $ansMap[$k] = in_array(strtolower($val), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                        }
+                    }
+                    if (!empty($ansMap)) {
+                        $answerKey = json_encode($ansMap);
+                    }
+                }
             }
 
             try {

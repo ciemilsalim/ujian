@@ -161,6 +161,85 @@ export default function Detail({ examSessionUser }: Props) {
                                                 }
                                             })()}
                                         </div>
+                                    ) : answer.question.type === 'benar_salah' ? (
+                                        <div className="space-y-2">
+                                            {(() => {
+                                                try {
+                                                    const rawOpts = answer.question.options;
+                                                    const opts: Record<string, string> = typeof rawOpts === 'string' ? JSON.parse(rawOpts) : (rawOpts || {});
+                                                    
+                                                    let keyMap: Record<string, string> = {};
+                                                    try {
+                                                        keyMap = JSON.parse(answer.question.answer_key || '{}');
+                                                    } catch (e) {
+                                                        keyMap = { a: answer.question.answer_key || 'benar' };
+                                                    }
+
+                                                    let studentMap: Record<string, string> = {};
+                                                    try {
+                                                        studentMap = JSON.parse(answer.answer_text || '{}');
+                                                    } catch (e) {
+                                                        studentMap = { a: answer.answer_text || '' };
+                                                    }
+
+                                                    const entries = Object.entries(opts).filter(([_, val]) => val && String(val).trim() !== '');
+
+                                                    if (entries.length === 0) {
+                                                        const sVal = (answer.answer_text || '').toLowerCase();
+                                                        const kVal = (answer.question.answer_key || '').toLowerCase();
+                                                        return (
+                                                            <div className="text-sm">
+                                                                <p className="font-medium">Jawaban Siswa: <span className="font-bold uppercase text-indigo-600">{sVal || 'Tidak Dijawab'}</span></p>
+                                                                <p className="text-gray-500">Kunci Jawaban: <span className="font-bold uppercase text-emerald-600">{kVal}</span></p>
+                                                            </div>
+                                                        );
+                                                    }
+
+                                                    return entries.map(([optKey, val]) => {
+                                                        const sChoice = (studentMap[optKey] || '-').toLowerCase();
+                                                        const kChoice = (keyMap[optKey] || 'benar').toLowerCase();
+                                                        const isMatch = sChoice === kChoice;
+
+                                                        return (
+                                                            <div 
+                                                                key={optKey} 
+                                                                className={`p-3 rounded-xl border text-sm flex items-center justify-between gap-3 ${
+                                                                    isMatch 
+                                                                        ? 'border-green-200 bg-green-50/50 dark:bg-green-900/10' 
+                                                                        : 'border-red-200 bg-red-50/50 dark:bg-red-900/10'
+                                                                }`}
+                                                            >
+                                                                <div className="flex items-start gap-2 flex-1">
+                                                                    <span className="font-bold uppercase text-xs w-5">{optKey}.</span>
+                                                                    <span dangerouslySetInnerHTML={{ __html: String(val) }} />
+                                                                </div>
+                                                                <div className="flex items-center gap-3 text-xs flex-shrink-0">
+                                                                    <div className="text-right">
+                                                                        <span className="text-[10px] text-gray-400 block uppercase">Jawaban:</span>
+                                                                        <span className={`font-bold uppercase ${sChoice === 'benar' ? 'text-emerald-600' : sChoice === 'salah' ? 'text-rose-600' : 'text-gray-400'}`}>
+                                                                            {sChoice}
+                                                                        </span>
+                                                                    </div>
+                                                                    <div className="text-right border-l pl-3 dark:border-gray-700">
+                                                                        <span className="text-[10px] text-gray-400 block uppercase">Kunci:</span>
+                                                                        <span className={`font-bold uppercase ${kChoice === 'benar' ? 'text-emerald-600' : 'text-rose-600'}`}>
+                                                                            {kChoice}
+                                                                        </span>
+                                                                    </div>
+                                                                    {isMatch ? (
+                                                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                                                    ) : (
+                                                                        <XCircle className="w-4 h-4 text-rose-600" />
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                        );
+                                                    });
+                                                } catch (err: any) {
+                                                    return <div className="text-sm text-red-500">Error: {err.message}</div>;
+                                                }
+                                            })()}
+                                        </div>
                                     ) : (
                                         <div className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
                                             {answer.answer_text || <span className="italic text-gray-400">Tidak ada jawaban</span>}

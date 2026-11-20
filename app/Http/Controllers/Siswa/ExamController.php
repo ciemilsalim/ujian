@@ -284,14 +284,16 @@ class ExamController extends Controller
         }
 
         // Server-side time check
-        $durationInSeconds = ($examSessionUser->examSession->exam->duration ?? 0) * 60;
-        $elapsedSeconds = $examSessionUser->started_at->diffInSeconds(now());
-        if ($elapsedSeconds > $durationInSeconds + 30) { // Beri toleransi 30 detik untuk network lag
-            $examSessionUser->update(['status' => 'finished', 'finished_at' => now()]);
-            if ($request->expectsJson()) {
-                return response()->json(['status' => 'time_up', 'message' => 'Waktu ujian telah habis.']);
+        if ($examSessionUser->started_at) {
+            $durationInSeconds = ($examSessionUser->examSession->exam->duration ?? 0) * 60;
+            $elapsedSeconds = $examSessionUser->started_at->diffInSeconds(now());
+            if ($elapsedSeconds > $durationInSeconds + 30) { // Beri toleransi 30 detik untuk network lag
+                $examSessionUser->update(['status' => 'finished', 'finished_at' => now()]);
+                if ($request->expectsJson()) {
+                    return response()->json(['status' => 'time_up', 'message' => 'Waktu ujian telah habis.']);
+                }
+                return redirect()->route('siswa.dashboard')->with('error', 'Waktu ujian telah habis.');
             }
-            return redirect()->route('siswa.dashboard')->with('error', 'Waktu ujian telah habis.');
         }
 
         // Validasi sesi masih aktif sebelum menyimpan jawaban
@@ -437,6 +439,41 @@ class ExamController extends Controller
                 // Menjodohkan: Jawaban disimpan dalam format JSON pasangan
                 $isCorrect = (trim($studentAnswer->answer_text ?? '') === trim($question->answer_key ?? ''));
                 
+                $studentAnswer->update([
+                    'is_correct' => $isCorrect,
+                    'score' => $isCorrect ? $question->score_default : 0,
+                ]);
+
+                if ($isCorrect) {
+                    $totalScore += $question->score_default;
+                }
+            } elseif ($question->type === 'benar_salah') {
+                // Benar / Salah: Mendukung format JSON map {"a":"benar","b":"salah"} atau single value "benar"/"salah"
+                $keyRaw = trim($question->answer_key ?? '');
+                $ansRaw = trim($studentAnswer->answer_text ?? '');
+                
+                $keyMap = json_decode($keyRaw, true);
+                $ansMap = json_decode($ansRaw, true);
+
+                if (is_array($keyMap) && is_array($ansMap)) {
+                    $allMatched = true;
+                    $hasStatements = false;
+                    foreach ($keyMap as $k => $expectedVal) {
+                        $hasStatements = true;
+                        $expected = in_array(strtolower(trim((string)$expectedVal)), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                        $actual = isset($ansMap[$k]) && in_array(strtolower(trim((string)$ansMap[$k])), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                        if (!isset($ansMap[$k]) || $expected !== $actual) {
+                            $allMatched = false;
+                            break;
+                        }
+                    }
+                    $isCorrect = $hasStatements && $allMatched;
+                } else {
+                    $expected = in_array(strtolower($keyRaw), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                    $actual = in_array(strtolower($ansRaw), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                    $isCorrect = ($expected === $actual && !empty($ansRaw));
+                }
+
                 $studentAnswer->update([
                     'is_correct' => $isCorrect,
                     'score' => $isCorrect ? $question->score_default : 0,

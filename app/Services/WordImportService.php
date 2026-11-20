@@ -85,7 +85,7 @@ class WordImportService
                 }
 
                 $options = null;
-                if ($qData['type'] === 'pilihan_ganda' || $qData['type'] === 'pilihan_ganda_kompleks') {
+                if ($qData['type'] === 'pilihan_ganda' || $qData['type'] === 'pilihan_ganda_kompleks' || $qData['type'] === 'benar_salah') {
                     $options = array_filter($qData['options'], function ($val) {
                         return !is_null($val) && trim($val) !== '';
                     });
@@ -99,12 +99,35 @@ class WordImportService
                     $type = 'pilihan_ganda_kompleks';
                 }
 
+                $answerKey = $qData['answer_key'] ?? 'a';
+                if ($type === 'benar_salah' && !empty($answerKey)) {
+                    $decoded = json_decode($answerKey, true);
+                    if (!is_array($decoded) && is_array($options) && count($options) > 0) {
+                        $parts = explode(',', $answerKey);
+                        $ansMap = [];
+                        $optKeys = array_keys($options);
+                        foreach ($parts as $idx => $val) {
+                            $val = trim($val);
+                            if (str_contains($val, ':')) {
+                                [$k, $v] = explode(':', $val, 2);
+                                $ansMap[trim($k)] = in_array(strtolower(trim($v)), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                            } else {
+                                $k = $optKeys[$idx] ?? chr(97 + $idx);
+                                $ansMap[$k] = in_array(strtolower($val), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+                            }
+                        }
+                        if (!empty($ansMap)) {
+                            $answerKey = json_encode($ansMap);
+                        }
+                    }
+                }
+
                 Question::create([
                     'question_bank_id' => $questionBankId,
                     'type'             => $type,
                     'question_text'    => $qData['text'],
                     'options'          => $options,
-                    'answer_key'       => $qData['answer_key'] ?? 'a',
+                    'answer_key'       => $answerKey,
                     'score_default'    => 1,
                 ]);
                 $successCount++;
@@ -541,6 +564,8 @@ class WordImportService
             $typeName = strtolower(trim($matchesType[2]));
             if (str_contains($typeName, 'kompleks') || str_contains($typeName, 'pgk')) {
                 $currentQuestion['type'] = 'pilihan_ganda_kompleks';
+            } elseif (str_contains($typeName, 'benar') || str_contains($typeName, 'bs')) {
+                $currentQuestion['type'] = 'benar_salah';
             } elseif (str_contains($typeName, 'jodoh') || str_contains($typeName, 'match')) {
                 $currentQuestion['type'] = 'menjodohkan';
                 $currentQuestion['options'] = [];

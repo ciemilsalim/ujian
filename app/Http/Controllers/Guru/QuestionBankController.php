@@ -210,6 +210,14 @@ class QuestionBankController
         $sheet->setCellValue('E5', 'Inggris|London');
         $sheet->setCellValue('I5', '1');
 
+        // Sample Data 5: Pernyataan Benar dan Salah
+        $sheet->setCellValue('A6', 'Tentukan apakah pernyataan berikut Benar atau Salah:');
+        $sheet->setCellValue('B6', 'benar_salah');
+        $sheet->setCellValue('C6', 'Matahari terbit dari sebelah timur');
+        $sheet->setCellValue('D6', 'Air membeku pada suhu 100 derajat celcius');
+        $sheet->setCellValue('H6', '{"a":"benar","b":"salah"}');
+        $sheet->setCellValue('I6', '1');
+
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $fileName = 'Template_Import_Soal.xlsx';
         
@@ -255,6 +263,13 @@ class QuestionBankController
         $section->addText('5. Contoh Soal Essay?');
         $section->addText('Tipe: Essay');
         $section->addText('Kunci: keyword1, keyword2');
+        $section->addTextBreak(1);
+
+        $section->addText('6. Contoh Soal Pernyataan Benar dan Salah?');
+        $section->addText('Tipe: Benar Salah');
+        $section->addText('A. Matahari terbit dari sebelah timur');
+        $section->addText('B. Air mendidih pada suhu 0 derajat Celsius');
+        $section->addText('Kunci: A:Benar, B:Salah');
 
         $fileName = 'Template_Import_Soal.docx';
         $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');

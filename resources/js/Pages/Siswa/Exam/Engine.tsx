@@ -514,6 +514,7 @@ export default function ExamEngine({
                             <div className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-800 rounded-full text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                                 {currentQuestion.type === 'essay' ? 'Uraian' : 
                                  currentQuestion.type === 'pilihan_ganda_kompleks' ? 'Pilihan Ganda Kompleks' :
+                                 currentQuestion.type === 'benar_salah' ? 'Pernyataan Benar / Salah' :
                                  currentQuestion.type === 'isian_singkat' ? 'Isian Singkat' :
                                  currentQuestion.type === 'menjodohkan' ? 'Menjodohkan' : 'Pilihan Ganda'}
                             </div>
@@ -645,6 +646,107 @@ export default function ExamEngine({
                                             </div>
                                         );
                                     })}
+                                </div>
+                            ) : currentQuestion.type === 'benar_salah' ? (
+                                <div className="space-y-4">
+                                    {(() => {
+                                        const rawOpts = currentQuestion.options;
+                                        const opts: Record<string, string> = typeof rawOpts === 'string' ? JSON.parse(rawOpts) : (rawOpts || {});
+                                        const entries = Object.entries(opts).filter(([_, val]) => val && String(val).trim() !== '');
+
+                                        let currentMap: Record<string, string> = {};
+                                        try {
+                                            const ans = data.answers[currentQuestion.id];
+                                            if (ans && ans.startsWith('{')) {
+                                                currentMap = JSON.parse(ans);
+                                            } else if (ans) {
+                                                currentMap = { a: ans };
+                                            }
+                                        } catch (e) {}
+
+                                        if (entries.length === 0) {
+                                            const singleAns = (data.answers[currentQuestion.id] || '').toLowerCase();
+                                            return (
+                                                <div className="grid grid-cols-2 gap-4">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleAnswer(currentQuestion.id, 'benar')}
+                                                        className={`p-6 rounded-2xl border-2 font-bold text-lg flex items-center justify-center gap-2 transition-all ${
+                                                            singleAns === 'benar' || singleAns === 'b'
+                                                                ? 'border-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 shadow-md ring-2 ring-emerald-500'
+                                                                : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50'
+                                                        }`}
+                                                    >
+                                                        <CheckCircle className="w-6 h-6 text-emerald-600" />
+                                                        BENAR
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleAnswer(currentQuestion.id, 'salah')}
+                                                        className={`p-6 rounded-2xl border-2 font-bold text-lg flex items-center justify-center gap-2 transition-all ${
+                                                            singleAns === 'salah' || singleAns === 's'
+                                                                ? 'border-rose-600 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 shadow-md ring-2 ring-rose-500'
+                                                                : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50'
+                                                        }`}
+                                                    >
+                                                        <XIcon className="w-6 h-6 text-rose-600" />
+                                                        SALAH
+                                                    </button>
+                                                </div>
+                                            );
+                                        }
+
+                                        return entries.map(([optKey, val]) => {
+                                            const selectedVal = currentMap[optKey];
+                                            return (
+                                                <div key={optKey} className="bg-white dark:bg-gray-800 p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                                    <div className="flex items-start gap-3 flex-1">
+                                                        <div className="w-7 h-7 rounded-lg bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5 uppercase">
+                                                            {optKey}
+                                                        </div>
+                                                        <div
+                                                            className={`font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 ${
+                                                                fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl' : 'text-base'
+                                                            }`}
+                                                            dangerouslySetInnerHTML={{ __html: String(val) }}
+                                                        />
+                                                    </div>
+                                                    <div className="flex items-center gap-2 self-end sm:self-auto flex-shrink-0">
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => {
+                                                                const nextMap = { ...currentMap, [optKey]: 'benar' };
+                                                                handleAnswer(currentQuestion.id, JSON.stringify(nextMap));
+                                                            }}
+                                                            className={`px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-all duration-200 border ${
+                                                                selectedVal === 'benar'
+                                                                    ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
+                                                                    : 'bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:bg-gray-100'
+                                                            }`}
+                                                        >
+                                                            <CheckCircle className="w-4 h-4" />
+                                                            Benar
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => {
+                                                                const nextMap = { ...currentMap, [optKey]: 'salah' };
+                                                                handleAnswer(currentQuestion.id, JSON.stringify(nextMap));
+                                                            }}
+                                                            className={`px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-all duration-200 border ${
+                                                                selectedVal === 'salah'
+                                                                    ? 'bg-rose-600 text-white border-rose-600 shadow-sm'
+                                                                    : 'bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:bg-gray-100'
+                                                            }`}
+                                                        >
+                                                            <XIcon className="w-4 h-4" />
+                                                            Salah
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            );
+                                        });
+                                    })()}
                                 </div>
                             ) : (
                                 <div className="relative">
