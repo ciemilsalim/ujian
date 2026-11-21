@@ -206,7 +206,7 @@ export default function Index({ questionBanks, subjects, academicYears, selected
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">{bank.user?.name}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-3 sticky right-0 bg-white dark:bg-gray-800 z-10 shadow-[-8px_0_8px_-8px_rgba(0,0,0,0.1)]">
-                                                <Link href={route('guru.question-banks.show', bank.id)} className="text-indigo-600 hover:text-indigo-900">Detail & Soal</Link>
+                                                <Link id={`btn-bank-detail-${bank.id}`} href={route('guru.question-banks.show', bank.id)} className="text-indigo-600 hover:text-indigo-900">Detail & Soal</Link>
                                                 <Link href={route('guru.question-analysis.show', bank.id)} className="text-green-600 hover:text-green-900">Analisis</Link>
                                                 <button onClick={() => openEditModal(bank)} className="text-yellow-600 hover:Yellow-900">Edit</button>
                                                 <button onClick={() => openDeleteModal(bank)} className="text-red-600 hover:text-red-900">Hapus</button>

@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "project_id": "ujian",
+  "project_name": "ZEXAM-CBT",
+  "framework": "laravel",
+  "app_type": "web",
+  "base_url": "http://127.0.0.1:8000",
+  "local_server_cmd": "php artisan serve --port 8000",
+  "mode": "dual",
+  "viewport": {
+    "width": 414,
+    "height": 736
+  },
+  "target_resolution": [
+    1080,
+    1920
+  ],
+  "fps": 60,
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "reaction_delay_ms": 300,
+  "result_hold_ms": 1200,
+  "color_scheme": "light",
+  "auth": {
+    "type": "form_login",
+    "login_url": "http://127.0.0.1:8000/login",
+    "email_selector": "#username",
+    "password_selector": "#password",
+    "submit_selector": "#btn-login-submit",
+    "email_env": "TUTORIAL_EMAIL",
+    "password_env": "TUTORIAL_PASSWORD",
+    "default_email": "guru",
+    "default_password": "password",
+    "available_test_accounts": [
+      {
+        "email": "guru@example.com",
+        "username": "guru",
+        "password": "password",
+        "role": "guru",
+        "name": "Guru Pengampu"
+      },
+      {
+        "email": "proktor@example.com",
+        "username": "proktor",
+        "password": "password",
+        "role": "proktor",
+        "name": "Administrator Proktor"
+      }
+    ]
+  },
+  "navigation_rules": {
+    "default_wait_selector": "body",
+    "page_load_timeout_ms": 20000
+  }
+}

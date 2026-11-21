@@ -54,5 +54,25 @@ class DatabaseSeeder extends Seeder
                 'classroom_id' => $classroom->id,
             ]
         );
+
+        // Create Subject
+        $subject = \App\Models\Subject::firstOrCreate(
+            ['code' => 'INF-01'],
+            ['name' => 'Informatika']
+        );
+
+        $guru = \App\Models\User::where('username', 'guru')->first();
+        $academicYear = \App\Models\AcademicYear::where('is_active', true)->first();
+
+        // Create Question Bank
+        \App\Models\QuestionBank::firstOrCreate(
+            ['name' => 'Bank Soal Informatika Kelas VII'],
+            [
+                'subject_id' => $subject->id,
+                'user_id' => $guru->id,
+                'academic_year_id' => $academicYear ? $academicYear->id : 1,
+                'description' => 'Kumpulan bank soal asesmen sumatif informatika kelas tujuh.',
+            ]
+        );
     }
 }

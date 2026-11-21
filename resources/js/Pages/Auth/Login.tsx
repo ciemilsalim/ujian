@@ -128,6 +128,8 @@ export default function Login({
 
                 <div className="pt-2">
                     <PrimaryButton
+                        id="btn-login-submit"
+                        type="submit"
                         className="w-full h-14 flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-black rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl disabled:opacity-50"
                         disabled={processing}
                     >

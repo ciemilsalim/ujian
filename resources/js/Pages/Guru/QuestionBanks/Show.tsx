@@ -255,6 +255,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                             <div key={option} className="flex items-center gap-2">
                                 <span className="uppercase font-bold w-6">{option}.</span>
                                 <TextInput
+                                    id={`statement_input_${option}`}
                                     value={form.data.options[option] || ''}
                                     onChange={(e) => {
                                         const newOptions = { ...form.data.options, [option]: e.target.value };
@@ -275,6 +276,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                 <div className="flex rounded-md shadow-sm border border-gray-300 dark:border-gray-700 overflow-hidden">
                                     <button
                                         type="button"
+                                        id={`btn_${option}_benar`}
                                         onClick={() => updateKey('benar')}
                                         className={`px-3 py-2 text-xs font-bold transition-colors ${
                                             currentVal === 'benar'
@@ -286,6 +288,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                     </button>
                                     <button
                                         type="button"
+                                        id={`btn_${option}_salah`}
                                         onClick={() => updateKey('salah')}
                                         className={`px-3 py-2 text-xs font-bold transition-colors border-l border-gray-300 dark:border-gray-700 ${
                                             currentVal === 'salah'
@@ -341,7 +344,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
 
             <div className="mt-6 flex justify-end">
                 <SecondaryButton onClick={onClose}>Batal</SecondaryButton>
-                <PrimaryButton className="ml-3" disabled={form.processing}>Simpan Soal</PrimaryButton>
+                <PrimaryButton id="btn-submit-soal" className="ml-3" disabled={form.processing}>Simpan Soal</PrimaryButton>
             </div>
         </form>
     );
@@ -394,6 +397,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                         </div>
 
                         <button
+                            id="btn-tambah-soal"
                             onClick={() => setShowCreateModal(true)}
                             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
                         >
