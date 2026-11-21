@@ -31,12 +31,33 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
             $actualRowNumber = $index + 2; 
 
             $questionText = $row['pertanyaan'] ?? '';
-            $type = $row['tipe'] ?? 'pilihan_ganda';
-            if (!in_array($type, ['pilihan_ganda', 'pilihan_ganda_kompleks', 'benar_salah', 'isian_singkat', 'menjodohkan', 'essay'])) {
-                if (in_array(strtolower($type), ['bs', 'benar-salah', 'pernyataan_benar_salah', 'true_false'])) {
+            $rawTypeInput = (string)($row['tipe'] ?? '');
+            $cleanType = strtolower(trim(str_replace(['-', '/', '_'], ' ', $rawTypeInput)));
+
+            if (in_array($cleanType, ['benar salah', 'bs', 'b s', 'tf', 't f', 'true false', 'pernyataan benar salah', 'pernyataan benar', 'benar'])) {
+                $type = 'benar_salah';
+            } elseif (in_array($cleanType, ['pilihan ganda kompleks', 'pg kompleks', 'pgk'])) {
+                $type = 'pilihan_ganda_kompleks';
+            } elseif (in_array($cleanType, ['isian singkat', 'isian', 'singkat'])) {
+                $type = 'isian_singkat';
+            } elseif (in_array($cleanType, ['menjodohkan', 'jodohkan', 'match'])) {
+                $type = 'menjodohkan';
+            } elseif (in_array($cleanType, ['essay', 'uraian'])) {
+                $type = 'essay';
+            } elseif (in_array($cleanType, ['pilihan ganda', 'pg'])) {
+                $type = 'pilihan_ganda';
+            } elseif (in_array($rawTypeInput, ['pilihan_ganda', 'pilihan_ganda_kompleks', 'benar_salah', 'isian_singkat', 'menjodohkan', 'essay'])) {
+                $type = $rawTypeInput;
+            } else {
+                $type = 'pilihan_ganda';
+            }
+
+            // Auto-detect benar_salah if key has true/false indicators
+            $rawKey = trim((string)($row['kunci'] ?? ''));
+            $lowerKey = strtolower($rawKey);
+            if ($type === 'pilihan_ganda' || empty($cleanType)) {
+                if (str_contains($lowerKey, 'benar') || str_contains($lowerKey, 'salah') || preg_match('/^[a-e]:[bs]([,;][a-e]:[bs])*$/i', str_replace(' ', '', $lowerKey))) {
                     $type = 'benar_salah';
-                } else {
-                    $type = 'pilihan_ganda';
                 }
             }
             
@@ -70,37 +91,22 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
                 }
             }
 
-            // For Menjodohkan / Benar-Salah, build normalized answer key
-            // Normalize answer key: lower case and remove all spaces
-            $answerKey = str_replace(' ', '', strtolower(trim($row['kunci'] ?? '')));
-            if ($type === 'menjodohkan' && empty($answerKey)) {
-                $answerMap = [];
-                foreach (['a', 'b', 'c', 'd', 'e'] as $opt) {
-                    if (isset($options["left_$opt"])) {
-                        $answerMap[$opt] = $opt; // Default assume same index match
-                    }
-                }
-                $answerKey = json_encode($answerMap);
-            } elseif ($type === 'benar_salah' && !empty($answerKey)) {
-                $decoded = json_decode($answerKey, true);
-                if (!is_array($decoded) && is_array($options) && count($options) > 0) {
-                    $parts = explode(',', $answerKey);
-                    $ansMap = [];
-                    $optKeys = array_keys($options);
-                    foreach ($parts as $idx => $val) {
-                        $val = trim($val);
-                        if (str_contains($val, ':')) {
-                            [$k, $v] = explode(':', $val, 2);
-                            $ansMap[trim($k)] = in_array(strtolower(trim($v)), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
-                        } else {
-                            $k = $optKeys[$idx] ?? chr(97 + $idx);
-                            $ansMap[$k] = in_array(strtolower($val), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
+            // Normalize answer key
+            if ($type === 'benar_salah') {
+                $answerKey = Question::normalizeBenarSalahKey($rawKey, $options ?: []);
+            } elseif ($type === 'menjodohkan') {
+                $answerKey = str_replace(' ', '', strtolower(trim($rawKey)));
+                if (empty($answerKey)) {
+                    $answerMap = [];
+                    foreach (['a', 'b', 'c', 'd', 'e'] as $opt) {
+                        if (isset($options["left_$opt"])) {
+                            $answerMap[$opt] = $opt; // Default assume same index match
                         }
                     }
-                    if (!empty($ansMap)) {
-                        $answerKey = json_encode($ansMap);
-                    }
+                    $answerKey = json_encode($answerMap);
                 }
+            } else {
+                $answerKey = str_replace(' ', '', strtolower(trim($rawKey)));
             }
 
             try {

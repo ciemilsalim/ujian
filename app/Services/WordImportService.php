@@ -93,33 +93,23 @@ class WordImportService
                     $options = $qData['options'];
                 }
 
-                // Auto-detect PGK if answer key has multiple options
+                // Auto-detect question type if not explicitly set
+                $rawKey = $qData['answer_key'] ?? '';
+                $lowerKey = strtolower($rawKey);
                 $type = $qData['type'];
-                if ($type === 'pilihan_ganda' && strpos($qData['answer_key'], ',') !== false) {
-                    $type = 'pilihan_ganda_kompleks';
+
+                if ($type === 'pilihan_ganda' || $type === 'essay') {
+                    if (str_contains($lowerKey, 'benar') || str_contains($lowerKey, 'salah') || preg_match('/^[a-e]:[bs]([,;][a-e]:[bs])*$/i', str_replace(' ', '', $lowerKey))) {
+                        $type = 'benar_salah';
+                    } elseif (strpos($rawKey, ',') !== false) {
+                        $type = 'pilihan_ganda_kompleks';
+                    }
                 }
 
-                $answerKey = $qData['answer_key'] ?? 'a';
-                if ($type === 'benar_salah' && !empty($answerKey)) {
-                    $decoded = json_decode($answerKey, true);
-                    if (!is_array($decoded) && is_array($options) && count($options) > 0) {
-                        $parts = explode(',', $answerKey);
-                        $ansMap = [];
-                        $optKeys = array_keys($options);
-                        foreach ($parts as $idx => $val) {
-                            $val = trim($val);
-                            if (str_contains($val, ':')) {
-                                [$k, $v] = explode(':', $val, 2);
-                                $ansMap[trim($k)] = in_array(strtolower(trim($v)), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
-                            } else {
-                                $k = $optKeys[$idx] ?? chr(97 + $idx);
-                                $ansMap[$k] = in_array(strtolower($val), ['b', 'benar', 'true', '1']) ? 'benar' : 'salah';
-                            }
-                        }
-                        if (!empty($ansMap)) {
-                            $answerKey = json_encode($ansMap);
-                        }
-                    }
+                if ($type === 'benar_salah') {
+                    $answerKey = Question::normalizeBenarSalahKey($rawKey, $options ?: []);
+                } else {
+                    $answerKey = $rawKey ?: 'a';
                 }
 
                 Question::create([
@@ -564,7 +554,7 @@ class WordImportService
             $typeName = strtolower(trim($matchesType[2]));
             if (str_contains($typeName, 'kompleks') || str_contains($typeName, 'pgk')) {
                 $currentQuestion['type'] = 'pilihan_ganda_kompleks';
-            } elseif (str_contains($typeName, 'benar') || str_contains($typeName, 'bs')) {
+            } elseif (str_contains($typeName, 'benar') || str_contains($typeName, 'salah') || str_contains($typeName, 'bs') || str_contains($typeName, 'tf')) {
                 $currentQuestion['type'] = 'benar_salah';
             } elseif (str_contains($typeName, 'jodoh') || str_contains($typeName, 'match')) {
                 $currentQuestion['type'] = 'menjodohkan';

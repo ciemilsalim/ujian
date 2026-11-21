@@ -640,17 +640,17 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                     <p>B. Bandung</p>
                                     <p>Kunci: A</p>
                                     <br />
-                                    <p>Manakah pulau di Jawa?</p>
-                                    <p>Tipe: PGK</p>
-                                    <p>A. Jawa Barat</p>
-                                    <p>B. Medan</p>
-                                    <p>Kunci: A</p>
+                                    <p>Tentukan Benar atau Salah:</p>
+                                    <p>Tipe: Benar Salah</p>
+                                    <p>A. Matahari terbit dari sebelah timur</p>
+                                    <p>B. Air mendidih pada suhu 0°C</p>
+                                    <p>Kunci: A: Benar, B: Salah</p>
                                 </div>
                                 <ul className="mt-3 text-[10px] text-gray-500 space-y-1">
                                     <li>&bull; Nomor soal opsional.</li>
                                     <li>&bull; Tambahkan <strong>Tipe: [Jenis]</strong> jika bukan PG biasa (PGK, Benar Salah, Isian, Menjodohkan, Essay).</li>
                                     <li>&bull; Menjodohkan gunakan format <strong>A. Kiri|Kanan</strong>.</li>
-                                    <li>&bull; Benar / Salah gunakan format <strong>Kunci: A:Benar, B:Salah</strong>.</li>
+                                    <li>&bull; Benar / Salah gunakan format <strong>Kunci: A: Benar, B: Salah</strong> (atau shorthand <strong>B, S</strong>).</li>
                                 </ul>
                             </div>
 
@@ -670,17 +670,24 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td className="border p-1">Apa...</td>
+                                                <td className="border p-1">Apa ibukota...</td>
                                                 <td className="border p-1">pilihan_ganda</td>
                                                 <td className="border p-1">Jakarta</td>
                                                 <td className="border p-1">a</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="border p-1">Tentukan Benar/Salah...</td>
+                                                <td className="border p-1">benar_salah</td>
+                                                <td className="border p-1">Matahari terbit...</td>
+                                                <td className="border p-1">A: Benar, B: Salah</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <ul className="mt-3 text-[10px] text-gray-500 space-y-1">
-                                    <li>&bull; Gunakan template yang disediakan.</li>
-                                    <li>&bull; Kolom Tipe diisi: pilihan_ganda, pilihan_ganda_kompleks, benar_salah, isian_singkat, menjodohkan, atau essay.</li>
+                                    <li>&bull; Gunakan template yang disediakan melalui tombol download template.</li>
+                                    <li>&bull; Kolom Tipe diisi: pilihan_ganda, pilihan_ganda_kompleks, benar_salah (atau 'bs'), isian_singkat, menjodohkan, atau essay.</li>
+                                    <li>&bull; Kunci Benar Salah dapat ditulis <strong>A: Benar, B: Salah</strong>, <strong>B, S</strong>, atau JSON.</li>
                                 </ul>
                             </div>
                         </div>

@@ -176,6 +176,9 @@ class QuestionBankController
             $sheet->setCellValueByColumnAndRow($col + 1, 1, $header);
         }
 
+        // Style Header
+        $sheet->getStyle('A1:I1')->getFont()->setBold(true);
+
         // Sample Data 1: Pilihan Ganda
         $sheet->setCellValue('A2', 'Apa ibukota Indonesia?');
         $sheet->setCellValue('B2', 'pilihan_ganda');
@@ -211,12 +214,23 @@ class QuestionBankController
         $sheet->setCellValue('I5', '1');
 
         // Sample Data 5: Pernyataan Benar dan Salah
-        $sheet->setCellValue('A6', 'Tentukan apakah pernyataan berikut Benar atau Salah:');
+        $sheet->setCellValue('A6', 'Tentukan apakah setiap pernyataan berikut Benar atau Salah:');
         $sheet->setCellValue('B6', 'benar_salah');
         $sheet->setCellValue('C6', 'Matahari terbit dari sebelah timur');
-        $sheet->setCellValue('D6', 'Air membeku pada suhu 100 derajat celcius');
-        $sheet->setCellValue('H6', '{"a":"benar","b":"salah"}');
-        $sheet->setCellValue('I6', '1');
+        $sheet->setCellValue('D6', 'Air mendidih pada suhu 0 derajat Celsius');
+        $sheet->setCellValue('E6', 'Bumi berputar mengelilingi matahari');
+        $sheet->setCellValue('H6', 'A: Benar, B: Salah, C: Benar');
+        $sheet->setCellValue('I6', '10');
+
+        // Sample Data 6: Essay
+        $sheet->setCellValue('A7', 'Jelaskan faktor-faktor yang mempengaruhi perubahan iklim global!');
+        $sheet->setCellValue('B7', 'essay');
+        $sheet->setCellValue('H7', 'emisi karbon, deforestasi, efek rumah kaca');
+        $sheet->setCellValue('I7', '10');
+
+        foreach (range('A', 'I') as $col) {
+            $sheet->getColumnDimension($col)->setAutoSize(true);
+        }
 
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         $fileName = 'Template_Import_Soal.xlsx';
@@ -269,7 +283,10 @@ class QuestionBankController
         $section->addText('Tipe: Benar Salah');
         $section->addText('A. Matahari terbit dari sebelah timur');
         $section->addText('B. Air mendidih pada suhu 0 derajat Celsius');
-        $section->addText('Kunci: A:Benar, B:Salah');
+        $section->addText('C. Bumi berputar mengelilingi matahari');
+        $section->addText('Kunci: A: Benar, B: Salah, C: Benar');
+        $section->addTextBreak(1);
+        $section->addText('Catatan: Format Kunci Benar/Salah dapat ditulis "A: Benar, B: Salah, C: Benar", "A: B, B: S, C: B", "Benar, Salah, Benar", atau "B, S, B".', ['italic' => true, 'color' => '555555']);
 
         $fileName = 'Template_Import_Soal.docx';
         $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
