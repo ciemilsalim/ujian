@@ -1,0 +1,30 @@
+Tutorial Import Soal Pernyataan Benar / Salah — ZEXAM-CBT
+
+Video panduan resmi cara import soal jenis Pernyataan Benar / Salah pada aplikasi CBT UJIAN (ZEXAM-CBT). Ikuti langkah-langkah mudah di bawah ini untuk memahami alur unduh template, penyusunan format, hingga proses import dan peninjauan soal secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Buka Bank Soal
+00:24 - Unduh Template Excel / Word
+00:51 - Panduan Format Import
+01:17 - Konfirmasi & Eksekusi Format
+01:40 - Pilih Menu Import & Upload File
+02:05 - Tinjau Hasil Soal & Penutup
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Buka Bank Soal: Akses menu Bank Soal pada panel proktor/guru ZEXAM-CBT.
+2. Unduh Template: Unduh format template resmi yang telah disediakan oleh sistem.
+3. Panduan Format Import: Periksa petunjuk format penulisan stimulus, nomor pernyataan, dan kunci jawaban.
+4. Konfirmasi & Eksekusi Format: Pastikan seluruh kunci jawaban Benar/Salah (B/S) terisi sesuai panduan.
+5. Pilih Menu Import: Buka modal import soal lalu pilih file template yang telah diisi.
+6. Tinjau Hasil Soal: Seluruh butir soal pernyataan benar salah yang diimpor langsung tersimpan rapi pada bank soal.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan interaktif visual beresolusi tinggi (Full HD 1080p 60 FPS).
+- Navigasi responsif dan ramah pengguna bagi Admin, Proktor, dan Guru.
+- Mendukung rumus matematika, teks Arab, dan format toleran kunci jawaban.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #UJIAN #TutorialAplikasi #ImportSoal #BenarSalah #CBT

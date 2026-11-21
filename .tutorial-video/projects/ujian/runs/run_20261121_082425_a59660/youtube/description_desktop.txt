@@ -1,0 +1,27 @@
+Tutorial Pembuatan Soal Pernyataan Benar / Salah oleh Admin Proktor & Guru — ZEXAM-CBT
+
+Video panduan resmi cara pembuatan soal jenis Pernyataan Benar / Salah pada aplikasi CBT UJIAN (ZEXAM-CBT). Ikuti langkah-langkah mudah di bawah ini untuk memahami alur pembuatan dan pengelolaan soal secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Buka Bank Soal
+00:21 - Pilih Tipe Soal Benar / Salah
+00:43 - Isi Soal Dan Pernyataan
+01:35 - Simpan Soal
+01:54 - Verifikasi Dan Penutup
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Buka Bank Soal: Akses menu Bank Soal melalui sidebar aplikasi ZEXAM-CBT.
+2. Pilih Tipe Soal: Pilih tipe soal "Pernyataan Benar / Salah".
+3. Isi Soal Dan Pernyataan: Tuliskan stimulus/petunjuk pertanyaan dan daftar pernyataan beserta kunci Benar / Salah.
+4. Simpan Soal: Klik tombol Simpan untuk menyimpan seluruh data soal ke dalam database.
+5. Verifikasi Dan Penutup: Soal pernyataan benar dan salah telah berhasil tersimpan dan siap digunakan pada ujian.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan interaktif visual beresolusi tinggi (Full HD 1080p 60 FPS).
+- Navigasi responsif dan ramah pengguna bagi Admin, Proktor, dan Guru.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #UJIAN #TutorialAplikasi #BankSoal #CBT
