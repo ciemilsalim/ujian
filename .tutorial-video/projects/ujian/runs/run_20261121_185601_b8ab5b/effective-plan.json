@@ -1,0 +1,358 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Proktor ZEXAM-CBT: Monitoring Ujian Real-Time & Kontrol Darurat",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "proktor"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "a[href*=\"/sessions\"]"
+    },
+    {
+      "do": "click",
+      "target": "a[href*=\"/sessions\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h2:has-text(\"Manajemen Sesi Ujian\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_live_monitoring",
+      "narration": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada tutorial ini, kita akan mempelajari fitur pengawasan ujian secara real-time dan penggunaan tombol kontrol darurat proktor. Dari menu Sesi Aktif, klik ikon Pantau Live pada sesi ujian yang sedang berjalan untuk masuk ke ruang kontrol pengawasan.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada tutorial ini, kita akan mempelajari fitur pengawasan ujian secara real-time dan penggunaan tombol kontrol darurat proktor.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Dari menu Sesi Aktif, klik ikon Pantau Live pada sesi ujian yang sedang berjalan untuk masuk ke ruang kontrol pengawasan.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "tr:has-text(\"Sesi 1\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "a[title=\"Pantau Live\"]",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "a[title=\"Pantau Live\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Live Monitor:\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "h2:has-text(\"Live Monitor:\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "span:has-text(\"Live connection active\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu",
+      "narration": "Di bagian atas halaman, Anda dapat melihat empat kartu metrik utama: total peserta yang hadir, jumlah siswa yang sedang aktif mengerjakan soal, jumlah peserta yang telah selesai, serta estimasi waktu berakhir ujian. Jika terjadi kendala teknis atau mati listrik di ruangan, proktor dapat langsung menambah durasi ujian dengan mengklik tombol plus lima atau plus sepuluh menit.",
+      "narration_segments": [
+        {
+          "text": "Di bagian atas halaman, Anda dapat melihat empat kartu metrik utama: total peserta yang hadir, jumlah siswa yang sedang aktif mengerjakan soal, jumlah peserta yang telah selesai, serta estimasi waktu berakhir ujian.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Jika terjadi kendala teknis atau mati listrik di ruangan, proktor dapat langsung menambah durasi ujian dengan mengklik tombol plus lima atau plus sepuluh menit.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "p:has-text(\"Total Peserta Hadir\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "p:text-is(\"Sedang Mengerjakan\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "p:text-is(\"Selesai\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "p:has-text(\"Waktu Selesai\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"+5 Min\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"+5 Min\")"
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"+10 Min\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 1200
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_proktor_broadcast_system",
+      "narration": "Fitur Proktor Broadcast System memungkinkan Anda mengirimkan pesan penting atau peringatan langsung ke layar gawai seluruh siswa secara bersamaan. Cukup ketik pesan pengumuman pada kolom yang tersedia, lalu klik tombol Kirim Sekarang. Pesan akan langsung tersiar secara instan melalui koneksi websocket Reverb tanpa mengganggu lembar jawaban siswa.",
+      "narration_segments": [
+        {
+          "text": "Fitur Proktor Broadcast System memungkinkan Anda mengirimkan pesan penting atau peringatan langsung ke layar gawai seluruh siswa secara bersamaan.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Cukup ketik pesan pengumuman pada kolom yang tersedia, lalu klik tombol Kirim Sekarang.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pesan akan langsung tersiar secara instan melalui koneksi websocket Reverb tanpa mengganggu lembar jawaban siswa.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "h3:has-text(\"Proktor Broadcast System\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "input[placeholder*=\"Ketik pengumuman\"]",
+          "hold_ms": 500
+        },
+        {
+          "do": "type",
+          "target": "input[placeholder*=\"Ketik pengumuman\"]",
+          "text": "Waktu ujian tersisa 10 menit. Periksa kembali jawaban Anda!"
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Kirim Sekarang\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Kirim Sekarang\")"
+        },
+        {
+          "do": "hold",
+          "ms": 1500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel",
+      "narration": "ZEXAM-CBT menyediakan dua mode tampilan pemantauan peserta. Mode Denah Visual menampilkan posisi tempat duduk siswa sesuai tata letak ruangan kelas, lengkap dengan indikator warna status siswa. Anda dapat beralih ke Mode Tabel untuk melihat daftar peserta secara rinci beserta rekam jejak status pengerjaan masing-masing.",
+      "narration_segments": [
+        {
+          "text": "ZEXAM-CBT menyediakan dua mode tampilan pemantauan peserta.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Mode Denah Visual menampilkan posisi tempat duduk siswa sesuai tata letak ruangan kelas, lengkap dengan indikator warna status siswa.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Anda dapat beralih ke Mode Tabel untuk melihat daftar peserta secara rinci beserta rekam jejak status pengerjaan masing-masing.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "text=DEPAN / PENGAWAS",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "div.grid.gap-3",
+          "hold_ms": 1000
+        },
+        {
+          "do": "hover",
+          "target": "div:has-text(\"Mengerjakan\"):has(> div.bg-white)",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "div:has-text(\"Selesai\"):has(> div.bg-emerald-50)",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "div.flex.bg-gray-100 button:nth-child(1)",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "div.flex.bg-gray-100 button:nth-child(1)"
+        },
+        {
+          "do": "wait_for",
+          "selector": "table",
+          "budget_ms": 4000
+        },
+        {
+          "do": "hover",
+          "target": "table",
+          "hold_ms": 1000
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_kontrol_darurat_proktor",
+      "narration": "Pada kolom aksi tabel peserta, proktor memiliki tiga kontrol darurat utama: tombol Reset Login untuk mengizinkan siswa masuk kembali saat terjadi ganti perangkat, tombol Reset Progress untuk mengulang ujian dari nol jika terjadi kendala fatal, serta tombol Force Logout untuk mengeluarkan siswa tertentu. Tersedia pula tombol Force Logout Semua Siswa untuk menghentikan seluruh sesi secara serentak. Selamat bertugas dan sukses mengawal ujian bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Pada kolom aksi tabel peserta, proktor memiliki tiga kontrol darurat utama: tombol Reset Login untuk mengizinkan siswa masuk kembali saat terjadi ganti perangkat,",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "tombol Reset Progress untuk mengulang ujian dari nol jika terjadi kendala fatal, serta tombol Force Logout untuk mengeluarkan siswa tertentu.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Tersedia pula tombol Force Logout Semua Siswa untuk menghentikan seluruh sesi secara serentak.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Selamat bertugas dan sukses mengawal ujian bersama ZEXAM-CBT!",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "button[title*=\"Reset Login\"]",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button[title*=\"Reset Progress\"]",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button[title*=\"Force Logout this student\"]",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Force Logout Semua Siswa\")",
+          "hold_ms": 1000
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Kembali ke Manajemen Sesi\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 1500
+        }
+      ],
+      "result_hold_ms": 1500
+    }
+  ]
+}

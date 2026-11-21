@@ -1,0 +1,464 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Cara Menjawab Berbagai Tipe Soal CBT & Menyelesaikan Ujian — ZEXAM-CBT",
+  "mode": "mobile",
+  "fps": 60,
+  "viewport": {
+    "width": 414,
+    "height": 736
+  },
+  "target_resolution": [
+    1080,
+    1920
+  ],
+  "mobile_viewport": {
+    "width": 414,
+    "height": 736
+  },
+  "mobile_target_resolution": [
+    1080,
+    1920
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login/siswa"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "siswa"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "a[href*=\"/siswa/exams/\"]"
+    },
+    {
+      "do": "click",
+      "target": "a[href*=\"/siswa/exams/\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "input[placeholder=\"MASUKKAN TOKEN\"]"
+    },
+    {
+      "do": "fill",
+      "target": "input[placeholder=\"MASUKKAN TOKEN\"]",
+      "value": "ZX2026"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "button:has-text(\"MULAI KERJAKAN SOAL\")"
+    },
+    {
+      "do": "click",
+      "target": "button:has-text(\"MULAI KERJAKAN SOAL\")"
+    },
+    {
+      "do": "wait_for",
+      "selector": "button:has-text(\"Central Processing Unit (CPU)\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_menjawab_pilihan_ganda",
+      "narration": "Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan cara menjawab berbagai jenis soal pada aplikasi ZEXAM-CBT versi mobile. Pada tipe soal Pilihan Ganda biasa, Anda cukup memilih salah satu opsi jawaban yang paling tepat. Ketuk pada pilihan jawaban, dan sistem akan langsung menyimpannya dengan tanda centang biru.",
+      "narration_segments": [
+        {
+          "text": "Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan cara menjawab berbagai jenis soal pada aplikasi ZEXAM-CBT versi mobile.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Pada tipe soal Pilihan Ganda biasa, Anda cukup memilih salah satu opsi jawaban yang paling tepat.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Ketuk pada pilihan jawaban, dan sistem akan langsung menyimpannya dengan tanda centang biru.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Central Processing Unit (CPU)\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Central Processing Unit (CPU)\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Central Processing Unit (CPU)\")"
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Solid State Drive (SSD)\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_menjawab_pilihan_ganda_kompleks",
+      "narration": "Tipe berikutnya adalah Pilihan Ganda Kompleks. Pada tipe ini, jawaban benar bisa lebih dari satu. Bacalah petunjuk soal dengan cermat, lalu ketuk setiap opsi yang sesuai. Anda dapat memilih beberapa opsi sekaligus, dan sistem akan menandai seluruh pilihan Anda.",
+      "narration_segments": [
+        {
+          "text": "Tipe berikutnya adalah Pilihan Ganda Kompleks.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada tipe ini, jawaban benar bisa lebih dari satu. Bacalah petunjuk soal dengan cermat, lalu ketuk setiap opsi yang sesuai.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Anda dapat memilih beberapa opsi sekaligus, dan sistem akan menandai seluruh pilihan Anda.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Solid State Drive (SSD)\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Solid State Drive (SSD)\")",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Solid State Drive (SSD)\")"
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Flashdisk USB\")",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Flashdisk USB\")"
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Hard Disk Eksternal\")",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Hard Disk Eksternal\")"
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Benar\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_menjawab_benar_salah",
+      "narration": "Tipe ketiga adalah soal Pernyataan Benar atau Salah. Anda akan diberikan beberapa baris stimulus pernyataan. Untuk setiap baris, tentukan kebenarannya secara mandiri dengan mengetuk tombol Benar atau tombol Salah.",
+      "narration_segments": [
+        {
+          "text": "Tipe ketiga adalah soal Pernyataan Benar atau Salah.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Anda akan diberikan beberapa baris stimulus pernyataan.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Untuk setiap baris, tentukan kebenarannya secara mandiri dengan mengetuk tombol Benar atau tombol Salah.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Benar\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Benar\")",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Benar\")"
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Salah\")",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Salah\")"
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)"
+        },
+        {
+          "do": "wait_for",
+          "selector": "textarea[placeholder*=\"jawaban lengkap\"]",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_menjawab_soal_essay",
+      "narration": "Tipe keempat adalah soal Uraian atau Essay. Ketuk area kolom teks jawaban yang luas di bawah pertanyaan, lalu ketikkan penjelasan jawaban Anda secara lengkap. Sistem dilengkapi penyimpanan otomatis, sehingga tulisan Anda aman dan tersimpan ke server secara real-time.",
+      "narration_segments": [
+        {
+          "text": "Tipe keempat adalah soal Uraian atau Essay.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Ketuk area kolom teks jawaban yang luas di bawah pertanyaan, lalu ketikkan penjelasan jawaban Anda secara lengkap.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Sistem dilengkapi penyimpanan otomatis, sehingga tulisan Anda aman dan tersimpan ke server secara real-time.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "textarea[placeholder*=\"jawaban lengkap\"]",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "textarea[placeholder*=\"jawaban lengkap\"]",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "textarea[placeholder*=\"jawaban lengkap\"]"
+        },
+        {
+          "do": "type",
+          "target": "textarea[placeholder*=\"jawaban lengkap\"]",
+          "text": "Hardware adalah perangkat fisik seperti CPU dan RAM, sedangkan software adalah program atau aplikasi."
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_rekapitulasi_drawer_soal",
+      "narration": "Sebelum menyelesaikan ujian, selalu pastikan seluruh soal telah terjawab. Ketuk tombol navigasi nomor soal di bagian tengah bawah. Drawer akan menampilkan rekapitulasi lengkap, di mana kotak berwarna hijau menandakan soal yang sudah berhasil Anda jawab.",
+      "narration_segments": [
+        {
+          "text": "Sebelum menyelesaikan ujian, selalu pastikan seluruh soal telah terjawab.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Ketuk tombol navigasi nomor soal di bagian tengah bawah.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Drawer akan menampilkan rekapitulasi lengkap, di mana kotak berwarna hijau menandakan soal yang sudah berhasil Anda jawab.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-layout-grid)",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-layout-grid)"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h3:has-text(\"Daftar Soal\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "h3:has-text(\"Daftar Soal\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Selesaikan Ujian Sekarang\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Selesaikan Ujian Sekarang\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h3:has-text(\"Selesaikan Ujian?\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_06_konfirmasi_dan_selesai_ujian",
+      "narration": "Pada jendela konfirmasi akhir, periksa kembali jumlah soal yang terselesaikan. Jika sudah yakin, ketuk tombol Ya, Selesaikan Sekarang. Ujian Anda telah tuntas dan Anda akan diarahkan kembali ke dashboard utama. Selamat belajar dan semoga sukses bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Pada jendela konfirmasi akhir, periksa kembali jumlah soal yang terselesaikan.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Jika sudah yakin, ketuk tombol Ya, Selesaikan Sekarang.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Ujian Anda telah tuntas dan Anda akan diarahkan kembali ke dashboard utama. Selamat belajar dan semoga sukses bersama ZEXAM-CBT!",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"YA, SELESAIKAN SEKARANG\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"YA, SELESAIKAN SEKARANG\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"YA, SELESAIKAN SEKARANG\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Ujian Tersedia\")",
+          "budget_ms": 10000
+        },
+        {
+          "do": "hover",
+          "target": "h2:has-text(\"Ujian Tersedia\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 1200
+        }
+      ],
+      "result_hold_ms": 1200
+    }
+  ]
+}

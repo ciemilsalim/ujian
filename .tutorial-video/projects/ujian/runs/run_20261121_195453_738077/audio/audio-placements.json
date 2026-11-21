@@ -1,0 +1,121 @@
+{
+  "sample_rate": 48000,
+  "source": "recording\\events-desktop.json",
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "ducking_attack_ms": 200,
+    "ducking_release_ms": 500,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true,
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "file_rel": "resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256_verified": true,
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa"
+  },
+  "bgm_acoustics": {
+    "bgm_present": true,
+    "ducked_bgm_rms_dbfs": -45.82,
+    "pause_bgm_rms_dbfs": -35.16,
+    "speech_master_rms_dbfs": -18.29,
+    "measured_voice_advantage_db": 27.52,
+    "measured_ducking_attenuation_db": 10.66,
+    "audible": false
+  },
+  "placements": [
+    {
+      "kind": "narration",
+      "at_ms": 200,
+      "dur_ms": 24104.0,
+      "ref": "scene_01_administrasi_sesi_dan_dokumen"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 26533.333,
+      "dur_ms": 45.0,
+      "ref": "a[href*=\"/administration\"]"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 30816.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Cetak Dokumen Administrasi\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 33500,
+      "dur_ms": 15898.0,
+      "ref": "scene_02_sinkronisasi_ruang_dan_pengawas"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 59750,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Tutup Jendela\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 62233.333,
+      "dur_ms": 14794.0,
+      "ref": "scene_03_tata_tertib_peserta_dan_pengawas"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 79200,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Tata Tertib\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 89250,
+      "dur_ms": 19916.0,
+      "ref": "scene_04_cetak_kartu_peserta_ujian"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 111366.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Kartu Peserta\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 118100,
+      "dur_ms": 19558.0,
+      "ref": "scene_05_rekapitulasi_hasil_dan_ekspor"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 139716.667,
+      "dur_ms": 45.0,
+      "ref": "a[href*=\"/results\"]"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 149833.333,
+      "dur_ms": 22198.0,
+      "ref": "scene_06_analisis_hasil_dan_grafik_sebaran"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 173933.333,
+      "dur_ms": 45.0,
+      "ref": "a:has-text(\"Analisis\")"
+    },
+    {
+      "kind": "background_music",
+      "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+      "base_volume": 0.16,
+      "ducking_volume": 0.045,
+      "at_ms": 0.0,
+      "dur_ms": 184366.7,
+      "ref": "bgm"
+    }
+  ]
+}

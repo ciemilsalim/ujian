@@ -1,0 +1,39 @@
+{
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "mode": "mobile",
+  "capture_method": "Per-virtual-frame CDP Page.captureScreenshot of the live Chromium compositor; fake clock + virtual animation timeline",
+  "video_pipeline": "B (continuous browser capture) -> libx264 CFR",
+  "evidence_pipeline": "A (clean screenshots in evidence/, never used as video frames)",
+  "fps": 60,
+  "frames": 7857,
+  "duration_ms": 130950,
+  "frame_sources": {
+    "cdp_live_capture": 7857,
+    "still_image": 0,
+    "repeated": 0,
+    "interpolated": 0
+  },
+  "mobile": true,
+  "viewport": [
+    414,
+    736
+  ],
+  "dsf": 2.608695652173913,
+  "output": [
+    1080,
+    1920
+  ],
+  "video": "recording/continuous-mobile-60fps.mp4",
+  "video_sha256": "e8753e1044b7a827fe2729c32a1673183cc48b7874dfaca056ff65334b57af76",
+  "wall_clock_capture_s": 693.1,
+  "capture_speed_x_realtime": 0.189,
+  "scenes": [
+    "scene_01_pengenalan_keamanan",
+    "scene_02_deteksi_salin_soal_peringatan_1",
+    "scene_03_akumulasi_pelanggaran_realtime",
+    "scene_04_batas_toleransi_dan_diskualifikasi",
+    "scene_05_lembar_selesai_dan_integritas"
+  ],
+  "warnings": [],
+  "created_at": "2026-11-21T08:50:39.172Z"
+}

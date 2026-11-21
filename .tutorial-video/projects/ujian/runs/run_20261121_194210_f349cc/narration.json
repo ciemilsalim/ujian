@@ -1,0 +1,1323 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_administrasi_sesi_dan_dokumen": {
+      "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada video kali ini, kita akan membahas modul administrasi ujian, pencetakan kartu peserta, serta rekapitulasi dan analisis nilai. Pertama, buka menu Administrasi Ujian pada bilah navigasi kiri. Klik tombol Cetak Dokumen Administrasi pada sesi yang diinginkan untuk membuka sentral dokumen resmi.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_194210_f349cc\\audio\\scene_01_administrasi_sesi_dan_dokumen.wav",
+      "duration_ms": 24104.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "Bapak",
+          "s": 375.0,
+          "e": 675.0
+        },
+        {
+          "w": "dan",
+          "s": 675.0,
+          "e": 812.5
+        },
+        {
+          "w": "Ibu",
+          "s": 812.5,
+          "e": 1012.5
+        },
+        {
+          "w": "Admin",
+          "s": 1012.5,
+          "e": 1425.0
+        },
+        {
+          "w": "serta",
+          "s": 1425.0,
+          "e": 1700.0
+        },
+        {
+          "w": "Proktor",
+          "s": 1700.0,
+          "e": 2100.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2100.0,
+          "e": 3112.5
+        },
+        {
+          "w": "Pada",
+          "s": 4322.5,
+          "e": 4535.0
+        },
+        {
+          "w": "video",
+          "s": 4535.0,
+          "e": 4797.5
+        },
+        {
+          "w": "kali",
+          "s": 4797.5,
+          "e": 4972.5
+        },
+        {
+          "w": "ini",
+          "s": 4972.5,
+          "e": 5422.5
+        },
+        {
+          "w": "kita",
+          "s": 5722.5,
+          "e": 5922.5
+        },
+        {
+          "w": "akan",
+          "s": 5922.5,
+          "e": 6110.0
+        },
+        {
+          "w": "membahas",
+          "s": 6110.0,
+          "e": 6460.0
+        },
+        {
+          "w": "modul",
+          "s": 6460.0,
+          "e": 6747.5
+        },
+        {
+          "w": "administrasi",
+          "s": 6747.5,
+          "e": 7347.5
+        },
+        {
+          "w": "ujian",
+          "s": 7347.5,
+          "e": 7922.5
+        },
+        {
+          "w": "pencetakan",
+          "s": 8197.5,
+          "e": 8747.5
+        },
+        {
+          "w": "kartu",
+          "s": 8747.5,
+          "e": 8960.0
+        },
+        {
+          "w": "peserta",
+          "s": 8960.0,
+          "e": 9585.0
+        },
+        {
+          "w": "serta",
+          "s": 9835.0,
+          "e": 10160.0
+        },
+        {
+          "w": "rekapitulasi",
+          "s": 10160.0,
+          "e": 10860.0
+        },
+        {
+          "w": "dan",
+          "s": 10860.0,
+          "e": 11035.0
+        },
+        {
+          "w": "analisis",
+          "s": 11035.0,
+          "e": 11510.0
+        },
+        {
+          "w": "nilai",
+          "s": 11510.0,
+          "e": 12010.0
+        },
+        {
+          "w": "Pertama",
+          "s": 13262.5,
+          "e": 13912.5
+        },
+        {
+          "w": "buka",
+          "s": 14212.5,
+          "e": 14487.5
+        },
+        {
+          "w": "menu",
+          "s": 14487.5,
+          "e": 14675.0
+        },
+        {
+          "w": "Administrasi",
+          "s": 14675.0,
+          "e": 15287.5
+        },
+        {
+          "w": "Ujian",
+          "s": 15287.5,
+          "e": 15750.0
+        },
+        {
+          "w": "pada",
+          "s": 15750.0,
+          "e": 15962.5
+        },
+        {
+          "w": "bilah",
+          "s": 15962.5,
+          "e": 16212.5
+        },
+        {
+          "w": "navigasi",
+          "s": 16212.5,
+          "e": 16687.5
+        },
+        {
+          "w": "kiri",
+          "s": 16687.5,
+          "e": 17137.5
+        },
+        {
+          "w": "Klik",
+          "s": 18324.0,
+          "e": 18536.5
+        },
+        {
+          "w": "tombol",
+          "s": 18536.5,
+          "e": 18849.0
+        },
+        {
+          "w": "Cetak",
+          "s": 18849.0,
+          "e": 19124.0
+        },
+        {
+          "w": "Dokumen",
+          "s": 19124.0,
+          "e": 19474.0
+        },
+        {
+          "w": "Administrasi",
+          "s": 19474.0,
+          "e": 20211.5
+        },
+        {
+          "w": "pada",
+          "s": 20211.5,
+          "e": 20411.5
+        },
+        {
+          "w": "sesi",
+          "s": 20411.5,
+          "e": 20724.0
+        },
+        {
+          "w": "yang",
+          "s": 20724.0,
+          "e": 20849.0
+        },
+        {
+          "w": "diinginkan",
+          "s": 20849.0,
+          "e": 21411.5
+        },
+        {
+          "w": "untuk",
+          "s": 21411.5,
+          "e": 21674.0
+        },
+        {
+          "w": "membuka",
+          "s": 21674.0,
+          "e": 21986.5
+        },
+        {
+          "w": "sentral",
+          "s": 21986.5,
+          "e": 22399.0
+        },
+        {
+          "w": "dokumen",
+          "s": 22399.0,
+          "e": 22736.5
+        },
+        {
+          "w": "resmi",
+          "s": 22736.5,
+          "e": 23249.0
+        }
+      ],
+      "segments_count": 4,
+      "sha256": "8d159b925f7ac997ccb072e7b5284cfe06e47ddf42b11ee6ace90d953ba6e002"
+    },
+    "scene_02_sinkronisasi_ruang_dan_pengawas": {
+      "text": "Di dalam jendela sentral administrasi, proktor dapat memilih ruangan dan nama pengawas. Seluruh identitas yang dipilih di sini akan otomatis disinkronkan ke dalam dokumen PDF Berita Acara pelaksanaan ujian, Daftar Hadir Peserta, maupun Daftar Hadir Pengawas ruangan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_194210_f349cc\\audio\\scene_02_sinkronisasi_ruang_dan_pengawas.wav",
+      "duration_ms": 15898.0,
+      "words": [
+        {
+          "w": "Di",
+          "s": 112.5,
+          "e": 250.0
+        },
+        {
+          "w": "dalam",
+          "s": 250.0,
+          "e": 475.0
+        },
+        {
+          "w": "jendela",
+          "s": 475.0,
+          "e": 787.5
+        },
+        {
+          "w": "sentral",
+          "s": 787.5,
+          "e": 1137.5
+        },
+        {
+          "w": "administrasi",
+          "s": 1137.5,
+          "e": 2075.0
+        },
+        {
+          "w": "proktor",
+          "s": 2400.0,
+          "e": 2750.0
+        },
+        {
+          "w": "dapat",
+          "s": 2750.0,
+          "e": 3012.5
+        },
+        {
+          "w": "memilih",
+          "s": 3012.5,
+          "e": 3312.5
+        },
+        {
+          "w": "ruangan",
+          "s": 3312.5,
+          "e": 3712.5
+        },
+        {
+          "w": "dan",
+          "s": 3712.5,
+          "e": 3875.0
+        },
+        {
+          "w": "nama",
+          "s": 3875.0,
+          "e": 4087.5
+        },
+        {
+          "w": "pengawas",
+          "s": 4087.5,
+          "e": 4750.0
+        },
+        {
+          "w": "Seluruh",
+          "s": 5954.5,
+          "e": 6292.0
+        },
+        {
+          "w": "identitas",
+          "s": 6292.0,
+          "e": 6792.0
+        },
+        {
+          "w": "yang",
+          "s": 6792.0,
+          "e": 6892.0
+        },
+        {
+          "w": "dipilih",
+          "s": 6892.0,
+          "e": 7167.0
+        },
+        {
+          "w": "di",
+          "s": 7167.0,
+          "e": 7242.0
+        },
+        {
+          "w": "sini",
+          "s": 7242.0,
+          "e": 7504.5
+        },
+        {
+          "w": "akan",
+          "s": 7504.5,
+          "e": 7679.5
+        },
+        {
+          "w": "otomatis",
+          "s": 7679.5,
+          "e": 8154.5
+        },
+        {
+          "w": "disinkronkan",
+          "s": 8154.5,
+          "e": 8754.5
+        },
+        {
+          "w": "ke",
+          "s": 8754.5,
+          "e": 8829.5
+        },
+        {
+          "w": "dalam",
+          "s": 8829.5,
+          "e": 9067.0
+        },
+        {
+          "w": "dokumen",
+          "s": 9067.0,
+          "e": 9379.5
+        },
+        {
+          "w": "PDF",
+          "s": 9379.5,
+          "e": 9804.5
+        },
+        {
+          "w": "Berita",
+          "s": 9804.5,
+          "e": 10054.5
+        },
+        {
+          "w": "Acara",
+          "s": 10054.5,
+          "e": 10304.5
+        },
+        {
+          "w": "pelaksanaan",
+          "s": 10304.5,
+          "e": 10779.5
+        },
+        {
+          "w": "ujian",
+          "s": 10779.5,
+          "e": 11342.0
+        },
+        {
+          "w": "Daftar",
+          "s": 11629.5,
+          "e": 12017.0
+        },
+        {
+          "w": "Hadir",
+          "s": 12017.0,
+          "e": 12242.0
+        },
+        {
+          "w": "Peserta",
+          "s": 12242.0,
+          "e": 12854.5
+        },
+        {
+          "w": "maupun",
+          "s": 13117.0,
+          "e": 13467.0
+        },
+        {
+          "w": "Daftar",
+          "s": 13467.0,
+          "e": 13767.0
+        },
+        {
+          "w": "Hadir",
+          "s": 13767.0,
+          "e": 14079.5
+        },
+        {
+          "w": "Pengawas",
+          "s": 14079.5,
+          "e": 14479.5
+        },
+        {
+          "w": "ruangan",
+          "s": 14479.5,
+          "e": 15054.5
+        }
+      ],
+      "segments_count": 2,
+      "sha256": "d0af3dad76b5c92ad73a55f4f57a70c253f65b1b75a01f57085bce1617081011"
+    },
+    "scene_03_tata_tertib_peserta_dan_pengawas": {
+      "text": "Selanjutnya, pilih tab Tata Tertib. Proktor dapat langsung mengunduh berkas resmi Tata Tertib Peserta dan panduan integritas Tata Tertib Pengawas berformat PDF standar siap cetak untuk ditempelkan di papan pengumuman maupun dibacakan sebelum ujian dimulai.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_194210_f349cc\\audio\\scene_03_tata_tertib_peserta_dan_pengawas.wav",
+      "duration_ms": 14794.0,
+      "words": [
+        {
+          "w": "Selanjutnya",
+          "s": 100.0,
+          "e": 975.0
+        },
+        {
+          "w": "pilih",
+          "s": 1250.0,
+          "e": 1550.0
+        },
+        {
+          "w": "tab",
+          "s": 1550.0,
+          "e": 1750.0
+        },
+        {
+          "w": "Tata",
+          "s": 1750.0,
+          "e": 1975.0
+        },
+        {
+          "w": "Tertib",
+          "s": 1975.0,
+          "e": 2487.5
+        },
+        {
+          "w": "Proktor",
+          "s": 3686.0,
+          "e": 4073.5
+        },
+        {
+          "w": "dapat",
+          "s": 4073.5,
+          "e": 4323.5
+        },
+        {
+          "w": "langsung",
+          "s": 4323.5,
+          "e": 4623.5
+        },
+        {
+          "w": "mengunduh",
+          "s": 4623.5,
+          "e": 4948.5
+        },
+        {
+          "w": "berkas",
+          "s": 4948.5,
+          "e": 5248.5
+        },
+        {
+          "w": "resmi",
+          "s": 5248.5,
+          "e": 5548.5
+        },
+        {
+          "w": "Tata",
+          "s": 5548.5,
+          "e": 5773.5
+        },
+        {
+          "w": "Tertib",
+          "s": 5773.5,
+          "e": 6048.5
+        },
+        {
+          "w": "Peserta",
+          "s": 6048.5,
+          "e": 6473.5
+        },
+        {
+          "w": "dan",
+          "s": 6473.5,
+          "e": 6661.0
+        },
+        {
+          "w": "panduan",
+          "s": 6661.0,
+          "e": 6986.0
+        },
+        {
+          "w": "integritas",
+          "s": 6986.0,
+          "e": 7511.0
+        },
+        {
+          "w": "Tata",
+          "s": 7511.0,
+          "e": 7748.5
+        },
+        {
+          "w": "Tertib",
+          "s": 7748.5,
+          "e": 8061.0
+        },
+        {
+          "w": "Pengawas",
+          "s": 8061.0,
+          "e": 8498.5
+        },
+        {
+          "w": "berformat",
+          "s": 8498.5,
+          "e": 8936.0
+        },
+        {
+          "w": "PDF",
+          "s": 8936.0,
+          "e": 9286.0
+        },
+        {
+          "w": "standar",
+          "s": 9286.0,
+          "e": 9636.0
+        },
+        {
+          "w": "siap",
+          "s": 9636.0,
+          "e": 9848.5
+        },
+        {
+          "w": "cetak",
+          "s": 9848.5,
+          "e": 10236.0
+        },
+        {
+          "w": "untuk",
+          "s": 10236.0,
+          "e": 10473.5
+        },
+        {
+          "w": "ditempelkan",
+          "s": 10473.5,
+          "e": 11011.0
+        },
+        {
+          "w": "di",
+          "s": 11011.0,
+          "e": 11086.0
+        },
+        {
+          "w": "papan",
+          "s": 11086.0,
+          "e": 11348.5
+        },
+        {
+          "w": "pengumuman",
+          "s": 11348.5,
+          "e": 11873.5
+        },
+        {
+          "w": "maupun",
+          "s": 11873.5,
+          "e": 12161.0
+        },
+        {
+          "w": "dibacakan",
+          "s": 12161.0,
+          "e": 12711.0
+        },
+        {
+          "w": "sebelum",
+          "s": 12711.0,
+          "e": 13011.0
+        },
+        {
+          "w": "ujian",
+          "s": 13011.0,
+          "e": 13361.0
+        },
+        {
+          "w": "dimulai",
+          "s": 13361.0,
+          "e": 13936.0
+        }
+      ],
+      "segments_count": 2,
+      "sha256": "27c0b5785f347ca7a3af7ad88518a58f57031b78d655c58bdbf63d42b9242f5f"
+    },
+    "scene_04_cetak_kartu_peserta_ujian": {
+      "text": "Untuk mencetak kartu ujian seluruh peserta didik, buka tab Kartu Peserta. Sistem secara otomatis mengelompokkan daftar kelas beserta jumlah siswanya. Cukup klik tombol Cetak Kartu pada kelas yang dipilih untuk mengunduh lembar kartu ujian PDF berformat A4 yang dilengkapi pas foto, barcode, dan QR code login instan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_194210_f349cc\\audio\\scene_04_cetak_kartu_peserta_ujian.wav",
+      "duration_ms": 19916.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 375.0
+        },
+        {
+          "w": "mencetak",
+          "s": 375.0,
+          "e": 725.0
+        },
+        {
+          "w": "kartu",
+          "s": 725.0,
+          "e": 950.0
+        },
+        {
+          "w": "ujian",
+          "s": 950.0,
+          "e": 1300.0
+        },
+        {
+          "w": "seluruh",
+          "s": 1300.0,
+          "e": 1600.0
+        },
+        {
+          "w": "peserta",
+          "s": 1600.0,
+          "e": 1950.0
+        },
+        {
+          "w": "didik",
+          "s": 1950.0,
+          "e": 2450.0
+        },
+        {
+          "w": "buka",
+          "s": 2712.5,
+          "e": 3000.0
+        },
+        {
+          "w": "tab",
+          "s": 3000.0,
+          "e": 3237.5
+        },
+        {
+          "w": "Kartu",
+          "s": 3237.5,
+          "e": 3512.5
+        },
+        {
+          "w": "Peserta",
+          "s": 3512.5,
+          "e": 4125.0
+        },
+        {
+          "w": "Sistem",
+          "s": 5318.0,
+          "e": 5743.0
+        },
+        {
+          "w": "secara",
+          "s": 5743.0,
+          "e": 6043.0
+        },
+        {
+          "w": "otomatis",
+          "s": 6043.0,
+          "e": 6543.0
+        },
+        {
+          "w": "mengelompokkan",
+          "s": 6543.0,
+          "e": 7093.0
+        },
+        {
+          "w": "daftar",
+          "s": 7093.0,
+          "e": 7393.0
+        },
+        {
+          "w": "kelas",
+          "s": 7393.0,
+          "e": 7705.5
+        },
+        {
+          "w": "beserta",
+          "s": 7705.5,
+          "e": 8143.0
+        },
+        {
+          "w": "jumlah",
+          "s": 8143.0,
+          "e": 8443.0
+        },
+        {
+          "w": "siswanya",
+          "s": 8443.0,
+          "e": 9130.5
+        },
+        {
+          "w": "Cukup",
+          "s": 10332.5,
+          "e": 10570.0
+        },
+        {
+          "w": "klik",
+          "s": 10570.0,
+          "e": 10745.0
+        },
+        {
+          "w": "tombol",
+          "s": 10745.0,
+          "e": 11007.5
+        },
+        {
+          "w": "Cetak",
+          "s": 11007.5,
+          "e": 11245.0
+        },
+        {
+          "w": "Kartu",
+          "s": 11245.0,
+          "e": 11532.5
+        },
+        {
+          "w": "pada",
+          "s": 11532.5,
+          "e": 11720.0
+        },
+        {
+          "w": "kelas",
+          "s": 11720.0,
+          "e": 11970.0
+        },
+        {
+          "w": "yang",
+          "s": 11970.0,
+          "e": 12070.0
+        },
+        {
+          "w": "dipilih",
+          "s": 12070.0,
+          "e": 12445.0
+        },
+        {
+          "w": "untuk",
+          "s": 12445.0,
+          "e": 12645.0
+        },
+        {
+          "w": "mengunduh",
+          "s": 12645.0,
+          "e": 12932.5
+        },
+        {
+          "w": "lembar",
+          "s": 12932.5,
+          "e": 13182.5
+        },
+        {
+          "w": "kartu",
+          "s": 13182.5,
+          "e": 13432.5
+        },
+        {
+          "w": "ujian",
+          "s": 13432.5,
+          "e": 13745.0
+        },
+        {
+          "w": "PDF",
+          "s": 13745.0,
+          "e": 14170.0
+        },
+        {
+          "w": "berformat",
+          "s": 14170.0,
+          "e": 14657.5
+        },
+        {
+          "w": "A4",
+          "s": 14657.5,
+          "e": 15070.0
+        },
+        {
+          "w": "yang",
+          "s": 15070.0,
+          "e": 15182.5
+        },
+        {
+          "w": "dilengkapi",
+          "s": 15182.5,
+          "e": 15570.0
+        },
+        {
+          "w": "pas",
+          "s": 15570.0,
+          "e": 15770.0
+        },
+        {
+          "w": "foto",
+          "s": 15770.0,
+          "e": 16282.5
+        },
+        {
+          "w": "barcode",
+          "s": 16545.0,
+          "e": 17132.5
+        },
+        {
+          "w": "dan",
+          "s": 17407.5,
+          "e": 17645.0
+        },
+        {
+          "w": "QR",
+          "s": 17645.0,
+          "e": 17945.0
+        },
+        {
+          "w": "code",
+          "s": 17945.0,
+          "e": 18170.0
+        },
+        {
+          "w": "login",
+          "s": 18170.0,
+          "e": 18457.5
+        },
+        {
+          "w": "instan",
+          "s": 18457.5,
+          "e": 19070.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "7c29241ae52445165b399704e1130eb91ca17217b77110cd295a244b81334b0c"
+    },
+    "scene_05_rekapitulasi_hasil_dan_ekspor": {
+      "text": "Setelah sesi ujian selesai dilaksanakan, buka menu Hasil Ujian. Halaman ini menyajikan rekapitulasi sesi, filter tahun ajaran aktif, serta bilah progres partisipasi siswa yang telah menyelesaikan ujian. Anda dapat langsung mengunduh rekapan nilai lengkap dalam format PDF atau Excel hanya dengan satu klik.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_194210_f349cc\\audio\\scene_05_rekapitulasi_hasil_dan_ekspor.wav",
+      "duration_ms": 19558.0,
+      "words": [
+        {
+          "w": "Setelah",
+          "s": 112.5,
+          "e": 462.5
+        },
+        {
+          "w": "sesi",
+          "s": 462.5,
+          "e": 700.0
+        },
+        {
+          "w": "ujian",
+          "s": 700.0,
+          "e": 1062.5
+        },
+        {
+          "w": "selesai",
+          "s": 1062.5,
+          "e": 1425.0
+        },
+        {
+          "w": "dilaksanakan",
+          "s": 1425.0,
+          "e": 2237.5
+        },
+        {
+          "w": "buka",
+          "s": 2525.0,
+          "e": 2800.0
+        },
+        {
+          "w": "menu",
+          "s": 2800.0,
+          "e": 3000.0
+        },
+        {
+          "w": "Hasil",
+          "s": 3000.0,
+          "e": 3275.0
+        },
+        {
+          "w": "Ujian",
+          "s": 3275.0,
+          "e": 3887.5
+        },
+        {
+          "w": "Halaman",
+          "s": 5090.5,
+          "e": 5403.0
+        },
+        {
+          "w": "ini",
+          "s": 5403.0,
+          "e": 5628.0
+        },
+        {
+          "w": "menyajikan",
+          "s": 5628.0,
+          "e": 6140.5
+        },
+        {
+          "w": "rekapitulasi",
+          "s": 6140.5,
+          "e": 6778.0
+        },
+        {
+          "w": "sesi",
+          "s": 6778.0,
+          "e": 7353.0
+        },
+        {
+          "w": "filter",
+          "s": 7615.5,
+          "e": 7940.5
+        },
+        {
+          "w": "tahun",
+          "s": 7940.5,
+          "e": 8215.5
+        },
+        {
+          "w": "ajaran",
+          "s": 8215.5,
+          "e": 8540.5
+        },
+        {
+          "w": "aktif",
+          "s": 8540.5,
+          "e": 9053.0
+        },
+        {
+          "w": "serta",
+          "s": 9328.0,
+          "e": 9640.5
+        },
+        {
+          "w": "bilah",
+          "s": 9640.5,
+          "e": 9828.0
+        },
+        {
+          "w": "progres",
+          "s": 9828.0,
+          "e": 10165.5
+        },
+        {
+          "w": "partisipasi",
+          "s": 10165.5,
+          "e": 10765.5
+        },
+        {
+          "w": "siswa",
+          "s": 10765.5,
+          "e": 11178.0
+        },
+        {
+          "w": "yang",
+          "s": 11178.0,
+          "e": 11340.5
+        },
+        {
+          "w": "telah",
+          "s": 11340.5,
+          "e": 11553.0
+        },
+        {
+          "w": "menyelesaikan",
+          "s": 11553.0,
+          "e": 12103.0
+        },
+        {
+          "w": "ujian",
+          "s": 12103.0,
+          "e": 12703.0
+        },
+        {
+          "w": "Anda",
+          "s": 13946.0,
+          "e": 14233.5
+        },
+        {
+          "w": "dapat",
+          "s": 14233.5,
+          "e": 14471.0
+        },
+        {
+          "w": "langsung",
+          "s": 14471.0,
+          "e": 14783.5
+        },
+        {
+          "w": "mengunduh",
+          "s": 14783.5,
+          "e": 15046.0
+        },
+        {
+          "w": "rekapan",
+          "s": 15046.0,
+          "e": 15383.5
+        },
+        {
+          "w": "nilai",
+          "s": 15383.5,
+          "e": 15596.0
+        },
+        {
+          "w": "lengkap",
+          "s": 15596.0,
+          "e": 15921.0
+        },
+        {
+          "w": "dalam",
+          "s": 15921.0,
+          "e": 16146.0
+        },
+        {
+          "w": "format",
+          "s": 16146.0,
+          "e": 16446.0
+        },
+        {
+          "w": "PDF",
+          "s": 16446.0,
+          "e": 16946.0
+        },
+        {
+          "w": "atau",
+          "s": 16946.0,
+          "e": 17208.5
+        },
+        {
+          "w": "Excel",
+          "s": 17208.5,
+          "e": 17583.5
+        },
+        {
+          "w": "hanya",
+          "s": 17583.5,
+          "e": 17871.0
+        },
+        {
+          "w": "dengan",
+          "s": 17871.0,
+          "e": 18096.0
+        },
+        {
+          "w": "satu",
+          "s": 18096.0,
+          "e": 18371.0
+        },
+        {
+          "w": "klik",
+          "s": 18371.0,
+          "e": 18708.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "1f6d17807d0ee86c53e5d97fcc9c5bbfe0cb07b22614d934b54bf463f7163080"
+    },
+    "scene_06_analisis_hasil_dan_grafik_sebaran": {
+      "text": "Untuk evaluasi mendalam, klik tombol Analisis. ZEXAM-CBT menyediakan visualisasi data interaktif meliputi nilai rata-rata, nilai tertinggi dan terendah, rasio kelulusan KKM, serta diagram sebaran nilai siswa. Seluruh proses administrasi dan evaluasi ujian kini tuntas dalam hitungan detik. Terima kasih telah menyaksikan!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_194210_f349cc\\audio\\scene_06_analisis_hasil_dan_grafik_sebaran.wav",
+      "duration_ms": 22198.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 362.5
+        },
+        {
+          "w": "evaluasi",
+          "s": 362.5,
+          "e": 837.5
+        },
+        {
+          "w": "mendalam",
+          "s": 837.5,
+          "e": 1425.0
+        },
+        {
+          "w": "klik",
+          "s": 1725.0,
+          "e": 1925.0
+        },
+        {
+          "w": "tombol",
+          "s": 1925.0,
+          "e": 2250.0
+        },
+        {
+          "w": "Analisis",
+          "s": 2250.0,
+          "e": 2987.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 4202.5,
+          "e": 4977.5
+        },
+        {
+          "w": "menyediakan",
+          "s": 4977.5,
+          "e": 5490.0
+        },
+        {
+          "w": "visualisasi",
+          "s": 5490.0,
+          "e": 6165.0
+        },
+        {
+          "w": "data",
+          "s": 6165.0,
+          "e": 6377.5
+        },
+        {
+          "w": "interaktif",
+          "s": 6377.5,
+          "e": 6840.0
+        },
+        {
+          "w": "meliputi",
+          "s": 6840.0,
+          "e": 7240.0
+        },
+        {
+          "w": "nilai",
+          "s": 7240.0,
+          "e": 7465.0
+        },
+        {
+          "w": "rata-rata",
+          "s": 7465.0,
+          "e": 8140.0
+        },
+        {
+          "w": "nilai",
+          "s": 8427.5,
+          "e": 8690.0
+        },
+        {
+          "w": "tertinggi",
+          "s": 8690.0,
+          "e": 9190.0
+        },
+        {
+          "w": "dan",
+          "s": 9190.0,
+          "e": 9365.0
+        },
+        {
+          "w": "terendah",
+          "s": 9365.0,
+          "e": 9890.0
+        },
+        {
+          "w": "rasio",
+          "s": 10140.0,
+          "e": 10527.5
+        },
+        {
+          "w": "kelulusan",
+          "s": 10527.5,
+          "e": 10965.0
+        },
+        {
+          "w": "KKM",
+          "s": 10965.0,
+          "e": 11565.0
+        },
+        {
+          "w": "serta",
+          "s": 11815.0,
+          "e": 12140.0
+        },
+        {
+          "w": "diagram",
+          "s": 12140.0,
+          "e": 12540.0
+        },
+        {
+          "w": "sebaran",
+          "s": 12540.0,
+          "e": 12877.5
+        },
+        {
+          "w": "nilai",
+          "s": 12877.5,
+          "e": 13090.0
+        },
+        {
+          "w": "siswa",
+          "s": 13090.0,
+          "e": 13677.5
+        },
+        {
+          "w": "Seluruh",
+          "s": 14930.0,
+          "e": 15305.0
+        },
+        {
+          "w": "proses",
+          "s": 15305.0,
+          "e": 15642.5
+        },
+        {
+          "w": "administrasi",
+          "s": 15642.5,
+          "e": 16367.5
+        },
+        {
+          "w": "dan",
+          "s": 16367.5,
+          "e": 16517.5
+        },
+        {
+          "w": "evaluasi",
+          "s": 16517.5,
+          "e": 16967.5
+        },
+        {
+          "w": "ujian",
+          "s": 16967.5,
+          "e": 17305.0
+        },
+        {
+          "w": "kini",
+          "s": 17305.0,
+          "e": 17567.5
+        },
+        {
+          "w": "tuntas",
+          "s": 17567.5,
+          "e": 18017.5
+        },
+        {
+          "w": "dalam",
+          "s": 18017.5,
+          "e": 18230.0
+        },
+        {
+          "w": "hitungan",
+          "s": 18230.0,
+          "e": 18580.0
+        },
+        {
+          "w": "detik",
+          "s": 18580.0,
+          "e": 18992.5
+        },
+        {
+          "w": "Terima",
+          "s": 19830.0,
+          "e": 20105.0
+        },
+        {
+          "w": "kasih",
+          "s": 20105.0,
+          "e": 20442.5
+        },
+        {
+          "w": "telah",
+          "s": 20442.5,
+          "e": 20617.5
+        },
+        {
+          "w": "menyaksikan",
+          "s": 20617.5,
+          "e": 21355.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "2ffa1aefbd6238f388eb9dd437bb12ff94585c3b6bfbfc77b827261c4973acc7"
+    }
+  }
+}

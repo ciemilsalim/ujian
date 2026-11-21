@@ -1,0 +1,1193 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_menjawab_pilihan_ganda": {
+      "text": "Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan cara menjawab berbagai jenis soal pada aplikasi ZEXAM-CBT versi mobile. Pada tipe soal Pilihan Ganda biasa, Anda cukup memilih salah satu opsi jawaban yang paling tepat. Ketuk pada pilihan jawaban, dan sistem akan langsung menyimpannya dengan tanda centang biru.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_142728_5d0f07\\audio\\scene_01_menjawab_pilihan_ganda.wav",
+      "duration_ms": 19972.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 112.5,
+          "e": 337.5
+        },
+        {
+          "w": "Rekan-Rekan",
+          "s": 337.5,
+          "e": 800.0
+        },
+        {
+          "w": "Siswa",
+          "s": 800.0,
+          "e": 1100.0
+        },
+        {
+          "w": "Peserta",
+          "s": 1100.0,
+          "e": 1412.5
+        },
+        {
+          "w": "Ujian",
+          "s": 1412.5,
+          "e": 2000.0
+        },
+        {
+          "w": "selamat",
+          "s": 2287.5,
+          "e": 2612.5
+        },
+        {
+          "w": "datang",
+          "s": 2612.5,
+          "e": 2900.0
+        },
+        {
+          "w": "di",
+          "s": 2900.0,
+          "e": 2962.5
+        },
+        {
+          "w": "panduan",
+          "s": 2962.5,
+          "e": 3275.0
+        },
+        {
+          "w": "cara",
+          "s": 3275.0,
+          "e": 3512.5
+        },
+        {
+          "w": "menjawab",
+          "s": 3512.5,
+          "e": 3925.0
+        },
+        {
+          "w": "berbagai",
+          "s": 3925.0,
+          "e": 4275.0
+        },
+        {
+          "w": "jenis",
+          "s": 4275.0,
+          "e": 4600.0
+        },
+        {
+          "w": "soal",
+          "s": 4600.0,
+          "e": 4912.5
+        },
+        {
+          "w": "pada",
+          "s": 4912.5,
+          "e": 5112.5
+        },
+        {
+          "w": "aplikasi",
+          "s": 5112.5,
+          "e": 5562.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 5562.5,
+          "e": 6300.0
+        },
+        {
+          "w": "versi",
+          "s": 6300.0,
+          "e": 6600.0
+        },
+        {
+          "w": "mobile",
+          "s": 6600.0,
+          "e": 7187.5
+        },
+        {
+          "w": "Pada",
+          "s": 8452.5,
+          "e": 8652.5
+        },
+        {
+          "w": "tipe",
+          "s": 8652.5,
+          "e": 8865.0
+        },
+        {
+          "w": "soal",
+          "s": 8865.0,
+          "e": 9077.5
+        },
+        {
+          "w": "Pilihan",
+          "s": 9077.5,
+          "e": 9440.0
+        },
+        {
+          "w": "Ganda",
+          "s": 9440.0,
+          "e": 9652.5
+        },
+        {
+          "w": "biasa",
+          "s": 9652.5,
+          "e": 10227.5
+        },
+        {
+          "w": "Anda",
+          "s": 10565.0,
+          "e": 10790.0
+        },
+        {
+          "w": "cukup",
+          "s": 10790.0,
+          "e": 11027.5
+        },
+        {
+          "w": "memilih",
+          "s": 11027.5,
+          "e": 11365.0
+        },
+        {
+          "w": "salah",
+          "s": 11365.0,
+          "e": 11565.0
+        },
+        {
+          "w": "satu",
+          "s": 11565.0,
+          "e": 11765.0
+        },
+        {
+          "w": "opsi",
+          "s": 11765.0,
+          "e": 12027.5
+        },
+        {
+          "w": "jawaban",
+          "s": 12027.5,
+          "e": 12465.0
+        },
+        {
+          "w": "yang",
+          "s": 12465.0,
+          "e": 12615.0
+        },
+        {
+          "w": "paling",
+          "s": 12615.0,
+          "e": 12827.5
+        },
+        {
+          "w": "tepat",
+          "s": 12827.5,
+          "e": 13190.0
+        },
+        {
+          "w": "Ketuk",
+          "s": 14420.5,
+          "e": 14658.0
+        },
+        {
+          "w": "pada",
+          "s": 14658.0,
+          "e": 14858.0
+        },
+        {
+          "w": "pilihan",
+          "s": 14858.0,
+          "e": 15195.5
+        },
+        {
+          "w": "jawaban",
+          "s": 15195.5,
+          "e": 15858.0
+        },
+        {
+          "w": "dan",
+          "s": 16170.5,
+          "e": 16370.5
+        },
+        {
+          "w": "sistem",
+          "s": 16370.5,
+          "e": 16720.5
+        },
+        {
+          "w": "akan",
+          "s": 16720.5,
+          "e": 16920.5
+        },
+        {
+          "w": "langsung",
+          "s": 16920.5,
+          "e": 17220.5
+        },
+        {
+          "w": "menyimpannya",
+          "s": 17220.5,
+          "e": 17770.5
+        },
+        {
+          "w": "dengan",
+          "s": 17770.5,
+          "e": 18033.0
+        },
+        {
+          "w": "tanda",
+          "s": 18033.0,
+          "e": 18333.0
+        },
+        {
+          "w": "centang",
+          "s": 18333.0,
+          "e": 18683.0
+        },
+        {
+          "w": "biru",
+          "s": 18683.0,
+          "e": 19120.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "2beef6ee54804f1070b24f631ebe47cb6f37eeb9e8cce7c222cd29c98280f51f"
+    },
+    "scene_02_menjawab_pilihan_ganda_kompleks": {
+      "text": "Tipe berikutnya adalah Pilihan Ganda Kompleks. Pada tipe ini, jawaban benar bisa lebih dari satu. Bacalah petunjuk soal dengan cermat, lalu ketuk setiap opsi yang sesuai. Anda dapat memilih beberapa opsi sekaligus, dan sistem akan menandai seluruh pilihan Anda.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_142728_5d0f07\\audio\\scene_02_menjawab_pilihan_ganda_kompleks.wav",
+      "duration_ms": 18238.0,
+      "words": [
+        {
+          "w": "Tipe",
+          "s": 100.0,
+          "e": 362.5
+        },
+        {
+          "w": "berikutnya",
+          "s": 362.5,
+          "e": 900.0
+        },
+        {
+          "w": "adalah",
+          "s": 900.0,
+          "e": 1200.0
+        },
+        {
+          "w": "Pilihan",
+          "s": 1200.0,
+          "e": 1575.0
+        },
+        {
+          "w": "Ganda",
+          "s": 1575.0,
+          "e": 1837.5
+        },
+        {
+          "w": "Kompleks",
+          "s": 1837.5,
+          "e": 2487.5
+        },
+        {
+          "w": "Pada",
+          "s": 3698.5,
+          "e": 3886.0
+        },
+        {
+          "w": "tipe",
+          "s": 3886.0,
+          "e": 4048.5
+        },
+        {
+          "w": "ini",
+          "s": 4048.5,
+          "e": 4511.0
+        },
+        {
+          "w": "jawaban",
+          "s": 4823.5,
+          "e": 5298.5
+        },
+        {
+          "w": "benar",
+          "s": 5298.5,
+          "e": 5573.5
+        },
+        {
+          "w": "bisa",
+          "s": 5573.5,
+          "e": 5823.5
+        },
+        {
+          "w": "lebih",
+          "s": 5823.5,
+          "e": 6048.5
+        },
+        {
+          "w": "dari",
+          "s": 6048.5,
+          "e": 6211.0
+        },
+        {
+          "w": "satu",
+          "s": 6211.0,
+          "e": 6748.5
+        },
+        {
+          "w": "Bacalah",
+          "s": 7598.5,
+          "e": 7973.5
+        },
+        {
+          "w": "petunjuk",
+          "s": 7973.5,
+          "e": 8323.5
+        },
+        {
+          "w": "soal",
+          "s": 8323.5,
+          "e": 8573.5
+        },
+        {
+          "w": "dengan",
+          "s": 8573.5,
+          "e": 8786.0
+        },
+        {
+          "w": "cermat",
+          "s": 8786.0,
+          "e": 9311.0
+        },
+        {
+          "w": "lalu",
+          "s": 9611.0,
+          "e": 9848.5
+        },
+        {
+          "w": "ketuk",
+          "s": 9848.5,
+          "e": 10086.0
+        },
+        {
+          "w": "setiap",
+          "s": 10086.0,
+          "e": 10361.0
+        },
+        {
+          "w": "opsi",
+          "s": 10361.0,
+          "e": 10636.0
+        },
+        {
+          "w": "yang",
+          "s": 10636.0,
+          "e": 10748.5
+        },
+        {
+          "w": "sesuai",
+          "s": 10748.5,
+          "e": 11348.5
+        },
+        {
+          "w": "Anda",
+          "s": 12614.5,
+          "e": 12852.0
+        },
+        {
+          "w": "dapat",
+          "s": 12852.0,
+          "e": 13102.0
+        },
+        {
+          "w": "memilih",
+          "s": 13102.0,
+          "e": 13427.0
+        },
+        {
+          "w": "beberapa",
+          "s": 13427.0,
+          "e": 13764.5
+        },
+        {
+          "w": "opsi",
+          "s": 13764.5,
+          "e": 14014.5
+        },
+        {
+          "w": "sekaligus",
+          "s": 14014.5,
+          "e": 14739.5
+        },
+        {
+          "w": "dan",
+          "s": 15039.5,
+          "e": 15239.5
+        },
+        {
+          "w": "sistem",
+          "s": 15239.5,
+          "e": 15614.5
+        },
+        {
+          "w": "akan",
+          "s": 15614.5,
+          "e": 15802.0
+        },
+        {
+          "w": "menandai",
+          "s": 15802.0,
+          "e": 16202.0
+        },
+        {
+          "w": "seluruh",
+          "s": 16202.0,
+          "e": 16577.0
+        },
+        {
+          "w": "pilihan",
+          "s": 16577.0,
+          "e": 16902.0
+        },
+        {
+          "w": "Anda",
+          "s": 16902.0,
+          "e": 17389.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "7418c61436c77470a7d48edebbef02354313ea455eb93039322eb3a06f397770"
+    },
+    "scene_03_menjawab_benar_salah": {
+      "text": "Tipe ketiga adalah soal Pernyataan Benar atau Salah. Anda akan diberikan beberapa baris stimulus pernyataan. Untuk setiap baris, tentukan kebenarannya secara mandiri dengan mengetuk tombol Benar atau tombol Salah.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_142728_5d0f07\\audio\\scene_03_menjawab_benar_salah.wav",
+      "duration_ms": 13994.0,
+      "words": [
+        {
+          "w": "Tipe",
+          "s": 100.0,
+          "e": 325.0
+        },
+        {
+          "w": "ketiga",
+          "s": 325.0,
+          "e": 737.5
+        },
+        {
+          "w": "adalah",
+          "s": 737.5,
+          "e": 1037.5
+        },
+        {
+          "w": "soal",
+          "s": 1037.5,
+          "e": 1262.5
+        },
+        {
+          "w": "Pernyataan",
+          "s": 1262.5,
+          "e": 1725.0
+        },
+        {
+          "w": "Benar",
+          "s": 1725.0,
+          "e": 2037.5
+        },
+        {
+          "w": "atau",
+          "s": 2037.5,
+          "e": 2275.0
+        },
+        {
+          "w": "Salah",
+          "s": 2275.0,
+          "e": 2812.5
+        },
+        {
+          "w": "Anda",
+          "s": 3998.0,
+          "e": 4310.5
+        },
+        {
+          "w": "akan",
+          "s": 4310.5,
+          "e": 4510.5
+        },
+        {
+          "w": "diberikan",
+          "s": 4510.5,
+          "e": 4910.5
+        },
+        {
+          "w": "beberapa",
+          "s": 4910.5,
+          "e": 5248.0
+        },
+        {
+          "w": "baris",
+          "s": 5248.0,
+          "e": 5535.5
+        },
+        {
+          "w": "stimulus",
+          "s": 5535.5,
+          "e": 5948.0
+        },
+        {
+          "w": "pernyataan",
+          "s": 5948.0,
+          "e": 6723.0
+        },
+        {
+          "w": "Untuk",
+          "s": 7962.5,
+          "e": 8200.0
+        },
+        {
+          "w": "setiap",
+          "s": 8200.0,
+          "e": 8475.0
+        },
+        {
+          "w": "baris",
+          "s": 8475.0,
+          "e": 8987.5
+        },
+        {
+          "w": "tentukan",
+          "s": 9237.5,
+          "e": 9637.5
+        },
+        {
+          "w": "kebenarannya",
+          "s": 9637.5,
+          "e": 10150.0
+        },
+        {
+          "w": "secara",
+          "s": 10150.0,
+          "e": 10450.0
+        },
+        {
+          "w": "mandiri",
+          "s": 10450.0,
+          "e": 10862.5
+        },
+        {
+          "w": "dengan",
+          "s": 10862.5,
+          "e": 11100.0
+        },
+        {
+          "w": "mengetuk",
+          "s": 11100.0,
+          "e": 11400.0
+        },
+        {
+          "w": "tombol",
+          "s": 11400.0,
+          "e": 11662.5
+        },
+        {
+          "w": "Benar",
+          "s": 11662.5,
+          "e": 11987.5
+        },
+        {
+          "w": "atau",
+          "s": 11987.5,
+          "e": 12287.5
+        },
+        {
+          "w": "tombol",
+          "s": 12287.5,
+          "e": 12612.5
+        },
+        {
+          "w": "Salah",
+          "s": 12612.5,
+          "e": 13137.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "832a3c5943cebf03d23cf6abce4ab55590089dd2bc1b8b978753b68446495042"
+    },
+    "scene_04_menjawab_soal_essay": {
+      "text": "Tipe keempat adalah soal Uraian atau Essay. Ketuk area kolom teks jawaban yang luas di bawah pertanyaan, lalu ketikkan penjelasan jawaban Anda secara lengkap. Sistem dilengkapi penyimpanan otomatis, sehingga tulisan Anda aman dan tersimpan ke server secara real-time.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_142728_5d0f07\\audio\\scene_04_menjawab_soal_essay.wav",
+      "duration_ms": 17206.0,
+      "words": [
+        {
+          "w": "Tipe",
+          "s": 100.0,
+          "e": 350.0
+        },
+        {
+          "w": "keempat",
+          "s": 350.0,
+          "e": 750.0
+        },
+        {
+          "w": "adalah",
+          "s": 750.0,
+          "e": 1037.5
+        },
+        {
+          "w": "soal",
+          "s": 1037.5,
+          "e": 1237.5
+        },
+        {
+          "w": "Uraian",
+          "s": 1237.5,
+          "e": 1700.0
+        },
+        {
+          "w": "atau",
+          "s": 1700.0,
+          "e": 1975.0
+        },
+        {
+          "w": "Essay",
+          "s": 1975.0,
+          "e": 2562.5
+        },
+        {
+          "w": "Ketuk",
+          "s": 3770.5,
+          "e": 3983.0
+        },
+        {
+          "w": "area",
+          "s": 3983.0,
+          "e": 4220.5
+        },
+        {
+          "w": "kolom",
+          "s": 4220.5,
+          "e": 4470.5
+        },
+        {
+          "w": "teks",
+          "s": 4470.5,
+          "e": 4708.0
+        },
+        {
+          "w": "jawaban",
+          "s": 4708.0,
+          "e": 5145.5
+        },
+        {
+          "w": "yang",
+          "s": 5145.5,
+          "e": 5283.0
+        },
+        {
+          "w": "luas",
+          "s": 5283.0,
+          "e": 5558.0
+        },
+        {
+          "w": "di",
+          "s": 5558.0,
+          "e": 5633.0
+        },
+        {
+          "w": "bawah",
+          "s": 5633.0,
+          "e": 5858.0
+        },
+        {
+          "w": "pertanyaan",
+          "s": 5858.0,
+          "e": 6570.5
+        },
+        {
+          "w": "lalu",
+          "s": 6908.0,
+          "e": 7145.5
+        },
+        {
+          "w": "ketikkan",
+          "s": 7145.5,
+          "e": 7533.0
+        },
+        {
+          "w": "penjelasan",
+          "s": 7533.0,
+          "e": 8020.5
+        },
+        {
+          "w": "jawaban",
+          "s": 8020.5,
+          "e": 8420.5
+        },
+        {
+          "w": "Anda",
+          "s": 8420.5,
+          "e": 8758.0
+        },
+        {
+          "w": "secara",
+          "s": 8758.0,
+          "e": 9083.0
+        },
+        {
+          "w": "lengkap",
+          "s": 9083.0,
+          "e": 9595.5
+        },
+        {
+          "w": "Sistem",
+          "s": 10862.5,
+          "e": 11237.5
+        },
+        {
+          "w": "dilengkapi",
+          "s": 11237.5,
+          "e": 11637.5
+        },
+        {
+          "w": "penyimpanan",
+          "s": 11637.5,
+          "e": 12050.0
+        },
+        {
+          "w": "otomatis",
+          "s": 12050.0,
+          "e": 12762.5
+        },
+        {
+          "w": "sehingga",
+          "s": 13025.0,
+          "e": 13425.0
+        },
+        {
+          "w": "tulisan",
+          "s": 13425.0,
+          "e": 13787.5
+        },
+        {
+          "w": "Anda",
+          "s": 13787.5,
+          "e": 13975.0
+        },
+        {
+          "w": "aman",
+          "s": 13975.0,
+          "e": 14312.5
+        },
+        {
+          "w": "dan",
+          "s": 14312.5,
+          "e": 14462.5
+        },
+        {
+          "w": "tersimpan",
+          "s": 14462.5,
+          "e": 14912.5
+        },
+        {
+          "w": "ke",
+          "s": 14912.5,
+          "e": 14987.5
+        },
+        {
+          "w": "server",
+          "s": 14987.5,
+          "e": 15362.5
+        },
+        {
+          "w": "secara",
+          "s": 15362.5,
+          "e": 15725.0
+        },
+        {
+          "w": "real-time",
+          "s": 15725.0,
+          "e": 16362.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "604b2493eee1fe3ef7ec7dee2ba9a0d0fbb03c1279d615f539b217815435253f"
+    },
+    "scene_05_rekapitulasi_drawer_soal": {
+      "text": "Sebelum menyelesaikan ujian, selalu pastikan seluruh soal telah terjawab. Ketuk tombol navigasi nomor soal di bagian tengah bawah. Drawer akan menampilkan rekapitulasi lengkap, di mana kotak berwarna hijau menandakan soal yang sudah berhasil Anda jawab.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_142728_5d0f07\\audio\\scene_05_rekapitulasi_drawer_soal.wav",
+      "duration_ms": 16520.0,
+      "words": [
+        {
+          "w": "Sebelum",
+          "s": 100.0,
+          "e": 462.5
+        },
+        {
+          "w": "menyelesaikan",
+          "s": 462.5,
+          "e": 987.5
+        },
+        {
+          "w": "ujian",
+          "s": 987.5,
+          "e": 1575.0
+        },
+        {
+          "w": "selalu",
+          "s": 1862.5,
+          "e": 2187.5
+        },
+        {
+          "w": "pastikan",
+          "s": 2187.5,
+          "e": 2612.5
+        },
+        {
+          "w": "seluruh",
+          "s": 2612.5,
+          "e": 2987.5
+        },
+        {
+          "w": "soal",
+          "s": 2987.5,
+          "e": 3262.5
+        },
+        {
+          "w": "telah",
+          "s": 3262.5,
+          "e": 3475.0
+        },
+        {
+          "w": "terjawab",
+          "s": 3475.0,
+          "e": 4150.0
+        },
+        {
+          "w": "Ketuk",
+          "s": 5372.0,
+          "e": 5647.0
+        },
+        {
+          "w": "tombol",
+          "s": 5647.0,
+          "e": 5909.5
+        },
+        {
+          "w": "navigasi",
+          "s": 5909.5,
+          "e": 6359.5
+        },
+        {
+          "w": "nomor",
+          "s": 6359.5,
+          "e": 6709.5
+        },
+        {
+          "w": "soal",
+          "s": 6709.5,
+          "e": 7047.0
+        },
+        {
+          "w": "di",
+          "s": 7047.0,
+          "e": 7134.5
+        },
+        {
+          "w": "bagian",
+          "s": 7134.5,
+          "e": 7497.0
+        },
+        {
+          "w": "tengah",
+          "s": 7497.0,
+          "e": 7722.0
+        },
+        {
+          "w": "bawah",
+          "s": 7722.0,
+          "e": 8247.0
+        },
+        {
+          "w": "Drawer",
+          "s": 9480.5,
+          "e": 9843.0
+        },
+        {
+          "w": "akan",
+          "s": 9843.0,
+          "e": 10055.5
+        },
+        {
+          "w": "menampilkan",
+          "s": 10055.5,
+          "e": 10555.5
+        },
+        {
+          "w": "rekapitulasi",
+          "s": 10555.5,
+          "e": 11155.5
+        },
+        {
+          "w": "lengkap",
+          "s": 11155.5,
+          "e": 11655.5
+        },
+        {
+          "w": "di",
+          "s": 11943.0,
+          "e": 12068.0
+        },
+        {
+          "w": "mana",
+          "s": 12068.0,
+          "e": 12255.5
+        },
+        {
+          "w": "kotak",
+          "s": 12255.5,
+          "e": 12518.0
+        },
+        {
+          "w": "berwarna",
+          "s": 12518.0,
+          "e": 12868.0
+        },
+        {
+          "w": "hijau",
+          "s": 12868.0,
+          "e": 13205.5
+        },
+        {
+          "w": "menandakan",
+          "s": 13205.5,
+          "e": 13768.0
+        },
+        {
+          "w": "soal",
+          "s": 13768.0,
+          "e": 14093.0
+        },
+        {
+          "w": "yang",
+          "s": 14093.0,
+          "e": 14230.5
+        },
+        {
+          "w": "sudah",
+          "s": 14230.5,
+          "e": 14480.5
+        },
+        {
+          "w": "berhasil",
+          "s": 14480.5,
+          "e": 14905.5
+        },
+        {
+          "w": "Anda",
+          "s": 14905.5,
+          "e": 15143.0
+        },
+        {
+          "w": "jawab",
+          "s": 15143.0,
+          "e": 15680.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "c93a3c88d1e550355f773233b6f8c9dfc79b0e0ed5bdbd0a64e548856e72f3bc"
+    },
+    "scene_06_konfirmasi_dan_selesai_ujian": {
+      "text": "Pada jendela konfirmasi akhir, periksa kembali jumlah soal yang terselesaikan. Jika sudah yakin, ketuk tombol Ya, Selesaikan Sekarang. Ujian Anda telah tuntas dan Anda akan diarahkan kembali ke dashboard utama. Selamat belajar dan semoga sukses bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_142728_5d0f07\\audio\\scene_06_konfirmasi_dan_selesai_ujian.wav",
+      "duration_ms": 18920.0,
+      "words": [
+        {
+          "w": "Pada",
+          "s": 112.5,
+          "e": 337.5
+        },
+        {
+          "w": "jendela",
+          "s": 337.5,
+          "e": 675.0
+        },
+        {
+          "w": "konfirmasi",
+          "s": 675.0,
+          "e": 1175.0
+        },
+        {
+          "w": "akhir",
+          "s": 1175.0,
+          "e": 1637.5
+        },
+        {
+          "w": "periksa",
+          "s": 1937.5,
+          "e": 2262.5
+        },
+        {
+          "w": "kembali",
+          "s": 2262.5,
+          "e": 2587.5
+        },
+        {
+          "w": "jumlah",
+          "s": 2587.5,
+          "e": 2887.5
+        },
+        {
+          "w": "soal",
+          "s": 2887.5,
+          "e": 3187.5
+        },
+        {
+          "w": "yang",
+          "s": 3187.5,
+          "e": 3325.0
+        },
+        {
+          "w": "terselesaikan",
+          "s": 3325.0,
+          "e": 4237.5
+        },
+        {
+          "w": "Jika",
+          "s": 5468.0,
+          "e": 5755.5
+        },
+        {
+          "w": "sudah",
+          "s": 5755.5,
+          "e": 5993.0
+        },
+        {
+          "w": "yakin",
+          "s": 5993.0,
+          "e": 6505.5
+        },
+        {
+          "w": "ketuk",
+          "s": 6780.5,
+          "e": 7030.5
+        },
+        {
+          "w": "tombol",
+          "s": 7030.5,
+          "e": 7343.0
+        },
+        {
+          "w": "Ya",
+          "s": 7343.0,
+          "e": 7718.0
+        },
+        {
+          "w": "Selesaikan",
+          "s": 7955.5,
+          "e": 8505.5
+        },
+        {
+          "w": "Sekarang",
+          "s": 8505.5,
+          "e": 9093.0
+        },
+        {
+          "w": "Ujian",
+          "s": 10332.0,
+          "e": 10682.0
+        },
+        {
+          "w": "Anda",
+          "s": 10682.0,
+          "e": 10919.5
+        },
+        {
+          "w": "telah",
+          "s": 10919.5,
+          "e": 11132.0
+        },
+        {
+          "w": "tuntas",
+          "s": 11132.0,
+          "e": 11582.0
+        },
+        {
+          "w": "dan",
+          "s": 11582.0,
+          "e": 11744.5
+        },
+        {
+          "w": "Anda",
+          "s": 11744.5,
+          "e": 12019.5
+        },
+        {
+          "w": "akan",
+          "s": 12019.5,
+          "e": 12219.5
+        },
+        {
+          "w": "diarahkan",
+          "s": 12219.5,
+          "e": 12632.0
+        },
+        {
+          "w": "kembali",
+          "s": 12632.0,
+          "e": 12994.5
+        },
+        {
+          "w": "ke",
+          "s": 12994.5,
+          "e": 13082.0
+        },
+        {
+          "w": "dashboard",
+          "s": 13082.0,
+          "e": 13557.0
+        },
+        {
+          "w": "utama",
+          "s": 13557.0,
+          "e": 14107.0
+        },
+        {
+          "w": "Selamat",
+          "s": 14944.5,
+          "e": 15332.0
+        },
+        {
+          "w": "belajar",
+          "s": 15332.0,
+          "e": 15807.0
+        },
+        {
+          "w": "dan",
+          "s": 15807.0,
+          "e": 15957.0
+        },
+        {
+          "w": "semoga",
+          "s": 15957.0,
+          "e": 16269.5
+        },
+        {
+          "w": "sukses",
+          "s": 16269.5,
+          "e": 16707.0
+        },
+        {
+          "w": "bersama",
+          "s": 16707.0,
+          "e": 17082.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 17082.0,
+          "e": 18082.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "47f8b7b37aa05c2e9ea7da9dfa3ad062b0894e6bf494bcce21aaddae0ee5c8a8"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "mode": "desktop",
+  "capture_method": "Per-virtual-frame CDP Page.captureScreenshot of the live Chromium compositor; fake clock + virtual animation timeline",
+  "video_pipeline": "B (continuous browser capture) -> libx264 CFR",
+  "evidence_pipeline": "A (clean screenshots in evidence/, never used as video frames)",
+  "fps": 60,
+  "frames": 9892,
+  "duration_ms": 164866.667,
+  "frame_sources": {
+    "cdp_live_capture": 9892,
+    "still_image": 0,
+    "repeated": 0,
+    "interpolated": 0
+  },
+  "mobile": false,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "dsf": 1,
+  "output": [
+    1920,
+    1080
+  ],
+  "video": "recording/continuous-desktop-60fps.mp4",
+  "video_sha256": "393d3b9d4c653db527fd1949b4153deeef4a28263c225b3286579ddccef5a8a5",
+  "wall_clock_capture_s": 827.3,
+  "capture_speed_x_realtime": 0.199,
+  "scenes": [
+    "scene_01_navigasi_manajemen_ujian",
+    "scene_02_pembuatan_paket_ujian_dan_parameter",
+    "scene_03_menu_sesi_aktif_dan_statistik",
+    "scene_04_pembuatan_sesi_dan_jadwal_kelas",
+    "scene_05_sinkronisasi_peserta_token_dan_monitoring"
+  ],
+  "warnings": [],
+  "created_at": "2026-11-21T09:21:49.570Z"
+}

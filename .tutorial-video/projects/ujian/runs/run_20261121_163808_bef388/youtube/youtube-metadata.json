@@ -1,0 +1,43 @@
+{
+  "snippet": {
+    "title": "Tutorial Fitur Anti-Curang ZEXAM-CBT: Sensor Pelanggaran & Diskualifikasi — ZEXAM-CBT #Shorts",
+    "description": "Tutorial Fitur Anti-Curang ZEXAM-CBT: Sensor Pelanggaran & Diskualifikasi — ZEXAM-CBT\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Pengenalan Keamanan\n00:22 - Deteksi Salin Soal Peringatan 1\n00:48 - Akumulasi Pelanggaran Realtime\n01:09 - Batas Toleransi Dan Diskualifikasi\n01:38 - Lembar Selesai Dan Integritas\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Pengenalan Keamanan: Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan sistem keamanan anti-curang pada aplikasi ZEXAM-CBT versi mobile.\n2. Deteksi Salin Soal Peringatan 1: Sistem secara otomatis memblokir segala bentuk penyalinan naskah ujian.\n3. Akumulasi Pelanggaran Realtime: Setiap peringatan yang Anda terima dicatat secara permanen di server dan disiarkan secara langsung ke layar pemantauan pengawas atau proktor ruangan.\n4. Batas Toleransi Dan Diskualifikasi: Perlu diingat bahwa sistem memiliki batas toleransi maksimal peringatan, yaitu tiga kali pelanggaran.\n5. Lembar Selesai Dan Integritas: Pada halaman akhir, status ujian akan tercatat sebagai Sesi Terhenti dengan nilai akhir diskualifikasi, disertai rekam jejak pelanggaran yang tidak dapat diubah.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#Shorts #UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "fitur",
+      "anti-curang",
+      "zexam-cbt",
+      "sensor",
+      "pelanggaran",
+      "diskualifikasi",
+      "pengenalan keamanan",
+      "deteksi salin soal peringatan 1",
+      "akumulasi pelanggaran realtime",
+      "batas toleransi dan diskualifikasi",
+      "lembar selesai dan integritas"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_163808_bef388\\final\\final-tutorial-mobile.mp4",
+    "duration_sec": 130.95,
+    "is_shorts": true,
+    "aspect_ratio": "9:16",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_163808_bef388\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T08:52:29.655709+00:00"
+  }
+}

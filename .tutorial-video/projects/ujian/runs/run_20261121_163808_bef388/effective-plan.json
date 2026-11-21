@@ -1,0 +1,315 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Fitur Anti-Curang ZEXAM-CBT: Sensor Pelanggaran & Diskualifikasi — ZEXAM-CBT",
+  "mode": "mobile",
+  "fps": 60,
+  "viewport": {
+    "width": 414,
+    "height": 736
+  },
+  "target_resolution": [
+    1080,
+    1920
+  ],
+  "mobile_viewport": {
+    "width": 414,
+    "height": 736
+  },
+  "mobile_target_resolution": [
+    1080,
+    1920
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login/siswa"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "siswa"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "a[href*=\"/siswa/exams/\"]"
+    },
+    {
+      "do": "click",
+      "target": "a[href*=\"/siswa/exams/\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "input[placeholder=\"MASUKKAN TOKEN\"]"
+    },
+    {
+      "do": "fill",
+      "target": "input[placeholder=\"MASUKKAN TOKEN\"]",
+      "value": "ZX2026"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "button:has-text(\"MULAI KERJAKAN SOAL\")"
+    },
+    {
+      "do": "click",
+      "target": "button:has-text(\"MULAI KERJAKAN SOAL\")"
+    },
+    {
+      "do": "wait_for",
+      "selector": "button:has-text(\"Central Processing Unit\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_pengenalan_keamanan",
+      "narration": "Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan sistem keamanan anti-curang pada aplikasi ZEXAM-CBT versi mobile. Aplikasi ini dilengkapi dengan algoritma pemantau cerdas yang menjaga integritas ujian agar tetap jujur, adil, dan transparan bagi seluruh peserta.",
+      "narration_segments": [
+        {
+          "text": "Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan sistem keamanan anti-curang pada aplikasi ZEXAM-CBT versi mobile.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Aplikasi ini dilengkapi dengan algoritma pemantau cerdas yang menjaga integritas ujian agar tetap jujur, adil, dan transparan bagi seluruh peserta.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Central Processing Unit\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Central Processing Unit\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1",
+      "narration": "Sistem secara otomatis memblokir segala bentuk penyalinan naskah ujian. Fitur klik kanan, tahan layar ponsel, dan kombinasi tombol salin teks dinonaktifkan secara penuh. Jika terdeteksi upaya menyalin soal, sistem akan langsung mencatat pelanggaran dan memunculkan banner peringatan kuning di bagian atas layar.",
+      "narration_segments": [
+        {
+          "text": "Sistem secara otomatis memblokir segala bentuk penyalinan naskah ujian.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Fitur klik kanan, tahan layar ponsel, dan kombinasi tombol salin teks dinonaktifkan secara penuh.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Jika terdeteksi upaya menyalin soal, sistem akan langsung mencatat pelanggaran dan memunculkan banner peringatan kuning di bagian atas layar.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "evaluate",
+          "script": "document.dispatchEvent(new Event('copy', { bubbles: true, cancelable: true }));"
+        },
+        {
+          "do": "wait_for",
+          "selector": "div:has-text(\"PERINGATAN KECURANGAN!\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "div:has-text(\"PERINGATAN KECURANGAN!\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 1500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime",
+      "narration": "Setiap peringatan yang Anda terima dicatat secara permanen di server dan disiarkan secara langsung ke layar pemantauan pengawas atau proktor ruangan. Mencoba menempelkan teks dari luar atau keluar jendela ujian akan meningkatkan akumulasi peringatan Anda ke tingkat berikutnya.",
+      "narration_segments": [
+        {
+          "text": "Setiap peringatan yang Anda terima dicatat secara permanen di server dan disiarkan secara langsung ke layar pemantauan pengawas atau proktor ruangan.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Mencoba menempelkan teks dari luar atau keluar jendela ujian akan meningkatkan akumulasi peringatan Anda ke tingkat berikutnya.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "evaluate",
+          "script": "document.dispatchEvent(new Event('paste', { bubbles: true, cancelable: true }));"
+        },
+        {
+          "do": "wait_for",
+          "selector": "div:has-text(\"Peringatan ke-2\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "div:has-text(\"Peringatan ke-2\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 1500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi",
+      "narration": "Perlu diingat bahwa sistem memiliki batas toleransi maksimal peringatan, yaitu tiga kali pelanggaran. Jika batas ini terlampaui, sistem secara otomatis menjatuhkan sanksi diskualifikasi. Sesi pengerjaan soal langsung dihentikan dan lembar ujian terkunci secara permanen.",
+      "narration_segments": [
+        {
+          "text": "Perlu diingat bahwa sistem memiliki batas toleransi maksimal peringatan, yaitu tiga kali pelanggaran.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Jika batas ini terlampaui, sistem secara otomatis menjatuhkan sanksi diskualifikasi.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Sesi pengerjaan soal langsung dihentikan dan lembar ujian terkunci secara permanen.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "evaluate",
+          "script": "document.dispatchEvent(new Event('cut', { bubbles: true, cancelable: true }));"
+        },
+        {
+          "do": "wait_for",
+          "selector": "div:has-text(\"DISKUALIFIKASI\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "div:has-text(\"DISKUALIFIKASI\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 3500
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Ujian Tersedia\")",
+          "budget_ms": 8000
+        },
+        {
+          "do": "hover",
+          "target": "a[href*=\"/siswa/exams/\"]",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "a[href*=\"/siswa/exams/\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h1:has-text(\"Sesi Terhenti\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_lembar_selesai_dan_integritas",
+      "narration": "Pada halaman akhir, status ujian akan tercatat sebagai Sesi Terhenti dengan nilai akhir diskualifikasi, disertai rekam jejak pelanggaran yang tidak dapat diubah. Oleh karena itu, kerjakanlah setiap soal ujian dengan jujur, percaya pada kemampuan diri sendiri, dan tetap fokus pada layar ujian Anda. Selamat menempuh ujian bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Pada halaman akhir, status ujian akan tercatat sebagai Sesi Terhenti dengan nilai akhir diskualifikasi, disertai rekam jejak pelanggaran yang tidak dapat diubah.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Oleh karena itu, kerjakanlah setiap soal ujian dengan jujur, percaya pada kemampuan diri sendiri, dan tetap fokus pada layar ujian Anda.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Selamat menempuh ujian bersama ZEXAM-CBT!",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "h1:has-text(\"Sesi Terhenti\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "p:has-text(\"DQ\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "p:has-text(\"3x\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "a[href*=\"/siswa/dashboard\"]",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 1200
+        }
+      ],
+      "result_hold_ms": 1200
+    }
+  ]
+}

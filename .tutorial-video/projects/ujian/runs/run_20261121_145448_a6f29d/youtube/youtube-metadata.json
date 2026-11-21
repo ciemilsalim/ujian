@@ -1,0 +1,45 @@
+{
+  "snippet": {
+    "title": "Tutorial Cara Menjawab Berbagai Tipe Soal CBT & Menyelesaikan Ujian — ZEXAM-CBT #Shorts",
+    "description": "Tutorial Cara Menjawab Berbagai Tipe Soal CBT & Menyelesaikan Ujian — ZEXAM-CBT\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Menjawab Pilihan Ganda\n00:28 - Menjawab Pilihan Ganda Kompleks\n00:58 - Menjawab Benar Salah\n01:22 - Menjawab Soal Essay\n01:58 - Rekapitulasi Drawer Soal\n02:24 - Konfirmasi Dan Selesai Ujian\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Menjawab Pilihan Ganda: Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan cara menjawab berbagai jenis soal pada aplikasi ZEXAM-CBT versi mobile.\n2. Menjawab Pilihan Ganda Kompleks: Tipe berikutnya adalah Pilihan Ganda Kompleks.\n3. Menjawab Benar Salah: Tipe ketiga adalah soal Pernyataan Benar atau Salah.\n4. Menjawab Soal Essay: Tipe keempat adalah soal Uraian atau Essay.\n5. Rekapitulasi Drawer Soal: Sebelum menyelesaikan ujian, selalu pastikan seluruh soal telah terjawab.\n6. Konfirmasi Dan Selesai Ujian: Pada jendela konfirmasi akhir, periksa kembali jumlah soal yang terselesaikan.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#Shorts #UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "menjawab",
+      "berbagai",
+      "tipe",
+      "soal",
+      "cbt",
+      "menyelesaikan",
+      "zexam-cbt",
+      "menjawab pilihan ganda",
+      "menjawab pilihan ganda kompleks",
+      "menjawab benar salah",
+      "menjawab soal essay",
+      "rekapitulasi drawer soal",
+      "konfirmasi dan selesai ujian"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_145448_a6f29d\\final\\final-tutorial-mobile.mp4",
+    "duration_sec": 171.62,
+    "is_shorts": true,
+    "aspect_ratio": "9:16",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_145448_a6f29d\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T07:21:10.486527+00:00"
+  }
+}

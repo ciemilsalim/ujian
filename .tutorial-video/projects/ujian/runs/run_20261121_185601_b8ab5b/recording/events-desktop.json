@@ -1,0 +1,1514 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_live_monitoring",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 18894,
+      "action_start_ms": 19200,
+      "action_end_ms": 28333.333,
+      "end_ms": 29533.333
+    },
+    {
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu",
+      "start_ms": 29533.333,
+      "narration_start_ms": 29733.333,
+      "narration_end_ms": 51081.333,
+      "action_start_ms": 51383.333,
+      "action_end_ms": 63533.333,
+      "end_ms": 64733.333
+    },
+    {
+      "scene_id": "scene_03_proktor_broadcast_system",
+      "start_ms": 64733.333,
+      "narration_start_ms": 64933.333,
+      "narration_end_ms": 84423.333,
+      "action_start_ms": 84733.333,
+      "action_end_ms": 101283.333,
+      "end_ms": 102483.333
+    },
+    {
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel",
+      "start_ms": 102483.333,
+      "narration_start_ms": 102683.333,
+      "narration_end_ms": 122025.333,
+      "action_start_ms": 122333.333,
+      "action_end_ms": 137583.333,
+      "end_ms": 138783.333
+    },
+    {
+      "scene_id": "scene_05_kontrol_darurat_proktor",
+      "start_ms": 138783.333,
+      "narration_start_ms": 138983.333,
+      "narration_end_ms": 166861.333,
+      "action_start_ms": 167166.667,
+      "action_end_ms": 177883.333,
+      "end_ms": 179383.333
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_live_monitoring"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_live_monitoring",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_01_navigasi_live_monitoring.wav",
+      "duration_ms": 18694,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 18900,
+      "frame": 1134,
+      "scene_id": "scene_01_navigasi_live_monitoring"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 19200,
+      "frame": 1152,
+      "scene_id": "scene_01_navigasi_live_monitoring"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 19200,
+      "frame": 1152,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        1088,
+        644.25
+      ],
+      "dist_px": 105.5,
+      "move_ms": 701.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 20100,
+      "frame": 1206,
+      "at": [
+        1088,
+        644.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 20700,
+      "frame": 1242,
+      "from": [
+        1088,
+        644.25
+      ],
+      "to": [
+        1570,
+        644.5
+      ],
+      "dist_px": 482,
+      "move_ms": 1025.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 21916.667,
+      "frame": 1315,
+      "at": [
+        1570,
+        644.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 22516.667,
+      "frame": 1351,
+      "from": [
+        1570,
+        644.5
+      ],
+      "to": [
+        1570,
+        644.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 22600,
+      "frame": 1356,
+      "at": [
+        1570,
+        644.5
+      ],
+      "label": "a[title=\"Pantau Live\"]",
+      "bbox": [
+        1553,
+        627.5,
+        34,
+        34
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 22733.333,
+      "frame": 1364,
+      "selector": "h2:has-text(\"Live Monitor:\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 23283.333,
+      "frame": 1397,
+      "from": [
+        1570,
+        644.5
+      ],
+      "to": [
+        1088,
+        108.5
+      ],
+      "dist_px": 720.8,
+      "move_ms": 1117.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 24600,
+      "frame": 1476,
+      "at": [
+        1088,
+        108.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 25200,
+      "frame": 1512,
+      "from": [
+        1088,
+        108.5
+      ],
+      "to": [
+        1600.8515625,
+        762
+      ],
+      "dist_px": 830.7,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 26533.333,
+      "frame": 1592,
+      "at": [
+        1600.8515625,
+        762
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 28333.333,
+      "frame": 1700,
+      "scene_id": "scene_01_navigasi_live_monitoring"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 29533.333,
+      "frame": 1772,
+      "scene_id": "scene_01_navigasi_live_monitoring"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 29533.333,
+      "frame": 1772,
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 29533.333,
+      "frame": 1772,
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_02_metrik_statistik_dan_perpanjang_waktu.wav",
+      "duration_ms": 21348,
+      "at_ms": 29733.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 51083.333,
+      "frame": 3065,
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 51383.333,
+      "frame": 3083,
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 51383.333,
+      "frame": 3083,
+      "from": [
+        1600.8515625,
+        762
+      ],
+      "to": [
+        628.0546875,
+        297.5
+      ],
+      "dist_px": 1078,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 52716.667,
+      "frame": 3163,
+      "at": [
+        628.0546875,
+        297.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 53516.667,
+      "frame": 3211,
+      "from": [
+        628.0546875,
+        297.5
+      ],
+      "to": [
+        944.734375,
+        297.5
+      ],
+      "dist_px": 316.7,
+      "move_ms": 931.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 54633.333,
+      "frame": 3278,
+      "at": [
+        944.734375,
+        297.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 55433.333,
+      "frame": 3326,
+      "from": [
+        944.734375,
+        297.5
+      ],
+      "to": [
+        1210.9453125,
+        297.5
+      ],
+      "dist_px": 266.2,
+      "move_ms": 893.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 56516.667,
+      "frame": 3391,
+      "at": [
+        1210.9453125,
+        297.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 57316.667,
+      "frame": 3439,
+      "from": [
+        1210.9453125,
+        297.5
+      ],
+      "to": [
+        1542.6171875,
+        276
+      ],
+      "dist_px": 332.4,
+      "move_ms": 942.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 58450,
+      "frame": 3507,
+      "at": [
+        1542.6171875,
+        276
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 59250,
+      "frame": 3555,
+      "from": [
+        1542.6171875,
+        276
+      ],
+      "to": [
+        1492,
+        345.5
+      ],
+      "dist_px": 86,
+      "move_ms": 662.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 60100,
+      "frame": 3606,
+      "at": [
+        1492,
+        345.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 60600,
+      "frame": 3636,
+      "from": [
+        1492,
+        345.5
+      ],
+      "to": [
+        1492,
+        345.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 60683.333,
+      "frame": 3641,
+      "at": [
+        1492,
+        345.5
+      ],
+      "label": "button:has-text(\"+5 Min\")",
+      "bbox": [
+        1435,
+        330,
+        114,
+        31
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 60816.667,
+      "frame": 3649,
+      "from": [
+        1492,
+        345.5
+      ],
+      "to": [
+        1614,
+        345.5
+      ],
+      "dist_px": 122,
+      "move_ms": 729.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 61733.333,
+      "frame": 3704,
+      "at": [
+        1614,
+        345.5
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 63533.333,
+      "frame": 3812,
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 64733.333,
+      "frame": 3884,
+      "scene_id": "scene_02_metrik_statistik_dan_perpanjang_waktu"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 64733.333,
+      "frame": 3884,
+      "scene_id": "scene_03_proktor_broadcast_system"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 64733.333,
+      "frame": 3884,
+      "scene_id": "scene_03_proktor_broadcast_system",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_03_proktor_broadcast_system.wav",
+      "duration_ms": 19490,
+      "at_ms": 64933.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 84433.333,
+      "frame": 5066,
+      "scene_id": "scene_03_proktor_broadcast_system"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 84733.333,
+      "frame": 5084,
+      "scene_id": "scene_03_proktor_broadcast_system"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 84733.333,
+      "frame": 5084,
+      "from": [
+        1614,
+        345.5
+      ],
+      "to": [
+        647.078125,
+        520
+      ],
+      "dist_px": 982.5,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 86066.667,
+      "frame": 5164,
+      "at": [
+        647.078125,
+        520
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 86666.667,
+      "frame": 5200,
+      "from": [
+        647.078125,
+        520
+      ],
+      "to": [
+        989.265625,
+        639
+      ],
+      "dist_px": 362.3,
+      "move_ms": 961.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 87816.667,
+      "frame": 5269,
+      "at": [
+        989.265625,
+        639
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 88316.667,
+      "frame": 5299,
+      "from": [
+        989.265625,
+        639
+      ],
+      "to": [
+        795.159375,
+        639
+      ],
+      "dist_px": 194.1,
+      "move_ms": 825.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 89333.333,
+      "frame": 5360,
+      "at": [
+        795.159375,
+        639
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 89416.667,
+      "frame": 5365,
+      "at": [
+        795.159375,
+        639
+      ],
+      "label": "input[placeholder*=\"Ketik pengumuman\"]",
+      "bbox": [
+        504,
+        614,
+        970.53125,
+        50
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 89716.667,
+      "frame": 5383,
+      "target": "input[placeholder*=\"Ketik pengumuman\"]",
+      "text_len": 59,
+      "bbox": [
+        504,
+        614,
+        970.53125,
+        50
+      ],
+      "end_vt_ms": 97733.333
+    },
+    {
+      "type": "key",
+      "vt_ms": 89716.667,
+      "frame": 5383,
+      "ch": "W",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 89850,
+      "frame": 5391,
+      "ch": "a",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 89966.667,
+      "frame": 5398,
+      "ch": "k",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 90083.333,
+      "frame": 5405,
+      "ch": "t",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 90316.667,
+      "frame": 5419,
+      "ch": "u",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 90466.667,
+      "frame": 5428,
+      "ch": " ",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 90616.667,
+      "frame": 5437,
+      "ch": "u",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 90700,
+      "frame": 5442,
+      "ch": "j",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 90783.333,
+      "frame": 5447,
+      "ch": "i",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 90933.333,
+      "frame": 5456,
+      "ch": "a",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 91183.333,
+      "frame": 5471,
+      "ch": "n",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 91300,
+      "frame": 5478,
+      "ch": " ",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 91450,
+      "frame": 5487,
+      "ch": "t",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 91600,
+      "frame": 5496,
+      "ch": "e",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 91716.667,
+      "frame": 5503,
+      "ch": "r",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 91833.333,
+      "frame": 5510,
+      "ch": "s",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 91950,
+      "frame": 5517,
+      "ch": "i",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 92066.667,
+      "frame": 5524,
+      "ch": "s",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 92166.667,
+      "frame": 5530,
+      "ch": "a",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 92250,
+      "frame": 5535,
+      "ch": " ",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 92416.667,
+      "frame": 5545,
+      "ch": "1",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 92550,
+      "frame": 5553,
+      "ch": "0",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 92683.333,
+      "frame": 5561,
+      "ch": " ",
+      "i": 22
+    },
+    {
+      "type": "key",
+      "vt_ms": 92983.333,
+      "frame": 5579,
+      "ch": "m",
+      "i": 23
+    },
+    {
+      "type": "key",
+      "vt_ms": 93116.667,
+      "frame": 5587,
+      "ch": "e",
+      "i": 24
+    },
+    {
+      "type": "key",
+      "vt_ms": 93216.667,
+      "frame": 5593,
+      "ch": "n",
+      "i": 25
+    },
+    {
+      "type": "key",
+      "vt_ms": 93333.333,
+      "frame": 5600,
+      "ch": "i",
+      "i": 26
+    },
+    {
+      "type": "key",
+      "vt_ms": 93450,
+      "frame": 5607,
+      "ch": "t",
+      "i": 27
+    },
+    {
+      "type": "key",
+      "vt_ms": 93600,
+      "frame": 5616,
+      "ch": ".",
+      "i": 28
+    },
+    {
+      "type": "key",
+      "vt_ms": 93783.333,
+      "frame": 5627,
+      "ch": " ",
+      "i": 29
+    },
+    {
+      "type": "key",
+      "vt_ms": 93933.333,
+      "frame": 5636,
+      "ch": "P",
+      "i": 30
+    },
+    {
+      "type": "key",
+      "vt_ms": 94050,
+      "frame": 5643,
+      "ch": "e",
+      "i": 31
+    },
+    {
+      "type": "key",
+      "vt_ms": 94150,
+      "frame": 5649,
+      "ch": "r",
+      "i": 32
+    },
+    {
+      "type": "key",
+      "vt_ms": 94266.667,
+      "frame": 5656,
+      "ch": "i",
+      "i": 33
+    },
+    {
+      "type": "key",
+      "vt_ms": 94416.667,
+      "frame": 5665,
+      "ch": "k",
+      "i": 34
+    },
+    {
+      "type": "key",
+      "vt_ms": 94550,
+      "frame": 5673,
+      "ch": "s",
+      "i": 35
+    },
+    {
+      "type": "key",
+      "vt_ms": 94683.333,
+      "frame": 5681,
+      "ch": "a",
+      "i": 36
+    },
+    {
+      "type": "key",
+      "vt_ms": 94833.333,
+      "frame": 5690,
+      "ch": " ",
+      "i": 37
+    },
+    {
+      "type": "key",
+      "vt_ms": 94983.333,
+      "frame": 5699,
+      "ch": "k",
+      "i": 38
+    },
+    {
+      "type": "key",
+      "vt_ms": 95100,
+      "frame": 5706,
+      "ch": "e",
+      "i": 39
+    },
+    {
+      "type": "key",
+      "vt_ms": 95183.333,
+      "frame": 5711,
+      "ch": "m",
+      "i": 40
+    },
+    {
+      "type": "key",
+      "vt_ms": 95316.667,
+      "frame": 5719,
+      "ch": "b",
+      "i": 41
+    },
+    {
+      "type": "key",
+      "vt_ms": 95450,
+      "frame": 5727,
+      "ch": "a",
+      "i": 42
+    },
+    {
+      "type": "key",
+      "vt_ms": 95600,
+      "frame": 5736,
+      "ch": "l",
+      "i": 43
+    },
+    {
+      "type": "key",
+      "vt_ms": 95750,
+      "frame": 5745,
+      "ch": "i",
+      "i": 44
+    },
+    {
+      "type": "key",
+      "vt_ms": 95850,
+      "frame": 5751,
+      "ch": " ",
+      "i": 45
+    },
+    {
+      "type": "key",
+      "vt_ms": 96033.333,
+      "frame": 5762,
+      "ch": "j",
+      "i": 46
+    },
+    {
+      "type": "key",
+      "vt_ms": 96133.333,
+      "frame": 5768,
+      "ch": "a",
+      "i": 47
+    },
+    {
+      "type": "key",
+      "vt_ms": 96233.333,
+      "frame": 5774,
+      "ch": "w",
+      "i": 48
+    },
+    {
+      "type": "key",
+      "vt_ms": 96383.333,
+      "frame": 5783,
+      "ch": "a",
+      "i": 49
+    },
+    {
+      "type": "key",
+      "vt_ms": 96516.667,
+      "frame": 5791,
+      "ch": "b",
+      "i": 50
+    },
+    {
+      "type": "key",
+      "vt_ms": 96650,
+      "frame": 5799,
+      "ch": "a",
+      "i": 51
+    },
+    {
+      "type": "key",
+      "vt_ms": 96750,
+      "frame": 5805,
+      "ch": "n",
+      "i": 52
+    },
+    {
+      "type": "key",
+      "vt_ms": 96883.333,
+      "frame": 5813,
+      "ch": " ",
+      "i": 53
+    },
+    {
+      "type": "key",
+      "vt_ms": 97083.333,
+      "frame": 5825,
+      "ch": "A",
+      "i": 54
+    },
+    {
+      "type": "key",
+      "vt_ms": 97216.667,
+      "frame": 5833,
+      "ch": "n",
+      "i": 55
+    },
+    {
+      "type": "key",
+      "vt_ms": 97350,
+      "frame": 5841,
+      "ch": "d",
+      "i": 56
+    },
+    {
+      "type": "key",
+      "vt_ms": 97483.333,
+      "frame": 5849,
+      "ch": "a",
+      "i": 57
+    },
+    {
+      "type": "key",
+      "vt_ms": 97616.667,
+      "frame": 5857,
+      "ch": "!",
+      "i": 58
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 97733.333,
+      "frame": 5864,
+      "target": "input[placeholder*=\"Ketik pengumuman\"]"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 97733.333,
+      "frame": 5864,
+      "from": [
+        795.159375,
+        639
+      ],
+      "to": [
+        1581.265625,
+        639
+      ],
+      "dist_px": 786.1,
+      "move_ms": 1137.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 99066.667,
+      "frame": 5944,
+      "at": [
+        1581.265625,
+        639
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 99566.667,
+      "frame": 5974,
+      "from": [
+        1581.265625,
+        639
+      ],
+      "to": [
+        1581.265625,
+        639
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 99650,
+      "frame": 5979,
+      "at": [
+        1581.265625,
+        639
+      ],
+      "label": "button:has-text(\"Kirim Sekarang\")",
+      "bbox": [
+        1490.53125,
+        614,
+        181.46875,
+        50
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 101283.333,
+      "frame": 6077,
+      "scene_id": "scene_03_proktor_broadcast_system"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 102483.333,
+      "frame": 6149,
+      "scene_id": "scene_03_proktor_broadcast_system"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 102483.333,
+      "frame": 6149,
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 102483.333,
+      "frame": 6149,
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_04_tampilan_denah_visual_dan_tabel.wav",
+      "duration_ms": 19342,
+      "at_ms": 102683.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 122033.333,
+      "frame": 7322,
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 122333.333,
+      "frame": 7340,
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 122333.333,
+      "frame": 7340,
+      "from": [
+        1581.265625,
+        639
+      ],
+      "to": [
+        1088,
+        827.5
+      ],
+      "dist_px": 528.1,
+      "move_ms": 1046.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 123566.667,
+      "frame": 7414,
+      "at": [
+        1088,
+        827.5
+      ]
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 124366.667,
+      "frame": 7462,
+      "from_y": 0,
+      "to_y": 362.40000000000003,
+      "dur_ms": 786.2
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 125183.333,
+      "frame": 7511,
+      "y": 362
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 125183.333,
+      "frame": 7511,
+      "from": [
+        1088,
+        827.5
+      ],
+      "to": [
+        1088,
+        773
+      ],
+      "dist_px": 54.5,
+      "move_ms": 582.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 125950,
+      "frame": 7557,
+      "at": [
+        1088,
+        773
+      ]
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 126950,
+      "frame": 7617,
+      "from_y": 362,
+      "to_y": 389.90000000000003,
+      "dur_ms": 520
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 127500,
+      "frame": 7650,
+      "y": 390
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 127500,
+      "frame": 7650,
+      "from": [
+        1088,
+        773
+      ],
+      "to": [
+        1088,
+        453.5
+      ],
+      "dist_px": 319.5,
+      "move_ms": 933.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 128633.333,
+      "frame": 7718,
+      "at": [
+        1088,
+        453.5
+      ]
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 129233.333,
+      "frame": 7754,
+      "from_y": 390,
+      "to_y": 606,
+      "dur_ms": 654.4
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 129916.667,
+      "frame": 7795,
+      "y": 606
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 129916.667,
+      "frame": 7795,
+      "from": [
+        1088,
+        453.5
+      ],
+      "to": [
+        1092.625,
+        832.5
+      ],
+      "dist_px": 379,
+      "move_ms": 971.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 131083.333,
+      "frame": 7865,
+      "at": [
+        1092.625,
+        832.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 131683.333,
+      "frame": 7901,
+      "from": [
+        1092.625,
+        832.5
+      ],
+      "to": [
+        1447.703125,
+        156
+      ],
+      "dist_px": 764,
+      "move_ms": 1131.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 133000,
+      "frame": 7980,
+      "at": [
+        1447.703125,
+        156
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 133500,
+      "frame": 8010,
+      "from": [
+        1447.703125,
+        156
+      ],
+      "to": [
+        1447.703125,
+        156
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 133583.333,
+      "frame": 8015,
+      "at": [
+        1447.703125,
+        156
+      ],
+      "label": "div.flex.bg-gray-100 button:nth-child(1)",
+      "bbox": [
+        1433.703125,
+        142,
+        28,
+        28
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 133716.667,
+      "frame": 8023,
+      "selector": "table",
+      "budget_ms": 4000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 134266.667,
+      "frame": 8056,
+      "from": [
+        1447.703125,
+        156
+      ],
+      "to": [
+        1088,
+        805.5
+      ],
+      "dist_px": 742.5,
+      "move_ms": 1124.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 135583.333,
+      "frame": 8135,
+      "at": [
+        1088,
+        805.5
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 137583.333,
+      "frame": 8255,
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 138783.333,
+      "frame": 8327,
+      "scene_id": "scene_04_tampilan_denah_visual_dan_tabel"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 138783.333,
+      "frame": 8327,
+      "scene_id": "scene_05_kontrol_darurat_proktor"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 138783.333,
+      "frame": 8327,
+      "scene_id": "scene_05_kontrol_darurat_proktor",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_05_kontrol_darurat_proktor.wav",
+      "duration_ms": 27878,
+      "at_ms": 138983.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 166866.667,
+      "frame": 10012,
+      "scene_id": "scene_05_kontrol_darurat_proktor"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 167166.667,
+      "frame": 10030,
+      "scene_id": "scene_05_kontrol_darurat_proktor"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 167166.667,
+      "frame": 10030,
+      "from": [
+        1088,
+        805.5
+      ],
+      "to": [
+        1562,
+        825
+      ],
+      "dist_px": 474.4,
+      "move_ms": 1022.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 168383.333,
+      "frame": 10103,
+      "at": [
+        1562,
+        825
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 169183.333,
+      "frame": 10151,
+      "from": [
+        1562,
+        825
+      ],
+      "to": [
+        1598,
+        825
+      ],
+      "dist_px": 36,
+      "move_ms": 518.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 169900,
+      "frame": 10194,
+      "at": [
+        1598,
+        825
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 170700,
+      "frame": 10242,
+      "from": [
+        1598,
+        825
+      ],
+      "to": [
+        1634,
+        825
+      ],
+      "dist_px": 36,
+      "move_ms": 518.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 171416.667,
+      "frame": 10285,
+      "at": [
+        1634,
+        825
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 172216.667,
+      "frame": 10333,
+      "from": [
+        1634,
+        825
+      ],
+      "to": [
+        616.515625,
+        393
+      ],
+      "dist_px": 1105.4,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 173550,
+      "frame": 10413,
+      "at": [
+        616.515625,
+        393
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 174550,
+      "frame": 10473,
+      "from": [
+        616.515625,
+        393
+      ],
+      "to": [
+        1088,
+        172
+      ],
+      "dist_px": 520.7,
+      "move_ms": 1043.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 175783.333,
+      "frame": 10547,
+      "at": [
+        1088,
+        172
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 177883.333,
+      "frame": 10673,
+      "scene_id": "scene_05_kontrol_darurat_proktor"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 179383.333,
+      "frame": 10763,
+      "scene_id": "scene_05_kontrol_darurat_proktor"
+    }
+  ]
+}

@@ -1,0 +1,1209 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_navigasi_manajemen_ujian": {
+      "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada panduan ini, kita akan mempelajari langkah mudah mengelola paket ujian, mengatur jadwal sesi pelaksanaan, hingga mengaktifkan token ujian untuk siswa. Mari kita mulai dengan membuka menu Manajemen Ujian pada panel navigasi sebelah kiri.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_170518_720140\\audio\\scene_01_navigasi_manajemen_ujian.wav",
+      "duration_ms": 18934.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "Bapak",
+          "s": 375.0,
+          "e": 675.0
+        },
+        {
+          "w": "dan",
+          "s": 675.0,
+          "e": 812.5
+        },
+        {
+          "w": "Ibu",
+          "s": 812.5,
+          "e": 1012.5
+        },
+        {
+          "w": "Admin",
+          "s": 1012.5,
+          "e": 1425.0
+        },
+        {
+          "w": "serta",
+          "s": 1425.0,
+          "e": 1700.0
+        },
+        {
+          "w": "Proktor",
+          "s": 1700.0,
+          "e": 2100.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2100.0,
+          "e": 3112.5
+        },
+        {
+          "w": "Pada",
+          "s": 4322.5,
+          "e": 4535.0
+        },
+        {
+          "w": "panduan",
+          "s": 4535.0,
+          "e": 4847.5
+        },
+        {
+          "w": "ini",
+          "s": 4847.5,
+          "e": 5297.5
+        },
+        {
+          "w": "kita",
+          "s": 5597.5,
+          "e": 5797.5
+        },
+        {
+          "w": "akan",
+          "s": 5797.5,
+          "e": 5985.0
+        },
+        {
+          "w": "mempelajari",
+          "s": 5985.0,
+          "e": 6422.5
+        },
+        {
+          "w": "langkah",
+          "s": 6422.5,
+          "e": 6735.0
+        },
+        {
+          "w": "mudah",
+          "s": 6735.0,
+          "e": 6972.5
+        },
+        {
+          "w": "mengelola",
+          "s": 6972.5,
+          "e": 7297.5
+        },
+        {
+          "w": "paket",
+          "s": 7297.5,
+          "e": 7560.0
+        },
+        {
+          "w": "ujian",
+          "s": 7560.0,
+          "e": 8135.0
+        },
+        {
+          "w": "mengatur",
+          "s": 8410.0,
+          "e": 8810.0
+        },
+        {
+          "w": "jadwal",
+          "s": 8810.0,
+          "e": 9197.5
+        },
+        {
+          "w": "sesi",
+          "s": 9197.5,
+          "e": 9460.0
+        },
+        {
+          "w": "pelaksanaan",
+          "s": 9460.0,
+          "e": 10210.0
+        },
+        {
+          "w": "hingga",
+          "s": 10472.5,
+          "e": 10722.5
+        },
+        {
+          "w": "mengaktifkan",
+          "s": 10722.5,
+          "e": 11260.0
+        },
+        {
+          "w": "token",
+          "s": 11260.0,
+          "e": 11485.0
+        },
+        {
+          "w": "ujian",
+          "s": 11485.0,
+          "e": 11872.5
+        },
+        {
+          "w": "untuk",
+          "s": 11872.5,
+          "e": 12110.0
+        },
+        {
+          "w": "siswa",
+          "s": 12110.0,
+          "e": 12672.5
+        },
+        {
+          "w": "Mari",
+          "s": 13922.0,
+          "e": 14172.0
+        },
+        {
+          "w": "kita",
+          "s": 14172.0,
+          "e": 14397.0
+        },
+        {
+          "w": "mulai",
+          "s": 14397.0,
+          "e": 14647.0
+        },
+        {
+          "w": "dengan",
+          "s": 14647.0,
+          "e": 14872.0
+        },
+        {
+          "w": "membuka",
+          "s": 14872.0,
+          "e": 15222.0
+        },
+        {
+          "w": "menu",
+          "s": 15222.0,
+          "e": 15409.5
+        },
+        {
+          "w": "Manajemen",
+          "s": 15409.5,
+          "e": 15847.0
+        },
+        {
+          "w": "Ujian",
+          "s": 15847.0,
+          "e": 16309.5
+        },
+        {
+          "w": "pada",
+          "s": 16309.5,
+          "e": 16522.0
+        },
+        {
+          "w": "panel",
+          "s": 16522.0,
+          "e": 16772.0
+        },
+        {
+          "w": "navigasi",
+          "s": 16772.0,
+          "e": 17297.0
+        },
+        {
+          "w": "sebelah",
+          "s": 17297.0,
+          "e": 17634.5
+        },
+        {
+          "w": "kiri",
+          "s": 17634.5,
+          "e": 18084.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "8f62ccf7b78d468012de7251de5730aa394c9ce980b999322784f537061cd164"
+    },
+    "scene_02_pembuatan_paket_ujian_dan_parameter": {
+      "text": "Untuk membuat paket ujian baru, klik tombol Buat Ujian Baru di pojok kanan atas. Di jendela formulir ini, Anda dapat menentukan judul ujian, memilih bank soal yang telah disusun guru, serta menetapkan alokasi durasi pengerjaan. Tersedia pula opsi acak urutan soal, acak pilihan jawaban, serta pengaturan apakah nilai langsung ditampilkan kepada siswa setelah ujian selesai.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_170518_720140\\audio\\scene_02_pembuatan_paket_ujian_dan_parameter.wav",
+      "duration_ms": 23854.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 350.0
+        },
+        {
+          "w": "membuat",
+          "s": 350.0,
+          "e": 612.5
+        },
+        {
+          "w": "paket",
+          "s": 612.5,
+          "e": 862.5
+        },
+        {
+          "w": "ujian",
+          "s": 862.5,
+          "e": 1212.5
+        },
+        {
+          "w": "baru",
+          "s": 1212.5,
+          "e": 1675.0
+        },
+        {
+          "w": "klik",
+          "s": 1987.5,
+          "e": 2162.5
+        },
+        {
+          "w": "tombol",
+          "s": 2162.5,
+          "e": 2437.5
+        },
+        {
+          "w": "Buat",
+          "s": 2437.5,
+          "e": 2600.0
+        },
+        {
+          "w": "Ujian",
+          "s": 2600.0,
+          "e": 2912.5
+        },
+        {
+          "w": "Baru",
+          "s": 2912.5,
+          "e": 3187.5
+        },
+        {
+          "w": "di",
+          "s": 3187.5,
+          "e": 3300.0
+        },
+        {
+          "w": "pojok",
+          "s": 3300.0,
+          "e": 3625.0
+        },
+        {
+          "w": "kanan",
+          "s": 3625.0,
+          "e": 3850.0
+        },
+        {
+          "w": "atas",
+          "s": 3850.0,
+          "e": 4387.5
+        },
+        {
+          "w": "Di",
+          "s": 5594.5,
+          "e": 5719.5
+        },
+        {
+          "w": "jendela",
+          "s": 5719.5,
+          "e": 6069.5
+        },
+        {
+          "w": "formulir",
+          "s": 6069.5,
+          "e": 6432.0
+        },
+        {
+          "w": "ini",
+          "s": 6432.0,
+          "e": 6882.0
+        },
+        {
+          "w": "Anda",
+          "s": 7194.5,
+          "e": 7469.5
+        },
+        {
+          "w": "dapat",
+          "s": 7469.5,
+          "e": 7719.5
+        },
+        {
+          "w": "menentukan",
+          "s": 7719.5,
+          "e": 8132.0
+        },
+        {
+          "w": "judul",
+          "s": 8132.0,
+          "e": 8369.5
+        },
+        {
+          "w": "ujian",
+          "s": 8369.5,
+          "e": 8944.5
+        },
+        {
+          "w": "memilih",
+          "s": 9232.0,
+          "e": 9594.5
+        },
+        {
+          "w": "bank",
+          "s": 9594.5,
+          "e": 9794.5
+        },
+        {
+          "w": "soal",
+          "s": 9794.5,
+          "e": 10094.5
+        },
+        {
+          "w": "yang",
+          "s": 10094.5,
+          "e": 10232.0
+        },
+        {
+          "w": "telah",
+          "s": 10232.0,
+          "e": 10432.0
+        },
+        {
+          "w": "disusun",
+          "s": 10432.0,
+          "e": 10807.0
+        },
+        {
+          "w": "guru",
+          "s": 10807.0,
+          "e": 11257.0
+        },
+        {
+          "w": "serta",
+          "s": 11507.0,
+          "e": 11819.5
+        },
+        {
+          "w": "menetapkan",
+          "s": 11819.5,
+          "e": 12294.5
+        },
+        {
+          "w": "alokasi",
+          "s": 12294.5,
+          "e": 12732.0
+        },
+        {
+          "w": "durasi",
+          "s": 12732.0,
+          "e": 13069.5
+        },
+        {
+          "w": "pengerjaan",
+          "s": 13069.5,
+          "e": 13832.0
+        },
+        {
+          "w": "Tersedia",
+          "s": 15086.5,
+          "e": 15461.5
+        },
+        {
+          "w": "pula",
+          "s": 15461.5,
+          "e": 15636.5
+        },
+        {
+          "w": "opsi",
+          "s": 15636.5,
+          "e": 15899.0
+        },
+        {
+          "w": "acak",
+          "s": 15899.0,
+          "e": 16136.5
+        },
+        {
+          "w": "urutan",
+          "s": 16136.5,
+          "e": 16449.0
+        },
+        {
+          "w": "soal",
+          "s": 16449.0,
+          "e": 16986.5
+        },
+        {
+          "w": "acak",
+          "s": 17286.5,
+          "e": 17574.0
+        },
+        {
+          "w": "pilihan",
+          "s": 17574.0,
+          "e": 17911.5
+        },
+        {
+          "w": "jawaban",
+          "s": 17911.5,
+          "e": 18561.5
+        },
+        {
+          "w": "serta",
+          "s": 18849.0,
+          "e": 19136.5
+        },
+        {
+          "w": "pengaturan",
+          "s": 19136.5,
+          "e": 19586.5
+        },
+        {
+          "w": "apakah",
+          "s": 19586.5,
+          "e": 19899.0
+        },
+        {
+          "w": "nilai",
+          "s": 19899.0,
+          "e": 20149.0
+        },
+        {
+          "w": "langsung",
+          "s": 20149.0,
+          "e": 20486.5
+        },
+        {
+          "w": "ditampilkan",
+          "s": 20486.5,
+          "e": 21049.0
+        },
+        {
+          "w": "kepada",
+          "s": 21049.0,
+          "e": 21311.5
+        },
+        {
+          "w": "siswa",
+          "s": 21311.5,
+          "e": 21686.5
+        },
+        {
+          "w": "setelah",
+          "s": 21686.5,
+          "e": 22011.5
+        },
+        {
+          "w": "ujian",
+          "s": 22011.5,
+          "e": 22349.0
+        },
+        {
+          "w": "selesai",
+          "s": 22349.0,
+          "e": 22999.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "bd87c6b04a6cd40ba0ca54e909fa9f540fe92b0f98392f60b7bdccb5a3d0fb2b"
+    },
+    "scene_03_menu_sesi_aktif_dan_statistik": {
+      "text": "Setelah paket ujian siap, langkah berikutnya adalah menjadwalkan sesi pelaksanaan. Klik menu Sesi Aktif pada sidebar. Di bagian atas, dashboard menyajikan ringkasan statistik secara langsung, mulai dari total sesi terdaftar, jumlah sesi yang sedang aktif, hingga total peserta yang terhubung.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_170518_720140\\audio\\scene_03_menu_sesi_aktif_dan_statistik.wav",
+      "duration_ms": 19268.0,
+      "words": [
+        {
+          "w": "Setelah",
+          "s": 112.5,
+          "e": 437.5
+        },
+        {
+          "w": "paket",
+          "s": 437.5,
+          "e": 687.5
+        },
+        {
+          "w": "ujian",
+          "s": 687.5,
+          "e": 1012.5
+        },
+        {
+          "w": "siap",
+          "s": 1012.5,
+          "e": 1487.5
+        },
+        {
+          "w": "langkah",
+          "s": 1787.5,
+          "e": 2100.0
+        },
+        {
+          "w": "berikutnya",
+          "s": 2100.0,
+          "e": 2537.5
+        },
+        {
+          "w": "adalah",
+          "s": 2537.5,
+          "e": 2812.5
+        },
+        {
+          "w": "menjadwalkan",
+          "s": 2812.5,
+          "e": 3450.0
+        },
+        {
+          "w": "sesi",
+          "s": 3450.0,
+          "e": 3762.5
+        },
+        {
+          "w": "pelaksanaan",
+          "s": 3762.5,
+          "e": 4612.5
+        },
+        {
+          "w": "Klik",
+          "s": 5798.0,
+          "e": 6060.5
+        },
+        {
+          "w": "menu",
+          "s": 6060.5,
+          "e": 6235.5
+        },
+        {
+          "w": "Sesi",
+          "s": 6235.5,
+          "e": 6485.5
+        },
+        {
+          "w": "Aktif",
+          "s": 6485.5,
+          "e": 6910.5
+        },
+        {
+          "w": "pada",
+          "s": 6910.5,
+          "e": 7123.0
+        },
+        {
+          "w": "sidebar",
+          "s": 7123.0,
+          "e": 7748.0
+        },
+        {
+          "w": "Di",
+          "s": 8964.5,
+          "e": 9089.5
+        },
+        {
+          "w": "bagian",
+          "s": 9089.5,
+          "e": 9402.0
+        },
+        {
+          "w": "atas",
+          "s": 9402.0,
+          "e": 9927.0
+        },
+        {
+          "w": "dashboard",
+          "s": 10202.0,
+          "e": 10677.0
+        },
+        {
+          "w": "menyajikan",
+          "s": 10677.0,
+          "e": 11152.0
+        },
+        {
+          "w": "ringkasan",
+          "s": 11152.0,
+          "e": 11514.5
+        },
+        {
+          "w": "statistik",
+          "s": 11514.5,
+          "e": 12014.5
+        },
+        {
+          "w": "secara",
+          "s": 12014.5,
+          "e": 12314.5
+        },
+        {
+          "w": "langsung",
+          "s": 12314.5,
+          "e": 12864.5
+        },
+        {
+          "w": "mulai",
+          "s": 13164.5,
+          "e": 13439.5
+        },
+        {
+          "w": "dari",
+          "s": 13439.5,
+          "e": 13602.0
+        },
+        {
+          "w": "total",
+          "s": 13602.0,
+          "e": 13864.5
+        },
+        {
+          "w": "sesi",
+          "s": 13864.5,
+          "e": 14114.5
+        },
+        {
+          "w": "terdaftar",
+          "s": 14114.5,
+          "e": 14814.5
+        },
+        {
+          "w": "jumlah",
+          "s": 15077.0,
+          "e": 15402.0
+        },
+        {
+          "w": "sesi",
+          "s": 15402.0,
+          "e": 15714.5
+        },
+        {
+          "w": "yang",
+          "s": 15714.5,
+          "e": 15814.5
+        },
+        {
+          "w": "sedang",
+          "s": 15814.5,
+          "e": 16064.5
+        },
+        {
+          "w": "aktif",
+          "s": 16064.5,
+          "e": 16564.5
+        },
+        {
+          "w": "hingga",
+          "s": 16764.5,
+          "e": 17027.0
+        },
+        {
+          "w": "total",
+          "s": 17027.0,
+          "e": 17289.5
+        },
+        {
+          "w": "peserta",
+          "s": 17289.5,
+          "e": 17664.5
+        },
+        {
+          "w": "yang",
+          "s": 17664.5,
+          "e": 17814.5
+        },
+        {
+          "w": "terhubung",
+          "s": 17814.5,
+          "e": 18427.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "25383db78befb4c1cc73834121292a2185007d368f631c8ea46ac5f74f7b7f26"
+    },
+    "scene_04_pembuatan_sesi_dan_jadwal_kelas": {
+      "text": "Klik tombol Buat Sesi Baru untuk mengalokasikan ujian ke rombongan belajar. Masukkan nama sesi, pilih paket ujian yang akan diujikan, centang satu atau beberapa kelas peserta sekaligus, lalu tetapkan rentang waktu mulai dan waktu berakhir ujian secara akurat.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_170518_720140\\audio\\scene_04_pembuatan_sesi_dan_jadwal_kelas.wav",
+      "duration_ms": 15226.0,
+      "words": [
+        {
+          "w": "Klik",
+          "s": 100.0,
+          "e": 325.0
+        },
+        {
+          "w": "tombol",
+          "s": 325.0,
+          "e": 662.5
+        },
+        {
+          "w": "Buat",
+          "s": 662.5,
+          "e": 850.0
+        },
+        {
+          "w": "Sesi",
+          "s": 850.0,
+          "e": 1087.5
+        },
+        {
+          "w": "Baru",
+          "s": 1087.5,
+          "e": 1425.0
+        },
+        {
+          "w": "untuk",
+          "s": 1425.0,
+          "e": 1675.0
+        },
+        {
+          "w": "mengalokasikan",
+          "s": 1675.0,
+          "e": 2262.5
+        },
+        {
+          "w": "ujian",
+          "s": 2262.5,
+          "e": 2675.0
+        },
+        {
+          "w": "ke",
+          "s": 2675.0,
+          "e": 2750.0
+        },
+        {
+          "w": "rombongan",
+          "s": 2750.0,
+          "e": 3100.0
+        },
+        {
+          "w": "belajar",
+          "s": 3100.0,
+          "e": 3712.5
+        },
+        {
+          "w": "Masukkan",
+          "s": 4922.5,
+          "e": 5335.0
+        },
+        {
+          "w": "nama",
+          "s": 5335.0,
+          "e": 5497.5
+        },
+        {
+          "w": "sesi",
+          "s": 5497.5,
+          "e": 6047.5
+        },
+        {
+          "w": "pilih",
+          "s": 6322.5,
+          "e": 6535.0
+        },
+        {
+          "w": "paket",
+          "s": 6535.0,
+          "e": 6760.0
+        },
+        {
+          "w": "ujian",
+          "s": 6760.0,
+          "e": 7110.0
+        },
+        {
+          "w": "yang",
+          "s": 7110.0,
+          "e": 7210.0
+        },
+        {
+          "w": "akan",
+          "s": 7210.0,
+          "e": 7410.0
+        },
+        {
+          "w": "diujikan",
+          "s": 7410.0,
+          "e": 8060.0
+        },
+        {
+          "w": "centang",
+          "s": 8360.0,
+          "e": 8672.5
+        },
+        {
+          "w": "satu",
+          "s": 8672.5,
+          "e": 8972.5
+        },
+        {
+          "w": "atau",
+          "s": 8972.5,
+          "e": 9147.5
+        },
+        {
+          "w": "beberapa",
+          "s": 9147.5,
+          "e": 9485.0
+        },
+        {
+          "w": "kelas",
+          "s": 9485.0,
+          "e": 9697.5
+        },
+        {
+          "w": "peserta",
+          "s": 9697.5,
+          "e": 10022.5
+        },
+        {
+          "w": "sekaligus",
+          "s": 10022.5,
+          "e": 10710.0
+        },
+        {
+          "w": "lalu",
+          "s": 11022.5,
+          "e": 11260.0
+        },
+        {
+          "w": "tetapkan",
+          "s": 11260.0,
+          "e": 11672.5
+        },
+        {
+          "w": "rentang",
+          "s": 11672.5,
+          "e": 11935.0
+        },
+        {
+          "w": "waktu",
+          "s": 11935.0,
+          "e": 12172.5
+        },
+        {
+          "w": "mulai",
+          "s": 12172.5,
+          "e": 12510.0
+        },
+        {
+          "w": "dan",
+          "s": 12510.0,
+          "e": 12697.5
+        },
+        {
+          "w": "waktu",
+          "s": 12697.5,
+          "e": 12947.5
+        },
+        {
+          "w": "berakhir",
+          "s": 12947.5,
+          "e": 13260.0
+        },
+        {
+          "w": "ujian",
+          "s": 13260.0,
+          "e": 13622.5
+        },
+        {
+          "w": "secara",
+          "s": 13622.5,
+          "e": 13910.0
+        },
+        {
+          "w": "akurat",
+          "s": 13910.0,
+          "e": 14385.0
+        }
+      ],
+      "segments_count": 2,
+      "sha256": "93a75a6a037e588434886628dc0baa4fa187064ce549e24156baaa42eb9034bf"
+    },
+    "scene_05_sinkronisasi_peserta_token_dan_monitoring": {
+      "text": "Pada tabel sesi, klik tombol sinkronisasi peserta agar seluruh siswa pada kelas tersebut terdaftar ke dalam sesi ujian. Sistem secara otomatis men-generate token acak enam karakter yang dapat dibagikan kepada peserta saat ujian dimulai. Klik tombol status untuk mengaktifkan sesi, dan gunakan fitur Pantau Live untuk memonitor jalannya ujian secara langsung. Selamat mengelola ujian bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_170518_720140\\audio\\scene_05_sinkronisasi_peserta_token_dan_monitoring.wav",
+      "duration_ms": 25248.0,
+      "words": [
+        {
+          "w": "Pada",
+          "s": 112.5,
+          "e": 325.0
+        },
+        {
+          "w": "tabel",
+          "s": 325.0,
+          "e": 562.5
+        },
+        {
+          "w": "sesi",
+          "s": 562.5,
+          "e": 1125.0
+        },
+        {
+          "w": "klik",
+          "s": 1437.5,
+          "e": 1612.5
+        },
+        {
+          "w": "tombol",
+          "s": 1612.5,
+          "e": 1887.5
+        },
+        {
+          "w": "sinkronisasi",
+          "s": 1887.5,
+          "e": 2550.0
+        },
+        {
+          "w": "peserta",
+          "s": 2550.0,
+          "e": 2950.0
+        },
+        {
+          "w": "agar",
+          "s": 2950.0,
+          "e": 3175.0
+        },
+        {
+          "w": "seluruh",
+          "s": 3175.0,
+          "e": 3462.5
+        },
+        {
+          "w": "siswa",
+          "s": 3462.5,
+          "e": 3825.0
+        },
+        {
+          "w": "pada",
+          "s": 3825.0,
+          "e": 4012.5
+        },
+        {
+          "w": "kelas",
+          "s": 4012.5,
+          "e": 4187.5
+        },
+        {
+          "w": "tersebut",
+          "s": 4187.5,
+          "e": 4587.5
+        },
+        {
+          "w": "terdaftar",
+          "s": 4587.5,
+          "e": 5125.0
+        },
+        {
+          "w": "ke",
+          "s": 5125.0,
+          "e": 5212.5
+        },
+        {
+          "w": "dalam",
+          "s": 5212.5,
+          "e": 5462.5
+        },
+        {
+          "w": "sesi",
+          "s": 5462.5,
+          "e": 5712.5
+        },
+        {
+          "w": "ujian",
+          "s": 5712.5,
+          "e": 6312.5
+        },
+        {
+          "w": "Sistem",
+          "s": 7532.0,
+          "e": 7944.5
+        },
+        {
+          "w": "secara",
+          "s": 7944.5,
+          "e": 8244.5
+        },
+        {
+          "w": "otomatis",
+          "s": 8244.5,
+          "e": 8732.0
+        },
+        {
+          "w": "men-generate",
+          "s": 8732.0,
+          "e": 9207.0
+        },
+        {
+          "w": "token",
+          "s": 9207.0,
+          "e": 9532.0
+        },
+        {
+          "w": "acak",
+          "s": 9532.0,
+          "e": 9769.5
+        },
+        {
+          "w": "enam",
+          "s": 9769.5,
+          "e": 9982.0
+        },
+        {
+          "w": "karakter",
+          "s": 9982.0,
+          "e": 10382.0
+        },
+        {
+          "w": "yang",
+          "s": 10382.0,
+          "e": 10557.0
+        },
+        {
+          "w": "dapat",
+          "s": 10557.0,
+          "e": 10807.0
+        },
+        {
+          "w": "dibagikan",
+          "s": 10807.0,
+          "e": 11357.0
+        },
+        {
+          "w": "kepada",
+          "s": 11357.0,
+          "e": 11607.0
+        },
+        {
+          "w": "peserta",
+          "s": 11607.0,
+          "e": 12044.5
+        },
+        {
+          "w": "saat",
+          "s": 12044.5,
+          "e": 12294.5
+        },
+        {
+          "w": "ujian",
+          "s": 12294.5,
+          "e": 12644.5
+        },
+        {
+          "w": "dimulai",
+          "s": 12644.5,
+          "e": 13244.5
+        },
+        {
+          "w": "Klik",
+          "s": 14472.5,
+          "e": 14647.5
+        },
+        {
+          "w": "tombol",
+          "s": 14647.5,
+          "e": 14910.0
+        },
+        {
+          "w": "status",
+          "s": 14910.0,
+          "e": 15347.5
+        },
+        {
+          "w": "untuk",
+          "s": 15347.5,
+          "e": 15560.0
+        },
+        {
+          "w": "mengaktifkan",
+          "s": 15560.0,
+          "e": 16060.0
+        },
+        {
+          "w": "sesi",
+          "s": 16060.0,
+          "e": 16597.5
+        },
+        {
+          "w": "dan",
+          "s": 16897.5,
+          "e": 17122.5
+        },
+        {
+          "w": "gunakan",
+          "s": 17122.5,
+          "e": 17460.0
+        },
+        {
+          "w": "fitur",
+          "s": 17460.0,
+          "e": 17735.0
+        },
+        {
+          "w": "Pantau",
+          "s": 17735.0,
+          "e": 18035.0
+        },
+        {
+          "w": "Live",
+          "s": 18035.0,
+          "e": 18322.5
+        },
+        {
+          "w": "untuk",
+          "s": 18322.5,
+          "e": 18572.5
+        },
+        {
+          "w": "memonitor",
+          "s": 18572.5,
+          "e": 18985.0
+        },
+        {
+          "w": "jalannya",
+          "s": 18985.0,
+          "e": 19347.5
+        },
+        {
+          "w": "ujian",
+          "s": 19347.5,
+          "e": 19735.0
+        },
+        {
+          "w": "secara",
+          "s": 19735.0,
+          "e": 20035.0
+        },
+        {
+          "w": "langsung",
+          "s": 20035.0,
+          "e": 20622.5
+        },
+        {
+          "w": "Selamat",
+          "s": 21844.0,
+          "e": 22269.0
+        },
+        {
+          "w": "mengelola",
+          "s": 22269.0,
+          "e": 22594.0
+        },
+        {
+          "w": "ujian",
+          "s": 22594.0,
+          "e": 23019.0
+        },
+        {
+          "w": "bersama",
+          "s": 23019.0,
+          "e": 23406.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 23406.5,
+          "e": 24406.5
+        }
+      ],
+      "segments_count": 4,
+      "sha256": "867bdfa99185580d67bb78fa3d208d54bb3fba20d2bc42cd28cc4f3f67840754"
+    }
+  }
+}

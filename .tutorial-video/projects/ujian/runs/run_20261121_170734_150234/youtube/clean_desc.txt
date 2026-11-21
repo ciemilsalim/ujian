@@ -1,0 +1,12 @@
+Tutorial Admin Proktor ZEXAM-CBT: Pembuatan Paket Ujian, Penjadwalan Sesi, & Rilis Token Ujian (Versi Desktop)
+
+Panduan resmi bagi Bapak/Ibu Admin & Proktor ZEXAM-CBT dalam mengelola ujian, mengatur sesi, dan merilis token:
+00:00 - Navigasi Menu Manajemen Ujian
+00:28 - Pembuatan Paket Ujian & Konfigurasi Parameter (Bank Soal, Durasi, Acak Soal & Opsi, Tampil Nilai)
+01:07 - Tinjauan Menu Sesi Aktif & Statistik Real-Time
+01:37 - Pembuatan Sesi Ujian Baru & Penjadwalan Rombel Kelas
+02:08 - Sinkronisasi Peserta Kelas, Generate Token Ujian, & Fitur Pantau Live
+
+Semoga panduan ini membantu kelancaran pelaksanaan ujian berbasis komputer di sekolah Anda. Selamat mengelola ujian bersama ZEXAM-CBT!
+
+#ZexamCBT #TutorialProktor #AdminUjian #CBTOnline #AplikasiSekolah #UjianBerbasisKomputer

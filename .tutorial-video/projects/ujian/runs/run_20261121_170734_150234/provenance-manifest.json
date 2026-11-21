@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+  "project_id": "ujian",
+  "run_id": "run_20261121_170734_150234",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "created_at": "2026-11-21T17:24:00.645494",
+  "git_commit": "untracked",
+  "plan": {
+    "path": "projects\\ujian\\runs\\run_20261121_170734_150234\\effective-plan.json",
+    "sha256": "cf8070fcf3c4d0a57c5a82b1b946071b4399f23a3879970ac0d9bb08a6dc1825"
+  },
+  "profile": {
+    "path": null,
+    "sha256": null
+  },
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "path": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true
+  },
+  "artifacts": {
+    "final_video": {
+      "path": "final\\final-tutorial.mp4",
+      "sha256": "3276d54b675503c8e3de1250ff4722a9715e989775deb13222204c5f2c88073b"
+    },
+    "raw_recording": {
+      "path": null,
+      "sha256": null
+    },
+    "audio_master": {
+      "path": "audio\\audio-master.wav",
+      "sha256": "ce7055974de3ae734fe0f0814f0413cb3a0240515475847d5fa0a0a00cd5b296"
+    },
+    "recorded_events": {
+      "path": "recording\\events.json",
+      "sha256": "d056d980c89006660d2db4abd9c5135744593ba5f023f8067174febb96821516"
+    },
+    "final_video_desktop": {
+      "path": "final\\final-tutorial-desktop.mp4",
+      "sha256": "3276d54b675503c8e3de1250ff4722a9715e989775deb13222204c5f2c88073b"
+    },
+    "audio_master_desktop": {
+      "path": "audio\\audio-master-desktop.wav",
+      "sha256": "ce7055974de3ae734fe0f0814f0413cb3a0240515475847d5fa0a0a00cd5b296"
+    }
+  },
+  "isolation_verified": true,
+  "data_safety": {
+    "status": "VERIFIED",
+    "isolation_method": "TRACKED_EPHEMERAL_TEST_DATA",
+    "production_mutations_allowed": false,
+    "cleanliness_policy": "tracked_created_ids_only"
+  }
+}

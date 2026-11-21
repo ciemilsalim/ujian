@@ -1,0 +1,29 @@
+Tutorial Admin Proktor ZEXAM-CBT: Berkas Administrasi, Kartu Ujian, & Rekap Nilai
+
+Video panduan resmi tata cara pencetakan dokumen resmi ujian, cetak kartu peserta berbasis kelas dengan QR Code, serta rekapitulasi nilai dan analisis butir soal pada aplikasi ZEXAM-CBT.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Sentral Dokumen Administrasi Ujian
+00:33 - Sinkronisasi Ruang & Pengawas Ruangan
+01:02 - Unduh Tata Tertib Peserta & Pengawas
+01:29 - Cetak Kartu Peserta Ujian (A4 & QR Code)
+01:57 - Rekapitulasi Hasil Ujian & Ekspor Berkas (PDF/Excel)
+02:29 - Analisis Butir Soal & Grafik Sebaran Nilai
+
+📌 RINGKASAN FITUR:
+1. Sentral Dokumen Administrasi: Berita Acara, Kehadiran Siswa, dan Kehadiran Pengawas otomatis tersinkronisasi.
+2. Tata Tertib Resmi: Dokumen aturan ujian peserta dan integritas pengawas siap cetak PDF.
+3. Cetak Kartu Siswa: Generate kartu ujian kelas siap potong A4 dengan pas foto dan QR Code login otomatis.
+4. Rekapitulasi Nilai: Pemantauan rasio kehadiran real-time dan download rekap cepat PDF/Excel.
+5. Analisis Hasil: Statistik rata-rata, tertinggi/terendah, KKM, dan grafik distribusi nilai interaktif.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual desktop jernih beresolusi Full HD 1080p (60 FPS).
+- Navigasi responsif dan ramah pengguna.
+- Terintegrasi langsung dengan database sistem ZEXAM-CBT.
+
+🌐 Website: https://zexam.id
+Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur ZEXAM-CBT lainnya!
+
+#ZexamCBT #UjianBerbasisKomputer #AplikasiUjian #TutorialCBT #ProktorUjian #AdministrasiUjian

@@ -1,0 +1,31 @@
+Tutorial Ujian CBT Siswa: Login, Token, & Antarmuka Ujian — ZEXAM-CBT
+
+Video panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Login Siswa
+00:30 - Dashboard Dan Pilih Ujian
+00:54 - Masukkan Token Ujian
+01:17 - Konfirmasi Dan Mulai Soal
+01:41 - Antarmuka Cbt Dan Font
+02:08 - Menjawab Dan Navigasi
+02:33 - Daftar Soal Dan Penutup
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Login Siswa: Masuk ke halaman login siswa menggunakan username dan password peserta.
+2. Dashboard Dan Pilih Ujian: Masuk ke dashboard dan pilih sesi ujian yang aktif.
+3. Masukkan Token Ujian: Masukkan token resmi yang dirilis oleh pengawas / proktor.
+4. Konfirmasi Dan Mulai Soal: Periksa rincian data peserta dan konfirmasi mulai ujian.
+5. Antarmuka Cbt Dan Font: Kenali timer waktu, tombol ubah ukuran font (sedang/besar/sangat besar).
+6. Menjawab Dan Navigasi: Pilih jawaban pernyataan Benar/Salah dan simpan.
+7. Daftar Soal Dan Penutup: Akses drawer daftar nomor soal untuk berpindah ke nomor lainnya.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan interaktif visual beresolusi tinggi 1080x1920 (60 FPS).
+- Navigasi responsif tampilan mobile smartphone.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#Shorts #ZexamCBT #UjianOnline #TutorialSiswa #AplikasiCBT

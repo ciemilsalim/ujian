@@ -1,0 +1,46 @@
+{
+  "snippet": {
+    "title": "Tutorial Admin Proktor ZEXAM-CBT: Pembuatan Paket Ujian, Penjadwalan Sesi, & Rilis Token Ujian",
+    "description": "Tutorial Admin Proktor ZEXAM-CBT: Pembuatan Paket Ujian, Penjadwalan Sesi, & Rilis Token Ujian\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Manajemen Ujian\n00:28 - Pembuatan Paket Ujian Dan Parameter\n01:07 - Menu Sesi Aktif Dan Statistik\n01:37 - Pembuatan Sesi Dan Jadwal Kelas\n02:08 - Sinkronisasi Peserta Token Dan Monitoring\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Manajemen Ujian: Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.\n2. Pembuatan Paket Ujian Dan Parameter: Untuk membuat paket ujian baru, klik tombol Buat Ujian Baru di pojok kanan atas.\n3. Menu Sesi Aktif Dan Statistik: Setelah paket ujian siap, langkah berikutnya adalah menjadwalkan sesi pelaksanaan.\n4. Pembuatan Sesi Dan Jadwal Kelas: Klik tombol Buat Sesi Baru untuk mengalokasikan ujian ke rombongan belajar.\n5. Sinkronisasi Peserta Token Dan Monitoring: Pada tabel sesi, klik tombol sinkronisasi peserta agar seluruh siswa pada kelas tersebut terdaftar ke dalam sesi ujian.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "admin",
+      "proktor",
+      "zexam-cbt",
+      "pembuatan",
+      "paket",
+      "penjadwalan",
+      "sesi",
+      "rilis",
+      "token",
+      "navigasi manajemen ujian",
+      "pembuatan paket ujian dan parameter",
+      "menu sesi aktif dan statistik",
+      "pembuatan sesi dan jadwal kelas",
+      "sinkronisasi peserta token dan monitoring"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_170734_150234\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 164.87,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_170734_150234\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T09:24:00.649994+00:00"
+  }
+}

@@ -1,0 +1,29 @@
+Tutorial Cara Menjawab Berbagai Tipe Soal CBT & Menyelesaikan Ujian — ZEXAM-CBT
+
+Video panduan resmi cara menjawab berbagai jenis tipe soal pada aplikasi ZEXAM-CBT (versi mobile smartphone). Ikuti langkah-langkah mudah di bawah ini untuk memahami alur pengerjaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Menjawab Soal Pilihan Ganda
+00:28 - Menjawab Pilihan Ganda Kompleks
+00:58 - Menjawab Soal Benar / Salah
+01:22 - Menjawab Soal Uraian / Essay
+01:58 - Rekapitulasi Drawer Nomor Soal
+02:24 - Konfirmasi Dan Selesai Ujian
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Pilihan Ganda: Pilih salah satu opsi jawaban yang paling tepat (A, B, C, D) dan sistem menandai centang biru.
+2. Pilihan Ganda Kompleks: Pilih lebih dari satu opsi jawaban yang benar sesuai stimulus soal.
+3. Benar / Salah: Tentukan kebenaran masing-masing baris pernyataan dengan mengetuk tombol Benar atau Salah.
+4. Uraian / Essay: Ketikkan jawaban lengkap pada kolom teks yang tersedia dengan fitur auto-save ke server.
+5. Rekapitulasi Drawer: Buka daftar soal di bilah bawah untuk memastikan semua nomor telah berwarna hijau (terjawab).
+6. Selesai Ujian: Ketuk tombol 'YA, SELESAIKAN SEKARANG' pada modal konfirmasi untuk mengakhiri sesi ujian.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual interaktif beresolusi tinggi 1080x1920 (60 FPS).
+- Tampilan responsif mobile smartphone.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#Shorts #ZexamCBT #UjianOnline #TutorialSiswa #AplikasiCBT #TipsUjian

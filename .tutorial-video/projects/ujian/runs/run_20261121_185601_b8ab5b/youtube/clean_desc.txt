@@ -1,0 +1,12 @@
+Tutorial Admin Proktor ZEXAM-CBT: Monitoring Ujian Real-Time & Kontrol Darurat (Versi Desktop)
+
+Panduan lengkap bagi Bapak/Ibu Admin & Proktor ZEXAM-CBT dalam memantau ujian secara langsung dan menangani kendala teknis peserta:
+00:00 - Navigasi Menu Live Monitoring Ujian
+00:29 - Meninjau Metrik Statistik & Perpanjangan Waktu (+5 / +10 Menit)
+01:04 - Mengirim Pengumuman Instan (Proktor Broadcast System)
+01:42 - Tampilan Pemantauan: Denah Visual Kursi vs Mode Tabel
+02:18 - Kontrol Darurat Proktor: Reset Login, Reset Ujian, & Force Logout
+
+Semoga panduan ini membantu kelancaran pelaksanaan ujian berbasis komputer di sekolah Anda. Selamat mengelola ujian bersama ZEXAM-CBT!
+
+#ZexamCBT #TutorialProktor #AdminUjian #MonitoringCBT #UjianOnline #AplikasiSekolah #UjianBerbasisKomputer

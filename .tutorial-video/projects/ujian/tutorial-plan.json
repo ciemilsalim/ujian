@@ -2,7 +2,7 @@
   "version": "4.5.0",
   "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
   "project_id": "ujian",
-  "title": "Tutorial Import Soal Benar Salah — ZEXAM-CBT",
+  "title": "Tutorial Admin Proktor ZEXAM-CBT: Berkas Administrasi, Kartu Ujian, & Rekap Nilai",
   "mode": "desktop",
   "fps": 60,
   "viewport": {
@@ -43,9 +43,13 @@
       "url": "http://127.0.0.1:8000/login"
     },
     {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
       "do": "fill",
       "target": "#username",
-      "value": "guru"
+      "value": "proktor"
     },
     {
       "do": "fill",
@@ -54,57 +58,123 @@
     },
     {
       "do": "click",
-      "target": "#btn-login-submit"
+      "target": "button[type=\"submit\"]"
     },
     {
       "do": "wait_for",
-      "selector": "header"
     },
     {
-      "do": "goto",
-      "url": "http://127.0.0.1:8000/guru/question-banks"
-    },
-    {
-      "do": "wait_for",
-      "selector": "#btn-bank-detail-1"
+      "do": "hold",
+      "ms": 500
     }
   ],
   "scenes": [
     {
-      "scene_id": "scene_01_buka_bank_soal",
-      "narration": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT. Hari ini kita bersama-sama akan mempelajari cara mengimport soal jenis pernyataan benar dan salah secara praktis, baik menggunakan dokumen Excel maupun Word. Mari kita mulai dengan membuka detail bank soal yang aktif.",
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen",
+      "narration": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada video kali ini, kita akan membahas modul administrasi ujian, pencetakan kartu peserta, serta rekapitulasi dan analisis nilai. Pertama, buka menu Administrasi Ujian pada bilah navigasi kiri. Klik tombol Cetak Dokumen Administrasi pada sesi yang diinginkan untuk membuka sentral dokumen resmi.",
       "narration_segments": [
         {
-          "text": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT.",
+          "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada video kali ini, kita akan membahas modul administrasi ujian, pencetakan kartu peserta, serta rekapitulasi dan analisis nilai.",
           "pause_after_ms": 300
         },
         {
-          "text": "Hari ini kita bersama-sama akan mempelajari cara mengimport soal jenis pernyataan benar dan salah secara praktis, baik menggunakan dokumen Excel maupun Word.",
-          "pause_after_ms": 320
+          "text": "Pertama, buka menu Administrasi Ujian pada bilah navigasi kiri.",
+          "pause_after_ms": 250
         },
         {
-          "text": "Mari kita mulai dengan membuka detail bank soal yang aktif.",
-          "pause_after_ms": 250
+          "text": "Klik tombol Cetak Dokumen Administrasi pada sesi yang diinginkan untuk membuka sentral dokumen resmi.",
+          "pause_after_ms": 300
         }
       ],
       "steps": [
         {
-          "do": "wait_for",
-          "selector": "#btn-bank-detail-1",
-          "budget_ms": 3000
-        },
-        {
           "do": "hover",
-          "target": "#btn-bank-detail-1",
-          "hold_ms": 350
+          "target": "a[href*=\"/administration\"]",
+          "hold_ms": 500
         },
         {
           "do": "click",
-          "target": "#btn-bank-detail-1"
         },
         {
           "do": "wait_for",
-          "selector": "#btn-import-dropdown",
+          "selector": "h2:has-text(\"Administrasi Ujian\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Dokumen Sesi\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Cetak Dokumen Administrasi\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Cetak Dokumen Administrasi\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "text=Sentral Dokumen Administrasi",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas",
+      "narration": "Di dalam jendela sentral administrasi, proktor dapat memilih ruangan dan nama pengawas. Seluruh identitas yang dipilih di sini akan otomatis disinkronkan ke dalam dokumen PDF Berita Acara pelaksanaan ujian, Daftar Hadir Peserta, maupun Daftar Hadir Pengawas ruangan.",
+      "narration_segments": [
+        {
+          "text": "Di dalam jendela sentral administrasi, proktor dapat memilih ruangan dan nama pengawas.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Seluruh identitas yang dipilih di sini akan otomatis disinkronkan ke dalam dokumen PDF Berita Acara pelaksanaan ujian, Daftar Hadir Peserta, maupun Daftar Hadir Pengawas ruangan.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "select#room_id",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "select#proctor_id",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Berita Acara\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Kehadiran Siswa\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Kehadiran Pengawas\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "click",
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Cetak Dokumen Administrasi\")",
           "budget_ms": 5000
         },
         {
@@ -112,169 +182,52 @@
           "ms": 600
         }
       ],
-      "result_hold_ms": 1200
+      "result_hold_ms": 1000
     },
     {
-      "scene_id": "scene_02_unduh_template",
-      "narration": "Langkah pertama sebelum menyusun soal, kita dapat mengunduh format template resmi yang telah disediakan oleh sistem. Di sudut kanan atas informasi bank soal, tersedia tombol unduh template Excel berformat XLSX dan Word berformat DOCX. Template ini telah memuat contoh nyata soal benar salah, rumus matematika, dan teks Arab.",
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas",
+      "narration": "Selanjutnya, pilih tab Tata Tertib. Proktor dapat langsung mengunduh berkas resmi Tata Tertib Peserta dan panduan integritas Tata Tertib Pengawas berformat PDF standar siap cetak untuk ditempelkan di papan pengumuman maupun dibacakan sebelum ujian dimulai.",
       "narration_segments": [
         {
-          "text": "Langkah pertama sebelum menyusun soal, kita dapat mengunduh format template resmi yang telah disediakan oleh sistem.",
-          "pause_after_ms": 280
-        },
-        {
-          "text": "Di sudut kanan atas informasi bank soal, tersedia tombol unduh template Excel berformat XLSX dan Word berformat DOCX.",
-          "pause_after_ms": 300
-        },
-        {
-          "text": "Template ini telah memuat contoh nyata soal benar salah, rumus matematika, dan teks Arab.",
-          "pause_after_ms": 260
-        }
-      ],
-      "steps": [
-        {
-          "do": "hover",
-          "target": "#btn-download-template-excel",
-          "hold_ms": 500
-        },
-        {
-          "do": "hold",
-          "ms": 400
-        },
-        {
-          "do": "hover",
-          "target": "#btn-download-template-word",
-          "hold_ms": 600
-        },
-        {
-          "do": "hold",
-          "ms": 500
-        }
-      ],
-      "result_hold_ms": 1200
-    },
-    {
-      "scene_id": "scene_03_panduan_import",
-      "narration": "Untuk memastikan susunan naskah kita terbaca sempurna oleh mesin pengurai, kita dapat memeriksa panduan format import. Silakan klik tombol Import di bagian atas, lalu pilih menu Panduan Import. Dialog panduan akan menyajikan contoh struktur penulisan pada dokumen Word dan lembar kerja Excel secara transparan.",
-      "narration_segments": [
-        {
-          "text": "Untuk memastikan susunan naskah kita terbaca sempurna oleh mesin pengurai, kita dapat memeriksa panduan format import.",
-          "pause_after_ms": 290
-        },
-        {
-          "text": "Silakan klik tombol Import di bagian atas, lalu pilih menu Panduan Import.",
-          "pause_after_ms": 280
-        },
-        {
-          "text": "Dialog panduan akan menyajikan contoh struktur penulisan pada dokumen Word dan lembar kerja Excel secara transparan.",
-          "pause_after_ms": 260
-        }
-      ],
-      "steps": [
-        {
-          "do": "hover",
-          "target": "#btn-import-dropdown",
-          "hold_ms": 300
-        },
-        {
-          "do": "click",
-          "target": "#btn-import-dropdown"
-        },
-        {
-          "do": "wait_for",
-          "selector": "#btn-panduan-import",
-          "budget_ms": 3000
-        },
-        {
-          "do": "hover",
-          "target": "#btn-panduan-import",
-          "hold_ms": 300
-        },
-        {
-          "do": "click",
-          "target": "#btn-panduan-import"
-        },
-        {
-          "do": "wait_for",
-          "selector": "#btn-modal-start-import",
-          "budget_ms": 3000
-        },
-        {
-          "do": "hold",
-          "ms": 800
-        }
-      ],
-      "result_hold_ms": 1500
-    },
-    {
-      "scene_id": "scene_04_tutup_panduan_dan_eksekusi",
-      "narration": "Perhatikan bahwa sistem sangat toleran terhadap format kunci jawaban. Bapak dan Ibu Guru dapat menulis kunci dengan format huruf seperti A Benar B Salah, singkatan B dan S, angka biner, maupun kunci berbahasa Arab. Setelah memahaminya, kita klik tombol Mulai Import Sekarang untuk melanjutkan.",
-      "narration_segments": [
-        {
-          "text": "Perhatikan bahwa sistem sangat toleran terhadap format kunci jawaban.",
-          "pause_after_ms": 260
-        },
-        {
-          "text": "Bapak dan Ibu Guru dapat menulis kunci dengan format huruf seperti A Benar B Salah, singkatan B dan S, angka biner, maupun kunci berbahasa Arab.",
-          "pause_after_ms": 320
-        },
-        {
-          "text": "Setelah memahaminya, kita klik tombol Mulai Import Sekarang untuk melanjutkan.",
-          "pause_after_ms": 280
-        }
-      ],
-      "steps": [
-        {
-          "do": "hover",
-          "target": "#btn-modal-start-import",
-          "hold_ms": 350
-        },
-        {
-          "do": "click",
-          "target": "#btn-modal-start-import"
-        },
-        {
-          "do": "wait_for",
-          "selector": "#btn-import-excel",
-          "budget_ms": 3000
-        },
-        {
-          "do": "hold",
-          "ms": 500
-        }
-      ],
-      "result_hold_ms": 1200
-    },
-    {
-      "scene_id": "scene_05_pilih_menu_import",
-      "narration": "Sekarang menu import telah terbuka kembali. Kita cukup memilih opsi Import Excel apabila menggunakan spreadsheet, atau Import Word untuk dokumen naskah soal. Sistem otomatis menguraikan teks pertanyaan, daftar pernyataan, rumus matematika, hingga kunci jawaban dalam hitungan detik.",
-      "narration_segments": [
-        {
-          "text": "Sekarang menu import telah terbuka kembali.",
+          "text": "Selanjutnya, pilih tab Tata Tertib.",
           "pause_after_ms": 250
         },
         {
-          "text": "Kita cukup memilih opsi Import Excel apabila menggunakan spreadsheet, atau Import Word untuk dokumen naskah soal.",
-          "pause_after_ms": 310
-        },
-        {
-          "text": "Sistem otomatis menguraikan teks pertanyaan, daftar pernyataan, rumus matematika, hingga kunci jawaban dalam hitungan detik.",
+          "text": "Proktor dapat langsung mengunduh berkas resmi Tata Tertib Peserta dan panduan integritas Tata Tertib Pengawas berformat PDF standar siap cetak untuk ditempelkan di papan pengumuman maupun dibacakan sebelum ujian dimulai.",
           "pause_after_ms": 300
         }
       ],
       "steps": [
         {
           "do": "hover",
-          "target": "#btn-import-excel",
-          "hold_ms": 600
+          "target": "button:has-text(\"Tata Tertib\")",
+          "hold_ms": 500
         },
         {
-          "do": "hold",
-          "ms": 500
+          "do": "click",
+          "target": "button:has-text(\"Tata Tertib\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "text=Tata Tertib Peserta",
+          "budget_ms": 6000
         },
         {
           "do": "hover",
-          "target": "#btn-import-word",
+          "target": "h3:has-text(\"Tata Tertib Peserta\")",
+          "hold_ms": 800
+        },
+        {
+          "target": "a[href*=\"/administration/exam-rules\"]",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "h3:has-text(\"Tata Tertib Pengawas\")",
+          "hold_ms": 800
+        },
+        {
+          "target": "a[href*=\"/administration/proctor-rules\"]",
           "hold_ms": 600
         },
         {
@@ -282,44 +235,175 @@
           "ms": 800
         }
       ],
-      "result_hold_ms": 1200
+      "result_hold_ms": 1000
     },
     {
-      "scene_id": "scene_06_tinjau_hasil_soal",
-      "narration": "Seluruh butir soal pernyataan benar salah yang diimpor akan langsung tersimpan rapi pada bank soal. Tampil lengkap dengan indikator kebenaran, badge tipe soal, dan bobot skor otomatis. Sangat praktis dan menghemat waktu, bukan? Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian",
+      "narration": "Untuk mencetak kartu ujian seluruh peserta didik, buka tab Kartu Peserta. Sistem secara otomatis mengelompokkan daftar kelas beserta jumlah siswanya. Cukup klik tombol Cetak Kartu pada kelas yang dipilih untuk mengunduh lembar kartu ujian PDF berformat A4 yang dilengkapi pas foto, barcode, dan QR code login instan.",
       "narration_segments": [
         {
-          "text": "Seluruh butir soal pernyataan benar salah yang diimpor akan langsung tersimpan rapi pada bank soal.",
-          "pause_after_ms": 280
+          "text": "Untuk mencetak kartu ujian seluruh peserta didik, buka tab Kartu Peserta.",
+          "pause_after_ms": 250
         },
         {
-          "text": "Tampil lengkap dengan indikator kebenaran, badge tipe soal, dan bobot skor otomatis.",
-          "pause_after_ms": 270
+          "text": "Sistem secara otomatis mengelompokkan daftar kelas beserta jumlah siswanya.",
+          "pause_after_ms": 250
         },
         {
-          "text": "Sangat praktis dan menghemat waktu, bukan? Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+          "text": "Cukup klik tombol Cetak Kartu pada kelas yang dipilih untuk mengunduh lembar kartu ujian PDF berformat A4 yang dilengkapi pas foto, barcode, dan QR code login instan.",
           "pause_after_ms": 300
         }
       ],
       "steps": [
         {
+          "do": "hover",
+          "target": "button:has-text(\"Kartu Peserta\")",
+          "hold_ms": 500
+        },
+        {
           "do": "click",
-          "target": "#btn-import-dropdown"
+          "target": "button:has-text(\"Kartu Peserta\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Cetak Kartu\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "p:has-text(\"Siswa\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Cetak Kartu\")",
+          "hold_ms": 1000
         },
         {
           "do": "hold",
-          "ms": 400
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor",
+      "narration": "Setelah sesi ujian selesai dilaksanakan, buka menu Hasil Ujian. Halaman ini menyajikan rekapitulasi sesi, filter tahun ajaran aktif, serta bilah progres partisipasi siswa yang telah menyelesaikan ujian. Anda dapat langsung mengunduh rekapan nilai lengkap dalam format PDF atau Excel hanya dengan satu klik.",
+      "narration_segments": [
+        {
+          "text": "Setelah sesi ujian selesai dilaksanakan, buka menu Hasil Ujian.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Halaman ini menyajikan rekapitulasi sesi, filter tahun ajaran aktif, serta bilah progres partisipasi siswa yang telah menyelesaikan ujian.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Anda dapat langsung mengunduh rekapan nilai lengkap dalam format PDF atau Excel hanya dengan satu klik.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a[href*=\"/results\"]",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Hasil Ujian & Analitik\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "select",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "table",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"PDF\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Excel\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran",
+      "narration": "Untuk evaluasi mendalam, klik tombol Analisis. ZEXAM-CBT menyediakan visualisasi data interaktif meliputi nilai rata-rata, nilai tertinggi dan terendah, rasio kelulusan KKM, serta diagram sebaran nilai siswa. Seluruh proses administrasi dan evaluasi ujian kini tuntas dalam hitungan detik. Terima kasih telah menyaksikan!",
+      "narration_segments": [
+        {
+          "text": "Untuk evaluasi mendalam, klik tombol Analisis.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "ZEXAM-CBT menyediakan visualisasi data interaktif meliputi nilai rata-rata, nilai tertinggi dan terendah, rasio kelulusan KKM, serta diagram sebaran nilai siswa.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Seluruh proses administrasi dan evaluasi ujian kini tuntas dalam hitungan detik. Terima kasih telah menyaksikan!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Analisis\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "a:has-text(\"Analisis\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Analisis Hasil:\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "h2:has-text(\"Analisis Hasil:\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Unduh Laporan PDF\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Unduh DOCX\")",
+          "hold_ms": 600
         },
         {
           "do": "scroll",
-          "by": 300
+          "target": "window",
+          "direction": "down",
+          "distance": 300,
+          "hold_ms": 1500
         },
         {
           "do": "hold",
-          "ms": 1200
+          "ms": 2000
         }
       ],
-      "result_hold_ms": 1500
+      "result_hold_ms": 2500
     }
   ]
 }

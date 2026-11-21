@@ -1,0 +1,1222 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 24304,
+      "action_start_ms": 24616.667,
+      "action_end_ms": 32300,
+      "end_ms": 33300
+    },
+    {
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas",
+      "start_ms": 33300,
+      "narration_start_ms": 33500,
+      "narration_end_ms": 49398,
+      "action_start_ms": 49700,
+      "action_end_ms": 61033.333,
+      "end_ms": 62033.333
+    },
+    {
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas",
+      "start_ms": 62033.333,
+      "narration_start_ms": 62233.333,
+      "narration_end_ms": 77027.333,
+      "action_start_ms": 77333.333,
+      "action_end_ms": 88050,
+      "end_ms": 89050
+    },
+    {
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian",
+      "start_ms": 89050,
+      "narration_start_ms": 89250,
+      "narration_end_ms": 109166,
+      "action_start_ms": 109466.667,
+      "action_end_ms": 116700,
+      "end_ms": 117900
+    },
+    {
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor",
+      "start_ms": 117900,
+      "narration_start_ms": 118100,
+      "narration_end_ms": 137658,
+      "action_start_ms": 137966.667,
+      "action_end_ms": 148633.333,
+      "end_ms": 149633.333
+    },
+    {
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran",
+      "start_ms": 149633.333,
+      "narration_start_ms": 149833.333,
+      "narration_end_ms": 172031.333,
+      "action_start_ms": 172333.333,
+      "action_end_ms": 181866.667,
+      "end_ms": 184366.667
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_195453_738077\\audio\\scene_01_administrasi_sesi_dan_dokumen.wav",
+      "duration_ms": 24104,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 24316.667,
+      "frame": 1459,
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 24616.667,
+      "frame": 1477,
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 24616.667,
+      "frame": 1477,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        127.5,
+        461
+      ],
+      "dist_px": 1083.2,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 25950,
+      "frame": 1557,
+      "at": [
+        127.5,
+        461
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 26450,
+      "frame": 1587,
+      "from": [
+        127.5,
+        461
+      ],
+      "to": [
+        127.5,
+        461
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 26533.333,
+      "frame": 1592,
+      "at": [
+        127.5,
+        461
+      ],
+      "label": "a[href*=\"/administration\"]",
+      "bbox": [
+        16,
+        441,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 26666.667,
+      "frame": 1600,
+      "selector": "h2:has-text(\"Administrasi Ujian\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 27216.667,
+      "frame": 1633,
+      "from": [
+        127.5,
+        461
+      ],
+      "to": [
+        361.1796875,
+        232
+      ],
+      "dist_px": 327.2,
+      "move_ms": 938.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 28350,
+      "frame": 1701,
+      "at": [
+        361.1796875,
+        232
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 28950,
+      "frame": 1737,
+      "from": [
+        361.1796875,
+        232
+      ],
+      "to": [
+        682,
+        487
+      ],
+      "dist_px": 409.8,
+      "move_ms": 989,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 30133.333,
+      "frame": 1808,
+      "at": [
+        682,
+        487
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 30733.333,
+      "frame": 1844,
+      "from": [
+        682,
+        487
+      ],
+      "to": [
+        682,
+        487
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 30816.667,
+      "frame": 1849,
+      "at": [
+        682,
+        487
+      ],
+      "label": "button:has-text(\"Cetak Dokumen Administrasi\")",
+      "bbox": [
+        313,
+        459,
+        738,
+        56
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 30950,
+      "frame": 1857,
+      "selector": "text=Sentral Dokumen Administrasi",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 32300,
+      "frame": 1938,
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 33300,
+      "frame": 1998,
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 33300,
+      "frame": 1998,
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 33300,
+      "frame": 1998,
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_195453_738077\\audio\\scene_02_sinkronisasi_ruang_dan_pengawas.wav",
+      "duration_ms": 15898,
+      "at_ms": 33500
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 49400,
+      "frame": 2964,
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 49700,
+      "frame": 2982,
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 49700,
+      "frame": 2982,
+      "from": [
+        682,
+        487
+      ],
+      "to": [
+        842,
+        401.75
+      ],
+      "dist_px": 181.3,
+      "move_ms": 810.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 50700,
+      "frame": 3042,
+      "at": [
+        842,
+        401.75
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 51400,
+      "frame": 3084,
+      "from": [
+        842,
+        401.75
+      ],
+      "to": [
+        1078,
+        401.75
+      ],
+      "dist_px": 236,
+      "move_ms": 867.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 52466.667,
+      "frame": 3148,
+      "at": [
+        1078,
+        401.75
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 53166.667,
+      "frame": 3190,
+      "from": [
+        1078,
+        401.75
+      ],
+      "to": [
+        805.328125,
+        681.25
+      ],
+      "dist_px": 390.5,
+      "move_ms": 978.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 54333.333,
+      "frame": 3260,
+      "at": [
+        805.328125,
+        681.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 55133.333,
+      "frame": 3308,
+      "from": [
+        805.328125,
+        681.25
+      ],
+      "to": [
+        959.9921875,
+        681.25
+      ],
+      "dist_px": 154.7,
+      "move_ms": 777.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 56100,
+      "frame": 3366,
+      "at": [
+        959.9921875,
+        681.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 56900,
+      "frame": 3414,
+      "from": [
+        959.9921875,
+        681.25
+      ],
+      "to": [
+        1114.6640625,
+        681.25
+      ],
+      "dist_px": 154.7,
+      "move_ms": 777.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 57866.667,
+      "frame": 3472,
+      "at": [
+        1114.6640625,
+        681.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 58666.667,
+      "frame": 3520,
+      "from": [
+        1114.6640625,
+        681.25
+      ],
+      "to": [
+        960,
+        784.25
+      ],
+      "dist_px": 185.8,
+      "move_ms": 816.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 59666.667,
+      "frame": 3580,
+      "at": [
+        960,
+        784.25
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 59750,
+      "frame": 3585,
+      "at": [
+        960,
+        784.25
+      ],
+      "label": "button:has-text(\"Tutup Jendela\")",
+      "bbox": [
+        914.890625,
+        774.25,
+        90.21875,
+        20
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 59883.333,
+      "frame": 3593,
+      "selector": "button:has-text(\"Cetak Dokumen Administrasi\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 61033.333,
+      "frame": 3662,
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 62033.333,
+      "frame": 3722,
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 62033.333,
+      "frame": 3722,
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 62033.333,
+      "frame": 3722,
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_195453_738077\\audio\\scene_03_tata_tertib_peserta_dan_pengawas.wav",
+      "duration_ms": 14794,
+      "at_ms": 62233.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 77033.333,
+      "frame": 4622,
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 77333.333,
+      "frame": 4640,
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 77333.333,
+      "frame": 4640,
+      "from": [
+        960,
+        784.25
+      ],
+      "to": [
+        622.140625,
+        232
+      ],
+      "dist_px": 647.4,
+      "move_ms": 1093,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 78616.667,
+      "frame": 4717,
+      "at": [
+        622.140625,
+        232
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 79116.667,
+      "frame": 4747,
+      "from": [
+        622.140625,
+        232
+      ],
+      "to": [
+        622.140625,
+        232
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 79200,
+      "frame": 4752,
+      "at": [
+        622.140625,
+        232
+      ],
+      "label": "button:has-text(\"Tata Tertib\")",
+      "bbox": [
+        564.25,
+        212,
+        115.78125,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 79333.333,
+      "frame": 4760,
+      "selector": "text=Tata Tertib Peserta",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 79883.333,
+      "frame": 4793,
+      "from": [
+        622.140625,
+        232
+      ],
+      "to": [
+        680,
+        407
+      ],
+      "dist_px": 184.3,
+      "move_ms": 814.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 80883.333,
+      "frame": 4853,
+      "at": [
+        680,
+        407
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 81683.333,
+      "frame": 4901,
+      "from": [
+        680,
+        407
+      ],
+      "to": [
+        399.5546875,
+        505
+      ],
+      "dist_px": 297.1,
+      "move_ms": 917.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 82800,
+      "frame": 4968,
+      "at": [
+        399.5546875,
+        505
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 83400,
+      "frame": 5004,
+      "from": [
+        399.5546875,
+        505
+      ],
+      "to": [
+        1496,
+        407
+      ],
+      "dist_px": 1100.8,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 84733.333,
+      "frame": 5084,
+      "at": [
+        1496,
+        407
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 85533.333,
+      "frame": 5132,
+      "from": [
+        1496,
+        407
+      ],
+      "to": [
+        1215.5546875,
+        505
+      ],
+      "dist_px": 297.1,
+      "move_ms": 917.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 86650,
+      "frame": 5199,
+      "at": [
+        1215.5546875,
+        505
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 88050,
+      "frame": 5283,
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 89050,
+      "frame": 5343,
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 89050,
+      "frame": 5343,
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 89050,
+      "frame": 5343,
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_195453_738077\\audio\\scene_04_cetak_kartu_peserta_ujian.wav",
+      "duration_ms": 19916,
+      "at_ms": 89250
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 109166.667,
+      "frame": 6550,
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 109466.667,
+      "frame": 6568,
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 109466.667,
+      "frame": 6568,
+      "from": [
+        1215.5546875,
+        505
+      ],
+      "to": [
+        497.3046875,
+        232
+      ],
+      "dist_px": 768.4,
+      "move_ms": 1132.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 110783.333,
+      "frame": 6647,
+      "at": [
+        497.3046875,
+        232
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 111283.333,
+      "frame": 6677,
+      "from": [
+        497.3046875,
+        232
+      ],
+      "to": [
+        497.3046875,
+        232
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 111366.667,
+      "frame": 6682,
+      "at": [
+        497.3046875,
+        232
+      ],
+      "label": "button:has-text(\"Kartu Peserta\")",
+      "bbox": [
+        430.359375,
+        212,
+        133.890625,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 111500,
+      "frame": 6690,
+      "selector": "button:has-text(\"Cetak Kartu\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 112050,
+      "frame": 6723,
+      "from": [
+        497.3046875,
+        232
+      ],
+      "to": [
+        479,
+        499
+      ],
+      "dist_px": 267.6,
+      "move_ms": 894.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 113133.333,
+      "frame": 6788,
+      "at": [
+        479,
+        499
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 113933.333,
+      "frame": 6836,
+      "from": [
+        479,
+        499
+      ],
+      "to": [
+        479,
+        551
+      ],
+      "dist_px": 52,
+      "move_ms": 574.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 114700,
+      "frame": 6882,
+      "at": [
+        479,
+        551
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 116700,
+      "frame": 7002,
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 117900,
+      "frame": 7074,
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 117900,
+      "frame": 7074,
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 117900,
+      "frame": 7074,
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_195453_738077\\audio\\scene_05_rekapitulasi_hasil_dan_ekspor.wav",
+      "duration_ms": 19558,
+      "at_ms": 118100
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 137666.667,
+      "frame": 8260,
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 137966.667,
+      "frame": 8278,
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 137966.667,
+      "frame": 8278,
+      "from": [
+        479,
+        551
+      ],
+      "to": [
+        127.5,
+        374
+      ],
+      "dist_px": 393.5,
+      "move_ms": 979.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 139133.333,
+      "frame": 8348,
+      "at": [
+        127.5,
+        374
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 139633.333,
+      "frame": 8378,
+      "from": [
+        127.5,
+        374
+      ],
+      "to": [
+        127.5,
+        374
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 139716.667,
+      "frame": 8383,
+      "at": [
+        127.5,
+        374
+      ],
+      "label": "a[href*=\"/results\"]",
+      "bbox": [
+        16,
+        354,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 139850,
+      "frame": 8391,
+      "selector": "h2:has-text(\"Hasil Ujian & Analitik\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 140400,
+      "frame": 8424,
+      "from": [
+        127.5,
+        374
+      ],
+      "to": [
+        1361.515625,
+        31.5
+      ],
+      "dist_px": 1280.7,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 141733.333,
+      "frame": 8504,
+      "at": [
+        1361.515625,
+        31.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 142433.333,
+      "frame": 8546,
+      "from": [
+        1361.515625,
+        31.5
+      ],
+      "to": [
+        1088,
+        375.5
+      ],
+      "dist_px": 439.5,
+      "move_ms": 1004.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 143633.333,
+      "frame": 8618,
+      "at": [
+        1088,
+        375.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 144433.333,
+      "frame": 8666,
+      "from": [
+        1088,
+        375.5
+      ],
+      "to": [
+        1563.234375,
+        397
+      ],
+      "dist_px": 475.7,
+      "move_ms": 1022.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 145650,
+      "frame": 8739,
+      "at": [
+        1563.234375,
+        397
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 146350,
+      "frame": 8781,
+      "from": [
+        1563.234375,
+        397
+      ],
+      "to": [
+        1621.0546875,
+        397
+      ],
+      "dist_px": 57.8,
+      "move_ms": 592,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 147133.333,
+      "frame": 8828,
+      "at": [
+        1621.0546875,
+        397
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 148633.333,
+      "frame": 8918,
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 149633.333,
+      "frame": 8978,
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 149633.333,
+      "frame": 8978,
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 149633.333,
+      "frame": 8978,
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_195453_738077\\audio\\scene_06_analisis_hasil_dan_grafik_sebaran.wav",
+      "duration_ms": 22198,
+      "at_ms": 149833.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 172033.333,
+      "frame": 10322,
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 172333.333,
+      "frame": 10340,
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 172333.333,
+      "frame": 10340,
+      "from": [
+        1621.0546875,
+        397
+      ],
+      "to": [
+        1498.171875,
+        397
+      ],
+      "dist_px": 122.9,
+      "move_ms": 731.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 173250,
+      "frame": 10395,
+      "at": [
+        1498.171875,
+        397
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 173850,
+      "frame": 10431,
+      "from": [
+        1498.171875,
+        397
+      ],
+      "to": [
+        1498.171875,
+        397
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 173933.333,
+      "frame": 10436,
+      "at": [
+        1498.171875,
+        397
+      ],
+      "label": "a:has-text(\"Analisis\")",
+      "bbox": [
+        1463.984375,
+        387,
+        68.375,
+        20
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 174066.667,
+      "frame": 10444,
+      "selector": "h2:has-text(\"Analisis Hasil:\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 174616.667,
+      "frame": 10477,
+      "from": [
+        1498.171875,
+        397
+      ],
+      "to": [
+        1088,
+        108.5
+      ],
+      "dist_px": 501.5,
+      "move_ms": 1034.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 175850,
+      "frame": 10551,
+      "at": [
+        1088,
+        108.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 176650,
+      "frame": 10599,
+      "from": [
+        1088,
+        108.5
+      ],
+      "to": [
+        1241.5703125,
+        221
+      ],
+      "dist_px": 190.4,
+      "move_ms": 821.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 177666.667,
+      "frame": 10660,
+      "at": [
+        1241.5703125,
+        221
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 178266.667,
+      "frame": 10696,
+      "from": [
+        1241.5703125,
+        221
+      ],
+      "to": [
+        1426.1953125,
+        221
+      ],
+      "dist_px": 184.6,
+      "move_ms": 814.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 179266.667,
+      "frame": 10756,
+      "at": [
+        1426.1953125,
+        221
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 181866.667,
+      "frame": 10912,
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 184366.667,
+      "frame": 11062,
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+Tutorial Fitur Anti-Curang ZEXAM-CBT: Sensor Pelanggaran & Diskualifikasi — Versi Mobile
+
+Panduan lengkap bagi peserta ujian mengenai mekanisme sistem keamanan anti-curang pada aplikasi ZEXAM-CBT:
+00:00 - Pengenalan Fitur Keamanan Anti-Curang Mobile
+00:22 - Sensor Pemblokiran Salin Soal & Peringatan 1
+00:48 - Akumulasi Pelanggaran Real-Time & Peringatan 2
+01:09 - Batas Toleransi Maksimal & Sanksi Diskualifikasi Otomatis
+01:38 - Lembar Sesi Terhenti & Penegakan Integritas Ujian
+
+Tetap fokus dan junjung tinggi kejujuran selama ujian berlangsung. Selamat menempuh ujian bersama ZEXAM-CBT!
+
+#Shorts #ZexamCBT #UjianOnline #AntiCurang #AplikasiSekolah #TutorialSiswa

@@ -1,0 +1,587 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 2.608695652173913,
+  "viewport": [
+    414,
+    736
+  ],
+  "output": [
+    1080,
+    1920
+  ],
+  "mode": "mobile",
+  "scenes": [
+    {
+      "scene_id": "scene_01_pengenalan_keamanan",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 17156,
+      "action_start_ms": 17466.667,
+      "action_end_ms": 21116.667,
+      "end_ms": 22316.667
+    },
+    {
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1",
+      "start_ms": 22316.667,
+      "narration_start_ms": 22516.667,
+      "narration_end_ms": 41930.667,
+      "action_start_ms": 42233.333,
+      "action_end_ms": 47683.333,
+      "end_ms": 48883.333
+    },
+    {
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime",
+      "start_ms": 48883.333,
+      "narration_start_ms": 49083.333,
+      "narration_end_ms": 63855.333,
+      "action_start_ms": 64166.667,
+      "action_end_ms": 68516.667,
+      "end_ms": 69716.667
+    },
+    {
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi",
+      "start_ms": 69716.667,
+      "narration_start_ms": 69916.667,
+      "narration_end_ms": 87660.667,
+      "action_start_ms": 87966.667,
+      "action_end_ms": 97650,
+      "end_ms": 98850
+    },
+    {
+      "scene_id": "scene_05_lembar_selesai_dan_integritas",
+      "start_ms": 98850,
+      "narration_start_ms": 99050,
+      "narration_end_ms": 120866,
+      "action_start_ms": 121166.667,
+      "action_end_ms": 129750,
+      "end_ms": 130950
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_pengenalan_keamanan"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_pengenalan_keamanan",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_163808_bef388\\audio\\scene_01_pengenalan_keamanan.wav",
+      "duration_ms": 16956,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 17166.667,
+      "frame": 1030,
+      "scene_id": "scene_01_pengenalan_keamanan"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 17466.667,
+      "frame": 1048,
+      "scene_id": "scene_01_pengenalan_keamanan"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 17466.667,
+      "frame": 1048,
+      "selector": "button:has-text(\"Central Processing Unit\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 18016.667,
+      "frame": 1081,
+      "from": [
+        628.695652173913,
+        1210.4347826086957
+      ],
+      "to": [
+        540,
+        960
+      ],
+      "dist_px": 265.7,
+      "move_ms": 694.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 18900,
+      "frame": 1134,
+      "at": [
+        540,
+        960
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 21116.667,
+      "frame": 1267,
+      "scene_id": "scene_01_pengenalan_keamanan"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 22316.667,
+      "frame": 1339,
+      "scene_id": "scene_01_pengenalan_keamanan"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 22316.667,
+      "frame": 1339,
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 22316.667,
+      "frame": 1339,
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_163808_bef388\\audio\\scene_02_deteksi_salin_soal_peringatan_1.wav",
+      "duration_ms": 19414,
+      "at_ms": 22516.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 41933.333,
+      "frame": 2516,
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 42233.333,
+      "frame": 2534,
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 42233.333,
+      "frame": 2534,
+      "selector": "div:has-text(\"PERINGATAN KECURANGAN!\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 42783.333,
+      "frame": 2567,
+      "from_y": 65,
+      "to_y": 136.38,
+      "dur_ms": 524.2
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 43883.333,
+      "frame": 2633,
+      "y": 136
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 43883.333,
+      "frame": 2633,
+      "from": [
+        628.695652173913,
+        1057.8260869565217
+      ],
+      "to": [
+        540,
+        807.3913043478261
+      ],
+      "dist_px": 265.7,
+      "move_ms": 694.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 44766.667,
+      "frame": 2686,
+      "at": [
+        540,
+        807.3913043478261
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 47683.333,
+      "frame": 2861,
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 48883.333,
+      "frame": 2933,
+      "scene_id": "scene_02_deteksi_salin_soal_peringatan_1"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 48883.333,
+      "frame": 2933,
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 48883.333,
+      "frame": 2933,
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_163808_bef388\\audio\\scene_03_akumulasi_pelanggaran_realtime.wav",
+      "duration_ms": 14772,
+      "at_ms": 49083.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 63866.667,
+      "frame": 3832,
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 64166.667,
+      "frame": 3850,
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 64166.667,
+      "frame": 3850,
+      "selector": "div:has-text(\"Peringatan ke-2\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 64716.667,
+      "frame": 3883,
+      "from": [
+        628.695652173913,
+        1057.8260869565217
+      ],
+      "to": [
+        540,
+        807.3913043478261
+      ],
+      "dist_px": 265.7,
+      "move_ms": 694.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 65600,
+      "frame": 3936,
+      "at": [
+        540,
+        807.3913043478261
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 68516.667,
+      "frame": 4111,
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 69716.667,
+      "frame": 4183,
+      "scene_id": "scene_03_akumulasi_pelanggaran_realtime"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 69716.667,
+      "frame": 4183,
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 69716.667,
+      "frame": 4183,
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_163808_bef388\\audio\\scene_04_batas_toleransi_dan_diskualifikasi.wav",
+      "duration_ms": 17744,
+      "at_ms": 69916.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 87666.667,
+      "frame": 5260,
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 87966.667,
+      "frame": 5278,
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 87966.667,
+      "frame": 5278,
+      "selector": "div:has-text(\"DISKUALIFIKASI\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 88516.667,
+      "frame": 5311,
+      "from": [
+        628.695652173913,
+        1057.8260869565217
+      ],
+      "to": [
+        540,
+        807.3913043478261
+      ],
+      "dist_px": 265.7,
+      "move_ms": 694.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 89400,
+      "frame": 5364,
+      "at": [
+        540,
+        807.3913043478261
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 93700,
+      "frame": 5622,
+      "selector": "h2:has-text(\"Ujian Tersedia\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 94250,
+      "frame": 5655,
+      "from": [
+        540,
+        807.3913043478261
+      ],
+      "to": [
+        540,
+        1327.8260869565217
+      ],
+      "dist_px": 520.4,
+      "move_ms": 831.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 95266.667,
+      "frame": 5716,
+      "at": [
+        540,
+        1327.8260869565217
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 95766.667,
+      "frame": 5746,
+      "from": [
+        540,
+        1327.8260869565217
+      ],
+      "to": [
+        540,
+        1327.8260869565217
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 95850,
+      "frame": 5751,
+      "at": [
+        540,
+        1327.8260869565217
+      ],
+      "label": "a[href*=\"/siswa/exams/\"]",
+      "bbox": [
+        159.1304347826087,
+        1265.2173913043478,
+        761.7391304347826,
+        125.21739130434783
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 95983.333,
+      "frame": 5759,
+      "selector": "h1:has-text(\"Sesi Terhenti\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 97650,
+      "frame": 5859,
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 98850,
+      "frame": 5931,
+      "scene_id": "scene_04_batas_toleransi_dan_diskualifikasi"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 98850,
+      "frame": 5931,
+      "scene_id": "scene_05_lembar_selesai_dan_integritas"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 98850,
+      "frame": 5931,
+      "scene_id": "scene_05_lembar_selesai_dan_integritas",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_163808_bef388\\audio\\scene_05_lembar_selesai_dan_integritas.wav",
+      "duration_ms": 21816,
+      "at_ms": 99050
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 120866.667,
+      "frame": 7252,
+      "scene_id": "scene_05_lembar_selesai_dan_integritas"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 121166.667,
+      "frame": 7270,
+      "scene_id": "scene_05_lembar_selesai_dan_integritas"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 121166.667,
+      "frame": 7270,
+      "from": [
+        628.695652173913,
+        1306.9565217391305
+      ],
+      "to": [
+        540,
+        1056.5217391304348
+      ],
+      "dist_px": 265.7,
+      "move_ms": 694.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 122050,
+      "frame": 7323,
+      "at": [
+        540,
+        1056.5217391304348
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 122650,
+      "frame": 7359,
+      "from": [
+        540,
+        1056.5217391304348
+      ],
+      "to": [
+        354.7826086956522,
+        1640.8695652173913
+      ],
+      "dist_px": 613,
+      "move_ms": 866.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 123700,
+      "frame": 7422,
+      "at": [
+        354.7826086956522,
+        1640.8695652173913
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 124500,
+      "frame": 7470,
+      "from": [
+        354.7826086956522,
+        1640.8695652173913
+      ],
+      "to": [
+        725.2173913043479,
+        1640.8695652173913
+      ],
+      "dist_px": 370.4,
+      "move_ms": 760.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 125450,
+      "frame": 7527,
+      "at": [
+        725.2173913043479,
+        1640.8695652173913
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 126250,
+      "frame": 7575,
+      "from": [
+        725.2173913043479,
+        1640.8695652173913
+      ],
+      "to": [
+        540,
+        960
+      ],
+      "dist_px": 705.6,
+      "move_ms": 896.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 127333.333,
+      "frame": 7640,
+      "at": [
+        540,
+        960
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 129750,
+      "frame": 7785,
+      "scene_id": "scene_05_lembar_selesai_dan_integritas"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 130950,
+      "frame": 7857,
+      "scene_id": "scene_05_lembar_selesai_dan_integritas"
+    }
+  ]
+}

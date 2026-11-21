@@ -1,0 +1,43 @@
+{
+  "snippet": {
+    "title": "Tutorial Proktor ZEXAM-CBT: Monitoring Ujian Real-Time & Kontrol Darurat",
+    "description": "Tutorial Proktor ZEXAM-CBT: Monitoring Ujian Real-Time & Kontrol Darurat\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Live Monitoring\n00:29 - Metrik Statistik Dan Perpanjang Waktu\n01:04 - Proktor Broadcast System\n01:42 - Tampilan Denah Visual Dan Tabel\n02:18 - Kontrol Darurat Proktor\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Live Monitoring: Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.\n2. Metrik Statistik Dan Perpanjang Waktu: Di bagian atas halaman, Anda dapat melihat empat kartu metrik utama: total peserta yang hadir, jumlah siswa yang sedang aktif mengerjakan soal, jumlah peserta yang telah selesai, serta estimasi waktu berakhir ujian.\n3. Proktor Broadcast System: Fitur Proktor Broadcast System memungkinkan Anda mengirimkan pesan penting atau peringatan langsung ke layar gawai seluruh siswa secara bersamaan.\n4. Tampilan Denah Visual Dan Tabel: ZEXAM-CBT menyediakan dua mode tampilan pemantauan peserta.\n5. Kontrol Darurat Proktor: Pada kolom aksi tabel peserta, proktor memiliki tiga kontrol darurat utama: tombol Reset Login untuk mengizinkan siswa masuk kembali saat terjadi ganti perangkat, tombol Reset Progress untuk mengulang ujian dari nol jika terjadi kendala fatal, serta tombol Force Logout untuk mengeluarkan siswa tertentu.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "proktor",
+      "zexam-cbt",
+      "monitoring",
+      "real-time",
+      "kontrol",
+      "darurat",
+      "navigasi live monitoring",
+      "metrik statistik dan perpanjang waktu",
+      "proktor broadcast system",
+      "tampilan denah visual dan tabel",
+      "kontrol darurat proktor"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 179.38,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T11:15:17.374932+00:00"
+  }
+}

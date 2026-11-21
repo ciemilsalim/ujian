@@ -1,0 +1,415 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Admin Proktor ZEXAM-CBT: Berkas Administrasi, Kartu Ujian, & Rekap Nilai",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "proktor"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "a[href*=\"/administration\"]"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_administrasi_sesi_dan_dokumen",
+      "narration": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada video kali ini, kita akan membahas modul administrasi ujian, pencetakan kartu peserta, serta rekapitulasi dan analisis nilai. Pertama, buka menu Administrasi Ujian pada bilah navigasi kiri. Klik tombol Cetak Dokumen Administrasi pada sesi yang diinginkan untuk membuka sentral dokumen resmi.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada video kali ini, kita akan membahas modul administrasi ujian, pencetakan kartu peserta, serta rekapitulasi dan analisis nilai.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Pertama, buka menu Administrasi Ujian pada bilah navigasi kiri.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Klik tombol Cetak Dokumen Administrasi pada sesi yang diinginkan untuk membuka sentral dokumen resmi.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a[href*=\"/administration\"]",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "a[href*=\"/administration\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Administrasi Ujian\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Dokumen Sesi\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Cetak Dokumen Administrasi\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Cetak Dokumen Administrasi\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "text=Sentral Dokumen Administrasi",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas",
+      "narration": "Di dalam jendela sentral administrasi, proktor dapat memilih ruangan dan nama pengawas. Seluruh identitas yang dipilih di sini akan otomatis disinkronkan ke dalam dokumen PDF Berita Acara pelaksanaan ujian, Daftar Hadir Peserta, maupun Daftar Hadir Pengawas ruangan.",
+      "narration_segments": [
+        {
+          "text": "Di dalam jendela sentral administrasi, proktor dapat memilih ruangan dan nama pengawas.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Seluruh identitas yang dipilih di sini akan otomatis disinkronkan ke dalam dokumen PDF Berita Acara pelaksanaan ujian, Daftar Hadir Peserta, maupun Daftar Hadir Pengawas ruangan.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "select#room_id",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "select#proctor_id",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Berita Acara\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Kehadiran Siswa\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Kehadiran Pengawas\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tutup Jendela\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Cetak Dokumen Administrasi\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas",
+      "narration": "Selanjutnya, pilih tab Tata Tertib. Proktor dapat langsung mengunduh berkas resmi Tata Tertib Peserta dan panduan integritas Tata Tertib Pengawas berformat PDF standar siap cetak untuk ditempelkan di papan pengumuman maupun dibacakan sebelum ujian dimulai.",
+      "narration_segments": [
+        {
+          "text": "Selanjutnya, pilih tab Tata Tertib.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Proktor dapat langsung mengunduh berkas resmi Tata Tertib Peserta dan panduan integritas Tata Tertib Pengawas berformat PDF standar siap cetak untuk ditempelkan di papan pengumuman maupun dibacakan sebelum ujian dimulai.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Tata Tertib\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tata Tertib\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "text=Tata Tertib Peserta",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "h3:has-text(\"Tata Tertib Peserta\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "a[href*=\"/administration/exam-rules\"]",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "h3:has-text(\"Tata Tertib Pengawas\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "a[href*=\"/administration/proctor-rules\"]",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_04_cetak_kartu_peserta_ujian",
+      "narration": "Untuk mencetak kartu ujian seluruh peserta didik, buka tab Kartu Peserta. Sistem secara otomatis mengelompokkan daftar kelas beserta jumlah siswanya. Cukup klik tombol Cetak Kartu pada kelas yang dipilih untuk mengunduh lembar kartu ujian PDF berformat A4 yang dilengkapi pas foto, barcode, dan QR code login instan.",
+      "narration_segments": [
+        {
+          "text": "Untuk mencetak kartu ujian seluruh peserta didik, buka tab Kartu Peserta.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Sistem secara otomatis mengelompokkan daftar kelas beserta jumlah siswanya.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Cukup klik tombol Cetak Kartu pada kelas yang dipilih untuk mengunduh lembar kartu ujian PDF berformat A4 yang dilengkapi pas foto, barcode, dan QR code login instan.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Kartu Peserta\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Kartu Peserta\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Cetak Kartu\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "p:has-text(\"Siswa\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Cetak Kartu\")",
+          "hold_ms": 1000
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor",
+      "narration": "Setelah sesi ujian selesai dilaksanakan, buka menu Hasil Ujian. Halaman ini menyajikan rekapitulasi sesi, filter tahun ajaran aktif, serta bilah progres partisipasi siswa yang telah menyelesaikan ujian. Anda dapat langsung mengunduh rekapan nilai lengkap dalam format PDF atau Excel hanya dengan satu klik.",
+      "narration_segments": [
+        {
+          "text": "Setelah sesi ujian selesai dilaksanakan, buka menu Hasil Ujian.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Halaman ini menyajikan rekapitulasi sesi, filter tahun ajaran aktif, serta bilah progres partisipasi siswa yang telah menyelesaikan ujian.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Anda dapat langsung mengunduh rekapan nilai lengkap dalam format PDF atau Excel hanya dengan satu klik.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a[href*=\"/results\"]",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "a[href*=\"/results\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Hasil Ujian & Analitik\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "select",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "table",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"PDF\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Excel\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran",
+      "narration": "Untuk evaluasi mendalam, klik tombol Analisis. ZEXAM-CBT menyediakan visualisasi data interaktif meliputi nilai rata-rata, nilai tertinggi dan terendah, rasio kelulusan KKM, serta diagram sebaran nilai siswa. Seluruh proses administrasi dan evaluasi ujian kini tuntas dalam hitungan detik. Terima kasih telah menyaksikan!",
+      "narration_segments": [
+        {
+          "text": "Untuk evaluasi mendalam, klik tombol Analisis.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "ZEXAM-CBT menyediakan visualisasi data interaktif meliputi nilai rata-rata, nilai tertinggi dan terendah, rasio kelulusan KKM, serta diagram sebaran nilai siswa.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Seluruh proses administrasi dan evaluasi ujian kini tuntas dalam hitungan detik. Terima kasih telah menyaksikan!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Analisis\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "a:has-text(\"Analisis\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Analisis Hasil:\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "h2:has-text(\"Analisis Hasil:\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Unduh Laporan PDF\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Unduh DOCX\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "scroll",
+          "target": "window",
+          "direction": "down",
+          "distance": 300,
+          "hold_ms": 1500
+        },
+        {
+          "do": "hold",
+          "ms": 2000
+        }
+      ],
+      "result_hold_ms": 2500
+    }
+  ]
+}

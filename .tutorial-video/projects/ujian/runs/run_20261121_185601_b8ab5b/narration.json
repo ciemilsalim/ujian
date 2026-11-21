@@ -1,0 +1,1334 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_navigasi_live_monitoring": {
+      "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada tutorial ini, kita akan mempelajari fitur pengawasan ujian secara real-time dan penggunaan tombol kontrol darurat proktor. Dari menu Sesi Aktif, klik ikon Pantau Live pada sesi ujian yang sedang berjalan untuk masuk ke ruang kontrol pengawasan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_01_navigasi_live_monitoring.wav",
+      "duration_ms": 18694.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "Bapak",
+          "s": 375.0,
+          "e": 675.0
+        },
+        {
+          "w": "dan",
+          "s": 675.0,
+          "e": 812.5
+        },
+        {
+          "w": "Ibu",
+          "s": 812.5,
+          "e": 1012.5
+        },
+        {
+          "w": "Admin",
+          "s": 1012.5,
+          "e": 1425.0
+        },
+        {
+          "w": "serta",
+          "s": 1425.0,
+          "e": 1700.0
+        },
+        {
+          "w": "Proktor",
+          "s": 1700.0,
+          "e": 2100.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2100.0,
+          "e": 3112.5
+        },
+        {
+          "w": "Pada",
+          "s": 4322.5,
+          "e": 4522.5
+        },
+        {
+          "w": "tutorial",
+          "s": 4522.5,
+          "e": 4897.5
+        },
+        {
+          "w": "ini",
+          "s": 4897.5,
+          "e": 5347.5
+        },
+        {
+          "w": "kita",
+          "s": 5660.0,
+          "e": 5872.5
+        },
+        {
+          "w": "akan",
+          "s": 5872.5,
+          "e": 6060.0
+        },
+        {
+          "w": "mempelajari",
+          "s": 6060.0,
+          "e": 6497.5
+        },
+        {
+          "w": "fitur",
+          "s": 6497.5,
+          "e": 6772.5
+        },
+        {
+          "w": "pengawasan",
+          "s": 6772.5,
+          "e": 7185.0
+        },
+        {
+          "w": "ujian",
+          "s": 7185.0,
+          "e": 7560.0
+        },
+        {
+          "w": "secara",
+          "s": 7560.0,
+          "e": 7910.0
+        },
+        {
+          "w": "real-time",
+          "s": 7910.0,
+          "e": 8397.5
+        },
+        {
+          "w": "dan",
+          "s": 8397.5,
+          "e": 8572.5
+        },
+        {
+          "w": "penggunaan",
+          "s": 8572.5,
+          "e": 9022.5
+        },
+        {
+          "w": "tombol",
+          "s": 9022.5,
+          "e": 9297.5
+        },
+        {
+          "w": "kontrol",
+          "s": 9297.5,
+          "e": 9722.5
+        },
+        {
+          "w": "darurat",
+          "s": 9722.5,
+          "e": 10060.0
+        },
+        {
+          "w": "proktor",
+          "s": 10060.0,
+          "e": 10610.0
+        },
+        {
+          "w": "Dari",
+          "s": 11870.5,
+          "e": 12120.5
+        },
+        {
+          "w": "menu",
+          "s": 12120.5,
+          "e": 12295.5
+        },
+        {
+          "w": "Sesi",
+          "s": 12295.5,
+          "e": 12545.5
+        },
+        {
+          "w": "Aktif",
+          "s": 12545.5,
+          "e": 13083.0
+        },
+        {
+          "w": "klik",
+          "s": 13383.0,
+          "e": 13545.5
+        },
+        {
+          "w": "ikon",
+          "s": 13545.5,
+          "e": 13820.5
+        },
+        {
+          "w": "Pantau",
+          "s": 13820.5,
+          "e": 14108.0
+        },
+        {
+          "w": "Live",
+          "s": 14108.0,
+          "e": 14383.0
+        },
+        {
+          "w": "pada",
+          "s": 14383.0,
+          "e": 14583.0
+        },
+        {
+          "w": "sesi",
+          "s": 14583.0,
+          "e": 14833.0
+        },
+        {
+          "w": "ujian",
+          "s": 14833.0,
+          "e": 15208.0
+        },
+        {
+          "w": "yang",
+          "s": 15208.0,
+          "e": 15333.0
+        },
+        {
+          "w": "sedang",
+          "s": 15333.0,
+          "e": 15570.5
+        },
+        {
+          "w": "berjalan",
+          "s": 15570.5,
+          "e": 16033.0
+        },
+        {
+          "w": "untuk",
+          "s": 16033.0,
+          "e": 16258.0
+        },
+        {
+          "w": "masuk",
+          "s": 16258.0,
+          "e": 16545.5
+        },
+        {
+          "w": "ke",
+          "s": 16545.5,
+          "e": 16608.0
+        },
+        {
+          "w": "ruang",
+          "s": 16608.0,
+          "e": 16820.5
+        },
+        {
+          "w": "kontrol",
+          "s": 16820.5,
+          "e": 17120.5
+        },
+        {
+          "w": "pengawasan",
+          "s": 17120.5,
+          "e": 17858.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "0fc725dbd3d06ca9de6049b70273f05ff1d4ea12b61b907fc051b454242cb791"
+    },
+    "scene_02_metrik_statistik_dan_perpanjang_waktu": {
+      "text": "Di bagian atas halaman, Anda dapat melihat empat kartu metrik utama: total peserta yang hadir, jumlah siswa yang sedang aktif mengerjakan soal, jumlah peserta yang telah selesai, serta estimasi waktu berakhir ujian. Jika terjadi kendala teknis atau mati listrik di ruangan, proktor dapat langsung menambah durasi ujian dengan mengklik tombol plus lima atau plus sepuluh menit.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_02_metrik_statistik_dan_perpanjang_waktu.wav",
+      "duration_ms": 21348.0,
+      "words": [
+        {
+          "w": "Di",
+          "s": 112.5,
+          "e": 225.0
+        },
+        {
+          "w": "bagian",
+          "s": 225.0,
+          "e": 562.5
+        },
+        {
+          "w": "atas",
+          "s": 562.5,
+          "e": 787.5
+        },
+        {
+          "w": "halaman",
+          "s": 787.5,
+          "e": 1325.0
+        },
+        {
+          "w": "Anda",
+          "s": 1625.0,
+          "e": 1862.5
+        },
+        {
+          "w": "dapat",
+          "s": 1862.5,
+          "e": 2112.5
+        },
+        {
+          "w": "melihat",
+          "s": 2112.5,
+          "e": 2400.0
+        },
+        {
+          "w": "empat",
+          "s": 2400.0,
+          "e": 2637.5
+        },
+        {
+          "w": "kartu",
+          "s": 2637.5,
+          "e": 2875.0
+        },
+        {
+          "w": "metrik",
+          "s": 2875.0,
+          "e": 3125.0
+        },
+        {
+          "w": "utama",
+          "s": 3125.0,
+          "e": 3687.5
+        },
+        {
+          "w": "total",
+          "s": 3950.0,
+          "e": 4250.0
+        },
+        {
+          "w": "peserta",
+          "s": 4250.0,
+          "e": 4612.5
+        },
+        {
+          "w": "yang",
+          "s": 4612.5,
+          "e": 4750.0
+        },
+        {
+          "w": "hadir",
+          "s": 4750.0,
+          "e": 5275.0
+        },
+        {
+          "w": "jumlah",
+          "s": 5525.0,
+          "e": 5850.0
+        },
+        {
+          "w": "siswa",
+          "s": 5850.0,
+          "e": 6150.0
+        },
+        {
+          "w": "yang",
+          "s": 6150.0,
+          "e": 6287.5
+        },
+        {
+          "w": "sedang",
+          "s": 6287.5,
+          "e": 6525.0
+        },
+        {
+          "w": "aktif",
+          "s": 6525.0,
+          "e": 6825.0
+        },
+        {
+          "w": "mengerjakan",
+          "s": 6825.0,
+          "e": 7300.0
+        },
+        {
+          "w": "soal",
+          "s": 7300.0,
+          "e": 7812.5
+        },
+        {
+          "w": "jumlah",
+          "s": 8075.0,
+          "e": 8387.5
+        },
+        {
+          "w": "peserta",
+          "s": 8387.5,
+          "e": 8750.0
+        },
+        {
+          "w": "yang",
+          "s": 8750.0,
+          "e": 8887.5
+        },
+        {
+          "w": "telah",
+          "s": 8887.5,
+          "e": 9037.5
+        },
+        {
+          "w": "selesai",
+          "s": 9037.5,
+          "e": 9637.5
+        },
+        {
+          "w": "serta",
+          "s": 9862.5,
+          "e": 10162.5
+        },
+        {
+          "w": "estimasi",
+          "s": 10162.5,
+          "e": 10650.0
+        },
+        {
+          "w": "waktu",
+          "s": 10650.0,
+          "e": 10937.5
+        },
+        {
+          "w": "berakhir",
+          "s": 10937.5,
+          "e": 11250.0
+        },
+        {
+          "w": "ujian",
+          "s": 11250.0,
+          "e": 11850.0
+        },
+        {
+          "w": "Jika",
+          "s": 13108.5,
+          "e": 13358.5
+        },
+        {
+          "w": "terjadi",
+          "s": 13358.5,
+          "e": 13721.0
+        },
+        {
+          "w": "kendala",
+          "s": 13721.0,
+          "e": 13971.0
+        },
+        {
+          "w": "teknis",
+          "s": 13971.0,
+          "e": 14383.5
+        },
+        {
+          "w": "atau",
+          "s": 14383.5,
+          "e": 14571.0
+        },
+        {
+          "w": "mati",
+          "s": 14571.0,
+          "e": 14783.5
+        },
+        {
+          "w": "listrik",
+          "s": 14783.5,
+          "e": 15121.0
+        },
+        {
+          "w": "di",
+          "s": 15121.0,
+          "e": 15208.5
+        },
+        {
+          "w": "ruangan",
+          "s": 15208.5,
+          "e": 15721.0
+        },
+        {
+          "w": "proktor",
+          "s": 16046.0,
+          "e": 16383.5
+        },
+        {
+          "w": "dapat",
+          "s": 16383.5,
+          "e": 16633.5
+        },
+        {
+          "w": "langsung",
+          "s": 16633.5,
+          "e": 16946.0
+        },
+        {
+          "w": "menambah",
+          "s": 16946.0,
+          "e": 17246.0
+        },
+        {
+          "w": "durasi",
+          "s": 17246.0,
+          "e": 17546.0
+        },
+        {
+          "w": "ujian",
+          "s": 17546.0,
+          "e": 17933.5
+        },
+        {
+          "w": "dengan",
+          "s": 17933.5,
+          "e": 18146.0
+        },
+        {
+          "w": "mengklik",
+          "s": 18146.0,
+          "e": 18421.0
+        },
+        {
+          "w": "tombol",
+          "s": 18421.0,
+          "e": 18708.5
+        },
+        {
+          "w": "plus",
+          "s": 18708.5,
+          "e": 18946.0
+        },
+        {
+          "w": "lima",
+          "s": 18946.0,
+          "e": 19246.0
+        },
+        {
+          "w": "atau",
+          "s": 19246.0,
+          "e": 19558.5
+        },
+        {
+          "w": "plus",
+          "s": 19558.5,
+          "e": 19783.5
+        },
+        {
+          "w": "sepuluh",
+          "s": 19783.5,
+          "e": 20058.5
+        },
+        {
+          "w": "menit",
+          "s": 20058.5,
+          "e": 20496.0
+        }
+      ],
+      "segments_count": 2,
+      "sha256": "8a1f74430061445a4001040498b19c3320d8ed6ee8298550388c04b5e2355dc1"
+    },
+    "scene_03_proktor_broadcast_system": {
+      "text": "Fitur Proktor Broadcast System memungkinkan Anda mengirimkan pesan penting atau peringatan langsung ke layar gawai seluruh siswa secara bersamaan. Cukup ketik pesan pengumuman pada kolom yang tersedia, lalu klik tombol Kirim Sekarang. Pesan akan langsung tersiar secara instan melalui koneksi websocket Reverb tanpa mengganggu lembar jawaban siswa.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_03_proktor_broadcast_system.wav",
+      "duration_ms": 19490.0,
+      "words": [
+        {
+          "w": "Fitur",
+          "s": 100.0,
+          "e": 425.0
+        },
+        {
+          "w": "Proktor",
+          "s": 425.0,
+          "e": 775.0
+        },
+        {
+          "w": "Broadcast",
+          "s": 775.0,
+          "e": 1187.5
+        },
+        {
+          "w": "System",
+          "s": 1187.5,
+          "e": 1500.0
+        },
+        {
+          "w": "memungkinkan",
+          "s": 1500.0,
+          "e": 2000.0
+        },
+        {
+          "w": "Anda",
+          "s": 2000.0,
+          "e": 2262.5
+        },
+        {
+          "w": "mengirimkan",
+          "s": 2262.5,
+          "e": 2725.0
+        },
+        {
+          "w": "pesan",
+          "s": 2725.0,
+          "e": 2987.5
+        },
+        {
+          "w": "penting",
+          "s": 2987.5,
+          "e": 3362.5
+        },
+        {
+          "w": "atau",
+          "s": 3362.5,
+          "e": 3575.0
+        },
+        {
+          "w": "peringatan",
+          "s": 3575.0,
+          "e": 3987.5
+        },
+        {
+          "w": "langsung",
+          "s": 3987.5,
+          "e": 4337.5
+        },
+        {
+          "w": "ke",
+          "s": 4337.5,
+          "e": 4412.5
+        },
+        {
+          "w": "layar",
+          "s": 4412.5,
+          "e": 4675.0
+        },
+        {
+          "w": "gawai",
+          "s": 4675.0,
+          "e": 4925.0
+        },
+        {
+          "w": "seluruh",
+          "s": 4925.0,
+          "e": 5212.5
+        },
+        {
+          "w": "siswa",
+          "s": 5212.5,
+          "e": 5575.0
+        },
+        {
+          "w": "secara",
+          "s": 5575.0,
+          "e": 5862.5
+        },
+        {
+          "w": "bersamaan",
+          "s": 5862.5,
+          "e": 6625.0
+        },
+        {
+          "w": "Cukup",
+          "s": 7856.5,
+          "e": 8106.5
+        },
+        {
+          "w": "ketik",
+          "s": 8106.5,
+          "e": 8294.0
+        },
+        {
+          "w": "pesan",
+          "s": 8294.0,
+          "e": 8556.5
+        },
+        {
+          "w": "pengumuman",
+          "s": 8556.5,
+          "e": 9044.0
+        },
+        {
+          "w": "pada",
+          "s": 9044.0,
+          "e": 9231.5
+        },
+        {
+          "w": "kolom",
+          "s": 9231.5,
+          "e": 9469.0
+        },
+        {
+          "w": "yang",
+          "s": 9469.0,
+          "e": 9581.5
+        },
+        {
+          "w": "tersedia",
+          "s": 9581.5,
+          "e": 10256.5
+        },
+        {
+          "w": "lalu",
+          "s": 10556.5,
+          "e": 10819.0
+        },
+        {
+          "w": "klik",
+          "s": 10819.0,
+          "e": 11019.0
+        },
+        {
+          "w": "tombol",
+          "s": 11019.0,
+          "e": 11331.5
+        },
+        {
+          "w": "Kirim",
+          "s": 11331.5,
+          "e": 11556.5
+        },
+        {
+          "w": "Sekarang",
+          "s": 11556.5,
+          "e": 12169.0
+        },
+        {
+          "w": "Pesan",
+          "s": 13374.0,
+          "e": 13649.0
+        },
+        {
+          "w": "akan",
+          "s": 13649.0,
+          "e": 13836.5
+        },
+        {
+          "w": "langsung",
+          "s": 13836.5,
+          "e": 14099.0
+        },
+        {
+          "w": "tersiar",
+          "s": 14099.0,
+          "e": 14486.5
+        },
+        {
+          "w": "secara",
+          "s": 14486.5,
+          "e": 14774.0
+        },
+        {
+          "w": "instan",
+          "s": 14774.0,
+          "e": 15161.5
+        },
+        {
+          "w": "melalui",
+          "s": 15161.5,
+          "e": 15474.0
+        },
+        {
+          "w": "koneksi",
+          "s": 15474.0,
+          "e": 15836.5
+        },
+        {
+          "w": "websocket",
+          "s": 15836.5,
+          "e": 16299.0
+        },
+        {
+          "w": "Reverb",
+          "s": 16299.0,
+          "e": 16699.0
+        },
+        {
+          "w": "tanpa",
+          "s": 16699.0,
+          "e": 17011.5
+        },
+        {
+          "w": "mengganggu",
+          "s": 17011.5,
+          "e": 17374.0
+        },
+        {
+          "w": "lembar",
+          "s": 17374.0,
+          "e": 17649.0
+        },
+        {
+          "w": "jawaban",
+          "s": 17649.0,
+          "e": 18074.0
+        },
+        {
+          "w": "siswa",
+          "s": 18074.0,
+          "e": 18649.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "c93f22849bdee6bae4214d25c942d6d3f5e5bc7d8e0772b608327055f59cb3a1"
+    },
+    "scene_04_tampilan_denah_visual_dan_tabel": {
+      "text": "ZEXAM-CBT menyediakan dua mode tampilan pemantauan peserta. Mode Denah Visual menampilkan posisi tempat duduk siswa sesuai tata letak ruangan kelas, lengkap dengan indikator warna status siswa. Anda dapat beralih ke Mode Tabel untuk melihat daftar peserta secara rinci beserta rekam jejak status pengerjaan masing-masing.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_04_tampilan_denah_visual_dan_tabel.wav",
+      "duration_ms": 19342.0,
+      "words": [
+        {
+          "w": "ZEXAM-CBT",
+          "s": 100.0,
+          "e": 925.0
+        },
+        {
+          "w": "menyediakan",
+          "s": 925.0,
+          "e": 1487.5
+        },
+        {
+          "w": "dua",
+          "s": 1487.5,
+          "e": 1662.5
+        },
+        {
+          "w": "mode",
+          "s": 1662.5,
+          "e": 1887.5
+        },
+        {
+          "w": "tampilan",
+          "s": 1887.5,
+          "e": 2312.5
+        },
+        {
+          "w": "pemantauan",
+          "s": 2312.5,
+          "e": 2812.5
+        },
+        {
+          "w": "peserta",
+          "s": 2812.5,
+          "e": 3437.5
+        },
+        {
+          "w": "Mode",
+          "s": 4658.5,
+          "e": 4896.0
+        },
+        {
+          "w": "Denah",
+          "s": 4896.0,
+          "e": 5133.5
+        },
+        {
+          "w": "Visual",
+          "s": 5133.5,
+          "e": 5483.5
+        },
+        {
+          "w": "menampilkan",
+          "s": 5483.5,
+          "e": 5996.0
+        },
+        {
+          "w": "posisi",
+          "s": 5996.0,
+          "e": 6371.0
+        },
+        {
+          "w": "tempat",
+          "s": 6371.0,
+          "e": 6646.0
+        },
+        {
+          "w": "duduk",
+          "s": 6646.0,
+          "e": 6858.5
+        },
+        {
+          "w": "siswa",
+          "s": 6858.5,
+          "e": 7258.5
+        },
+        {
+          "w": "sesuai",
+          "s": 7258.5,
+          "e": 7596.0
+        },
+        {
+          "w": "tata",
+          "s": 7596.0,
+          "e": 7833.5
+        },
+        {
+          "w": "letak",
+          "s": 7833.5,
+          "e": 8058.5
+        },
+        {
+          "w": "ruangan",
+          "s": 8058.5,
+          "e": 8333.5
+        },
+        {
+          "w": "kelas",
+          "s": 8333.5,
+          "e": 8808.5
+        },
+        {
+          "w": "lengkap",
+          "s": 9083.5,
+          "e": 9408.5
+        },
+        {
+          "w": "dengan",
+          "s": 9408.5,
+          "e": 9621.0
+        },
+        {
+          "w": "indikator",
+          "s": 9621.0,
+          "e": 10083.5
+        },
+        {
+          "w": "warna",
+          "s": 10083.5,
+          "e": 10371.0
+        },
+        {
+          "w": "status",
+          "s": 10371.0,
+          "e": 10733.5
+        },
+        {
+          "w": "siswa",
+          "s": 10733.5,
+          "e": 11271.0
+        },
+        {
+          "w": "Anda",
+          "s": 12530.0,
+          "e": 12817.5
+        },
+        {
+          "w": "dapat",
+          "s": 12817.5,
+          "e": 13055.0
+        },
+        {
+          "w": "beralih",
+          "s": 13055.0,
+          "e": 13367.5
+        },
+        {
+          "w": "ke",
+          "s": 13367.5,
+          "e": 13430.0
+        },
+        {
+          "w": "Mode",
+          "s": 13430.0,
+          "e": 13617.5
+        },
+        {
+          "w": "Tabel",
+          "s": 13617.5,
+          "e": 13992.5
+        },
+        {
+          "w": "untuk",
+          "s": 13992.5,
+          "e": 14217.5
+        },
+        {
+          "w": "melihat",
+          "s": 14217.5,
+          "e": 14505.0
+        },
+        {
+          "w": "daftar",
+          "s": 14505.0,
+          "e": 14817.5
+        },
+        {
+          "w": "peserta",
+          "s": 14817.5,
+          "e": 15242.5
+        },
+        {
+          "w": "secara",
+          "s": 15242.5,
+          "e": 15580.0
+        },
+        {
+          "w": "rinci",
+          "s": 15580.0,
+          "e": 15892.5
+        },
+        {
+          "w": "beserta",
+          "s": 15892.5,
+          "e": 16280.0
+        },
+        {
+          "w": "rekam",
+          "s": 16280.0,
+          "e": 16555.0
+        },
+        {
+          "w": "jejak",
+          "s": 16555.0,
+          "e": 16905.0
+        },
+        {
+          "w": "status",
+          "s": 16905.0,
+          "e": 17255.0
+        },
+        {
+          "w": "pengerjaan",
+          "s": 17255.0,
+          "e": 17742.5
+        },
+        {
+          "w": "masing-masing",
+          "s": 17742.5,
+          "e": 18505.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "b478232d5c462b2901070fc03cf340896345fd3b89d99846c9aaa8850429e2a2"
+    },
+    "scene_05_kontrol_darurat_proktor": {
+      "text": "Pada kolom aksi tabel peserta, proktor memiliki tiga kontrol darurat utama: tombol Reset Login untuk mengizinkan siswa masuk kembali saat terjadi ganti perangkat, tombol Reset Progress untuk mengulang ujian dari nol jika terjadi kendala fatal, serta tombol Force Logout untuk mengeluarkan siswa tertentu. Tersedia pula tombol Force Logout Semua Siswa untuk menghentikan seluruh sesi secara serentak. Selamat bertugas dan sukses mengawal ujian bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_185601_b8ab5b\\audio\\scene_05_kontrol_darurat_proktor.wav",
+      "duration_ms": 27878.0,
+      "words": [
+        {
+          "w": "Pada",
+          "s": 112.5,
+          "e": 325.0
+        },
+        {
+          "w": "kolom",
+          "s": 325.0,
+          "e": 550.0
+        },
+        {
+          "w": "aksi",
+          "s": 550.0,
+          "e": 812.5
+        },
+        {
+          "w": "tabel",
+          "s": 812.5,
+          "e": 1062.5
+        },
+        {
+          "w": "peserta",
+          "s": 1062.5,
+          "e": 1687.5
+        },
+        {
+          "w": "proktor",
+          "s": 1987.5,
+          "e": 2312.5
+        },
+        {
+          "w": "memiliki",
+          "s": 2312.5,
+          "e": 2700.0
+        },
+        {
+          "w": "tiga",
+          "s": 2700.0,
+          "e": 2950.0
+        },
+        {
+          "w": "kontrol",
+          "s": 2950.0,
+          "e": 3312.5
+        },
+        {
+          "w": "darurat",
+          "s": 3312.5,
+          "e": 3612.5
+        },
+        {
+          "w": "utama",
+          "s": 3612.5,
+          "e": 4162.5
+        },
+        {
+          "w": "tombol",
+          "s": 4437.5,
+          "e": 4762.5
+        },
+        {
+          "w": "Reset",
+          "s": 4762.5,
+          "e": 5037.5
+        },
+        {
+          "w": "Login",
+          "s": 5037.5,
+          "e": 5375.0
+        },
+        {
+          "w": "untuk",
+          "s": 5375.0,
+          "e": 5575.0
+        },
+        {
+          "w": "mengizinkan",
+          "s": 5575.0,
+          "e": 6062.5
+        },
+        {
+          "w": "siswa",
+          "s": 6062.5,
+          "e": 6400.0
+        },
+        {
+          "w": "masuk",
+          "s": 6400.0,
+          "e": 6650.0
+        },
+        {
+          "w": "kembali",
+          "s": 6650.0,
+          "e": 7050.0
+        },
+        {
+          "w": "saat",
+          "s": 7050.0,
+          "e": 7275.0
+        },
+        {
+          "w": "terjadi",
+          "s": 7275.0,
+          "e": 7650.0
+        },
+        {
+          "w": "ganti",
+          "s": 7650.0,
+          "e": 7925.0
+        },
+        {
+          "w": "perangkat",
+          "s": 7925.0,
+          "e": 8512.5
+        },
+        {
+          "w": "tombol",
+          "s": 9722.5,
+          "e": 10010.0
+        },
+        {
+          "w": "Reset",
+          "s": 10010.0,
+          "e": 10285.0
+        },
+        {
+          "w": "Progress",
+          "s": 10285.0,
+          "e": 10722.5
+        },
+        {
+          "w": "untuk",
+          "s": 10722.5,
+          "e": 10935.0
+        },
+        {
+          "w": "mengulang",
+          "s": 10935.0,
+          "e": 11197.5
+        },
+        {
+          "w": "ujian",
+          "s": 11197.5,
+          "e": 11535.0
+        },
+        {
+          "w": "dari",
+          "s": 11535.0,
+          "e": 11697.5
+        },
+        {
+          "w": "nol",
+          "s": 11697.5,
+          "e": 11947.5
+        },
+        {
+          "w": "jika",
+          "s": 11947.5,
+          "e": 12172.5
+        },
+        {
+          "w": "terjadi",
+          "s": 12172.5,
+          "e": 12547.5
+        },
+        {
+          "w": "kendala",
+          "s": 12547.5,
+          "e": 12810.0
+        },
+        {
+          "w": "fatal",
+          "s": 12810.0,
+          "e": 13372.5
+        },
+        {
+          "w": "serta",
+          "s": 13635.0,
+          "e": 13935.0
+        },
+        {
+          "w": "tombol",
+          "s": 13935.0,
+          "e": 14247.5
+        },
+        {
+          "w": "Force",
+          "s": 14247.5,
+          "e": 14497.5
+        },
+        {
+          "w": "Logout",
+          "s": 14497.5,
+          "e": 14872.5
+        },
+        {
+          "w": "untuk",
+          "s": 14872.5,
+          "e": 15110.0
+        },
+        {
+          "w": "mengeluarkan",
+          "s": 15110.0,
+          "e": 15585.0
+        },
+        {
+          "w": "siswa",
+          "s": 15585.0,
+          "e": 15910.0
+        },
+        {
+          "w": "tertentu",
+          "s": 15910.0,
+          "e": 16572.5
+        },
+        {
+          "w": "Tersedia",
+          "s": 17810.0,
+          "e": 18222.5
+        },
+        {
+          "w": "pula",
+          "s": 18222.5,
+          "e": 18422.5
+        },
+        {
+          "w": "tombol",
+          "s": 18422.5,
+          "e": 18735.0
+        },
+        {
+          "w": "Force",
+          "s": 18735.0,
+          "e": 18985.0
+        },
+        {
+          "w": "Logout",
+          "s": 18985.0,
+          "e": 19322.5
+        },
+        {
+          "w": "Semua",
+          "s": 19322.5,
+          "e": 19597.5
+        },
+        {
+          "w": "Siswa",
+          "s": 19597.5,
+          "e": 20035.0
+        },
+        {
+          "w": "untuk",
+          "s": 20035.0,
+          "e": 20310.0
+        },
+        {
+          "w": "menghentikan",
+          "s": 20310.0,
+          "e": 20785.0
+        },
+        {
+          "w": "seluruh",
+          "s": 20785.0,
+          "e": 21097.5
+        },
+        {
+          "w": "sesi",
+          "s": 21097.5,
+          "e": 21422.5
+        },
+        {
+          "w": "secara",
+          "s": 21422.5,
+          "e": 21735.0
+        },
+        {
+          "w": "serentak",
+          "s": 21735.0,
+          "e": 22322.5
+        },
+        {
+          "w": "Selamat",
+          "s": 23538.0,
+          "e": 23925.5
+        },
+        {
+          "w": "bertugas",
+          "s": 23925.5,
+          "e": 24425.5
+        },
+        {
+          "w": "dan",
+          "s": 24425.5,
+          "e": 24575.5
+        },
+        {
+          "w": "sukses",
+          "s": 24575.5,
+          "e": 24975.5
+        },
+        {
+          "w": "mengawal",
+          "s": 24975.5,
+          "e": 25263.0
+        },
+        {
+          "w": "ujian",
+          "s": 25263.0,
+          "e": 25675.5
+        },
+        {
+          "w": "bersama",
+          "s": 25675.5,
+          "e": 26038.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 26038.0,
+          "e": 27025.5
+        }
+      ],
+      "segments_count": 4,
+      "sha256": "7712635197633ad7d67224ff4c9c945eb02f6fcb147d1caf937af2e71a8e3060"
+    }
+  }
+}
