@@ -213,7 +213,7 @@ class QuestionBankController
         $sheet->setCellValue('E5', 'Inggris|London');
         $sheet->setCellValue('I5', '1');
 
-        // Sample Data 5: Pernyataan Benar dan Salah
+        // Sample Data 5: Pernyataan Benar dan Salah (Umum / Sains)
         $sheet->setCellValue('A6', 'Tentukan apakah setiap pernyataan berikut Benar atau Salah:');
         $sheet->setCellValue('B6', 'benar_salah');
         $sheet->setCellValue('C6', 'Matahari terbit dari sebelah timur');
@@ -222,11 +222,29 @@ class QuestionBankController
         $sheet->setCellValue('H6', 'A: Benar, B: Salah, C: Benar');
         $sheet->setCellValue('I6', '10');
 
-        // Sample Data 6: Essay
-        $sheet->setCellValue('A7', 'Jelaskan faktor-faktor yang mempengaruhi perubahan iklim global!');
-        $sheet->setCellValue('B7', 'essay');
-        $sheet->setCellValue('H7', 'emisi karbon, deforestasi, efek rumah kaca');
+        // Sample Data 6: Pernyataan Benar dan Salah (Rumus Matematika)
+        $sheet->setCellValue('A7', 'Tentukan kebenaran dari pernyataan rumus matematika berikut:');
+        $sheet->setCellValue('B7', 'benar_salah');
+        $sheet->setCellValue('C7', 'Hasil penjumlahan (1/2) + (1/4) adalah (3/4)');
+        $sheet->setCellValue('D7', 'Akar kuadrat dari 144 adalah 12: √(144) = 12');
+        $sheet->setCellValue('E7', 'Jika x^2 = 25, maka nilai x selalu bernilai positif 5');
+        $sheet->setCellValue('H7', 'A: Benar, B: Benar, C: Salah');
         $sheet->setCellValue('I7', '10');
+
+        // Sample Data 7: Pernyataan Benar dan Salah (Teks Arab / PAI / Bahasa Arab)
+        $sheet->setCellValue('A8', 'حَدِّدْ صِحَّةَ العِبَارَاتِ التَّالِيَةِ (صَحِيحٌ أَمْ خَطَأٌ):');
+        $sheet->setCellValue('B8', 'benar_salah');
+        $sheet->setCellValue('C8', 'الصَّلَاةُ عِمَادُ الدِّينِ');
+        $sheet->setCellValue('D8', 'صَوْمُ رَمَضَانَ هُوَ الرُّكْنُ الخَامِسُ مِنْ أَرْكَانِ الإِسْلَامِ');
+        $sheet->setCellValue('E8', 'القُرْآنُ الكَرِيمُ كَلَامُ اللهِ تَعَالَى المُنَزَّلُ عَلَى نَبِيِّنَا مُحَمَّدٍ');
+        $sheet->setCellValue('H8', 'أ: صحيح, ب: خطأ, ج: صحيح');
+        $sheet->setCellValue('I8', '10');
+
+        // Sample Data 8: Essay
+        $sheet->setCellValue('A9', 'Jelaskan faktor-faktor yang mempengaruhi perubahan iklim global!');
+        $sheet->setCellValue('B9', 'essay');
+        $sheet->setCellValue('H9', 'emisi karbon, deforestasi, efek rumah kaca');
+        $sheet->setCellValue('I9', '10');
 
         foreach (range('A', 'I') as $col) {
             $sheet->getColumnDimension($col)->setAutoSize(true);
@@ -279,14 +297,31 @@ class QuestionBankController
         $section->addText('Kunci: keyword1, keyword2');
         $section->addTextBreak(1);
 
-        $section->addText('6. Contoh Soal Pernyataan Benar dan Salah?');
+        $section->addText('6. Contoh Soal Pernyataan Benar dan Salah (Umum / Sains)?');
         $section->addText('Tipe: Benar Salah');
         $section->addText('A. Matahari terbit dari sebelah timur');
         $section->addText('B. Air mendidih pada suhu 0 derajat Celsius');
         $section->addText('C. Bumi berputar mengelilingi matahari');
         $section->addText('Kunci: A: Benar, B: Salah, C: Benar');
         $section->addTextBreak(1);
-        $section->addText('Catatan: Format Kunci Benar/Salah dapat ditulis "A: Benar, B: Salah, C: Benar", "A: B, B: S, C: B", "Benar, Salah, Benar", atau "B, S, B".', ['italic' => true, 'color' => '555555']);
+
+        $section->addText('7. Contoh Soal Pernyataan Benar dan Salah (Rumus Matematika)?');
+        $section->addText('Tipe: Benar Salah');
+        $section->addText('A. Nilai pecahan (1/2) setara dengan 0,5');
+        $section->addText('B. Hasil dari (1/4) + (2/4) adalah (3/4)');
+        $section->addText('C. Akar kuadrat dari 81 adalah 9: √(81) = 9');
+        $section->addText('Kunci: A: Benar, B: Benar, C: Benar');
+        $section->addTextBreak(1);
+
+        $section->addText('8. Contoh Soal Pernyataan Benar dan Salah (Teks Arab / PAI)?');
+        $section->addText('Tipe: Benar Salah');
+        $section->addText('A. الصَّلَاةُ هِيَ الرُّكْنُ الثَّانِي مِنْ أَرْكَانِ الإِسْلَامِ');
+        $section->addText('B. عَدَدُ رَكَعَاتِ صَلَاةِ المَغْرِبِ أَرْبَعُ رَكَعَاتٍ');
+        $section->addText('C. صَوْمُ رَمَضَانَ وَاجِبٌ عَلَى كُلِّ مُسْلِمٍ بَالِغٍ عَاقِلٍ');
+        $section->addText('Kunci: A: Benar, B: Salah, C: Benar');
+        $section->addTextBreak(1);
+
+        $section->addText('Catatan: Mendukung tulisan Arab berharakat, angka Arab (١, ٢), opsi Arab (أ, ب), dan kunci Arab (صحيح/خطأ atau ص/خ). Rumus matematika (Equation Word m:oMath, pecahan (1/2), pangkat, akar, dan LaTeX) didukung penuh pada semua tipe soal.', ['italic' => true, 'color' => '555555']);
 
         $fileName = 'Template_Import_Soal.docx';
         $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');

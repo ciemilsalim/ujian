@@ -1,6 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, useForm, router } from '@inertiajs/react';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -24,6 +24,17 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
 
     const excelInputRef = useRef<HTMLInputElement>(null);
     const wordInputRef = useRef<HTMLInputElement>(null);
+
+    // Otomatis render ulang formula matematika MathJax saat daftar soal dimuat/berubah
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setTimeout(() => {
+                if ((window as any).MathJax?.typesetPromise) {
+                    (window as any).MathJax.typesetPromise().catch(() => {});
+                }
+            }, 60);
+        }
+    }, [questionBank.questions]);
 
     const handleImportExcel = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files?.[0]) return;
@@ -158,6 +169,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                 <InputLabel htmlFor="question_text" value="Pertanyaan" />
                 <textarea
                     id="question_text"
+                    dir="auto"
                     value={form.data.question_text}
                     onChange={(e) => form.setData('question_text', e.target.value)}
                     className="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm"
@@ -482,6 +494,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                     <span className="text-xs text-gray-500 font-medium">Skor Default: {question.score_default}</span>
                                                 </div>
                                                 <div 
+                                                    dir="auto"
                                                     className="text-gray-900 dark:text-gray-100 mb-4 prose dark:prose-invert max-w-full"
                                                     dangerouslySetInnerHTML={{ __html: question.question_text }}
                                                 />
@@ -500,7 +513,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                                     }`}
                                                                 >
                                                                     <span className="font-bold uppercase text-xs w-4">{key}.</span>
-                                                                    <span dangerouslySetInnerHTML={{ __html: value }} />
+                                                                    <span dir="auto" className="flex-1" dangerouslySetInnerHTML={{ __html: value }} />
                                                                     {question.answer_key.split(',').includes(key) && (
                                                                         <CheckCircle className="w-3 h-3 text-emerald-600 ml-auto" />
                                                                     )}
@@ -521,11 +534,13 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                                 return (
                                                                     <div key={opt} className="flex items-stretch gap-2">
                                                                         <div 
+                                                                            dir="auto"
                                                                             className="flex-1 p-2 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 rounded text-sm text-center"
                                                                             dangerouslySetInnerHTML={{ __html: left }}
                                                                         />
                                                                         <div className="flex items-center text-gray-400">↔</div>
                                                                         <div 
+                                                                            dir="auto"
                                                                             className="flex-1 p-2 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 rounded text-sm text-center font-bold"
                                                                             dangerouslySetInnerHTML={{ __html: right }}
                                                                         />
@@ -551,7 +566,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                                                             <div key={optKey} className="flex items-center justify-between p-2.5 rounded-lg border bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800 text-sm">
                                                                                 <div className="flex items-start gap-2 flex-1">
                                                                                     <span className="font-bold uppercase text-xs w-5">{optKey}.</span>
-                                                                                    <span dangerouslySetInnerHTML={{ __html: val }} />
+                                                                                    <span dir="auto" className="flex-1" dangerouslySetInnerHTML={{ __html: val }} />
                                                                                 </div>
                                                                                 <span className={`px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider ${
                                                                                     isBenar ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300' : 'bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300'
@@ -687,7 +702,9 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                 <ul className="mt-3 text-[10px] text-gray-500 space-y-1">
                                     <li>&bull; Gunakan template yang disediakan melalui tombol download template.</li>
                                     <li>&bull; Kolom Tipe diisi: pilihan_ganda, pilihan_ganda_kompleks, benar_salah (atau 'bs'), isian_singkat, menjodohkan, atau essay.</li>
-                                    <li>&bull; Kunci Benar Salah dapat ditulis <strong>A: Benar, B: Salah</strong>, <strong>B, S</strong>, atau JSON.</li>
+                                    <li>&bull; Kunci Benar Salah dapat ditulis <strong>A: Benar, B: Salah</strong>, <strong>B, S</strong>, kunci Arab <strong>أ: صحيح, ب: خطأ</strong>, atau JSON.</li>
+                                    <li>&bull; <strong>Dukungan Bahasa Arab & PAI:</strong> Mendukung tulisan Arab berharakat, angka Arab (١, ٢), dan arah baca teks otomatis (RTL/LTR).</li>
+                                    <li>&bull; <strong>Dukungan Rumus Matematika:</strong> Mendukung Equation Word (m:oMath), format pecahan (1/2), akar, pangkat, dan simbol LaTeX MathJax ($...$).</li>
                                 </ul>
                             </div>
                         </div>

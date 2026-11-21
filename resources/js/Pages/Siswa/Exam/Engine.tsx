@@ -88,6 +88,17 @@ export default function ExamEngine({
     const [isFinishModalOpen, setIsFinishModalOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+    // Otomatis render ulang formula matematika MathJax saat pindah nomor soal
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setTimeout(() => {
+                if ((window as any).MathJax?.typesetPromise) {
+                    (window as any).MathJax.typesetPromise().catch(() => {});
+                }
+            }, 30);
+        }
+    }, [currentQuestionIndex]);
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
@@ -522,7 +533,7 @@ export default function ExamEngine({
 
                         {/* Question Text */}
                         <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-100 dark:border-gray-800">
-                            <div className={`prose dark:prose-invert max-w-none font-medium leading-relaxed text-gray-800 dark:text-gray-200 transition-all duration-300 ${
+                            <div dir="auto" className={`prose dark:prose-invert max-w-none font-medium leading-relaxed text-gray-800 dark:text-gray-200 transition-all duration-300 ${
                                 fontSize === 'small' ? 'text-base' : fontSize === 'large' ? 'text-2xl sm:text-3xl' : 'text-lg sm:text-xl'
                             }`} dangerouslySetInnerHTML={{ __html: currentQuestion.question_text }} />
                         </div>
@@ -549,7 +560,7 @@ export default function ExamEngine({
                                             }`}>
                                                 {key.toUpperCase()}
                                             </div>
-                                            <div className={`flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 ${
+                                            <div dir="auto" className={`flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 ${
                                                 fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg'
                                             }`} dangerouslySetInnerHTML={{ __html: value as string }} />
                                             {data.answers[currentQuestion.id] === key && (
@@ -591,7 +602,7 @@ export default function ExamEngine({
                                                 }`}>
                                                     {isSelected ? <CheckCircle className="w-5 h-5" /> : key.toUpperCase()}
                                                 </div>
-                                                <div className={`flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 ${
+                                                <div dir="auto" className={`flex-1 pt-1.5 prose-sm sm:prose dark:prose-invert text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 ${
                                                     fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg'
                                                 }`} dangerouslySetInnerHTML={{ __html: value as string }} />
                                             </button>
@@ -602,6 +613,7 @@ export default function ExamEngine({
                                 <div className="relative">
                                     <input
                                         type="text"
+                                        dir="auto"
                                         className={`w-full p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none transition-all duration-300 ${
                                             fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-2xl' : 'text-lg'
                                         }`}
@@ -621,6 +633,7 @@ export default function ExamEngine({
                                         return (
                                             <div key={opt} className="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
                                                 <div 
+                                                    dir="auto"
                                                     className={`flex-1 font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 ${
                                                         fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl' : 'text-base'
                                                     }`}
@@ -705,6 +718,7 @@ export default function ExamEngine({
                                                             {optKey}
                                                         </div>
                                                         <div
+                                                            dir="auto"
                                                             className={`font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 ${
                                                                 fontSize === 'small' ? 'text-sm' : fontSize === 'large' ? 'text-xl' : 'text-base'
                                                             }`}
@@ -751,6 +765,7 @@ export default function ExamEngine({
                             ) : (
                                 <div className="relative">
                                     <textarea
+                                        dir="auto"
                                         className={`w-full p-6 sm:p-8 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-800 rounded-3xl shadow-sm focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 dark:focus:ring-indigo-900/20 outline-none transition-all duration-300 dark:text-gray-200 min-h-[300px] ${
                                             fontSize === 'small' ? 'text-base' : fontSize === 'large' ? 'text-2xl' : 'text-lg'
                                         }`}

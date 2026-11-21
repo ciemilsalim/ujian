@@ -30,21 +30,24 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
             // Maatwebsite Excel WithHeadingRow starts collection from row 2
             $actualRowNumber = $index + 2; 
 
-            $questionText = $row['pertanyaan'] ?? '';
+            $questionText = (string)($row['pertanyaan'] ?? '');
             $rawTypeInput = (string)($row['tipe'] ?? '');
-            $cleanType = strtolower(trim(str_replace(['-', '/', '_'], ' ', $rawTypeInput)));
+            $cleanType = mb_strtolower(trim(str_replace(['-', '/', '_', ' '], '', $rawTypeInput)), 'UTF-8');
 
-            if (in_array($cleanType, ['benar salah', 'bs', 'b s', 'tf', 't f', 'true false', 'pernyataan benar salah', 'pernyataan benar', 'benar'])) {
+            if (in_array($cleanType, [
+                'benarsalah', 'bs', 'tf', 'truefalse', 'pernyataanbenarsalah', 'pernyataanbenar', 'benar',
+                'صحيحخطأ', 'صحخطأ', 'صحيحوخطأ', 'صحوخطأ', 'صحيحاوخطأ', 'صحاوخطأ', 'صخ', 'صحيح', 'صح'
+            ])) {
                 $type = 'benar_salah';
-            } elseif (in_array($cleanType, ['pilihan ganda kompleks', 'pg kompleks', 'pgk'])) {
+            } elseif (in_array($cleanType, ['pilihangandakompleks', 'pgkompleks', 'pgk'])) {
                 $type = 'pilihan_ganda_kompleks';
-            } elseif (in_array($cleanType, ['isian singkat', 'isian', 'singkat'])) {
+            } elseif (in_array($cleanType, ['isiansingkat', 'isian', 'singkat'])) {
                 $type = 'isian_singkat';
             } elseif (in_array($cleanType, ['menjodohkan', 'jodohkan', 'match'])) {
                 $type = 'menjodohkan';
-            } elseif (in_array($cleanType, ['essay', 'uraian'])) {
+            } elseif (in_array($cleanType, ['essay', 'uraian', 'مقال', 'مقالي'])) {
                 $type = 'essay';
-            } elseif (in_array($cleanType, ['pilihan ganda', 'pg'])) {
+            } elseif (in_array($cleanType, ['pilihanganda', 'pg', 'اختيارمنمتعدد'])) {
                 $type = 'pilihan_ganda';
             } elseif (in_array($rawTypeInput, ['pilihan_ganda', 'pilihan_ganda_kompleks', 'benar_salah', 'isian_singkat', 'menjodohkan', 'essay'])) {
                 $type = $rawTypeInput;
@@ -52,15 +55,32 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
                 $type = 'pilihan_ganda';
             }
 
-            // Auto-detect benar_salah if key has true/false indicators
+            // Auto-detect benar_salah if key has true/false indicators (Latin & Arabic)
             $rawKey = trim((string)($row['kunci'] ?? ''));
-            $lowerKey = strtolower($rawKey);
+            $lowerKey = mb_strtolower($rawKey, 'UTF-8');
             if ($type === 'pilihan_ganda' || empty($cleanType)) {
-                if (str_contains($lowerKey, 'benar') || str_contains($lowerKey, 'salah') || preg_match('/^[a-e]:[bs]([,;][a-e]:[bs])*$/i', str_replace(' ', '', $lowerKey))) {
+                if (
+                    str_contains($lowerKey, 'benar') || 
+                    str_contains($lowerKey, 'salah') || 
+                    str_contains($lowerKey, 'صحيح') || 
+                    str_contains($lowerKey, 'خطأ') || 
+                    str_contains($lowerKey, 'خطا') || 
+                    str_contains($lowerKey, 'صح') || 
+                    preg_match('/^[a-eأ-ه]:[bsصخ]([,;،][a-eأ-ه]:[bsصخ])*$/iu', str_replace(' ', '', $lowerKey))
+                ) {
                     $type = 'benar_salah';
                 }
             }
             
+            // Format plain fractions (e.g. (1/2) -> math-frac) unless already HTML
+            if (!str_contains($questionText, 'math-frac')) {
+                $questionText = preg_replace(
+                    '/\((\d+)\/(\d+)\)/',
+                    '<span class="math-frac"><span class="math-num">$1</span><span class="math-den">$2</span></span>',
+                    $questionText
+                );
+            }
+
             // Handle Images for this row if any
             if (isset($this->drawings[$actualRowNumber])) {
                 foreach ($this->drawings[$actualRowNumber] as $imagePath) {
@@ -71,18 +91,29 @@ class QuestionsImport implements ToCollection, WithHeadingRow, WithEvents
             $options = null;
             if ($type === 'pilihan_ganda' || $type === 'pilihan_ganda_kompleks' || $type === 'benar_salah') {
                 $options = array_filter([
-                    'a' => $row['opsi_a'] ?? '',
-                    'b' => $row['opsi_b'] ?? '',
-                    'c' => $row['opsi_c'] ?? '',
-                    'd' => $row['opsi_d'] ?? '',
-                    'e' => $row['opsi_e'] ?? '',
+                    'a' => (string)($row['opsi_a'] ?? ''),
+                    'b' => (string)($row['opsi_b'] ?? ''),
+                    'c' => (string)($row['opsi_c'] ?? ''),
+                    'd' => (string)($row['opsi_d'] ?? ''),
+                    'e' => (string)($row['opsi_e'] ?? ''),
                 ], function($value) {
                     return !is_null($value) && trim($value) !== '';
                 });
+
+                // Format plain fractions in options
+                foreach ($options as $k => $optVal) {
+                    if (!str_contains($optVal, 'math-frac')) {
+                        $options[$k] = preg_replace(
+                            '/\((\d+)\/(\d+)\)/',
+                            '<span class="math-frac"><span class="math-num">$1</span><span class="math-den">$2</span></span>',
+                            $optVal
+                        );
+                    }
+                }
             } elseif ($type === 'menjodohkan') {
                 $options = [];
                 foreach (['a', 'b', 'c', 'd', 'e'] as $opt) {
-                    $raw = $row["opsi_$opt"] ?? '';
+                    $raw = (string)($row["opsi_$opt"] ?? '');
                     if (strpos($raw, '|') !== false) {
                         [$left, $right] = explode('|', $raw, 2);
                         $options["left_$opt"] = trim($left);

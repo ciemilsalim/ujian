@@ -219,3 +219,133 @@ it('can import benar salah questions from word document', function () {
 
     @unlink($tempPath);
 });
+
+it('normalizes arabic answer keys and arabic numbers correctly for benar salah', function () {
+    // 1. Arabic key-value with Arabic letters (أ، ب، ج) and words (صحيح، خطأ)
+    $key1 = Question::normalizeBenarSalahKey('أ: صحيح, ب: خطأ, ج: صحيح');
+    expect(json_decode($key1, true))->toBe(['a' => 'benar', 'b' => 'salah', 'c' => 'benar']);
+
+    // 2. Arabic shorthand (ص / خ)
+    $key2 = Question::normalizeBenarSalahKey('أ: ص, ب: خ, ج: ص');
+    expect(json_decode($key2, true))->toBe(['a' => 'benar', 'b' => 'salah', 'c' => 'benar']);
+
+    // 3. Arabic comma (،) separator
+    $key3 = Question::normalizeBenarSalahKey('أ: صحيح، ب: خطأ، ج: صحيح');
+    expect(json_decode($key3, true))->toBe(['a' => 'benar', 'b' => 'salah', 'c' => 'benar']);
+
+    // 4. Arabic numerals (١, ٠)
+    $key4 = Question::normalizeBenarSalahKey('١, ٠, ١', ['a' => 'Opt 1', 'b' => 'Opt 2', 'c' => 'Opt 3']);
+    expect(json_decode($key4, true))->toBe(['a' => 'benar', 'b' => 'salah', 'c' => 'benar']);
+
+    // 5. Arabic positional list (صحيح, خطأ)
+    $key5 = Question::normalizeBenarSalahKey('صحيح, خطأ', ['a' => 'Opt 1', 'b' => 'Opt 2']);
+    expect(json_decode($key5, true))->toBe(['a' => 'benar', 'b' => 'salah']);
+
+    // 6. Dash separator with Arabic letters (أ - صحيح)
+    $key6 = Question::normalizeBenarSalahKey('أ - صحيح, ب - خطأ');
+    expect(json_decode($key6, true))->toBe(['a' => 'benar', 'b' => 'salah']);
+});
+
+it('can import benar salah questions with arabic text and math formulas from excel', function () {
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+
+    $headers = ['pertanyaan', 'tipe', 'opsi_a', 'opsi_b', 'opsi_c', 'opsi_d', 'opsi_e', 'kunci', 'skor'];
+    foreach ($headers as $col => $header) {
+        $sheet->setCellValueByColumnAndRow($col + 1, 1, $header);
+    }
+
+    // Row 2: Soal Teks Arab berharakat & Kunci Bahasa Arab
+    $sheet->setCellValue('A2', 'حَدِّدْ صِحَّةَ العِبَارَاتِ التَّالِيَةِ (صَحِيحٌ أَمْ خَطَأٌ):');
+    $sheet->setCellValue('B2', 'benar_salah');
+    $sheet->setCellValue('C2', 'الصَّلَاةُ عِمَادُ الدِّينِ');
+    $sheet->setCellValue('D2', 'صَوْمُ رَمَضَانَ هُوَ الرُّكْنُ الخَامِسُ مِنْ أَرْكَانِ الإِسْلَامِ');
+    $sheet->setCellValue('E2', 'القُرْآنُ الكَرِيمُ كَلَامُ اللهِ تَعَالَى');
+    $sheet->setCellValue('H2', 'أ: صحيح, ب: خطأ, ج: صحيح');
+    $sheet->setCellValue('I2', '10');
+
+    // Row 3: Soal Rumus Matematika (pecahan & pangkat & akar)
+    $sheet->setCellValue('A3', 'Tentukan kebenaran dari pernyataan rumus matematika berikut:');
+    $sheet->setCellValue('B3', 'benar_salah');
+    $sheet->setCellValue('C3', 'Hasil dari (1/2) + (1/4) adalah (3/4)');
+    $sheet->setCellValue('D3', 'Akar kuadrat √(144) = 12');
+    $sheet->setCellValue('E3', 'Jika x^2 = 25, maka x selalu positif 5');
+    $sheet->setCellValue('H3', 'A: Benar, B: Benar, C: Salah');
+    $sheet->setCellValue('I3', '10');
+
+    $tempPath = tempnam(sys_get_temp_dir(), 'test_arabic_math_') . '.xlsx';
+    $writer = new Xlsx($spreadsheet);
+    $writer->save($tempPath);
+
+    $uploadedFile = new UploadedFile($tempPath, 'soal_arabic_math.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', null, true);
+
+    $response = $this->actingAs($this->guru)->post(route('guru.question-banks.import-excel', $this->qb->id), [
+        'file' => $uploadedFile,
+    ]);
+
+    $response->assertSessionHas('success');
+
+    $questions = Question::where('question_bank_id', $this->qb->id)->get();
+    expect($questions)->toHaveCount(2);
+
+    // Assert Arabic question
+    $qArabic = $questions->first();
+    expect($qArabic->type)->toBe('benar_salah');
+    expect($qArabic->question_text)->toContain('حَدِّدْ صِحَّةَ العِبَارَاتِ');
+    expect($qArabic->options['a'])->toBe('الصَّلَاةُ عِمَادُ الدِّينِ');
+    expect(json_decode($qArabic->answer_key, true))->toBe([
+        'a' => 'benar',
+        'b' => 'salah',
+        'c' => 'benar',
+    ]);
+
+    // Assert Math question (with math-frac)
+    $qMath = $questions->last();
+    expect($qMath->type)->toBe('benar_salah');
+    expect($qMath->options['a'])->toContain('math-frac');
+    expect(json_decode($qMath->answer_key, true))->toBe([
+        'a' => 'benar',
+        'b' => 'benar',
+        'c' => 'salah',
+    ]);
+
+    @unlink($tempPath);
+});
+
+it('can import benar salah questions with arabic numerals and options from word', function () {
+    $phpWord = new PhpWord();
+    $section = $phpWord->addSection();
+
+    // Arabic numbers and Arabic options
+    $section->addText('١. حَدِّدْ صِحَّةَ العِبَارَاتِ التَّالِيَةِ:');
+    $section->addText('النوع: صحيح خطأ');
+    $section->addText('أ. الصَّلَاةُ هِيَ الرُّكْنُ الثَّانِي مِنْ أَرْكَانِ الإِسْلَامِ');
+    $section->addText('ب. عَدَدُ رَكَعَاتِ صَلَاةِ المَغْرِبِ أَرْبَعُ رَكَعَاتٍ');
+    $section->addText('الإجابة: أ: صحيح, ب: خطأ');
+
+    $tempPath = tempnam(sys_get_temp_dir(), 'test_word_arabic_') . '.docx';
+    $writer = IOFactory::createWriter($phpWord, 'Word2007');
+    $writer->save($tempPath);
+
+    $uploadedFile = new UploadedFile($tempPath, 'soal_arabic.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', null, true);
+
+    $response = $this->actingAs($this->guru)->post(route('guru.question-banks.import-word', $this->qb->id), [
+        'file' => $uploadedFile,
+    ]);
+
+    $response->assertSessionHas('success');
+
+    $questions = Question::where('question_bank_id', $this->qb->id)->get();
+    expect($questions)->toHaveCount(1);
+
+    $q = $questions->first();
+    expect($q->type)->toBe('benar_salah');
+    expect($q->question_text)->toContain('حَدِّدْ صِحَّةَ العِبَارَاتِ');
+    expect($q->options['a'])->toContain('الصَّلَاةُ');
+    expect(json_decode($q->answer_key, true))->toBe([
+        'a' => 'benar',
+        'b' => 'salah',
+    ]);
+
+    @unlink($tempPath);
+});

@@ -95,13 +95,18 @@ class WordImportService
 
                 // Auto-detect question type if not explicitly set
                 $rawKey = $qData['answer_key'] ?? '';
-                $lowerKey = strtolower($rawKey);
+                $lowerKey = mb_strtolower($rawKey, 'UTF-8');
                 $type = $qData['type'];
 
                 if ($type === 'pilihan_ganda' || $type === 'essay') {
-                    if (str_contains($lowerKey, 'benar') || str_contains($lowerKey, 'salah') || preg_match('/^[a-e]:[bs]([,;][a-e]:[bs])*$/i', str_replace(' ', '', $lowerKey))) {
+                    if (
+                        str_contains($lowerKey, 'benar') || str_contains($lowerKey, 'salah') ||
+                        str_contains($lowerKey, 'صحيح') || str_contains($lowerKey, 'خطأ') || str_contains($lowerKey, 'خطا') ||
+                        str_contains($lowerKey, 'صح') ||
+                        preg_match('/^[a-eأ-ه]:[bsصخ]([,;،][a-eأ-ه]:[bsصخ])*$/iu', str_replace(' ', '', $lowerKey))
+                    ) {
                         $type = 'benar_salah';
-                    } elseif (strpos($rawKey, ',') !== false) {
+                    } elseif (strpos($rawKey, ',') !== false || strpos($rawKey, '،') !== false) {
                         $type = 'pilihan_ganda_kompleks';
                     }
                 }
@@ -515,15 +520,15 @@ class WordImportService
         $plainLine = trim(strip_tags($line));
         if (empty($plainLine)) return;
 
-        $isDigitMatch     = preg_match('/^\d+[\.\)]\s*(.*)/is', $plainLine, $matches);
-        $isOptionMatch    = preg_match('/^([A-E])[\.\)]\s*(.*)/is', $plainLine, $matchesOption);
-        $isTypeMatch      = preg_match('/^(Tipe|Jenis):\s*(.*)/i', $plainLine, $matchesType);
-        $isAnswerKeyMatch = preg_match('/^(Kunci|Jawaban|Jawab|Answer):\s*(.*)/i', $plainLine, $matchesKey);
+        $isDigitMatch     = preg_match('/^[\d\x{0660}-\x{0669}\x{06F0}-\x{06F9}]+[\.\)]\s*(.*)/isu', $plainLine, $matches);
+        $isOptionMatch    = preg_match('/^([A-Ea-e]|[أاإآبجدوههـ])[\.\)]\s*(.*)/isu', $plainLine, $matchesOption);
+        $isTypeMatch      = preg_match('/^(Tipe|Jenis|النوع|نوع\s*السؤال):\s*(.*)/iu', $plainLine, $matchesType);
+        $isAnswerKeyMatch = preg_match('/^(Kunci|Jawaban|Jawab|Answer|الإجابة|الاجابة|المفتاح|الجواب):\s*(.*)/iu', $plainLine, $matchesKey);
 
         // Rebuild the "rich" version of the line (with HTML) for the digit match
         if ($isDigitMatch) {
             // Strip the leading number from the original (HTML-preserved) line
-            $richContent = preg_replace('/^\d+[\.\)]\s*/s', '', $line);
+            $richContent = preg_replace('/^[\d\x{0660}-\x{0669}\x{06F0}-\x{06F9}]+[\.\)]\s*/isu', '', $line);
         }
 
         if ($isDigitMatch || ($currentQuestion['is_complete'] && !$isOptionMatch && !$isTypeMatch && !$isAnswerKeyMatch)) {
@@ -533,9 +538,9 @@ class WordImportService
             }
             $currentQuestion['text'] = $isDigitMatch ? ($richContent ?? $matches[1]) : $line;
         } elseif ($isOptionMatch) {
-            $key = strtolower($matchesOption[1]);
+            $key = \App\Models\Question::normalizeOptionKey($matchesOption[1]);
             // Build rich value: strip "X. " from the beginning of the original line
-            $richVal = trim(preg_replace('/^[A-E][\.\)]\s*/is', '', $line));
+            $richVal = trim(preg_replace('/^([A-Ea-e]|[أاإآبجدوههـ])[\.\)]\s*/isu', '', $line));
 
             if ($currentQuestion['type'] === 'menjodohkan' && strpos($richVal, '|') !== false) {
                 [$left, $right] = explode('|', $richVal, 2);
@@ -551,10 +556,15 @@ class WordImportService
                 }
             }
         } elseif ($isTypeMatch) {
-            $typeName = strtolower(trim($matchesType[2]));
+            $typeName = mb_strtolower(trim($matchesType[2]), 'UTF-8');
             if (str_contains($typeName, 'kompleks') || str_contains($typeName, 'pgk')) {
                 $currentQuestion['type'] = 'pilihan_ganda_kompleks';
-            } elseif (str_contains($typeName, 'benar') || str_contains($typeName, 'salah') || str_contains($typeName, 'bs') || str_contains($typeName, 'tf')) {
+            } elseif (
+                str_contains($typeName, 'benar') || str_contains($typeName, 'salah') || 
+                str_contains($typeName, 'bs') || str_contains($typeName, 'tf') ||
+                str_contains($typeName, 'صحيح') || str_contains($typeName, 'خطأ') ||
+                str_contains($typeName, 'خطا') || str_contains($typeName, 'صح')
+            ) {
                 $currentQuestion['type'] = 'benar_salah';
             } elseif (str_contains($typeName, 'jodoh') || str_contains($typeName, 'match')) {
                 $currentQuestion['type'] = 'menjodohkan';
@@ -562,11 +572,11 @@ class WordImportService
                 $currentQuestion['answer_key'] = '';
             } elseif (str_contains($typeName, 'isian') || str_contains($typeName, 'singkat')) {
                 $currentQuestion['type'] = 'isian_singkat';
-            } elseif (str_contains($typeName, 'essay') || str_contains($typeName, 'uraian')) {
+            } elseif (str_contains($typeName, 'essay') || str_contains($typeName, 'uraian') || str_contains($typeName, 'مقال')) {
                 $currentQuestion['type'] = 'essay';
             }
         } elseif ($isAnswerKeyMatch) {
-            $currentQuestion['answer_key'] = str_replace(' ', '', strtolower(trim($matchesKey[2])));
+            $currentQuestion['answer_key'] = trim($matchesKey[2]);
             $currentQuestion['is_complete'] = true;
         } else {
             if (empty($currentQuestion['text'])) {

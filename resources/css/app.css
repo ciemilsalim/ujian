@@ -45,3 +45,28 @@
     padding: 0 2px;
     display: block;
 }
+
+/* Arabic Typography & Direction Support */
+[dir="rtl"], .text-arabic {
+    font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade New', 'Tahoma', 'Arial', serif;
+    direction: rtl;
+    text-align: right;
+    line-height: 2;
+}
+
+/* Math Styles Enhancements */
+.math-sqrt {
+    display: inline-flex;
+    align-items: baseline;
+    vertical-align: baseline;
+}
+.math-sqrt-symbol {
+    font-size: 1.15em;
+    margin-right: 1px;
+}
+.math-sqrt-radicand {
+    border-top: 1px solid currentColor;
+    padding-top: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+}

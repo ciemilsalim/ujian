@@ -1,9 +1,19 @@
 import '../css/app.css';
 import './bootstrap';
 
-import { createInertiaApp } from '@inertiajs/react';
+import { createInertiaApp, router } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot, hydrateRoot } from 'react-dom/client';
+
+if (typeof window !== 'undefined') {
+    router.on('finish', () => {
+        setTimeout(() => {
+            if ((window as any).MathJax?.typesetPromise) {
+                (window as any).MathJax.typesetPromise().catch(() => {});
+            }
+        }, 50);
+    });
+}
 
 const appName = import.meta.env.VITE_APP_NAME || 'ZEXAM-CBT';
 
