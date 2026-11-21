@@ -371,6 +371,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                     <div className="flex gap-2 relative">
                         <div className="relative">
                             <button
+                                id="btn-import-dropdown"
                                 onClick={() => setShowImportDropdown(!showImportDropdown)}
                                 className="flex items-center gap-2 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                             >
@@ -380,9 +381,10 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                             </button>
                             
                             {showImportDropdown && (
-                                <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                <div id="menu-import-dropdown" className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                     <div className="py-1">
                                         <button
+                                            id="btn-import-excel"
                                             onClick={() => excelInputRef.current?.click()}
                                             className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
                                         >
@@ -390,6 +392,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                             Import Excel
                                         </button>
                                         <button
+                                            id="btn-import-word"
                                             onClick={() => wordInputRef.current?.click()}
                                             className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
                                         >
@@ -397,6 +400,7 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                             Import Word
                                         </button>
                                         <button
+                                            id="btn-panduan-import"
                                             onClick={() => setShowGuideModal(true)}
                                             className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
                                         >
@@ -455,10 +459,10 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                                 <div className="text-right">
                                     <p className="text-xs text-gray-500 font-bold uppercase mb-2">Download Template</p>
                                     <div className="flex gap-2">
-                                        <a href={route('guru.question-banks.template-excel')} className="p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-1 text-xs" title="Excel Template">
+                                        <a id="btn-download-template-excel" href={route('guru.question-banks.template-excel')} className="p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-1 text-xs" title="Excel Template">
                                             <FileSpreadsheet className="w-4 h-4 text-green-600" /> XLSX
                                         </a>
-                                        <a href={route('guru.question-banks.template-word')} className="p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-1 text-xs" title="Word Template">
+                                        <a id="btn-download-template-word" href={route('guru.question-banks.template-word')} className="p-2 border rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-1 text-xs" title="Word Template">
                                             <FileText className="w-4 h-4 text-blue-600" /> DOCX
                                         </a>
                                     </div>
@@ -711,8 +715,8 @@ export default function Show({ questionBank }: { questionBank: QuestionBank }) {
                     </div>
 
                     <div className="mt-8 flex justify-end gap-3">
-                        <SecondaryButton onClick={() => setShowGuideModal(false)}>Tutup</SecondaryButton>
-                        <PrimaryButton onClick={() => {
+                        <SecondaryButton id="btn-close-guide" onClick={() => setShowGuideModal(false)}>Tutup</SecondaryButton>
+                        <PrimaryButton id="btn-modal-start-import" onClick={() => {
                             setShowGuideModal(false);
                             setShowImportDropdown(true);
                         }}>Mulai Import Sekarang</PrimaryButton>

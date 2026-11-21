@@ -6,14 +6,14 @@
   "app_type": "web",
   "base_url": "http://127.0.0.1:8000",
   "local_server_cmd": "php artisan serve --port 8000",
-  "mode": "dual",
+  "mode": "desktop",
   "viewport": {
-    "width": 414,
-    "height": 736
+    "width": 1920,
+    "height": 1080
   },
   "target_resolution": [
-    1080,
-    1920
+    1920,
+    1080
   ],
   "fps": 60,
   "voice": {
