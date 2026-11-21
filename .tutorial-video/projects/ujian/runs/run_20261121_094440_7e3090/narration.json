@@ -1,0 +1,1363 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_buka_bank_soal": {
+      "text": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT. Hari ini kita bersama-sama akan mempelajari cara mengimport soal jenis pernyataan benar dan salah secara praktis, baik menggunakan dokumen Excel maupun Word. Mari kita mulai dengan membuka detail bank soal yang aktif.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_01_buka_bank_soal.wav",
+      "duration_ms": 19724.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 112.5,
+          "e": 350.0
+        },
+        {
+          "w": "Bapak",
+          "s": 350.0,
+          "e": 600.0
+        },
+        {
+          "w": "dan",
+          "s": 600.0,
+          "e": 737.5
+        },
+        {
+          "w": "Ibu",
+          "s": 737.5,
+          "e": 925.0
+        },
+        {
+          "w": "Guru",
+          "s": 925.0,
+          "e": 1187.5
+        },
+        {
+          "w": "serta",
+          "s": 1187.5,
+          "e": 1437.5
+        },
+        {
+          "w": "Rekan-Rekan",
+          "s": 1437.5,
+          "e": 1887.5
+        },
+        {
+          "w": "Administrator",
+          "s": 1887.5,
+          "e": 2587.5
+        },
+        {
+          "w": "Proktor",
+          "s": 2587.5,
+          "e": 3162.5
+        },
+        {
+          "w": "selamat",
+          "s": 3437.5,
+          "e": 3775.0
+        },
+        {
+          "w": "datang",
+          "s": 3775.0,
+          "e": 4112.5
+        },
+        {
+          "w": "di",
+          "s": 4112.5,
+          "e": 4187.5
+        },
+        {
+          "w": "panduan",
+          "s": 4187.5,
+          "e": 4537.5
+        },
+        {
+          "w": "aplikasi",
+          "s": 4537.5,
+          "e": 5050.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 5050.0,
+          "e": 6012.5
+        },
+        {
+          "w": "Hari",
+          "s": 7276.5,
+          "e": 7476.5
+        },
+        {
+          "w": "ini",
+          "s": 7476.5,
+          "e": 7764.0
+        },
+        {
+          "w": "kita",
+          "s": 7764.0,
+          "e": 7976.5
+        },
+        {
+          "w": "bersama-sama",
+          "s": 7976.5,
+          "e": 8601.5
+        },
+        {
+          "w": "akan",
+          "s": 8601.5,
+          "e": 8789.0
+        },
+        {
+          "w": "mempelajari",
+          "s": 8789.0,
+          "e": 9251.5
+        },
+        {
+          "w": "cara",
+          "s": 9251.5,
+          "e": 9439.0
+        },
+        {
+          "w": "mengimport",
+          "s": 9439.0,
+          "e": 9901.5
+        },
+        {
+          "w": "soal",
+          "s": 9901.5,
+          "e": 10151.5
+        },
+        {
+          "w": "jenis",
+          "s": 10151.5,
+          "e": 10414.0
+        },
+        {
+          "w": "pernyataan",
+          "s": 10414.0,
+          "e": 10851.5
+        },
+        {
+          "w": "benar",
+          "s": 10851.5,
+          "e": 11164.0
+        },
+        {
+          "w": "dan",
+          "s": 11164.0,
+          "e": 11339.0
+        },
+        {
+          "w": "salah",
+          "s": 11339.0,
+          "e": 11564.0
+        },
+        {
+          "w": "secara",
+          "s": 11564.0,
+          "e": 11814.0
+        },
+        {
+          "w": "praktis",
+          "s": 11814.0,
+          "e": 12376.5
+        },
+        {
+          "w": "baik",
+          "s": 12664.0,
+          "e": 12939.0
+        },
+        {
+          "w": "menggunakan",
+          "s": 12939.0,
+          "e": 13414.0
+        },
+        {
+          "w": "dokumen",
+          "s": 13414.0,
+          "e": 13714.0
+        },
+        {
+          "w": "Excel",
+          "s": 13714.0,
+          "e": 14101.5
+        },
+        {
+          "w": "maupun",
+          "s": 14101.5,
+          "e": 14401.5
+        },
+        {
+          "w": "Word",
+          "s": 14401.5,
+          "e": 14739.0
+        },
+        {
+          "w": "Mari",
+          "s": 16008.0,
+          "e": 16258.0
+        },
+        {
+          "w": "kita",
+          "s": 16258.0,
+          "e": 16458.0
+        },
+        {
+          "w": "mulai",
+          "s": 16458.0,
+          "e": 16720.5
+        },
+        {
+          "w": "dengan",
+          "s": 16720.5,
+          "e": 16945.5
+        },
+        {
+          "w": "membuka",
+          "s": 16945.5,
+          "e": 17270.5
+        },
+        {
+          "w": "detail",
+          "s": 17270.5,
+          "e": 17620.5
+        },
+        {
+          "w": "bank",
+          "s": 17620.5,
+          "e": 17858.0
+        },
+        {
+          "w": "soal",
+          "s": 17858.0,
+          "e": 18145.5
+        },
+        {
+          "w": "yang",
+          "s": 18145.5,
+          "e": 18283.0
+        },
+        {
+          "w": "aktif",
+          "s": 18283.0,
+          "e": 18870.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "91a0d4066acd9301a8771787abb7a899b959e83e997eb572b1dc0ce5d5a52ef0"
+    },
+    "scene_02_unduh_template": {
+      "text": "Langkah pertama sebelum menyusun soal, kita dapat mengunduh format template resmi yang telah disediakan oleh sistem. Di sudut kanan atas informasi bank soal, tersedia tombol unduh template Excel berformat XLSX dan Word berformat DOCX. Template ini telah memuat contoh nyata soal benar salah, rumus matematika, dan teks Arab.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_02_unduh_template.wav",
+      "duration_ms": 20908.0,
+      "words": [
+        {
+          "w": "Langkah",
+          "s": 112.5,
+          "e": 450.0
+        },
+        {
+          "w": "pertama",
+          "s": 450.0,
+          "e": 775.0
+        },
+        {
+          "w": "sebelum",
+          "s": 775.0,
+          "e": 1062.5
+        },
+        {
+          "w": "menyusun",
+          "s": 1062.5,
+          "e": 1400.0
+        },
+        {
+          "w": "soal",
+          "s": 1400.0,
+          "e": 1925.0
+        },
+        {
+          "w": "kita",
+          "s": 2212.5,
+          "e": 2437.5
+        },
+        {
+          "w": "dapat",
+          "s": 2437.5,
+          "e": 2675.0
+        },
+        {
+          "w": "mengunduh",
+          "s": 2675.0,
+          "e": 2987.5
+        },
+        {
+          "w": "format",
+          "s": 2987.5,
+          "e": 3300.0
+        },
+        {
+          "w": "template",
+          "s": 3300.0,
+          "e": 3662.5
+        },
+        {
+          "w": "resmi",
+          "s": 3662.5,
+          "e": 4025.0
+        },
+        {
+          "w": "yang",
+          "s": 4025.0,
+          "e": 4162.5
+        },
+        {
+          "w": "telah",
+          "s": 4162.5,
+          "e": 4350.0
+        },
+        {
+          "w": "disediakan",
+          "s": 4350.0,
+          "e": 4875.0
+        },
+        {
+          "w": "oleh",
+          "s": 4875.0,
+          "e": 5062.5
+        },
+        {
+          "w": "sistem",
+          "s": 5062.5,
+          "e": 5662.5
+        },
+        {
+          "w": "Di",
+          "s": 6896.5,
+          "e": 7021.5
+        },
+        {
+          "w": "sudut",
+          "s": 7021.5,
+          "e": 7271.5
+        },
+        {
+          "w": "kanan",
+          "s": 7271.5,
+          "e": 7584.0
+        },
+        {
+          "w": "atas",
+          "s": 7584.0,
+          "e": 7834.0
+        },
+        {
+          "w": "informasi",
+          "s": 7834.0,
+          "e": 8334.0
+        },
+        {
+          "w": "bank",
+          "s": 8334.0,
+          "e": 8521.5
+        },
+        {
+          "w": "soal",
+          "s": 8521.5,
+          "e": 9071.5
+        },
+        {
+          "w": "tersedia",
+          "s": 9346.5,
+          "e": 9746.5
+        },
+        {
+          "w": "tombol",
+          "s": 9746.5,
+          "e": 10084.0
+        },
+        {
+          "w": "unduh",
+          "s": 10084.0,
+          "e": 10271.5
+        },
+        {
+          "w": "template",
+          "s": 10271.5,
+          "e": 10634.0
+        },
+        {
+          "w": "Excel",
+          "s": 10634.0,
+          "e": 10984.0
+        },
+        {
+          "w": "berformat",
+          "s": 10984.0,
+          "e": 11446.5
+        },
+        {
+          "w": "XLSX",
+          "s": 11446.5,
+          "e": 12246.5
+        },
+        {
+          "w": "dan",
+          "s": 12246.5,
+          "e": 12459.0
+        },
+        {
+          "w": "Word",
+          "s": 12459.0,
+          "e": 12659.0
+        },
+        {
+          "w": "berformat",
+          "s": 12659.0,
+          "e": 13171.5
+        },
+        {
+          "w": "DOCX",
+          "s": 13171.5,
+          "e": 13584.0
+        },
+        {
+          "w": "Template",
+          "s": 14852.5,
+          "e": 15190.0
+        },
+        {
+          "w": "ini",
+          "s": 15190.0,
+          "e": 15427.5
+        },
+        {
+          "w": "telah",
+          "s": 15427.5,
+          "e": 15615.0
+        },
+        {
+          "w": "memuat",
+          "s": 15615.0,
+          "e": 15877.5
+        },
+        {
+          "w": "contoh",
+          "s": 15877.5,
+          "e": 16152.5
+        },
+        {
+          "w": "nyata",
+          "s": 16152.5,
+          "e": 16440.0
+        },
+        {
+          "w": "soal",
+          "s": 16440.0,
+          "e": 16665.0
+        },
+        {
+          "w": "benar",
+          "s": 16665.0,
+          "e": 16890.0
+        },
+        {
+          "w": "salah",
+          "s": 16890.0,
+          "e": 17427.5
+        },
+        {
+          "w": "rumus",
+          "s": 17690.0,
+          "e": 18015.0
+        },
+        {
+          "w": "matematika",
+          "s": 18015.0,
+          "e": 18815.0
+        },
+        {
+          "w": "dan",
+          "s": 19052.5,
+          "e": 19340.0
+        },
+        {
+          "w": "teks",
+          "s": 19340.0,
+          "e": 19577.5
+        },
+        {
+          "w": "Arab",
+          "s": 19577.5,
+          "e": 20065.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "17945f7bdd86a3b8a2a2ed619b4a0d11fd29ec25d13e71795228278535871f98"
+    },
+    "scene_03_panduan_import": {
+      "text": "Untuk memastikan susunan naskah kita terbaca sempurna oleh mesin pengurai, kita dapat memeriksa panduan format import. Silakan klik tombol Import di bagian atas, lalu pilih menu Panduan Import. Dialog panduan akan menyajikan contoh struktur penulisan pada dokumen Word dan lembar kerja Excel secara transparan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_03_panduan_import.wav",
+      "duration_ms": 18906.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 362.5
+        },
+        {
+          "w": "memastikan",
+          "s": 362.5,
+          "e": 850.0
+        },
+        {
+          "w": "susunan",
+          "s": 850.0,
+          "e": 1212.5
+        },
+        {
+          "w": "naskah",
+          "s": 1212.5,
+          "e": 1562.5
+        },
+        {
+          "w": "kita",
+          "s": 1562.5,
+          "e": 1762.5
+        },
+        {
+          "w": "terbaca",
+          "s": 1762.5,
+          "e": 2150.0
+        },
+        {
+          "w": "sempurna",
+          "s": 2150.0,
+          "e": 2612.5
+        },
+        {
+          "w": "oleh",
+          "s": 2612.5,
+          "e": 2787.5
+        },
+        {
+          "w": "mesin",
+          "s": 2787.5,
+          "e": 3025.0
+        },
+        {
+          "w": "pengurai",
+          "s": 3025.0,
+          "e": 3600.0
+        },
+        {
+          "w": "kita",
+          "s": 3887.5,
+          "e": 4137.5
+        },
+        {
+          "w": "dapat",
+          "s": 4137.5,
+          "e": 4387.5
+        },
+        {
+          "w": "memeriksa",
+          "s": 4387.5,
+          "e": 4787.5
+        },
+        {
+          "w": "panduan",
+          "s": 4787.5,
+          "e": 5175.0
+        },
+        {
+          "w": "format",
+          "s": 5175.0,
+          "e": 5525.0
+        },
+        {
+          "w": "import",
+          "s": 5525.0,
+          "e": 6062.5
+        },
+        {
+          "w": "Silakan",
+          "s": 7314.5,
+          "e": 7752.0
+        },
+        {
+          "w": "klik",
+          "s": 7752.0,
+          "e": 7952.0
+        },
+        {
+          "w": "tombol",
+          "s": 7952.0,
+          "e": 8214.5
+        },
+        {
+          "w": "Import",
+          "s": 8214.5,
+          "e": 8539.5
+        },
+        {
+          "w": "di",
+          "s": 8539.5,
+          "e": 8627.0
+        },
+        {
+          "w": "bagian",
+          "s": 8627.0,
+          "e": 8952.0
+        },
+        {
+          "w": "atas",
+          "s": 8952.0,
+          "e": 9477.0
+        },
+        {
+          "w": "lalu",
+          "s": 9764.5,
+          "e": 10027.0
+        },
+        {
+          "w": "pilih",
+          "s": 10027.0,
+          "e": 10264.5
+        },
+        {
+          "w": "menu",
+          "s": 10264.5,
+          "e": 10452.0
+        },
+        {
+          "w": "Panduan",
+          "s": 10452.0,
+          "e": 10789.5
+        },
+        {
+          "w": "Import",
+          "s": 10789.5,
+          "e": 11327.0
+        },
+        {
+          "w": "Dialog",
+          "s": 12550.0,
+          "e": 12900.0
+        },
+        {
+          "w": "panduan",
+          "s": 12900.0,
+          "e": 13262.5
+        },
+        {
+          "w": "akan",
+          "s": 13262.5,
+          "e": 13462.5
+        },
+        {
+          "w": "menyajikan",
+          "s": 13462.5,
+          "e": 13950.0
+        },
+        {
+          "w": "contoh",
+          "s": 13950.0,
+          "e": 14225.0
+        },
+        {
+          "w": "struktur",
+          "s": 14225.0,
+          "e": 14575.0
+        },
+        {
+          "w": "penulisan",
+          "s": 14575.0,
+          "e": 15100.0
+        },
+        {
+          "w": "pada",
+          "s": 15100.0,
+          "e": 15287.5
+        },
+        {
+          "w": "dokumen",
+          "s": 15287.5,
+          "e": 15612.5
+        },
+        {
+          "w": "Word",
+          "s": 15612.5,
+          "e": 15825.0
+        },
+        {
+          "w": "dan",
+          "s": 15825.0,
+          "e": 16012.5
+        },
+        {
+          "w": "lembar",
+          "s": 16012.5,
+          "e": 16262.5
+        },
+        {
+          "w": "kerja",
+          "s": 16262.5,
+          "e": 16575.0
+        },
+        {
+          "w": "Excel",
+          "s": 16575.0,
+          "e": 16950.0
+        },
+        {
+          "w": "secara",
+          "s": 16950.0,
+          "e": 17287.5
+        },
+        {
+          "w": "transparan",
+          "s": 17287.5,
+          "e": 18062.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "93fe99edef8255a3e431ddae26324fb3ff471298ebc72ac23831e07de054332c"
+    },
+    "scene_04_tutup_panduan_dan_eksekusi": {
+      "text": "Perhatikan bahwa sistem sangat toleran terhadap format kunci jawaban. Bapak dan Ibu Guru dapat menulis kunci dengan format huruf seperti A Benar B Salah, singkatan B dan S, angka biner, maupun kunci berbahasa Arab. Setelah memahaminya, kita klik tombol Mulai Import Sekarang untuk melanjutkan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_04_tutup_panduan_dan_eksekusi.wav",
+      "duration_ms": 18988.0,
+      "words": [
+        {
+          "w": "Perhatikan",
+          "s": 100.0,
+          "e": 662.5
+        },
+        {
+          "w": "bahwa",
+          "s": 662.5,
+          "e": 900.0
+        },
+        {
+          "w": "sistem",
+          "s": 900.0,
+          "e": 1262.5
+        },
+        {
+          "w": "sangat",
+          "s": 1262.5,
+          "e": 1512.5
+        },
+        {
+          "w": "toleran",
+          "s": 1512.5,
+          "e": 1912.5
+        },
+        {
+          "w": "terhadap",
+          "s": 1912.5,
+          "e": 2237.5
+        },
+        {
+          "w": "format",
+          "s": 2237.5,
+          "e": 2537.5
+        },
+        {
+          "w": "kunci",
+          "s": 2537.5,
+          "e": 2800.0
+        },
+        {
+          "w": "jawaban",
+          "s": 2800.0,
+          "e": 3475.0
+        },
+        {
+          "w": "Bapak",
+          "s": 4692.5,
+          "e": 5042.5
+        },
+        {
+          "w": "dan",
+          "s": 5042.5,
+          "e": 5180.0
+        },
+        {
+          "w": "Ibu",
+          "s": 5180.0,
+          "e": 5380.0
+        },
+        {
+          "w": "Guru",
+          "s": 5380.0,
+          "e": 5655.0
+        },
+        {
+          "w": "dapat",
+          "s": 5655.0,
+          "e": 5905.0
+        },
+        {
+          "w": "menulis",
+          "s": 5905.0,
+          "e": 6180.0
+        },
+        {
+          "w": "kunci",
+          "s": 6180.0,
+          "e": 6480.0
+        },
+        {
+          "w": "dengan",
+          "s": 6480.0,
+          "e": 6692.5
+        },
+        {
+          "w": "format",
+          "s": 6692.5,
+          "e": 6992.5
+        },
+        {
+          "w": "huruf",
+          "s": 6992.5,
+          "e": 7255.0
+        },
+        {
+          "w": "seperti",
+          "s": 7255.0,
+          "e": 7605.0
+        },
+        {
+          "w": "A",
+          "s": 7605.0,
+          "e": 7717.5
+        },
+        {
+          "w": "Benar",
+          "s": 7717.5,
+          "e": 7980.0
+        },
+        {
+          "w": "B",
+          "s": 7980.0,
+          "e": 8105.0
+        },
+        {
+          "w": "Salah",
+          "s": 8105.0,
+          "e": 8655.0
+        },
+        {
+          "w": "singkatan",
+          "s": 8905.0,
+          "e": 9367.5
+        },
+        {
+          "w": "B",
+          "s": 9367.5,
+          "e": 9542.5
+        },
+        {
+          "w": "dan",
+          "s": 9542.5,
+          "e": 9730.0
+        },
+        {
+          "w": "S",
+          "s": 9730.0,
+          "e": 10155.0
+        },
+        {
+          "w": "angka",
+          "s": 10367.5,
+          "e": 10630.0
+        },
+        {
+          "w": "biner",
+          "s": 10630.0,
+          "e": 11130.0
+        },
+        {
+          "w": "maupun",
+          "s": 11330.0,
+          "e": 11667.5
+        },
+        {
+          "w": "kunci",
+          "s": 11667.5,
+          "e": 11967.5
+        },
+        {
+          "w": "berbahasa",
+          "s": 11967.5,
+          "e": 12405.0
+        },
+        {
+          "w": "Arab",
+          "s": 12405.0,
+          "e": 12817.5
+        },
+        {
+          "w": "Setelah",
+          "s": 14096.0,
+          "e": 14433.5
+        },
+        {
+          "w": "memahaminya",
+          "s": 14433.5,
+          "e": 15221.0
+        },
+        {
+          "w": "kita",
+          "s": 15521.0,
+          "e": 15746.0
+        },
+        {
+          "w": "klik",
+          "s": 15746.0,
+          "e": 15921.0
+        },
+        {
+          "w": "tombol",
+          "s": 15921.0,
+          "e": 16246.0
+        },
+        {
+          "w": "Mulai",
+          "s": 16246.0,
+          "e": 16471.0
+        },
+        {
+          "w": "Import",
+          "s": 16471.0,
+          "e": 16758.5
+        },
+        {
+          "w": "Sekarang",
+          "s": 16758.5,
+          "e": 17158.5
+        },
+        {
+          "w": "untuk",
+          "s": 17158.5,
+          "e": 17383.5
+        },
+        {
+          "w": "melanjutkan",
+          "s": 17383.5,
+          "e": 18133.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "8f774bf5ce1621750dd52b8937185f2c0a7f7f662f3df265e3b2aab94e494eb8"
+    },
+    "scene_05_pilih_menu_import": {
+      "text": "Sekarang menu import telah terbuka kembali. Kita cukup memilih opsi Import Excel apabila menggunakan spreadsheet, atau Import Word untuk dokumen naskah soal. Sistem otomatis menguraikan teks pertanyaan, daftar pernyataan, rumus matematika, hingga kunci jawaban dalam hitungan detik.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_05_pilih_menu_import.wav",
+      "duration_ms": 18512.0,
+      "words": [
+        {
+          "w": "Sekarang",
+          "s": 100.0,
+          "e": 525.0
+        },
+        {
+          "w": "menu",
+          "s": 525.0,
+          "e": 675.0
+        },
+        {
+          "w": "import",
+          "s": 675.0,
+          "e": 1062.5
+        },
+        {
+          "w": "telah",
+          "s": 1062.5,
+          "e": 1250.0
+        },
+        {
+          "w": "terbuka",
+          "s": 1250.0,
+          "e": 1600.0
+        },
+        {
+          "w": "kembali",
+          "s": 1600.0,
+          "e": 2187.5
+        },
+        {
+          "w": "Kita",
+          "s": 3386.5,
+          "e": 3611.5
+        },
+        {
+          "w": "cukup",
+          "s": 3611.5,
+          "e": 3874.0
+        },
+        {
+          "w": "memilih",
+          "s": 3874.0,
+          "e": 4149.0
+        },
+        {
+          "w": "opsi",
+          "s": 4149.0,
+          "e": 4424.0
+        },
+        {
+          "w": "Import",
+          "s": 4424.0,
+          "e": 4711.5
+        },
+        {
+          "w": "Excel",
+          "s": 4711.5,
+          "e": 5099.0
+        },
+        {
+          "w": "apabila",
+          "s": 5099.0,
+          "e": 5486.5
+        },
+        {
+          "w": "menggunakan",
+          "s": 5486.5,
+          "e": 5911.5
+        },
+        {
+          "w": "spreadsheet",
+          "s": 5911.5,
+          "e": 6599.0
+        },
+        {
+          "w": "atau",
+          "s": 6874.0,
+          "e": 7136.5
+        },
+        {
+          "w": "Import",
+          "s": 7136.5,
+          "e": 7486.5
+        },
+        {
+          "w": "Word",
+          "s": 7486.5,
+          "e": 7699.0
+        },
+        {
+          "w": "untuk",
+          "s": 7699.0,
+          "e": 7936.5
+        },
+        {
+          "w": "dokumen",
+          "s": 7936.5,
+          "e": 8249.0
+        },
+        {
+          "w": "naskah",
+          "s": 8249.0,
+          "e": 8574.0
+        },
+        {
+          "w": "soal",
+          "s": 8574.0,
+          "e": 9111.5
+        },
+        {
+          "w": "Sistem",
+          "s": 10392.5,
+          "e": 10742.5
+        },
+        {
+          "w": "otomatis",
+          "s": 10742.5,
+          "e": 11242.5
+        },
+        {
+          "w": "menguraikan",
+          "s": 11242.5,
+          "e": 11705.0
+        },
+        {
+          "w": "teks",
+          "s": 11705.0,
+          "e": 11917.5
+        },
+        {
+          "w": "pertanyaan",
+          "s": 11917.5,
+          "e": 12642.5
+        },
+        {
+          "w": "daftar",
+          "s": 12917.5,
+          "e": 13292.5
+        },
+        {
+          "w": "pernyataan",
+          "s": 13292.5,
+          "e": 14042.5
+        },
+        {
+          "w": "rumus",
+          "s": 14305.0,
+          "e": 14630.0
+        },
+        {
+          "w": "matematika",
+          "s": 14630.0,
+          "e": 15430.0
+        },
+        {
+          "w": "hingga",
+          "s": 15692.5,
+          "e": 15980.0
+        },
+        {
+          "w": "kunci",
+          "s": 15980.0,
+          "e": 16242.5
+        },
+        {
+          "w": "jawaban",
+          "s": 16242.5,
+          "e": 16717.5
+        },
+        {
+          "w": "dalam",
+          "s": 16717.5,
+          "e": 16930.0
+        },
+        {
+          "w": "hitungan",
+          "s": 16930.0,
+          "e": 17280.0
+        },
+        {
+          "w": "detik",
+          "s": 17280.0,
+          "e": 17655.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "121d6dc14e52ceed683df2ab4210d345d4e17b60455c96b38ba151987bb82e9e"
+    },
+    "scene_06_tinjau_hasil_soal": {
+      "text": "Seluruh butir soal pernyataan benar salah yang diimpor akan langsung tersimpan rapi pada bank soal. Tampil lengkap dengan indikator kebenaran, badge tipe soal, dan bobot skor otomatis. Sangat praktis dan menghemat waktu, bukan? Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_06_tinjau_hasil_soal.wav",
+      "duration_ms": 19486.0,
+      "words": [
+        {
+          "w": "Seluruh",
+          "s": 100.0,
+          "e": 450.0
+        },
+        {
+          "w": "butir",
+          "s": 450.0,
+          "e": 775.0
+        },
+        {
+          "w": "soal",
+          "s": 775.0,
+          "e": 1000.0
+        },
+        {
+          "w": "pernyataan",
+          "s": 1000.0,
+          "e": 1462.5
+        },
+        {
+          "w": "benar",
+          "s": 1462.5,
+          "e": 1675.0
+        },
+        {
+          "w": "salah",
+          "s": 1675.0,
+          "e": 1987.5
+        },
+        {
+          "w": "yang",
+          "s": 1987.5,
+          "e": 2137.5
+        },
+        {
+          "w": "diimpor",
+          "s": 2137.5,
+          "e": 2512.5
+        },
+        {
+          "w": "akan",
+          "s": 2512.5,
+          "e": 2750.0
+        },
+        {
+          "w": "langsung",
+          "s": 2750.0,
+          "e": 3062.5
+        },
+        {
+          "w": "tersimpan",
+          "s": 3062.5,
+          "e": 3462.5
+        },
+        {
+          "w": "rapi",
+          "s": 3462.5,
+          "e": 3775.0
+        },
+        {
+          "w": "pada",
+          "s": 3775.0,
+          "e": 4000.0
+        },
+        {
+          "w": "bank",
+          "s": 4000.0,
+          "e": 4187.5
+        },
+        {
+          "w": "soal",
+          "s": 4187.5,
+          "e": 4737.5
+        },
+        {
+          "w": "Tampil",
+          "s": 5984.5,
+          "e": 6284.5
+        },
+        {
+          "w": "lengkap",
+          "s": 6284.5,
+          "e": 6572.0
+        },
+        {
+          "w": "dengan",
+          "s": 6572.0,
+          "e": 6784.5
+        },
+        {
+          "w": "indikator",
+          "s": 6784.5,
+          "e": 7184.5
+        },
+        {
+          "w": "kebenaran",
+          "s": 7184.5,
+          "e": 7834.5
+        },
+        {
+          "w": "badge",
+          "s": 8122.0,
+          "e": 8509.5
+        },
+        {
+          "w": "tipe",
+          "s": 8509.5,
+          "e": 8709.5
+        },
+        {
+          "w": "soal",
+          "s": 8709.5,
+          "e": 9234.5
+        },
+        {
+          "w": "dan",
+          "s": 9497.0,
+          "e": 9722.0
+        },
+        {
+          "w": "bobot",
+          "s": 9722.0,
+          "e": 10022.0
+        },
+        {
+          "w": "skor",
+          "s": 10022.0,
+          "e": 10272.0
+        },
+        {
+          "w": "otomatis",
+          "s": 10272.0,
+          "e": 11009.5
+        },
+        {
+          "w": "Sangat",
+          "s": 12218.0,
+          "e": 12555.5
+        },
+        {
+          "w": "praktis",
+          "s": 12555.5,
+          "e": 13005.5
+        },
+        {
+          "w": "dan",
+          "s": 13005.5,
+          "e": 13130.5
+        },
+        {
+          "w": "menghemat",
+          "s": 13130.5,
+          "e": 13480.5
+        },
+        {
+          "w": "waktu",
+          "s": 13480.5,
+          "e": 13993.0
+        },
+        {
+          "w": "bukan",
+          "s": 14230.5,
+          "e": 14743.0
+        },
+        {
+          "w": "Selamat",
+          "s": 15580.5,
+          "e": 15968.0
+        },
+        {
+          "w": "mencoba",
+          "s": 15968.0,
+          "e": 16393.0
+        },
+        {
+          "w": "dan",
+          "s": 16393.0,
+          "e": 16555.5
+        },
+        {
+          "w": "sukses",
+          "s": 16555.5,
+          "e": 16943.0
+        },
+        {
+          "w": "selalu",
+          "s": 16943.0,
+          "e": 17255.5
+        },
+        {
+          "w": "bersama",
+          "s": 17255.5,
+          "e": 17643.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 17643.0,
+          "e": 18643.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "c24c45810c3aec6e0f93188b5ed804c69da35dd647b64b348aee7d103b6477cd"
+    }
+  }
+}

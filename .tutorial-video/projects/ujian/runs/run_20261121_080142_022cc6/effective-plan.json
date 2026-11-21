@@ -1,0 +1,311 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Pembuatan Soal Benar Salah — ZEXAM-CBT",
+  "mode": "dual",
+  "fps": 60,
+  "target_resolution": [
+    1080,
+    1920
+  ],
+  "viewport": {
+    "width": 414,
+    "height": 736
+  },
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "tablet_viewport": {
+    "width": 800,
+    "height": 1280
+  },
+  "tablet_target_resolution": [
+    1200,
+    1920
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "guru"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "#btn-login-submit"
+    },
+    {
+      "do": "wait_for",
+      "selector": "header"
+    },
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/guru/question-banks"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#btn-bank-detail-1"
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_buka_bank_soal",
+      "narration": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT. Hari ini kita bersama-sama akan mempelajari cara membuat soal pernyataan benar dan salah secara mudah. Kita mulai dengan memilih bank soal yang aktif.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Hari ini kita bersama-sama akan mempelajari cara membuat soal pernyataan benar dan salah secara mudah.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Kita mulai dengan memilih bank soal yang aktif.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "#btn-bank-detail-1",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": "#btn-bank-detail-1",
+          "hold_ms": 300
+        },
+        {
+          "do": "click",
+          "target": "#btn-bank-detail-1"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-tambah-soal",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_pilih_tipe_soal",
+      "narration": "Sekarang kita berada di halaman detail bank soal. Silakan klik tombol Tambah Soal untuk membuka formulir. Pada pilihan tipe soal, kita pilih opsi Pernyataan Benar atau Salah.",
+      "narration_segments": [
+        {
+          "text": "Sekarang kita berada di halaman detail bank soal.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Silakan klik tombol Tambah Soal untuk membuka formulir.",
+          "pause_after_ms": 260
+        },
+        {
+          "text": "Pada pilihan tipe soal, kita pilih opsi Pernyataan Benar atau Salah.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-tambah-soal",
+          "hold_ms": 300
+        },
+        {
+          "do": "click",
+          "target": "#btn-tambah-soal"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#type",
+          "budget_ms": 3000
+        },
+        {
+          "do": "select",
+          "target": "#type",
+          "value": "benar_salah",
+          "picker_title": "Tipe Soal"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#statement_input_a",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_isi_soal_dan_pernyataan",
+      "narration": "Ketikkan stimulus atau petunjuk pertanyaan pada kolom utama. Selanjutnya, tuliskan butir-butir pernyataan dan tentukan status kebenarannya dengan menekan tombol Benar atau Salah sesuai kunci jawaban yang tepat.",
+      "narration_segments": [
+        {
+          "text": "Ketikkan stimulus atau petunjuk pertanyaan pada kolom utama.",
+          "pause_after_ms": 260
+        },
+        {
+          "text": "Selanjutnya, tuliskan butir-butir pernyataan dan tentukan status kebenarannya.",
+          "pause_after_ms": 260
+        },
+        {
+          "text": "Tekan tombol Benar atau Salah sesuai kunci jawaban yang tepat.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "type",
+          "target": "#question_text",
+          "text": "Perhatikan beberapa pernyataan sistem komputer berikut ini:"
+        },
+        {
+          "do": "type",
+          "target": "#statement_input_a",
+          "text": "RAM menyimpan data instruksi secara sementara."
+        },
+        {
+          "do": "type",
+          "target": "#statement_input_b",
+          "text": "ROM kehilangan data saat aliran listrik dimatikan."
+        },
+        {
+          "do": "click",
+          "target": "#btn_b_salah"
+        },
+        {
+          "do": "type",
+          "target": "#statement_input_c",
+          "text": "CPU bertugas mengeksekusi instruksi aritmatika."
+        },
+        {
+          "do": "click",
+          "target": "#btn_c_benar"
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_simpan_soal",
+      "narration": "Bagus, seluruh pernyataan dan kunci jawaban sudah terisi dengan lengkap. Sekarang masukkan bobot nilai pada kolom Skor Bawaan, lalu klik tombol Simpan Soal.",
+      "narration_segments": [
+        {
+          "text": "Bagus, seluruh pernyataan dan kunci jawaban sudah terisi dengan lengkap.",
+          "pause_after_ms": 260
+        },
+        {
+          "text": "Sekarang masukkan bobot nilai pada kolom Skor Bawaan.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Lalu klik tombol Simpan Soal.",
+          "pause_after_ms": 280
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#score_default",
+          "hold_ms": 200
+        },
+        {
+          "do": "click",
+          "target": "#score_default"
+        },
+        {
+          "do": "type",
+          "target": "#score_default",
+          "text": "0"
+        },
+        {
+          "do": "hover",
+          "target": "#btn-submit-soal",
+          "hold_ms": 300
+        },
+        {
+          "do": "click",
+          "target": "#btn-submit-soal"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-tambah-soal",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_verifikasi_dan_penutup",
+      "narration": "Soal pernyataan benar dan salah telah berhasil tersimpan dengan rapi. Administrator Proktor kini dapat langsung menghubungkan bank soal ini ke jadwal ujian siswa. Terima kasih dan selamat memandu asesmen di ZEXAM-CBT.",
+      "narration_segments": [
+        {
+          "text": "Soal pernyataan benar dan salah telah berhasil tersimpan dengan rapi.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Administrator Proktor kini dapat langsung menghubungkan bank soal ini ke jadwal ujian siswa.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Terima kasih dan selamat memandu asesmen di ZEXAM-CBT.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "scroll",
+          "by": 250
+        },
+        {
+          "do": "hold",
+          "ms": 1200
+        }
+      ],
+      "result_hold_ms": 1400
+    }
+  ]
+}

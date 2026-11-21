@@ -1,0 +1,39 @@
+{
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "mode": "desktop",
+  "capture_method": "Per-virtual-frame CDP Page.captureScreenshot of the live Chromium compositor; fake clock + virtual animation timeline",
+  "video_pipeline": "B (continuous browser capture) -> libx264 CFR",
+  "evidence_pipeline": "A (clean screenshots in evidence/, never used as video frames)",
+  "fps": 60,
+  "frames": 7857,
+  "duration_ms": 130950,
+  "frame_sources": {
+    "cdp_live_capture": 7857,
+    "still_image": 0,
+    "repeated": 0,
+    "interpolated": 0
+  },
+  "mobile": false,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "dsf": 1,
+  "output": [
+    1920,
+    1080
+  ],
+  "video": "recording/continuous-desktop-60fps.mp4",
+  "video_sha256": "df604742ff7a032f9b4c2a926c2be9c3725bb885b2c9f66205bd45890cc34c06",
+  "wall_clock_capture_s": 694.5,
+  "capture_speed_x_realtime": 0.189,
+  "scenes": [
+    "scene_01_buka_bank_soal",
+    "scene_02_pilih_tipe_soal",
+    "scene_03_isi_soal_dan_pernyataan",
+    "scene_04_simpan_soal",
+    "scene_05_verifikasi_dan_penutup"
+  ],
+  "warnings": [],
+  "created_at": "2026-11-21T00:14:22.894Z"
+}

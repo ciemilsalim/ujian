@@ -1,0 +1,779 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_buka_bank_soal": {
+      "text": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT. Hari ini kita bersama-sama akan mempelajari cara membuat soal pernyataan benar dan salah secara mudah. Kita mulai dengan memilih bank soal yang aktif.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_01_buka_bank_soal.wav",
+      "duration_ms": 16588.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 112.5,
+          "e": 350.0
+        },
+        {
+          "w": "Bapak",
+          "s": 350.0,
+          "e": 600.0
+        },
+        {
+          "w": "dan",
+          "s": 600.0,
+          "e": 737.5
+        },
+        {
+          "w": "Ibu",
+          "s": 737.5,
+          "e": 925.0
+        },
+        {
+          "w": "Guru",
+          "s": 925.0,
+          "e": 1187.5
+        },
+        {
+          "w": "serta",
+          "s": 1187.5,
+          "e": 1437.5
+        },
+        {
+          "w": "Rekan-Rekan",
+          "s": 1437.5,
+          "e": 1887.5
+        },
+        {
+          "w": "Administrator",
+          "s": 1887.5,
+          "e": 2587.5
+        },
+        {
+          "w": "Proktor",
+          "s": 2587.5,
+          "e": 3162.5
+        },
+        {
+          "w": "selamat",
+          "s": 3437.5,
+          "e": 3775.0
+        },
+        {
+          "w": "datang",
+          "s": 3775.0,
+          "e": 4112.5
+        },
+        {
+          "w": "di",
+          "s": 4112.5,
+          "e": 4187.5
+        },
+        {
+          "w": "panduan",
+          "s": 4187.5,
+          "e": 4537.5
+        },
+        {
+          "w": "aplikasi",
+          "s": 4537.5,
+          "e": 5050.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 5050.0,
+          "e": 6012.5
+        },
+        {
+          "w": "Hari",
+          "s": 7264.0,
+          "e": 7501.5
+        },
+        {
+          "w": "ini",
+          "s": 7501.5,
+          "e": 7789.0
+        },
+        {
+          "w": "kita",
+          "s": 7789.0,
+          "e": 8014.0
+        },
+        {
+          "w": "bersama-sama",
+          "s": 8014.0,
+          "e": 8651.5
+        },
+        {
+          "w": "akan",
+          "s": 8651.5,
+          "e": 8851.5
+        },
+        {
+          "w": "mempelajari",
+          "s": 8851.5,
+          "e": 9314.0
+        },
+        {
+          "w": "cara",
+          "s": 9314.0,
+          "e": 9564.0
+        },
+        {
+          "w": "membuat",
+          "s": 9564.0,
+          "e": 9926.5
+        },
+        {
+          "w": "soal",
+          "s": 9926.5,
+          "e": 10139.0
+        },
+        {
+          "w": "pernyataan",
+          "s": 10139.0,
+          "e": 10589.0
+        },
+        {
+          "w": "benar",
+          "s": 10589.0,
+          "e": 10914.0
+        },
+        {
+          "w": "dan",
+          "s": 10914.0,
+          "e": 11101.5
+        },
+        {
+          "w": "salah",
+          "s": 11101.5,
+          "e": 11364.0
+        },
+        {
+          "w": "secara",
+          "s": 11364.0,
+          "e": 11651.5
+        },
+        {
+          "w": "mudah",
+          "s": 11651.5,
+          "e": 12151.5
+        },
+        {
+          "w": "Kita",
+          "s": 13376.0,
+          "e": 13651.0
+        },
+        {
+          "w": "mulai",
+          "s": 13651.0,
+          "e": 13926.0
+        },
+        {
+          "w": "dengan",
+          "s": 13926.0,
+          "e": 14138.5
+        },
+        {
+          "w": "memilih",
+          "s": 14138.5,
+          "e": 14476.0
+        },
+        {
+          "w": "bank",
+          "s": 14476.0,
+          "e": 14713.5
+        },
+        {
+          "w": "soal",
+          "s": 14713.5,
+          "e": 15001.0
+        },
+        {
+          "w": "yang",
+          "s": 15001.0,
+          "e": 15151.0
+        },
+        {
+          "w": "aktif",
+          "s": 15151.0,
+          "e": 15738.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "c71bbbb587d032e604e6eb5ee940608bf13503ee78f3b904cf6b3d4a29c77257"
+    },
+    "scene_02_pilih_tipe_soal": {
+      "text": "Sekarang kita berada di halaman detail bank soal. Silakan klik tombol Tambah Soal untuk membuka formulir. Pada pilihan tipe soal, kita pilih opsi Pernyataan Benar atau Salah.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_02_pilih_tipe_soal.wav",
+      "duration_ms": 12414.0,
+      "words": [
+        {
+          "w": "Sekarang",
+          "s": 100.0,
+          "e": 512.5
+        },
+        {
+          "w": "kita",
+          "s": 512.5,
+          "e": 712.5
+        },
+        {
+          "w": "berada",
+          "s": 712.5,
+          "e": 1050.0
+        },
+        {
+          "w": "di",
+          "s": 1050.0,
+          "e": 1137.5
+        },
+        {
+          "w": "halaman",
+          "s": 1137.5,
+          "e": 1475.0
+        },
+        {
+          "w": "detail",
+          "s": 1475.0,
+          "e": 1812.5
+        },
+        {
+          "w": "bank",
+          "s": 1812.5,
+          "e": 2012.5
+        },
+        {
+          "w": "soal",
+          "s": 2012.5,
+          "e": 2562.5
+        },
+        {
+          "w": "Silakan",
+          "s": 3758.0,
+          "e": 4245.5
+        },
+        {
+          "w": "klik",
+          "s": 4245.5,
+          "e": 4445.5
+        },
+        {
+          "w": "tombol",
+          "s": 4445.5,
+          "e": 4720.5
+        },
+        {
+          "w": "Tambah",
+          "s": 4720.5,
+          "e": 5008.0
+        },
+        {
+          "w": "Soal",
+          "s": 5008.0,
+          "e": 5383.0
+        },
+        {
+          "w": "untuk",
+          "s": 5383.0,
+          "e": 5633.0
+        },
+        {
+          "w": "membuka",
+          "s": 5633.0,
+          "e": 5958.0
+        },
+        {
+          "w": "formulir",
+          "s": 5958.0,
+          "e": 6595.5
+        },
+        {
+          "w": "Pada",
+          "s": 7822.5,
+          "e": 8035.0
+        },
+        {
+          "w": "pilihan",
+          "s": 8035.0,
+          "e": 8385.0
+        },
+        {
+          "w": "tipe",
+          "s": 8385.0,
+          "e": 8547.5
+        },
+        {
+          "w": "soal",
+          "s": 8547.5,
+          "e": 9072.5
+        },
+        {
+          "w": "kita",
+          "s": 9372.5,
+          "e": 9597.5
+        },
+        {
+          "w": "pilih",
+          "s": 9597.5,
+          "e": 9810.0
+        },
+        {
+          "w": "opsi",
+          "s": 9810.0,
+          "e": 10060.0
+        },
+        {
+          "w": "Pernyataan",
+          "s": 10060.0,
+          "e": 10510.0
+        },
+        {
+          "w": "Benar",
+          "s": 10510.0,
+          "e": 10810.0
+        },
+        {
+          "w": "atau",
+          "s": 10810.0,
+          "e": 11047.5
+        },
+        {
+          "w": "Salah",
+          "s": 11047.5,
+          "e": 11572.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "6ba6058ca3ee5ccddfd304b764eadd69d2c63a2512ce29698797b12ef2d7cddc"
+    },
+    "scene_03_isi_soal_dan_pernyataan": {
+      "text": "Ketikkan stimulus atau petunjuk pertanyaan pada kolom utama. Selanjutnya, tuliskan butir-butir pernyataan dan tentukan status kebenarannya. Tekan tombol Benar atau Salah sesuai kunci jawaban yang tepat.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_03_isi_soal_dan_pernyataan.wav",
+      "duration_ms": 13792.0,
+      "words": [
+        {
+          "w": "Ketikkan",
+          "s": 100.0,
+          "e": 487.5
+        },
+        {
+          "w": "stimulus",
+          "s": 487.5,
+          "e": 1000.0
+        },
+        {
+          "w": "atau",
+          "s": 1000.0,
+          "e": 1225.0
+        },
+        {
+          "w": "petunjuk",
+          "s": 1225.0,
+          "e": 1587.5
+        },
+        {
+          "w": "pertanyaan",
+          "s": 1587.5,
+          "e": 2187.5
+        },
+        {
+          "w": "pada",
+          "s": 2187.5,
+          "e": 2425.0
+        },
+        {
+          "w": "kolom",
+          "s": 2425.0,
+          "e": 2637.5
+        },
+        {
+          "w": "utama",
+          "s": 2637.5,
+          "e": 3187.5
+        },
+        {
+          "w": "Selanjutnya",
+          "s": 4404.5,
+          "e": 5204.5
+        },
+        {
+          "w": "tuliskan",
+          "s": 5492.0,
+          "e": 5917.0
+        },
+        {
+          "w": "butir-butir",
+          "s": 5917.0,
+          "e": 6392.0
+        },
+        {
+          "w": "pernyataan",
+          "s": 6392.0,
+          "e": 7017.0
+        },
+        {
+          "w": "dan",
+          "s": 7017.0,
+          "e": 7179.5
+        },
+        {
+          "w": "tentukan",
+          "s": 7179.5,
+          "e": 7579.5
+        },
+        {
+          "w": "status",
+          "s": 7579.5,
+          "e": 7979.5
+        },
+        {
+          "w": "kebenarannya",
+          "s": 7979.5,
+          "e": 8767.0
+        },
+        {
+          "w": "Tekan",
+          "s": 9980.0,
+          "e": 10280.0
+        },
+        {
+          "w": "tombol",
+          "s": 10280.0,
+          "e": 10542.5
+        },
+        {
+          "w": "Benar",
+          "s": 10542.5,
+          "e": 10880.0
+        },
+        {
+          "w": "atau",
+          "s": 10880.0,
+          "e": 11105.0
+        },
+        {
+          "w": "Salah",
+          "s": 11105.0,
+          "e": 11342.5
+        },
+        {
+          "w": "sesuai",
+          "s": 11342.5,
+          "e": 11667.5
+        },
+        {
+          "w": "kunci",
+          "s": 11667.5,
+          "e": 11955.0
+        },
+        {
+          "w": "jawaban",
+          "s": 11955.0,
+          "e": 12392.5
+        },
+        {
+          "w": "yang",
+          "s": 12392.5,
+          "e": 12530.0
+        },
+        {
+          "w": "tepat",
+          "s": 12530.0,
+          "e": 12942.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "0cbf6cd223d9d409fdf7e0deddd10b31eb4fe97cfafffd7d0c67b1f6ff2d3f3f"
+    },
+    "scene_04_simpan_soal": {
+      "text": "Bagus, seluruh pernyataan dan kunci jawaban sudah terisi dengan lengkap. Sekarang masukkan bobot nilai pada kolom Skor Bawaan. Lalu klik tombol Simpan Soal.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_04_simpan_soal.wav",
+      "duration_ms": 11790.0,
+      "words": [
+        {
+          "w": "Bagus",
+          "s": 112.5,
+          "e": 725.0
+        },
+        {
+          "w": "seluruh",
+          "s": 962.5,
+          "e": 1312.5
+        },
+        {
+          "w": "pernyataan",
+          "s": 1312.5,
+          "e": 1837.5
+        },
+        {
+          "w": "dan",
+          "s": 1837.5,
+          "e": 2000.0
+        },
+        {
+          "w": "kunci",
+          "s": 2000.0,
+          "e": 2250.0
+        },
+        {
+          "w": "jawaban",
+          "s": 2250.0,
+          "e": 2725.0
+        },
+        {
+          "w": "sudah",
+          "s": 2725.0,
+          "e": 2987.5
+        },
+        {
+          "w": "terisi",
+          "s": 2987.5,
+          "e": 3312.5
+        },
+        {
+          "w": "dengan",
+          "s": 3312.5,
+          "e": 3550.0
+        },
+        {
+          "w": "lengkap",
+          "s": 3550.0,
+          "e": 4037.5
+        },
+        {
+          "w": "Sekarang",
+          "s": 5256.0,
+          "e": 5631.0
+        },
+        {
+          "w": "masukkan",
+          "s": 5631.0,
+          "e": 6006.0
+        },
+        {
+          "w": "bobot",
+          "s": 6006.0,
+          "e": 6356.0
+        },
+        {
+          "w": "nilai",
+          "s": 6356.0,
+          "e": 6668.5
+        },
+        {
+          "w": "pada",
+          "s": 6668.5,
+          "e": 6906.0
+        },
+        {
+          "w": "kolom",
+          "s": 6906.0,
+          "e": 7143.5
+        },
+        {
+          "w": "Skor",
+          "s": 7143.5,
+          "e": 7393.5
+        },
+        {
+          "w": "Bawaan",
+          "s": 7393.5,
+          "e": 8056.0
+        },
+        {
+          "w": "Lalu",
+          "s": 9250.0,
+          "e": 9575.0
+        },
+        {
+          "w": "klik",
+          "s": 9575.0,
+          "e": 9775.0
+        },
+        {
+          "w": "tombol",
+          "s": 9775.0,
+          "e": 10100.0
+        },
+        {
+          "w": "Simpan",
+          "s": 10100.0,
+          "e": 10425.0
+        },
+        {
+          "w": "Soal",
+          "s": 10425.0,
+          "e": 10937.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "5a7e2ea9be296d2e76be683d3de29b675e0398b8c024c4efb5e11f7a8244f94c"
+    },
+    "scene_05_verifikasi_dan_penutup": {
+      "text": "Soal pernyataan benar dan salah telah berhasil tersimpan dengan rapi. Administrator Proktor kini dapat langsung menghubungkan bank soal ini ke jadwal ujian siswa. Terima kasih dan selamat memandu asesmen di ZEXAM-CBT.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_05_verifikasi_dan_penutup.wav",
+      "duration_ms": 14456.0,
+      "words": [
+        {
+          "w": "Soal",
+          "s": 100.0,
+          "e": 437.5
+        },
+        {
+          "w": "pernyataan",
+          "s": 437.5,
+          "e": 875.0
+        },
+        {
+          "w": "benar",
+          "s": 875.0,
+          "e": 1175.0
+        },
+        {
+          "w": "dan",
+          "s": 1175.0,
+          "e": 1350.0
+        },
+        {
+          "w": "salah",
+          "s": 1350.0,
+          "e": 1687.5
+        },
+        {
+          "w": "telah",
+          "s": 1687.5,
+          "e": 1887.5
+        },
+        {
+          "w": "berhasil",
+          "s": 1887.5,
+          "e": 2275.0
+        },
+        {
+          "w": "tersimpan",
+          "s": 2275.0,
+          "e": 2762.5
+        },
+        {
+          "w": "dengan",
+          "s": 2762.5,
+          "e": 2975.0
+        },
+        {
+          "w": "rapi",
+          "s": 2975.0,
+          "e": 3475.0
+        },
+        {
+          "w": "Administrator",
+          "s": 4700.0,
+          "e": 5412.5
+        },
+        {
+          "w": "Proktor",
+          "s": 5412.5,
+          "e": 5750.0
+        },
+        {
+          "w": "kini",
+          "s": 5750.0,
+          "e": 6050.0
+        },
+        {
+          "w": "dapat",
+          "s": 6050.0,
+          "e": 6312.5
+        },
+        {
+          "w": "langsung",
+          "s": 6312.5,
+          "e": 6637.5
+        },
+        {
+          "w": "menghubungkan",
+          "s": 6637.5,
+          "e": 7187.5
+        },
+        {
+          "w": "bank",
+          "s": 7187.5,
+          "e": 7387.5
+        },
+        {
+          "w": "soal",
+          "s": 7387.5,
+          "e": 7612.5
+        },
+        {
+          "w": "ini",
+          "s": 7612.5,
+          "e": 7900.0
+        },
+        {
+          "w": "ke",
+          "s": 7900.0,
+          "e": 8000.0
+        },
+        {
+          "w": "jadwal",
+          "s": 8000.0,
+          "e": 8387.5
+        },
+        {
+          "w": "ujian",
+          "s": 8387.5,
+          "e": 8712.5
+        },
+        {
+          "w": "siswa",
+          "s": 8712.5,
+          "e": 9287.5
+        },
+        {
+          "w": "Terima",
+          "s": 10524.0,
+          "e": 10786.5
+        },
+        {
+          "w": "kasih",
+          "s": 10786.5,
+          "e": 11149.0
+        },
+        {
+          "w": "dan",
+          "s": 11149.0,
+          "e": 11311.5
+        },
+        {
+          "w": "selamat",
+          "s": 11311.5,
+          "e": 11686.5
+        },
+        {
+          "w": "memandu",
+          "s": 11686.5,
+          "e": 11999.0
+        },
+        {
+          "w": "asesmen",
+          "s": 11999.0,
+          "e": 12511.5
+        },
+        {
+          "w": "di",
+          "s": 12511.5,
+          "e": 12611.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 12611.5,
+          "e": 13599.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "4f155ef1845480e6eb2875276799ac7c4352e74a3489f9f675b99af9c9f21fcd"
+    }
+  }
+}

@@ -1,0 +1,2384 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_buka_bank_soal",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 16788,
+      "action_start_ms": 17100,
+      "action_end_ms": 20383.333,
+      "end_ms": 21583.333
+    },
+    {
+      "scene_id": "scene_02_pilih_tipe_soal",
+      "start_ms": 21583.333,
+      "narration_start_ms": 21783.333,
+      "narration_end_ms": 34197.333,
+      "action_start_ms": 34500,
+      "action_end_ms": 41883.333,
+      "end_ms": 43083.333
+    },
+    {
+      "scene_id": "scene_03_isi_soal_dan_pernyataan",
+      "start_ms": 43083.333,
+      "narration_start_ms": 43283.333,
+      "narration_end_ms": 57075.333,
+      "action_start_ms": 57383.333,
+      "action_end_ms": 94050,
+      "end_ms": 95250
+    },
+    {
+      "scene_id": "scene_04_simpan_soal",
+      "start_ms": 95250,
+      "narration_start_ms": 95450,
+      "narration_end_ms": 107240,
+      "action_start_ms": 107550,
+      "action_end_ms": 112183.333,
+      "end_ms": 113383.333
+    },
+    {
+      "scene_id": "scene_05_verifikasi_dan_penutup",
+      "start_ms": 113383.333,
+      "narration_start_ms": 113583.333,
+      "narration_end_ms": 128039.333,
+      "action_start_ms": 128350,
+      "action_end_ms": 129550,
+      "end_ms": 130950
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_buka_bank_soal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_01_buka_bank_soal.wav",
+      "duration_ms": 16588,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 16800,
+      "frame": 1008,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 17100,
+      "frame": 1026,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 17100,
+      "frame": 1026,
+      "selector": "#btn-bank-detail-1",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 17650,
+      "frame": 1059,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        1458.9609375,
+        400.5
+      ],
+      "dist_px": 380.2,
+      "move_ms": 972.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 18816.667,
+      "frame": 1129,
+      "at": [
+        1458.9609375,
+        400.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 19116.667,
+      "frame": 1147,
+      "from": [
+        1458.9609375,
+        400.5
+      ],
+      "to": [
+        1458.9609375,
+        400.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 19200,
+      "frame": 1152,
+      "at": [
+        1458.9609375,
+        400.5
+      ],
+      "label": "#btn-bank-detail-1",
+      "bbox": [
+        1419.265625,
+        392,
+        79.390625,
+        17
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 19333.333,
+      "frame": 1160,
+      "selector": "#btn-tambah-soal",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 20383.333,
+      "frame": 1223,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 21583.333,
+      "frame": 1295,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 21583.333,
+      "frame": 1295,
+      "scene_id": "scene_02_pilih_tipe_soal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 21583.333,
+      "frame": 1295,
+      "scene_id": "scene_02_pilih_tipe_soal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_02_pilih_tipe_soal.wav",
+      "duration_ms": 12414,
+      "at_ms": 21783.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 34200,
+      "frame": 2052,
+      "scene_id": "scene_02_pilih_tipe_soal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 34500,
+      "frame": 2070,
+      "scene_id": "scene_02_pilih_tipe_soal"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 34500,
+      "frame": 2070,
+      "from": [
+        1458.9609375,
+        400.5
+      ],
+      "to": [
+        1835.609375,
+        114
+      ],
+      "dist_px": 473.2,
+      "move_ms": 1021.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 35716.667,
+      "frame": 2143,
+      "at": [
+        1835.609375,
+        114
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 36016.667,
+      "frame": 2161,
+      "from": [
+        1835.609375,
+        114
+      ],
+      "to": [
+        1835.609375,
+        114
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 36100,
+      "frame": 2166,
+      "at": [
+        1835.609375,
+        114
+      ],
+      "label": "#btn-tambah-soal",
+      "bbox": [
+        1783.21875,
+        96,
+        104.78125,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 36233.333,
+      "frame": 2174,
+      "selector": "#type",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 36783.333,
+      "frame": 2207,
+      "from": [
+        1835.609375,
+        114
+      ],
+      "to": [
+        960,
+        211
+      ],
+      "dist_px": 881,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 38116.667,
+      "frame": 2287,
+      "at": [
+        960,
+        211
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 38200,
+      "frame": 2292,
+      "at": [
+        960,
+        211
+      ],
+      "label": "#type",
+      "bbox": null
+    },
+    {
+      "type": "dropdown_open",
+      "vt_ms": 38333.333,
+      "frame": 2300,
+      "options": 6
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 38966.667,
+      "frame": 2338,
+      "from": [
+        960,
+        211
+      ],
+      "to": [
+        172,
+        535.296875
+      ],
+      "dist_px": 852.1,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 40300,
+      "frame": 2418,
+      "at": [
+        172,
+        535.296875
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 40383.333,
+      "frame": 2423,
+      "at": [
+        172,
+        535.296875
+      ],
+      "label": "option:benar_salah",
+      "bbox": null
+    },
+    {
+      "type": "select_commit",
+      "vt_ms": 40383.333,
+      "frame": 2423,
+      "value": "benar_salah"
+    },
+    {
+      "type": "dropdown_close",
+      "vt_ms": 40833.333,
+      "frame": 2450
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 40833.333,
+      "frame": 2450,
+      "selector": "#statement_input_a",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 41883.333,
+      "frame": 2513,
+      "scene_id": "scene_02_pilih_tipe_soal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 43083.333,
+      "frame": 2585,
+      "scene_id": "scene_02_pilih_tipe_soal"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 43083.333,
+      "frame": 2585,
+      "scene_id": "scene_03_isi_soal_dan_pernyataan"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 43083.333,
+      "frame": 2585,
+      "scene_id": "scene_03_isi_soal_dan_pernyataan",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_03_isi_soal_dan_pernyataan.wav",
+      "duration_ms": 13792,
+      "at_ms": 43283.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 57083.333,
+      "frame": 3425,
+      "scene_id": "scene_03_isi_soal_dan_pernyataan"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 57383.333,
+      "frame": 3443,
+      "scene_id": "scene_03_isi_soal_dan_pernyataan"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 57383.333,
+      "frame": 3443,
+      "from": [
+        172,
+        535.296875
+      ],
+      "to": [
+        835.2,
+        312
+      ],
+      "dist_px": 699.8,
+      "move_ms": 1110.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 58683.333,
+      "frame": 3521,
+      "at": [
+        835.2,
+        312
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 58766.667,
+      "frame": 3526,
+      "at": [
+        835.2,
+        312
+      ],
+      "label": "#question_text",
+      "bbox": [
+        648,
+        255,
+        624,
+        114
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 59066.667,
+      "frame": 3544,
+      "target": "#question_text",
+      "text_len": 59,
+      "bbox": [
+        648,
+        255,
+        624,
+        114
+      ],
+      "end_vt_ms": 67383.333
+    },
+    {
+      "type": "key",
+      "vt_ms": 59066.667,
+      "frame": 3544,
+      "ch": "P",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 59216.667,
+      "frame": 3553,
+      "ch": "e",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 59300,
+      "frame": 3558,
+      "ch": "r",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 59450,
+      "frame": 3567,
+      "ch": "h",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 59566.667,
+      "frame": 3574,
+      "ch": "a",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 59716.667,
+      "frame": 3583,
+      "ch": "t",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 59866.667,
+      "frame": 3592,
+      "ch": "i",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 59966.667,
+      "frame": 3598,
+      "ch": "k",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 60233.333,
+      "frame": 3614,
+      "ch": "a",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 60316.667,
+      "frame": 3619,
+      "ch": "n",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 60416.667,
+      "frame": 3625,
+      "ch": " ",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 60616.667,
+      "frame": 3637,
+      "ch": "b",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 60700,
+      "frame": 3642,
+      "ch": "e",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 61000,
+      "frame": 3660,
+      "ch": "b",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 61116.667,
+      "frame": 3667,
+      "ch": "e",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 61400,
+      "frame": 3684,
+      "ch": "r",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 61483.333,
+      "frame": 3689,
+      "ch": "a",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 61750,
+      "frame": 3705,
+      "ch": "p",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 61883.333,
+      "frame": 3713,
+      "ch": "a",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 61983.333,
+      "frame": 3719,
+      "ch": " ",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 62166.667,
+      "frame": 3730,
+      "ch": "p",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 62316.667,
+      "frame": 3739,
+      "ch": "e",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 62466.667,
+      "frame": 3748,
+      "ch": "r",
+      "i": 22
+    },
+    {
+      "type": "key",
+      "vt_ms": 62566.667,
+      "frame": 3754,
+      "ch": "n",
+      "i": 23
+    },
+    {
+      "type": "key",
+      "vt_ms": 62650,
+      "frame": 3759,
+      "ch": "y",
+      "i": 24
+    },
+    {
+      "type": "key",
+      "vt_ms": 62750,
+      "frame": 3765,
+      "ch": "a",
+      "i": 25
+    },
+    {
+      "type": "key",
+      "vt_ms": 62900,
+      "frame": 3774,
+      "ch": "t",
+      "i": 26
+    },
+    {
+      "type": "key",
+      "vt_ms": 63016.667,
+      "frame": 3781,
+      "ch": "a",
+      "i": 27
+    },
+    {
+      "type": "key",
+      "vt_ms": 63100,
+      "frame": 3786,
+      "ch": "a",
+      "i": 28
+    },
+    {
+      "type": "key",
+      "vt_ms": 63183.333,
+      "frame": 3791,
+      "ch": "n",
+      "i": 29
+    },
+    {
+      "type": "key",
+      "vt_ms": 63316.667,
+      "frame": 3799,
+      "ch": " ",
+      "i": 30
+    },
+    {
+      "type": "key",
+      "vt_ms": 63516.667,
+      "frame": 3811,
+      "ch": "s",
+      "i": 31
+    },
+    {
+      "type": "key",
+      "vt_ms": 63633.333,
+      "frame": 3818,
+      "ch": "i",
+      "i": 32
+    },
+    {
+      "type": "key",
+      "vt_ms": 63766.667,
+      "frame": 3826,
+      "ch": "s",
+      "i": 33
+    },
+    {
+      "type": "key",
+      "vt_ms": 63900,
+      "frame": 3834,
+      "ch": "t",
+      "i": 34
+    },
+    {
+      "type": "key",
+      "vt_ms": 64000,
+      "frame": 3840,
+      "ch": "e",
+      "i": 35
+    },
+    {
+      "type": "key",
+      "vt_ms": 64150,
+      "frame": 3849,
+      "ch": "m",
+      "i": 36
+    },
+    {
+      "type": "key",
+      "vt_ms": 64300,
+      "frame": 3858,
+      "ch": " ",
+      "i": 37
+    },
+    {
+      "type": "key",
+      "vt_ms": 64466.667,
+      "frame": 3868,
+      "ch": "k",
+      "i": 38
+    },
+    {
+      "type": "key",
+      "vt_ms": 64566.667,
+      "frame": 3874,
+      "ch": "o",
+      "i": 39
+    },
+    {
+      "type": "key",
+      "vt_ms": 64700,
+      "frame": 3882,
+      "ch": "m",
+      "i": 40
+    },
+    {
+      "type": "key",
+      "vt_ms": 64816.667,
+      "frame": 3889,
+      "ch": "p",
+      "i": 41
+    },
+    {
+      "type": "key",
+      "vt_ms": 64966.667,
+      "frame": 3898,
+      "ch": "u",
+      "i": 42
+    },
+    {
+      "type": "key",
+      "vt_ms": 65083.333,
+      "frame": 3905,
+      "ch": "t",
+      "i": 43
+    },
+    {
+      "type": "key",
+      "vt_ms": 65200,
+      "frame": 3912,
+      "ch": "e",
+      "i": 44
+    },
+    {
+      "type": "key",
+      "vt_ms": 65350,
+      "frame": 3921,
+      "ch": "r",
+      "i": 45
+    },
+    {
+      "type": "key",
+      "vt_ms": 65483.333,
+      "frame": 3929,
+      "ch": " ",
+      "i": 46
+    },
+    {
+      "type": "key",
+      "vt_ms": 65800,
+      "frame": 3948,
+      "ch": "b",
+      "i": 47
+    },
+    {
+      "type": "key",
+      "vt_ms": 65900,
+      "frame": 3954,
+      "ch": "e",
+      "i": 48
+    },
+    {
+      "type": "key",
+      "vt_ms": 66000,
+      "frame": 3960,
+      "ch": "r",
+      "i": 49
+    },
+    {
+      "type": "key",
+      "vt_ms": 66116.667,
+      "frame": 3967,
+      "ch": "i",
+      "i": 50
+    },
+    {
+      "type": "key",
+      "vt_ms": 66216.667,
+      "frame": 3973,
+      "ch": "k",
+      "i": 51
+    },
+    {
+      "type": "key",
+      "vt_ms": 66300,
+      "frame": 3978,
+      "ch": "u",
+      "i": 52
+    },
+    {
+      "type": "key",
+      "vt_ms": 66450,
+      "frame": 3987,
+      "ch": "t",
+      "i": 53
+    },
+    {
+      "type": "key",
+      "vt_ms": 66583.333,
+      "frame": 3995,
+      "ch": " ",
+      "i": 54
+    },
+    {
+      "type": "key",
+      "vt_ms": 66883.333,
+      "frame": 4013,
+      "ch": "i",
+      "i": 55
+    },
+    {
+      "type": "key",
+      "vt_ms": 67016.667,
+      "frame": 4021,
+      "ch": "n",
+      "i": 56
+    },
+    {
+      "type": "key",
+      "vt_ms": 67150,
+      "frame": 4029,
+      "ch": "i",
+      "i": 57
+    },
+    {
+      "type": "key",
+      "vt_ms": 67266.667,
+      "frame": 4036,
+      "ch": ":",
+      "i": 58
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 67383.333,
+      "frame": 4043,
+      "target": "#question_text"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 67383.333,
+      "frame": 4043,
+      "from": [
+        835.2,
+        312
+      ],
+      "to": [
+        821.6328125,
+        445
+      ],
+      "dist_px": 133.7,
+      "move_ms": 748.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 68316.667,
+      "frame": 4099,
+      "at": [
+        821.6328125,
+        445
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 68400,
+      "frame": 4104,
+      "at": [
+        821.6328125,
+        445
+      ],
+      "label": "#statement_input_a",
+      "bbox": [
+        680,
+        424,
+        472.109375,
+        42
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 68700,
+      "frame": 4122,
+      "target": "#statement_input_a",
+      "text_len": 46,
+      "bbox": [
+        680,
+        424,
+        472.109375,
+        42
+      ],
+      "end_vt_ms": 74866.667
+    },
+    {
+      "type": "key",
+      "vt_ms": 68700,
+      "frame": 4122,
+      "ch": "R",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 68816.667,
+      "frame": 4129,
+      "ch": "A",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 68950,
+      "frame": 4137,
+      "ch": "M",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 69050,
+      "frame": 4143,
+      "ch": " ",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 69266.667,
+      "frame": 4156,
+      "ch": "m",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 69383.333,
+      "frame": 4163,
+      "ch": "e",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 69500,
+      "frame": 4170,
+      "ch": "n",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 69616.667,
+      "frame": 4177,
+      "ch": "y",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 69716.667,
+      "frame": 4183,
+      "ch": "i",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 69850,
+      "frame": 4191,
+      "ch": "m",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 69950,
+      "frame": 4197,
+      "ch": "p",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 70050,
+      "frame": 4203,
+      "ch": "a",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 70183.333,
+      "frame": 4211,
+      "ch": "n",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 70333.333,
+      "frame": 4220,
+      "ch": " ",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 70500,
+      "frame": 4230,
+      "ch": "d",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 70616.667,
+      "frame": 4237,
+      "ch": "a",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 70766.667,
+      "frame": 4246,
+      "ch": "t",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 70883.333,
+      "frame": 4253,
+      "ch": "a",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 71000,
+      "frame": 4260,
+      "ch": " ",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 71200,
+      "frame": 4272,
+      "ch": "i",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 71316.667,
+      "frame": 4279,
+      "ch": "n",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 71433.333,
+      "frame": 4286,
+      "ch": "s",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 71516.667,
+      "frame": 4291,
+      "ch": "t",
+      "i": 22
+    },
+    {
+      "type": "key",
+      "vt_ms": 71666.667,
+      "frame": 4300,
+      "ch": "r",
+      "i": 23
+    },
+    {
+      "type": "key",
+      "vt_ms": 71800,
+      "frame": 4308,
+      "ch": "u",
+      "i": 24
+    },
+    {
+      "type": "key",
+      "vt_ms": 71916.667,
+      "frame": 4315,
+      "ch": "k",
+      "i": 25
+    },
+    {
+      "type": "key",
+      "vt_ms": 72016.667,
+      "frame": 4321,
+      "ch": "s",
+      "i": 26
+    },
+    {
+      "type": "key",
+      "vt_ms": 72166.667,
+      "frame": 4330,
+      "ch": "i",
+      "i": 27
+    },
+    {
+      "type": "key",
+      "vt_ms": 72283.333,
+      "frame": 4337,
+      "ch": " ",
+      "i": 28
+    },
+    {
+      "type": "key",
+      "vt_ms": 72433.333,
+      "frame": 4346,
+      "ch": "s",
+      "i": 29
+    },
+    {
+      "type": "key",
+      "vt_ms": 72683.333,
+      "frame": 4361,
+      "ch": "e",
+      "i": 30
+    },
+    {
+      "type": "key",
+      "vt_ms": 72800,
+      "frame": 4368,
+      "ch": "c",
+      "i": 31
+    },
+    {
+      "type": "key",
+      "vt_ms": 72933.333,
+      "frame": 4376,
+      "ch": "a",
+      "i": 32
+    },
+    {
+      "type": "key",
+      "vt_ms": 73083.333,
+      "frame": 4385,
+      "ch": "r",
+      "i": 33
+    },
+    {
+      "type": "key",
+      "vt_ms": 73216.667,
+      "frame": 4393,
+      "ch": "a",
+      "i": 34
+    },
+    {
+      "type": "key",
+      "vt_ms": 73366.667,
+      "frame": 4402,
+      "ch": " ",
+      "i": 35
+    },
+    {
+      "type": "key",
+      "vt_ms": 73566.667,
+      "frame": 4414,
+      "ch": "s",
+      "i": 36
+    },
+    {
+      "type": "key",
+      "vt_ms": 73683.333,
+      "frame": 4421,
+      "ch": "e",
+      "i": 37
+    },
+    {
+      "type": "key",
+      "vt_ms": 73816.667,
+      "frame": 4429,
+      "ch": "m",
+      "i": 38
+    },
+    {
+      "type": "key",
+      "vt_ms": 73916.667,
+      "frame": 4435,
+      "ch": "e",
+      "i": 39
+    },
+    {
+      "type": "key",
+      "vt_ms": 74050,
+      "frame": 4443,
+      "ch": "n",
+      "i": 40
+    },
+    {
+      "type": "key",
+      "vt_ms": 74183.333,
+      "frame": 4451,
+      "ch": "t",
+      "i": 41
+    },
+    {
+      "type": "key",
+      "vt_ms": 74300,
+      "frame": 4458,
+      "ch": "a",
+      "i": 42
+    },
+    {
+      "type": "key",
+      "vt_ms": 74433.333,
+      "frame": 4466,
+      "ch": "r",
+      "i": 43
+    },
+    {
+      "type": "key",
+      "vt_ms": 74566.667,
+      "frame": 4474,
+      "ch": "a",
+      "i": 44
+    },
+    {
+      "type": "key",
+      "vt_ms": 74716.667,
+      "frame": 4483,
+      "ch": ".",
+      "i": 45
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 74866.667,
+      "frame": 4492,
+      "target": "#statement_input_a"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 74866.667,
+      "frame": 4492,
+      "from": [
+        821.6328125,
+        445
+      ],
+      "to": [
+        821.6328125,
+        503
+      ],
+      "dist_px": 58,
+      "move_ms": 592.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 75650,
+      "frame": 4539,
+      "at": [
+        821.6328125,
+        503
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 75733.333,
+      "frame": 4544,
+      "at": [
+        821.6328125,
+        503
+      ],
+      "label": "#statement_input_b",
+      "bbox": [
+        680,
+        482,
+        472.109375,
+        42
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 76033.333,
+      "frame": 4562,
+      "target": "#statement_input_b",
+      "text_len": 50,
+      "bbox": [
+        680,
+        482,
+        472.109375,
+        42
+      ],
+      "end_vt_ms": 82850
+    },
+    {
+      "type": "key",
+      "vt_ms": 76033.333,
+      "frame": 4562,
+      "ch": "R",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 76116.667,
+      "frame": 4567,
+      "ch": "O",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 76266.667,
+      "frame": 4576,
+      "ch": "M",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 76400,
+      "frame": 4584,
+      "ch": " ",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 76550,
+      "frame": 4593,
+      "ch": "k",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 76800,
+      "frame": 4608,
+      "ch": "e",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 76916.667,
+      "frame": 4615,
+      "ch": "h",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 77050,
+      "frame": 4623,
+      "ch": "i",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 77150,
+      "frame": 4629,
+      "ch": "l",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 77233.333,
+      "frame": 4634,
+      "ch": "a",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 77333.333,
+      "frame": 4640,
+      "ch": "n",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 77433.333,
+      "frame": 4646,
+      "ch": "g",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 77550,
+      "frame": 4653,
+      "ch": "a",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 77700,
+      "frame": 4662,
+      "ch": "n",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 77816.667,
+      "frame": 4669,
+      "ch": " ",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 78033.333,
+      "frame": 4682,
+      "ch": "d",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 78166.667,
+      "frame": 4690,
+      "ch": "a",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 78250,
+      "frame": 4695,
+      "ch": "t",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 78400,
+      "frame": 4704,
+      "ch": "a",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 78533.333,
+      "frame": 4712,
+      "ch": " ",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 78733.333,
+      "frame": 4724,
+      "ch": "s",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 78866.667,
+      "frame": 4732,
+      "ch": "a",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 78983.333,
+      "frame": 4739,
+      "ch": "a",
+      "i": 22
+    },
+    {
+      "type": "key",
+      "vt_ms": 79083.333,
+      "frame": 4745,
+      "ch": "t",
+      "i": 23
+    },
+    {
+      "type": "key",
+      "vt_ms": 79183.333,
+      "frame": 4751,
+      "ch": " ",
+      "i": 24
+    },
+    {
+      "type": "key",
+      "vt_ms": 79366.667,
+      "frame": 4762,
+      "ch": "a",
+      "i": 25
+    },
+    {
+      "type": "key",
+      "vt_ms": 79516.667,
+      "frame": 4771,
+      "ch": "l",
+      "i": 26
+    },
+    {
+      "type": "key",
+      "vt_ms": 79633.333,
+      "frame": 4778,
+      "ch": "i",
+      "i": 27
+    },
+    {
+      "type": "key",
+      "vt_ms": 79783.333,
+      "frame": 4787,
+      "ch": "r",
+      "i": 28
+    },
+    {
+      "type": "key",
+      "vt_ms": 79883.333,
+      "frame": 4793,
+      "ch": "a",
+      "i": 29
+    },
+    {
+      "type": "key",
+      "vt_ms": 79966.667,
+      "frame": 4798,
+      "ch": "n",
+      "i": 30
+    },
+    {
+      "type": "key",
+      "vt_ms": 80100,
+      "frame": 4806,
+      "ch": " ",
+      "i": 31
+    },
+    {
+      "type": "key",
+      "vt_ms": 80283.333,
+      "frame": 4817,
+      "ch": "l",
+      "i": 32
+    },
+    {
+      "type": "key",
+      "vt_ms": 80400,
+      "frame": 4824,
+      "ch": "i",
+      "i": 33
+    },
+    {
+      "type": "key",
+      "vt_ms": 80516.667,
+      "frame": 4831,
+      "ch": "s",
+      "i": 34
+    },
+    {
+      "type": "key",
+      "vt_ms": 80666.667,
+      "frame": 4840,
+      "ch": "t",
+      "i": 35
+    },
+    {
+      "type": "key",
+      "vt_ms": 80800,
+      "frame": 4848,
+      "ch": "r",
+      "i": 36
+    },
+    {
+      "type": "key",
+      "vt_ms": 80950,
+      "frame": 4857,
+      "ch": "i",
+      "i": 37
+    },
+    {
+      "type": "key",
+      "vt_ms": 81216.667,
+      "frame": 4873,
+      "ch": "k",
+      "i": 38
+    },
+    {
+      "type": "key",
+      "vt_ms": 81316.667,
+      "frame": 4879,
+      "ch": " ",
+      "i": 39
+    },
+    {
+      "type": "key",
+      "vt_ms": 81483.333,
+      "frame": 4889,
+      "ch": "d",
+      "i": 40
+    },
+    {
+      "type": "key",
+      "vt_ms": 81616.667,
+      "frame": 4897,
+      "ch": "i",
+      "i": 41
+    },
+    {
+      "type": "key",
+      "vt_ms": 81733.333,
+      "frame": 4904,
+      "ch": "m",
+      "i": 42
+    },
+    {
+      "type": "key",
+      "vt_ms": 81883.333,
+      "frame": 4913,
+      "ch": "a",
+      "i": 43
+    },
+    {
+      "type": "key",
+      "vt_ms": 81983.333,
+      "frame": 4919,
+      "ch": "t",
+      "i": 44
+    },
+    {
+      "type": "key",
+      "vt_ms": 82116.667,
+      "frame": 4927,
+      "ch": "i",
+      "i": 45
+    },
+    {
+      "type": "key",
+      "vt_ms": 82216.667,
+      "frame": 4933,
+      "ch": "k",
+      "i": 46
+    },
+    {
+      "type": "key",
+      "vt_ms": 82333.333,
+      "frame": 4940,
+      "ch": "a",
+      "i": 47
+    },
+    {
+      "type": "key",
+      "vt_ms": 82450,
+      "frame": 4947,
+      "ch": "n",
+      "i": 48
+    },
+    {
+      "type": "key",
+      "vt_ms": 82700,
+      "frame": 4962,
+      "ch": ".",
+      "i": 49
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 82850,
+      "frame": 4971,
+      "target": "#statement_input_b"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 82850,
+      "frame": 4971,
+      "from": [
+        821.6328125,
+        503
+      ],
+      "to": [
+        1243.7421875,
+        503
+      ],
+      "dist_px": 422.1,
+      "move_ms": 995.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 84033.333,
+      "frame": 5042,
+      "at": [
+        1243.7421875,
+        503
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 84116.667,
+      "frame": 5047,
+      "at": [
+        1243.7421875,
+        503
+      ],
+      "label": "#btn_b_salah",
+      "bbox": [
+        1216.484375,
+        487,
+        54.515625,
+        32
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 84250,
+      "frame": 5055,
+      "from": [
+        1243.7421875,
+        503
+      ],
+      "to": [
+        821.6328125,
+        561
+      ],
+      "dist_px": 426.1,
+      "move_ms": 997.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 85433.333,
+      "frame": 5126,
+      "at": [
+        821.6328125,
+        561
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 85516.667,
+      "frame": 5131,
+      "at": [
+        821.6328125,
+        561
+      ],
+      "label": "#statement_input_c",
+      "bbox": [
+        680,
+        540,
+        472.109375,
+        42
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 85816.667,
+      "frame": 5149,
+      "target": "#statement_input_c",
+      "text_len": 47,
+      "bbox": [
+        680,
+        540,
+        472.109375,
+        42
+      ],
+      "end_vt_ms": 92283.333
+    },
+    {
+      "type": "key",
+      "vt_ms": 85816.667,
+      "frame": 5149,
+      "ch": "C",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 85950,
+      "frame": 5157,
+      "ch": "P",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 86100,
+      "frame": 5166,
+      "ch": "U",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 86216.667,
+      "frame": 5173,
+      "ch": " ",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 86366.667,
+      "frame": 5182,
+      "ch": "b",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 86516.667,
+      "frame": 5191,
+      "ch": "e",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 86633.333,
+      "frame": 5198,
+      "ch": "r",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 86766.667,
+      "frame": 5206,
+      "ch": "t",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 86916.667,
+      "frame": 5215,
+      "ch": "u",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 87050,
+      "frame": 5223,
+      "ch": "g",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 87150,
+      "frame": 5229,
+      "ch": "a",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 87250,
+      "frame": 5235,
+      "ch": "s",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 87383.333,
+      "frame": 5243,
+      "ch": " ",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 87550,
+      "frame": 5253,
+      "ch": "m",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 87700,
+      "frame": 5262,
+      "ch": "e",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 87816.667,
+      "frame": 5269,
+      "ch": "n",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 87916.667,
+      "frame": 5275,
+      "ch": "g",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 88033.333,
+      "frame": 5282,
+      "ch": "e",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 88133.333,
+      "frame": 5288,
+      "ch": "k",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 88250,
+      "frame": 5295,
+      "ch": "s",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 88383.333,
+      "frame": 5303,
+      "ch": "e",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 88533.333,
+      "frame": 5312,
+      "ch": "k",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 88666.667,
+      "frame": 5320,
+      "ch": "u",
+      "i": 22
+    },
+    {
+      "type": "key",
+      "vt_ms": 88783.333,
+      "frame": 5327,
+      "ch": "s",
+      "i": 23
+    },
+    {
+      "type": "key",
+      "vt_ms": 88900,
+      "frame": 5334,
+      "ch": "i",
+      "i": 24
+    },
+    {
+      "type": "key",
+      "vt_ms": 89016.667,
+      "frame": 5341,
+      "ch": " ",
+      "i": 25
+    },
+    {
+      "type": "key",
+      "vt_ms": 89200,
+      "frame": 5352,
+      "ch": "i",
+      "i": 26
+    },
+    {
+      "type": "key",
+      "vt_ms": 89300,
+      "frame": 5358,
+      "ch": "n",
+      "i": 27
+    },
+    {
+      "type": "key",
+      "vt_ms": 89416.667,
+      "frame": 5365,
+      "ch": "s",
+      "i": 28
+    },
+    {
+      "type": "key",
+      "vt_ms": 89533.333,
+      "frame": 5372,
+      "ch": "t",
+      "i": 29
+    },
+    {
+      "type": "key",
+      "vt_ms": 89633.333,
+      "frame": 5378,
+      "ch": "r",
+      "i": 30
+    },
+    {
+      "type": "key",
+      "vt_ms": 89783.333,
+      "frame": 5387,
+      "ch": "u",
+      "i": 31
+    },
+    {
+      "type": "key",
+      "vt_ms": 89916.667,
+      "frame": 5395,
+      "ch": "k",
+      "i": 32
+    },
+    {
+      "type": "key",
+      "vt_ms": 90000,
+      "frame": 5400,
+      "ch": "s",
+      "i": 33
+    },
+    {
+      "type": "key",
+      "vt_ms": 90100,
+      "frame": 5406,
+      "ch": "i",
+      "i": 34
+    },
+    {
+      "type": "key",
+      "vt_ms": 90200,
+      "frame": 5412,
+      "ch": " ",
+      "i": 35
+    },
+    {
+      "type": "key",
+      "vt_ms": 90383.333,
+      "frame": 5423,
+      "ch": "a",
+      "i": 36
+    },
+    {
+      "type": "key",
+      "vt_ms": 90516.667,
+      "frame": 5431,
+      "ch": "r",
+      "i": 37
+    },
+    {
+      "type": "key",
+      "vt_ms": 90650,
+      "frame": 5439,
+      "ch": "i",
+      "i": 38
+    },
+    {
+      "type": "key",
+      "vt_ms": 90783.333,
+      "frame": 5447,
+      "ch": "t",
+      "i": 39
+    },
+    {
+      "type": "key",
+      "vt_ms": 90933.333,
+      "frame": 5456,
+      "ch": "m",
+      "i": 40
+    },
+    {
+      "type": "key",
+      "vt_ms": 91050,
+      "frame": 5463,
+      "ch": "a",
+      "i": 41
+    },
+    {
+      "type": "key",
+      "vt_ms": 91200,
+      "frame": 5472,
+      "ch": "t",
+      "i": 42
+    },
+    {
+      "type": "key",
+      "vt_ms": 91333.333,
+      "frame": 5480,
+      "ch": "i",
+      "i": 43
+    },
+    {
+      "type": "key",
+      "vt_ms": 91600,
+      "frame": 5496,
+      "ch": "k",
+      "i": 44
+    },
+    {
+      "type": "key",
+      "vt_ms": 91700,
+      "frame": 5502,
+      "ch": "a",
+      "i": 45
+    },
+    {
+      "type": "key",
+      "vt_ms": 91950,
+      "frame": 5517,
+      "ch": ".",
+      "i": 46
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 92283.333,
+      "frame": 5537,
+      "target": "#statement_input_c"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 92283.333,
+      "frame": 5537,
+      "from": [
+        821.6328125,
+        561
+      ],
+      "to": [
+        1188.796875,
+        561
+      ],
+      "dist_px": 367.2,
+      "move_ms": 964.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 93433.333,
+      "frame": 5606,
+      "at": [
+        1188.796875,
+        561
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 93516.667,
+      "frame": 5611,
+      "at": [
+        1188.796875,
+        561
+      ],
+      "label": "#btn_c_benar",
+      "bbox": [
+        1161.109375,
+        545,
+        55.375,
+        32
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 94050,
+      "frame": 5643,
+      "scene_id": "scene_03_isi_soal_dan_pernyataan"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 95250,
+      "frame": 5715,
+      "scene_id": "scene_03_isi_soal_dan_pernyataan"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 95250,
+      "frame": 5715,
+      "scene_id": "scene_04_simpan_soal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 95250,
+      "frame": 5715,
+      "scene_id": "scene_04_simpan_soal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_04_simpan_soal.wav",
+      "duration_ms": 11790,
+      "at_ms": 95450
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 107250,
+      "frame": 6435,
+      "scene_id": "scene_04_simpan_soal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 107550,
+      "frame": 6453,
+      "scene_id": "scene_04_simpan_soal"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 107550,
+      "frame": 6453,
+      "from": [
+        1188.796875,
+        561
+      ],
+      "to": [
+        960,
+        872
+      ],
+      "dist_px": 386.1,
+      "move_ms": 975.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 108716.667,
+      "frame": 6523,
+      "at": [
+        960,
+        872
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 108916.667,
+      "frame": 6535,
+      "from": [
+        960,
+        872
+      ],
+      "to": [
+        960,
+        872
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 109000,
+      "frame": 6540,
+      "at": [
+        960,
+        872
+      ],
+      "label": "#score_default",
+      "bbox": [
+        648,
+        851,
+        624,
+        42
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 109300,
+      "frame": 6558,
+      "target": "#score_default",
+      "text_len": 1,
+      "bbox": [
+        648,
+        851,
+        624,
+        42
+      ],
+      "end_vt_ms": 109433.333
+    },
+    {
+      "type": "key",
+      "vt_ms": 109300,
+      "frame": 6558,
+      "ch": "0",
+      "i": 0
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 109433.333,
+      "frame": 6566,
+      "target": "#score_default"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 109433.333,
+      "frame": 6566,
+      "from": [
+        960,
+        872
+      ],
+      "to": [
+        1208.34375,
+        934
+      ],
+      "dist_px": 256,
+      "move_ms": 884.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 110516.667,
+      "frame": 6631,
+      "at": [
+        1208.34375,
+        934
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 110816.667,
+      "frame": 6649,
+      "from": [
+        1208.34375,
+        934
+      ],
+      "to": [
+        1208.34375,
+        934
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 110900,
+      "frame": 6654,
+      "at": [
+        1208.34375,
+        934
+      ],
+      "label": "#btn-submit-soal",
+      "bbox": [
+        1144.6875,
+        917,
+        127.3125,
+        34
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 111033.333,
+      "frame": 6662,
+      "selector": "#btn-tambah-soal",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 112183.333,
+      "frame": 6731,
+      "scene_id": "scene_04_simpan_soal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 113383.333,
+      "frame": 6803,
+      "scene_id": "scene_04_simpan_soal"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 113383.333,
+      "frame": 6803,
+      "scene_id": "scene_05_verifikasi_dan_penutup"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 113383.333,
+      "frame": 6803,
+      "scene_id": "scene_05_verifikasi_dan_penutup",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_080142_022cc6\\audio\\scene_05_verifikasi_dan_penutup.wav",
+      "duration_ms": 14456,
+      "at_ms": 113583.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 128050,
+      "frame": 7683,
+      "scene_id": "scene_05_verifikasi_dan_penutup"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 128350,
+      "frame": 7701,
+      "scene_id": "scene_05_verifikasi_dan_penutup"
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 129550,
+      "frame": 7773,
+      "scene_id": "scene_05_verifikasi_dan_penutup"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 130950,
+      "frame": 7857,
+      "scene_id": "scene_05_verifikasi_dan_penutup"
+    }
+  ]
+}

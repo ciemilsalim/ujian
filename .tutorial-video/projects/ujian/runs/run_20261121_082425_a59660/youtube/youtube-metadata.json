@@ -1,0 +1,42 @@
+{
+  "snippet": {
+    "title": "Tutorial Pembuatan Soal Benar Salah — ZEXAM-CBT #Shorts",
+    "description": "Tutorial Pembuatan Soal Benar Salah — ZEXAM-CBT\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Buka Bank Soal\n00:21 - Pilih Tipe Soal\n00:43 - Isi Soal Dan Pernyataan\n01:35 - Simpan Soal\n01:54 - Verifikasi Dan Penutup\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Buka Bank Soal: Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT.\n2. Pilih Tipe Soal: Sekarang kita berada di halaman detail bank soal.\n3. Isi Soal Dan Pernyataan: Ketikkan stimulus atau petunjuk pertanyaan pada kolom utama.\n4. Simpan Soal: Bagus, seluruh pernyataan dan kunci jawaban sudah terisi dengan lengkap.\n5. Verifikasi Dan Penutup: Soal pernyataan benar dan salah telah berhasil tersimpan dengan rapi.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#Shorts #UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "pembuatan",
+      "soal",
+      "benar",
+      "salah",
+      "zexam-cbt",
+      "buka bank soal",
+      "pilih tipe soal",
+      "isi soal dan pernyataan",
+      "simpan soal",
+      "verifikasi dan penutup"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_082425_a59660\\final\\final-tutorial-mobile.mp4",
+    "duration_sec": 133.12,
+    "is_shorts": true,
+    "aspect_ratio": "9:16",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_082425_a59660\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T00:44:53.721634+00:00"
+  }
+}

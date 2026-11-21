@@ -1,0 +1,43 @@
+{
+  "snippet": {
+    "title": "Tutorial Import Soal Benar Salah — ZEXAM-CBT",
+    "description": "Tutorial Import Soal Benar Salah — ZEXAM-CBT\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Buka Bank Soal\n00:24 - Unduh Template\n00:51 - Panduan Import\n01:17 - Tutup Panduan Dan Eksekusi\n01:40 - Pilih Menu Import\n02:05 - Tinjau Hasil Soal\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Buka Bank Soal: Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT.\n2. Unduh Template: Langkah pertama sebelum menyusun soal, kita dapat mengunduh format template resmi yang telah disediakan oleh sistem.\n3. Panduan Import: Untuk memastikan susunan naskah kita terbaca sempurna oleh mesin pengurai, kita dapat memeriksa panduan format import.\n4. Tutup Panduan Dan Eksekusi: Perhatikan bahwa sistem sangat toleran terhadap format kunci jawaban.\n5. Pilih Menu Import: Sekarang menu import telah terbuka kembali.\n6. Tinjau Hasil Soal: Seluruh butir soal pernyataan benar salah yang diimpor akan langsung tersimpan rapi pada bank soal.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "import",
+      "soal",
+      "benar",
+      "salah",
+      "zexam-cbt",
+      "buka bank soal",
+      "unduh template",
+      "panduan import",
+      "tutup panduan dan eksekusi",
+      "pilih menu import",
+      "tinjau hasil soal"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 150.43,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T01:57:28.605423+00:00"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "project_id": "ujian",
+  "run_id": "run_20261121_082425_a59660",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "created_at": "2026-11-21T08:44:53.713636",
+  "git_commit": "untracked",
+  "plan": {
+    "path": "projects\\ujian\\runs\\run_20261121_082425_a59660\\effective-plan.json",
+    "sha256": "6e91a4b018fc9cd623cc4ce885e7b874c83f8ed96a3a22ec45be1fe3421945fe"
+  },
+  "profile": {
+    "path": null,
+    "sha256": null
+  },
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "path": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true
+  },
+  "artifacts": {
+    "final_video": {
+      "path": "final\\final-tutorial-desktop.mp4",
+      "sha256": "a2a3f932e1934cd37069ca5e42b93c2a2edcd277f331c976a1875137f8e1ba96"
+    },
+    "raw_recording": {
+      "path": "recording\\continuous-60fps.mp4",
+      "sha256": "3df752bd655a83ffaa0839b463dc50d6b4a25fedfd4ab40716494f80844b3fe3"
+    },
+    "audio_master": {
+      "path": "audio\\audio-master.wav",
+      "sha256": "016d8353a81027b4541d98852a10ddb2b7a19cccf934b701f2c0cd2fa860a713"
+    },
+    "recorded_events": {
+      "path": "recording\\events.json",
+      "sha256": "dcf91e12be80fcdd3f55b536af6f2c7d0f6a15302c1c9176d648181f46dc7d3a"
+    },
+    "final_video_desktop": {
+      "path": "final\\final-tutorial-desktop.mp4",
+      "sha256": "a2a3f932e1934cd37069ca5e42b93c2a2edcd277f331c976a1875137f8e1ba96"
+    },
+    "final_video_mobile": {
+      "path": "final\\final-tutorial-mobile.mp4",
+      "sha256": "0f261963f1a1f7e0e37b7d9aa0481aead4cd932f2c3968c635c0d1625b5a7c17"
+    },
+    "audio_master_desktop": {
+      "path": "audio\\audio-master-desktop.wav",
+      "sha256": "35212431a4e4f6b5ccc6656969335bb72dd56b50bb5102527051b0e2881c40da"
+    },
+    "audio_master_mobile": {
+      "path": "audio\\audio-master-mobile.wav",
+      "sha256": "016d8353a81027b4541d98852a10ddb2b7a19cccf934b701f2c0cd2fa860a713"
+    }
+  },
+  "isolation_verified": true,
+  "data_safety": {
+    "status": "VERIFIED",
+    "isolation_method": "TRACKED_EPHEMERAL_TEST_DATA",
+    "production_mutations_allowed": false,
+    "cleanliness_policy": "tracked_created_ids_only"
+  }
+}

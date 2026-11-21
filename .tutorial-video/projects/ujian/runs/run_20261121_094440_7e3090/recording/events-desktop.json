@@ -1,0 +1,731 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_buka_bank_soal",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 19924,
+      "action_start_ms": 20233.333,
+      "action_end_ms": 23666.667,
+      "end_ms": 24866.667
+    },
+    {
+      "scene_id": "scene_02_unduh_template",
+      "start_ms": 24866.667,
+      "narration_start_ms": 25066.667,
+      "narration_end_ms": 45974.667,
+      "action_start_ms": 46283.333,
+      "action_end_ms": 50100,
+      "end_ms": 51300
+    },
+    {
+      "scene_id": "scene_03_panduan_import",
+      "start_ms": 51300,
+      "narration_start_ms": 51500,
+      "narration_end_ms": 70406,
+      "action_start_ms": 70716.667,
+      "action_end_ms": 75583.333,
+      "end_ms": 77083.333
+    },
+    {
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi",
+      "start_ms": 77083.333,
+      "narration_start_ms": 77283.333,
+      "narration_end_ms": 96271.333,
+      "action_start_ms": 96583.333,
+      "action_end_ms": 99533.333,
+      "end_ms": 100733.333
+    },
+    {
+      "scene_id": "scene_05_pilih_menu_import",
+      "start_ms": 100733.333,
+      "narration_start_ms": 100933.333,
+      "narration_end_ms": 119445.333,
+      "action_start_ms": 119750,
+      "action_end_ms": 124300,
+      "end_ms": 125500
+    },
+    {
+      "scene_id": "scene_06_tinjau_hasil_soal",
+      "start_ms": 125500,
+      "narration_start_ms": 125700,
+      "narration_end_ms": 145186,
+      "action_start_ms": 145500,
+      "action_end_ms": 148933.333,
+      "end_ms": 150433.333
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_buka_bank_soal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_01_buka_bank_soal.wav",
+      "duration_ms": 19724,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 19933.333,
+      "frame": 1196,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 20233.333,
+      "frame": 1214,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 20233.333,
+      "frame": 1214,
+      "selector": "#btn-bank-detail-1",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 20783.333,
+      "frame": 1247,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        1458.9609375,
+        400.5
+      ],
+      "dist_px": 380.2,
+      "move_ms": 972.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 21950,
+      "frame": 1317,
+      "at": [
+        1458.9609375,
+        400.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 22300,
+      "frame": 1338,
+      "from": [
+        1458.9609375,
+        400.5
+      ],
+      "to": [
+        1458.9609375,
+        400.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 22383.333,
+      "frame": 1343,
+      "at": [
+        1458.9609375,
+        400.5
+      ],
+      "label": "#btn-bank-detail-1",
+      "bbox": [
+        1419.265625,
+        392,
+        79.390625,
+        17
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 22516.667,
+      "frame": 1351,
+      "selector": "#btn-import-dropdown",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 23666.667,
+      "frame": 1420,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 24866.667,
+      "frame": 1492,
+      "scene_id": "scene_01_buka_bank_soal"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 24866.667,
+      "frame": 1492,
+      "scene_id": "scene_02_unduh_template"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 24866.667,
+      "frame": 1492,
+      "scene_id": "scene_02_unduh_template",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_02_unduh_template.wav",
+      "duration_ms": 20908,
+      "at_ms": 25066.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 45983.333,
+      "frame": 2759,
+      "scene_id": "scene_02_unduh_template"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 46283.333,
+      "frame": 2777,
+      "scene_id": "scene_02_unduh_template"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 46283.333,
+      "frame": 2777,
+      "from": [
+        1458.9609375,
+        400.5
+      ],
+      "to": [
+        1559.2265625,
+        277
+      ],
+      "dist_px": 159.1,
+      "move_ms": 783.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 47266.667,
+      "frame": 2836,
+      "at": [
+        1559.2265625,
+        277
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 48166.667,
+      "frame": 2890,
+      "from": [
+        1559.2265625,
+        277
+      ],
+      "to": [
+        1636.203125,
+        277
+      ],
+      "dist_px": 77,
+      "move_ms": 642,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 49000,
+      "frame": 2940,
+      "at": [
+        1636.203125,
+        277
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 50100,
+      "frame": 3006,
+      "scene_id": "scene_02_unduh_template"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 51300,
+      "frame": 3078,
+      "scene_id": "scene_02_unduh_template"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 51300,
+      "frame": 3078,
+      "scene_id": "scene_03_panduan_import"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 51300,
+      "frame": 3078,
+      "scene_id": "scene_03_panduan_import",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_03_panduan_import.wav",
+      "duration_ms": 18906,
+      "at_ms": 51500
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 70416.667,
+      "frame": 4225,
+      "scene_id": "scene_03_panduan_import"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 70716.667,
+      "frame": 4243,
+      "scene_id": "scene_03_panduan_import"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 70716.667,
+      "frame": 4243,
+      "from": [
+        1636.203125,
+        277
+      ],
+      "to": [
+        1717.65625,
+        114
+      ],
+      "dist_px": 182.2,
+      "move_ms": 812,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 71716.667,
+      "frame": 4303,
+      "at": [
+        1717.65625,
+        114
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 72016.667,
+      "frame": 4321,
+      "from": [
+        1717.65625,
+        114
+      ],
+      "to": [
+        1717.65625,
+        114
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 72100,
+      "frame": 4326,
+      "at": [
+        1717.65625,
+        114
+      ],
+      "label": "#btn-import-dropdown",
+      "bbox": [
+        1660.09375,
+        96,
+        115.125,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 72233.333,
+      "frame": 4334,
+      "selector": "#btn-panduan-import",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 72783.333,
+      "frame": 4367,
+      "from": [
+        1717.65625,
+        114
+      ],
+      "to": [
+        1679.21875,
+        234
+      ],
+      "dist_px": 126,
+      "move_ms": 736.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 73716.667,
+      "frame": 4423,
+      "at": [
+        1679.21875,
+        234
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 74016.667,
+      "frame": 4441,
+      "from": [
+        1679.21875,
+        234
+      ],
+      "to": [
+        1679.21875,
+        234
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 74100,
+      "frame": 4446,
+      "at": [
+        1679.21875,
+        234
+      ],
+      "label": "#btn-panduan-import",
+      "bbox": [
+        1583.21875,
+        216,
+        192,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 74233.333,
+      "frame": 4454,
+      "selector": "#btn-modal-start-import",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 75583.333,
+      "frame": 4535,
+      "scene_id": "scene_03_panduan_import"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 77083.333,
+      "frame": 4625,
+      "scene_id": "scene_03_panduan_import"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 77083.333,
+      "frame": 4625,
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 77083.333,
+      "frame": 4625,
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_04_tutup_panduan_dan_eksekusi.wav",
+      "duration_ms": 18988,
+      "at_ms": 77283.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 96283.333,
+      "frame": 5777,
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 96583.333,
+      "frame": 5795,
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 96583.333,
+      "frame": 5795,
+      "from": [
+        1679.21875,
+        234
+      ],
+      "to": [
+        1166.375,
+        842
+      ],
+      "dist_px": 795.4,
+      "move_ms": 1140.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 97916.667,
+      "frame": 5875,
+      "at": [
+        1166.375,
+        842
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 98266.667,
+      "frame": 5896,
+      "from": [
+        1166.375,
+        842
+      ],
+      "to": [
+        1166.375,
+        842
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 98350,
+      "frame": 5901,
+      "at": [
+        1166.375,
+        842
+      ],
+      "label": "#btn-modal-start-import",
+      "bbox": [
+        1060.75,
+        825,
+        211.25,
+        34
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 98483.333,
+      "frame": 5909,
+      "selector": "#btn-import-excel",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 99533.333,
+      "frame": 5972,
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 100733.333,
+      "frame": 6044,
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 100733.333,
+      "frame": 6044,
+      "scene_id": "scene_05_pilih_menu_import"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 100733.333,
+      "frame": 6044,
+      "scene_id": "scene_05_pilih_menu_import",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_05_pilih_menu_import.wav",
+      "duration_ms": 18512,
+      "at_ms": 100933.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 119450,
+      "frame": 7167,
+      "scene_id": "scene_05_pilih_menu_import"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 119750,
+      "frame": 7185,
+      "scene_id": "scene_05_pilih_menu_import"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 119750,
+      "frame": 7185,
+      "from": [
+        1166.375,
+        842
+      ],
+      "to": [
+        1679.21875,
+        162
+      ],
+      "dist_px": 851.7,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 121083.333,
+      "frame": 7265,
+      "at": [
+        1679.21875,
+        162
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 122183.333,
+      "frame": 7331,
+      "from": [
+        1679.21875,
+        162
+      ],
+      "to": [
+        1679.21875,
+        198
+      ],
+      "dist_px": 36,
+      "move_ms": 518.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 122900,
+      "frame": 7374,
+      "at": [
+        1679.21875,
+        198
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 124300,
+      "frame": 7458,
+      "scene_id": "scene_05_pilih_menu_import"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 125500,
+      "frame": 7530,
+      "scene_id": "scene_05_pilih_menu_import"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 125500,
+      "frame": 7530,
+      "scene_id": "scene_06_tinjau_hasil_soal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 125500,
+      "frame": 7530,
+      "scene_id": "scene_06_tinjau_hasil_soal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_094440_7e3090\\audio\\scene_06_tinjau_hasil_soal.wav",
+      "duration_ms": 19486,
+      "at_ms": 125700
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 145200,
+      "frame": 8712,
+      "scene_id": "scene_06_tinjau_hasil_soal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 145500,
+      "frame": 8730,
+      "scene_id": "scene_06_tinjau_hasil_soal"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 145500,
+      "frame": 8730,
+      "from": [
+        1679.21875,
+        198
+      ],
+      "to": [
+        1717.65625,
+        114
+      ],
+      "dist_px": 92.4,
+      "move_ms": 675.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 146366.667,
+      "frame": 8782,
+      "at": [
+        1717.65625,
+        114
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 146450,
+      "frame": 8787,
+      "at": [
+        1717.65625,
+        114
+      ],
+      "label": "#btn-import-dropdown",
+      "bbox": [
+        1660.09375,
+        96,
+        115.125,
+        36
+      ]
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 146983.333,
+      "frame": 8819,
+      "from_y": 0,
+      "to_y": 300,
+      "dur_ms": 730
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 147733.333,
+      "frame": 8864,
+      "y": 300
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 148933.333,
+      "frame": 8936,
+      "scene_id": "scene_06_tinjau_hasil_soal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 150433.333,
+      "frame": 9026,
+      "scene_id": "scene_06_tinjau_hasil_soal"
+    }
+  ]
+}

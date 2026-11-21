@@ -1,0 +1,325 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Import Soal Benar Salah — ZEXAM-CBT",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "guru"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "#btn-login-submit"
+    },
+    {
+      "do": "wait_for",
+      "selector": "header"
+    },
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/guru/question-banks"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#btn-bank-detail-1"
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_buka_bank_soal",
+      "narration": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT. Hari ini kita bersama-sama akan mempelajari cara mengimport soal jenis pernyataan benar dan salah secara praktis, baik menggunakan dokumen Excel maupun Word. Mari kita mulai dengan membuka detail bank soal yang aktif.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Guru serta Rekan-Rekan Administrator Proktor, selamat datang di panduan aplikasi ZEXAM-CBT.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Hari ini kita bersama-sama akan mempelajari cara mengimport soal jenis pernyataan benar dan salah secara praktis, baik menggunakan dokumen Excel maupun Word.",
+          "pause_after_ms": 320
+        },
+        {
+          "text": "Mari kita mulai dengan membuka detail bank soal yang aktif.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "#btn-bank-detail-1",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": "#btn-bank-detail-1",
+          "hold_ms": 350
+        },
+        {
+          "do": "click",
+          "target": "#btn-bank-detail-1"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-import-dropdown",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_unduh_template",
+      "narration": "Langkah pertama sebelum menyusun soal, kita dapat mengunduh format template resmi yang telah disediakan oleh sistem. Di sudut kanan atas informasi bank soal, tersedia tombol unduh template Excel berformat XLSX dan Word berformat DOCX. Template ini telah memuat contoh nyata soal benar salah, rumus matematika, dan teks Arab.",
+      "narration_segments": [
+        {
+          "text": "Langkah pertama sebelum menyusun soal, kita dapat mengunduh format template resmi yang telah disediakan oleh sistem.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Di sudut kanan atas informasi bank soal, tersedia tombol unduh template Excel berformat XLSX dan Word berformat DOCX.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Template ini telah memuat contoh nyata soal benar salah, rumus matematika, dan teks Arab.",
+          "pause_after_ms": 260
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-download-template-excel",
+          "hold_ms": 500
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "hover",
+          "target": "#btn-download-template-word",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_panduan_import",
+      "narration": "Untuk memastikan susunan naskah kita terbaca sempurna oleh mesin pengurai, kita dapat memeriksa panduan format import. Silakan klik tombol Import di bagian atas, lalu pilih menu Panduan Import. Dialog panduan akan menyajikan contoh struktur penulisan pada dokumen Word dan lembar kerja Excel secara transparan.",
+      "narration_segments": [
+        {
+          "text": "Untuk memastikan susunan naskah kita terbaca sempurna oleh mesin pengurai, kita dapat memeriksa panduan format import.",
+          "pause_after_ms": 290
+        },
+        {
+          "text": "Silakan klik tombol Import di bagian atas, lalu pilih menu Panduan Import.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Dialog panduan akan menyajikan contoh struktur penulisan pada dokumen Word dan lembar kerja Excel secara transparan.",
+          "pause_after_ms": 260
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-import-dropdown",
+          "hold_ms": 300
+        },
+        {
+          "do": "click",
+          "target": "#btn-import-dropdown"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-panduan-import",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": "#btn-panduan-import",
+          "hold_ms": 300
+        },
+        {
+          "do": "click",
+          "target": "#btn-panduan-import"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-modal-start-import",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1500
+    },
+    {
+      "scene_id": "scene_04_tutup_panduan_dan_eksekusi",
+      "narration": "Perhatikan bahwa sistem sangat toleran terhadap format kunci jawaban. Bapak dan Ibu Guru dapat menulis kunci dengan format huruf seperti A Benar B Salah, singkatan B dan S, angka biner, maupun kunci berbahasa Arab. Setelah memahaminya, kita klik tombol Mulai Import Sekarang untuk melanjutkan.",
+      "narration_segments": [
+        {
+          "text": "Perhatikan bahwa sistem sangat toleran terhadap format kunci jawaban.",
+          "pause_after_ms": 260
+        },
+        {
+          "text": "Bapak dan Ibu Guru dapat menulis kunci dengan format huruf seperti A Benar B Salah, singkatan B dan S, angka biner, maupun kunci berbahasa Arab.",
+          "pause_after_ms": 320
+        },
+        {
+          "text": "Setelah memahaminya, kita klik tombol Mulai Import Sekarang untuk melanjutkan.",
+          "pause_after_ms": 280
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-modal-start-import",
+          "hold_ms": 350
+        },
+        {
+          "do": "click",
+          "target": "#btn-modal-start-import"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-import-excel",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_pilih_menu_import",
+      "narration": "Sekarang menu import telah terbuka kembali. Kita cukup memilih opsi Import Excel apabila menggunakan spreadsheet, atau Import Word untuk dokumen naskah soal. Sistem otomatis menguraikan teks pertanyaan, daftar pernyataan, rumus matematika, hingga kunci jawaban dalam hitungan detik.",
+      "narration_segments": [
+        {
+          "text": "Sekarang menu import telah terbuka kembali.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Kita cukup memilih opsi Import Excel apabila menggunakan spreadsheet, atau Import Word untuk dokumen naskah soal.",
+          "pause_after_ms": 310
+        },
+        {
+          "text": "Sistem otomatis menguraikan teks pertanyaan, daftar pernyataan, rumus matematika, hingga kunci jawaban dalam hitungan detik.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-import-excel",
+          "hold_ms": 500
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "hover",
+          "target": "#btn-import-word",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_06_tinjau_hasil_soal",
+      "narration": "Seluruh butir soal pernyataan benar salah yang diimpor akan langsung tersimpan rapi pada bank soal. Tampil lengkap dengan indikator kebenaran, badge tipe soal, dan bobot skor otomatis. Sangat praktis dan menghemat waktu, bukan? Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Seluruh butir soal pernyataan benar salah yang diimpor akan langsung tersimpan rapi pada bank soal.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Tampil lengkap dengan indikator kebenaran, badge tipe soal, dan bobot skor otomatis.",
+          "pause_after_ms": 270
+        },
+        {
+          "text": "Sangat praktis dan menghemat waktu, bukan? Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "click",
+          "target": "#btn-import-dropdown"
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "scroll_by",
+          "delta_y": 300
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1500
+    }
+  ]
+}
