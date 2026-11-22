@@ -1,0 +1,350 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Guru ZEXAM-CBT: Cara Import Soal Pilihan Ganda via Template Excel",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "guru"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "#btn-login-submit"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h2:has-text(\"Dashboard Guru\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_bank_soal",
+      "narration": "Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT. Pada panduan kali ini, kita akan mempelajari alur lengkap menyusun dan mengunggah puluhan soal pilihan ganda secara otomatis menggunakan lembar kerja Excel. Dari panel navigasi samping, klik menu Banks Soal untuk membuka daftar bank soal aktif Anda, kemudian pilih tombol Detail dan Soal pada paket bank soal yang dituju.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada panduan kali ini, kita akan mempelajari alur lengkap menyusun dan mengunggah puluhan soal pilihan ganda secara otomatis menggunakan lembar kerja Excel.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Dari panel navigasi samping, klik menu Banks Soal untuk membuka daftar bank soal aktif Anda, kemudian pilih tombol Detail dan Soal pada paket bank soal yang dituju.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block a:has-text(\"Banks Soal\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block a:has-text(\"Banks Soal\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-bank-detail-1",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        },
+        {
+          "do": "hover",
+          "target": "#btn-bank-detail-1",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "#btn-bank-detail-1"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-import-dropdown",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_unduh_template_resmi_excel",
+      "narration": "Sebelum menyusun naskah soal, pastikan Anda menggunakan template resmi sistem. Pada kartu Informasi Bank Soal di sebelah kanan atas, klik tombol XLSX untuk mengunduh template spreadsheet resmi. Format ini telah dikonfigurasi khusus agar seluruh butir soal, opsi jawaban A hingga E, dan kunci jawaban dapat dikenali secara presisi tanpa kendala.",
+      "narration_segments": [
+        {
+          "text": "Sebelum menyusun naskah soal, pastikan Anda menggunakan template resmi sistem.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada kartu Informasi Bank Soal di sebelah kanan atas, klik tombol XLSX untuk mengunduh template spreadsheet resmi.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Format ini telah dikonfigurasi khusus agar seluruh butir soal, opsi jawaban A hingga E, dan kunci jawaban dapat dikenali secara presisi tanpa kendala.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-download-template-excel",
+          "hold_ms": 800
+        },
+        {
+          "do": "click",
+          "target": "#btn-download-template-excel"
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "#btn-download-template-word",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_panduan_struktur_kolom_excel",
+      "narration": "Untuk memastikan naskah kita sesuai standar, kita dapat memeriksa panduan format yang disediakan di dalam aplikasi. Klik tombol dropdown Import di sudut kanan atas, lalu pilih opsi Panduan Import. Jendela dialog akan memunculkan petunjuk lengkap struktur tabel Excel beserta contoh tata cara pengisiannya.",
+      "narration_segments": [
+        {
+          "text": "Untuk memastikan naskah kita sesuai standar, kita dapat memeriksa panduan format yang disediakan di dalam aplikasi.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Klik tombol dropdown Import di sudut kanan atas, lalu pilih opsi Panduan Import.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Jendela dialog akan memunculkan petunjuk lengkap struktur tabel Excel beserta contoh tata cara pengisiannya.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-import-dropdown",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "#btn-import-dropdown"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-panduan-import",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": "#btn-panduan-import",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "#btn-panduan-import"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-modal-start-import",
+          "budget_ms": 4000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1500
+    },
+    {
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci",
+      "narration": "Perhatikan kolom-kolom utama pada lembar kerja Excel: kolom Pertanyaan memuat teks stimulus soal; kolom Tipe diisi pilihan ganda atau pg; kolom Opsi A sampai Opsi E memuat pilihan ganda yang disajikan; kolom Kunci diisi dengan huruf jawaban benar dari A sampai E; dan kolom Skor menentukan bobot nilai masing-masing butir soal. Setelah memahami format ini, klik tombol Mulai Import Sekarang.",
+      "narration_segments": [
+        {
+          "text": "Perhatikan kolom-kolom utama pada lembar kerja Excel: kolom Pertanyaan memuat teks stimulus soal; kolom Tipe diisi pilihan ganda atau pg;",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "kolom Opsi A sampai Opsi E memuat pilihan ganda yang disajikan; kolom Kunci diisi dengan huruf jawaban benar dari A sampai E; dan kolom Skor menentukan bobot nilai masing-masing butir soal.",
+          "pause_after_ms": 320
+        },
+        {
+          "text": "Setelah memahami format ini, klik tombol Mulai Import Sekarang.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hold",
+          "ms": 1000
+        },
+        {
+          "do": "hover",
+          "target": "#btn-modal-start-import",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "#btn-modal-start-import"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-import-excel",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress",
+      "narration": "Sekarang kita jalankan proses import. Klik opsi Import Excel dan pilih file naskah soal yang telah Anda siapkan. Sistem ZEXAM-CBT akan menampilkan indikator progress bar pengunggahan dan secara otomatis mengekstrak seluruh butir soal ke dalam basis data dengan cepat dan aman.",
+      "narration_segments": [
+        {
+          "text": "Sekarang kita jalankan proses import.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Klik opsi Import Excel dan pilih file naskah soal yang telah Anda siapkan.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Sistem ZEXAM-CBT akan menampilkan indikator progress bar pengunggahan dan secara otomatis mengekstrak seluruh butir soal ke dalam basis data dengan cepat dan aman.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#btn-import-excel",
+          "hold_ms": 600
+        },
+        {
+          "do": "upload",
+          "target": "input[type=\"file\"][accept*=\".xlsx\"]",
+          "file": "D:/laragon/www/ujian/.tutorial-video/projects/ujian/sample_soal_pg.xlsx"
+        },
+        {
+          "do": "hold",
+          "ms": 2500
+        }
+      ],
+      "result_hold_ms": 1500
+    },
+    {
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda",
+      "narration": "Luar biasa! Seluruh butir soal pilihan ganda telah berhasil diimpor ke dalam bank soal. Setiap butir soal tersusun rapi dengan lencana tipe soal, opsi A hingga E, kunci jawaban terverifikasi, serta skor otomatis. Bapak dan Ibu Guru kini dapat menghemat waktu persiapan ujian secara signifikan. Selamat mencoba dan semoga sukses bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Luar biasa! Seluruh butir soal pilihan ganda telah berhasil diimpor ke dalam bank soal.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Setiap butir soal tersusun rapi dengan lencana tipe soal, opsi A hingga E, kunci jawaban terverifikasi, serta skor otomatis.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Bapak dan Ibu Guru kini dapat menghemat waktu persiapan ujian secara signifikan. Selamat mencoba dan semoga sukses bersama ZEXAM-CBT!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "scroll",
+          "by": 400
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        },
+        {
+          "do": "scroll",
+          "by": 400
+        },
+        {
+          "do": "hold",
+          "ms": 1200
+        },
+        {
+          "do": "scroll",
+          "by": -800
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1500
+    }
+  ]
+}

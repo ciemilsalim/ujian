@@ -1,0 +1,46 @@
+{
+  "snippet": {
+    "title": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Akun & Import Siswa Excel Word",
+    "description": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Akun & Import Siswa Excel Word\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Manajemen Akun\n00:31 - Filter Dan Pencarian Pengguna\n00:59 - Tambah User Manual\n01:29 - Import Siswa Excel Dan Word\n02:07 - Kontrol Keamanan Password Dan Aksi Masal\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Manajemen Akun: Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.\n2. Filter Dan Pencarian Pengguna: Sistem ZEXAM-CBT memudahkan proktor mencari akun berdasarkan nama, username, maupun NIS siswa.\n3. Tambah User Manual: Untuk menambahkan akun pengguna satu per satu, klik tombol User Baru di pojok kanan atas.\n4. Import Siswa Excel Dan Word: Untuk mengunggah ratusan akun siswa sekaligus dalam hitungan detik, klik tombol Import Siswa.\n5. Kontrol Keamanan Password Dan Aksi Masal: Tabel pengguna dilengkapi kontrol interaktif: klik ikon mata untuk menampilkan password siswa secara transparan saat ada kendala lupa sandi, atau gunakan kotak centang untuk menghapus beberapa akun sekaligus secara massal.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "admin",
+      "proktor",
+      "zexam-cbt",
+      "manajemen",
+      "akun",
+      "import",
+      "siswa",
+      "excel",
+      "word",
+      "navigasi manajemen akun",
+      "filter dan pencarian pengguna",
+      "tambah user manual",
+      "import siswa excel dan word",
+      "kontrol keamanan password dan aksi masal"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 166.7,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T13:35:38.259590+00:00"
+  }
+}

@@ -1,0 +1,27 @@
+Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay
+
+Video panduan resmi cara penggunaan fitur pada aplikasi ZEXAM-CBT. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Navigasi Tambah Soal
+00:34 - Konfigurasi Soal Menjodohkan
+01:15 - Konfigurasi Soal Isian Singkat
+01:48 - Konfigurasi Soal Essay Dan Rubrik
+02:19 - Tinjau Daftar Soal Dan Penutup
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Navigasi Tambah Soal: Buka modul Banks Soal Guru, pilih bank soal aktif, dan klik tombol Tambah Soal.
+2. Konfigurasi Soal Menjodohkan: Pilih tipe Menjodohkan, masukkan pertanyaan, dan isikan pasangan premis kiri serta respon jawaban kanan secara horizontal.
+3. Konfigurasi Soal Isian Singkat: Pilih tipe Isian Singkat, masukkan teks soal/kalimat rumpang, dan tentukan kata kunci jawaban yang akurat.
+4. Konfigurasi Soal Essay Dan Rubrik: Pilih tipe Essay, susun pertanyaan uraian penalaran, dan masukkan poin rubrik penilaian manual beserta bobot skor.
+5. Tinjau Daftar Soal Dan Penutup: Periksa seluruh butir soal yang tersimpan rapi dengan lencana tipe, kunci jawaban, dan skor otomatis.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual interaktif beresolusi tinggi 1080p 60 FPS.
+- Penjelasan bertahap yang ramah bagi pendidik dan penyusun bank soal.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #TutorialGuru #BankSoal #SoalMenjodohkan #SoalEssay #UjianOnline

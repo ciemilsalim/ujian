@@ -2,7 +2,7 @@
   "version": "4.5.0",
   "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
   "project_id": "ujian",
-  "title": "Tutorial Admin Proktor ZEXAM-CBT: Berkas Administrasi, Kartu Ujian, & Rekap Nilai",
+  "title": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran",
   "mode": "desktop",
   "fps": 60,
   "viewport": {
@@ -62,348 +62,427 @@
     },
     {
       "do": "wait_for",
-    },
-    {
-      "do": "hold",
-      "ms": 500
+      "selector": "h2:has-text(\"Halo,\")"
     }
   ],
   "scenes": [
     {
-      "scene_id": "scene_01_administrasi_sesi_dan_dokumen",
-      "narration": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada video kali ini, kita akan membahas modul administrasi ujian, pencetakan kartu peserta, serta rekapitulasi dan analisis nilai. Pertama, buka menu Administrasi Ujian pada bilah navigasi kiri. Klik tombol Cetak Dokumen Administrasi pada sesi yang diinginkan untuk membuka sentral dokumen resmi.",
-      "narration_segments": [
-        {
-          "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.",
-          "pause_after_ms": 250
-        },
-        {
-          "text": "Pada video kali ini, kita akan membahas modul administrasi ujian, pencetakan kartu peserta, serta rekapitulasi dan analisis nilai.",
-          "pause_after_ms": 300
-        },
-        {
-          "text": "Pertama, buka menu Administrasi Ujian pada bilah navigasi kiri.",
-          "pause_after_ms": 250
-        },
-        {
-          "text": "Klik tombol Cetak Dokumen Administrasi pada sesi yang diinginkan untuk membuka sentral dokumen resmi.",
-          "pause_after_ms": 300
-        }
-      ],
+      "scene_id": "scene_01_profil_sekolah_dan_kkm",
+      "name": "Profil Sekolah, Kop Surat Dan Ambang Batas KKM",
+      "narration": "Halo rekan proktor dan pengelola sistem ZEXAM-CBT. Pada video kali ini, kita akan mempelajari panduan lengkap konfigurasi Identitas Sekolah, fitur Anti-Kecurangan, serta Manajemen Tahun Ajaran dan TA Switcher. Dari dashboard proktor, kita buka menu Pengaturan Sistem. Di sini, Anda dapat mengisikan profil lengkap sekolah, mulai dari nama institusi, alamat resmi, identitas kepala sekolah beserta NIP, serta logo sekolah yang akan otomatis tercetak pada kop surat berita acara dan kartu peserta ujian.",
       "steps": [
         {
-          "do": "hover",
-          "target": "a[href*=\"/administration\"]",
-          "hold_ms": 500
-        },
-        {
-          "do": "click",
+          "do": "goto",
+          "url": "http://127.0.0.1:8000/proktor/settings"
         },
         {
           "do": "wait_for",
-          "selector": "h2:has-text(\"Administrasi Ujian\")",
-          "budget_ms": 6000
+          "selector": "h2:has-text(\"Pengaturan Aplikasi\")"
         },
         {
-          "do": "hover",
-          "target": "button:has-text(\"Dokumen Sesi\")",
-          "hold_ms": 600
-        },
-        {
-          "do": "hover",
-          "target": "button:has-text(\"Cetak Dokumen Administrasi\")",
-          "hold_ms": 600
-        },
-        {
-          "do": "click",
-          "target": "button:has-text(\"Cetak Dokumen Administrasi\")"
-        },
-        {
-          "do": "wait_for",
-          "selector": "text=Sentral Dokumen Administrasi",
-          "budget_ms": 6000
-        },
-        {
-          "do": "hold",
-          "ms": 800
-        }
-      ],
-      "result_hold_ms": 1000
-    },
-    {
-      "scene_id": "scene_02_sinkronisasi_ruang_dan_pengawas",
-      "narration": "Di dalam jendela sentral administrasi, proktor dapat memilih ruangan dan nama pengawas. Seluruh identitas yang dipilih di sini akan otomatis disinkronkan ke dalam dokumen PDF Berita Acara pelaksanaan ujian, Daftar Hadir Peserta, maupun Daftar Hadir Pengawas ruangan.",
-      "narration_segments": [
-        {
-          "text": "Di dalam jendela sentral administrasi, proktor dapat memilih ruangan dan nama pengawas.",
-          "pause_after_ms": 250
-        },
-        {
-          "text": "Seluruh identitas yang dipilih di sini akan otomatis disinkronkan ke dalam dokumen PDF Berita Acara pelaksanaan ujian, Daftar Hadir Peserta, maupun Daftar Hadir Pengawas ruangan.",
-          "pause_after_ms": 300
-        }
-      ],
-      "steps": [
-        {
-          "do": "hover",
-          "target": "select#room_id",
-          "hold_ms": 700
-        },
-        {
-          "do": "hover",
-          "target": "select#proctor_id",
-          "hold_ms": 700
-        },
-        {
-          "do": "hover",
-          "target": "button:has-text(\"Berita Acara\")",
-          "hold_ms": 800
-        },
-        {
-          "do": "hover",
-          "target": "button:has-text(\"Kehadiran Siswa\")",
-          "hold_ms": 800
-        },
-        {
-          "do": "hover",
-          "target": "button:has-text(\"Kehadiran Pengawas\")",
-          "hold_ms": 800
-        },
-        {
-          "do": "click",
-        },
-        {
-          "do": "wait_for",
-          "selector": "button:has-text(\"Cetak Dokumen Administrasi\")",
-          "budget_ms": 5000
-        },
-        {
-          "do": "hold",
-          "ms": 600
-        }
-      ],
-      "result_hold_ms": 1000
-    },
-    {
-      "scene_id": "scene_03_tata_tertib_peserta_dan_pengawas",
-      "narration": "Selanjutnya, pilih tab Tata Tertib. Proktor dapat langsung mengunduh berkas resmi Tata Tertib Peserta dan panduan integritas Tata Tertib Pengawas berformat PDF standar siap cetak untuk ditempelkan di papan pengumuman maupun dibacakan sebelum ujian dimulai.",
-      "narration_segments": [
-        {
-          "text": "Selanjutnya, pilih tab Tata Tertib.",
-          "pause_after_ms": 250
-        },
-        {
-          "text": "Proktor dapat langsung mengunduh berkas resmi Tata Tertib Peserta dan panduan integritas Tata Tertib Pengawas berformat PDF standar siap cetak untuk ditempelkan di papan pengumuman maupun dibacakan sebelum ujian dimulai.",
-          "pause_after_ms": 300
-        }
-      ],
-      "steps": [
-        {
-          "do": "hover",
-          "target": "button:has-text(\"Tata Tertib\")",
-          "hold_ms": 500
-        },
-        {
-          "do": "click",
-          "target": "button:has-text(\"Tata Tertib\")"
-        },
-        {
-          "do": "wait_for",
-          "selector": "text=Tata Tertib Peserta",
-          "budget_ms": 6000
-        },
-        {
-          "do": "hover",
-          "target": "h3:has-text(\"Tata Tertib Peserta\")",
-          "hold_ms": 800
-        },
-        {
-          "target": "a[href*=\"/administration/exam-rules\"]",
-          "hold_ms": 600
-        },
-        {
-          "do": "hover",
-          "target": "h3:has-text(\"Tata Tertib Pengawas\")",
-          "hold_ms": 800
-        },
-        {
-          "target": "a[href*=\"/administration/proctor-rules\"]",
-          "hold_ms": 600
-        },
-        {
-          "do": "hold",
-          "ms": 800
-        }
-      ],
-      "result_hold_ms": 1000
-    },
-    {
-      "scene_id": "scene_04_cetak_kartu_peserta_ujian",
-      "narration": "Untuk mencetak kartu ujian seluruh peserta didik, buka tab Kartu Peserta. Sistem secara otomatis mengelompokkan daftar kelas beserta jumlah siswanya. Cukup klik tombol Cetak Kartu pada kelas yang dipilih untuk mengunduh lembar kartu ujian PDF berformat A4 yang dilengkapi pas foto, barcode, dan QR code login instan.",
-      "narration_segments": [
-        {
-          "text": "Untuk mencetak kartu ujian seluruh peserta didik, buka tab Kartu Peserta.",
-          "pause_after_ms": 250
-        },
-        {
-          "text": "Sistem secara otomatis mengelompokkan daftar kelas beserta jumlah siswanya.",
-          "pause_after_ms": 250
-        },
-        {
-          "text": "Cukup klik tombol Cetak Kartu pada kelas yang dipilih untuk mengunduh lembar kartu ujian PDF berformat A4 yang dilengkapi pas foto, barcode, dan QR code login instan.",
-          "pause_after_ms": 300
-        }
-      ],
-      "steps": [
-        {
-          "do": "hover",
-          "target": "button:has-text(\"Kartu Peserta\")",
-          "hold_ms": 500
-        },
-        {
-          "do": "click",
-          "target": "button:has-text(\"Kartu Peserta\")"
-        },
-        {
-          "do": "wait_for",
-          "selector": "button:has-text(\"Cetak Kartu\")",
-          "budget_ms": 6000
-        },
-        {
-          "do": "hover",
-          "target": "p:has-text(\"Siswa\")",
-          "hold_ms": 800
-        },
-        {
-          "do": "hover",
-          "target": "button:has-text(\"Cetak Kartu\")",
-          "hold_ms": 1000
-        },
-        {
-          "do": "hold",
+          "do": "wait",
           "ms": 1000
-        }
-      ],
-      "result_hold_ms": 1200
-    },
-    {
-      "scene_id": "scene_05_rekapitulasi_hasil_dan_ekspor",
-      "narration": "Setelah sesi ujian selesai dilaksanakan, buka menu Hasil Ujian. Halaman ini menyajikan rekapitulasi sesi, filter tahun ajaran aktif, serta bilah progres partisipasi siswa yang telah menyelesaikan ujian. Anda dapat langsung mengunduh rekapan nilai lengkap dalam format PDF atau Excel hanya dengan satu klik.",
-      "narration_segments": [
-        {
-          "text": "Setelah sesi ujian selesai dilaksanakan, buka menu Hasil Ujian.",
-          "pause_after_ms": 250
         },
         {
-          "text": "Halaman ini menyajikan rekapitulasi sesi, filter tahun ajaran aktif, serta bilah progres partisipasi siswa yang telah menyelesaikan ujian.",
-          "pause_after_ms": 300
-        },
-        {
-          "text": "Anda dapat langsung mengunduh rekapan nilai lengkap dalam format PDF atau Excel hanya dengan satu klik.",
-          "pause_after_ms": 300
-        }
-      ],
-      "steps": [
-        {
-          "do": "hover",
-          "target": "a[href*=\"/results\"]",
-          "hold_ms": 500
+          "do": "move",
+          "target": "#school_name"
         },
         {
           "do": "click",
+          "target": "#school_name"
         },
         {
-          "do": "wait_for",
-          "selector": "h2:has-text(\"Hasil Ujian & Analitik\")",
-          "budget_ms": 6000
+          "do": "fill",
+          "target": "#school_name",
+          "value": "SMP Bintang Pelajar Nusantara"
         },
         {
-          "do": "hover",
-          "target": "select",
-          "hold_ms": 700
+          "do": "wait",
+          "ms": 700
         },
         {
-          "do": "hover",
-          "target": "table",
-          "hold_ms": 800
+          "do": "move",
+          "target": "#school_address"
         },
         {
-          "do": "hover",
-          "target": "a:has-text(\"PDF\")",
-          "hold_ms": 700
+          "do": "click",
+          "target": "#school_address"
         },
         {
-          "do": "hover",
-          "target": "a:has-text(\"Excel\")",
-          "hold_ms": 700
+          "do": "fill",
+          "target": "#school_address",
+          "value": "Jl. Pendidikan Karakter No. 45, Jakarta"
         },
         {
-          "do": "hold",
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "#principal_name"
+        },
+        {
+          "do": "click",
+          "target": "#principal_name"
+        },
+        {
+          "do": "fill",
+          "target": "#principal_name",
+          "value": "Dra. Hj. Nurul Hidayah, M.Pd"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "#principal_nip"
+        },
+        {
+          "do": "click",
+          "target": "#principal_nip"
+        },
+        {
+          "do": "fill",
+          "target": "#principal_nip",
+          "value": "197508151998032001"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "#passing_grade"
+        },
+        {
+          "do": "click",
+          "target": "#passing_grade"
+        },
+        {
+          "do": "fill",
+          "target": "#passing_grade",
+          "value": "75"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_02_sensor_anti_curang_dan_mode",
+      "name": "Konfigurasi Sensor Anti-Curang Dan Mode Aplikasi",
+      "narration": "ZEXAM-CBT dibekali sistem keamanan canggih dengan kontrol anti-kecurangan modular. Anda dapat mengaktifkan sensor kecurangan, menentukan batas maksimal peringatan sebelum sanksi diskualifikasi, serta mengaktifkan proteksi blokir klik kanan, pemblokiran copy-paste, deteksi pindah tab, dan kewajiban layar penuh. Selain itu, tentukan mode operasional aplikasi, apakah berjalan secara online pada cloud hosting, ataupun offline melalui server lokal sekolah. Klik Simpan Perubahan untuk mengunci seluruh parameter.",
+      "steps": [
+        {
+          "do": "move",
+          "target": "h3:has-text(\"Pengaturan Kecurangan\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "#max_cheat_warnings"
+        },
+        {
+          "do": "click",
+          "target": "#max_cheat_warnings"
+        },
+        {
+          "do": "fill",
+          "target": "#max_cheat_warnings",
+          "value": "3"
+        },
+        {
+          "do": "wait",
           "ms": 800
-        }
-      ],
-      "result_hold_ms": 1000
-    },
-    {
-      "scene_id": "scene_06_analisis_hasil_dan_grafik_sebaran",
-      "narration": "Untuk evaluasi mendalam, klik tombol Analisis. ZEXAM-CBT menyediakan visualisasi data interaktif meliputi nilai rata-rata, nilai tertinggi dan terendah, rasio kelulusan KKM, serta diagram sebaran nilai siswa. Seluruh proses administrasi dan evaluasi ujian kini tuntas dalam hitungan detik. Terima kasih telah menyaksikan!",
-      "narration_segments": [
-        {
-          "text": "Untuk evaluasi mendalam, klik tombol Analisis.",
-          "pause_after_ms": 250
         },
         {
-          "text": "ZEXAM-CBT menyediakan visualisasi data interaktif meliputi nilai rata-rata, nilai tertinggi dan terendah, rasio kelulusan KKM, serta diagram sebaran nilai siswa.",
-          "pause_after_ms": 300
+          "do": "move",
+          "target": "span:has-text(\"Blokir Klik Kanan\")"
         },
         {
-          "text": "Seluruh proses administrasi dan evaluasi ujian kini tuntas dalam hitungan detik. Terima kasih telah menyaksikan!",
-          "pause_after_ms": 300
-        }
-      ],
-      "steps": [
+          "do": "wait",
+          "ms": 700
+        },
         {
-          "do": "hover",
-          "target": "a:has-text(\"Analisis\")",
-          "hold_ms": 600
+          "do": "move",
+          "target": "span:has-text(\"Blokir Copy, Cut, & Paste\")"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "span:has-text(\"Wajib Fullscreen\")"
+        },
+        {
+          "do": "wait",
+          "ms": 900
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Online\")"
+        },
+        {
+          "do": "wait",
+          "ms": 900
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Offline\")"
+        },
+        {
+          "do": "wait",
+          "ms": 900
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Simpan Perubahan\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
         },
         {
           "do": "click",
-          "target": "a:has-text(\"Analisis\")"
+          "target": "button:has-text(\"Simpan Perubahan\")"
         },
         {
-          "do": "wait_for",
-          "selector": "h2:has-text(\"Analisis Hasil:\")",
-          "budget_ms": 6000
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_03_area_berbahaya_clear_data",
+      "name": "Area Berbahaya Dan Pembersihan Data Transaksi",
+      "narration": "Di bagian bawah halaman pengaturan, ZEXAM-CBT menyediakan fitur Area Berbahaya untuk pembersihan data transaksional. Fitur ini dirancang khusus untuk memfasilitasi pergantian periode atau tahun ajaran baru. Dengan satu tombol, Anda dapat membersihkan rekaman jawaban siswa dan riwayat sesi ujian terdahulu secara aman, tanpa khawatir kehilangan data master penting seperti bank soal, kurikulum mata pelajaran, maupun database pengguna.",
+      "steps": [
+        {
+          "do": "scroll",
+          "by": 450
         },
         {
-          "do": "hover",
-          "target": "h2:has-text(\"Analisis Hasil:\")",
-          "hold_ms": 800
+          "do": "wait",
+          "ms": 1200
         },
         {
-          "do": "hover",
-          "target": "a:has-text(\"Unduh Laporan PDF\")",
-          "hold_ms": 600
+          "do": "move",
+          "target": "h3:has-text(\"Area Berbahaya\")"
         },
         {
-          "do": "hover",
-          "target": "a:has-text(\"Unduh DOCX\")",
-          "hold_ms": 600
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "h4:has-text(\"Bersihkan Seluruh Data Ujian\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "p:has-text(\"Menghapus: Jawaban Siswa\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
         },
         {
           "do": "scroll",
-          "target": "window",
-          "direction": "down",
-          "distance": 300,
-          "hold_ms": 1500
+          "by": -450
         },
         {
-          "do": "hold",
+          "do": "wait",
           "ms": 2000
         }
-      ],
-      "result_hold_ms": 2500
+      ]
+    },
+    {
+      "scene_id": "scene_04_manajemen_tahun_ajaran",
+      "name": "Manajemen Master Tahun Ajaran Dan Semester",
+      "narration": "Selanjutnya, mari kita masuk ke menu Tahun Ajaran pada kelompok Data Master. Halaman ini memuat seluruh periode akademik sekolah Anda. Untuk menambahkan periode baru, klik tombol Tambah Tahun Ajaran. Masukkan nama tahun pelajaran, misalnya 2026 garis miring 2027, pilih semester ganjil atau genap, dan centang opsi Jadikan Aktif jika ingin langsung menjadikannya acuan sistem. Simpan data, dan periode baru siap digunakan untuk penjadwalan ujian dan penugasan bank soal.",
+      "steps": [
+        {
+          "do": "goto",
+          "url": "http://127.0.0.1:8000/proktor/academic-years"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Master Tahun Ajaran & Semester\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "table tbody tr"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Tahun Ajaran Baru\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tahun Ajaran Baru\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Tambah Tahun Ajaran Baru\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "#name"
+        },
+        {
+          "do": "click",
+          "target": "#name"
+        },
+        {
+          "do": "fill",
+          "target": "#name",
+          "value": "2026/2027"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "move",
+          "target": "#semester"
+        },
+        {
+          "do": "click",
+          "target": "#semester"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "move",
+          "target": "label[for=\"is_active\"]"
+        },
+        {
+          "do": "click",
+          "target": "#is_active"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "form button:has-text(\"Tambah Tahun Ajaran\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "form button:has-text(\"Tambah Tahun Ajaran\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "td:has-text(\"2026/2027\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "tr:has-text(\"2026/2027\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_05_fitur_ta_switcher",
+      "name": "Fitur TA Switcher Cepat Pada Topbar Navigasi",
+      "narration": "Salah satu keunggulan ZEXAM-CBT adalah fitur TA Switcher cepat di bagian atas navigasi. Tanpa perlu merubah status aktif sistem sekolah, proktor dapat langsung beralih melihat arsip ujian dan bank soal pada tahun ajaran terdahulu hanya dengan memilihnya dari menu dropdown. Lencana oranye akan menandakan mode peninjauan aktif, dan Anda cukup menekan tombol Reset untuk kembali ke tahun ajaran utama. Seluruh konfigurasi sistem sekolah Anda kini telah terkelola dengan sempurna.",
+      "steps": [
+        {
+          "do": "move",
+          "target": "select[title*=\"Tahun Ajaran\"]"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "click",
+          "target": "select[title*=\"Tahun Ajaran\"]"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "eval",
+          "code": "const sel = document.querySelector('select[title*=\"Tahun Ajaran\"]'); if (sel && sel.options.length > 1) { sel.value = sel.options[1].value; sel.dispatchEvent(new Event('change', { bubbles: true })); }"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        },
+        {
+          "do": "move",
+          "target": "span.animate-bounce"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Reset\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Reset\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        },
+        {
+          "do": "move",
+          "target": "h2:has-text(\"Master Tahun Ajaran & Semester\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
     }
   ]
 }

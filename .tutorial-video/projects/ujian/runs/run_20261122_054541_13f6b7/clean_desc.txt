@@ -1,0 +1,27 @@
+Tutorial Admin Proktor ZEXAM-CBT: Manajemen Ruang Ujian, Distribusi Siswa & Denah Duduk
+
+Video panduan resmi cara penggunaan fitur pada aplikasi ZEXAM-CBT. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Navigasi Ruang Ujian
+00:29 - Tambah Ruang Dan Kapasitas
+01:02 - Modul Distribusi Siswa Global
+01:30 - Filter Kelas Dan Pembagian Siswa
+01:59 - Denah Duduk Interaktif Dan Cetak PDF
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Navigasi Ruang Ujian: Masuk ke kelompok menu Data Master dan pilih Ruang Ujian untuk membuka pusat data ruangan.
+2. Tambah Ruang Dan Kapasitas: Tambahkan ruang ujian baru, tentukan kapasitas maksimal kursi, dan pantau status keterisian ruangan.
+3. Modul Distribusi Siswa Global: Buka fitur Atur Ruang Siswa (Permanen) untuk mengalokasikan peserta ke masing-masing ruangan secara terpusat.
+4. Filter Kelas Dan Pembagian Siswa: Manfaatkan filter rombel kelas dan checkbox seleksi massal untuk membagi satu kelas ke ruang tujuan dalam satu klik.
+5. Denah Duduk Interaktif Dan Cetak PDF: Atur tata letak baris dan kolom meja siswa di depan meja pengawas secara visual, lalu cetak berkas denah resmi berformat PDF.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual interaktif beresolusi tinggi 1080p 60 FPS.
+- Penjelasan bertahap yang komprehensif bagi Admin & Proktor CBT.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #TutorialAdmin #ProktorCBT #RuangUjian #DenahDuduk #UjianOnline

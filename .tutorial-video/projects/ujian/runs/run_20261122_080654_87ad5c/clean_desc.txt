@@ -1,0 +1,27 @@
+Tutorial Proktor ZEXAM-CBT: Manajemen Pengawas & Penetapan Ruang Ujian
+
+Video panduan resmi cara penggunaan fitur pada aplikasi ZEXAM-CBT. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Navigasi Master Pengawas
+00:41 - Tambah Pengawas Baru & PIN Login Unik
+01:31 - Akses QR Code & Cetak Barcode
+02:14 - Penetapan Pengawas ke Ruang Ujian
+03:05 - Integrasi Administrasi & Berita Acara
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Navigasi Master Pengawas: Buka menu Data Master pada navigasi sidebar lalu pilih Manajemen Pengawas untuk meninjau tabel data pengawas, NIP, dan PIN login.
+2. Tambah Pengawas Baru: Klik tombol Tambah Pengawas, masukkan nama lengkap beserta gelar dan NIP/NIK, sistem secara otomatis men-generate 6-digit PIN login unik.
+3. Akses QR Code: Klik ikon QR Code pada baris pengawas untuk membuka jendela kartu akses barcode mode Server Online (Internet Publik) maupun Server Offline (Intranet Lokal) yang siap dicetak.
+4. Penetapan Pengawas ke Ruang: Masuk ke menu Pembagian Ruang pada sesi ujian aktif, pilih tenaga pengawas yang bertugas di masing-masing ruang, lalu klik Update dengan proteksi validasi anti-bentrok.
+5. Integrasi Administrasi: Seluruh penugasan pengawas otomatis terhubung ke pencetakan Berita Acara Ujian, Daftar Hadir Pengawas, dan lembar Tata Tertib Pengawas.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual interaktif beresolusi tinggi 1080p 60 FPS.
+- Penjelasan alur bertahap yang ramah bagi administrator dan proktor sekolah.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #TutorialProktor #ManajemenPengawas #RuangUjian #UjianOnline

@@ -1,0 +1,27 @@
+Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran
+
+Video panduan resmi cara penggunaan fitur pada aplikasi ZEXAM-CBT. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Profil Sekolah, Kop Surat & KKM
+01:02 - Sensor Anti-Curang & Mode Aplikasi
+01:54 - Area Berbahaya (Pembersihan Data Ujian)
+02:33 - Manajemen Master Tahun Ajaran & Semester
+03:29 - Fitur TA Switcher Cepat pada Topbar
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Profil Sekolah, Kop Surat & KKM: Buka menu Pengaturan Sistem untuk melengkapi profil sekolah, nama institusi, alamat, identitas kepala sekolah, NIP, logo kop surat, serta ambang batas KKM kelulusan.
+2. Sensor Anti-Curang & Mode Aplikasi: Aktifkan sakelar anti-kecurangan, tentukan batas maksimal peringatan sebelum diskualifikasi, kontrol modular blokir klik kanan, copy-paste, deteksi tab switch, wajib fullscreen, serta pilih mode Online atau Offline.
+3. Area Berbahaya (Clear Data): Manfaatkan fitur pembersihan data transaksional untuk persiapan tahun ajaran baru tanpa menghapus data master bank soal, mapel, atau akun pengguna.
+4. Manajemen Tahun Ajaran: Tambahkan tahun ajaran baru (misal 2026/2027), pilih semester ganjil/genap, dan tentukan status aktif sistem dengan satu kali klik.
+5. Fitur TA Switcher: Beralih tampilan arsip tahun ajaran terdahulu secara instan melalui widget dropdown di topbar tanpa mengganggu status aktif sistem, dilengkapi tombol Reset kilat.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual interaktif beresolusi tinggi 1080p 60 FPS CFR.
+- Penjelasan alur bertahap yang ramah bagi administrator dan proktor sekolah.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #TutorialProktor #PengaturanSekolah #AntiCurang #TahunAjaran #UjianOnline

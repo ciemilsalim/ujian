@@ -1,0 +1,187 @@
+{
+  "sample_rate": 48000,
+  "source": "recording\\events-desktop.json",
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "ducking_attack_ms": 200,
+    "ducking_release_ms": 500,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true,
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "file_rel": "resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256_verified": true,
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa"
+  },
+  "bgm_acoustics": {
+    "bgm_present": true,
+    "ducked_bgm_rms_dbfs": -45.8,
+    "pause_bgm_rms_dbfs": -35.28,
+    "speech_master_rms_dbfs": -18.35,
+    "measured_voice_advantage_db": 27.45,
+    "measured_ducking_attenuation_db": 10.52,
+    "audible": false
+  },
+  "placements": [
+    {
+      "kind": "narration",
+      "at_ms": 200,
+      "dur_ms": 22870.0,
+      "ref": "scene_01_navigasi_data_kelas"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 25400,
+      "dur_ms": 45.0,
+      "ref": ".hidden.lg\\:block button:has-text(\"Data Master\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 27700,
+      "dur_ms": 45.0,
+      "ref": ".hidden.lg\\:block a:has-text(\"Data Kelas\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 30583.333,
+      "dur_ms": 18506.0,
+      "ref": "scene_02_tambah_rombel_baru"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 51700,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Tambah Kelas\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 53800,
+      "dur_ms": 45.0,
+      "ref": "#name"
+    },
+    {
+      "kind": "key",
+      "at_ms": 54100,
+      "dur_ms": 30.0,
+      "ref": "K"
+    },
+    {
+      "kind": "key",
+      "at_ms": 54383.333,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 54516.667,
+      "dur_ms": 30.0,
+      "ref": "l"
+    },
+    {
+      "kind": "key",
+      "at_ms": 54650,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 54916.667,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55033.333,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 55183.333,
+      "dur_ms": 30.0,
+      "ref": "V"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55283.333,
+      "dur_ms": 30.0,
+      "ref": "I"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55400,
+      "dur_ms": 30.0,
+      "ref": "I"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55500,
+      "dur_ms": 30.0,
+      "ref": "-"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55616.667,
+      "dur_ms": 30.0,
+      "ref": "C"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 57800,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Batal\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 59933.333,
+      "dur_ms": 18122.0,
+      "ref": "scene_03_kelola_anggota_siswa_kelas"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 80300,
+      "dur_ms": 45.0,
+      "ref": "a:has-text(\"Kelola Siswa\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 85500,
+      "dur_ms": 19706.0,
+      "ref": "scene_04_modul_kenaikan_kelas_dan_mutasi"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 107816.667,
+      "dur_ms": 45.0,
+      "ref": ".hidden.lg\\:block a:has-text(\"Kenaikan Kelas\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 113300,
+      "dur_ms": 23874.0,
+      "ref": "scene_05_pemetaan_massal_wizard_dan_kelulusan"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 139216.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Pemetaan Massal\")"
+    },
+    {
+      "kind": "background_music",
+      "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+      "base_volume": 0.16,
+      "ducking_volume": 0.045,
+      "at_ms": 0.0,
+      "dur_ms": 143650.0,
+      "ref": "bgm"
+    }
+  ]
+}

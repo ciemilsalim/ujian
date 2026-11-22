@@ -1,0 +1,778 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_bank_soal",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 22566,
+      "action_start_ms": 22866.667,
+      "action_end_ms": 29366.667,
+      "end_ms": 30566.667
+    },
+    {
+      "scene_id": "scene_02_unduh_template_resmi_excel",
+      "start_ms": 30566.667,
+      "narration_start_ms": 30766.667,
+      "narration_end_ms": 52772.667,
+      "action_start_ms": 53083.333,
+      "action_end_ms": 57916.667,
+      "end_ms": 59116.667
+    },
+    {
+      "scene_id": "scene_03_panduan_struktur_kolom_excel",
+      "start_ms": 59116.667,
+      "narration_start_ms": 59316.667,
+      "narration_end_ms": 78038.667,
+      "action_start_ms": 78350,
+      "action_end_ms": 83816.667,
+      "end_ms": 85316.667
+    },
+    {
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci",
+      "start_ms": 85316.667,
+      "narration_start_ms": 85516.667,
+      "narration_end_ms": 109588.667,
+      "action_start_ms": 109900,
+      "action_end_ms": 114200,
+      "end_ms": 115400
+    },
+    {
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress",
+      "start_ms": 115400,
+      "narration_start_ms": 115600,
+      "narration_end_ms": 132282,
+      "action_start_ms": 132583.333,
+      "action_end_ms": 137016.667,
+      "end_ms": 138516.667
+    },
+    {
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda",
+      "start_ms": 138516.667,
+      "narration_start_ms": 138716.667,
+      "narration_end_ms": 163560.667,
+      "action_start_ms": 163866.667,
+      "action_end_ms": 169933.333,
+      "end_ms": 171433.333
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_bank_soal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_bank_soal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\audio\\scene_01_navigasi_bank_soal.wav",
+      "duration_ms": 22366,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 22566.667,
+      "frame": 1354,
+      "scene_id": "scene_01_navigasi_bank_soal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 22866.667,
+      "frame": 1372,
+      "scene_id": "scene_01_navigasi_bank_soal"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 22866.667,
+      "frame": 1372,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 1162.4,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 24200,
+      "frame": 1452,
+      "at": [
+        127.5,
+        199
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 24800,
+      "frame": 1488,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 24883.333,
+      "frame": 1493,
+      "at": [
+        127.5,
+        199
+      ],
+      "label": ".hidden.lg\\:block a:has-text(\"Banks Soal\")",
+      "bbox": [
+        16,
+        179,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 25016.667,
+      "frame": 1501,
+      "selector": "#btn-bank-detail-1",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 26066.667,
+      "frame": 1564,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        1458.9609375,
+        400.5
+      ],
+      "dist_px": 1346.6,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 27400,
+      "frame": 1644,
+      "at": [
+        1458.9609375,
+        400.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 28000,
+      "frame": 1680,
+      "from": [
+        1458.9609375,
+        400.5
+      ],
+      "to": [
+        1458.9609375,
+        400.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 28083.333,
+      "frame": 1685,
+      "at": [
+        1458.9609375,
+        400.5
+      ],
+      "label": "#btn-bank-detail-1",
+      "bbox": [
+        1419.265625,
+        392,
+        79.390625,
+        17
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 28216.667,
+      "frame": 1693,
+      "selector": "#btn-import-dropdown",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 29366.667,
+      "frame": 1762,
+      "scene_id": "scene_01_navigasi_bank_soal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 30566.667,
+      "frame": 1834,
+      "scene_id": "scene_01_navigasi_bank_soal"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 30566.667,
+      "frame": 1834,
+      "scene_id": "scene_02_unduh_template_resmi_excel"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 30566.667,
+      "frame": 1834,
+      "scene_id": "scene_02_unduh_template_resmi_excel",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\audio\\scene_02_unduh_template_resmi_excel.wav",
+      "duration_ms": 22006,
+      "at_ms": 30766.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 52783.333,
+      "frame": 3167,
+      "scene_id": "scene_02_unduh_template_resmi_excel"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 53083.333,
+      "frame": 3185,
+      "scene_id": "scene_02_unduh_template_resmi_excel"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 53083.333,
+      "frame": 3185,
+      "from": [
+        1458.9609375,
+        400.5
+      ],
+      "to": [
+        1559.2265625,
+        277
+      ],
+      "dist_px": 159.1,
+      "move_ms": 783.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 54066.667,
+      "frame": 3244,
+      "at": [
+        1559.2265625,
+        277
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 54866.667,
+      "frame": 3292,
+      "from": [
+        1559.2265625,
+        277
+      ],
+      "to": [
+        1559.2265625,
+        277
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 54950,
+      "frame": 3297,
+      "at": [
+        1559.2265625,
+        277
+      ],
+      "label": "#btn-download-template-excel",
+      "bbox": [
+        1526.046875,
+        260,
+        66.359375,
+        34
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 55883.333,
+      "frame": 3353,
+      "from": [
+        1559.2265625,
+        277
+      ],
+      "to": [
+        1636.203125,
+        277
+      ],
+      "dist_px": 77,
+      "move_ms": 642,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 56716.667,
+      "frame": 3403,
+      "at": [
+        1636.203125,
+        277
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 57916.667,
+      "frame": 3475,
+      "scene_id": "scene_02_unduh_template_resmi_excel"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 59116.667,
+      "frame": 3547,
+      "scene_id": "scene_02_unduh_template_resmi_excel"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 59116.667,
+      "frame": 3547,
+      "scene_id": "scene_03_panduan_struktur_kolom_excel"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 59116.667,
+      "frame": 3547,
+      "scene_id": "scene_03_panduan_struktur_kolom_excel",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\audio\\scene_03_panduan_struktur_kolom_excel.wav",
+      "duration_ms": 18722,
+      "at_ms": 59316.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 78050,
+      "frame": 4683,
+      "scene_id": "scene_03_panduan_struktur_kolom_excel"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 78350,
+      "frame": 4701,
+      "scene_id": "scene_03_panduan_struktur_kolom_excel"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 78350,
+      "frame": 4701,
+      "from": [
+        1636.203125,
+        277
+      ],
+      "to": [
+        1717.65625,
+        114
+      ],
+      "dist_px": 182.2,
+      "move_ms": 812,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 79350,
+      "frame": 4761,
+      "at": [
+        1717.65625,
+        114
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 79950,
+      "frame": 4797,
+      "from": [
+        1717.65625,
+        114
+      ],
+      "to": [
+        1717.65625,
+        114
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 80033.333,
+      "frame": 4802,
+      "at": [
+        1717.65625,
+        114
+      ],
+      "label": "#btn-import-dropdown",
+      "bbox": [
+        1660.09375,
+        96,
+        115.125,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 80166.667,
+      "frame": 4810,
+      "selector": "#btn-panduan-import",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 80716.667,
+      "frame": 4843,
+      "from": [
+        1717.65625,
+        114
+      ],
+      "to": [
+        1679.21875,
+        234
+      ],
+      "dist_px": 126,
+      "move_ms": 736.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 81650,
+      "frame": 4899,
+      "at": [
+        1679.21875,
+        234
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 82250,
+      "frame": 4935,
+      "from": [
+        1679.21875,
+        234
+      ],
+      "to": [
+        1679.21875,
+        234
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 82333.333,
+      "frame": 4940,
+      "at": [
+        1679.21875,
+        234
+      ],
+      "label": "#btn-panduan-import",
+      "bbox": [
+        1583.21875,
+        216,
+        192,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 82466.667,
+      "frame": 4948,
+      "selector": "#btn-modal-start-import",
+      "budget_ms": 4000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 83816.667,
+      "frame": 5029,
+      "scene_id": "scene_03_panduan_struktur_kolom_excel"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 85316.667,
+      "frame": 5119,
+      "scene_id": "scene_03_panduan_struktur_kolom_excel"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 85316.667,
+      "frame": 5119,
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 85316.667,
+      "frame": 5119,
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\audio\\scene_04_ketentuan_kolom_pertanyaan_dan_kunci.wav",
+      "duration_ms": 24072,
+      "at_ms": 85516.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 109600,
+      "frame": 6576,
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 109900,
+      "frame": 6594,
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 110900,
+      "frame": 6654,
+      "from": [
+        1679.21875,
+        234
+      ],
+      "to": [
+        1166.375,
+        842
+      ],
+      "dist_px": 795.4,
+      "move_ms": 1140.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 112233.333,
+      "frame": 6734,
+      "at": [
+        1166.375,
+        842
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 112833.333,
+      "frame": 6770,
+      "from": [
+        1166.375,
+        842
+      ],
+      "to": [
+        1166.375,
+        842
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 112916.667,
+      "frame": 6775,
+      "at": [
+        1166.375,
+        842
+      ],
+      "label": "#btn-modal-start-import",
+      "bbox": [
+        1060.75,
+        825,
+        211.25,
+        34
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 113050,
+      "frame": 6783,
+      "selector": "#btn-import-excel",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 114200,
+      "frame": 6852,
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 115400,
+      "frame": 6924,
+      "scene_id": "scene_04_ketentuan_kolom_pertanyaan_dan_kunci"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 115400,
+      "frame": 6924,
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 115400,
+      "frame": 6924,
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\audio\\scene_05_eksekusi_import_excel_dan_progress.wav",
+      "duration_ms": 16682,
+      "at_ms": 115600
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 132283.333,
+      "frame": 7937,
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 132583.333,
+      "frame": 7955,
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 132583.333,
+      "frame": 7955,
+      "from": [
+        1166.375,
+        842
+      ],
+      "to": [
+        1679.21875,
+        162
+      ],
+      "dist_px": 851.7,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 133916.667,
+      "frame": 8035,
+      "at": [
+        1679.21875,
+        162
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 137016.667,
+      "frame": 8221,
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 138516.667,
+      "frame": 8311,
+      "scene_id": "scene_05_eksekusi_import_excel_dan_progress"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 138516.667,
+      "frame": 8311,
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 138516.667,
+      "frame": 8311,
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\audio\\scene_06_tinjau_hasil_soal_pilihan_ganda.wav",
+      "duration_ms": 24844,
+      "at_ms": 138716.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 163566.667,
+      "frame": 9814,
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 163866.667,
+      "frame": 9832,
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda"
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 163866.667,
+      "frame": 9832,
+      "from_y": 0,
+      "to_y": 400,
+      "dur_ms": 820
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 164716.667,
+      "frame": 9883,
+      "y": 400
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 165716.667,
+      "frame": 9943,
+      "from_y": 400,
+      "to_y": 800,
+      "dur_ms": 820
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 166566.667,
+      "frame": 9994,
+      "y": 800
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 167766.667,
+      "frame": 10066,
+      "from_y": 800,
+      "to_y": 0,
+      "dur_ms": 1150
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 168933.333,
+      "frame": 10136,
+      "y": 0
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 169933.333,
+      "frame": 10196,
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 171433.333,
+      "frame": 10286,
+      "scene_id": "scene_06_tinjau_hasil_soal_pilihan_ganda"
+    }
+  ]
+}

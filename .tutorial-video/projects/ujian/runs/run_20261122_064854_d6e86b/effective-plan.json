@@ -1,0 +1,353 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "guru"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "#btn-login-submit"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h2:has-text(\"Dashboard Guru\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_tambah_soal",
+      "narration": "Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari panduan lengkap pembuatan tipe soal interaktif tingkat lanjut, yaitu tipe Menjodohkan atau Matching Pairs, Isian Singkat, serta Soal Uraian atau Essay. Mari kita mulai dengan membuka modul Banks Soal, memilih bank soal yang aktif, lalu menekan tombol Tambah Soal di kanan atas.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada tutorial kali ini, kita akan mempelajari panduan lengkap pembuatan tipe soal interaktif tingkat lanjut, yaitu tipe Menjodohkan atau Matching Pairs, Isian Singkat, serta Soal Uraian atau Essay.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Mari kita mulai dengan membuka modul Banks Soal, memilih bank soal yang aktif, lalu menekan tombol Tambah Soal di kanan atas.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block a:has-text(\"Banks Soal\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block a:has-text(\"Banks Soal\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-bank-detail-1",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        },
+        {
+          "do": "hover",
+          "target": "#btn-bank-detail-1",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "#btn-bank-detail-1"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#btn-tambah-soal",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "#btn-tambah-soal",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "#btn-tambah-soal"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#type",
+          "budget_ms": 4000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan",
+      "narration": "Untuk membuat soal menjodohkan, ubah dropdown Tipe Soal menjadi Menjodohkan. Masukkan instruksi pertanyaan pada kolom teks, kemudian isikan pasangan premis di sebelah kiri dan respon jawaban di sebelah kanan. Sistem ZEXAM-CBT secara otomatis memvalidasi pasangan horizontal sebagai kunci jawaban dan akan mengacak opsi jawaban saat siswa mengerjakan ujian.",
+      "narration_segments": [
+        {
+          "text": "Untuk membuat soal menjodohkan, ubah dropdown Tipe Soal menjadi Menjodohkan.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Masukkan instruksi pertanyaan pada kolom teks, kemudian isikan pasangan premis di sebelah kiri dan respon jawaban di sebelah kanan.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Sistem ZEXAM-CBT secara otomatis memvalidasi pasangan horizontal sebagai kunci jawaban dan akan mengacak opsi jawaban saat siswa mengerjakan ujian.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#type",
+          "hold_ms": 600
+        },
+        {
+          "do": "select",
+          "target": "#type",
+          "value": "menjodohkan"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "#question_text",
+          "hold_ms": 500
+        },
+        {
+          "do": "type",
+          "target": "#question_text",
+          "text": "Jodohkan istilah komponen perangkat keras dengan fungsinya:"
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat",
+      "narration": "Selanjutnya, kita beralih ke tipe soal Isian Singkat. Ubah dropdown Tipe Soal menjadi Isian Singkat. Masukkan pertanyaan atau kalimat rumpang yang harus dilengkapi siswa, lalu tentukan kata kunci jawaban benar pada kolom Kunci Jawaban. Sistem dilengkapi pencocokan cerdas yang fleksibel terhadap variasi huruf besar dan kecil.",
+      "narration_segments": [
+        {
+          "text": "Selanjutnya, kita beralih ke tipe soal Isian Singkat.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Ubah dropdown Tipe Soal menjadi Isian Singkat.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Masukkan pertanyaan atau kalimat rumpang yang harus dilengkapi siswa, lalu tentukan kata kunci jawaban benar pada kolom Kunci Jawaban.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Sistem dilengkapi pencocokan cerdas yang fleksibel terhadap variasi huruf besar dan kecil.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#type",
+          "hold_ms": 600
+        },
+        {
+          "do": "select",
+          "target": "#type",
+          "value": "isian_singkat"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "#answer_key",
+          "hold_ms": 500
+        },
+        {
+          "do": "type",
+          "target": "#answer_key",
+          "text": "HTTPS"
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik",
+      "narration": "Untuk soal uraian mendalam, pilih tipe Essay. Pada tipe ini, guru dapat menyusun pertanyaan terbuka berbasis penalaran atau studi kasus. Pada kolom Kunci Jawaban, masukkan rubrik penilaian atau poin-poin penting yang harus dijawab siswa sebagai panduan saat guru melakukan koreksi nilai manual nantinya.",
+      "narration_segments": [
+        {
+          "text": "Untuk soal uraian mendalam, pilih tipe Essay.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada tipe ini, guru dapat menyusun pertanyaan terbuka berbasis penalaran atau studi kasus.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Pada kolom Kunci Jawaban, masukkan rubrik penilaian atau poin-poin penting yang harus dijawab siswa sebagai panduan saat guru melakukan koreksi nilai manual nantinya.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "#type",
+          "hold_ms": 600
+        },
+        {
+          "do": "select",
+          "target": "#type",
+          "value": "essay"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "#score_default",
+          "hold_ms": 500
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Batal\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Batal\")"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup",
+      "narration": "Seluruh butir soal menjodohkan, isian singkat, dan uraian esai akan tampil terstruktur pada daftar pertanyaan. Lengkap dengan lencana tipe soal, premis pasangan, kata kunci, serta bobot skor masing-masing. Sangat lengkap, fleksibel, dan memudahkan asesmen pembelajaran. Selamat mencoba dan semoga sukses bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Seluruh butir soal menjodohkan, isian singkat, dan uraian esai akan tampil terstruktur pada daftar pertanyaan.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Lengkap dengan lencana tipe soal, premis pasangan, kata kunci, serta bobot skor masing-masing.",
+          "pause_after_ms": 270
+        },
+        {
+          "text": "Sangat lengkap, fleksibel, dan memudahkan asesmen pembelajaran. Selamat mencoba dan semoga sukses bersama ZEXAM-CBT!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "scroll",
+          "by": 400
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        },
+        {
+          "do": "scroll",
+          "by": 400
+        },
+        {
+          "do": "hold",
+          "ms": 1200
+        },
+        {
+          "do": "scroll",
+          "by": -800
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1500
+    }
+  ]
+}

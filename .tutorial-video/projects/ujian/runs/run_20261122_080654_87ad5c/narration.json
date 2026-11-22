@@ -1,0 +1,1529 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_navigasi_pengawas": {
+      "text": "Halo rekan administrator dan proktor ujian. Pada panduan kali ini, kita akan mempelajari tata cara manajemen data pengawas ujian serta penetapan pengawas ke setiap ruang sesi di ZEXAM-CBT. Dari dashboard utama proktor, buka menu Data Master pada navigasi sebelah kiri, kemudian pilih Manajemen Pengawas. Di halaman ini, sistem menyajikan daftar lengkap pengawas yang berhak mengawasi jalannya asesmen, lengkap dengan NIP dan PIN login otomatis.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_01_navigasi_pengawas.mp3",
+      "duration_ms": 27192.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "rekan",
+          "s": 375.0,
+          "e": 625.0
+        },
+        {
+          "w": "administrator",
+          "s": 625.0,
+          "e": 1412.5
+        },
+        {
+          "w": "dan",
+          "s": 1412.5,
+          "e": 1600.0
+        },
+        {
+          "w": "proktor",
+          "s": 1600.0,
+          "e": 1925.0
+        },
+        {
+          "w": "ujian",
+          "s": 1925.0,
+          "e": 2537.5
+        },
+        {
+          "w": "Pada",
+          "s": 3387.5,
+          "e": 3600.0
+        },
+        {
+          "w": "panduan",
+          "s": 3600.0,
+          "e": 3925.0
+        },
+        {
+          "w": "kali",
+          "s": 3925.0,
+          "e": 4087.5
+        },
+        {
+          "w": "ini",
+          "s": 4087.5,
+          "e": 4537.5
+        },
+        {
+          "w": "kita",
+          "s": 4850.0,
+          "e": 5050.0
+        },
+        {
+          "w": "akan",
+          "s": 5050.0,
+          "e": 5237.5
+        },
+        {
+          "w": "mempelajari",
+          "s": 5237.5,
+          "e": 5700.0
+        },
+        {
+          "w": "tata",
+          "s": 5700.0,
+          "e": 5925.0
+        },
+        {
+          "w": "cara",
+          "s": 5925.0,
+          "e": 6137.5
+        },
+        {
+          "w": "manajemen",
+          "s": 6137.5,
+          "e": 6637.5
+        },
+        {
+          "w": "data",
+          "s": 6637.5,
+          "e": 6875.0
+        },
+        {
+          "w": "pengawas",
+          "s": 6875.0,
+          "e": 7212.5
+        },
+        {
+          "w": "ujian",
+          "s": 7212.5,
+          "e": 7675.0
+        },
+        {
+          "w": "serta",
+          "s": 7675.0,
+          "e": 7975.0
+        },
+        {
+          "w": "penetapan",
+          "s": 7975.0,
+          "e": 8400.0
+        },
+        {
+          "w": "pengawas",
+          "s": 8400.0,
+          "e": 8850.0
+        },
+        {
+          "w": "ke",
+          "s": 8850.0,
+          "e": 8937.5
+        },
+        {
+          "w": "setiap",
+          "s": 8937.5,
+          "e": 9262.5
+        },
+        {
+          "w": "ruang",
+          "s": 9262.5,
+          "e": 9462.5
+        },
+        {
+          "w": "sesi",
+          "s": 9462.5,
+          "e": 9837.5
+        },
+        {
+          "w": "di",
+          "s": 9837.5,
+          "e": 9937.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 9937.5,
+          "e": 10900.0
+        },
+        {
+          "w": "Dari",
+          "s": 11750.0,
+          "e": 12012.5
+        },
+        {
+          "w": "dashboard",
+          "s": 12012.5,
+          "e": 12437.5
+        },
+        {
+          "w": "utama",
+          "s": 12437.5,
+          "e": 12712.5
+        },
+        {
+          "w": "proktor",
+          "s": 12712.5,
+          "e": 13275.0
+        },
+        {
+          "w": "buka",
+          "s": 13550.0,
+          "e": 13812.5
+        },
+        {
+          "w": "menu",
+          "s": 13812.5,
+          "e": 13987.5
+        },
+        {
+          "w": "Data",
+          "s": 13987.5,
+          "e": 14187.5
+        },
+        {
+          "w": "Master",
+          "s": 14187.5,
+          "e": 14525.0
+        },
+        {
+          "w": "pada",
+          "s": 14525.0,
+          "e": 14725.0
+        },
+        {
+          "w": "navigasi",
+          "s": 14725.0,
+          "e": 15187.5
+        },
+        {
+          "w": "sebelah",
+          "s": 15187.5,
+          "e": 15525.0
+        },
+        {
+          "w": "kiri",
+          "s": 15525.0,
+          "e": 15975.0
+        },
+        {
+          "w": "kemudian",
+          "s": 16237.5,
+          "e": 16662.5
+        },
+        {
+          "w": "pilih",
+          "s": 16662.5,
+          "e": 16925.0
+        },
+        {
+          "w": "Manajemen",
+          "s": 16925.0,
+          "e": 17400.0
+        },
+        {
+          "w": "Pengawas",
+          "s": 17400.0,
+          "e": 18050.0
+        },
+        {
+          "w": "Di",
+          "s": 18900.0,
+          "e": 19025.0
+        },
+        {
+          "w": "halaman",
+          "s": 19025.0,
+          "e": 19312.5
+        },
+        {
+          "w": "ini",
+          "s": 19312.5,
+          "e": 19762.5
+        },
+        {
+          "w": "sistem",
+          "s": 20025.0,
+          "e": 20375.0
+        },
+        {
+          "w": "menyajikan",
+          "s": 20375.0,
+          "e": 20812.5
+        },
+        {
+          "w": "daftar",
+          "s": 20812.5,
+          "e": 21137.5
+        },
+        {
+          "w": "lengkap",
+          "s": 21137.5,
+          "e": 21425.0
+        },
+        {
+          "w": "pengawas",
+          "s": 21425.0,
+          "e": 21825.0
+        },
+        {
+          "w": "yang",
+          "s": 21825.0,
+          "e": 21937.5
+        },
+        {
+          "w": "berhak",
+          "s": 21937.5,
+          "e": 22212.5
+        },
+        {
+          "w": "mengawasi",
+          "s": 22212.5,
+          "e": 22612.5
+        },
+        {
+          "w": "jalannya",
+          "s": 22612.5,
+          "e": 22937.5
+        },
+        {
+          "w": "asesmen",
+          "s": 22937.5,
+          "e": 23575.0
+        },
+        {
+          "w": "lengkap",
+          "s": 23862.5,
+          "e": 24200.0
+        },
+        {
+          "w": "dengan",
+          "s": 24200.0,
+          "e": 24425.0
+        },
+        {
+          "w": "NIP",
+          "s": 24425.0,
+          "e": 24887.5
+        },
+        {
+          "w": "dan",
+          "s": 24887.5,
+          "e": 25112.5
+        },
+        {
+          "w": "PIN",
+          "s": 25112.5,
+          "e": 25275.0
+        },
+        {
+          "w": "login",
+          "s": 25275.0,
+          "e": 25600.0
+        },
+        {
+          "w": "otomatis",
+          "s": 25600.0,
+          "e": 26337.5
+        }
+      ],
+      "sha256": "9244cf622fe46af7008d3b0d876ef2d7b9b4bcc2943f126ec378373fb180ee56"
+    },
+    "scene_02_tambah_pengawas_baru": {
+      "text": "Untuk mendaftarkan tenaga pengawas baru ke dalam sistem, klik tombol Tambah Pengawas di pojok kanan atas. Masukkan nama lengkap beserta gelar, misalnya Dokterandus Haji Ahmad Fauzi, Magister Pendidikan, dan masukkan NIP atau NIK pengawas. Hebatnya, ZEXAM-CBT secara otomatis men-generate enam digit PIN login unik yang aman. Klik Simpan Pengawas, dan data langsung tersimpan dengan rapi di daftar master pengawas.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_02_tambah_pengawas_baru.mp3",
+      "duration_ms": 26016.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 362.5
+        },
+        {
+          "w": "mendaftarkan",
+          "s": 362.5,
+          "e": 937.5
+        },
+        {
+          "w": "tenaga",
+          "s": 937.5,
+          "e": 1225.0
+        },
+        {
+          "w": "pengawas",
+          "s": 1225.0,
+          "e": 1575.0
+        },
+        {
+          "w": "baru",
+          "s": 1575.0,
+          "e": 1825.0
+        },
+        {
+          "w": "ke",
+          "s": 1825.0,
+          "e": 1912.5
+        },
+        {
+          "w": "dalam",
+          "s": 1912.5,
+          "e": 2125.0
+        },
+        {
+          "w": "sistem",
+          "s": 2125.0,
+          "e": 2662.5
+        },
+        {
+          "w": "klik",
+          "s": 2962.5,
+          "e": 3137.5
+        },
+        {
+          "w": "tombol",
+          "s": 3137.5,
+          "e": 3437.5
+        },
+        {
+          "w": "Tambah",
+          "s": 3437.5,
+          "e": 3687.5
+        },
+        {
+          "w": "Pengawas",
+          "s": 3687.5,
+          "e": 4137.5
+        },
+        {
+          "w": "di",
+          "s": 4137.5,
+          "e": 4237.5
+        },
+        {
+          "w": "pojok",
+          "s": 4237.5,
+          "e": 4575.0
+        },
+        {
+          "w": "kanan",
+          "s": 4575.0,
+          "e": 4800.0
+        },
+        {
+          "w": "atas",
+          "s": 4800.0,
+          "e": 5350.0
+        },
+        {
+          "w": "Masukkan",
+          "s": 6200.0,
+          "e": 6612.5
+        },
+        {
+          "w": "nama",
+          "s": 6612.5,
+          "e": 6787.5
+        },
+        {
+          "w": "lengkap",
+          "s": 6787.5,
+          "e": 7050.0
+        },
+        {
+          "w": "beserta",
+          "s": 7050.0,
+          "e": 7362.5
+        },
+        {
+          "w": "gelar",
+          "s": 7362.5,
+          "e": 7850.0
+        },
+        {
+          "w": "misalnya",
+          "s": 8100.0,
+          "e": 8550.0
+        },
+        {
+          "w": "Dokterandus",
+          "s": 8550.0,
+          "e": 9025.0
+        },
+        {
+          "w": "Haji",
+          "s": 9025.0,
+          "e": 9325.0
+        },
+        {
+          "w": "Ahmad",
+          "s": 9325.0,
+          "e": 9600.0
+        },
+        {
+          "w": "Fauzi",
+          "s": 9600.0,
+          "e": 10250.0
+        },
+        {
+          "w": "Magister",
+          "s": 10537.5,
+          "e": 10950.0
+        },
+        {
+          "w": "Pendidikan",
+          "s": 10950.0,
+          "e": 11625.0
+        },
+        {
+          "w": "dan",
+          "s": 11912.5,
+          "e": 12125.0
+        },
+        {
+          "w": "masukkan",
+          "s": 12125.0,
+          "e": 12487.5
+        },
+        {
+          "w": "NIP",
+          "s": 12487.5,
+          "e": 12887.5
+        },
+        {
+          "w": "atau",
+          "s": 12887.5,
+          "e": 13162.5
+        },
+        {
+          "w": "NIK",
+          "s": 13162.5,
+          "e": 13337.5
+        },
+        {
+          "w": "pengawas",
+          "s": 13337.5,
+          "e": 13987.5
+        },
+        {
+          "w": "Hebatnya",
+          "s": 14837.5,
+          "e": 15550.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 15862.5,
+          "e": 16625.0
+        },
+        {
+          "w": "secara",
+          "s": 16625.0,
+          "e": 16912.5
+        },
+        {
+          "w": "otomatis",
+          "s": 16912.5,
+          "e": 17400.0
+        },
+        {
+          "w": "men-generate",
+          "s": 17400.0,
+          "e": 17887.5
+        },
+        {
+          "w": "enam",
+          "s": 17887.5,
+          "e": 18137.5
+        },
+        {
+          "w": "digit",
+          "s": 18137.5,
+          "e": 18450.0
+        },
+        {
+          "w": "PIN",
+          "s": 18450.0,
+          "e": 18612.5
+        },
+        {
+          "w": "login",
+          "s": 18612.5,
+          "e": 18887.5
+        },
+        {
+          "w": "unik",
+          "s": 18887.5,
+          "e": 19175.0
+        },
+        {
+          "w": "yang",
+          "s": 19175.0,
+          "e": 19325.0
+        },
+        {
+          "w": "aman",
+          "s": 19325.0,
+          "e": 19850.0
+        },
+        {
+          "w": "Klik",
+          "s": 20700.0,
+          "e": 20875.0
+        },
+        {
+          "w": "Simpan",
+          "s": 20875.0,
+          "e": 21175.0
+        },
+        {
+          "w": "Pengawas",
+          "s": 21175.0,
+          "e": 21787.5
+        },
+        {
+          "w": "dan",
+          "s": 22050.0,
+          "e": 22262.5
+        },
+        {
+          "w": "data",
+          "s": 22262.5,
+          "e": 22487.5
+        },
+        {
+          "w": "langsung",
+          "s": 22487.5,
+          "e": 22787.5
+        },
+        {
+          "w": "tersimpan",
+          "s": 22787.5,
+          "e": 23250.0
+        },
+        {
+          "w": "dengan",
+          "s": 23250.0,
+          "e": 23475.0
+        },
+        {
+          "w": "rapi",
+          "s": 23475.0,
+          "e": 23775.0
+        },
+        {
+          "w": "di",
+          "s": 23775.0,
+          "e": 23862.5
+        },
+        {
+          "w": "daftar",
+          "s": 23862.5,
+          "e": 24212.5
+        },
+        {
+          "w": "master",
+          "s": 24212.5,
+          "e": 24512.5
+        },
+        {
+          "w": "pengawas",
+          "s": 24512.5,
+          "e": 25162.5
+        }
+      ],
+      "sha256": "7b284ff27e50da665c170d8620b843d2a16903455a699f74cabffc8086c3000d"
+    },
+    "scene_03_akses_qr_dan_cetak_barcode": {
+      "text": "ZEXAM-CBT menyediakan fitur cetak kartu akses berbasis barcode. Klik ikon QR Code pada baris pengawas untuk membuka jendela Akses QR. Sistem menyediakan dua barcode beresolusi tinggi, baik untuk mode server online melalui internet publik, maupun server offline berbasis intranet lokal sekolah. Proktor dapat mencetak kartu barcode ini untuk ditempel di pintu ruang ujian ataupun dibagikan langsung kepada pengawas ruang.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_03_akses_qr_dan_cetak_barcode.mp3",
+      "duration_ms": 24744.0,
+      "words": [
+        {
+          "w": "ZEXAM-CBT",
+          "s": 100.0,
+          "e": 925.0
+        },
+        {
+          "w": "menyediakan",
+          "s": 925.0,
+          "e": 1437.5
+        },
+        {
+          "w": "fitur",
+          "s": 1437.5,
+          "e": 1725.0
+        },
+        {
+          "w": "cetak",
+          "s": 1725.0,
+          "e": 2012.5
+        },
+        {
+          "w": "kartu",
+          "s": 2012.5,
+          "e": 2262.5
+        },
+        {
+          "w": "akses",
+          "s": 2262.5,
+          "e": 2675.0
+        },
+        {
+          "w": "berbasis",
+          "s": 2675.0,
+          "e": 3137.5
+        },
+        {
+          "w": "barcode",
+          "s": 3137.5,
+          "e": 3662.5
+        },
+        {
+          "w": "Klik",
+          "s": 4500.0,
+          "e": 4712.5
+        },
+        {
+          "w": "ikon",
+          "s": 4712.5,
+          "e": 4987.5
+        },
+        {
+          "w": "QR",
+          "s": 4987.5,
+          "e": 5237.5
+        },
+        {
+          "w": "Code",
+          "s": 5237.5,
+          "e": 5487.5
+        },
+        {
+          "w": "pada",
+          "s": 5487.5,
+          "e": 5675.0
+        },
+        {
+          "w": "baris",
+          "s": 5675.0,
+          "e": 5900.0
+        },
+        {
+          "w": "pengawas",
+          "s": 5900.0,
+          "e": 6387.5
+        },
+        {
+          "w": "untuk",
+          "s": 6387.5,
+          "e": 6637.5
+        },
+        {
+          "w": "membuka",
+          "s": 6637.5,
+          "e": 6975.0
+        },
+        {
+          "w": "jendela",
+          "s": 6975.0,
+          "e": 7325.0
+        },
+        {
+          "w": "Akses",
+          "s": 7325.0,
+          "e": 7700.0
+        },
+        {
+          "w": "QR",
+          "s": 7700.0,
+          "e": 8225.0
+        },
+        {
+          "w": "Sistem",
+          "s": 9075.0,
+          "e": 9425.0
+        },
+        {
+          "w": "menyediakan",
+          "s": 9425.0,
+          "e": 9925.0
+        },
+        {
+          "w": "dua",
+          "s": 9925.0,
+          "e": 10075.0
+        },
+        {
+          "w": "barcode",
+          "s": 10075.0,
+          "e": 10425.0
+        },
+        {
+          "w": "beresolusi",
+          "s": 10425.0,
+          "e": 10912.5
+        },
+        {
+          "w": "tinggi",
+          "s": 10912.5,
+          "e": 11437.5
+        },
+        {
+          "w": "baik",
+          "s": 11750.0,
+          "e": 12012.5
+        },
+        {
+          "w": "untuk",
+          "s": 12012.5,
+          "e": 12200.0
+        },
+        {
+          "w": "mode",
+          "s": 12200.0,
+          "e": 12400.0
+        },
+        {
+          "w": "server",
+          "s": 12400.0,
+          "e": 12712.5
+        },
+        {
+          "w": "online",
+          "s": 12712.5,
+          "e": 13087.5
+        },
+        {
+          "w": "melalui",
+          "s": 13087.5,
+          "e": 13362.5
+        },
+        {
+          "w": "internet",
+          "s": 13362.5,
+          "e": 13725.0
+        },
+        {
+          "w": "publik",
+          "s": 13725.0,
+          "e": 14212.5
+        },
+        {
+          "w": "maupun",
+          "s": 14450.0,
+          "e": 14775.0
+        },
+        {
+          "w": "server",
+          "s": 14775.0,
+          "e": 15087.5
+        },
+        {
+          "w": "offline",
+          "s": 15087.5,
+          "e": 15487.5
+        },
+        {
+          "w": "berbasis",
+          "s": 15487.5,
+          "e": 15950.0
+        },
+        {
+          "w": "intranet",
+          "s": 15950.0,
+          "e": 16362.5
+        },
+        {
+          "w": "lokal",
+          "s": 16362.5,
+          "e": 16637.5
+        },
+        {
+          "w": "sekolah",
+          "s": 16637.5,
+          "e": 17237.5
+        },
+        {
+          "w": "Proktor",
+          "s": 18075.0,
+          "e": 18462.5
+        },
+        {
+          "w": "dapat",
+          "s": 18462.5,
+          "e": 18712.5
+        },
+        {
+          "w": "mencetak",
+          "s": 18712.5,
+          "e": 19062.5
+        },
+        {
+          "w": "kartu",
+          "s": 19062.5,
+          "e": 19287.5
+        },
+        {
+          "w": "barcode",
+          "s": 19287.5,
+          "e": 19587.5
+        },
+        {
+          "w": "ini",
+          "s": 19587.5,
+          "e": 19862.5
+        },
+        {
+          "w": "untuk",
+          "s": 19862.5,
+          "e": 20062.5
+        },
+        {
+          "w": "ditempel",
+          "s": 20062.5,
+          "e": 20500.0
+        },
+        {
+          "w": "di",
+          "s": 20500.0,
+          "e": 20587.5
+        },
+        {
+          "w": "pintu",
+          "s": 20587.5,
+          "e": 20837.5
+        },
+        {
+          "w": "ruang",
+          "s": 20837.5,
+          "e": 21012.5
+        },
+        {
+          "w": "ujian",
+          "s": 21012.5,
+          "e": 21462.5
+        },
+        {
+          "w": "ataupun",
+          "s": 21462.5,
+          "e": 21912.5
+        },
+        {
+          "w": "dibagikan",
+          "s": 21912.5,
+          "e": 22362.5
+        },
+        {
+          "w": "langsung",
+          "s": 22362.5,
+          "e": 22737.5
+        },
+        {
+          "w": "kepada",
+          "s": 22737.5,
+          "e": 23037.5
+        },
+        {
+          "w": "pengawas",
+          "s": 23037.5,
+          "e": 23412.5
+        },
+        {
+          "w": "ruang",
+          "s": 23412.5,
+          "e": 23887.5
+        }
+      ],
+      "sha256": "e7e6e937f7279d12bcf38c1f944e433b62829e778cc45d2a00a3920986c5f3fb"
+    },
+    "scene_04_penetapan_pengawas_ruang": {
+      "text": "Langkah berikutnya adalah menugaskan pengawas ke ruang sesi ujian. Masuk ke modul Pembagian Ruang pada sesi yang dijadwalkan. Pada kartu Ruang Nol Satu, pilih pengawas yang bertugas, misalnya Ibu Siti Nurhaliza, lalu klik tombol Update. Kemudian pada Ruang Nol Dua, pilih Bapak Ahmad Fauzi dan simpan perubahan. Sistem menerapkan validasi proteksi anti-bentrok jadwal, sehingga seorang pengawas tidak dapat ditugaskan di dua ruang berbeda pada sesi yang sama.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_04_penetapan_pengawas_ruang.mp3",
+      "duration_ms": 28320.0,
+      "words": [
+        {
+          "w": "Langkah",
+          "s": 100.0,
+          "e": 437.5
+        },
+        {
+          "w": "berikutnya",
+          "s": 437.5,
+          "e": 912.5
+        },
+        {
+          "w": "adalah",
+          "s": 912.5,
+          "e": 1187.5
+        },
+        {
+          "w": "menugaskan",
+          "s": 1187.5,
+          "e": 1675.0
+        },
+        {
+          "w": "pengawas",
+          "s": 1675.0,
+          "e": 2112.5
+        },
+        {
+          "w": "ke",
+          "s": 2112.5,
+          "e": 2200.0
+        },
+        {
+          "w": "ruang",
+          "s": 2200.0,
+          "e": 2400.0
+        },
+        {
+          "w": "sesi",
+          "s": 2400.0,
+          "e": 2650.0
+        },
+        {
+          "w": "ujian",
+          "s": 2650.0,
+          "e": 3262.5
+        },
+        {
+          "w": "Masuk",
+          "s": 4100.0,
+          "e": 4437.5
+        },
+        {
+          "w": "ke",
+          "s": 4437.5,
+          "e": 4500.0
+        },
+        {
+          "w": "modul",
+          "s": 4500.0,
+          "e": 4762.5
+        },
+        {
+          "w": "Pembagian",
+          "s": 4762.5,
+          "e": 5200.0
+        },
+        {
+          "w": "Ruang",
+          "s": 5200.0,
+          "e": 5537.5
+        },
+        {
+          "w": "pada",
+          "s": 5537.5,
+          "e": 5750.0
+        },
+        {
+          "w": "sesi",
+          "s": 5750.0,
+          "e": 6100.0
+        },
+        {
+          "w": "yang",
+          "s": 6100.0,
+          "e": 6212.5
+        },
+        {
+          "w": "dijadwalkan",
+          "s": 6212.5,
+          "e": 7112.5
+        },
+        {
+          "w": "Pada",
+          "s": 7962.5,
+          "e": 8187.5
+        },
+        {
+          "w": "kartu",
+          "s": 8187.5,
+          "e": 8462.5
+        },
+        {
+          "w": "Ruang",
+          "s": 8462.5,
+          "e": 8650.0
+        },
+        {
+          "w": "Nol",
+          "s": 8650.0,
+          "e": 8775.0
+        },
+        {
+          "w": "Satu",
+          "s": 8775.0,
+          "e": 9325.0
+        },
+        {
+          "w": "pilih",
+          "s": 9637.5,
+          "e": 9862.5
+        },
+        {
+          "w": "pengawas",
+          "s": 9862.5,
+          "e": 10212.5
+        },
+        {
+          "w": "yang",
+          "s": 10212.5,
+          "e": 10300.0
+        },
+        {
+          "w": "bertugas",
+          "s": 10300.0,
+          "e": 10937.5
+        },
+        {
+          "w": "misalnya",
+          "s": 11200.0,
+          "e": 11637.5
+        },
+        {
+          "w": "Ibu",
+          "s": 11637.5,
+          "e": 11825.0
+        },
+        {
+          "w": "Siti",
+          "s": 11825.0,
+          "e": 12050.0
+        },
+        {
+          "w": "Nurhaliza",
+          "s": 12050.0,
+          "e": 12800.0
+        },
+        {
+          "w": "lalu",
+          "s": 13062.5,
+          "e": 13337.5
+        },
+        {
+          "w": "klik",
+          "s": 13337.5,
+          "e": 13562.5
+        },
+        {
+          "w": "tombol",
+          "s": 13562.5,
+          "e": 13862.5
+        },
+        {
+          "w": "Update",
+          "s": 13862.5,
+          "e": 14387.5
+        },
+        {
+          "w": "Kemudian",
+          "s": 15237.5,
+          "e": 15662.5
+        },
+        {
+          "w": "pada",
+          "s": 15662.5,
+          "e": 15862.5
+        },
+        {
+          "w": "Ruang",
+          "s": 15862.5,
+          "e": 16050.0
+        },
+        {
+          "w": "Nol",
+          "s": 16050.0,
+          "e": 16212.5
+        },
+        {
+          "w": "Dua",
+          "s": 16212.5,
+          "e": 16675.0
+        },
+        {
+          "w": "pilih",
+          "s": 16975.0,
+          "e": 17212.5
+        },
+        {
+          "w": "Bapak",
+          "s": 17212.5,
+          "e": 17450.0
+        },
+        {
+          "w": "Ahmad",
+          "s": 17450.0,
+          "e": 17687.5
+        },
+        {
+          "w": "Fauzi",
+          "s": 17687.5,
+          "e": 18187.5
+        },
+        {
+          "w": "dan",
+          "s": 18187.5,
+          "e": 18375.0
+        },
+        {
+          "w": "simpan",
+          "s": 18375.0,
+          "e": 18725.0
+        },
+        {
+          "w": "perubahan",
+          "s": 18725.0,
+          "e": 19387.5
+        },
+        {
+          "w": "Sistem",
+          "s": 20237.5,
+          "e": 20587.5
+        },
+        {
+          "w": "menerapkan",
+          "s": 20587.5,
+          "e": 21025.0
+        },
+        {
+          "w": "validasi",
+          "s": 21025.0,
+          "e": 21462.5
+        },
+        {
+          "w": "proteksi",
+          "s": 21462.5,
+          "e": 21937.5
+        },
+        {
+          "w": "anti-bentrok",
+          "s": 21937.5,
+          "e": 22462.5
+        },
+        {
+          "w": "jadwal",
+          "s": 22462.5,
+          "e": 23087.5
+        },
+        {
+          "w": "sehingga",
+          "s": 23387.5,
+          "e": 23775.0
+        },
+        {
+          "w": "seorang",
+          "s": 23775.0,
+          "e": 24050.0
+        },
+        {
+          "w": "pengawas",
+          "s": 24050.0,
+          "e": 24412.5
+        },
+        {
+          "w": "tidak",
+          "s": 24412.5,
+          "e": 24625.0
+        },
+        {
+          "w": "dapat",
+          "s": 24625.0,
+          "e": 24850.0
+        },
+        {
+          "w": "ditugaskan",
+          "s": 24850.0,
+          "e": 25425.0
+        },
+        {
+          "w": "di",
+          "s": 25425.0,
+          "e": 25512.5
+        },
+        {
+          "w": "dua",
+          "s": 25512.5,
+          "e": 25662.5
+        },
+        {
+          "w": "ruang",
+          "s": 25662.5,
+          "e": 25850.0
+        },
+        {
+          "w": "berbeda",
+          "s": 25850.0,
+          "e": 26287.5
+        },
+        {
+          "w": "pada",
+          "s": 26287.5,
+          "e": 26525.0
+        },
+        {
+          "w": "sesi",
+          "s": 26525.0,
+          "e": 26837.5
+        },
+        {
+          "w": "yang",
+          "s": 26837.5,
+          "e": 26975.0
+        },
+        {
+          "w": "sama",
+          "s": 26975.0,
+          "e": 27462.5
+        }
+      ],
+      "sha256": "a8bc8222320a6bb186ec430322344077b9330199b257c14f680e7decd2bfb12a"
+    },
+    "scene_05_integrasi_administrasi_selesai": {
+      "text": "Seluruh penetapan pengawas ini otomatis terintegrasi ke modul Administrasi Ujian. Proktor dapat langsung mencetak Berita Acara Pelaksanaan, Daftar Hadir Pengawas resmi, serta lembar Tata Tertib Pengawas berformat PDF standar asesmen nasional. Dengan pengelolaan pengawas yang terstruktur, pelaksanaan ujian di sekolah Anda berjalan lebih tertib, transparan, dan profesional.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_05_integrasi_administrasi_selesai.mp3",
+      "duration_ms": 22512.0,
+      "words": [
+        {
+          "w": "Seluruh",
+          "s": 100.0,
+          "e": 500.0
+        },
+        {
+          "w": "penetapan",
+          "s": 500.0,
+          "e": 937.5
+        },
+        {
+          "w": "pengawas",
+          "s": 937.5,
+          "e": 1275.0
+        },
+        {
+          "w": "ini",
+          "s": 1275.0,
+          "e": 1550.0
+        },
+        {
+          "w": "otomatis",
+          "s": 1550.0,
+          "e": 2037.5
+        },
+        {
+          "w": "terintegrasi",
+          "s": 2037.5,
+          "e": 2687.5
+        },
+        {
+          "w": "ke",
+          "s": 2687.5,
+          "e": 2787.5
+        },
+        {
+          "w": "modul",
+          "s": 2787.5,
+          "e": 3112.5
+        },
+        {
+          "w": "Administrasi",
+          "s": 3112.5,
+          "e": 3800.0
+        },
+        {
+          "w": "Ujian",
+          "s": 3800.0,
+          "e": 4400.0
+        },
+        {
+          "w": "Proktor",
+          "s": 5250.0,
+          "e": 5587.5
+        },
+        {
+          "w": "dapat",
+          "s": 5587.5,
+          "e": 5837.5
+        },
+        {
+          "w": "langsung",
+          "s": 5837.5,
+          "e": 6150.0
+        },
+        {
+          "w": "mencetak",
+          "s": 6150.0,
+          "e": 6525.0
+        },
+        {
+          "w": "Berita",
+          "s": 6525.0,
+          "e": 6762.5
+        },
+        {
+          "w": "Acara",
+          "s": 6762.5,
+          "e": 7000.0
+        },
+        {
+          "w": "Pelaksanaan",
+          "s": 7000.0,
+          "e": 7762.5
+        },
+        {
+          "w": "Daftar",
+          "s": 8037.5,
+          "e": 8437.5
+        },
+        {
+          "w": "Hadir",
+          "s": 8437.5,
+          "e": 8725.0
+        },
+        {
+          "w": "Pengawas",
+          "s": 8725.0,
+          "e": 9112.5
+        },
+        {
+          "w": "resmi",
+          "s": 9112.5,
+          "e": 9637.5
+        },
+        {
+          "w": "serta",
+          "s": 9912.5,
+          "e": 10212.5
+        },
+        {
+          "w": "lembar",
+          "s": 10212.5,
+          "e": 10462.5
+        },
+        {
+          "w": "Tata",
+          "s": 10462.5,
+          "e": 10687.5
+        },
+        {
+          "w": "Tertib",
+          "s": 10687.5,
+          "e": 11000.0
+        },
+        {
+          "w": "Pengawas",
+          "s": 11000.0,
+          "e": 11400.0
+        },
+        {
+          "w": "berformat",
+          "s": 11400.0,
+          "e": 11862.5
+        },
+        {
+          "w": "PDF",
+          "s": 11862.5,
+          "e": 12262.5
+        },
+        {
+          "w": "standar",
+          "s": 12262.5,
+          "e": 12637.5
+        },
+        {
+          "w": "asesmen",
+          "s": 12637.5,
+          "e": 13062.5
+        },
+        {
+          "w": "nasional",
+          "s": 13062.5,
+          "e": 13700.0
+        },
+        {
+          "w": "Dengan",
+          "s": 14550.0,
+          "e": 14837.5
+        },
+        {
+          "w": "pengelolaan",
+          "s": 14837.5,
+          "e": 15262.5
+        },
+        {
+          "w": "pengawas",
+          "s": 15262.5,
+          "e": 15662.5
+        },
+        {
+          "w": "yang",
+          "s": 15662.5,
+          "e": 15775.0
+        },
+        {
+          "w": "terstruktur",
+          "s": 15775.0,
+          "e": 16450.0
+        },
+        {
+          "w": "pelaksanaan",
+          "s": 16762.5,
+          "e": 17250.0
+        },
+        {
+          "w": "ujian",
+          "s": 17250.0,
+          "e": 17612.5
+        },
+        {
+          "w": "di",
+          "s": 17612.5,
+          "e": 17675.0
+        },
+        {
+          "w": "sekolah",
+          "s": 17675.0,
+          "e": 18012.5
+        },
+        {
+          "w": "Anda",
+          "s": 18012.5,
+          "e": 18287.5
+        },
+        {
+          "w": "berjalan",
+          "s": 18287.5,
+          "e": 18712.5
+        },
+        {
+          "w": "lebih",
+          "s": 18712.5,
+          "e": 18887.5
+        },
+        {
+          "w": "tertib",
+          "s": 18887.5,
+          "e": 19350.0
+        },
+        {
+          "w": "transparan",
+          "s": 19587.5,
+          "e": 20350.0
+        },
+        {
+          "w": "dan",
+          "s": 20562.5,
+          "e": 20837.5
+        },
+        {
+          "w": "profesional",
+          "s": 20837.5,
+          "e": 21662.5
+        }
+      ],
+      "sha256": "a9c8677316f6c426e9c50bcb52cca591bb7583c89b437b577e3e398021bf4821"
+    }
+  }
+}

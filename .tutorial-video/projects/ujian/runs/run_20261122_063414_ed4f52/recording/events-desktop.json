@@ -1,0 +1,881 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_data_kelas",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 23070,
+      "action_start_ms": 23383.333,
+      "action_end_ms": 29183.333,
+      "end_ms": 30383.333
+    },
+    {
+      "scene_id": "scene_02_tambah_rombel_baru",
+      "start_ms": 30383.333,
+      "narration_start_ms": 30583.333,
+      "narration_end_ms": 49089.333,
+      "action_start_ms": 49400,
+      "action_end_ms": 58533.333,
+      "end_ms": 59733.333
+    },
+    {
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas",
+      "start_ms": 59733.333,
+      "narration_start_ms": 59933.333,
+      "narration_end_ms": 78055.333,
+      "action_start_ms": 78366.667,
+      "action_end_ms": 84100,
+      "end_ms": 85300
+    },
+    {
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi",
+      "start_ms": 85300,
+      "narration_start_ms": 85500,
+      "narration_end_ms": 105206,
+      "action_start_ms": 105516.667,
+      "action_end_ms": 111900,
+      "end_ms": 113100
+    },
+    {
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan",
+      "start_ms": 113100,
+      "narration_start_ms": 113300,
+      "narration_end_ms": 137174,
+      "action_start_ms": 137483.333,
+      "action_end_ms": 142150,
+      "end_ms": 143650
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_data_kelas"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_data_kelas",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_01_navigasi_data_kelas.wav",
+      "duration_ms": 22870,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 23083.333,
+      "frame": 1385,
+      "scene_id": "scene_01_navigasi_data_kelas"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 23383.333,
+      "frame": 1403,
+      "scene_id": "scene_01_navigasi_data_kelas"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 23383.333,
+      "frame": 1403,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 1162.4,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 24716.667,
+      "frame": 1483,
+      "at": [
+        127.5,
+        199
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 25316.667,
+      "frame": 1519,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 25400,
+      "frame": 1524,
+      "at": [
+        127.5,
+        199
+      ],
+      "label": ".hidden.lg\\:block button:has-text(\"Data Master\")",
+      "bbox": [
+        16,
+        179,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 25533.333,
+      "frame": 1532,
+      "selector": ".hidden.lg\\:block a:has-text(\"Data Kelas\")",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 26083.333,
+      "frame": 1565,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        150,
+        331
+      ],
+      "dist_px": 133.9,
+      "move_ms": 748.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 27016.667,
+      "frame": 1621,
+      "at": [
+        150,
+        331
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 27616.667,
+      "frame": 1657,
+      "from": [
+        150,
+        331
+      ],
+      "to": [
+        150,
+        331
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 27700,
+      "frame": 1662,
+      "at": [
+        150,
+        331
+      ],
+      "label": ".hidden.lg\\:block a:has-text(\"Data Kelas\")",
+      "bbox": [
+        61,
+        311,
+        178,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 27833.333,
+      "frame": 1670,
+      "selector": "h2:has-text(\"Data Kelas\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 29183.333,
+      "frame": 1751,
+      "scene_id": "scene_01_navigasi_data_kelas"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 30383.333,
+      "frame": 1823,
+      "scene_id": "scene_01_navigasi_data_kelas"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 30383.333,
+      "frame": 1823,
+      "scene_id": "scene_02_tambah_rombel_baru"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 30383.333,
+      "frame": 1823,
+      "scene_id": "scene_02_tambah_rombel_baru",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_02_tambah_rombel_baru.wav",
+      "duration_ms": 18506,
+      "at_ms": 30583.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 49100,
+      "frame": 2946,
+      "scene_id": "scene_02_tambah_rombel_baru"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 49400,
+      "frame": 2964,
+      "scene_id": "scene_02_tambah_rombel_baru"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 49400,
+      "frame": 2964,
+      "from": [
+        150,
+        331
+      ],
+      "to": [
+        1812.46875,
+        122
+      ],
+      "dist_px": 1675.6,
+      "move_ms": 1433,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 51016.667,
+      "frame": 3061,
+      "at": [
+        1812.46875,
+        122
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 51616.667,
+      "frame": 3097,
+      "from": [
+        1812.46875,
+        122
+      ],
+      "to": [
+        1812.46875,
+        122
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 51700,
+      "frame": 3102,
+      "at": [
+        1812.46875,
+        122
+      ],
+      "label": "button:has-text(\"Tambah Kelas\")",
+      "bbox": [
+        1736.9375,
+        102,
+        151.0625,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 51833.333,
+      "frame": 3110,
+      "selector": "#name",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 52383.333,
+      "frame": 3143,
+      "from": [
+        1812.46875,
+        122
+      ],
+      "to": [
+        867.2,
+        475.75
+      ],
+      "dist_px": 1009.3,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 53716.667,
+      "frame": 3223,
+      "at": [
+        867.2,
+        475.75
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 53800,
+      "frame": 3228,
+      "at": [
+        867.2,
+        475.75
+      ],
+      "label": "#name",
+      "bbox": [
+        728,
+        456.75,
+        464,
+        38
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 54100,
+      "frame": 3246,
+      "target": "#name",
+      "text_len": 11,
+      "bbox": [
+        728,
+        456.75,
+        464,
+        38
+      ],
+      "end_vt_ms": 55733.333
+    },
+    {
+      "type": "key",
+      "vt_ms": 54100,
+      "frame": 3246,
+      "ch": "K",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 54383.333,
+      "frame": 3263,
+      "ch": "e",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 54516.667,
+      "frame": 3271,
+      "ch": "l",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 54650,
+      "frame": 3279,
+      "ch": "a",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 54916.667,
+      "frame": 3295,
+      "ch": "s",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 55033.333,
+      "frame": 3302,
+      "ch": " ",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 55183.333,
+      "frame": 3311,
+      "ch": "V",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 55283.333,
+      "frame": 3317,
+      "ch": "I",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 55400,
+      "frame": 3324,
+      "ch": "I",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 55500,
+      "frame": 3330,
+      "ch": "-",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 55616.667,
+      "frame": 3337,
+      "ch": "C",
+      "i": 10
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 55733.333,
+      "frame": 3344,
+      "target": "#name"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 56133.333,
+      "frame": 3368,
+      "from": [
+        867.2,
+        475.75
+      ],
+      "to": [
+        1015.296875,
+        691.25
+      ],
+      "dist_px": 261.5,
+      "move_ms": 889.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 57216.667,
+      "frame": 3433,
+      "at": [
+        1015.296875,
+        691.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 57716.667,
+      "frame": 3463,
+      "from": [
+        1015.296875,
+        691.25
+      ],
+      "to": [
+        1015.296875,
+        691.25
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 57800,
+      "frame": 3468,
+      "at": [
+        1015.296875,
+        691.25
+      ],
+      "label": "button:has-text(\"Batal\")",
+      "bbox": [
+        977.21875,
+        674.25,
+        76.15625,
+        34
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 58533.333,
+      "frame": 3512,
+      "scene_id": "scene_02_tambah_rombel_baru"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 59733.333,
+      "frame": 3584,
+      "scene_id": "scene_02_tambah_rombel_baru"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 59733.333,
+      "frame": 3584,
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 59733.333,
+      "frame": 3584,
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_03_kelola_anggota_siswa_kelas.wav",
+      "duration_ms": 18122,
+      "at_ms": 59933.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 78066.667,
+      "frame": 4684,
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 78366.667,
+      "frame": 4702,
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 78366.667,
+      "frame": 4702,
+      "from": [
+        1015.296875,
+        691.25
+      ],
+      "to": [
+        1547.140625,
+        531
+      ],
+      "dist_px": 555.5,
+      "move_ms": 1057.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 79616.667,
+      "frame": 4777,
+      "at": [
+        1547.140625,
+        531
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 80216.667,
+      "frame": 4813,
+      "from": [
+        1547.140625,
+        531
+      ],
+      "to": [
+        1547.140625,
+        531
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 80300,
+      "frame": 4818,
+      "at": [
+        1547.140625,
+        531
+      ],
+      "label": "a:has-text(\"Kelola Siswa\")",
+      "bbox": [
+        1491.28125,
+        517,
+        111.71875,
+        28
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 80433.333,
+      "frame": 4826,
+      "selector": "h2:has-text(\"Kelola Siswa\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 81583.333,
+      "frame": 4895,
+      "from": [
+        1547.140625,
+        531
+      ],
+      "to": [
+        1798.2421875,
+        122
+      ],
+      "dist_px": 479.9,
+      "move_ms": 1024.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 82800,
+      "frame": 4968,
+      "at": [
+        1798.2421875,
+        122
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 84100,
+      "frame": 5046,
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 85300,
+      "frame": 5118,
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 85300,
+      "frame": 5118,
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 85300,
+      "frame": 5118,
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_04_modul_kenaikan_kelas_dan_mutasi.wav",
+      "duration_ms": 19706,
+      "at_ms": 85500
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 105216.667,
+      "frame": 6313,
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 105516.667,
+      "frame": 6331,
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 105516.667,
+      "frame": 6331,
+      "from": [
+        1798.2421875,
+        122
+      ],
+      "to": [
+        150,
+        375
+      ],
+      "dist_px": 1667.5,
+      "move_ms": 1426.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 107133.333,
+      "frame": 6428,
+      "at": [
+        150,
+        375
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 107733.333,
+      "frame": 6464,
+      "from": [
+        150,
+        375
+      ],
+      "to": [
+        150,
+        375
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 107816.667,
+      "frame": 6469,
+      "at": [
+        150,
+        375
+      ],
+      "label": ".hidden.lg\\:block a:has-text(\"Kenaikan Kelas\")",
+      "bbox": [
+        61,
+        355,
+        178,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 107950,
+      "frame": 6477,
+      "selector": "h2:has-text(\"Kenaikan & Pemindahan Kelas\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 109300,
+      "frame": 6558,
+      "from": [
+        150,
+        375
+      ],
+      "to": [
+        1540.890625,
+        122
+      ],
+      "dist_px": 1413.7,
+      "move_ms": 1209.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 110700,
+      "frame": 6642,
+      "at": [
+        1540.890625,
+        122
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 111900,
+      "frame": 6714,
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 113100,
+      "frame": 6786,
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 113100,
+      "frame": 6786,
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 113100,
+      "frame": 6786,
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_05_pemetaan_massal_wizard_dan_kelulusan.wav",
+      "duration_ms": 23874,
+      "at_ms": 113300
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 137183.333,
+      "frame": 8231,
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 137483.333,
+      "frame": 8249,
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 137483.333,
+      "frame": 8249,
+      "from": [
+        1540.890625,
+        122
+      ],
+      "to": [
+        1759.09375,
+        122
+      ],
+      "dist_px": 218.2,
+      "move_ms": 850.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 138533.333,
+      "frame": 8312,
+      "at": [
+        1759.09375,
+        122
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 139133.333,
+      "frame": 8348,
+      "from": [
+        1759.09375,
+        122
+      ],
+      "to": [
+        1759.09375,
+        122
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 139216.667,
+      "frame": 8353,
+      "at": [
+        1759.09375,
+        122
+      ],
+      "label": "button:has-text(\"Pemetaan Massal\")",
+      "bbox": [
+        1637.1875,
+        106,
+        243.8125,
+        32
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 142150,
+      "frame": 8529,
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 143650,
+      "frame": 8619,
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan"
+    }
+  ]
+}

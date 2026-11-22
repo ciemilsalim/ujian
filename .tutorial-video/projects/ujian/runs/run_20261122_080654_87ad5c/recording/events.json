@@ -1,0 +1,1767 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_pengawas",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 27392,
+      "action_start_ms": 27700,
+      "action_end_ms": 40383.333,
+      "end_ms": 41283.333
+    },
+    {
+      "scene_id": "scene_02_tambah_pengawas_baru",
+      "start_ms": 41283.333,
+      "narration_start_ms": 41483.333,
+      "narration_end_ms": 67499.333,
+      "action_start_ms": 67800,
+      "action_end_ms": 90950,
+      "end_ms": 91850
+    },
+    {
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode",
+      "start_ms": 91850,
+      "narration_start_ms": 92050,
+      "narration_end_ms": 116794,
+      "action_start_ms": 117100,
+      "action_end_ms": 133250,
+      "end_ms": 134150
+    },
+    {
+      "scene_id": "scene_04_penetapan_pengawas_ruang",
+      "start_ms": 134150,
+      "narration_start_ms": 134350,
+      "narration_end_ms": 162670,
+      "action_start_ms": 162983.333,
+      "action_end_ms": 184100,
+      "end_ms": 185000
+    },
+    {
+      "scene_id": "scene_05_integrasi_administrasi_selesai",
+      "start_ms": 185000,
+      "narration_start_ms": 185200,
+      "narration_end_ms": 207712,
+      "action_start_ms": 208016.667,
+      "action_end_ms": 225016.667,
+      "end_ms": 227216.667
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_pengawas"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_pengawas",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_01_navigasi_pengawas.mp3",
+      "duration_ms": 27192,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 27400,
+      "frame": 1644,
+      "scene_id": "scene_01_navigasi_pengawas"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 27700,
+      "frame": 1662,
+      "scene_id": "scene_01_navigasi_pengawas"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 27700,
+      "frame": 1662,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 1162.4,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 29033.333,
+      "frame": 1742,
+      "at": [
+        127.5,
+        199
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 29733.333,
+      "frame": 1784,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 29816.667,
+      "frame": 1789,
+      "at": [
+        127.5,
+        199
+      ],
+      "label": "button:has-text(\"Data Master\")",
+      "bbox": [
+        16,
+        179,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 30750,
+      "frame": 1845,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        150,
+        517
+      ],
+      "dist_px": 318.8,
+      "move_ms": 933,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 31866.667,
+      "frame": 1912,
+      "at": [
+        150,
+        517
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 32466.667,
+      "frame": 1948,
+      "from": [
+        150,
+        517
+      ],
+      "to": [
+        150,
+        517
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 32550,
+      "frame": 1953,
+      "at": [
+        150,
+        517
+      ],
+      "label": "a:has-text(\"Manajemen Pengawas\")",
+      "bbox": [
+        61,
+        487,
+        178,
+        60
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 32683.333,
+      "frame": 1961,
+      "selector": "h2:has-text(\"Manajemen Pengawas\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 34233.333,
+      "frame": 2054,
+      "from": [
+        150,
+        517
+      ],
+      "to": [
+        729,
+        262
+      ],
+      "dist_px": 632.7,
+      "move_ms": 1087.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 35516.667,
+      "frame": 2131,
+      "at": [
+        729,
+        262
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 36716.667,
+      "frame": 2203,
+      "from": [
+        729,
+        262
+      ],
+      "to": [
+        1088,
+        387
+      ],
+      "dist_px": 380.1,
+      "move_ms": 972.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 37883.333,
+      "frame": 2273,
+      "at": [
+        1088,
+        387
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 40383.333,
+      "frame": 2423,
+      "scene_id": "scene_01_navigasi_pengawas"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 41283.333,
+      "frame": 2477,
+      "scene_id": "scene_01_navigasi_pengawas"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 41283.333,
+      "frame": 2477,
+      "scene_id": "scene_02_tambah_pengawas_baru"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 41283.333,
+      "frame": 2477,
+      "scene_id": "scene_02_tambah_pengawas_baru",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_02_tambah_pengawas_baru.mp3",
+      "duration_ms": 26016,
+      "at_ms": 41483.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 67500,
+      "frame": 4050,
+      "scene_id": "scene_02_tambah_pengawas_baru"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 67800,
+      "frame": 4068,
+      "scene_id": "scene_02_tambah_pengawas_baru"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 67800,
+      "frame": 4068,
+      "from": [
+        1088,
+        387
+      ],
+      "to": [
+        1780.4375,
+        124
+      ],
+      "dist_px": 740.7,
+      "move_ms": 1124,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 69116.667,
+      "frame": 4147,
+      "at": [
+        1780.4375,
+        124
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 69816.667,
+      "frame": 4189,
+      "from": [
+        1780.4375,
+        124
+      ],
+      "to": [
+        1780.4375,
+        124
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 69900,
+      "frame": 4194,
+      "at": [
+        1780.4375,
+        124
+      ],
+      "label": "button:has-text(\"Tambah Pengawas\")",
+      "bbox": [
+        1672.875,
+        100,
+        215.125,
+        48
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 70033.333,
+      "frame": 4202,
+      "selector": "h2:has-text(\"Tambah Pengawas Baru\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 71583.333,
+      "frame": 4295,
+      "from": [
+        1780.4375,
+        124
+      ],
+      "to": [
+        960,
+        434
+      ],
+      "dist_px": 877.1,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 72916.667,
+      "frame": 4375,
+      "at": [
+        960,
+        434
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 72916.667,
+      "frame": 4375,
+      "from": [
+        960,
+        434
+      ],
+      "to": [
+        960,
+        434
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 73000,
+      "frame": 4380,
+      "at": [
+        960,
+        434
+      ],
+      "label": "#name",
+      "bbox": [
+        768,
+        410,
+        384,
+        48
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 73300,
+      "frame": 4398,
+      "target": "#name",
+      "text_len": 25,
+      "bbox": [
+        768,
+        410,
+        384,
+        48
+      ],
+      "end_vt_ms": 76833.333
+    },
+    {
+      "type": "key",
+      "vt_ms": 73300,
+      "frame": 4398,
+      "ch": "D",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 73400,
+      "frame": 4404,
+      "ch": "r",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 73550,
+      "frame": 4413,
+      "ch": "s",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 73683.333,
+      "frame": 4421,
+      "ch": ".",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 73866.667,
+      "frame": 4432,
+      "ch": " ",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 74033.333,
+      "frame": 4442,
+      "ch": "H",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 74166.667,
+      "frame": 4450,
+      "ch": ".",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 74300,
+      "frame": 4458,
+      "ch": " ",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 74500,
+      "frame": 4470,
+      "ch": "A",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 74650,
+      "frame": 4479,
+      "ch": "h",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 74766.667,
+      "frame": 4486,
+      "ch": "m",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 74883.333,
+      "frame": 4493,
+      "ch": "a",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 75033.333,
+      "frame": 4502,
+      "ch": "d",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 75150,
+      "frame": 4509,
+      "ch": " ",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 75300,
+      "frame": 4518,
+      "ch": "F",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 75450,
+      "frame": 4527,
+      "ch": "a",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 75550,
+      "frame": 4533,
+      "ch": "u",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 75650,
+      "frame": 4539,
+      "ch": "z",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 75766.667,
+      "frame": 4546,
+      "ch": "i",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 75900,
+      "frame": 4554,
+      "ch": ",",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 76050,
+      "frame": 4563,
+      "ch": " ",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 76250,
+      "frame": 4575,
+      "ch": "M",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 76383.333,
+      "frame": 4583,
+      "ch": ".",
+      "i": 22
+    },
+    {
+      "type": "key",
+      "vt_ms": 76583.333,
+      "frame": 4595,
+      "ch": "P",
+      "i": 23
+    },
+    {
+      "type": "key",
+      "vt_ms": 76733.333,
+      "frame": 4604,
+      "ch": "d",
+      "i": 24
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 76833.333,
+      "frame": 4610,
+      "target": "#name"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 77633.333,
+      "frame": 4658,
+      "from": [
+        960,
+        434
+      ],
+      "to": [
+        960,
+        530
+      ],
+      "dist_px": 96,
+      "move_ms": 683.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 78500,
+      "frame": 4710,
+      "at": [
+        960,
+        530
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 78500,
+      "frame": 4710,
+      "from": [
+        960,
+        530
+      ],
+      "to": [
+        960,
+        530
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 78583.333,
+      "frame": 4715,
+      "at": [
+        960,
+        530
+      ],
+      "label": "#nip",
+      "bbox": [
+        768,
+        506,
+        384,
+        48
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 78883.333,
+      "frame": 4733,
+      "target": "#nip",
+      "text_len": 18,
+      "bbox": [
+        768,
+        506,
+        384,
+        48
+      ],
+      "end_vt_ms": 81000
+    },
+    {
+      "type": "key",
+      "vt_ms": 78883.333,
+      "frame": 4733,
+      "ch": "1",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 79016.667,
+      "frame": 4741,
+      "ch": "9",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 79116.667,
+      "frame": 4747,
+      "ch": "7",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 79250,
+      "frame": 4755,
+      "ch": "8",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 79350,
+      "frame": 4761,
+      "ch": "0",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 79500,
+      "frame": 4770,
+      "ch": "5",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 79633.333,
+      "frame": 4778,
+      "ch": "1",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 79766.667,
+      "frame": 4786,
+      "ch": "2",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 79900,
+      "frame": 4794,
+      "ch": "2",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 80000,
+      "frame": 4800,
+      "ch": "0",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 80083.333,
+      "frame": 4805,
+      "ch": "0",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 80216.667,
+      "frame": 4813,
+      "ch": "3",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 80333.333,
+      "frame": 4820,
+      "ch": "1",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 80433.333,
+      "frame": 4826,
+      "ch": "2",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 80550,
+      "frame": 4833,
+      "ch": "1",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 80650,
+      "frame": 4839,
+      "ch": "0",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 80783.333,
+      "frame": 4847,
+      "ch": "0",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 80883.333,
+      "frame": 4853,
+      "ch": "2",
+      "i": 17
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 81000,
+      "frame": 4860,
+      "target": "#nip"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 82000,
+      "frame": 4920,
+      "from": [
+        960,
+        530
+      ],
+      "to": [
+        976,
+        610
+      ],
+      "dist_px": 81.6,
+      "move_ms": 652.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 82850,
+      "frame": 4971,
+      "at": [
+        976,
+        610
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 84050,
+      "frame": 5043,
+      "from": [
+        976,
+        610
+      ],
+      "to": [
+        1052.28125,
+        698
+      ],
+      "dist_px": 116.5,
+      "move_ms": 720.6,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 84966.667,
+      "frame": 5098,
+      "at": [
+        1052.28125,
+        698
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 85566.667,
+      "frame": 5134,
+      "from": [
+        1052.28125,
+        698
+      ],
+      "to": [
+        1052.28125,
+        698
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 85650,
+      "frame": 5139,
+      "at": [
+        1052.28125,
+        698
+      ],
+      "label": "button:has-text(\"Simpan Pengawas\")",
+      "bbox": [
+        952.5625,
+        674,
+        199.4375,
+        48
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 85783.333,
+      "frame": 5147,
+      "selector": "td:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 87333.333,
+      "frame": 5240,
+      "from": [
+        1052.28125,
+        698
+      ],
+      "to": [
+        1088,
+        387.25
+      ],
+      "dist_px": 312.8,
+      "move_ms": 928.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 88450,
+      "frame": 5307,
+      "at": [
+        1088,
+        387.25
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 90950,
+      "frame": 5457,
+      "scene_id": "scene_02_tambah_pengawas_baru"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 91850,
+      "frame": 5511,
+      "scene_id": "scene_02_tambah_pengawas_baru"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 91850,
+      "frame": 5511,
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 91850,
+      "frame": 5511,
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_03_akses_qr_dan_cetak_barcode.mp3",
+      "duration_ms": 24744,
+      "at_ms": 92050
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 116800,
+      "frame": 7008,
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 117100,
+      "frame": 7026,
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 117100,
+      "frame": 7026,
+      "from": [
+        1088,
+        387.25
+      ],
+      "to": [
+        1575,
+        387
+      ],
+      "dist_px": 487,
+      "move_ms": 1028,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 118316.667,
+      "frame": 7099,
+      "at": [
+        1575,
+        387
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 119116.667,
+      "frame": 7147,
+      "from": [
+        1575,
+        387
+      ],
+      "to": [
+        1575,
+        387
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 119200,
+      "frame": 7152,
+      "at": [
+        1575,
+        387
+      ],
+      "label": "tr:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\") button[title=\"Lihat QR Code\"]",
+      "bbox": [
+        1559,
+        371,
+        32,
+        32
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 119333.333,
+      "frame": 7160,
+      "selector": "h2:has-text(\"Akses QR Siswa\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 121083.333,
+      "frame": 7265,
+      "from": [
+        1575,
+        387
+      ],
+      "to": [
+        814,
+        546.5
+      ],
+      "dist_px": 777.5,
+      "move_ms": 1135.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 122416.667,
+      "frame": 7345,
+      "at": [
+        814,
+        546.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 123916.667,
+      "frame": 7435,
+      "from": [
+        814,
+        546.5
+      ],
+      "to": [
+        1106,
+        546.5
+      ],
+      "dist_px": 292,
+      "move_ms": 913.6,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 125016.667,
+      "frame": 7501,
+      "at": [
+        1106,
+        546.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 126516.667,
+      "frame": 7591,
+      "from": [
+        1106,
+        546.5
+      ],
+      "to": [
+        1167.0390625,
+        224
+      ],
+      "dist_px": 328.2,
+      "move_ms": 939.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 127650,
+      "frame": 7659,
+      "at": [
+        1167.0390625,
+        224
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 129150,
+      "frame": 7749,
+      "from": [
+        1167.0390625,
+        224
+      ],
+      "to": [
+        1209.203125,
+        850
+      ],
+      "dist_px": 627.4,
+      "move_ms": 1085.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 130433.333,
+      "frame": 7826,
+      "at": [
+        1209.203125,
+        850
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 131033.333,
+      "frame": 7862,
+      "from": [
+        1209.203125,
+        850
+      ],
+      "to": [
+        1209.203125,
+        850
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 131116.667,
+      "frame": 7867,
+      "at": [
+        1209.203125,
+        850
+      ],
+      "label": "button:has-text(\"Tutup\")",
+      "bbox": [
+        1154.40625,
+        826,
+        109.59375,
+        48
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 133250,
+      "frame": 7995,
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 134150,
+      "frame": 8049,
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 134150,
+      "frame": 8049,
+      "scene_id": "scene_04_penetapan_pengawas_ruang"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 134150,
+      "frame": 8049,
+      "scene_id": "scene_04_penetapan_pengawas_ruang",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_04_penetapan_pengawas_ruang.mp3",
+      "duration_ms": 28320,
+      "at_ms": 134350
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 162683.333,
+      "frame": 9761,
+      "scene_id": "scene_04_penetapan_pengawas_ruang"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 162983.333,
+      "frame": 9779,
+      "scene_id": "scene_04_penetapan_pengawas_ruang"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 162983.333,
+      "frame": 9779,
+      "selector": "h4:has-text(\"Ruang 01\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 164733.333,
+      "frame": 9884,
+      "from_y": 0,
+      "to_y": 184.40000000000003,
+      "dur_ms": 626
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 165383.333,
+      "frame": 9923,
+      "y": 184
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 165383.333,
+      "frame": 9923,
+      "from": [
+        1209.203125,
+        850
+      ],
+      "to": [
+        960,
+        454
+      ],
+      "dist_px": 467.9,
+      "move_ms": 1018.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 166600,
+      "frame": 9996,
+      "at": [
+        960,
+        454
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 167600,
+      "frame": 10056,
+      "from": [
+        960,
+        454
+      ],
+      "to": [
+        1006.2578125,
+        187.5
+      ],
+      "dist_px": 270.5,
+      "move_ms": 896.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 168683.333,
+      "frame": 10121,
+      "at": [
+        1006.2578125,
+        187.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 169383.333,
+      "frame": 10163,
+      "from": [
+        1006.2578125,
+        187.5
+      ],
+      "to": [
+        1006.2578125,
+        187.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 169466.667,
+      "frame": 10168,
+      "at": [
+        1006.2578125,
+        187.5
+      ],
+      "label": "div:has(h4:has-text(\"Ruang 01\")) button:has-text(\"Siti Nurhaliza, S.Kom\")",
+      "bbox": [
+        946.140625,
+        173,
+        120.234375,
+        29
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 170400,
+      "frame": 10224,
+      "from": [
+        1006.2578125,
+        187.5
+      ],
+      "to": [
+        1185.21875,
+        149.5
+      ],
+      "dist_px": 183,
+      "move_ms": 812.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 171400,
+      "frame": 10284,
+      "at": [
+        1185.21875,
+        149.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 172000,
+      "frame": 10320,
+      "from": [
+        1185.21875,
+        149.5
+      ],
+      "to": [
+        1185.21875,
+        149.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 172083.333,
+      "frame": 10325,
+      "at": [
+        1185.21875,
+        149.5
+      ],
+      "label": "div:has(h4:has-text(\"Ruang 01\")) button:has-text(\"Update\")",
+      "bbox": [
+        1160.4375,
+        138,
+        49.5625,
+        23
+      ]
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 174016.667,
+      "frame": 10441,
+      "from_y": 0,
+      "to_y": 184.40000000000003,
+      "dur_ms": 626
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 174666.667,
+      "frame": 10480,
+      "y": 184
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 174666.667,
+      "frame": 10480,
+      "from": [
+        1185.21875,
+        149.5
+      ],
+      "to": [
+        960,
+        454
+      ],
+      "dist_px": 378.7,
+      "move_ms": 971.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 175833.333,
+      "frame": 10550,
+      "at": [
+        960,
+        454
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 176833.333,
+      "frame": 10610,
+      "from": [
+        960,
+        454
+      ],
+      "to": [
+        866.0703125,
+        187.5
+      ],
+      "dist_px": 282.6,
+      "move_ms": 906.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 177933.333,
+      "frame": 10676,
+      "at": [
+        866.0703125,
+        187.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 178633.333,
+      "frame": 10718,
+      "from": [
+        866.0703125,
+        187.5
+      ],
+      "to": [
+        866.0703125,
+        187.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 178716.667,
+      "frame": 10723,
+      "at": [
+        866.0703125,
+        187.5
+      ],
+      "label": "div:has(h4:has-text(\"Ruang 02\")) button:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\")",
+      "bbox": [
+        794,
+        173,
+        144.140625,
+        29
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 179650,
+      "frame": 10779,
+      "from": [
+        866.0703125,
+        187.5
+      ],
+      "to": [
+        1185.21875,
+        149.5
+      ],
+      "dist_px": 321.4,
+      "move_ms": 934.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 180783.333,
+      "frame": 10847,
+      "at": [
+        1185.21875,
+        149.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 181383.333,
+      "frame": 10883,
+      "from": [
+        1185.21875,
+        149.5
+      ],
+      "to": [
+        1185.21875,
+        149.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 181466.667,
+      "frame": 10888,
+      "at": [
+        1185.21875,
+        149.5
+      ],
+      "label": "div:has(h4:has-text(\"Ruang 02\")) button:has-text(\"Update\")",
+      "bbox": [
+        1160.4375,
+        138,
+        49.5625,
+        23
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 184100,
+      "frame": 11046,
+      "scene_id": "scene_04_penetapan_pengawas_ruang"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 185000,
+      "frame": 11100,
+      "scene_id": "scene_04_penetapan_pengawas_ruang"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 185000,
+      "frame": 11100,
+      "scene_id": "scene_05_integrasi_administrasi_selesai"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 185000,
+      "frame": 11100,
+      "scene_id": "scene_05_integrasi_administrasi_selesai",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\audio\\scene_05_integrasi_administrasi_selesai.mp3",
+      "duration_ms": 22512,
+      "at_ms": 185200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 207716.667,
+      "frame": 12463,
+      "scene_id": "scene_05_integrasi_administrasi_selesai"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 208016.667,
+      "frame": 12481,
+      "scene_id": "scene_05_integrasi_administrasi_selesai"
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 208016.667,
+      "frame": 12481,
+      "selector": "h2:has-text(\"Administrasi Ujian\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 209766.667,
+      "frame": 12586,
+      "from": [
+        1185.21875,
+        149.5
+      ],
+      "to": [
+        682,
+        487
+      ],
+      "dist_px": 605.9,
+      "move_ms": 1077.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 211033.333,
+      "frame": 12662,
+      "at": [
+        682,
+        487
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 211833.333,
+      "frame": 12710,
+      "from": [
+        682,
+        487
+      ],
+      "to": [
+        682,
+        487
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 211916.667,
+      "frame": 12715,
+      "at": [
+        682,
+        487
+      ],
+      "label": "button:has-text(\"Cetak Dokumen Administrasi\")",
+      "bbox": [
+        313,
+        459,
+        738,
+        56
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 212050,
+      "frame": 12723,
+      "selector": "h3:has-text(\"Sentral Dokumen Administrasi\")",
+      "budget_ms": 8000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 213800,
+      "frame": 12828,
+      "from": [
+        682,
+        487
+      ],
+      "to": [
+        1078,
+        401.75
+      ],
+      "dist_px": 405.1,
+      "move_ms": 986.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 214983.333,
+      "frame": 12899,
+      "at": [
+        1078,
+        401.75
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 215983.333,
+      "frame": 12959,
+      "from": [
+        1078,
+        401.75
+      ],
+      "to": [
+        1114.6640625,
+        681.25
+      ],
+      "dist_px": 281.9,
+      "move_ms": 905.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 217083.333,
+      "frame": 13025,
+      "at": [
+        1114.6640625,
+        681.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 218583.333,
+      "frame": 13115,
+      "from": [
+        1114.6640625,
+        681.25
+      ],
+      "to": [
+        805.328125,
+        681.25
+      ],
+      "dist_px": 309.3,
+      "move_ms": 926.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 219700,
+      "frame": 13182,
+      "at": [
+        805.328125,
+        681.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 221200,
+      "frame": 13272,
+      "from": [
+        805.328125,
+        681.25
+      ],
+      "to": [
+        960,
+        784.25
+      ],
+      "dist_px": 185.8,
+      "move_ms": 816.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 222200,
+      "frame": 13332,
+      "at": [
+        960,
+        784.25
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 222800,
+      "frame": 13368,
+      "from": [
+        960,
+        784.25
+      ],
+      "to": [
+        960,
+        784.25
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 222883.333,
+      "frame": 13373,
+      "at": [
+        960,
+        784.25
+      ],
+      "label": "button:has-text(\"Tutup Jendela\")",
+      "bbox": [
+        914.890625,
+        774.25,
+        90.21875,
+        20
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 225016.667,
+      "frame": 13501,
+      "scene_id": "scene_05_integrasi_administrasi_selesai"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 227216.667,
+      "frame": 13633,
+      "scene_id": "scene_05_integrasi_administrasi_selesai"
+    }
+  ]
+}

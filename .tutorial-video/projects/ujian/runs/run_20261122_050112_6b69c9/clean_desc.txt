@@ -1,0 +1,29 @@
+Tutorial Guru ZEXAM-CBT: Cara Import Soal Pilihan Ganda via Template Excel
+
+Video panduan resmi cara penggunaan fitur pada aplikasi ZEXAM-CBT. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Navigasi Bank Soal
+00:30 - Unduh Template Resmi Excel
+00:59 - Panduan Struktur Kolom Excel
+01:25 - Ketentuan Kolom Pertanyaan Dan Kunci
+01:55 - Eksekusi Import Excel Dan Progress
+02:18 - Tinjau Hasil Soal Pilihan Ganda
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Navigasi Bank Soal: Buka modul Banks Soal melalui navigasi menu samping dan pilih paket bank soal yang aktif.
+2. Unduh Template Resmi Excel: Unduh format lembar kerja XLSX resmi pada kartu informasi bank soal.
+3. Panduan Struktur Kolom Excel: Buka modal panduan import untuk memahami format standar tabel.
+4. Ketentuan Kolom Pertanyaan Dan Kunci: Pahami ketentuan kolom Pertanyaan, Tipe (pilihan_ganda/pg), Opsi A-E, Kunci (A-E), dan Skor.
+5. Eksekusi Import Excel Dan Progress: Unggah berkas spreadsheet naskah soal dan pantau indikator pengunggahan.
+6. Tinjau Hasil Soal Pilihan Ganda: Periksa hasil import yang telah tersusun rapi lengkap dengan badge tipe, opsi jawaban, dan kunci terverifikasi.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan interaktif visual beresolusi tinggi 1080p 60 FPS.
+- Penjelasan bertahap yang ramah bagi pendidik dan proktor.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #TutorialGuru #BankSoal #ImportExcel #UjianOnline

@@ -1,0 +1,1234 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_navigasi_data_kelas": {
+      "text": "Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari panduan lengkap manajemen data kelas, pembagian anggota siswa ke dalam rombongan belajar, serta proses kenaikan kelas dan kelulusan siswa secara massal. Dari navigasi samping, klik kelompok Data Master, lalu pilih menu Data Kelas untuk membuka pusat informasi rombel.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_01_navigasi_data_kelas.wav",
+      "duration_ms": 22870.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "Bapak",
+          "s": 375.0,
+          "e": 675.0
+        },
+        {
+          "w": "dan",
+          "s": 675.0,
+          "e": 812.5
+        },
+        {
+          "w": "Ibu",
+          "s": 812.5,
+          "e": 1012.5
+        },
+        {
+          "w": "Admin",
+          "s": 1012.5,
+          "e": 1425.0
+        },
+        {
+          "w": "serta",
+          "s": 1425.0,
+          "e": 1687.5
+        },
+        {
+          "w": "Rekan-Rekan",
+          "s": 1687.5,
+          "e": 2150.0
+        },
+        {
+          "w": "Proktor",
+          "s": 2150.0,
+          "e": 2512.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2512.5,
+          "e": 3500.0
+        },
+        {
+          "w": "Pada",
+          "s": 4706.5,
+          "e": 4906.5
+        },
+        {
+          "w": "tutorial",
+          "s": 4906.5,
+          "e": 5281.5
+        },
+        {
+          "w": "kali",
+          "s": 5281.5,
+          "e": 5456.5
+        },
+        {
+          "w": "ini",
+          "s": 5456.5,
+          "e": 5906.5
+        },
+        {
+          "w": "kita",
+          "s": 6181.5,
+          "e": 6381.5
+        },
+        {
+          "w": "akan",
+          "s": 6381.5,
+          "e": 6569.0
+        },
+        {
+          "w": "mempelajari",
+          "s": 6569.0,
+          "e": 6969.0
+        },
+        {
+          "w": "panduan",
+          "s": 6969.0,
+          "e": 7331.5
+        },
+        {
+          "w": "lengkap",
+          "s": 7331.5,
+          "e": 7619.0
+        },
+        {
+          "w": "manajemen",
+          "s": 7619.0,
+          "e": 8031.5
+        },
+        {
+          "w": "data",
+          "s": 8031.5,
+          "e": 8219.0
+        },
+        {
+          "w": "kelas",
+          "s": 8219.0,
+          "e": 8669.0
+        },
+        {
+          "w": "pembagian",
+          "s": 8944.0,
+          "e": 9369.0
+        },
+        {
+          "w": "anggota",
+          "s": 9369.0,
+          "e": 9656.5
+        },
+        {
+          "w": "siswa",
+          "s": 9656.5,
+          "e": 10031.5
+        },
+        {
+          "w": "ke",
+          "s": 10031.5,
+          "e": 10119.0
+        },
+        {
+          "w": "dalam",
+          "s": 10119.0,
+          "e": 10356.5
+        },
+        {
+          "w": "rombongan",
+          "s": 10356.5,
+          "e": 10694.0
+        },
+        {
+          "w": "belajar",
+          "s": 10694.0,
+          "e": 11281.5
+        },
+        {
+          "w": "serta",
+          "s": 11531.5,
+          "e": 11819.0
+        },
+        {
+          "w": "proses",
+          "s": 11819.0,
+          "e": 12156.5
+        },
+        {
+          "w": "kenaikan",
+          "s": 12156.5,
+          "e": 12519.0
+        },
+        {
+          "w": "kelas",
+          "s": 12519.0,
+          "e": 12844.0
+        },
+        {
+          "w": "dan",
+          "s": 12844.0,
+          "e": 13019.0
+        },
+        {
+          "w": "kelulusan",
+          "s": 13019.0,
+          "e": 13444.0
+        },
+        {
+          "w": "siswa",
+          "s": 13444.0,
+          "e": 13794.0
+        },
+        {
+          "w": "secara",
+          "s": 13794.0,
+          "e": 14094.0
+        },
+        {
+          "w": "massal",
+          "s": 14094.0,
+          "e": 14644.0
+        },
+        {
+          "w": "Dari",
+          "s": 15902.5,
+          "e": 16152.5
+        },
+        {
+          "w": "navigasi",
+          "s": 16152.5,
+          "e": 16602.5
+        },
+        {
+          "w": "samping",
+          "s": 16602.5,
+          "e": 17165.0
+        },
+        {
+          "w": "klik",
+          "s": 17452.5,
+          "e": 17627.5
+        },
+        {
+          "w": "kelompok",
+          "s": 17627.5,
+          "e": 17952.5
+        },
+        {
+          "w": "Data",
+          "s": 17952.5,
+          "e": 18152.5
+        },
+        {
+          "w": "Master",
+          "s": 18152.5,
+          "e": 18690.0
+        },
+        {
+          "w": "lalu",
+          "s": 18977.5,
+          "e": 19240.0
+        },
+        {
+          "w": "pilih",
+          "s": 19240.0,
+          "e": 19440.0
+        },
+        {
+          "w": "menu",
+          "s": 19440.0,
+          "e": 19590.0
+        },
+        {
+          "w": "Data",
+          "s": 19590.0,
+          "e": 19790.0
+        },
+        {
+          "w": "Kelas",
+          "s": 19790.0,
+          "e": 20102.5
+        },
+        {
+          "w": "untuk",
+          "s": 20102.5,
+          "e": 20327.5
+        },
+        {
+          "w": "membuka",
+          "s": 20327.5,
+          "e": 20652.5
+        },
+        {
+          "w": "pusat",
+          "s": 20652.5,
+          "e": 20965.0
+        },
+        {
+          "w": "informasi",
+          "s": 20965.0,
+          "e": 21502.5
+        },
+        {
+          "w": "rombel",
+          "s": 21502.5,
+          "e": 22027.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "98dbf3926d37215afa17f84d41f9c1c8777cd3a14b6eaa8cb862d3209fe3462c"
+    },
+    "scene_02_tambah_rombel_baru": {
+      "text": "Pada modul Data Kelas, proktor dapat memantau seluruh rombel aktif beserta jumlah siswa di dalamnya. Untuk menambahkan kelas baru, klik tombol Tambah Kelas di kanan atas. Masukkan nama kelas seperti Kelas VII-C atau VIII-B beserta deskripsinya, lalu simpan data tersebut ke dalam sistem.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_02_tambah_rombel_baru.wav",
+      "duration_ms": 18506.0,
+      "words": [
+        {
+          "w": "Pada",
+          "s": 112.5,
+          "e": 312.5
+        },
+        {
+          "w": "modul",
+          "s": 312.5,
+          "e": 575.0
+        },
+        {
+          "w": "Data",
+          "s": 575.0,
+          "e": 775.0
+        },
+        {
+          "w": "Kelas",
+          "s": 775.0,
+          "e": 1250.0
+        },
+        {
+          "w": "proktor",
+          "s": 1525.0,
+          "e": 1875.0
+        },
+        {
+          "w": "dapat",
+          "s": 1875.0,
+          "e": 2137.5
+        },
+        {
+          "w": "memantau",
+          "s": 2137.5,
+          "e": 2512.5
+        },
+        {
+          "w": "seluruh",
+          "s": 2512.5,
+          "e": 2825.0
+        },
+        {
+          "w": "rombel",
+          "s": 2825.0,
+          "e": 3075.0
+        },
+        {
+          "w": "aktif",
+          "s": 3075.0,
+          "e": 3437.5
+        },
+        {
+          "w": "beserta",
+          "s": 3437.5,
+          "e": 3850.0
+        },
+        {
+          "w": "jumlah",
+          "s": 3850.0,
+          "e": 4150.0
+        },
+        {
+          "w": "siswa",
+          "s": 4150.0,
+          "e": 4500.0
+        },
+        {
+          "w": "di",
+          "s": 4500.0,
+          "e": 4587.5
+        },
+        {
+          "w": "dalamnya",
+          "s": 4587.5,
+          "e": 5187.5
+        },
+        {
+          "w": "Untuk",
+          "s": 6386.5,
+          "e": 6636.5
+        },
+        {
+          "w": "menambahkan",
+          "s": 6636.5,
+          "e": 7111.5
+        },
+        {
+          "w": "kelas",
+          "s": 7111.5,
+          "e": 7336.5
+        },
+        {
+          "w": "baru",
+          "s": 7336.5,
+          "e": 7824.0
+        },
+        {
+          "w": "klik",
+          "s": 8149.0,
+          "e": 8324.0
+        },
+        {
+          "w": "tombol",
+          "s": 8324.0,
+          "e": 8611.5
+        },
+        {
+          "w": "Tambah",
+          "s": 8611.5,
+          "e": 8861.5
+        },
+        {
+          "w": "Kelas",
+          "s": 8861.5,
+          "e": 9186.5
+        },
+        {
+          "w": "di",
+          "s": 9186.5,
+          "e": 9274.0
+        },
+        {
+          "w": "kanan",
+          "s": 9274.0,
+          "e": 9524.0
+        },
+        {
+          "w": "atas",
+          "s": 9524.0,
+          "e": 10061.5
+        },
+        {
+          "w": "Masukkan",
+          "s": 11298.5,
+          "e": 11698.5
+        },
+        {
+          "w": "nama",
+          "s": 11698.5,
+          "e": 11873.5
+        },
+        {
+          "w": "kelas",
+          "s": 11873.5,
+          "e": 12136.0
+        },
+        {
+          "w": "seperti",
+          "s": 12136.0,
+          "e": 12423.5
+        },
+        {
+          "w": "Kelas",
+          "s": 12423.5,
+          "e": 12636.0
+        },
+        {
+          "w": "VII-C",
+          "s": 12636.0,
+          "e": 13136.0
+        },
+        {
+          "w": "atau",
+          "s": 13136.0,
+          "e": 13398.5
+        },
+        {
+          "w": "VIII-B",
+          "s": 13398.5,
+          "e": 13886.0
+        },
+        {
+          "w": "beserta",
+          "s": 13886.0,
+          "e": 14273.5
+        },
+        {
+          "w": "deskripsinya",
+          "s": 14273.5,
+          "e": 15186.0
+        },
+        {
+          "w": "lalu",
+          "s": 15498.5,
+          "e": 15748.5
+        },
+        {
+          "w": "simpan",
+          "s": 15748.5,
+          "e": 16073.5
+        },
+        {
+          "w": "data",
+          "s": 16073.5,
+          "e": 16248.5
+        },
+        {
+          "w": "tersebut",
+          "s": 16248.5,
+          "e": 16711.0
+        },
+        {
+          "w": "ke",
+          "s": 16711.0,
+          "e": 16798.5
+        },
+        {
+          "w": "dalam",
+          "s": 16798.5,
+          "e": 17036.0
+        },
+        {
+          "w": "sistem",
+          "s": 17036.0,
+          "e": 17648.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "99a094b28706fac7ca875e4db5b5de1be0ee5905dd0bacf091a59f8a098e81f2"
+    },
+    "scene_03_kelola_anggota_siswa_kelas": {
+      "text": "Untuk mengatur siswa yang tergabung di dalam suatu kelas, klik tombol Kelola Siswa pada baris rombel yang diinginkan. Halaman ini menyajikan daftar seluruh siswa yang aktif di kelas tersebut. Proktor dapat menambahkan siswa yang belum memiliki rombel, atau mengeluarkan siswa jika terjadi mutasi kelas.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_03_kelola_anggota_siswa_kelas.wav",
+      "duration_ms": 18122.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 350.0
+        },
+        {
+          "w": "mengatur",
+          "s": 350.0,
+          "e": 637.5
+        },
+        {
+          "w": "siswa",
+          "s": 637.5,
+          "e": 975.0
+        },
+        {
+          "w": "yang",
+          "s": 975.0,
+          "e": 1112.5
+        },
+        {
+          "w": "tergabung",
+          "s": 1112.5,
+          "e": 1562.5
+        },
+        {
+          "w": "di",
+          "s": 1562.5,
+          "e": 1637.5
+        },
+        {
+          "w": "dalam",
+          "s": 1637.5,
+          "e": 1850.0
+        },
+        {
+          "w": "suatu",
+          "s": 1850.0,
+          "e": 2112.5
+        },
+        {
+          "w": "kelas",
+          "s": 2112.5,
+          "e": 2587.5
+        },
+        {
+          "w": "klik",
+          "s": 2875.0,
+          "e": 3050.0
+        },
+        {
+          "w": "tombol",
+          "s": 3050.0,
+          "e": 3325.0
+        },
+        {
+          "w": "Kelola",
+          "s": 3325.0,
+          "e": 3562.5
+        },
+        {
+          "w": "Siswa",
+          "s": 3562.5,
+          "e": 3975.0
+        },
+        {
+          "w": "pada",
+          "s": 3975.0,
+          "e": 4162.5
+        },
+        {
+          "w": "baris",
+          "s": 4162.5,
+          "e": 4425.0
+        },
+        {
+          "w": "rombel",
+          "s": 4425.0,
+          "e": 4762.5
+        },
+        {
+          "w": "yang",
+          "s": 4762.5,
+          "e": 4937.5
+        },
+        {
+          "w": "diinginkan",
+          "s": 4937.5,
+          "e": 5662.5
+        },
+        {
+          "w": "Halaman",
+          "s": 6884.0,
+          "e": 7246.5
+        },
+        {
+          "w": "ini",
+          "s": 7246.5,
+          "e": 7496.5
+        },
+        {
+          "w": "menyajikan",
+          "s": 7496.5,
+          "e": 7984.0
+        },
+        {
+          "w": "daftar",
+          "s": 7984.0,
+          "e": 8334.0
+        },
+        {
+          "w": "seluruh",
+          "s": 8334.0,
+          "e": 8659.0
+        },
+        {
+          "w": "siswa",
+          "s": 8659.0,
+          "e": 9021.5
+        },
+        {
+          "w": "yang",
+          "s": 9021.5,
+          "e": 9171.5
+        },
+        {
+          "w": "aktif",
+          "s": 9171.5,
+          "e": 9559.0
+        },
+        {
+          "w": "di",
+          "s": 9559.0,
+          "e": 9646.5
+        },
+        {
+          "w": "kelas",
+          "s": 9646.5,
+          "e": 9859.0
+        },
+        {
+          "w": "tersebut",
+          "s": 9859.0,
+          "e": 10459.0
+        },
+        {
+          "w": "Proktor",
+          "s": 11658.5,
+          "e": 12008.5
+        },
+        {
+          "w": "dapat",
+          "s": 12008.5,
+          "e": 12271.0
+        },
+        {
+          "w": "menambahkan",
+          "s": 12271.0,
+          "e": 12733.5
+        },
+        {
+          "w": "siswa",
+          "s": 12733.5,
+          "e": 13108.5
+        },
+        {
+          "w": "yang",
+          "s": 13108.5,
+          "e": 13283.5
+        },
+        {
+          "w": "belum",
+          "s": 13283.5,
+          "e": 13471.0
+        },
+        {
+          "w": "memiliki",
+          "s": 13471.0,
+          "e": 13808.5
+        },
+        {
+          "w": "rombel",
+          "s": 13808.5,
+          "e": 14321.0
+        },
+        {
+          "w": "atau",
+          "s": 14596.0,
+          "e": 14846.0
+        },
+        {
+          "w": "mengeluarkan",
+          "s": 14846.0,
+          "e": 15346.0
+        },
+        {
+          "w": "siswa",
+          "s": 15346.0,
+          "e": 15746.0
+        },
+        {
+          "w": "jika",
+          "s": 15746.0,
+          "e": 15983.5
+        },
+        {
+          "w": "terjadi",
+          "s": 15983.5,
+          "e": 16433.5
+        },
+        {
+          "w": "mutasi",
+          "s": 16433.5,
+          "e": 16758.5
+        },
+        {
+          "w": "kelas",
+          "s": 16758.5,
+          "e": 17271.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "bac8b369032f7ddd8eeb9a88312a888f639f2a5898f35b3f5b9e95dfd235977d"
+    },
+    "scene_04_modul_kenaikan_kelas_dan_mutasi": {
+      "text": "Ketika memasuki tahun ajaran baru, sistem menyediakan modul Kenaikan Kelas terpadu. Dari navigasi samping, klik menu Kenaikan Kelas. Pada tab Kenaikan Per Kelas, proktor cukup memilih kelas asal, menentukan kelas tujuan atau opsi kelulusan, lalu menandai siswa yang naik kelas untuk diproses secara instan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_04_modul_kenaikan_kelas_dan_mutasi.wav",
+      "duration_ms": 19706.0,
+      "words": [
+        {
+          "w": "Ketika",
+          "s": 112.5,
+          "e": 400.0
+        },
+        {
+          "w": "memasuki",
+          "s": 400.0,
+          "e": 825.0
+        },
+        {
+          "w": "tahun",
+          "s": 825.0,
+          "e": 1062.5
+        },
+        {
+          "w": "ajaran",
+          "s": 1062.5,
+          "e": 1400.0
+        },
+        {
+          "w": "baru",
+          "s": 1400.0,
+          "e": 1862.5
+        },
+        {
+          "w": "sistem",
+          "s": 2150.0,
+          "e": 2525.0
+        },
+        {
+          "w": "menyediakan",
+          "s": 2525.0,
+          "e": 3012.5
+        },
+        {
+          "w": "modul",
+          "s": 3012.5,
+          "e": 3325.0
+        },
+        {
+          "w": "Kenaikan",
+          "s": 3325.0,
+          "e": 3737.5
+        },
+        {
+          "w": "Kelas",
+          "s": 3737.5,
+          "e": 3962.5
+        },
+        {
+          "w": "terpadu",
+          "s": 3962.5,
+          "e": 4575.0
+        },
+        {
+          "w": "Dari",
+          "s": 5774.0,
+          "e": 6061.5
+        },
+        {
+          "w": "navigasi",
+          "s": 6061.5,
+          "e": 6511.5
+        },
+        {
+          "w": "samping",
+          "s": 6511.5,
+          "e": 7086.5
+        },
+        {
+          "w": "klik",
+          "s": 7386.5,
+          "e": 7599.0
+        },
+        {
+          "w": "menu",
+          "s": 7599.0,
+          "e": 7786.5
+        },
+        {
+          "w": "Kenaikan",
+          "s": 7786.5,
+          "e": 8174.0
+        },
+        {
+          "w": "Kelas",
+          "s": 8174.0,
+          "e": 8674.0
+        },
+        {
+          "w": "Pada",
+          "s": 9906.5,
+          "e": 10119.0
+        },
+        {
+          "w": "tab",
+          "s": 10119.0,
+          "e": 10306.5
+        },
+        {
+          "w": "Kenaikan",
+          "s": 10306.5,
+          "e": 10681.5
+        },
+        {
+          "w": "Per",
+          "s": 10681.5,
+          "e": 10769.0
+        },
+        {
+          "w": "Kelas",
+          "s": 10769.0,
+          "e": 11244.0
+        },
+        {
+          "w": "proktor",
+          "s": 11506.5,
+          "e": 11831.5
+        },
+        {
+          "w": "cukup",
+          "s": 11831.5,
+          "e": 12094.0
+        },
+        {
+          "w": "memilih",
+          "s": 12094.0,
+          "e": 12369.0
+        },
+        {
+          "w": "kelas",
+          "s": 12369.0,
+          "e": 12581.5
+        },
+        {
+          "w": "asal",
+          "s": 12581.5,
+          "e": 13081.5
+        },
+        {
+          "w": "menentukan",
+          "s": 13344.0,
+          "e": 13819.0
+        },
+        {
+          "w": "kelas",
+          "s": 13819.0,
+          "e": 14006.5
+        },
+        {
+          "w": "tujuan",
+          "s": 14006.5,
+          "e": 14406.5
+        },
+        {
+          "w": "atau",
+          "s": 14406.5,
+          "e": 14606.5
+        },
+        {
+          "w": "opsi",
+          "s": 14606.5,
+          "e": 14856.5
+        },
+        {
+          "w": "kelulusan",
+          "s": 14856.5,
+          "e": 15506.5
+        },
+        {
+          "w": "lalu",
+          "s": 15806.5,
+          "e": 16056.5
+        },
+        {
+          "w": "menandai",
+          "s": 16056.5,
+          "e": 16394.0
+        },
+        {
+          "w": "siswa",
+          "s": 16394.0,
+          "e": 16744.0
+        },
+        {
+          "w": "yang",
+          "s": 16744.0,
+          "e": 16881.5
+        },
+        {
+          "w": "naik",
+          "s": 16881.5,
+          "e": 17056.5
+        },
+        {
+          "w": "kelas",
+          "s": 17056.5,
+          "e": 17331.5
+        },
+        {
+          "w": "untuk",
+          "s": 17331.5,
+          "e": 17556.5
+        },
+        {
+          "w": "diproses",
+          "s": 17556.5,
+          "e": 17994.0
+        },
+        {
+          "w": "secara",
+          "s": 17994.0,
+          "e": 18256.5
+        },
+        {
+          "w": "instan",
+          "s": 18256.5,
+          "e": 18869.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "4548bf52c4e2d8a5b9cb14516d8169ab598386d8330dcf7f30cef207216b2c43"
+    },
+    "scene_05_pemetaan_massal_wizard_dan_kelulusan": {
+      "text": "Bagi sekolah dengan banyak rombongan belajar, gunakan fitur Pemetaan Massal. Cukup klik tab Pemetaan Massal Wizard, lalu tentukan alur kenaikan seluruh kelas secara simultan, mulai dari kenaikan tingkat hingga status kelulusan siswa tingkat akhir hanya dalam satu kali klik. Sangat efisien, otomatis, dan akurat. Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\audio\\scene_05_pemetaan_massal_wizard_dan_kelulusan.wav",
+      "duration_ms": 23874.0,
+      "words": [
+        {
+          "w": "Bagi",
+          "s": 112.5,
+          "e": 362.5
+        },
+        {
+          "w": "sekolah",
+          "s": 362.5,
+          "e": 750.0
+        },
+        {
+          "w": "dengan",
+          "s": 750.0,
+          "e": 975.0
+        },
+        {
+          "w": "banyak",
+          "s": 975.0,
+          "e": 1262.5
+        },
+        {
+          "w": "rombongan",
+          "s": 1262.5,
+          "e": 1625.0
+        },
+        {
+          "w": "belajar",
+          "s": 1625.0,
+          "e": 2200.0
+        },
+        {
+          "w": "gunakan",
+          "s": 2487.5,
+          "e": 2912.5
+        },
+        {
+          "w": "fitur",
+          "s": 2912.5,
+          "e": 3212.5
+        },
+        {
+          "w": "Pemetaan",
+          "s": 3212.5,
+          "e": 3650.0
+        },
+        {
+          "w": "Massal",
+          "s": 3650.0,
+          "e": 4200.0
+        },
+        {
+          "w": "Cukup",
+          "s": 5402.5,
+          "e": 5652.5
+        },
+        {
+          "w": "klik",
+          "s": 5652.5,
+          "e": 5827.5
+        },
+        {
+          "w": "tab",
+          "s": 5827.5,
+          "e": 6002.5
+        },
+        {
+          "w": "Pemetaan",
+          "s": 6002.5,
+          "e": 6377.5
+        },
+        {
+          "w": "Massal",
+          "s": 6377.5,
+          "e": 6640.0
+        },
+        {
+          "w": "Wizard",
+          "s": 6640.0,
+          "e": 7152.5
+        },
+        {
+          "w": "lalu",
+          "s": 7427.5,
+          "e": 7652.5
+        },
+        {
+          "w": "tentukan",
+          "s": 7652.5,
+          "e": 8002.5
+        },
+        {
+          "w": "alur",
+          "s": 8002.5,
+          "e": 8240.0
+        },
+        {
+          "w": "kenaikan",
+          "s": 8240.0,
+          "e": 8652.5
+        },
+        {
+          "w": "seluruh",
+          "s": 8652.5,
+          "e": 8952.5
+        },
+        {
+          "w": "kelas",
+          "s": 8952.5,
+          "e": 9165.0
+        },
+        {
+          "w": "secara",
+          "s": 9165.0,
+          "e": 9402.5
+        },
+        {
+          "w": "simultan",
+          "s": 9402.5,
+          "e": 10065.0
+        },
+        {
+          "w": "mulai",
+          "s": 10365.0,
+          "e": 10627.5
+        },
+        {
+          "w": "dari",
+          "s": 10627.5,
+          "e": 10777.5
+        },
+        {
+          "w": "kenaikan",
+          "s": 10777.5,
+          "e": 11115.0
+        },
+        {
+          "w": "tingkat",
+          "s": 11115.0,
+          "e": 11465.0
+        },
+        {
+          "w": "hingga",
+          "s": 11465.0,
+          "e": 11702.5
+        },
+        {
+          "w": "status",
+          "s": 11702.5,
+          "e": 12027.5
+        },
+        {
+          "w": "kelulusan",
+          "s": 12027.5,
+          "e": 12452.5
+        },
+        {
+          "w": "siswa",
+          "s": 12452.5,
+          "e": 12752.5
+        },
+        {
+          "w": "tingkat",
+          "s": 12752.5,
+          "e": 13040.0
+        },
+        {
+          "w": "akhir",
+          "s": 13040.0,
+          "e": 13377.5
+        },
+        {
+          "w": "hanya",
+          "s": 13377.5,
+          "e": 13677.5
+        },
+        {
+          "w": "dalam",
+          "s": 13677.5,
+          "e": 13902.5
+        },
+        {
+          "w": "satu",
+          "s": 13902.5,
+          "e": 14152.5
+        },
+        {
+          "w": "kali",
+          "s": 14152.5,
+          "e": 14352.5
+        },
+        {
+          "w": "klik",
+          "s": 14352.5,
+          "e": 14715.0
+        },
+        {
+          "w": "Sangat",
+          "s": 15982.0,
+          "e": 16357.0
+        },
+        {
+          "w": "efisien",
+          "s": 16357.0,
+          "e": 17044.5
+        },
+        {
+          "w": "otomatis",
+          "s": 17307.0,
+          "e": 18069.5
+        },
+        {
+          "w": "dan",
+          "s": 18294.5,
+          "e": 18557.0
+        },
+        {
+          "w": "akurat",
+          "s": 18557.0,
+          "e": 19132.0
+        },
+        {
+          "w": "Selamat",
+          "s": 19969.5,
+          "e": 20357.0
+        },
+        {
+          "w": "mencoba",
+          "s": 20357.0,
+          "e": 20782.0
+        },
+        {
+          "w": "dan",
+          "s": 20782.0,
+          "e": 20944.5
+        },
+        {
+          "w": "sukses",
+          "s": 20944.5,
+          "e": 21344.5
+        },
+        {
+          "w": "selalu",
+          "s": 21344.5,
+          "e": 21657.0
+        },
+        {
+          "w": "bersama",
+          "s": 21657.0,
+          "e": 22044.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 22044.5,
+          "e": 23032.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "cd246a7c12a8f6fe97a6452b0b68588933d4a1127701cff040e2e52d98ceed8f"
+    }
+  }
+}

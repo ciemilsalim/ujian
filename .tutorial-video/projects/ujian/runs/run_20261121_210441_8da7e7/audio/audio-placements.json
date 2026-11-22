@@ -1,0 +1,175 @@
+{
+  "sample_rate": 48000,
+  "source": "recording\\events-desktop.json",
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "ducking_attack_ms": 200,
+    "ducking_release_ms": 500,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true,
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "file_rel": "resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256_verified": true,
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa"
+  },
+  "bgm_acoustics": {
+    "bgm_present": true,
+    "ducked_bgm_rms_dbfs": -45.88,
+    "pause_bgm_rms_dbfs": -35.05,
+    "speech_master_rms_dbfs": -18.1,
+    "measured_voice_advantage_db": 27.79,
+    "measured_ducking_attenuation_db": 10.83,
+    "audible": false
+  },
+  "placements": [
+    {
+      "kind": "narration",
+      "at_ms": 200,
+      "dur_ms": 21766.0,
+      "ref": "scene_01_navigasi_manajemen_akun"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 24283.333,
+      "dur_ms": 45.0,
+      "ref": ".hidden.lg\\:block button:has-text(\"Data Master\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 26400,
+      "dur_ms": 45.0,
+      "ref": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 31416.667,
+      "dur_ms": 17218.0,
+      "ref": "scene_02_filter_dan_pencarian_pengguna"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 51800,
+      "dur_ms": 45.0,
+      "ref": "input[placeholder*=\"Cari Nama\"]"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52100,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52216.667,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52316.667,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52466.667,
+      "dur_ms": 30.0,
+      "ref": "w"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52583.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 54716.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Filter\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 57683.333,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Reset\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 60016.667,
+      "dur_ms": 15634.0,
+      "ref": "scene_03_tambah_user_manual"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 77700,
+      "dur_ms": 45.0,
+      "ref": "a:has-text(\"User Baru\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 87300,
+      "dur_ms": 45.0,
+      "ref": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 89983.333,
+      "dur_ms": 22654.0,
+      "ref": "scene_04_import_siswa_excel_dan_word"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 114966.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Import Siswa\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 125416.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Batal\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 128100,
+      "dur_ms": 22992.0,
+      "ref": "scene_05_kontrol_keamanan_password_dan_aksi_masal"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 154750,
+      "dur_ms": 45.0,
+      "ref": "button:has(svg.lucide-eye)"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 157816.667,
+      "dur_ms": 45.0,
+      "ref": "td button:has(svg.lucide-square)"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 161566.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Batal\")"
+    },
+    {
+      "kind": "background_music",
+      "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+      "base_volume": 0.16,
+      "ducking_volume": 0.045,
+      "at_ms": 0.0,
+      "dur_ms": 166700.0,
+      "ref": "bgm"
+    }
+  ]
+}

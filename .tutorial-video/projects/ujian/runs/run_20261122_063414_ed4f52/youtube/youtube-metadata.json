@@ -1,0 +1,45 @@
+{
+  "snippet": {
+    "title": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Kelas, Anggota Siswa & Kenaikan Kelas",
+    "description": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Kelas, Anggota Siswa & Kenaikan Kelas\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Data Kelas\n00:30 - Tambah Rombel Baru\n00:59 - Kelola Anggota Siswa Kelas\n01:25 - Modul Kenaikan Kelas Dan Mutasi\n01:53 - Pemetaan Massal Wizard Dan Kelulusan\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Data Kelas: Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT.\n2. Tambah Rombel Baru: Pada modul Data Kelas, proktor dapat memantau seluruh rombel aktif beserta jumlah siswa di dalamnya.\n3. Kelola Anggota Siswa Kelas: Untuk mengatur siswa yang tergabung di dalam suatu kelas, klik tombol Kelola Siswa pada baris rombel yang diinginkan.\n4. Modul Kenaikan Kelas Dan Mutasi: Ketika memasuki tahun ajaran baru, sistem menyediakan modul Kenaikan Kelas terpadu.\n5. Pemetaan Massal Wizard Dan Kelulusan: Bagi sekolah dengan banyak rombongan belajar, gunakan fitur Pemetaan Massal.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "admin",
+      "proktor",
+      "zexam-cbt",
+      "manajemen",
+      "kelas",
+      "anggota",
+      "siswa",
+      "kenaikan",
+      "navigasi data kelas",
+      "tambah rombel baru",
+      "kelola anggota siswa kelas",
+      "modul kenaikan kelas dan mutasi",
+      "pemetaan massal wizard dan kelulusan"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 143.65,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_063414_ed4f52\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T22:44:43.857529+00:00"
+  }
+}

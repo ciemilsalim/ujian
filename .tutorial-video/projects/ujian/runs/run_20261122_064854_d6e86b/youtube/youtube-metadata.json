@@ -1,0 +1,45 @@
+{
+  "snippet": {
+    "title": "Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay",
+    "description": "Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Tambah Soal\n00:34 - Konfigurasi Soal Menjodohkan\n01:15 - Konfigurasi Soal Isian Singkat\n01:48 - Konfigurasi Soal Essay Dan Rubrik\n02:19 - Tinjau Daftar Soal Dan Penutup\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Tambah Soal: Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT.\n2. Konfigurasi Soal Menjodohkan: Untuk membuat soal menjodohkan, ubah dropdown Tipe Soal menjadi Menjodohkan.\n3. Konfigurasi Soal Isian Singkat: Selanjutnya, kita beralih ke tipe soal Isian Singkat.\n4. Konfigurasi Soal Essay Dan Rubrik: Untuk soal uraian mendalam, pilih tipe Essay.\n5. Tinjau Daftar Soal Dan Penutup: Seluruh butir soal menjodohkan, isian singkat, dan uraian esai akan tampil terstruktur pada daftar pertanyaan.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "guru",
+      "zexam-cbt",
+      "pembuatan",
+      "soal",
+      "menjodohkan",
+      "isian",
+      "singkat",
+      "essay",
+      "navigasi tambah soal",
+      "konfigurasi soal menjodohkan",
+      "konfigurasi soal isian singkat",
+      "konfigurasi soal essay dan rubrik",
+      "tinjau daftar soal dan penutup"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_064854_d6e86b\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 171.02,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_064854_d6e86b\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T23:08:27.920759+00:00"
+  }
+}

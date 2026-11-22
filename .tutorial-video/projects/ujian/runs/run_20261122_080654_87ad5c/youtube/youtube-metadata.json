@@ -1,0 +1,43 @@
+{
+  "snippet": {
+    "title": "Tutorial Proktor ZEXAM-CBT: Manajemen Pengawas & Penetapan Ruang Ujian",
+    "description": "Tutorial Proktor ZEXAM-CBT: Manajemen Pengawas & Penetapan Ruang Ujian\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Pengawas\n00:41 - Tambah Pengawas Baru\n01:31 - Akses Qr Dan Cetak Barcode\n02:14 - Penetapan Pengawas Ruang\n03:05 - Integrasi Administrasi Selesai\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Pengawas: Halo rekan administrator dan proktor ujian.\n2. Tambah Pengawas Baru: Untuk mendaftarkan tenaga pengawas baru ke dalam sistem, klik tombol Tambah Pengawas di pojok kanan atas.\n3. Akses Qr Dan Cetak Barcode: ZEXAM-CBT menyediakan fitur cetak kartu akses berbasis barcode.\n4. Penetapan Pengawas Ruang: Langkah berikutnya adalah menugaskan pengawas ke ruang sesi ujian.\n5. Integrasi Administrasi Selesai: Seluruh penetapan pengawas ini otomatis terintegrasi ke modul Administrasi Ujian.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "proktor",
+      "zexam-cbt",
+      "manajemen",
+      "pengawas",
+      "penetapan",
+      "ruang",
+      "navigasi pengawas",
+      "tambah pengawas baru",
+      "akses qr dan cetak barcode",
+      "penetapan pengawas ruang",
+      "integrasi administrasi selesai"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 227.22,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_080654_87ad5c\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-22T00:26:47.723665+00:00"
+  }
+}

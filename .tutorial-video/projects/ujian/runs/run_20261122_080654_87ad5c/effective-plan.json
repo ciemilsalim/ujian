@@ -1,0 +1,471 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Proktor ZEXAM-CBT: Manajemen Pengawas & Penetapan Ruang Ujian",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "proktor"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h2:has-text(\"Halo,\")"
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_pengawas",
+      "name": "Navigasi Menu Dan Dashboard Master Pengawas",
+      "narration": "Halo rekan administrator dan proktor ujian. Pada panduan kali ini, kita akan mempelajari tata cara manajemen data pengawas ujian serta penetapan pengawas ke setiap ruang sesi di ZEXAM-CBT. Dari dashboard utama proktor, buka menu Data Master pada navigasi sebelah kiri, kemudian pilih Manajemen Pengawas. Di halaman ini, sistem menyajikan daftar lengkap pengawas yang berhak mengawasi jalannya asesmen, lengkap dengan NIP dan PIN login otomatis.",
+      "steps": [
+        {
+          "do": "move",
+          "target": "button:has-text(\"Data Master\")"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Data Master\")"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "move",
+          "target": "a:has-text(\"Manajemen Pengawas\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "a:has-text(\"Manajemen Pengawas\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Manajemen Pengawas\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "input[placeholder*=\"Cari nama\"]"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "table tbody tr"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_02_tambah_pengawas_baru",
+      "name": "Tambah Pengawas Baru Dan PIN Login Unik",
+      "narration": "Untuk mendaftarkan tenaga pengawas baru ke dalam sistem, klik tombol Tambah Pengawas di pojok kanan atas. Masukkan nama lengkap beserta gelar, misalnya Dokterandus Haji Ahmad Fauzi, Magister Pendidikan, dan masukkan NIP atau NIK pengawas. Hebatnya, ZEXAM-CBT secara otomatis men-generate enam digit PIN login unik yang aman. Klik Simpan Pengawas, dan data langsung tersimpan dengan rapi di daftar master pengawas.",
+      "steps": [
+        {
+          "do": "move",
+          "target": "button:has-text(\"Tambah Pengawas\")"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tambah Pengawas\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Tambah Pengawas Baru\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "#name"
+        },
+        {
+          "do": "click",
+          "target": "#name"
+        },
+        {
+          "do": "fill",
+          "target": "#name",
+          "value": "Drs. H. Ahmad Fauzi, M.Pd"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "move",
+          "target": "#nip"
+        },
+        {
+          "do": "click",
+          "target": "#nip"
+        },
+        {
+          "do": "fill",
+          "target": "#nip",
+          "value": "197805122003121002"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "p:has-text(\"Sistem secara otomatis akan membuatkan PIN Login unik\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Simpan Pengawas\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Simpan Pengawas\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "td:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "tr:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_03_akses_qr_dan_cetak_barcode",
+      "name": "Akses QR Code Dan Cetak Barcode Pengawas",
+      "narration": "ZEXAM-CBT menyediakan fitur cetak kartu akses berbasis barcode. Klik ikon QR Code pada baris pengawas untuk membuka jendela Akses QR. Sistem menyediakan dua barcode beresolusi tinggi, baik untuk mode server online melalui internet publik, maupun server offline berbasis intranet lokal sekolah. Proktor dapat mencetak kartu barcode ini untuk ditempel di pintu ruang ujian ataupun dibagikan langsung kepada pengawas ruang.",
+      "steps": [
+        {
+          "do": "move",
+          "target": "tr:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\") button[title=\"Lihat QR Code\"]"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "click",
+          "target": "tr:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\") button[title=\"Lihat QR Code\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Akses QR Siswa\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": ".qr-card:has-text(\"Server Online\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": ".qr-card:has-text(\"Server Offline\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Cetak (Print) Barcode\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Tutup\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tutup\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_04_penetapan_pengawas_ruang",
+      "name": "Penetapan Pengawas Ke Ruang Ujian Pada Sesi",
+      "narration": "Langkah berikutnya adalah menugaskan pengawas ke ruang sesi ujian. Masuk ke modul Pembagian Ruang pada sesi yang dijadwalkan. Pada kartu Ruang Nol Satu, pilih pengawas yang bertugas, misalnya Ibu Siti Nurhaliza, lalu klik tombol Update. Kemudian pada Ruang Nol Dua, pilih Bapak Ahmad Fauzi dan simpan perubahan. Sistem menerapkan validasi proteksi anti-bentrok jadwal, sehingga seorang pengawas tidak dapat ditugaskan di dua ruang berbeda pada sesi yang sama.",
+      "steps": [
+        {
+          "do": "goto",
+          "url": "http://127.0.0.1:8000/proktor/sessions/1/assign-rooms"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h4:has-text(\"Ruang 01\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "div:has(h4:has-text(\"Ruang 01\"))"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "div:has(h4:has-text(\"Ruang 01\")) button:has-text(\"Siti Nurhaliza, S.Kom\")"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "click",
+          "target": "div:has(h4:has-text(\"Ruang 01\")) button:has-text(\"Siti Nurhaliza, S.Kom\")"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "move",
+          "target": "div:has(h4:has-text(\"Ruang 01\")) button:has-text(\"Update\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "div:has(h4:has-text(\"Ruang 01\")) button:has-text(\"Update\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1800
+        },
+        {
+          "do": "move",
+          "target": "div:has(h4:has-text(\"Ruang 02\"))"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "div:has(h4:has-text(\"Ruang 02\")) button:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\")"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "click",
+          "target": "div:has(h4:has-text(\"Ruang 02\")) button:has-text(\"Drs. H. Ahmad Fauzi, M.Pd\")"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "move",
+          "target": "div:has(h4:has-text(\"Ruang 02\")) button:has-text(\"Update\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "div:has(h4:has-text(\"Ruang 02\")) button:has-text(\"Update\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_05_integrasi_administrasi_selesai",
+      "name": "Integrasi Administrasi Dan Berita Acara Ujian",
+      "narration": "Seluruh penetapan pengawas ini otomatis terintegrasi ke modul Administrasi Ujian. Proktor dapat langsung mencetak Berita Acara Pelaksanaan, Daftar Hadir Pengawas resmi, serta lembar Tata Tertib Pengawas berformat PDF standar asesmen nasional. Dengan pengelolaan pengawas yang terstruktur, pelaksanaan ujian di sekolah Anda berjalan lebih tertib, transparan, dan profesional.",
+      "steps": [
+        {
+          "do": "goto",
+          "url": "http://127.0.0.1:8000/proktor/administration"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Administrasi Ujian\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Cetak Dokumen Administrasi\")"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Cetak Dokumen Administrasi\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h3:has-text(\"Sentral Dokumen Administrasi\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "#proctor_id"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Kehadiran Pengawas\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Berita Acara\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Tutup Jendela\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tutup Jendela\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        }
+      ]
+    }
+  ]
+}

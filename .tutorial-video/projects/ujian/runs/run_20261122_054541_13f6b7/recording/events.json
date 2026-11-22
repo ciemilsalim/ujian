@@ -1,0 +1,988 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_ruang_ujian",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 22518,
+      "action_start_ms": 22833.333,
+      "action_end_ms": 28783.333,
+      "end_ms": 29983.333
+    },
+    {
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas",
+      "start_ms": 29983.333,
+      "narration_start_ms": 30183.333,
+      "narration_end_ms": 50681.333,
+      "action_start_ms": 50983.333,
+      "action_end_ms": 61566.667,
+      "end_ms": 62766.667
+    },
+    {
+      "scene_id": "scene_03_modul_distribusi_siswa_global",
+      "start_ms": 62766.667,
+      "narration_start_ms": 62966.667,
+      "narration_end_ms": 83268.667,
+      "action_start_ms": 83583.333,
+      "action_end_ms": 89516.667,
+      "end_ms": 90716.667
+    },
+    {
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa",
+      "start_ms": 90716.667,
+      "narration_start_ms": 90916.667,
+      "narration_end_ms": 112774.667,
+      "action_start_ms": 113083.333,
+      "action_end_ms": 118666.667,
+      "end_ms": 119866.667
+    },
+    {
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf",
+      "start_ms": 119866.667,
+      "narration_start_ms": 120066.667,
+      "narration_end_ms": 147328.667,
+      "action_start_ms": 147633.333,
+      "action_end_ms": 155733.333,
+      "end_ms": 157233.333
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_ruang_ujian"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_ruang_ujian",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_01_navigasi_ruang_ujian.wav",
+      "duration_ms": 22318,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 22533.333,
+      "frame": 1352,
+      "scene_id": "scene_01_navigasi_ruang_ujian"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 22833.333,
+      "frame": 1370,
+      "scene_id": "scene_01_navigasi_ruang_ujian"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 22833.333,
+      "frame": 1370,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 1162.4,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 24166.667,
+      "frame": 1450,
+      "at": [
+        127.5,
+        199
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 24766.667,
+      "frame": 1486,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 24850,
+      "frame": 1491,
+      "at": [
+        127.5,
+        199
+      ],
+      "label": ".hidden.lg\\:block button:has-text(\"Data Master\")",
+      "bbox": [
+        16,
+        179,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 24983.333,
+      "frame": 1499,
+      "selector": ".hidden.lg\\:block a:has-text(\"Ruang Ujian\")",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 25533.333,
+      "frame": 1532,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        150,
+        463
+      ],
+      "dist_px": 265,
+      "move_ms": 892.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 26616.667,
+      "frame": 1597,
+      "at": [
+        150,
+        463
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 27216.667,
+      "frame": 1633,
+      "from": [
+        150,
+        463
+      ],
+      "to": [
+        150,
+        463
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 27300,
+      "frame": 1638,
+      "at": [
+        150,
+        463
+      ],
+      "label": ".hidden.lg\\:block a:has-text(\"Ruang Ujian\")",
+      "bbox": [
+        61,
+        443,
+        178,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 27433.333,
+      "frame": 1646,
+      "selector": "h2:has-text(\"Manajemen Ruang Ujian\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 28783.333,
+      "frame": 1727,
+      "scene_id": "scene_01_navigasi_ruang_ujian"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 29983.333,
+      "frame": 1799,
+      "scene_id": "scene_01_navigasi_ruang_ujian"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 29983.333,
+      "frame": 1799,
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 29983.333,
+      "frame": 1799,
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_02_tambah_ruang_dan_kapasitas.wav",
+      "duration_ms": 20498,
+      "at_ms": 30183.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 50683.333,
+      "frame": 3041,
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 50983.333,
+      "frame": 3059,
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 50983.333,
+      "frame": 3059,
+      "from": [
+        150,
+        463
+      ],
+      "to": [
+        1794.25,
+        124
+      ],
+      "dist_px": 1678.8,
+      "move_ms": 1435.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 52616.667,
+      "frame": 3157,
+      "at": [
+        1794.25,
+        124
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 53216.667,
+      "frame": 3193,
+      "from": [
+        1794.25,
+        124
+      ],
+      "to": [
+        1794.25,
+        124
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 53300,
+      "frame": 3198,
+      "at": [
+        1794.25,
+        124
+      ],
+      "label": "button:has-text(\"Tambah Ruang\")",
+      "bbox": [
+        1700.5,
+        100,
+        187.5,
+        48
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 53433.333,
+      "frame": 3206,
+      "selector": "#name",
+      "budget_ms": 3000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 53983.333,
+      "frame": 3239,
+      "from": [
+        1794.25,
+        124
+      ],
+      "to": [
+        883.2,
+        480
+      ],
+      "dist_px": 978.1,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 55316.667,
+      "frame": 3319,
+      "at": [
+        883.2,
+        480
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 55400,
+      "frame": 3324,
+      "at": [
+        883.2,
+        480
+      ],
+      "label": "#name",
+      "bbox": [
+        768,
+        456,
+        384,
+        48
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 55700,
+      "frame": 3342,
+      "target": "#name",
+      "text_len": 23,
+      "bbox": [
+        768,
+        456,
+        384,
+        48
+      ],
+      "end_vt_ms": 58850
+    },
+    {
+      "type": "key",
+      "vt_ms": 55700,
+      "frame": 3342,
+      "ch": "R",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 55800,
+      "frame": 3348,
+      "ch": "u",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 55900,
+      "frame": 3354,
+      "ch": "a",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 56183.333,
+      "frame": 3371,
+      "ch": "n",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 56333.333,
+      "frame": 3380,
+      "ch": "g",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 56483.333,
+      "frame": 3389,
+      "ch": " ",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 56650,
+      "frame": 3399,
+      "ch": "0",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 56750,
+      "frame": 3405,
+      "ch": "4",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 56900,
+      "frame": 3414,
+      "ch": " ",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 57083.333,
+      "frame": 3425,
+      "ch": "(",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 57216.667,
+      "frame": 3433,
+      "ch": "L",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 57350,
+      "frame": 3441,
+      "ch": "a",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 57500,
+      "frame": 3450,
+      "ch": "b",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 57633.333,
+      "frame": 3458,
+      "ch": " ",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 57783.333,
+      "frame": 3467,
+      "ch": "C",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 57916.667,
+      "frame": 3475,
+      "ch": "B",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 58016.667,
+      "frame": 3481,
+      "ch": "T",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 58116.667,
+      "frame": 3487,
+      "ch": " ",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 58266.667,
+      "frame": 3496,
+      "ch": "B",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 58416.667,
+      "frame": 3505,
+      "ch": "a",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 58500,
+      "frame": 3510,
+      "ch": "r",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 58600,
+      "frame": 3516,
+      "ch": "u",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 58716.667,
+      "frame": 3523,
+      "ch": ")",
+      "i": 22
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 58850,
+      "frame": 3531,
+      "target": "#name"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 59250,
+      "frame": 3555,
+      "from": [
+        883.2,
+        480
+      ],
+      "to": [
+        922.09375,
+        656
+      ],
+      "dist_px": 180.2,
+      "move_ms": 809.7,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 60250,
+      "frame": 3615,
+      "at": [
+        922.09375,
+        656
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 60750,
+      "frame": 3645,
+      "from": [
+        922.09375,
+        656
+      ],
+      "to": [
+        922.09375,
+        656
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 60833.333,
+      "frame": 3650,
+      "at": [
+        922.09375,
+        656
+      ],
+      "label": "button:has-text(\"Batal\")",
+      "bbox": [
+        876.015625,
+        632,
+        92.15625,
+        48
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 61566.667,
+      "frame": 3694,
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 62766.667,
+      "frame": 3766,
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 62766.667,
+      "frame": 3766,
+      "scene_id": "scene_03_modul_distribusi_siswa_global"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 62766.667,
+      "frame": 3766,
+      "scene_id": "scene_03_modul_distribusi_siswa_global",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_03_modul_distribusi_siswa_global.wav",
+      "duration_ms": 20302,
+      "at_ms": 62966.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 83283.333,
+      "frame": 4997,
+      "scene_id": "scene_03_modul_distribusi_siswa_global"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 83583.333,
+      "frame": 5015,
+      "scene_id": "scene_03_modul_distribusi_siswa_global"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 83583.333,
+      "frame": 5015,
+      "from": [
+        922.09375,
+        656
+      ],
+      "to": [
+        1539.859375,
+        124
+      ],
+      "dist_px": 815.3,
+      "move_ms": 1146.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 84916.667,
+      "frame": 5095,
+      "at": [
+        1539.859375,
+        124
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 85516.667,
+      "frame": 5131,
+      "from": [
+        1539.859375,
+        124
+      ],
+      "to": [
+        1539.859375,
+        124
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 85600,
+      "frame": 5136,
+      "at": [
+        1539.859375,
+        124
+      ],
+      "label": "a:has-text(\"Atur Ruang Siswa\")",
+      "bbox": [
+        1387.21875,
+        100,
+        305.28125,
+        48
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 85733.333,
+      "frame": 5144,
+      "selector": "h2:has-text(\"Pengaturan Ruang Permanen\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 86883.333,
+      "frame": 5213,
+      "from": [
+        1539.859375,
+        124
+      ],
+      "to": [
+        490.5,
+        492
+      ],
+      "dist_px": 1112,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 88216.667,
+      "frame": 5293,
+      "at": [
+        490.5,
+        492
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 89516.667,
+      "frame": 5371,
+      "scene_id": "scene_03_modul_distribusi_siswa_global"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 90716.667,
+      "frame": 5443,
+      "scene_id": "scene_03_modul_distribusi_siswa_global"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 90716.667,
+      "frame": 5443,
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 90716.667,
+      "frame": 5443,
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_04_filter_kelas_dan_pembagian_siswa.wav",
+      "duration_ms": 21858,
+      "at_ms": 90916.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 112783.333,
+      "frame": 6767,
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 113083.333,
+      "frame": 6785,
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 113083.333,
+      "frame": 6785,
+      "from": [
+        490.5,
+        492
+      ],
+      "to": [
+        560,
+        643
+      ],
+      "dist_px": 166.2,
+      "move_ms": 792.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 114066.667,
+      "frame": 6844,
+      "at": [
+        560,
+        643
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 115166.667,
+      "frame": 6910,
+      "from": [
+        560,
+        643
+      ],
+      "to": [
+        930.765625,
+        297
+      ],
+      "dist_px": 507.1,
+      "move_ms": 1037.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 116400,
+      "frame": 6984,
+      "at": [
+        930.765625,
+        297
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 117100,
+      "frame": 7026,
+      "from": [
+        930.765625,
+        297
+      ],
+      "to": [
+        930.765625,
+        297
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 117183.333,
+      "frame": 7031,
+      "at": [
+        930.765625,
+        297
+      ],
+      "label": ".lg\\:col-span-3 a:has-text(\"Atur Tata Letak\")",
+      "bbox": [
+        829,
+        291,
+        203.53125,
+        12
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 117316.667,
+      "frame": 7039,
+      "selector": "h2:has-text(\"Tata Letak\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 118666.667,
+      "frame": 7120,
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 119866.667,
+      "frame": 7192,
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 119866.667,
+      "frame": 7192,
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 119866.667,
+      "frame": 7192,
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_05_denah_duduk_interaktif_dan_cetak_pdf.wav",
+      "duration_ms": 27262,
+      "at_ms": 120066.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 147333.333,
+      "frame": 8840,
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 147633.333,
+      "frame": 8858,
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 147633.333,
+      "frame": 8858,
+      "from": [
+        930.765625,
+        297
+      ],
+      "to": [
+        560,
+        273
+      ],
+      "dist_px": 371.5,
+      "move_ms": 967,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 148800,
+      "frame": 8928,
+      "at": [
+        560,
+        273
+      ]
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 149700,
+      "frame": 8982,
+      "from_y": 0,
+      "to_y": 300,
+      "dur_ms": 730
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 150450,
+      "frame": 9027,
+      "y": 300
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 151250,
+      "frame": 9075,
+      "from_y": 300,
+      "to_y": 0,
+      "dur_ms": 730
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 152000,
+      "frame": 9120,
+      "y": 0
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 152600,
+      "frame": 9156,
+      "from": [
+        560,
+        273
+      ],
+      "to": [
+        1594.578125,
+        136
+      ],
+      "dist_px": 1043.6,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 153933.333,
+      "frame": 9236,
+      "at": [
+        1594.578125,
+        136
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 155733.333,
+      "frame": 9344,
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 157233.333,
+      "frame": 9434,
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf"
+    }
+  ]
+}

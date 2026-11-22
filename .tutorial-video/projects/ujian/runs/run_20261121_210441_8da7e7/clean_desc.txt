@@ -1,0 +1,28 @@
+Tutorial Admin Proktor ZEXAM-CBT: Manajemen Akun & Import Siswa Excel Word
+
+Video panduan resmi cara pengelolaan akun pengguna, pembuatan user manual, download template resmi, serta import data siswa massal format Excel (.xlsx) dan Word (.docx) pada aplikasi ZEXAM-CBT.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Navigasi Data Master & Manajemen Akun
+00:31 - Pencarian & Filter Akun (Role & Kelas)
+00:59 - Tambah User Baru Manual
+01:29 - Import Siswa Massal via Excel (.xlsx) & Word (.docx)
+02:07 - Kontrol Password (Eye Icon), Salin Akun, & Hapus Massal
+
+📌 RINGKASAN FITUR:
+1. Navigasi Manajemen Akun: Akses data master proktor, guru, dan siswa dalam satu dashboard terpadu.
+2. Filter & Pencarian Cepat: Menyaring akun berdasarkan nama, NIS unik, hak akses (role), maupun kelas.
+3. Tambah Akun Manual: Input satu per satu dengan kredensial login unik dan penetapan rombel.
+4. Import Siswa Massal: Unduh template XLSX/DOCX resmi untuk mendaftarkan ratusan siswa secara otomatis.
+5. Fitur Keamanan: Intip sandi saat siswa lupa password, salin kredensial, dan hapus akun terpilih (akun default proktor diproteksi anti-hapus).
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual desktop jernih beresolusi Full HD 1080p (60 FPS).
+- Navigasi responsif dan ramah pengguna.
+- Terintegrasi langsung dengan database sistem ZEXAM-CBT.
+
+🌐 Website: https://zexam.id
+Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur ZEXAM-CBT lainnya!
+
+#ZexamCBT #UjianBerbasisKomputer #AplikasiUjian #TutorialCBT #ProktorUjian #ImportSiswa #ManajemenPengguna

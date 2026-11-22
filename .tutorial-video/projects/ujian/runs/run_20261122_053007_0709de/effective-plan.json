@@ -1,0 +1,335 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Ruang Ujian, Distribusi Siswa & Denah Duduk",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "proktor"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "#btn-login-submit"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h3:has-text(\"Dashboard\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_ruang_ujian",
+      "narration": "Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari panduan lengkap manajemen ruang ujian, pembagian siswa ke masing-masing ruangan secara terpusat, serta pengaturan denah tempat duduk interaktif. Dari navigasi samping, klik kelompok Data Master, lalu pilih menu Ruang Ujian untuk membuka pusat data ruangan.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada tutorial kali ini, kita akan mempelajari panduan lengkap manajemen ruang ujian, pembagian siswa ke masing-masing ruangan secara terpusat, serta pengaturan denah tempat duduk interaktif.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Dari navigasi samping, klik kelompok Data Master, lalu pilih menu Ruang Ujian untuk membuka pusat data ruangan.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block button:has-text(\"Data Master\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block button:has-text(\"Data Master\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": ".hidden.lg\\:block a:has-text(\"Ruang Ujian\")",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block a:has-text(\"Ruang Ujian\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block a:has-text(\"Ruang Ujian\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Manajemen Ruang Ujian\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_tambah_ruang_dan_kapasitas",
+      "narration": "Pada halaman ini, proktor dapat melihat seluruh ruang ujian aktif beserta statistik kapasitas kursi dan statusnya. Untuk menambahkan ruang baru, klik tombol Tambah Ruang di sudut kanan atas. Masukkan nama ruangan seperti Lab Komputer atau Ruang Kelas, tentukan jumlah kapasitas maksimal kursi, lalu simpan data tersebut ke dalam sistem.",
+      "narration_segments": [
+        {
+          "text": "Pada halaman ini, proktor dapat melihat seluruh ruang ujian aktif beserta statistik kapasitas kursi dan statusnya.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Untuk menambahkan ruang baru, klik tombol Tambah Ruang di sudut kanan atas.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Masukkan nama ruangan seperti Lab Komputer atau Ruang Kelas, tentukan jumlah kapasitas maksimal kursi, lalu simpan data tersebut ke dalam sistem.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Tambah Ruang\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tambah Ruang\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#name",
+          "budget_ms": 3000
+        },
+        {
+          "do": "type",
+          "target": "#name",
+          "text": "Ruang 04 (Lab CBT Baru)"
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Batal\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Batal\")"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_modul_distribusi_siswa_global",
+      "narration": "Sekarang kita beralih ke pembagian ruang peserta ujian. Klik tombol Atur Ruang Siswa di pojok kanan atas untuk membuka modul Distribusi Siswa Permanen. Pada panel sebelah kiri, sistem menampilkan jumlah siswa yang belum terbagi, pilihan ruang ujian tujuan, serta tombol penugasan cepat seperti Masukan 15 atau Masukan Semua.",
+      "narration_segments": [
+        {
+          "text": "Sekarang kita beralih ke pembagian ruang peserta ujian.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Klik tombol Atur Ruang Siswa di pojok kanan atas untuk membuka modul Distribusi Siswa Permanen.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Pada panel sebelah kiri, sistem menampilkan jumlah siswa yang belum terbagi, pilihan ruang ujian tujuan, serta tombol penugasan cepat seperti Masukan 15 atau Masukan Semua.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Atur Ruang Siswa\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "a:has-text(\"Atur Ruang Siswa\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Pengaturan Ruang Permanen\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Masukan 15\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_filter_kelas_dan_pembagian_siswa",
+      "narration": "Proktor juga dapat memfilter siswa berdasarkan rombel kelas tertentu, mencari nama murid, atau mencentang seluruh siswa dalam satu rombel untuk dialokasikan sekaligus ke ruangan yang dituju. Di panel sebelah kanan, setiap kartu ruang menampilkan ringkasan kapasitas dan nama siswa yang terdaftar. Klik tautan Atur Tata Letak pada salah satu ruangan untuk membuka denah duduk.",
+      "narration_segments": [
+        {
+          "text": "Proktor juga dapat memfilter siswa berdasarkan rombel kelas tertentu, mencari nama murid, atau mencentang seluruh siswa dalam satu rombel untuk dialokasikan sekaligus ke ruangan yang dituju.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Di panel sebelah kanan, setiap kartu ruang menampilkan ringkasan kapasitas dan nama siswa yang terdaftar.",
+          "pause_after_ms": 270
+        },
+        {
+          "text": "Klik tautan Atur Tata Letak pada salah satu ruangan untuk membuka denah duduk.",
+          "pause_after_ms": 280
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "input[placeholder*=\"Cari siswa\"]",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        },
+        {
+          "do": "hover",
+          "target": ".lg\\:col-span-3 a:has-text(\"Atur Tata Letak\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "click",
+          "target": ".lg\\:col-span-3 a:has-text(\"Atur Tata Letak\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Tata Letak\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_denah_duduk_interaktif_dan_cetak_pdf",
+      "narration": "Inilah kanvas denah duduk interaktif ZEXAM-CBT. Proktor dapat menyesuaikan jumlah baris dan kolom tata letak, menempatkan posisi duduk siswa secara visual di depan papan tulis, serta memastikan susunan bangku rapi. Klik tombol Cetak PDF untuk mencetak lembar denah resmi yang siap ditempel pada pintu ruang ujian. Sangat praktis, visual, dan akurat. Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Inilah kanvas denah duduk interaktif ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Proktor dapat menyesuaikan jumlah baris dan kolom tata letak, menempatkan posisi duduk siswa secara visual di depan papan tulis, serta memastikan susunan bangku rapi.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Klik tombol Cetak PDF untuk mencetak lembar denah resmi yang siap ditempel pada pintu ruang ujian. Sangat praktis, visual, dan akurat. Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "h3:has-text(\"Grid Size\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "scroll",
+          "by": 300
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        },
+        {
+          "do": "scroll",
+          "by": -300
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Cetak PDF\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1500
+    }
+  ]
+}

@@ -1,0 +1,488 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "proktor"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h2:has-text(\"Halo,\")"
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_profil_sekolah_dan_kkm",
+      "name": "Profil Sekolah, Kop Surat Dan Ambang Batas KKM",
+      "narration": "Halo rekan proktor dan pengelola sistem ZEXAM-CBT. Pada video kali ini, kita akan mempelajari panduan lengkap konfigurasi Identitas Sekolah, fitur Anti-Kecurangan, serta Manajemen Tahun Ajaran dan TA Switcher. Dari dashboard proktor, kita buka menu Pengaturan Sistem. Di sini, Anda dapat mengisikan profil lengkap sekolah, mulai dari nama institusi, alamat resmi, identitas kepala sekolah beserta NIP, serta logo sekolah yang akan otomatis tercetak pada kop surat berita acara dan kartu peserta ujian.",
+      "steps": [
+        {
+          "do": "goto",
+          "url": "http://127.0.0.1:8000/proktor/settings"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Pengaturan Aplikasi\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "#school_name"
+        },
+        {
+          "do": "click",
+          "target": "#school_name"
+        },
+        {
+          "do": "fill",
+          "target": "#school_name",
+          "value": "SMP Bintang Pelajar Nusantara"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "#school_address"
+        },
+        {
+          "do": "click",
+          "target": "#school_address"
+        },
+        {
+          "do": "fill",
+          "target": "#school_address",
+          "value": "Jl. Pendidikan Karakter No. 45, Jakarta"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "#principal_name"
+        },
+        {
+          "do": "click",
+          "target": "#principal_name"
+        },
+        {
+          "do": "fill",
+          "target": "#principal_name",
+          "value": "Dra. Hj. Nurul Hidayah, M.Pd"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "#principal_nip"
+        },
+        {
+          "do": "click",
+          "target": "#principal_nip"
+        },
+        {
+          "do": "fill",
+          "target": "#principal_nip",
+          "value": "197508151998032001"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "#passing_grade"
+        },
+        {
+          "do": "click",
+          "target": "#passing_grade"
+        },
+        {
+          "do": "fill",
+          "target": "#passing_grade",
+          "value": "75"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_02_sensor_anti_curang_dan_mode",
+      "name": "Konfigurasi Sensor Anti-Curang Dan Mode Aplikasi",
+      "narration": "ZEXAM-CBT dibekali sistem keamanan canggih dengan kontrol anti-kecurangan modular. Anda dapat mengaktifkan sensor kecurangan, menentukan batas maksimal peringatan sebelum sanksi diskualifikasi, serta mengaktifkan proteksi blokir klik kanan, pemblokiran copy-paste, deteksi pindah tab, dan kewajiban layar penuh. Selain itu, tentukan mode operasional aplikasi, apakah berjalan secara online pada cloud hosting, ataupun offline melalui server lokal sekolah. Klik Simpan Perubahan untuk mengunci seluruh parameter.",
+      "steps": [
+        {
+          "do": "move",
+          "target": "h3:has-text(\"Pengaturan Kecurangan\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "#max_cheat_warnings"
+        },
+        {
+          "do": "click",
+          "target": "#max_cheat_warnings"
+        },
+        {
+          "do": "fill",
+          "target": "#max_cheat_warnings",
+          "value": "3"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "move",
+          "target": "span:has-text(\"Blokir Klik Kanan\")"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "span:has-text(\"Blokir Copy, Cut, & Paste\")"
+        },
+        {
+          "do": "wait",
+          "ms": 700
+        },
+        {
+          "do": "move",
+          "target": "span:has-text(\"Wajib Fullscreen\")"
+        },
+        {
+          "do": "wait",
+          "ms": 900
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Online\")"
+        },
+        {
+          "do": "wait",
+          "ms": 900
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Offline\")"
+        },
+        {
+          "do": "wait",
+          "ms": 900
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Simpan Perubahan\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Simpan Perubahan\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_03_area_berbahaya_clear_data",
+      "name": "Area Berbahaya Dan Pembersihan Data Transaksi",
+      "narration": "Di bagian bawah halaman pengaturan, ZEXAM-CBT menyediakan fitur Area Berbahaya untuk pembersihan data transaksional. Fitur ini dirancang khusus untuk memfasilitasi pergantian periode atau tahun ajaran baru. Dengan satu tombol, Anda dapat membersihkan rekaman jawaban siswa dan riwayat sesi ujian terdahulu secara aman, tanpa khawatir kehilangan data master penting seperti bank soal, kurikulum mata pelajaran, maupun database pengguna.",
+      "steps": [
+        {
+          "do": "scroll",
+          "by": 450
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "h3:has-text(\"Area Berbahaya\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "h4:has-text(\"Bersihkan Seluruh Data Ujian\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "p:has-text(\"Menghapus: Jawaban Siswa\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        },
+        {
+          "do": "scroll",
+          "by": -450
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_04_manajemen_tahun_ajaran",
+      "name": "Manajemen Master Tahun Ajaran Dan Semester",
+      "narration": "Selanjutnya, mari kita masuk ke menu Tahun Ajaran pada kelompok Data Master. Halaman ini memuat seluruh periode akademik sekolah Anda. Untuk menambahkan periode baru, klik tombol Tambah Tahun Ajaran. Masukkan nama tahun pelajaran, misalnya 2026 garis miring 2027, pilih semester ganjil atau genap, dan centang opsi Jadikan Aktif jika ingin langsung menjadikannya acuan sistem. Simpan data, dan periode baru siap digunakan untuk penjadwalan ujian dan penugasan bank soal.",
+      "steps": [
+        {
+          "do": "goto",
+          "url": "http://127.0.0.1:8000/proktor/academic-years"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Master Tahun Ajaran & Semester\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "table tbody tr"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Tahun Ajaran Baru\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tahun Ajaran Baru\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Tambah Tahun Ajaran Baru\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "#name"
+        },
+        {
+          "do": "click",
+          "target": "#name"
+        },
+        {
+          "do": "fill",
+          "target": "#name",
+          "value": "2026/2027"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "move",
+          "target": "#semester"
+        },
+        {
+          "do": "click",
+          "target": "#semester"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "move",
+          "target": "label[for=\"is_active\"]"
+        },
+        {
+          "do": "click",
+          "target": "#is_active"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "move",
+          "target": "form button:has-text(\"Tambah Tahun Ajaran\")"
+        },
+        {
+          "do": "wait",
+          "ms": 600
+        },
+        {
+          "do": "click",
+          "target": "form button:has-text(\"Tambah Tahun Ajaran\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "td:has-text(\"2026/2027\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "move",
+          "target": "tr:has-text(\"2026/2027\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_05_fitur_ta_switcher",
+      "name": "Fitur TA Switcher Cepat Pada Topbar Navigasi",
+      "narration": "Salah satu keunggulan ZEXAM-CBT adalah fitur TA Switcher cepat di bagian atas navigasi. Tanpa perlu merubah status aktif sistem sekolah, proktor dapat langsung beralih melihat arsip ujian dan bank soal pada tahun ajaran terdahulu hanya dengan memilihnya dari menu dropdown. Lencana oranye akan menandakan mode peninjauan aktif, dan Anda cukup menekan tombol Reset untuk kembali ke tahun ajaran utama. Seluruh konfigurasi sistem sekolah Anda kini telah terkelola dengan sempurna.",
+      "steps": [
+        {
+          "do": "move",
+          "target": "select[title*=\"Tahun Ajaran\"]"
+        },
+        {
+          "do": "wait",
+          "ms": 1200
+        },
+        {
+          "do": "click",
+          "target": "select[title*=\"Tahun Ajaran\"]"
+        },
+        {
+          "do": "wait",
+          "ms": 800
+        },
+        {
+          "do": "eval",
+          "code": "const sel = document.querySelector('select[title*=\"Tahun Ajaran\"]'); if (sel && sel.options.length > 1) { sel.value = sel.options[1].value; sel.dispatchEvent(new Event('change', { bubbles: true })); }"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        },
+        {
+          "do": "move",
+          "target": "span.animate-bounce"
+        },
+        {
+          "do": "wait",
+          "ms": 1500
+        },
+        {
+          "do": "move",
+          "target": "button:has-text(\"Reset\")"
+        },
+        {
+          "do": "wait",
+          "ms": 1000
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Reset\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2000
+        },
+        {
+          "do": "move",
+          "target": "h2:has-text(\"Master Tahun Ajaran & Semester\")"
+        },
+        {
+          "do": "wait",
+          "ms": 2500
+        }
+      ]
+    }
+  ]
+}

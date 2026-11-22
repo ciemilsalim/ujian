@@ -137,7 +137,7 @@ export default function Sidebar() {
                     <>
                         <div>
                             <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-widest px-3 mb-2">Master Akademik</p>
-                            <CollapsibleSection label="Data Master" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.academic-years.*') || route().current('proktor.classrooms.*') || route().current('proktor.class-promotions.*') || route().current('proktor.subjects.*')}>
+                            <CollapsibleSection label="Data Master" icon={Database} defaultOpen={route().current('proktor.users.*') || route().current('proktor.academic-years.*') || route().current('proktor.classrooms.*') || route().current('proktor.class-promotions.*') || route().current('proktor.subjects.*') || route().current('proktor.rooms.*') || route().current('proktor.proctors.*')}>
                                 <SidebarItem
                                     href={route('proktor.users.index')}
                                     icon={Users}

@@ -1,0 +1,1684 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_profil_sekolah_dan_kkm": {
+      "text": "Halo rekan proktor dan pengelola sistem ZEXAM-CBT. Pada video kali ini, kita akan mempelajari panduan lengkap konfigurasi Identitas Sekolah, fitur Anti-Kecurangan, serta Manajemen Tahun Ajaran dan TA Switcher. Dari dashboard proktor, kita buka menu Pengaturan Sistem. Di sini, Anda dapat mengisikan profil lengkap sekolah, mulai dari nama institusi, alamat resmi, identitas kepala sekolah beserta NIP, serta logo sekolah yang akan otomatis tercetak pada kop surat berita acara dan kartu peserta ujian.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_090647_7751c0\\audio\\scene_01_profil_sekolah_dan_kkm.mp3",
+      "duration_ms": 31200.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 362.5
+        },
+        {
+          "w": "rekan",
+          "s": 362.5,
+          "e": 587.5
+        },
+        {
+          "w": "proktor",
+          "s": 587.5,
+          "e": 987.5
+        },
+        {
+          "w": "dan",
+          "s": 987.5,
+          "e": 1175.0
+        },
+        {
+          "w": "pengelola",
+          "s": 1175.0,
+          "e": 1537.5
+        },
+        {
+          "w": "sistem",
+          "s": 1537.5,
+          "e": 1950.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 1950.0,
+          "e": 2975.0
+        },
+        {
+          "w": "Pada",
+          "s": 3825.0,
+          "e": 4037.5
+        },
+        {
+          "w": "video",
+          "s": 4037.5,
+          "e": 4300.0
+        },
+        {
+          "w": "kali",
+          "s": 4300.0,
+          "e": 4475.0
+        },
+        {
+          "w": "ini",
+          "s": 4475.0,
+          "e": 4925.0
+        },
+        {
+          "w": "kita",
+          "s": 5225.0,
+          "e": 5425.0
+        },
+        {
+          "w": "akan",
+          "s": 5425.0,
+          "e": 5612.5
+        },
+        {
+          "w": "mempelajari",
+          "s": 5612.5,
+          "e": 6037.5
+        },
+        {
+          "w": "panduan",
+          "s": 6037.5,
+          "e": 6387.5
+        },
+        {
+          "w": "lengkap",
+          "s": 6387.5,
+          "e": 6687.5
+        },
+        {
+          "w": "konfigurasi",
+          "s": 6687.5,
+          "e": 7275.0
+        },
+        {
+          "w": "Identitas",
+          "s": 7275.0,
+          "e": 7700.0
+        },
+        {
+          "w": "Sekolah",
+          "s": 7700.0,
+          "e": 8237.5
+        },
+        {
+          "w": "fitur",
+          "s": 8500.0,
+          "e": 8825.0
+        },
+        {
+          "w": "Anti-Kecurangan",
+          "s": 8825.0,
+          "e": 9712.5
+        },
+        {
+          "w": "serta",
+          "s": 9987.5,
+          "e": 10312.5
+        },
+        {
+          "w": "Manajemen",
+          "s": 10312.5,
+          "e": 10800.0
+        },
+        {
+          "w": "Tahun",
+          "s": 10800.0,
+          "e": 11025.0
+        },
+        {
+          "w": "Ajaran",
+          "s": 11025.0,
+          "e": 11487.5
+        },
+        {
+          "w": "dan",
+          "s": 11487.5,
+          "e": 11675.0
+        },
+        {
+          "w": "TA",
+          "s": 11675.0,
+          "e": 11862.5
+        },
+        {
+          "w": "Switcher",
+          "s": 11862.5,
+          "e": 12487.5
+        },
+        {
+          "w": "Dari",
+          "s": 13325.0,
+          "e": 13612.5
+        },
+        {
+          "w": "dashboard",
+          "s": 13612.5,
+          "e": 14062.5
+        },
+        {
+          "w": "proktor",
+          "s": 14062.5,
+          "e": 14612.5
+        },
+        {
+          "w": "kita",
+          "s": 14887.5,
+          "e": 15125.0
+        },
+        {
+          "w": "buka",
+          "s": 15125.0,
+          "e": 15337.5
+        },
+        {
+          "w": "menu",
+          "s": 15337.5,
+          "e": 15512.5
+        },
+        {
+          "w": "Pengaturan",
+          "s": 15512.5,
+          "e": 15937.5
+        },
+        {
+          "w": "Sistem",
+          "s": 15937.5,
+          "e": 16550.0
+        },
+        {
+          "w": "Di",
+          "s": 17400.0,
+          "e": 17537.5
+        },
+        {
+          "w": "sini",
+          "s": 17537.5,
+          "e": 18037.5
+        },
+        {
+          "w": "Anda",
+          "s": 18337.5,
+          "e": 18587.5
+        },
+        {
+          "w": "dapat",
+          "s": 18587.5,
+          "e": 18812.5
+        },
+        {
+          "w": "mengisikan",
+          "s": 18812.5,
+          "e": 19237.5
+        },
+        {
+          "w": "profil",
+          "s": 19237.5,
+          "e": 19550.0
+        },
+        {
+          "w": "lengkap",
+          "s": 19550.0,
+          "e": 19787.5
+        },
+        {
+          "w": "sekolah",
+          "s": 19787.5,
+          "e": 20350.0
+        },
+        {
+          "w": "mulai",
+          "s": 20587.5,
+          "e": 20875.0
+        },
+        {
+          "w": "dari",
+          "s": 20875.0,
+          "e": 21062.5
+        },
+        {
+          "w": "nama",
+          "s": 21062.5,
+          "e": 21250.0
+        },
+        {
+          "w": "institusi",
+          "s": 21250.0,
+          "e": 22050.0
+        },
+        {
+          "w": "alamat",
+          "s": 22325.0,
+          "e": 22662.5
+        },
+        {
+          "w": "resmi",
+          "s": 22662.5,
+          "e": 23175.0
+        },
+        {
+          "w": "identitas",
+          "s": 23425.0,
+          "e": 23925.0
+        },
+        {
+          "w": "kepala",
+          "s": 23925.0,
+          "e": 24162.5
+        },
+        {
+          "w": "sekolah",
+          "s": 24162.5,
+          "e": 24462.5
+        },
+        {
+          "w": "beserta",
+          "s": 24462.5,
+          "e": 24850.0
+        },
+        {
+          "w": "NIP",
+          "s": 24850.0,
+          "e": 25437.5
+        },
+        {
+          "w": "serta",
+          "s": 25712.5,
+          "e": 26000.0
+        },
+        {
+          "w": "logo",
+          "s": 26000.0,
+          "e": 26200.0
+        },
+        {
+          "w": "sekolah",
+          "s": 26200.0,
+          "e": 26550.0
+        },
+        {
+          "w": "yang",
+          "s": 26550.0,
+          "e": 26662.5
+        },
+        {
+          "w": "akan",
+          "s": 26662.5,
+          "e": 26837.5
+        },
+        {
+          "w": "otomatis",
+          "s": 26837.5,
+          "e": 27237.5
+        },
+        {
+          "w": "tercetak",
+          "s": 27237.5,
+          "e": 27712.5
+        },
+        {
+          "w": "pada",
+          "s": 27712.5,
+          "e": 27912.5
+        },
+        {
+          "w": "kop",
+          "s": 27912.5,
+          "e": 28075.0
+        },
+        {
+          "w": "surat",
+          "s": 28075.0,
+          "e": 28325.0
+        },
+        {
+          "w": "berita",
+          "s": 28325.0,
+          "e": 28550.0
+        },
+        {
+          "w": "acara",
+          "s": 28550.0,
+          "e": 28925.0
+        },
+        {
+          "w": "dan",
+          "s": 28925.0,
+          "e": 29137.5
+        },
+        {
+          "w": "kartu",
+          "s": 29137.5,
+          "e": 29437.5
+        },
+        {
+          "w": "peserta",
+          "s": 29437.5,
+          "e": 29762.5
+        },
+        {
+          "w": "ujian",
+          "s": 29762.5,
+          "e": 30362.5
+        }
+      ],
+      "sha256": "28af648fbe9d1f26a1b7fbf83735eb1c910b3fcbeea5c382dfe04de6299e378b"
+    },
+    "scene_02_sensor_anti_curang_dan_mode": {
+      "text": "ZEXAM-CBT dibekali sistem keamanan canggih dengan kontrol anti-kecurangan modular. Anda dapat mengaktifkan sensor kecurangan, menentukan batas maksimal peringatan sebelum sanksi diskualifikasi, serta mengaktifkan proteksi blokir klik kanan, pemblokiran copy-paste, deteksi pindah tab, dan kewajiban layar penuh. Selain itu, tentukan mode operasional aplikasi, apakah berjalan secara online pada cloud hosting, ataupun offline melalui server lokal sekolah. Klik Simpan Perubahan untuk mengunci seluruh parameter.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_090647_7751c0\\audio\\scene_02_sensor_anti_curang_dan_mode.mp3",
+      "duration_ms": 31200.0,
+      "words": [
+        {
+          "w": "ZEXAM-CBT",
+          "s": 100.0,
+          "e": 937.5
+        },
+        {
+          "w": "dibekali",
+          "s": 937.5,
+          "e": 1312.5
+        },
+        {
+          "w": "sistem",
+          "s": 1312.5,
+          "e": 1675.0
+        },
+        {
+          "w": "keamanan",
+          "s": 1675.0,
+          "e": 2037.5
+        },
+        {
+          "w": "canggih",
+          "s": 2037.5,
+          "e": 2450.0
+        },
+        {
+          "w": "dengan",
+          "s": 2450.0,
+          "e": 2712.5
+        },
+        {
+          "w": "kontrol",
+          "s": 2712.5,
+          "e": 3062.5
+        },
+        {
+          "w": "anti-kecurangan",
+          "s": 3062.5,
+          "e": 3700.0
+        },
+        {
+          "w": "modular",
+          "s": 3700.0,
+          "e": 4300.0
+        },
+        {
+          "w": "Anda",
+          "s": 5150.0,
+          "e": 5400.0
+        },
+        {
+          "w": "dapat",
+          "s": 5400.0,
+          "e": 5637.5
+        },
+        {
+          "w": "mengaktifkan",
+          "s": 5637.5,
+          "e": 6137.5
+        },
+        {
+          "w": "sensor",
+          "s": 6137.5,
+          "e": 6487.5
+        },
+        {
+          "w": "kecurangan",
+          "s": 6487.5,
+          "e": 7150.0
+        },
+        {
+          "w": "menentukan",
+          "s": 7462.5,
+          "e": 7925.0
+        },
+        {
+          "w": "batas",
+          "s": 7925.0,
+          "e": 8200.0
+        },
+        {
+          "w": "maksimal",
+          "s": 8200.0,
+          "e": 8550.0
+        },
+        {
+          "w": "peringatan",
+          "s": 8550.0,
+          "e": 8987.5
+        },
+        {
+          "w": "sebelum",
+          "s": 8987.5,
+          "e": 9287.5
+        },
+        {
+          "w": "sanksi",
+          "s": 9287.5,
+          "e": 9650.0
+        },
+        {
+          "w": "diskualifikasi",
+          "s": 9650.0,
+          "e": 10687.5
+        },
+        {
+          "w": "serta",
+          "s": 10975.0,
+          "e": 11275.0
+        },
+        {
+          "w": "mengaktifkan",
+          "s": 11275.0,
+          "e": 11837.5
+        },
+        {
+          "w": "proteksi",
+          "s": 11837.5,
+          "e": 12225.0
+        },
+        {
+          "w": "blokir",
+          "s": 12225.0,
+          "e": 12550.0
+        },
+        {
+          "w": "klik",
+          "s": 12550.0,
+          "e": 12737.5
+        },
+        {
+          "w": "kanan",
+          "s": 12737.5,
+          "e": 13237.5
+        },
+        {
+          "w": "pemblokiran",
+          "s": 13500.0,
+          "e": 13987.5
+        },
+        {
+          "w": "copy-paste",
+          "s": 13987.5,
+          "e": 14737.5
+        },
+        {
+          "w": "deteksi",
+          "s": 15000.0,
+          "e": 15462.5
+        },
+        {
+          "w": "pindah",
+          "s": 15462.5,
+          "e": 15750.0
+        },
+        {
+          "w": "tab",
+          "s": 15750.0,
+          "e": 16100.0
+        },
+        {
+          "w": "dan",
+          "s": 16325.0,
+          "e": 16587.5
+        },
+        {
+          "w": "kewajiban",
+          "s": 16587.5,
+          "e": 17075.0
+        },
+        {
+          "w": "layar",
+          "s": 17075.0,
+          "e": 17325.0
+        },
+        {
+          "w": "penuh",
+          "s": 17325.0,
+          "e": 17775.0
+        },
+        {
+          "w": "Selain",
+          "s": 18625.0,
+          "e": 18900.0
+        },
+        {
+          "w": "itu",
+          "s": 18900.0,
+          "e": 19362.5
+        },
+        {
+          "w": "tentukan",
+          "s": 19637.5,
+          "e": 20025.0
+        },
+        {
+          "w": "mode",
+          "s": 20025.0,
+          "e": 20225.0
+        },
+        {
+          "w": "operasional",
+          "s": 20225.0,
+          "e": 20712.5
+        },
+        {
+          "w": "aplikasi",
+          "s": 20712.5,
+          "e": 21462.5
+        },
+        {
+          "w": "apakah",
+          "s": 21737.5,
+          "e": 22075.0
+        },
+        {
+          "w": "berjalan",
+          "s": 22075.0,
+          "e": 22475.0
+        },
+        {
+          "w": "secara",
+          "s": 22475.0,
+          "e": 22787.5
+        },
+        {
+          "w": "online",
+          "s": 22787.5,
+          "e": 23150.0
+        },
+        {
+          "w": "pada",
+          "s": 23150.0,
+          "e": 23350.0
+        },
+        {
+          "w": "cloud",
+          "s": 23350.0,
+          "e": 23575.0
+        },
+        {
+          "w": "hosting",
+          "s": 23575.0,
+          "e": 24162.5
+        },
+        {
+          "w": "ataupun",
+          "s": 24412.5,
+          "e": 24837.5
+        },
+        {
+          "w": "offline",
+          "s": 24837.5,
+          "e": 25225.0
+        },
+        {
+          "w": "melalui",
+          "s": 25225.0,
+          "e": 25537.5
+        },
+        {
+          "w": "server",
+          "s": 25537.5,
+          "e": 25900.0
+        },
+        {
+          "w": "lokal",
+          "s": 25900.0,
+          "e": 26187.5
+        },
+        {
+          "w": "sekolah",
+          "s": 26187.5,
+          "e": 26787.5
+        },
+        {
+          "w": "Klik",
+          "s": 27625.0,
+          "e": 27837.5
+        },
+        {
+          "w": "Simpan",
+          "s": 27837.5,
+          "e": 28137.5
+        },
+        {
+          "w": "Perubahan",
+          "s": 28137.5,
+          "e": 28637.5
+        },
+        {
+          "w": "untuk",
+          "s": 28637.5,
+          "e": 28862.5
+        },
+        {
+          "w": "mengunci",
+          "s": 28862.5,
+          "e": 29275.0
+        },
+        {
+          "w": "seluruh",
+          "s": 29275.0,
+          "e": 29650.0
+        },
+        {
+          "w": "parameter",
+          "s": 29650.0,
+          "e": 30350.0
+        }
+      ],
+      "sha256": "6fd094e2c2472ff67ec0281eeeb0a08f80565d11cd14e13aca8abd044fd4bea9"
+    },
+    "scene_03_area_berbahaya_clear_data": {
+      "text": "Di bagian bawah halaman pengaturan, ZEXAM-CBT menyediakan fitur Area Berbahaya untuk pembersihan data transaksional. Fitur ini dirancang khusus untuk memfasilitasi pergantian periode atau tahun ajaran baru. Dengan satu tombol, Anda dapat membersihkan rekaman jawaban siswa dan riwayat sesi ujian terdahulu secara aman, tanpa khawatir kehilangan data master penting seperti bank soal, kurikulum mata pelajaran, maupun database pengguna.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_090647_7751c0\\audio\\scene_03_area_berbahaya_clear_data.mp3",
+      "duration_ms": 25440.0,
+      "words": [
+        {
+          "w": "Di",
+          "s": 112.5,
+          "e": 237.5
+        },
+        {
+          "w": "bagian",
+          "s": 237.5,
+          "e": 600.0
+        },
+        {
+          "w": "bawah",
+          "s": 600.0,
+          "e": 837.5
+        },
+        {
+          "w": "halaman",
+          "s": 837.5,
+          "e": 1125.0
+        },
+        {
+          "w": "pengaturan",
+          "s": 1125.0,
+          "e": 1787.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2125.0,
+          "e": 2862.5
+        },
+        {
+          "w": "menyediakan",
+          "s": 2862.5,
+          "e": 3362.5
+        },
+        {
+          "w": "fitur",
+          "s": 3362.5,
+          "e": 3625.0
+        },
+        {
+          "w": "Area",
+          "s": 3625.0,
+          "e": 3887.5
+        },
+        {
+          "w": "Berbahaya",
+          "s": 3887.5,
+          "e": 4450.0
+        },
+        {
+          "w": "untuk",
+          "s": 4450.0,
+          "e": 4725.0
+        },
+        {
+          "w": "pembersihan",
+          "s": 4725.0,
+          "e": 5237.5
+        },
+        {
+          "w": "data",
+          "s": 5237.5,
+          "e": 5512.5
+        },
+        {
+          "w": "transaksional",
+          "s": 5512.5,
+          "e": 6462.5
+        },
+        {
+          "w": "Fitur",
+          "s": 7300.0,
+          "e": 7587.5
+        },
+        {
+          "w": "ini",
+          "s": 7587.5,
+          "e": 7850.0
+        },
+        {
+          "w": "dirancang",
+          "s": 7850.0,
+          "e": 8225.0
+        },
+        {
+          "w": "khusus",
+          "s": 8225.0,
+          "e": 8625.0
+        },
+        {
+          "w": "untuk",
+          "s": 8625.0,
+          "e": 8837.5
+        },
+        {
+          "w": "memfasilitasi",
+          "s": 8837.5,
+          "e": 9575.0
+        },
+        {
+          "w": "pergantian",
+          "s": 9575.0,
+          "e": 10050.0
+        },
+        {
+          "w": "periode",
+          "s": 10050.0,
+          "e": 10512.5
+        },
+        {
+          "w": "atau",
+          "s": 10512.5,
+          "e": 10812.5
+        },
+        {
+          "w": "tahun",
+          "s": 10812.5,
+          "e": 11125.0
+        },
+        {
+          "w": "ajaran",
+          "s": 11125.0,
+          "e": 11487.5
+        },
+        {
+          "w": "baru",
+          "s": 11487.5,
+          "e": 11925.0
+        },
+        {
+          "w": "Dengan",
+          "s": 12775.0,
+          "e": 13025.0
+        },
+        {
+          "w": "satu",
+          "s": 13025.0,
+          "e": 13237.5
+        },
+        {
+          "w": "tombol",
+          "s": 13237.5,
+          "e": 13762.5
+        },
+        {
+          "w": "Anda",
+          "s": 14000.0,
+          "e": 14250.0
+        },
+        {
+          "w": "dapat",
+          "s": 14250.0,
+          "e": 14462.5
+        },
+        {
+          "w": "membersihkan",
+          "s": 14462.5,
+          "e": 14975.0
+        },
+        {
+          "w": "rekaman",
+          "s": 14975.0,
+          "e": 15275.0
+        },
+        {
+          "w": "jawaban",
+          "s": 15275.0,
+          "e": 15650.0
+        },
+        {
+          "w": "siswa",
+          "s": 15650.0,
+          "e": 16025.0
+        },
+        {
+          "w": "dan",
+          "s": 16025.0,
+          "e": 16212.5
+        },
+        {
+          "w": "riwayat",
+          "s": 16212.5,
+          "e": 16550.0
+        },
+        {
+          "w": "sesi",
+          "s": 16550.0,
+          "e": 16800.0
+        },
+        {
+          "w": "ujian",
+          "s": 16800.0,
+          "e": 17137.5
+        },
+        {
+          "w": "terdahulu",
+          "s": 17137.5,
+          "e": 17550.0
+        },
+        {
+          "w": "secara",
+          "s": 17550.0,
+          "e": 17862.5
+        },
+        {
+          "w": "aman",
+          "s": 17862.5,
+          "e": 18325.0
+        },
+        {
+          "w": "tanpa",
+          "s": 18662.5,
+          "e": 18925.0
+        },
+        {
+          "w": "khawatir",
+          "s": 18925.0,
+          "e": 19275.0
+        },
+        {
+          "w": "kehilangan",
+          "s": 19275.0,
+          "e": 19725.0
+        },
+        {
+          "w": "data",
+          "s": 19725.0,
+          "e": 19925.0
+        },
+        {
+          "w": "master",
+          "s": 19925.0,
+          "e": 20187.5
+        },
+        {
+          "w": "penting",
+          "s": 20187.5,
+          "e": 20525.0
+        },
+        {
+          "w": "seperti",
+          "s": 20525.0,
+          "e": 20825.0
+        },
+        {
+          "w": "bank",
+          "s": 20825.0,
+          "e": 21012.5
+        },
+        {
+          "w": "soal",
+          "s": 21012.5,
+          "e": 21587.5
+        },
+        {
+          "w": "kurikulum",
+          "s": 21825.0,
+          "e": 22212.5
+        },
+        {
+          "w": "mata",
+          "s": 22212.5,
+          "e": 22387.5
+        },
+        {
+          "w": "pelajaran",
+          "s": 22387.5,
+          "e": 23050.0
+        },
+        {
+          "w": "maupun",
+          "s": 23262.5,
+          "e": 23612.5
+        },
+        {
+          "w": "database",
+          "s": 23612.5,
+          "e": 24037.5
+        },
+        {
+          "w": "pengguna",
+          "s": 24037.5,
+          "e": 24600.0
+        }
+      ],
+      "sha256": "64f41b31d777c009d6c75dd09a5910c6f342dbfb0626d891914f4f4aadf5b4fc"
+    },
+    "scene_04_manajemen_tahun_ajaran": {
+      "text": "Selanjutnya, mari kita masuk ke menu Tahun Ajaran pada kelompok Data Master. Halaman ini memuat seluruh periode akademik sekolah Anda. Untuk menambahkan periode baru, klik tombol Tambah Tahun Ajaran. Masukkan nama tahun pelajaran, misalnya 2026 garis miring 2027, pilih semester ganjil atau genap, dan centang opsi Jadikan Aktif jika ingin langsung menjadikannya acuan sistem. Simpan data, dan periode baru siap digunakan untuk penjadwalan ujian dan penugasan bank soal.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_090647_7751c0\\audio\\scene_04_manajemen_tahun_ajaran.mp3",
+      "duration_ms": 30744.0,
+      "words": [
+        {
+          "w": "Selanjutnya",
+          "s": 112.5,
+          "e": 900.0
+        },
+        {
+          "w": "mari",
+          "s": 1200.0,
+          "e": 1412.5
+        },
+        {
+          "w": "kita",
+          "s": 1412.5,
+          "e": 1587.5
+        },
+        {
+          "w": "masuk",
+          "s": 1587.5,
+          "e": 1850.0
+        },
+        {
+          "w": "ke",
+          "s": 1850.0,
+          "e": 1912.5
+        },
+        {
+          "w": "menu",
+          "s": 1912.5,
+          "e": 2075.0
+        },
+        {
+          "w": "Tahun",
+          "s": 2075.0,
+          "e": 2312.5
+        },
+        {
+          "w": "Ajaran",
+          "s": 2312.5,
+          "e": 2775.0
+        },
+        {
+          "w": "pada",
+          "s": 2775.0,
+          "e": 2975.0
+        },
+        {
+          "w": "kelompok",
+          "s": 2975.0,
+          "e": 3375.0
+        },
+        {
+          "w": "Data",
+          "s": 3375.0,
+          "e": 3625.0
+        },
+        {
+          "w": "Master",
+          "s": 3625.0,
+          "e": 4187.5
+        },
+        {
+          "w": "Halaman",
+          "s": 5025.0,
+          "e": 5387.5
+        },
+        {
+          "w": "ini",
+          "s": 5387.5,
+          "e": 5650.0
+        },
+        {
+          "w": "memuat",
+          "s": 5650.0,
+          "e": 5975.0
+        },
+        {
+          "w": "seluruh",
+          "s": 5975.0,
+          "e": 6300.0
+        },
+        {
+          "w": "periode",
+          "s": 6300.0,
+          "e": 6712.5
+        },
+        {
+          "w": "akademik",
+          "s": 6712.5,
+          "e": 7150.0
+        },
+        {
+          "w": "sekolah",
+          "s": 7150.0,
+          "e": 7487.5
+        },
+        {
+          "w": "Anda",
+          "s": 7487.5,
+          "e": 7987.5
+        },
+        {
+          "w": "Untuk",
+          "s": 8837.5,
+          "e": 9100.0
+        },
+        {
+          "w": "menambahkan",
+          "s": 9100.0,
+          "e": 9600.0
+        },
+        {
+          "w": "periode",
+          "s": 9600.0,
+          "e": 9900.0
+        },
+        {
+          "w": "baru",
+          "s": 9900.0,
+          "e": 10375.0
+        },
+        {
+          "w": "klik",
+          "s": 10687.5,
+          "e": 10875.0
+        },
+        {
+          "w": "tombol",
+          "s": 10875.0,
+          "e": 11212.5
+        },
+        {
+          "w": "Tambah",
+          "s": 11212.5,
+          "e": 11512.5
+        },
+        {
+          "w": "Tahun",
+          "s": 11512.5,
+          "e": 11750.0
+        },
+        {
+          "w": "Ajaran",
+          "s": 11750.0,
+          "e": 12375.0
+        },
+        {
+          "w": "Masukkan",
+          "s": 13225.0,
+          "e": 13637.5
+        },
+        {
+          "w": "nama",
+          "s": 13637.5,
+          "e": 13800.0
+        },
+        {
+          "w": "tahun",
+          "s": 13800.0,
+          "e": 14012.5
+        },
+        {
+          "w": "pelajaran",
+          "s": 14012.5,
+          "e": 14662.5
+        },
+        {
+          "w": "misalnya",
+          "s": 14950.0,
+          "e": 15425.0
+        },
+        {
+          "w": "2026",
+          "s": 15425.0,
+          "e": 16262.5
+        },
+        {
+          "w": "garis",
+          "s": 16262.5,
+          "e": 16525.0
+        },
+        {
+          "w": "miring",
+          "s": 16525.0,
+          "e": 16787.5
+        },
+        {
+          "w": "2027",
+          "s": 16787.5,
+          "e": 17900.0
+        },
+        {
+          "w": "pilih",
+          "s": 18187.5,
+          "e": 18387.5
+        },
+        {
+          "w": "semester",
+          "s": 18387.5,
+          "e": 18787.5
+        },
+        {
+          "w": "ganjil",
+          "s": 18787.5,
+          "e": 19175.0
+        },
+        {
+          "w": "atau",
+          "s": 19175.0,
+          "e": 19375.0
+        },
+        {
+          "w": "genap",
+          "s": 19375.0,
+          "e": 19787.5
+        },
+        {
+          "w": "dan",
+          "s": 20062.5,
+          "e": 20287.5
+        },
+        {
+          "w": "centang",
+          "s": 20287.5,
+          "e": 20575.0
+        },
+        {
+          "w": "opsi",
+          "s": 20575.0,
+          "e": 20875.0
+        },
+        {
+          "w": "Jadikan",
+          "s": 20875.0,
+          "e": 21200.0
+        },
+        {
+          "w": "Aktif",
+          "s": 21200.0,
+          "e": 21600.0
+        },
+        {
+          "w": "jika",
+          "s": 21600.0,
+          "e": 21825.0
+        },
+        {
+          "w": "ingin",
+          "s": 21825.0,
+          "e": 22025.0
+        },
+        {
+          "w": "langsung",
+          "s": 22025.0,
+          "e": 22337.5
+        },
+        {
+          "w": "menjadikannya",
+          "s": 22337.5,
+          "e": 22887.5
+        },
+        {
+          "w": "acuan",
+          "s": 22887.5,
+          "e": 23200.0
+        },
+        {
+          "w": "sistem",
+          "s": 23200.0,
+          "e": 23800.0
+        },
+        {
+          "w": "Simpan",
+          "s": 24650.0,
+          "e": 24987.5
+        },
+        {
+          "w": "data",
+          "s": 24987.5,
+          "e": 25500.0
+        },
+        {
+          "w": "dan",
+          "s": 25812.5,
+          "e": 26050.0
+        },
+        {
+          "w": "periode",
+          "s": 26050.0,
+          "e": 26375.0
+        },
+        {
+          "w": "baru",
+          "s": 26375.0,
+          "e": 26625.0
+        },
+        {
+          "w": "siap",
+          "s": 26625.0,
+          "e": 26850.0
+        },
+        {
+          "w": "digunakan",
+          "s": 26850.0,
+          "e": 27325.0
+        },
+        {
+          "w": "untuk",
+          "s": 27325.0,
+          "e": 27537.5
+        },
+        {
+          "w": "penjadwalan",
+          "s": 27537.5,
+          "e": 28025.0
+        },
+        {
+          "w": "ujian",
+          "s": 28025.0,
+          "e": 28462.5
+        },
+        {
+          "w": "dan",
+          "s": 28462.5,
+          "e": 28625.0
+        },
+        {
+          "w": "penugasan",
+          "s": 28625.0,
+          "e": 29137.5
+        },
+        {
+          "w": "bank",
+          "s": 29137.5,
+          "e": 29325.0
+        },
+        {
+          "w": "soal",
+          "s": 29325.0,
+          "e": 29900.0
+        }
+      ],
+      "sha256": "f97bccffce8e77459b54e9daf0f51c965c359287a4b4066f99594625c5f1d324"
+    },
+    "scene_05_fitur_ta_switcher": {
+      "text": "Salah satu keunggulan ZEXAM-CBT adalah fitur TA Switcher cepat di bagian atas navigasi. Tanpa perlu merubah status aktif sistem sekolah, proktor dapat langsung beralih melihat arsip ujian dan bank soal pada tahun ajaran terdahulu hanya dengan memilihnya dari menu dropdown. Lencana oranye akan menandakan mode peninjauan aktif, dan Anda cukup menekan tombol Reset untuk kembali ke tahun ajaran utama. Seluruh konfigurasi sistem sekolah Anda kini telah terkelola dengan sempurna.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_090647_7751c0\\audio\\scene_05_fitur_ta_switcher.mp3",
+      "duration_ms": 26952.0,
+      "words": [
+        {
+          "w": "Salah",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "satu",
+          "s": 375.0,
+          "e": 612.5
+        },
+        {
+          "w": "keunggulan",
+          "s": 612.5,
+          "e": 1012.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 1012.5,
+          "e": 1812.5
+        },
+        {
+          "w": "adalah",
+          "s": 1812.5,
+          "e": 2150.0
+        },
+        {
+          "w": "fitur",
+          "s": 2150.0,
+          "e": 2437.5
+        },
+        {
+          "w": "TA",
+          "s": 2437.5,
+          "e": 2625.0
+        },
+        {
+          "w": "Switcher",
+          "s": 2625.0,
+          "e": 2987.5
+        },
+        {
+          "w": "cepat",
+          "s": 2987.5,
+          "e": 3325.0
+        },
+        {
+          "w": "di",
+          "s": 3325.0,
+          "e": 3412.5
+        },
+        {
+          "w": "bagian",
+          "s": 3412.5,
+          "e": 3800.0
+        },
+        {
+          "w": "atas",
+          "s": 3800.0,
+          "e": 4075.0
+        },
+        {
+          "w": "navigasi",
+          "s": 4075.0,
+          "e": 4800.0
+        },
+        {
+          "w": "Tanpa",
+          "s": 5650.0,
+          "e": 5900.0
+        },
+        {
+          "w": "perlu",
+          "s": 5900.0,
+          "e": 6137.5
+        },
+        {
+          "w": "merubah",
+          "s": 6137.5,
+          "e": 6412.5
+        },
+        {
+          "w": "status",
+          "s": 6412.5,
+          "e": 6750.0
+        },
+        {
+          "w": "aktif",
+          "s": 6750.0,
+          "e": 7025.0
+        },
+        {
+          "w": "sistem",
+          "s": 7025.0,
+          "e": 7312.5
+        },
+        {
+          "w": "sekolah",
+          "s": 7312.5,
+          "e": 7912.5
+        },
+        {
+          "w": "proktor",
+          "s": 8200.0,
+          "e": 8550.0
+        },
+        {
+          "w": "dapat",
+          "s": 8550.0,
+          "e": 8800.0
+        },
+        {
+          "w": "langsung",
+          "s": 8800.0,
+          "e": 9137.5
+        },
+        {
+          "w": "beralih",
+          "s": 9137.5,
+          "e": 9412.5
+        },
+        {
+          "w": "melihat",
+          "s": 9412.5,
+          "e": 9687.5
+        },
+        {
+          "w": "arsip",
+          "s": 9687.5,
+          "e": 9962.5
+        },
+        {
+          "w": "ujian",
+          "s": 9962.5,
+          "e": 10387.5
+        },
+        {
+          "w": "dan",
+          "s": 10387.5,
+          "e": 10562.5
+        },
+        {
+          "w": "bank",
+          "s": 10562.5,
+          "e": 10787.5
+        },
+        {
+          "w": "soal",
+          "s": 10787.5,
+          "e": 11062.5
+        },
+        {
+          "w": "pada",
+          "s": 11062.5,
+          "e": 11250.0
+        },
+        {
+          "w": "tahun",
+          "s": 11250.0,
+          "e": 11475.0
+        },
+        {
+          "w": "ajaran",
+          "s": 11475.0,
+          "e": 11762.5
+        },
+        {
+          "w": "terdahulu",
+          "s": 11762.5,
+          "e": 12312.5
+        },
+        {
+          "w": "hanya",
+          "s": 12312.5,
+          "e": 12600.0
+        },
+        {
+          "w": "dengan",
+          "s": 12600.0,
+          "e": 12800.0
+        },
+        {
+          "w": "memilihnya",
+          "s": 12800.0,
+          "e": 13300.0
+        },
+        {
+          "w": "dari",
+          "s": 13300.0,
+          "e": 13487.5
+        },
+        {
+          "w": "menu",
+          "s": 13487.5,
+          "e": 13675.0
+        },
+        {
+          "w": "dropdown",
+          "s": 13675.0,
+          "e": 14412.5
+        },
+        {
+          "w": "Lencana",
+          "s": 15262.5,
+          "e": 15587.5
+        },
+        {
+          "w": "oranye",
+          "s": 15587.5,
+          "e": 15950.0
+        },
+        {
+          "w": "akan",
+          "s": 15950.0,
+          "e": 16162.5
+        },
+        {
+          "w": "menandakan",
+          "s": 16162.5,
+          "e": 16612.5
+        },
+        {
+          "w": "mode",
+          "s": 16612.5,
+          "e": 16850.0
+        },
+        {
+          "w": "peninjauan",
+          "s": 16850.0,
+          "e": 17300.0
+        },
+        {
+          "w": "aktif",
+          "s": 17300.0,
+          "e": 17837.5
+        },
+        {
+          "w": "dan",
+          "s": 18112.5,
+          "e": 18325.0
+        },
+        {
+          "w": "Anda",
+          "s": 18325.0,
+          "e": 18575.0
+        },
+        {
+          "w": "cukup",
+          "s": 18575.0,
+          "e": 18825.0
+        },
+        {
+          "w": "menekan",
+          "s": 18825.0,
+          "e": 19112.5
+        },
+        {
+          "w": "tombol",
+          "s": 19112.5,
+          "e": 19375.0
+        },
+        {
+          "w": "Reset",
+          "s": 19375.0,
+          "e": 19712.5
+        },
+        {
+          "w": "untuk",
+          "s": 19712.5,
+          "e": 19925.0
+        },
+        {
+          "w": "kembali",
+          "s": 19925.0,
+          "e": 20262.5
+        },
+        {
+          "w": "ke",
+          "s": 20262.5,
+          "e": 20337.5
+        },
+        {
+          "w": "tahun",
+          "s": 20337.5,
+          "e": 20625.0
+        },
+        {
+          "w": "ajaran",
+          "s": 20625.0,
+          "e": 20962.5
+        },
+        {
+          "w": "utama",
+          "s": 20962.5,
+          "e": 21512.5
+        },
+        {
+          "w": "Seluruh",
+          "s": 22350.0,
+          "e": 22750.0
+        },
+        {
+          "w": "konfigurasi",
+          "s": 22750.0,
+          "e": 23325.0
+        },
+        {
+          "w": "sistem",
+          "s": 23325.0,
+          "e": 23700.0
+        },
+        {
+          "w": "sekolah",
+          "s": 23700.0,
+          "e": 24025.0
+        },
+        {
+          "w": "Anda",
+          "s": 24025.0,
+          "e": 24237.5
+        },
+        {
+          "w": "kini",
+          "s": 24237.5,
+          "e": 24562.5
+        },
+        {
+          "w": "telah",
+          "s": 24562.5,
+          "e": 24775.0
+        },
+        {
+          "w": "terkelola",
+          "s": 24775.0,
+          "e": 25250.0
+        },
+        {
+          "w": "dengan",
+          "s": 25250.0,
+          "e": 25475.0
+        },
+        {
+          "w": "sempurna",
+          "s": 25475.0,
+          "e": 26100.0
+        }
+      ],
+      "sha256": "4f5c3b7ae5c096e037105d6da3c0e9d61552908f2f57057fc65f786b10129dd3"
+    }
+  }
+}

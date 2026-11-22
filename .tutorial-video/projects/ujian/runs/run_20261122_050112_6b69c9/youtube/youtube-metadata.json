@@ -1,0 +1,47 @@
+{
+  "snippet": {
+    "title": "Tutorial Guru ZEXAM-CBT: Cara Import Soal Pilihan Ganda via Template Excel",
+    "description": "Tutorial Guru ZEXAM-CBT: Cara Import Soal Pilihan Ganda via Template Excel\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Bank Soal\n00:30 - Unduh Template Resmi Excel\n00:59 - Panduan Struktur Kolom Excel\n01:25 - Ketentuan Kolom Pertanyaan Dan Kunci\n01:55 - Eksekusi Import Excel Dan Progress\n02:18 - Tinjau Hasil Soal Pilihan Ganda\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Bank Soal: Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT.\n2. Unduh Template Resmi Excel: Sebelum menyusun naskah soal, pastikan Anda menggunakan template resmi sistem.\n3. Panduan Struktur Kolom Excel: Untuk memastikan naskah kita sesuai standar, kita dapat memeriksa panduan format yang disediakan di dalam aplikasi.\n4. Ketentuan Kolom Pertanyaan Dan Kunci: Perhatikan kolom-kolom utama pada lembar kerja Excel: kolom Pertanyaan memuat teks stimulus soal; kolom Tipe diisi pilihan ganda atau pg; kolom Opsi A sampai Opsi E memuat pilihan ganda yang disajikan; kolom Kunci diisi dengan huruf jawaban benar dari A sampai E; dan kolom Skor menentukan bobot nilai masing-masing butir soal.\n5. Eksekusi Import Excel Dan Progress: Sekarang kita jalankan proses import.\n6. Tinjau Hasil Soal Pilihan Ganda: Luar biasa! Seluruh butir soal pilihan ganda telah berhasil diimpor ke dalam bank soal.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "guru",
+      "zexam-cbt",
+      "import",
+      "soal",
+      "pilihan",
+      "ganda",
+      "via",
+      "template",
+      "excel",
+      "navigasi bank soal",
+      "unduh template resmi excel",
+      "panduan struktur kolom excel",
+      "ketentuan kolom pertanyaan dan kunci",
+      "eksekusi import excel dan progress",
+      "tinjau hasil soal pilihan ganda"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 171.43,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_050112_6b69c9\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T21:19:31.871140+00:00"
+  }
+}

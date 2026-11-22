@@ -1,0 +1,46 @@
+{
+  "snippet": {
+    "title": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Ruang Ujian, Distribusi Siswa & Denah Duduk",
+    "description": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Ruang Ujian, Distribusi Siswa & Denah Duduk\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Ruang Ujian\n00:29 - Tambah Ruang Dan Kapasitas\n01:02 - Modul Distribusi Siswa Global\n01:30 - Filter Kelas Dan Pembagian Siswa\n01:59 - Denah Duduk Interaktif Dan Cetak Pdf\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Ruang Ujian: Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT.\n2. Tambah Ruang Dan Kapasitas: Pada halaman ini, proktor dapat melihat seluruh ruang ujian aktif beserta statistik kapasitas kursi dan statusnya.\n3. Modul Distribusi Siswa Global: Sekarang kita beralih ke pembagian ruang peserta ujian.\n4. Filter Kelas Dan Pembagian Siswa: Proktor juga dapat memfilter siswa berdasarkan rombel kelas tertentu, mencari nama murid, atau mencentang seluruh siswa dalam satu rombel untuk dialokasikan sekaligus ke ruangan yang dituju.\n5. Denah Duduk Interaktif Dan Cetak Pdf: Inilah kanvas denah duduk interaktif ZEXAM-CBT.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "admin",
+      "proktor",
+      "zexam-cbt",
+      "manajemen",
+      "ruang",
+      "distribusi",
+      "siswa",
+      "denah",
+      "duduk",
+      "navigasi ruang ujian",
+      "tambah ruang dan kapasitas",
+      "modul distribusi siswa global",
+      "filter kelas dan pembagian siswa",
+      "denah duduk interaktif dan cetak pdf"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 157.23,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-21T22:02:17.875747+00:00"
+  }
+}

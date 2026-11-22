@@ -1,0 +1,44 @@
+{
+  "snippet": {
+    "title": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran",
+    "description": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Profil Sekolah Dan Kkm\n01:02 - Sensor Anti Curang Dan Mode\n01:54 - Area Berbahaya Clear Data\n02:33 - Manajemen Tahun Ajaran\n03:29 - Fitur Ta Switcher\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Profil Sekolah Dan Kkm: Halo rekan proktor dan pengelola sistem ZEXAM-CBT.\n2. Sensor Anti Curang Dan Mode: ZEXAM-CBT dibekali sistem keamanan canggih dengan kontrol anti-kecurangan modular.\n3. Area Berbahaya Clear Data: Di bagian bawah halaman pengaturan, ZEXAM-CBT menyediakan fitur Area Berbahaya untuk pembersihan data transaksional.\n4. Manajemen Tahun Ajaran: Selanjutnya, mari kita masuk ke menu Tahun Ajaran pada kelompok Data Master.\n5. Fitur Ta Switcher: Salah satu keunggulan ZEXAM-CBT adalah fitur TA Switcher cepat di bagian atas navigasi.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "proktor",
+      "zexam-cbt",
+      "pengaturan",
+      "sekolah",
+      "anti-curang",
+      "tahun",
+      "ajaran",
+      "profil sekolah dan kkm",
+      "sensor anti curang dan mode",
+      "area berbahaya clear data",
+      "manajemen tahun ajaran",
+      "fitur ta switcher"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "private",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_090647_7751c0\\final\\final-tutorial-desktop.mp4",
+    "duration_sec": 255.0,
+    "is_shorts": false,
+    "aspect_ratio": "16:9",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_090647_7751c0\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-22T01:38:32.183622+00:00"
+  }
+}

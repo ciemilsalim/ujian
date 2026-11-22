@@ -1,0 +1,529 @@
+{
+  "sample_rate": 48000,
+  "source": "recording\\events-desktop.json",
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "ducking_attack_ms": 200,
+    "ducking_release_ms": 500,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true,
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "file_rel": "resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256_verified": true,
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa"
+  },
+  "bgm_acoustics": {
+    "bgm_present": true,
+    "ducked_bgm_rms_dbfs": -45.89,
+    "pause_bgm_rms_dbfs": -35.03,
+    "speech_master_rms_dbfs": -18.37,
+    "measured_voice_advantage_db": 27.52,
+    "measured_ducking_attenuation_db": 10.86,
+    "audible": false
+  },
+  "placements": [
+    {
+      "kind": "narration",
+      "at_ms": 200,
+      "dur_ms": 23446.0,
+      "ref": "scene_01_navigasi_tambah_soal"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 25966.667,
+      "dur_ms": 45.0,
+      "ref": ".hidden.lg\\:block a:has-text(\"Banks Soal\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 29183.333,
+      "dur_ms": 45.0,
+      "ref": "#btn-bank-detail-1"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 32366.667,
+      "dur_ms": 45.0,
+      "ref": "#btn-tambah-soal"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 35050,
+      "dur_ms": 22102.0,
+      "ref": "scene_02_konfigurasi_soal_menjodohkan"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 59483.333,
+      "dur_ms": 45.0,
+      "ref": "#type"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 61666.667,
+      "dur_ms": 45.0,
+      "ref": "option:menjodohkan"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 65566.667,
+      "dur_ms": 45.0,
+      "ref": "#question_text"
+    },
+    {
+      "kind": "key",
+      "at_ms": 65866.667,
+      "dur_ms": 30.0,
+      "ref": "J"
+    },
+    {
+      "kind": "key",
+      "at_ms": 66000,
+      "dur_ms": 30.0,
+      "ref": "o"
+    },
+    {
+      "kind": "key",
+      "at_ms": 66116.667,
+      "dur_ms": 30.0,
+      "ref": "d"
+    },
+    {
+      "kind": "key",
+      "at_ms": 66416.667,
+      "dur_ms": 30.0,
+      "ref": "o"
+    },
+    {
+      "kind": "key",
+      "at_ms": 66516.667,
+      "dur_ms": 30.0,
+      "ref": "h"
+    },
+    {
+      "kind": "key",
+      "at_ms": 66633.333,
+      "dur_ms": 30.0,
+      "ref": "k"
+    },
+    {
+      "kind": "key",
+      "at_ms": 66750,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 66883.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 67166.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 67333.333,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 67483.333,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 67566.667,
+      "dur_ms": 30.0,
+      "ref": "t"
+    },
+    {
+      "kind": "key",
+      "at_ms": 67683.333,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 67783.333,
+      "dur_ms": 30.0,
+      "ref": "l"
+    },
+    {
+      "kind": "key",
+      "at_ms": 67866.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 68016.667,
+      "dur_ms": 30.0,
+      "ref": "h"
+    },
+    {
+      "kind": "key",
+      "at_ms": 68133.333,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 68333.333,
+      "dur_ms": 30.0,
+      "ref": "k"
+    },
+    {
+      "kind": "key",
+      "at_ms": 68433.333,
+      "dur_ms": 30.0,
+      "ref": "o"
+    },
+    {
+      "kind": "key",
+      "at_ms": 68583.333,
+      "dur_ms": 30.0,
+      "ref": "m"
+    },
+    {
+      "kind": "key",
+      "at_ms": 68683.333,
+      "dur_ms": 30.0,
+      "ref": "p"
+    },
+    {
+      "kind": "key",
+      "at_ms": 68783.333,
+      "dur_ms": 30.0,
+      "ref": "o"
+    },
+    {
+      "kind": "key",
+      "at_ms": 68883.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 69016.667,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 69116.667,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 69250,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 69433.333,
+      "dur_ms": 30.0,
+      "ref": "p"
+    },
+    {
+      "kind": "key",
+      "at_ms": 69550,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 69700,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 69816.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 69966.667,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 70100,
+      "dur_ms": 30.0,
+      "ref": "g"
+    },
+    {
+      "kind": "key",
+      "at_ms": 70233.333,
+      "dur_ms": 30.0,
+      "ref": "k"
+    },
+    {
+      "kind": "key",
+      "at_ms": 70316.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 70616.667,
+      "dur_ms": 30.0,
+      "ref": "t"
+    },
+    {
+      "kind": "key",
+      "at_ms": 70733.333,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 70883.333,
+      "dur_ms": 30.0,
+      "ref": "k"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71000,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71116.667,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71233.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71333.333,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71466.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 71633.333,
+      "dur_ms": 30.0,
+      "ref": "d"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71716.667,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71833.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 71950,
+      "dur_ms": 30.0,
+      "ref": "g"
+    },
+    {
+      "kind": "key",
+      "at_ms": 72083.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 72216.667,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 72316.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 72500,
+      "dur_ms": 30.0,
+      "ref": "f"
+    },
+    {
+      "kind": "key",
+      "at_ms": 72616.667,
+      "dur_ms": 30.0,
+      "ref": "u"
+    },
+    {
+      "kind": "key",
+      "at_ms": 72733.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 72866.667,
+      "dur_ms": 30.0,
+      "ref": "g"
+    },
+    {
+      "kind": "key",
+      "at_ms": 72966.667,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73066.667,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73183.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73283.333,
+      "dur_ms": 30.0,
+      "ref": "y"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73533.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73650,
+      "dur_ms": 30.0,
+      "ref": ":"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 75983.333,
+      "dur_ms": 21440.0,
+      "ref": "scene_03_konfigurasi_soal_isian_singkat"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 99400,
+      "dur_ms": 45.0,
+      "ref": "#type"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 101583.333,
+      "dur_ms": 45.0,
+      "ref": "option:isian_singkat"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 105483.333,
+      "dur_ms": 45.0,
+      "ref": "#answer_key"
+    },
+    {
+      "kind": "key",
+      "at_ms": 105783.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 105933.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 106083.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 106233.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 106383.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 108683.333,
+      "dur_ms": 19298.0,
+      "ref": "scene_04_konfigurasi_soal_essay_dan_rubrik"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 130050,
+      "dur_ms": 45.0,
+      "ref": "#type"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 132233.333,
+      "dur_ms": 45.0,
+      "ref": "option:essay"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 137366.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Batal\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 139500,
+      "dur_ms": 23638.0,
+      "ref": "scene_05_tinjau_daftar_soal_dan_penutup"
+    },
+    {
+      "kind": "background_music",
+      "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+      "base_volume": 0.16,
+      "ducking_volume": 0.045,
+      "at_ms": 0.0,
+      "dur_ms": 171016.7,
+      "ref": "bgm"
+    }
+  ]
+}

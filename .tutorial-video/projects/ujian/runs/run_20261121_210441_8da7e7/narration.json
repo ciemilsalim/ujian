@@ -1,0 +1,1144 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_navigasi_manajemen_akun": {
+      "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari manajemen akun pengguna, pembuatan akun manual, serta import data siswa secara massal menggunakan template Excel dan Word. Dari menu navigasi samping, klik kelompok Data Master, lalu pilih menu Data Pengguna untuk membuka pusat Manajemen Akun.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_01_navigasi_manajemen_akun.wav",
+      "duration_ms": 21766.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "Bapak",
+          "s": 375.0,
+          "e": 675.0
+        },
+        {
+          "w": "dan",
+          "s": 675.0,
+          "e": 812.5
+        },
+        {
+          "w": "Ibu",
+          "s": 812.5,
+          "e": 1012.5
+        },
+        {
+          "w": "Admin",
+          "s": 1012.5,
+          "e": 1425.0
+        },
+        {
+          "w": "serta",
+          "s": 1425.0,
+          "e": 1700.0
+        },
+        {
+          "w": "Proktor",
+          "s": 1700.0,
+          "e": 2100.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2100.0,
+          "e": 3112.5
+        },
+        {
+          "w": "Pada",
+          "s": 4322.5,
+          "e": 4522.5
+        },
+        {
+          "w": "tutorial",
+          "s": 4522.5,
+          "e": 4897.5
+        },
+        {
+          "w": "kali",
+          "s": 4897.5,
+          "e": 5072.5
+        },
+        {
+          "w": "ini",
+          "s": 5072.5,
+          "e": 5522.5
+        },
+        {
+          "w": "kita",
+          "s": 5810.0,
+          "e": 6010.0
+        },
+        {
+          "w": "akan",
+          "s": 6010.0,
+          "e": 6197.5
+        },
+        {
+          "w": "mempelajari",
+          "s": 6197.5,
+          "e": 6622.5
+        },
+        {
+          "w": "manajemen",
+          "s": 6622.5,
+          "e": 7085.0
+        },
+        {
+          "w": "akun",
+          "s": 7085.0,
+          "e": 7322.5
+        },
+        {
+          "w": "pengguna",
+          "s": 7322.5,
+          "e": 7910.0
+        },
+        {
+          "w": "pembuatan",
+          "s": 8160.0,
+          "e": 8585.0
+        },
+        {
+          "w": "akun",
+          "s": 8585.0,
+          "e": 8810.0
+        },
+        {
+          "w": "manual",
+          "s": 8810.0,
+          "e": 9372.5
+        },
+        {
+          "w": "serta",
+          "s": 9647.5,
+          "e": 9960.0
+        },
+        {
+          "w": "import",
+          "s": 9960.0,
+          "e": 10272.5
+        },
+        {
+          "w": "data",
+          "s": 10272.5,
+          "e": 10497.5
+        },
+        {
+          "w": "siswa",
+          "s": 10497.5,
+          "e": 10860.0
+        },
+        {
+          "w": "secara",
+          "s": 10860.0,
+          "e": 11135.0
+        },
+        {
+          "w": "massal",
+          "s": 11135.0,
+          "e": 11472.5
+        },
+        {
+          "w": "menggunakan",
+          "s": 11472.5,
+          "e": 11972.5
+        },
+        {
+          "w": "template",
+          "s": 11972.5,
+          "e": 12335.0
+        },
+        {
+          "w": "Excel",
+          "s": 12335.0,
+          "e": 12735.0
+        },
+        {
+          "w": "dan",
+          "s": 12735.0,
+          "e": 12935.0
+        },
+        {
+          "w": "Word",
+          "s": 12935.0,
+          "e": 13297.5
+        },
+        {
+          "w": "Dari",
+          "s": 14558.5,
+          "e": 14808.5
+        },
+        {
+          "w": "menu",
+          "s": 14808.5,
+          "e": 14996.0
+        },
+        {
+          "w": "navigasi",
+          "s": 14996.0,
+          "e": 15446.0
+        },
+        {
+          "w": "samping",
+          "s": 15446.0,
+          "e": 16008.5
+        },
+        {
+          "w": "klik",
+          "s": 16296.0,
+          "e": 16458.5
+        },
+        {
+          "w": "kelompok",
+          "s": 16458.5,
+          "e": 16783.5
+        },
+        {
+          "w": "Data",
+          "s": 16783.5,
+          "e": 16996.0
+        },
+        {
+          "w": "Master",
+          "s": 16996.0,
+          "e": 17521.0
+        },
+        {
+          "w": "lalu",
+          "s": 17821.0,
+          "e": 18058.5
+        },
+        {
+          "w": "pilih",
+          "s": 18058.5,
+          "e": 18258.5
+        },
+        {
+          "w": "menu",
+          "s": 18258.5,
+          "e": 18421.0
+        },
+        {
+          "w": "Data",
+          "s": 18421.0,
+          "e": 18621.0
+        },
+        {
+          "w": "Pengguna",
+          "s": 18621.0,
+          "e": 19058.5
+        },
+        {
+          "w": "untuk",
+          "s": 19058.5,
+          "e": 19321.0
+        },
+        {
+          "w": "membuka",
+          "s": 19321.0,
+          "e": 19646.0
+        },
+        {
+          "w": "pusat",
+          "s": 19646.0,
+          "e": 19971.0
+        },
+        {
+          "w": "Manajemen",
+          "s": 19971.0,
+          "e": 20408.5
+        },
+        {
+          "w": "Akun",
+          "s": 20408.5,
+          "e": 20908.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "d334d82384651a367216cee55c78e312aff1b3608ce073a1c0c393f160c52d49"
+    },
+    "scene_02_filter_dan_pencarian_pengguna": {
+      "text": "Sistem ZEXAM-CBT memudahkan proktor mencari akun berdasarkan nama, username, maupun NIS siswa. Anda juga dapat memfilter daftar pengguna berdasarkan peran seperti Proktor, Guru, atau Siswa, serta menyaring berdasarkan rombongan belajar kelas tertentu secara instan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_02_filter_dan_pencarian_pengguna.wav",
+      "duration_ms": 17218.0,
+      "words": [
+        {
+          "w": "Sistem",
+          "s": 112.5,
+          "e": 475.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 475.0,
+          "e": 1225.0
+        },
+        {
+          "w": "memudahkan",
+          "s": 1225.0,
+          "e": 1712.5
+        },
+        {
+          "w": "proktor",
+          "s": 1712.5,
+          "e": 2075.0
+        },
+        {
+          "w": "mencari",
+          "s": 2075.0,
+          "e": 2387.5
+        },
+        {
+          "w": "akun",
+          "s": 2387.5,
+          "e": 2650.0
+        },
+        {
+          "w": "berdasarkan",
+          "s": 2650.0,
+          "e": 3225.0
+        },
+        {
+          "w": "nama",
+          "s": 3225.0,
+          "e": 3725.0
+        },
+        {
+          "w": "username",
+          "s": 3987.5,
+          "e": 4687.5
+        },
+        {
+          "w": "maupun",
+          "s": 4925.0,
+          "e": 5325.0
+        },
+        {
+          "w": "NIS",
+          "s": 5325.0,
+          "e": 5462.5
+        },
+        {
+          "w": "siswa",
+          "s": 5462.5,
+          "e": 6000.0
+        },
+        {
+          "w": "Anda",
+          "s": 7202.5,
+          "e": 7440.0
+        },
+        {
+          "w": "juga",
+          "s": 7440.0,
+          "e": 7677.5
+        },
+        {
+          "w": "dapat",
+          "s": 7677.5,
+          "e": 7927.5
+        },
+        {
+          "w": "memfilter",
+          "s": 7927.5,
+          "e": 8315.0
+        },
+        {
+          "w": "daftar",
+          "s": 8315.0,
+          "e": 8652.5
+        },
+        {
+          "w": "pengguna",
+          "s": 8652.5,
+          "e": 9002.5
+        },
+        {
+          "w": "berdasarkan",
+          "s": 9002.5,
+          "e": 9565.0
+        },
+        {
+          "w": "peran",
+          "s": 9565.0,
+          "e": 9827.5
+        },
+        {
+          "w": "seperti",
+          "s": 9827.5,
+          "e": 10152.5
+        },
+        {
+          "w": "Proktor",
+          "s": 10152.5,
+          "e": 10715.0
+        },
+        {
+          "w": "Guru",
+          "s": 10965.0,
+          "e": 11540.0
+        },
+        {
+          "w": "atau",
+          "s": 11765.0,
+          "e": 12027.5
+        },
+        {
+          "w": "Siswa",
+          "s": 12027.5,
+          "e": 12640.0
+        },
+        {
+          "w": "serta",
+          "s": 12902.5,
+          "e": 13202.5
+        },
+        {
+          "w": "menyaring",
+          "s": 13202.5,
+          "e": 13540.0
+        },
+        {
+          "w": "berdasarkan",
+          "s": 13540.0,
+          "e": 14115.0
+        },
+        {
+          "w": "rombongan",
+          "s": 14115.0,
+          "e": 14477.5
+        },
+        {
+          "w": "belajar",
+          "s": 14477.5,
+          "e": 14802.5
+        },
+        {
+          "w": "kelas",
+          "s": 14802.5,
+          "e": 15040.0
+        },
+        {
+          "w": "tertentu",
+          "s": 15040.0,
+          "e": 15440.0
+        },
+        {
+          "w": "secara",
+          "s": 15440.0,
+          "e": 15752.5
+        },
+        {
+          "w": "instan",
+          "s": 15752.5,
+          "e": 16365.0
+        }
+      ],
+      "segments_count": 2,
+      "sha256": "cba43186d7c304da8f99277f5760dfccbb29c466677769ff851c9cfc9f1a3164"
+    },
+    "scene_03_tambah_user_manual": {
+      "text": "Untuk menambahkan akun pengguna satu per satu, klik tombol User Baru di pojok kanan atas. Masukkan username unik, nama lengkap, password login, serta pilih peran pengguna sebagai Siswa, Guru, atau Proktor beserta penetapan kelasnya.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_03_tambah_user_manual.wav",
+      "duration_ms": 15634.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 362.5
+        },
+        {
+          "w": "menambahkan",
+          "s": 362.5,
+          "e": 850.0
+        },
+        {
+          "w": "akun",
+          "s": 850.0,
+          "e": 1100.0
+        },
+        {
+          "w": "pengguna",
+          "s": 1100.0,
+          "e": 1387.5
+        },
+        {
+          "w": "satu",
+          "s": 1387.5,
+          "e": 1625.0
+        },
+        {
+          "w": "per",
+          "s": 1625.0,
+          "e": 1737.5
+        },
+        {
+          "w": "satu",
+          "s": 1737.5,
+          "e": 2287.5
+        },
+        {
+          "w": "klik",
+          "s": 2612.5,
+          "e": 2787.5
+        },
+        {
+          "w": "tombol",
+          "s": 2787.5,
+          "e": 3062.5
+        },
+        {
+          "w": "User",
+          "s": 3062.5,
+          "e": 3350.0
+        },
+        {
+          "w": "Baru",
+          "s": 3350.0,
+          "e": 3662.5
+        },
+        {
+          "w": "di",
+          "s": 3662.5,
+          "e": 3787.5
+        },
+        {
+          "w": "pojok",
+          "s": 3787.5,
+          "e": 4112.5
+        },
+        {
+          "w": "kanan",
+          "s": 4112.5,
+          "e": 4337.5
+        },
+        {
+          "w": "atas",
+          "s": 4337.5,
+          "e": 4887.5
+        },
+        {
+          "w": "Masukkan",
+          "s": 6098.5,
+          "e": 6523.5
+        },
+        {
+          "w": "username",
+          "s": 6523.5,
+          "e": 6911.0
+        },
+        {
+          "w": "unik",
+          "s": 6911.0,
+          "e": 7373.5
+        },
+        {
+          "w": "nama",
+          "s": 7611.0,
+          "e": 7836.0
+        },
+        {
+          "w": "lengkap",
+          "s": 7836.0,
+          "e": 8323.5
+        },
+        {
+          "w": "password",
+          "s": 8548.5,
+          "e": 8936.0
+        },
+        {
+          "w": "login",
+          "s": 8936.0,
+          "e": 9486.0
+        },
+        {
+          "w": "serta",
+          "s": 9761.0,
+          "e": 10061.0
+        },
+        {
+          "w": "pilih",
+          "s": 10061.0,
+          "e": 10273.5
+        },
+        {
+          "w": "peran",
+          "s": 10273.5,
+          "e": 10461.0
+        },
+        {
+          "w": "pengguna",
+          "s": 10461.0,
+          "e": 10786.0
+        },
+        {
+          "w": "sebagai",
+          "s": 10786.0,
+          "e": 11111.0
+        },
+        {
+          "w": "Siswa",
+          "s": 11111.0,
+          "e": 11711.0
+        },
+        {
+          "w": "Guru",
+          "s": 11961.0,
+          "e": 12511.0
+        },
+        {
+          "w": "atau",
+          "s": 12748.5,
+          "e": 13011.0
+        },
+        {
+          "w": "Proktor",
+          "s": 13011.0,
+          "e": 13361.0
+        },
+        {
+          "w": "beserta",
+          "s": 13361.0,
+          "e": 13761.0
+        },
+        {
+          "w": "penetapan",
+          "s": 13761.0,
+          "e": 14186.0
+        },
+        {
+          "w": "kelasnya",
+          "s": 14186.0,
+          "e": 14786.0
+        }
+      ],
+      "segments_count": 2,
+      "sha256": "9c479045d790126ca523c7e8552cda65a996cd4a7106964c1064aaadefffce8a"
+    },
+    "scene_04_import_siswa_excel_dan_word": {
+      "text": "Untuk mengunggah ratusan akun siswa sekaligus dalam hitungan detik, klik tombol Import Siswa. Di jendela ini, Anda dapat langsung mengunduh template resmi baik format Excel XLSX maupun dokumen Microsoft Word DOCX. Cukup sesuaikan data nama, NIS, kelas, dan password, lalu unggah berkas Anda agar sistem mendaftarkan seluruh akun secara otomatis.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_04_import_siswa_excel_dan_word.wav",
+      "duration_ms": 22654.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 375.0
+        },
+        {
+          "w": "mengunggah",
+          "s": 375.0,
+          "e": 687.5
+        },
+        {
+          "w": "ratusan",
+          "s": 687.5,
+          "e": 1075.0
+        },
+        {
+          "w": "akun",
+          "s": 1075.0,
+          "e": 1300.0
+        },
+        {
+          "w": "siswa",
+          "s": 1300.0,
+          "e": 1625.0
+        },
+        {
+          "w": "sekaligus",
+          "s": 1625.0,
+          "e": 2175.0
+        },
+        {
+          "w": "dalam",
+          "s": 2175.0,
+          "e": 2387.5
+        },
+        {
+          "w": "hitungan",
+          "s": 2387.5,
+          "e": 2712.5
+        },
+        {
+          "w": "detik",
+          "s": 2712.5,
+          "e": 3125.0
+        },
+        {
+          "w": "klik",
+          "s": 3412.5,
+          "e": 3600.0
+        },
+        {
+          "w": "tombol",
+          "s": 3600.0,
+          "e": 3937.5
+        },
+        {
+          "w": "Import",
+          "s": 3937.5,
+          "e": 4275.0
+        },
+        {
+          "w": "Siswa",
+          "s": 4275.0,
+          "e": 4850.0
+        },
+        {
+          "w": "Di",
+          "s": 6050.5,
+          "e": 6188.0
+        },
+        {
+          "w": "jendela",
+          "s": 6188.0,
+          "e": 6513.0
+        },
+        {
+          "w": "ini",
+          "s": 6513.0,
+          "e": 6975.5
+        },
+        {
+          "w": "Anda",
+          "s": 7313.0,
+          "e": 7563.0
+        },
+        {
+          "w": "dapat",
+          "s": 7563.0,
+          "e": 7800.5
+        },
+        {
+          "w": "langsung",
+          "s": 7800.5,
+          "e": 8100.5
+        },
+        {
+          "w": "mengunduh",
+          "s": 8100.5,
+          "e": 8400.5
+        },
+        {
+          "w": "template",
+          "s": 8400.5,
+          "e": 8800.5
+        },
+        {
+          "w": "resmi",
+          "s": 8800.5,
+          "e": 9113.0
+        },
+        {
+          "w": "baik",
+          "s": 9113.0,
+          "e": 9338.0
+        },
+        {
+          "w": "format",
+          "s": 9338.0,
+          "e": 9638.0
+        },
+        {
+          "w": "Excel",
+          "s": 9638.0,
+          "e": 9975.5
+        },
+        {
+          "w": "XLSX",
+          "s": 9975.5,
+          "e": 10750.5
+        },
+        {
+          "w": "maupun",
+          "s": 10750.5,
+          "e": 11063.0
+        },
+        {
+          "w": "dokumen",
+          "s": 11063.0,
+          "e": 11413.0
+        },
+        {
+          "w": "Microsoft",
+          "s": 11413.0,
+          "e": 12063.0
+        },
+        {
+          "w": "Word",
+          "s": 12063.0,
+          "e": 12275.5
+        },
+        {
+          "w": "DOCX",
+          "s": 12275.5,
+          "e": 12700.5
+        },
+        {
+          "w": "Cukup",
+          "s": 13958.5,
+          "e": 14196.0
+        },
+        {
+          "w": "sesuaikan",
+          "s": 14196.0,
+          "e": 14696.0
+        },
+        {
+          "w": "data",
+          "s": 14696.0,
+          "e": 14896.0
+        },
+        {
+          "w": "nama",
+          "s": 14896.0,
+          "e": 15396.0
+        },
+        {
+          "w": "NIS",
+          "s": 15671.0,
+          "e": 16146.0
+        },
+        {
+          "w": "kelas",
+          "s": 16371.0,
+          "e": 16883.5
+        },
+        {
+          "w": "dan",
+          "s": 17083.5,
+          "e": 17333.5
+        },
+        {
+          "w": "password",
+          "s": 17333.5,
+          "e": 17871.0
+        },
+        {
+          "w": "lalu",
+          "s": 18158.5,
+          "e": 18383.5
+        },
+        {
+          "w": "unggah",
+          "s": 18383.5,
+          "e": 18583.5
+        },
+        {
+          "w": "berkas",
+          "s": 18583.5,
+          "e": 18871.0
+        },
+        {
+          "w": "Anda",
+          "s": 18871.0,
+          "e": 19146.0
+        },
+        {
+          "w": "agar",
+          "s": 19146.0,
+          "e": 19346.0
+        },
+        {
+          "w": "sistem",
+          "s": 19346.0,
+          "e": 19658.5
+        },
+        {
+          "w": "mendaftarkan",
+          "s": 19658.5,
+          "e": 20208.5
+        },
+        {
+          "w": "seluruh",
+          "s": 20208.5,
+          "e": 20521.0
+        },
+        {
+          "w": "akun",
+          "s": 20521.0,
+          "e": 20796.0
+        },
+        {
+          "w": "secara",
+          "s": 20796.0,
+          "e": 21083.5
+        },
+        {
+          "w": "otomatis",
+          "s": 21083.5,
+          "e": 21808.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "9d7bb6ef6c6c541fa775158b4692ea50c6f368a3e8e100ea52ba0a7007fdc6e3"
+    },
+    "scene_05_kontrol_keamanan_password_dan_aksi_masal": {
+      "text": "Tabel pengguna dilengkapi kontrol interaktif: klik ikon mata untuk menampilkan password siswa secara transparan saat ada kendala lupa sandi. Gunakan kotak centang untuk memilih beberapa akun sekaligus jika ingin melakukan penghapusan massal. Akun bawaan proktor dilindungi secara permanen dari penghapusan demi keamanan sistem. Selamat mengelola data pengguna Anda bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_05_kontrol_keamanan_password_dan_aksi_masal.wav",
+      "duration_ms": 22992.0,
+      "words": [
+        {
+          "w": "Tabel",
+          "s": 112.5,
+          "e": 375.0
+        },
+        {
+          "w": "pengguna",
+          "s": 375.0,
+          "e": 712.5
+        },
+        {
+          "w": "dilengkapi",
+          "s": 712.5,
+          "e": 1100.0
+        },
+        {
+          "w": "kontrol",
+          "s": 1100.0,
+          "e": 1425.0
+        },
+        {
+          "w": "interaktif",
+          "s": 1425.0,
+          "e": 2100.0
+        },
+        {
+          "w": "klik",
+          "s": 2375.0,
+          "e": 2562.5
+        },
+        {
+          "w": "ikon",
+          "s": 2562.5,
+          "e": 2787.5
+        },
+        {
+          "w": "mata",
+          "s": 2787.5,
+          "e": 3037.5
+        },
+        {
+          "w": "untuk",
+          "s": 3037.5,
+          "e": 3237.5
+        },
+        {
+          "w": "menampilkan",
+          "s": 3237.5,
+          "e": 3737.5
+        },
+        {
+          "w": "password",
+          "s": 3737.5,
+          "e": 4050.0
+        },
+        {
+          "w": "siswa",
+          "s": 4050.0,
+          "e": 4425.0
+        },
+        {
+          "w": "secara",
+          "s": 4425.0,
+          "e": 4700.0
+        },
+        {
+          "w": "transparan",
+          "s": 4700.0,
+          "e": 5325.0
+        },
+        {
+          "w": "saat",
+          "s": 5325.0,
+          "e": 5562.5
+        },
+        {
+          "w": "ada",
+          "s": 5562.5,
+          "e": 5775.0
+        },
+        {
+          "w": "kendala",
+          "s": 5775.0,
+          "e": 6087.5
+        },
+        {
+          "w": "lupa",
+          "s": 6087.5,
+          "e": 6300.0
+        },
+        {
+          "w": "sandi",
+          "s": 6300.0,
+          "e": 6837.5
+        },
+        {
+          "w": "Gunakan",
+          "s": 8080.0,
+          "e": 8517.5
+        },
+        {
+          "w": "kotak",
+          "s": 8517.5,
+          "e": 8755.0
+        },
+        {
+          "w": "centang",
+          "s": 8755.0,
+          "e": 9167.5
+        },
+        {
+          "w": "untuk",
+          "s": 9167.5,
+          "e": 9380.0
+        },
+        {
+          "w": "memilih",
+          "s": 9380.0,
+          "e": 9705.0
+        },
+        {
+          "w": "beberapa",
+          "s": 9705.0,
+          "e": 10042.5
+        },
+        {
+          "w": "akun",
+          "s": 10042.5,
+          "e": 10242.5
+        },
+        {
+          "w": "sekaligus",
+          "s": 10242.5,
+          "e": 10867.5
+        },
+        {
+          "w": "jika",
+          "s": 10867.5,
+          "e": 11105.0
+        },
+        {
+          "w": "ingin",
+          "s": 11105.0,
+          "e": 11317.5
+        },
+        {
+          "w": "melakukan",
+          "s": 11317.5,
+          "e": 11780.0
+        },
+        {
+          "w": "penghapusan",
+          "s": 11780.0,
+          "e": 12292.5
+        },
+        {
+          "w": "massal",
+          "s": 12292.5,
+          "e": 12830.0
+        },
+        {
+          "w": "Akun",
+          "s": 14068.0,
+          "e": 14380.5
+        },
+        {
+          "w": "bawaan",
+          "s": 14380.5,
+          "e": 14693.0
+        },
+        {
+          "w": "proktor",
+          "s": 14693.0,
+          "e": 15068.0
+        },
+        {
+          "w": "dilindungi",
+          "s": 15068.0,
+          "e": 15530.5
+        },
+        {
+          "w": "secara",
+          "s": 15530.5,
+          "e": 15818.0
+        },
+        {
+          "w": "permanen",
+          "s": 15818.0,
+          "e": 16243.0
+        },
+        {
+          "w": "dari",
+          "s": 16243.0,
+          "e": 16393.0
+        },
+        {
+          "w": "penghapusan",
+          "s": 16393.0,
+          "e": 16993.0
+        },
+        {
+          "w": "demi",
+          "s": 16993.0,
+          "e": 17205.5
+        },
+        {
+          "w": "keamanan",
+          "s": 17205.5,
+          "e": 17593.0
+        },
+        {
+          "w": "sistem",
+          "s": 17593.0,
+          "e": 18218.0
+        },
+        {
+          "w": "Selamat",
+          "s": 19055.5,
+          "e": 19468.0
+        },
+        {
+          "w": "mengelola",
+          "s": 19468.0,
+          "e": 19818.0
+        },
+        {
+          "w": "data",
+          "s": 19818.0,
+          "e": 20043.0
+        },
+        {
+          "w": "pengguna",
+          "s": 20043.0,
+          "e": 20343.0
+        },
+        {
+          "w": "Anda",
+          "s": 20343.0,
+          "e": 20743.0
+        },
+        {
+          "w": "bersama",
+          "s": 20743.0,
+          "e": 21155.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 21155.5,
+          "e": 22155.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "c8ee972c9fed8019334f03612f54c59c724f15812c16588ad287a2f624f4d10e"
+    }
+  }
+}

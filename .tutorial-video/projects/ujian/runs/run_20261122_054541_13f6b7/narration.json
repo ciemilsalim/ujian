@@ -1,0 +1,1354 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_navigasi_ruang_ujian": {
+      "text": "Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari panduan lengkap manajemen ruang ujian, pembagian siswa ke masing-masing ruangan secara terpusat, serta pengaturan denah tempat duduk interaktif. Dari navigasi samping, klik kelompok Data Master, lalu pilih menu Ruang Ujian untuk membuka pusat data ruangan.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_01_navigasi_ruang_ujian.wav",
+      "duration_ms": 22318.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "Bapak",
+          "s": 375.0,
+          "e": 675.0
+        },
+        {
+          "w": "dan",
+          "s": 675.0,
+          "e": 812.5
+        },
+        {
+          "w": "Ibu",
+          "s": 812.5,
+          "e": 1012.5
+        },
+        {
+          "w": "Admin",
+          "s": 1012.5,
+          "e": 1425.0
+        },
+        {
+          "w": "serta",
+          "s": 1425.0,
+          "e": 1687.5
+        },
+        {
+          "w": "Rekan-Rekan",
+          "s": 1687.5,
+          "e": 2150.0
+        },
+        {
+          "w": "Proktor",
+          "s": 2150.0,
+          "e": 2512.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2512.5,
+          "e": 3500.0
+        },
+        {
+          "w": "Pada",
+          "s": 4706.5,
+          "e": 4906.5
+        },
+        {
+          "w": "tutorial",
+          "s": 4906.5,
+          "e": 5281.5
+        },
+        {
+          "w": "kali",
+          "s": 5281.5,
+          "e": 5456.5
+        },
+        {
+          "w": "ini",
+          "s": 5456.5,
+          "e": 5906.5
+        },
+        {
+          "w": "kita",
+          "s": 6181.5,
+          "e": 6381.5
+        },
+        {
+          "w": "akan",
+          "s": 6381.5,
+          "e": 6569.0
+        },
+        {
+          "w": "mempelajari",
+          "s": 6569.0,
+          "e": 6969.0
+        },
+        {
+          "w": "panduan",
+          "s": 6969.0,
+          "e": 7331.5
+        },
+        {
+          "w": "lengkap",
+          "s": 7331.5,
+          "e": 7619.0
+        },
+        {
+          "w": "manajemen",
+          "s": 7619.0,
+          "e": 8056.5
+        },
+        {
+          "w": "ruang",
+          "s": 8056.5,
+          "e": 8244.0
+        },
+        {
+          "w": "ujian",
+          "s": 8244.0,
+          "e": 8831.5
+        },
+        {
+          "w": "pembagian",
+          "s": 9119.0,
+          "e": 9531.5
+        },
+        {
+          "w": "siswa",
+          "s": 9531.5,
+          "e": 9894.0
+        },
+        {
+          "w": "ke",
+          "s": 9894.0,
+          "e": 9981.5
+        },
+        {
+          "w": "masing-masing",
+          "s": 9981.5,
+          "e": 10494.0
+        },
+        {
+          "w": "ruangan",
+          "s": 10494.0,
+          "e": 10794.0
+        },
+        {
+          "w": "secara",
+          "s": 10794.0,
+          "e": 11069.0
+        },
+        {
+          "w": "terpusat",
+          "s": 11069.0,
+          "e": 11644.0
+        },
+        {
+          "w": "serta",
+          "s": 11894.0,
+          "e": 12219.0
+        },
+        {
+          "w": "pengaturan",
+          "s": 12219.0,
+          "e": 12644.0
+        },
+        {
+          "w": "denah",
+          "s": 12644.0,
+          "e": 12894.0
+        },
+        {
+          "w": "tempat",
+          "s": 12894.0,
+          "e": 13219.0
+        },
+        {
+          "w": "duduk",
+          "s": 13219.0,
+          "e": 13506.5
+        },
+        {
+          "w": "interaktif",
+          "s": 13506.5,
+          "e": 14269.0
+        },
+        {
+          "w": "Dari",
+          "s": 15518.5,
+          "e": 15768.5
+        },
+        {
+          "w": "navigasi",
+          "s": 15768.5,
+          "e": 16218.5
+        },
+        {
+          "w": "samping",
+          "s": 16218.5,
+          "e": 16781.0
+        },
+        {
+          "w": "klik",
+          "s": 17068.5,
+          "e": 17231.0
+        },
+        {
+          "w": "kelompok",
+          "s": 17231.0,
+          "e": 17556.0
+        },
+        {
+          "w": "Data",
+          "s": 17556.0,
+          "e": 17756.0
+        },
+        {
+          "w": "Master",
+          "s": 17756.0,
+          "e": 18293.5
+        },
+        {
+          "w": "lalu",
+          "s": 18593.5,
+          "e": 18843.5
+        },
+        {
+          "w": "pilih",
+          "s": 18843.5,
+          "e": 19043.5
+        },
+        {
+          "w": "menu",
+          "s": 19043.5,
+          "e": 19206.0
+        },
+        {
+          "w": "Ruang",
+          "s": 19206.0,
+          "e": 19381.0
+        },
+        {
+          "w": "Ujian",
+          "s": 19381.0,
+          "e": 19793.5
+        },
+        {
+          "w": "untuk",
+          "s": 19793.5,
+          "e": 20018.5
+        },
+        {
+          "w": "membuka",
+          "s": 20018.5,
+          "e": 20343.5
+        },
+        {
+          "w": "pusat",
+          "s": 20343.5,
+          "e": 20681.0
+        },
+        {
+          "w": "data",
+          "s": 20681.0,
+          "e": 20918.5
+        },
+        {
+          "w": "ruangan",
+          "s": 20918.5,
+          "e": 21468.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "5617a925d6e69c04041a0b9b6c2c489f0a0c47f7abb2d33ee7a5999c17461f81"
+    },
+    "scene_02_tambah_ruang_dan_kapasitas": {
+      "text": "Pada halaman ini, proktor dapat melihat seluruh ruang ujian aktif beserta statistik kapasitas kursi dan statusnya. Untuk menambahkan ruang baru, klik tombol Tambah Ruang di sudut kanan atas. Masukkan nama ruangan seperti Lab Komputer atau Ruang Kelas, tentukan jumlah kapasitas maksimal kursi, lalu simpan data tersebut ke dalam sistem.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_02_tambah_ruang_dan_kapasitas.wav",
+      "duration_ms": 20498.0,
+      "words": [
+        {
+          "w": "Pada",
+          "s": 112.5,
+          "e": 312.5
+        },
+        {
+          "w": "halaman",
+          "s": 312.5,
+          "e": 587.5
+        },
+        {
+          "w": "ini",
+          "s": 587.5,
+          "e": 1037.5
+        },
+        {
+          "w": "proktor",
+          "s": 1337.5,
+          "e": 1687.5
+        },
+        {
+          "w": "dapat",
+          "s": 1687.5,
+          "e": 1937.5
+        },
+        {
+          "w": "melihat",
+          "s": 1937.5,
+          "e": 2250.0
+        },
+        {
+          "w": "seluruh",
+          "s": 2250.0,
+          "e": 2550.0
+        },
+        {
+          "w": "ruang",
+          "s": 2550.0,
+          "e": 2725.0
+        },
+        {
+          "w": "ujian",
+          "s": 2725.0,
+          "e": 3012.5
+        },
+        {
+          "w": "aktif",
+          "s": 3012.5,
+          "e": 3375.0
+        },
+        {
+          "w": "beserta",
+          "s": 3375.0,
+          "e": 3775.0
+        },
+        {
+          "w": "statistik",
+          "s": 3775.0,
+          "e": 4275.0
+        },
+        {
+          "w": "kapasitas",
+          "s": 4275.0,
+          "e": 4762.5
+        },
+        {
+          "w": "kursi",
+          "s": 4762.5,
+          "e": 5125.0
+        },
+        {
+          "w": "dan",
+          "s": 5125.0,
+          "e": 5300.0
+        },
+        {
+          "w": "statusnya",
+          "s": 5300.0,
+          "e": 6050.0
+        },
+        {
+          "w": "Untuk",
+          "s": 7250.5,
+          "e": 7500.5
+        },
+        {
+          "w": "menambahkan",
+          "s": 7500.5,
+          "e": 7975.5
+        },
+        {
+          "w": "ruang",
+          "s": 7975.5,
+          "e": 8188.0
+        },
+        {
+          "w": "baru",
+          "s": 8188.0,
+          "e": 8638.0
+        },
+        {
+          "w": "klik",
+          "s": 8950.5,
+          "e": 9125.5
+        },
+        {
+          "w": "tombol",
+          "s": 9125.5,
+          "e": 9413.0
+        },
+        {
+          "w": "Tambah",
+          "s": 9413.0,
+          "e": 9663.0
+        },
+        {
+          "w": "Ruang",
+          "s": 9663.0,
+          "e": 9938.0
+        },
+        {
+          "w": "di",
+          "s": 9938.0,
+          "e": 10000.5
+        },
+        {
+          "w": "sudut",
+          "s": 10000.5,
+          "e": 10275.5
+        },
+        {
+          "w": "kanan",
+          "s": 10275.5,
+          "e": 10513.0
+        },
+        {
+          "w": "atas",
+          "s": 10513.0,
+          "e": 11050.5
+        },
+        {
+          "w": "Masukkan",
+          "s": 12282.5,
+          "e": 12695.0
+        },
+        {
+          "w": "nama",
+          "s": 12695.0,
+          "e": 12870.0
+        },
+        {
+          "w": "ruangan",
+          "s": 12870.0,
+          "e": 13195.0
+        },
+        {
+          "w": "seperti",
+          "s": 13195.0,
+          "e": 13520.0
+        },
+        {
+          "w": "Lab",
+          "s": 13520.0,
+          "e": 13695.0
+        },
+        {
+          "w": "Komputer",
+          "s": 13695.0,
+          "e": 14145.0
+        },
+        {
+          "w": "atau",
+          "s": 14145.0,
+          "e": 14370.0
+        },
+        {
+          "w": "Ruang",
+          "s": 14370.0,
+          "e": 14557.5
+        },
+        {
+          "w": "Kelas",
+          "s": 14557.5,
+          "e": 15032.5
+        },
+        {
+          "w": "tentukan",
+          "s": 15282.5,
+          "e": 15670.0
+        },
+        {
+          "w": "jumlah",
+          "s": 15670.0,
+          "e": 15932.5
+        },
+        {
+          "w": "kapasitas",
+          "s": 15932.5,
+          "e": 16420.0
+        },
+        {
+          "w": "maksimal",
+          "s": 16420.0,
+          "e": 16795.0
+        },
+        {
+          "w": "kursi",
+          "s": 16795.0,
+          "e": 17320.0
+        },
+        {
+          "w": "lalu",
+          "s": 17607.5,
+          "e": 17845.0
+        },
+        {
+          "w": "simpan",
+          "s": 17845.0,
+          "e": 18157.5
+        },
+        {
+          "w": "data",
+          "s": 18157.5,
+          "e": 18332.5
+        },
+        {
+          "w": "tersebut",
+          "s": 18332.5,
+          "e": 18757.5
+        },
+        {
+          "w": "ke",
+          "s": 18757.5,
+          "e": 18832.5
+        },
+        {
+          "w": "dalam",
+          "s": 18832.5,
+          "e": 19070.0
+        },
+        {
+          "w": "sistem",
+          "s": 19070.0,
+          "e": 19657.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "1104e788ac5d3abf2de8a3efbc9669648d19d4e19b0e48380ed74b6c2cbe0bda"
+    },
+    "scene_03_modul_distribusi_siswa_global": {
+      "text": "Sekarang kita beralih ke pembagian ruang peserta ujian. Klik tombol Atur Ruang Siswa di pojok kanan atas untuk membuka modul Distribusi Siswa Permanen. Pada panel sebelah kiri, sistem menampilkan jumlah siswa yang belum terbagi, pilihan ruang ujian tujuan, serta tombol penugasan cepat seperti Masukan 15 atau Masukan Semua.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_03_modul_distribusi_siswa_global.wav",
+      "duration_ms": 20302.0,
+      "words": [
+        {
+          "w": "Sekarang",
+          "s": 100.0,
+          "e": 525.0
+        },
+        {
+          "w": "kita",
+          "s": 525.0,
+          "e": 725.0
+        },
+        {
+          "w": "beralih",
+          "s": 725.0,
+          "e": 1075.0
+        },
+        {
+          "w": "ke",
+          "s": 1075.0,
+          "e": 1137.5
+        },
+        {
+          "w": "pembagian",
+          "s": 1137.5,
+          "e": 1612.5
+        },
+        {
+          "w": "ruang",
+          "s": 1612.5,
+          "e": 1837.5
+        },
+        {
+          "w": "peserta",
+          "s": 1837.5,
+          "e": 2162.5
+        },
+        {
+          "w": "ujian",
+          "s": 2162.5,
+          "e": 2787.5
+        },
+        {
+          "w": "Klik",
+          "s": 3974.0,
+          "e": 4199.0
+        },
+        {
+          "w": "tombol",
+          "s": 4199.0,
+          "e": 4461.5
+        },
+        {
+          "w": "Atur",
+          "s": 4461.5,
+          "e": 4674.0
+        },
+        {
+          "w": "Ruang",
+          "s": 4674.0,
+          "e": 4861.5
+        },
+        {
+          "w": "Siswa",
+          "s": 4861.5,
+          "e": 5249.0
+        },
+        {
+          "w": "di",
+          "s": 5249.0,
+          "e": 5336.5
+        },
+        {
+          "w": "pojok",
+          "s": 5336.5,
+          "e": 5636.5
+        },
+        {
+          "w": "kanan",
+          "s": 5636.5,
+          "e": 5986.5
+        },
+        {
+          "w": "atas",
+          "s": 5986.5,
+          "e": 6349.0
+        },
+        {
+          "w": "untuk",
+          "s": 6349.0,
+          "e": 6561.5
+        },
+        {
+          "w": "membuka",
+          "s": 6561.5,
+          "e": 6886.5
+        },
+        {
+          "w": "modul",
+          "s": 6886.5,
+          "e": 7186.5
+        },
+        {
+          "w": "Distribusi",
+          "s": 7186.5,
+          "e": 7749.0
+        },
+        {
+          "w": "Siswa",
+          "s": 7749.0,
+          "e": 8074.0
+        },
+        {
+          "w": "Permanen",
+          "s": 8074.0,
+          "e": 8699.0
+        },
+        {
+          "w": "Pada",
+          "s": 9950.5,
+          "e": 10138.0
+        },
+        {
+          "w": "panel",
+          "s": 10138.0,
+          "e": 10363.0
+        },
+        {
+          "w": "sebelah",
+          "s": 10363.0,
+          "e": 10663.0
+        },
+        {
+          "w": "kiri",
+          "s": 10663.0,
+          "e": 11138.0
+        },
+        {
+          "w": "sistem",
+          "s": 11400.5,
+          "e": 11750.5
+        },
+        {
+          "w": "menampilkan",
+          "s": 11750.5,
+          "e": 12213.0
+        },
+        {
+          "w": "jumlah",
+          "s": 12213.0,
+          "e": 12475.5
+        },
+        {
+          "w": "siswa",
+          "s": 12475.5,
+          "e": 12788.0
+        },
+        {
+          "w": "yang",
+          "s": 12788.0,
+          "e": 12938.0
+        },
+        {
+          "w": "belum",
+          "s": 12938.0,
+          "e": 13113.0
+        },
+        {
+          "w": "terbagi",
+          "s": 13113.0,
+          "e": 13738.0
+        },
+        {
+          "w": "pilihan",
+          "s": 14000.5,
+          "e": 14388.0
+        },
+        {
+          "w": "ruang",
+          "s": 14388.0,
+          "e": 14588.0
+        },
+        {
+          "w": "ujian",
+          "s": 14588.0,
+          "e": 14913.0
+        },
+        {
+          "w": "tujuan",
+          "s": 14913.0,
+          "e": 15500.5
+        },
+        {
+          "w": "serta",
+          "s": 15775.5,
+          "e": 16063.0
+        },
+        {
+          "w": "tombol",
+          "s": 16063.0,
+          "e": 16350.5
+        },
+        {
+          "w": "penugasan",
+          "s": 16350.5,
+          "e": 16800.5
+        },
+        {
+          "w": "cepat",
+          "s": 16800.5,
+          "e": 17088.0
+        },
+        {
+          "w": "seperti",
+          "s": 17088.0,
+          "e": 17388.0
+        },
+        {
+          "w": "Masukan",
+          "s": 17388.0,
+          "e": 17763.0
+        },
+        {
+          "w": "15",
+          "s": 17763.0,
+          "e": 18275.5
+        },
+        {
+          "w": "atau",
+          "s": 18275.5,
+          "e": 18538.0
+        },
+        {
+          "w": "Masukan",
+          "s": 18538.0,
+          "e": 18913.0
+        },
+        {
+          "w": "Semua",
+          "s": 18913.0,
+          "e": 19450.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "070591441134f5a4b8461ecf3e03308bd939444d7709ceb06ad750425b688916"
+    },
+    "scene_04_filter_kelas_dan_pembagian_siswa": {
+      "text": "Proktor juga dapat memfilter siswa berdasarkan rombel kelas tertentu, mencari nama murid, atau mencentang seluruh siswa dalam satu rombel untuk dialokasikan sekaligus ke ruangan yang dituju. Di panel sebelah kanan, setiap kartu ruang menampilkan ringkasan kapasitas dan nama siswa yang terdaftar. Klik tautan Atur Tata Letak pada salah satu ruangan untuk membuka denah duduk.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_04_filter_kelas_dan_pembagian_siswa.wav",
+      "duration_ms": 21858.0,
+      "words": [
+        {
+          "w": "Proktor",
+          "s": 112.5,
+          "e": 462.5
+        },
+        {
+          "w": "juga",
+          "s": 462.5,
+          "e": 687.5
+        },
+        {
+          "w": "dapat",
+          "s": 687.5,
+          "e": 925.0
+        },
+        {
+          "w": "memfilter",
+          "s": 925.0,
+          "e": 1312.5
+        },
+        {
+          "w": "siswa",
+          "s": 1312.5,
+          "e": 1675.0
+        },
+        {
+          "w": "berdasarkan",
+          "s": 1675.0,
+          "e": 2287.5
+        },
+        {
+          "w": "rombel",
+          "s": 2287.5,
+          "e": 2550.0
+        },
+        {
+          "w": "kelas",
+          "s": 2550.0,
+          "e": 2750.0
+        },
+        {
+          "w": "tertentu",
+          "s": 2750.0,
+          "e": 3400.0
+        },
+        {
+          "w": "mencari",
+          "s": 3687.5,
+          "e": 4025.0
+        },
+        {
+          "w": "nama",
+          "s": 4025.0,
+          "e": 4225.0
+        },
+        {
+          "w": "murid",
+          "s": 4225.0,
+          "e": 4687.5
+        },
+        {
+          "w": "atau",
+          "s": 4925.0,
+          "e": 5137.5
+        },
+        {
+          "w": "mencentang",
+          "s": 5137.5,
+          "e": 5562.5
+        },
+        {
+          "w": "seluruh",
+          "s": 5562.5,
+          "e": 5850.0
+        },
+        {
+          "w": "siswa",
+          "s": 5850.0,
+          "e": 6200.0
+        },
+        {
+          "w": "dalam",
+          "s": 6200.0,
+          "e": 6425.0
+        },
+        {
+          "w": "satu",
+          "s": 6425.0,
+          "e": 6662.5
+        },
+        {
+          "w": "rombel",
+          "s": 6662.5,
+          "e": 6987.5
+        },
+        {
+          "w": "untuk",
+          "s": 6987.5,
+          "e": 7212.5
+        },
+        {
+          "w": "dialokasikan",
+          "s": 7212.5,
+          "e": 7850.0
+        },
+        {
+          "w": "sekaligus",
+          "s": 7850.0,
+          "e": 8337.5
+        },
+        {
+          "w": "ke",
+          "s": 8337.5,
+          "e": 8412.5
+        },
+        {
+          "w": "ruangan",
+          "s": 8412.5,
+          "e": 8737.5
+        },
+        {
+          "w": "yang",
+          "s": 8737.5,
+          "e": 8862.5
+        },
+        {
+          "w": "dituju",
+          "s": 8862.5,
+          "e": 9462.5
+        },
+        {
+          "w": "Di",
+          "s": 10732.5,
+          "e": 10870.0
+        },
+        {
+          "w": "panel",
+          "s": 10870.0,
+          "e": 11132.5
+        },
+        {
+          "w": "sebelah",
+          "s": 11132.5,
+          "e": 11432.5
+        },
+        {
+          "w": "kanan",
+          "s": 11432.5,
+          "e": 11920.0
+        },
+        {
+          "w": "setiap",
+          "s": 12220.0,
+          "e": 12557.5
+        },
+        {
+          "w": "kartu",
+          "s": 12557.5,
+          "e": 12807.5
+        },
+        {
+          "w": "ruang",
+          "s": 12807.5,
+          "e": 13007.5
+        },
+        {
+          "w": "menampilkan",
+          "s": 13007.5,
+          "e": 13507.5
+        },
+        {
+          "w": "ringkasan",
+          "s": 13507.5,
+          "e": 13907.5
+        },
+        {
+          "w": "kapasitas",
+          "s": 13907.5,
+          "e": 14532.5
+        },
+        {
+          "w": "dan",
+          "s": 14532.5,
+          "e": 14695.0
+        },
+        {
+          "w": "nama",
+          "s": 14695.0,
+          "e": 14870.0
+        },
+        {
+          "w": "siswa",
+          "s": 14870.0,
+          "e": 15232.5
+        },
+        {
+          "w": "yang",
+          "s": 15232.5,
+          "e": 15382.5
+        },
+        {
+          "w": "terdaftar",
+          "s": 15382.5,
+          "e": 16120.0
+        },
+        {
+          "w": "Klik",
+          "s": 17326.0,
+          "e": 17538.5
+        },
+        {
+          "w": "tautan",
+          "s": 17538.5,
+          "e": 17876.0
+        },
+        {
+          "w": "Atur",
+          "s": 17876.0,
+          "e": 18101.0
+        },
+        {
+          "w": "Tata",
+          "s": 18101.0,
+          "e": 18301.0
+        },
+        {
+          "w": "Letak",
+          "s": 18301.0,
+          "e": 18601.0
+        },
+        {
+          "w": "pada",
+          "s": 18601.0,
+          "e": 18788.5
+        },
+        {
+          "w": "salah",
+          "s": 18788.5,
+          "e": 19013.5
+        },
+        {
+          "w": "satu",
+          "s": 19013.5,
+          "e": 19238.5
+        },
+        {
+          "w": "ruangan",
+          "s": 19238.5,
+          "e": 19651.0
+        },
+        {
+          "w": "untuk",
+          "s": 19651.0,
+          "e": 19926.0
+        },
+        {
+          "w": "membuka",
+          "s": 19926.0,
+          "e": 20301.0
+        },
+        {
+          "w": "denah",
+          "s": 20301.0,
+          "e": 20563.5
+        },
+        {
+          "w": "duduk",
+          "s": 20563.5,
+          "e": 21001.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "4a765365c7bc5b977182421ad1bce58aac13d50dccac776ce72d8ccac480cdd3"
+    },
+    "scene_05_denah_duduk_interaktif_dan_cetak_pdf": {
+      "text": "Inilah kanvas denah duduk interaktif ZEXAM-CBT. Proktor dapat menyesuaikan jumlah baris dan kolom tata letak, menempatkan posisi duduk siswa secara visual di depan papan tulis, serta memastikan susunan bangku rapi. Klik tombol Cetak PDF untuk mencetak lembar denah resmi yang siap ditempel pada pintu ruang ujian. Sangat praktis, visual, dan akurat. Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_054541_13f6b7\\audio\\scene_05_denah_duduk_interaktif_dan_cetak_pdf.wav",
+      "duration_ms": 27262.0,
+      "words": [
+        {
+          "w": "Inilah",
+          "s": 100.0,
+          "e": 500.0
+        },
+        {
+          "w": "kanvas",
+          "s": 500.0,
+          "e": 875.0
+        },
+        {
+          "w": "denah",
+          "s": 875.0,
+          "e": 1225.0
+        },
+        {
+          "w": "duduk",
+          "s": 1225.0,
+          "e": 1500.0
+        },
+        {
+          "w": "interaktif",
+          "s": 1500.0,
+          "e": 2037.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2037.5,
+          "e": 3025.0
+        },
+        {
+          "w": "Proktor",
+          "s": 4226.5,
+          "e": 4576.5
+        },
+        {
+          "w": "dapat",
+          "s": 4576.5,
+          "e": 4826.5
+        },
+        {
+          "w": "menyesuaikan",
+          "s": 4826.5,
+          "e": 5401.5
+        },
+        {
+          "w": "jumlah",
+          "s": 5401.5,
+          "e": 5664.0
+        },
+        {
+          "w": "baris",
+          "s": 5664.0,
+          "e": 6001.5
+        },
+        {
+          "w": "dan",
+          "s": 6001.5,
+          "e": 6164.0
+        },
+        {
+          "w": "kolom",
+          "s": 6164.0,
+          "e": 6389.0
+        },
+        {
+          "w": "tata",
+          "s": 6389.0,
+          "e": 6589.0
+        },
+        {
+          "w": "letak",
+          "s": 6589.0,
+          "e": 7039.0
+        },
+        {
+          "w": "menempatkan",
+          "s": 7339.0,
+          "e": 7839.0
+        },
+        {
+          "w": "posisi",
+          "s": 7839.0,
+          "e": 8214.0
+        },
+        {
+          "w": "duduk",
+          "s": 8214.0,
+          "e": 8426.5
+        },
+        {
+          "w": "siswa",
+          "s": 8426.5,
+          "e": 8764.0
+        },
+        {
+          "w": "secara",
+          "s": 8764.0,
+          "e": 9039.0
+        },
+        {
+          "w": "visual",
+          "s": 9039.0,
+          "e": 9439.0
+        },
+        {
+          "w": "di",
+          "s": 9439.0,
+          "e": 9514.0
+        },
+        {
+          "w": "depan",
+          "s": 9514.0,
+          "e": 9751.5
+        },
+        {
+          "w": "papan",
+          "s": 9751.5,
+          "e": 9989.0
+        },
+        {
+          "w": "tulis",
+          "s": 9989.0,
+          "e": 10464.0
+        },
+        {
+          "w": "serta",
+          "s": 10714.0,
+          "e": 11026.5
+        },
+        {
+          "w": "memastikan",
+          "s": 11026.5,
+          "e": 11551.5
+        },
+        {
+          "w": "susunan",
+          "s": 11551.5,
+          "e": 11964.0
+        },
+        {
+          "w": "bangku",
+          "s": 11964.0,
+          "e": 12226.5
+        },
+        {
+          "w": "rapi",
+          "s": 12226.5,
+          "e": 12689.0
+        },
+        {
+          "w": "Klik",
+          "s": 13946.0,
+          "e": 14171.0
+        },
+        {
+          "w": "tombol",
+          "s": 14171.0,
+          "e": 14458.5
+        },
+        {
+          "w": "Cetak",
+          "s": 14458.5,
+          "e": 14721.0
+        },
+        {
+          "w": "PDF",
+          "s": 14721.0,
+          "e": 15196.0
+        },
+        {
+          "w": "untuk",
+          "s": 15196.0,
+          "e": 15421.0
+        },
+        {
+          "w": "mencetak",
+          "s": 15421.0,
+          "e": 15771.0
+        },
+        {
+          "w": "lembar",
+          "s": 15771.0,
+          "e": 16033.5
+        },
+        {
+          "w": "denah",
+          "s": 16033.5,
+          "e": 16258.5
+        },
+        {
+          "w": "resmi",
+          "s": 16258.5,
+          "e": 16621.0
+        },
+        {
+          "w": "yang",
+          "s": 16621.0,
+          "e": 16758.5
+        },
+        {
+          "w": "siap",
+          "s": 16758.5,
+          "e": 16983.5
+        },
+        {
+          "w": "ditempel",
+          "s": 16983.5,
+          "e": 17458.5
+        },
+        {
+          "w": "pada",
+          "s": 17458.5,
+          "e": 17683.5
+        },
+        {
+          "w": "pintu",
+          "s": 17683.5,
+          "e": 17971.0
+        },
+        {
+          "w": "ruang",
+          "s": 17971.0,
+          "e": 18146.0
+        },
+        {
+          "w": "ujian",
+          "s": 18146.0,
+          "e": 18746.0
+        },
+        {
+          "w": "Sangat",
+          "s": 19583.5,
+          "e": 19921.0
+        },
+        {
+          "w": "praktis",
+          "s": 19921.0,
+          "e": 20521.0
+        },
+        {
+          "w": "visual",
+          "s": 20733.5,
+          "e": 21433.5
+        },
+        {
+          "w": "dan",
+          "s": 21671.0,
+          "e": 21933.5
+        },
+        {
+          "w": "akurat",
+          "s": 21933.5,
+          "e": 22508.5
+        },
+        {
+          "w": "Selamat",
+          "s": 23346.0,
+          "e": 23733.5
+        },
+        {
+          "w": "mencoba",
+          "s": 23733.5,
+          "e": 24158.5
+        },
+        {
+          "w": "dan",
+          "s": 24158.5,
+          "e": 24321.0
+        },
+        {
+          "w": "sukses",
+          "s": 24321.0,
+          "e": 24721.0
+        },
+        {
+          "w": "selalu",
+          "s": 24721.0,
+          "e": 25033.5
+        },
+        {
+          "w": "bersama",
+          "s": 25033.5,
+          "e": 25433.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 25433.5,
+          "e": 26421.0
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "a915526c8841fb3e23a6e56a616fccb2e6cfeab56ec1fae39a2dbe4e1ae8270d"
+    }
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Akun & Import Siswa Excel Word",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "proktor"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "button[type=\"submit\"]"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h3:has-text(\"Dashboard\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_manajemen_akun",
+      "narration": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari manajemen akun pengguna, pembuatan akun manual, serta import data siswa secara massal menggunakan template Excel dan Word. Dari menu navigasi samping, klik kelompok Data Master, lalu pilih menu Data Pengguna untuk membuka pusat Manajemen Akun.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Admin serta Proktor ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada tutorial kali ini, kita akan mempelajari manajemen akun pengguna, pembuatan akun manual, serta import data siswa secara massal menggunakan template Excel dan Word.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Dari menu navigasi samping, klik kelompok Data Master, lalu pilih menu Data Pengguna untuk membuka pusat Manajemen Akun.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block button:has-text(\"Data Master\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block button:has-text(\"Data Master\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Manajemen Akun\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "h2:has-text(\"Manajemen Akun\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna",
+      "narration": "Sistem ZEXAM-CBT memudahkan proktor mencari akun berdasarkan nama, username, maupun NIS siswa. Anda juga dapat memfilter daftar pengguna berdasarkan peran seperti Proktor, Guru, atau Siswa, serta menyaring berdasarkan rombongan belajar kelas tertentu secara instan.",
+      "narration_segments": [
+        {
+          "text": "Sistem ZEXAM-CBT memudahkan proktor mencari akun berdasarkan nama, username, maupun NIS siswa.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Anda juga dapat memfilter daftar pengguna berdasarkan peran seperti Proktor, Guru, atau Siswa, serta menyaring berdasarkan rombongan belajar kelas tertentu secara instan.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "input[placeholder*=\"Cari Nama\"]",
+          "hold_ms": 600
+        },
+        {
+          "do": "fill",
+          "target": "input[placeholder*=\"Cari Nama\"]",
+          "value": "siswa"
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Filter\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Filter\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Reset\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Reset\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Reset\")"
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_03_tambah_user_manual",
+      "narration": "Untuk menambahkan akun pengguna satu per satu, klik tombol User Baru di pojok kanan atas. Masukkan username unik, nama lengkap, password login, serta pilih peran pengguna sebagai Siswa, Guru, atau Proktor beserta penetapan kelasnya.",
+      "narration_segments": [
+        {
+          "text": "Untuk menambahkan akun pengguna satu per satu, klik tombol User Baru di pojok kanan atas.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Masukkan username unik, nama lengkap, password login, serta pilih peran pengguna sebagai Siswa, Guru, atau Proktor beserta penetapan kelasnya.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a:has-text(\"User Baru\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "a:has-text(\"User Baru\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Tambah User\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "input#username",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "input#name",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "input#password",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "select#role",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Manajemen Akun\")",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_04_import_siswa_excel_dan_word",
+      "narration": "Untuk mengunggah ratusan akun siswa sekaligus dalam hitungan detik, klik tombol Import Siswa. Di jendela ini, Anda dapat langsung mengunduh template resmi baik format Excel XLSX maupun dokumen Microsoft Word DOCX. Cukup sesuaikan data nama, NIS, kelas, dan password, lalu unggah berkas Anda agar sistem mendaftarkan seluruh akun secara otomatis.",
+      "narration_segments": [
+        {
+          "text": "Untuk mengunggah ratusan akun siswa sekaligus dalam hitungan detik, klik tombol Import Siswa.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Di jendela ini, Anda dapat langsung mengunduh template resmi baik format Excel XLSX maupun dokumen Microsoft Word DOCX.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Cukup sesuaikan data nama, NIS, kelas, dan password, lalu unggah berkas Anda agar sistem mendaftarkan seluruh akun secara otomatis.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Import Siswa\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Import Siswa\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "text=Import Siswa Massal",
+          "budget_ms": 6000
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"XLSX\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "a:has-text(\"DOCX\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hover",
+          "target": "h4:has-text(\"Panduan Import:\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "select#classroom_id_import",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "label[for=\"file\"]",
+          "hold_ms": 800
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Batal\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Manajemen Akun\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1000
+    },
+    {
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal",
+      "narration": "Tabel pengguna dilengkapi kontrol interaktif: klik ikon mata untuk menampilkan password siswa secara transparan saat ada kendala lupa sandi, atau gunakan kotak centang untuk menghapus beberapa akun sekaligus secara massal. Akun bawaan proktor dilindungi secara permanen dari penghapusan demi keamanan sistem. Selamat mengelola data pengguna Anda bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Tabel pengguna dilengkapi kontrol interaktif: klik ikon mata untuk menampilkan password siswa secara transparan saat ada kendala lupa sandi.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Gunakan kotak centang untuk memilih beberapa akun sekaligus jika ingin melakukan penghapusan massal.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Akun bawaan proktor dilindungi secara permanen dari penghapusan demi keamanan sistem. Selamat mengelola data pengguna Anda bersama ZEXAM-CBT!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "table",
+          "hold_ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button:has(svg.lucide-eye)",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has(svg.lucide-eye)"
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        },
+        {
+          "do": "hover",
+          "target": "td button:has(svg.lucide-square)",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "td button:has(svg.lucide-square)"
+        },
+        {
+          "do": "wait_for",
+          "selector": "text=item terpilih",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Hapus Terpilih\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Batal\")"
+        },
+        {
+          "do": "hold",
+          "ms": 2500
+        }
+      ],
+      "result_hold_ms": 2500
+    }
+  ]
+}

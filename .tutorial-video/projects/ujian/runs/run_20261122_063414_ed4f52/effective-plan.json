@@ -1,0 +1,330 @@
+{
+  "version": "4.5.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Admin Proktor ZEXAM-CBT: Manajemen Kelas, Anggota Siswa & Kenaikan Kelas",
+  "mode": "desktop",
+  "fps": 60,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "target_resolution": [
+    1920,
+    1080
+  ],
+  "desktop_viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "desktop_target_resolution": [
+    1920,
+    1080
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    },
+    {
+      "do": "fill",
+      "target": "#username",
+      "value": "proktor"
+    },
+    {
+      "do": "fill",
+      "target": "#password",
+      "value": "password"
+    },
+    {
+      "do": "click",
+      "target": "#btn-login-submit"
+    },
+    {
+      "do": "wait_for",
+      "selector": "h3:has-text(\"Dashboard\")"
+    },
+    {
+      "do": "hold",
+      "ms": 500
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_data_kelas",
+      "narration": "Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari panduan lengkap manajemen data kelas, pembagian anggota siswa ke dalam rombongan belajar, serta proses kenaikan kelas dan kelulusan siswa secara massal. Dari navigasi samping, klik kelompok Data Master, lalu pilih menu Data Kelas untuk membuka pusat informasi rombel.",
+      "narration_segments": [
+        {
+          "text": "Halo Bapak dan Ibu Admin serta Rekan-Rekan Proktor ZEXAM-CBT.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Pada tutorial kali ini, kita akan mempelajari panduan lengkap manajemen data kelas, pembagian anggota siswa ke dalam rombongan belajar, serta proses kenaikan kelas dan kelulusan siswa secara massal.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Dari navigasi samping, klik kelompok Data Master, lalu pilih menu Data Kelas untuk membuka pusat informasi rombel.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block button:has-text(\"Data Master\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block button:has-text(\"Data Master\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": ".hidden.lg\\:block a:has-text(\"Data Kelas\")",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block a:has-text(\"Data Kelas\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block a:has-text(\"Data Kelas\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Data Kelas\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_tambah_rombel_baru",
+      "narration": "Pada modul Data Kelas, proktor dapat memantau seluruh rombel aktif beserta jumlah siswa di dalamnya. Untuk menambahkan kelas baru, klik tombol Tambah Kelas di kanan atas. Masukkan nama kelas seperti Kelas VII-C atau VIII-B beserta deskripsinya, lalu simpan data tersebut ke dalam sistem.",
+      "narration_segments": [
+        {
+          "text": "Pada modul Data Kelas, proktor dapat memantau seluruh rombel aktif beserta jumlah siswa di dalamnya.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Untuk menambahkan kelas baru, klik tombol Tambah Kelas di kanan atas.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Masukkan nama kelas seperti Kelas VII-C atau VIII-B beserta deskripsinya, lalu simpan data tersebut ke dalam sistem.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Tambah Kelas\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Tambah Kelas\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "#name",
+          "budget_ms": 3000
+        },
+        {
+          "do": "type",
+          "target": "#name",
+          "text": "Kelas VII-C"
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Batal\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Batal\")"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_kelola_anggota_siswa_kelas",
+      "narration": "Untuk mengatur siswa yang tergabung di dalam suatu kelas, klik tombol Kelola Siswa pada baris rombel yang diinginkan. Halaman ini menyajikan daftar seluruh siswa yang aktif di kelas tersebut. Proktor dapat menambahkan siswa yang belum memiliki rombel, atau mengeluarkan siswa jika terjadi mutasi kelas.",
+      "narration_segments": [
+        {
+          "text": "Untuk mengatur siswa yang tergabung di dalam suatu kelas, klik tombol Kelola Siswa pada baris rombel yang diinginkan.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Halaman ini menyajikan daftar seluruh siswa yang aktif di kelas tersebut.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Proktor dapat menambahkan siswa yang belum memiliki rombel, atau mengeluarkan siswa jika terjadi mutasi kelas.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "a:has-text(\"Kelola Siswa\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "a:has-text(\"Kelola Siswa\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Kelola Siswa\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Tambah Siswa\")",
+          "hold_ms": 700
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_modul_kenaikan_kelas_dan_mutasi",
+      "narration": "Ketika memasuki tahun ajaran baru, sistem menyediakan modul Kenaikan Kelas terpadu. Dari navigasi samping, klik menu Kenaikan Kelas. Pada tab Kenaikan Per Kelas, proktor cukup memilih kelas asal, menentukan kelas tujuan atau opsi kelulusan, lalu menandai siswa yang naik kelas untuk diproses secara instan.",
+      "narration_segments": [
+        {
+          "text": "Ketika memasuki tahun ajaran baru, sistem menyediakan modul Kenaikan Kelas terpadu.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Dari navigasi samping, klik menu Kenaikan Kelas.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Pada tab Kenaikan Per Kelas, proktor cukup memilih kelas asal, menentukan kelas tujuan atau opsi kelulusan, lalu menandai siswa yang naik kelas untuk diproses secara instan.",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": ".hidden.lg\\:block a:has-text(\"Kenaikan Kelas\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": ".hidden.lg\\:block a:has-text(\"Kenaikan Kelas\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h2:has-text(\"Kenaikan & Pemindahan Kelas\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Kenaikan Per Kelas\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_pemetaan_massal_wizard_dan_kelulusan",
+      "narration": "Bagi sekolah dengan banyak rombongan belajar, gunakan fitur Pemetaan Massal. Cukup klik tab Pemetaan Massal Wizard, lalu tentukan alur kenaikan seluruh kelas secara simultan, mulai dari kenaikan tingkat hingga status kelulusan siswa tingkat akhir hanya dalam satu kali klik. Sangat efisien, otomatis, dan akurat. Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Bagi sekolah dengan banyak rombongan belajar, gunakan fitur Pemetaan Massal.",
+          "pause_after_ms": 250
+        },
+        {
+          "text": "Cukup klik tab Pemetaan Massal Wizard, lalu tentukan alur kenaikan seluruh kelas secara simultan, mulai dari kenaikan tingkat hingga status kelulusan siswa tingkat akhir hanya dalam satu kali klik.",
+          "pause_after_ms": 320
+        },
+        {
+          "text": "Sangat efisien, otomatis, dan akurat. Selamat mencoba dan sukses selalu bersama ZEXAM-CBT!",
+          "pause_after_ms": 300
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Pemetaan Massal\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Pemetaan Massal\")"
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        },
+        {
+          "do": "scroll",
+          "by": 300
+        },
+        {
+          "do": "hold",
+          "ms": 800
+        },
+        {
+          "do": "scroll",
+          "by": -300
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1500
+    }
+  ]
+}

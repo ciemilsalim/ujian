@@ -1,0 +1,27 @@
+Tutorial Admin Proktor ZEXAM-CBT: Manajemen Kelas, Anggota Siswa & Kenaikan Kelas
+
+Video panduan resmi cara penggunaan fitur pada aplikasi ZEXAM-CBT. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.
+
+🕒 DAFTAR ISI & TIMESTAMPS:
+00:00 - Navigasi Data Kelas
+00:30 - Tambah Rombel Baru
+00:59 - Kelola Anggota Siswa Kelas
+01:25 - Modul Kenaikan Kelas Dan Mutasi
+01:53 - Pemetaan Massal Wizard Dan Kelulusan
+
+📌 RINGKASAN LANGKAH-LANGKAH:
+1. Navigasi Data Kelas: Buka kelompok menu Data Master dan pilih Data Kelas untuk melihat ringkasan rombel dan statistik KPI siswa.
+2. Tambah Rombel Baru: Tambahkan kelas/rombel baru dengan mudah beserta nama dan deskripsinya.
+3. Kelola Anggota Siswa Kelas: Atur anggota kelas, tambahkan siswa yang belum memiliki rombel, atau keluarkan siswa mutasi.
+4. Modul Kenaikan Kelas Dan Mutasi: Buka modul Kenaikan Kelas untuk memindahkan siswa per kelas asal ke kelas tujuan atau opsi kelulusan.
+5. Pemetaan Massal Wizard Dan Kelulusan: Manfaatkan tab Pemetaan Massal untuk memproses kenaikan seluruh rombel dan meluluskan siswa tingkat akhir dalam satu klik.
+
+✨ FITUR UTAMA & KEUNGGULAN:
+- Panduan visual interaktif beresolusi tinggi 1080p 60 FPS.
+- Penjelasan bertahap yang komprehensif bagi Admin & Proktor CBT.
+- Terintegrasi langsung dengan database sistem CBT.
+
+🌐 Akses Sistem: http://localhost:8000
+Jangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!
+
+#ZexamCBT #TutorialAdmin #ProktorCBT #DataKelas #KenaikanKelas #UjianOnline

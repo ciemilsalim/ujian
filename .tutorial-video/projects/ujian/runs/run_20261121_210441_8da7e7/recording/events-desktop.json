@@ -1,0 +1,1336 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1920,
+    1080
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_manajemen_akun",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 21966,
+      "action_start_ms": 22266.667,
+      "action_end_ms": 30016.667,
+      "end_ms": 31216.667
+    },
+    {
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna",
+      "start_ms": 31216.667,
+      "narration_start_ms": 31416.667,
+      "narration_end_ms": 48634.667,
+      "action_start_ms": 48950,
+      "action_end_ms": 58816.667,
+      "end_ms": 59816.667
+    },
+    {
+      "scene_id": "scene_03_tambah_user_manual",
+      "start_ms": 59816.667,
+      "narration_start_ms": 60016.667,
+      "narration_end_ms": 75650.667,
+      "action_start_ms": 75966.667,
+      "action_end_ms": 88783.333,
+      "end_ms": 89783.333
+    },
+    {
+      "scene_id": "scene_04_import_siswa_excel_dan_word",
+      "start_ms": 89783.333,
+      "narration_start_ms": 89983.333,
+      "narration_end_ms": 112637.333,
+      "action_start_ms": 112950,
+      "action_end_ms": 126900,
+      "end_ms": 127900
+    },
+    {
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal",
+      "start_ms": 127900,
+      "narration_start_ms": 128100,
+      "narration_end_ms": 151092,
+      "action_start_ms": 151400,
+      "action_end_ms": 164200,
+      "end_ms": 166700
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_manajemen_akun"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_manajemen_akun",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_01_navigasi_manajemen_akun.wav",
+      "duration_ms": 21766,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 21966.667,
+      "frame": 1318,
+      "scene_id": "scene_01_navigasi_manajemen_akun"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 22266.667,
+      "frame": 1336,
+      "scene_id": "scene_01_navigasi_manajemen_akun"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 22266.667,
+      "frame": 1336,
+      "from": [
+        1190.4,
+        669.6
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 1162.4,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 23600,
+      "frame": 1416,
+      "at": [
+        127.5,
+        199
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 24200,
+      "frame": 1452,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 24283.333,
+      "frame": 1457,
+      "at": [
+        127.5,
+        199
+      ],
+      "label": ".hidden.lg\\:block button:has-text(\"Data Master\")",
+      "bbox": [
+        16,
+        179,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 24416.667,
+      "frame": 1465,
+      "selector": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 24966.667,
+      "frame": 1498,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        150,
+        243
+      ],
+      "dist_px": 49.4,
+      "move_ms": 566.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 25716.667,
+      "frame": 1543,
+      "at": [
+        150,
+        243
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 26316.667,
+      "frame": 1579,
+      "from": [
+        150,
+        243
+      ],
+      "to": [
+        150,
+        243
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 26400,
+      "frame": 1584,
+      "at": [
+        150,
+        243
+      ],
+      "label": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")",
+      "bbox": [
+        61,
+        223,
+        178,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 26533.333,
+      "frame": 1592,
+      "selector": "h2:has-text(\"Manajemen Akun\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 27083.333,
+      "frame": 1625,
+      "from": [
+        150,
+        243
+      ],
+      "to": [
+        459.9453125,
+        112
+      ],
+      "dist_px": 336.5,
+      "move_ms": 945,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 28216.667,
+      "frame": 1693,
+      "at": [
+        459.9453125,
+        112
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 30016.667,
+      "frame": 1801,
+      "scene_id": "scene_01_navigasi_manajemen_akun"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 31216.667,
+      "frame": 1873,
+      "scene_id": "scene_01_navigasi_manajemen_akun"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 31216.667,
+      "frame": 1873,
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 31216.667,
+      "frame": 1873,
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_02_filter_dan_pencarian_pengguna.wav",
+      "duration_ms": 17218,
+      "at_ms": 31416.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 48650,
+      "frame": 2919,
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 48950,
+      "frame": 2937,
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 48950,
+      "frame": 2937,
+      "from": [
+        459.9453125,
+        112
+      ],
+      "to": [
+        885.4296875,
+        250
+      ],
+      "dist_px": 447.3,
+      "move_ms": 1008.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 50150,
+      "frame": 3009,
+      "at": [
+        885.4296875,
+        250
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 50750,
+      "frame": 3045,
+      "from": [
+        885.4296875,
+        250
+      ],
+      "to": [
+        730.0578125,
+        250
+      ],
+      "dist_px": 155.4,
+      "move_ms": 778.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 51716.667,
+      "frame": 3103,
+      "at": [
+        730.0578125,
+        250
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 51800,
+      "frame": 3108,
+      "at": [
+        730.0578125,
+        250
+      ],
+      "label": "input[placeholder*=\"Cari Nama\"]",
+      "bbox": [
+        497,
+        229,
+        776.859375,
+        42
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 52100,
+      "frame": 3126,
+      "target": "input[placeholder*=\"Cari Nama\"]",
+      "text_len": 5,
+      "bbox": [
+        497,
+        229,
+        776.859375,
+        42
+      ],
+      "end_vt_ms": 52700
+    },
+    {
+      "type": "key",
+      "vt_ms": 52100,
+      "frame": 3126,
+      "ch": "s",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 52216.667,
+      "frame": 3133,
+      "ch": "i",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 52316.667,
+      "frame": 3139,
+      "ch": "s",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 52466.667,
+      "frame": 3148,
+      "ch": "w",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 52583.333,
+      "frame": 3155,
+      "ch": "a",
+      "i": 4
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 52700,
+      "frame": 3162,
+      "target": "input[placeholder*=\"Cari Nama\"]"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 52700,
+      "frame": 3162,
+      "from": [
+        730.0578125,
+        250
+      ],
+      "to": [
+        1627.9296875,
+        250
+      ],
+      "dist_px": 897.9,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 54033.333,
+      "frame": 3242,
+      "at": [
+        1627.9296875,
+        250
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 54633.333,
+      "frame": 3278,
+      "from": [
+        1627.9296875,
+        250
+      ],
+      "to": [
+        1627.9296875,
+        250
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 54716.667,
+      "frame": 3283,
+      "at": [
+        1627.9296875,
+        250
+      ],
+      "label": "button:has-text(\"Filter\")",
+      "bbox": [
+        1576.859375,
+        229,
+        102.140625,
+        42
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 54850,
+      "frame": 3291,
+      "selector": "button:has-text(\"Reset\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 56400,
+      "frame": 3384,
+      "from": [
+        1627.9296875,
+        250
+      ],
+      "to": [
+        1641,
+        250
+      ],
+      "dist_px": 13.1,
+      "move_ms": 403.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 57000,
+      "frame": 3420,
+      "at": [
+        1641,
+        250
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 57600,
+      "frame": 3456,
+      "from": [
+        1641,
+        250
+      ],
+      "to": [
+        1641,
+        250
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 57683.333,
+      "frame": 3461,
+      "at": [
+        1641,
+        250
+      ],
+      "label": "button:has-text(\"Reset\")",
+      "bbox": [
+        1603,
+        229,
+        76,
+        42
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 58816.667,
+      "frame": 3529,
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 59816.667,
+      "frame": 3589,
+      "scene_id": "scene_02_filter_dan_pencarian_pengguna"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 59816.667,
+      "frame": 3589,
+      "scene_id": "scene_03_tambah_user_manual"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 59816.667,
+      "frame": 3589,
+      "scene_id": "scene_03_tambah_user_manual",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_03_tambah_user_manual.wav",
+      "duration_ms": 15634,
+      "at_ms": 60016.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 75666.667,
+      "frame": 4540,
+      "scene_id": "scene_03_tambah_user_manual"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 75966.667,
+      "frame": 4558,
+      "scene_id": "scene_03_tambah_user_manual"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 75966.667,
+      "frame": 4558,
+      "from": [
+        1641,
+        250
+      ],
+      "to": [
+        1829.2734375,
+        122
+      ],
+      "dist_px": 227.7,
+      "move_ms": 859.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 77016.667,
+      "frame": 4621,
+      "at": [
+        1829.2734375,
+        122
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 77616.667,
+      "frame": 4657,
+      "from": [
+        1829.2734375,
+        122
+      ],
+      "to": [
+        1829.2734375,
+        122
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 77700,
+      "frame": 4662,
+      "at": [
+        1829.2734375,
+        122
+      ],
+      "label": "a:has-text(\"User Baru\")",
+      "bbox": [
+        1770.546875,
+        104,
+        117.453125,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 77833.333,
+      "frame": 4670,
+      "selector": "h2:has-text(\"Tambah User\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 78383.333,
+      "frame": 4703,
+      "from": [
+        1829.2734375,
+        122
+      ],
+      "to": [
+        792,
+        270
+      ],
+      "dist_px": 1047.8,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 79716.667,
+      "frame": 4783,
+      "at": [
+        792,
+        270
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 80416.667,
+      "frame": 4825,
+      "from": [
+        792,
+        270
+      ],
+      "to": [
+        792,
+        352
+      ],
+      "dist_px": 82,
+      "move_ms": 653.6,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 81266.667,
+      "frame": 4876,
+      "at": [
+        792,
+        352
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 81966.667,
+      "frame": 4918,
+      "from": [
+        792,
+        352
+      ],
+      "to": [
+        792,
+        516
+      ],
+      "dist_px": 164,
+      "move_ms": 790,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 82950,
+      "frame": 4977,
+      "at": [
+        792,
+        516
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 83650,
+      "frame": 5019,
+      "from": [
+        792,
+        516
+      ],
+      "to": [
+        792,
+        598
+      ],
+      "dist_px": 82,
+      "move_ms": 653.6,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 84500,
+      "frame": 5070,
+      "at": [
+        792,
+        598
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 85300,
+      "frame": 5118,
+      "from": [
+        792,
+        598
+      ],
+      "to": [
+        150,
+        243
+      ],
+      "dist_px": 733.6,
+      "move_ms": 1121.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 86616.667,
+      "frame": 5197,
+      "at": [
+        150,
+        243
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 87216.667,
+      "frame": 5233,
+      "from": [
+        150,
+        243
+      ],
+      "to": [
+        150,
+        243
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 87300,
+      "frame": 5238,
+      "at": [
+        150,
+        243
+      ],
+      "label": ".hidden.lg\\:block a:has-text(\"Data Pengguna\")",
+      "bbox": [
+        61,
+        223,
+        178,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 87433.333,
+      "frame": 5246,
+      "selector": "h2:has-text(\"Manajemen Akun\")",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 88783.333,
+      "frame": 5327,
+      "scene_id": "scene_03_tambah_user_manual"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 89783.333,
+      "frame": 5387,
+      "scene_id": "scene_03_tambah_user_manual"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 89783.333,
+      "frame": 5387,
+      "scene_id": "scene_04_import_siswa_excel_dan_word"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 89783.333,
+      "frame": 5387,
+      "scene_id": "scene_04_import_siswa_excel_dan_word",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_04_import_siswa_excel_dan_word.wav",
+      "duration_ms": 22654,
+      "at_ms": 89983.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 112650,
+      "frame": 6759,
+      "scene_id": "scene_04_import_siswa_excel_dan_word"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 112950,
+      "frame": 6777,
+      "scene_id": "scene_04_import_siswa_excel_dan_word"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 112950,
+      "frame": 6777,
+      "from": [
+        150,
+        243
+      ],
+      "to": [
+        1692.7421875,
+        122
+      ],
+      "dist_px": 1547.5,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 114283.333,
+      "frame": 6857,
+      "at": [
+        1692.7421875,
+        122
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 114883.333,
+      "frame": 6893,
+      "from": [
+        1692.7421875,
+        122
+      ],
+      "to": [
+        1692.7421875,
+        122
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 114966.667,
+      "frame": 6898,
+      "at": [
+        1692.7421875,
+        122
+      ],
+      "label": "button:has-text(\"Import Siswa\")",
+      "bbox": [
+        1622.9375,
+        104,
+        139.609375,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 115100,
+      "frame": 6906,
+      "selector": "text=Import Siswa Massal",
+      "budget_ms": 6000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 115650,
+      "frame": 6939,
+      "from": [
+        1692.7421875,
+        122
+      ],
+      "to": [
+        1143.0703125,
+        296.5
+      ],
+      "dist_px": 576.7,
+      "move_ms": 1066.5,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 116900,
+      "frame": 7014,
+      "at": [
+        1143.0703125,
+        296.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 117600,
+      "frame": 7056,
+      "from": [
+        1143.0703125,
+        296.5
+      ],
+      "to": [
+        1230.875,
+        296.5
+      ],
+      "dist_px": 87.8,
+      "move_ms": 666.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 118450,
+      "frame": 7107,
+      "at": [
+        1230.875,
+        296.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 119150,
+      "frame": 7149,
+      "from": [
+        1230.875,
+        296.5
+      ],
+      "to": [
+        960,
+        360.5
+      ],
+      "dist_px": 278.3,
+      "move_ms": 903.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 120250,
+      "frame": 7215,
+      "at": [
+        960,
+        360.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 121050,
+      "frame": 7263,
+      "from": [
+        960,
+        360.5
+      ],
+      "to": [
+        960,
+        534.5
+      ],
+      "dist_px": 174,
+      "move_ms": 802.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 122050,
+      "frame": 7323,
+      "at": [
+        960,
+        534.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 122650,
+      "frame": 7359,
+      "from": [
+        960,
+        534.5
+      ],
+      "to": [
+        960,
+        655.5
+      ],
+      "dist_px": 121,
+      "move_ms": 728.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 123566.667,
+      "frame": 7414,
+      "at": [
+        960,
+        655.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 124366.667,
+      "frame": 7462,
+      "from": [
+        960,
+        655.5
+      ],
+      "to": [
+        1041.25,
+        780.5
+      ],
+      "dist_px": 149.1,
+      "move_ms": 770.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 125333.333,
+      "frame": 7520,
+      "at": [
+        1041.25,
+        780.5
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 125416.667,
+      "frame": 7525,
+      "at": [
+        1041.25,
+        780.5
+      ],
+      "label": "button:has-text(\"Batal\")",
+      "bbox": [
+        995.171875,
+        763.5,
+        92.15625,
+        34
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 125550,
+      "frame": 7533,
+      "selector": "h2:has-text(\"Manajemen Akun\")",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 126900,
+      "frame": 7614,
+      "scene_id": "scene_04_import_siswa_excel_dan_word"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 127900,
+      "frame": 7674,
+      "scene_id": "scene_04_import_siswa_excel_dan_word"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 127900,
+      "frame": 7674,
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 127900,
+      "frame": 7674,
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261121_210441_8da7e7\\audio\\scene_05_kontrol_keamanan_password_dan_aksi_masal.wav",
+      "duration_ms": 22992,
+      "at_ms": 128100
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 151100,
+      "frame": 9066,
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 151400,
+      "frame": 9084,
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 151400,
+      "frame": 9084,
+      "from": [
+        1041.25,
+        780.5
+      ],
+      "to": [
+        1088,
+        496
+      ],
+      "dist_px": 288.3,
+      "move_ms": 910.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 152500,
+      "frame": 9150,
+      "at": [
+        1088,
+        496
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 153100,
+      "frame": 9186,
+      "from": [
+        1088,
+        496
+      ],
+      "to": [
+        1063.859375,
+        642
+      ],
+      "dist_px": 148,
+      "move_ms": 768.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 154066.667,
+      "frame": 9244,
+      "at": [
+        1063.859375,
+        642
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 154666.667,
+      "frame": 9280,
+      "from": [
+        1063.859375,
+        642
+      ],
+      "to": [
+        1063.859375,
+        642
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 154750,
+      "frame": 9285,
+      "at": [
+        1063.859375,
+        642
+      ],
+      "label": "button:has(svg.lucide-eye)",
+      "bbox": [
+        1057.859375,
+        636,
+        12,
+        12
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 155883.333,
+      "frame": 9353,
+      "from": [
+        1063.859375,
+        642
+      ],
+      "to": [
+        515,
+        498
+      ],
+      "dist_px": 567.4,
+      "move_ms": 1062.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 157133.333,
+      "frame": 9428,
+      "at": [
+        515,
+        498
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 157733.333,
+      "frame": 9464,
+      "from": [
+        515,
+        498
+      ],
+      "to": [
+        515,
+        498
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 157816.667,
+      "frame": 9469,
+      "at": [
+        515,
+        498
+      ],
+      "label": "td button:has(svg.lucide-square)",
+      "bbox": [
+        505,
+        488,
+        20,
+        20
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 157950,
+      "frame": 9477,
+      "selector": "text=item terpilih",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 158500,
+      "frame": 9510,
+      "from": [
+        515,
+        498
+      ],
+      "to": [
+        1586.2265625,
+        339
+      ],
+      "dist_px": 1083,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 159833.333,
+      "frame": 9590,
+      "at": [
+        1586.2265625,
+        339
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 160633.333,
+      "frame": 9638,
+      "from": [
+        1586.2265625,
+        339
+      ],
+      "to": [
+        1669.5,
+        339
+      ],
+      "dist_px": 83.3,
+      "move_ms": 656.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 161483.333,
+      "frame": 9689,
+      "at": [
+        1669.5,
+        339
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 161566.667,
+      "frame": 9694,
+      "at": [
+        1669.5,
+        339
+      ],
+      "label": "button:has-text(\"Batal\")",
+      "bbox": [
+        1656,
+        325,
+        27,
+        28
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 164200,
+      "frame": 9852,
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 166700,
+      "frame": 10002,
+      "scene_id": "scene_05_kontrol_keamanan_password_dan_aksi_masal"
+    }
+  ]
+}
