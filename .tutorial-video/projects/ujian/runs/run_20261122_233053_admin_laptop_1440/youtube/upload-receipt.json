@@ -1,0 +1,74 @@
+{
+  "status": "UPLOADED",
+  "video_id": "_MJJZiyN6sY",
+  "watch_url": "https://youtu.be/_MJJZiyN6sY",
+  "privacy": "public",
+  "is_shorts": false,
+  "thumbnail_uploaded": true,
+  "uploaded_at": "2026-11-22T21:35:45.098279+00:00",
+  "api_response": {
+    "kind": "youtube#video",
+    "etag": "ibbQfIE3Z4r-bzqgofedIAYL-H8",
+    "id": "_MJJZiyN6sY",
+    "snippet": {
+      "publishedAt": "2026-11-22T21:35:16Z",
+      "channelId": "UClcuYT2uyDxc8qnaPtTOVDw",
+      "title": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran",
+      "description": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Profil Sekolah Dan Kkm\n01:03 - Sensor Anti Curang Dan Mode\n01:53 - Area Berbahaya Clear Data\n02:33 - Manajemen Tahun Ajaran\n03:28 - Fitur Ta Switcher\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Profil Sekolah Dan Kkm: Halo rekan proktor dan pengelola sistem ZEXAM-CBT.\n2. Sensor Anti Curang Dan Mode: ZEXAM-CBT dibekali sistem keamanan canggih dengan kontrol anti-kecurangan modular.\n3. Area Berbahaya Clear Data: Di bagian bawah halaman pengaturan, ZEXAM-CBT menyediakan fitur Area Berbahaya untuk pembersihan data transaksional.\n4. Manajemen Tahun Ajaran: Selanjutnya, mari kita masuk ke menu Tahun Ajaran pada kelompok Data Master.\n5. Fitur Ta Switcher: Salah satu keunggulan ZEXAM-CBT adalah fitur TA Switcher cepat di bagian atas navigasi.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/_MJJZiyN6sY/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/_MJJZiyN6sY/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/_MJJZiyN6sY/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "zahra developer",
+      "tags": [
+        "ajaran",
+        "anti-curang",
+        "area berbahaya clear data",
+        "fitur ta switcher",
+        "manajemen tahun ajaran",
+        "panduan sistem",
+        "panduan ujian",
+        "pengaturan",
+        "profil sekolah dan kkm",
+        "proktor",
+        "sekolah",
+        "sensor anti curang dan mode",
+        "tahun",
+        "tutorial",
+        "tutorial aplikasi",
+        "tutorial ujian",
+        "ujian",
+        "zexam-cbt"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "id",
+      "localized": {
+        "title": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran",
+        "description": "Tutorial Proktor ZEXAM-CBT: Pengaturan Sekolah, Anti-Curang & Tahun Ajaran\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Profil Sekolah Dan Kkm\n01:03 - Sensor Anti Curang Dan Mode\n01:53 - Area Berbahaya Clear Data\n02:33 - Manajemen Tahun Ajaran\n03:28 - Fitur Ta Switcher\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Profil Sekolah Dan Kkm: Halo rekan proktor dan pengelola sistem ZEXAM-CBT.\n2. Sensor Anti Curang Dan Mode: ZEXAM-CBT dibekali sistem keamanan canggih dengan kontrol anti-kecurangan modular.\n3. Area Berbahaya Clear Data: Di bagian bawah halaman pengaturan, ZEXAM-CBT menyediakan fitur Area Berbahaya untuk pembersihan data transaksional.\n4. Manajemen Tahun Ajaran: Selanjutnya, mari kita masuk ke menu Tahun Ajaran pada kelompok Data Master.\n5. Fitur Ta Switcher: Salah satu keunggulan ZEXAM-CBT adalah fitur TA Switcher cepat di bagian atas navigasi.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi"
+      },
+      "defaultAudioLanguage": "id"
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false
+    }
+  }
+}

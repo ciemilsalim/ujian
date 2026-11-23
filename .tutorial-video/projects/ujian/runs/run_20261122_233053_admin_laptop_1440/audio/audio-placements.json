@@ -1,0 +1,913 @@
+{
+  "sample_rate": 48000,
+  "source": "recording\\events-desktop.json",
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "ducking_attack_ms": 200,
+    "ducking_release_ms": 500,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true,
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "file_rel": "resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256_verified": true,
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa"
+  },
+  "bgm_acoustics": {
+    "bgm_present": true,
+    "ducked_bgm_rms_dbfs": -45.88,
+    "pause_bgm_rms_dbfs": -34.96,
+    "speech_master_rms_dbfs": -18.07,
+    "measured_voice_advantage_db": 27.81,
+    "measured_ducking_attenuation_db": 10.92,
+    "audible": false
+  },
+  "placements": [
+    {
+      "kind": "narration",
+      "at_ms": 200,
+      "dur_ms": 31200.0,
+      "ref": "scene_01_profil_sekolah_dan_kkm"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 34433.333,
+      "dur_ms": 45.0,
+      "ref": "#school_name"
+    },
+    {
+      "kind": "key",
+      "at_ms": 34733.333,
+      "dur_ms": 30.0,
+      "ref": "S"
+    },
+    {
+      "kind": "key",
+      "at_ms": 35000,
+      "dur_ms": 30.0,
+      "ref": "M"
+    },
+    {
+      "kind": "key",
+      "at_ms": 35100,
+      "dur_ms": 30.0,
+      "ref": "P"
+    },
+    {
+      "kind": "key",
+      "at_ms": 35250,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 35416.667,
+      "dur_ms": 30.0,
+      "ref": "B"
+    },
+    {
+      "kind": "key",
+      "at_ms": 35516.667,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 35650,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 35766.667,
+      "dur_ms": 30.0,
+      "ref": "t"
+    },
+    {
+      "kind": "key",
+      "at_ms": 35916.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 36033.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 36166.667,
+      "dur_ms": 30.0,
+      "ref": "g"
+    },
+    {
+      "kind": "key",
+      "at_ms": 36266.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 36450,
+      "dur_ms": 30.0,
+      "ref": "P"
+    },
+    {
+      "kind": "key",
+      "at_ms": 36700,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 36816.667,
+      "dur_ms": 30.0,
+      "ref": "l"
+    },
+    {
+      "kind": "key",
+      "at_ms": 36966.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 37066.667,
+      "dur_ms": 30.0,
+      "ref": "j"
+    },
+    {
+      "kind": "key",
+      "at_ms": 37183.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 37300,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 37450,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 37650,
+      "dur_ms": 30.0,
+      "ref": "N"
+    },
+    {
+      "kind": "key",
+      "at_ms": 37783.333,
+      "dur_ms": 30.0,
+      "ref": "u"
+    },
+    {
+      "kind": "key",
+      "at_ms": 37900,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 37983.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 38233.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 38333.333,
+      "dur_ms": 30.0,
+      "ref": "t"
+    },
+    {
+      "kind": "key",
+      "at_ms": 38450,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 38583.333,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 38683.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 40616.667,
+      "dur_ms": 45.0,
+      "ref": "#school_address"
+    },
+    {
+      "kind": "key",
+      "at_ms": 40916.667,
+      "dur_ms": 30.0,
+      "ref": "J"
+    },
+    {
+      "kind": "key",
+      "at_ms": 41066.667,
+      "dur_ms": 30.0,
+      "ref": "l"
+    },
+    {
+      "kind": "key",
+      "at_ms": 41200,
+      "dur_ms": 30.0,
+      "ref": "."
+    },
+    {
+      "kind": "key",
+      "at_ms": 41366.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 41550,
+      "dur_ms": 30.0,
+      "ref": "P"
+    },
+    {
+      "kind": "key",
+      "at_ms": 41700,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 41833.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 41983.333,
+      "dur_ms": 30.0,
+      "ref": "d"
+    },
+    {
+      "kind": "key",
+      "at_ms": 42083.333,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 42366.667,
+      "dur_ms": 30.0,
+      "ref": "d"
+    },
+    {
+      "kind": "key",
+      "at_ms": 42500,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 42583.333,
+      "dur_ms": 30.0,
+      "ref": "k"
+    },
+    {
+      "kind": "key",
+      "at_ms": 42733.333,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 42833.333,
+      "dur_ms": 30.0,
+      "ref": "n"
+    },
+    {
+      "kind": "key",
+      "at_ms": 42950,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 43116.667,
+      "dur_ms": 30.0,
+      "ref": "K"
+    },
+    {
+      "kind": "key",
+      "at_ms": 43266.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 43366.667,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 43466.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 43583.333,
+      "dur_ms": 30.0,
+      "ref": "k"
+    },
+    {
+      "kind": "key",
+      "at_ms": 43683.333,
+      "dur_ms": 30.0,
+      "ref": "t"
+    },
+    {
+      "kind": "key",
+      "at_ms": 43816.667,
+      "dur_ms": 30.0,
+      "ref": "e"
+    },
+    {
+      "kind": "key",
+      "at_ms": 43933.333,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 44033.333,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 44233.333,
+      "dur_ms": 30.0,
+      "ref": "N"
+    },
+    {
+      "kind": "key",
+      "at_ms": 44316.667,
+      "dur_ms": 30.0,
+      "ref": "o"
+    },
+    {
+      "kind": "key",
+      "at_ms": 44466.667,
+      "dur_ms": 30.0,
+      "ref": "."
+    },
+    {
+      "kind": "key",
+      "at_ms": 44616.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 44816.667,
+      "dur_ms": 30.0,
+      "ref": "4"
+    },
+    {
+      "kind": "key",
+      "at_ms": 44933.333,
+      "dur_ms": 30.0,
+      "ref": "5"
+    },
+    {
+      "kind": "key",
+      "at_ms": 45033.333,
+      "dur_ms": 30.0,
+      "ref": ","
+    },
+    {
+      "kind": "key",
+      "at_ms": 45150,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 45350,
+      "dur_ms": 30.0,
+      "ref": "J"
+    },
+    {
+      "kind": "key",
+      "at_ms": 45466.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 45583.333,
+      "dur_ms": 30.0,
+      "ref": "k"
+    },
+    {
+      "kind": "key",
+      "at_ms": 45716.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 45833.333,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 45966.667,
+      "dur_ms": 30.0,
+      "ref": "t"
+    },
+    {
+      "kind": "key",
+      "at_ms": 46066.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 48866.667,
+      "dur_ms": 45.0,
+      "ref": "#principal_name"
+    },
+    {
+      "kind": "key",
+      "at_ms": 49166.667,
+      "dur_ms": 30.0,
+      "ref": "D"
+    },
+    {
+      "kind": "key",
+      "at_ms": 49250,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 49400,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 49500,
+      "dur_ms": 30.0,
+      "ref": "."
+    },
+    {
+      "kind": "key",
+      "at_ms": 49650,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 49816.667,
+      "dur_ms": 30.0,
+      "ref": "H"
+    },
+    {
+      "kind": "key",
+      "at_ms": 49933.333,
+      "dur_ms": 30.0,
+      "ref": "j"
+    },
+    {
+      "kind": "key",
+      "at_ms": 50083.333,
+      "dur_ms": 30.0,
+      "ref": "."
+    },
+    {
+      "kind": "key",
+      "at_ms": 50216.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 50400,
+      "dur_ms": 30.0,
+      "ref": "N"
+    },
+    {
+      "kind": "key",
+      "at_ms": 50500,
+      "dur_ms": 30.0,
+      "ref": "u"
+    },
+    {
+      "kind": "key",
+      "at_ms": 50783.333,
+      "dur_ms": 30.0,
+      "ref": "r"
+    },
+    {
+      "kind": "key",
+      "at_ms": 50883.333,
+      "dur_ms": 30.0,
+      "ref": "u"
+    },
+    {
+      "kind": "key",
+      "at_ms": 50983.333,
+      "dur_ms": 30.0,
+      "ref": "l"
+    },
+    {
+      "kind": "key",
+      "at_ms": 51116.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 51266.667,
+      "dur_ms": 30.0,
+      "ref": "H"
+    },
+    {
+      "kind": "key",
+      "at_ms": 51366.667,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 51516.667,
+      "dur_ms": 30.0,
+      "ref": "d"
+    },
+    {
+      "kind": "key",
+      "at_ms": 51650,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 51800,
+      "dur_ms": 30.0,
+      "ref": "y"
+    },
+    {
+      "kind": "key",
+      "at_ms": 51900,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52033.333,
+      "dur_ms": 30.0,
+      "ref": "h"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52133.333,
+      "dur_ms": 30.0,
+      "ref": ","
+    },
+    {
+      "kind": "key",
+      "at_ms": 52266.667,
+      "dur_ms": 30.0,
+      "ref": " "
+    },
+    {
+      "kind": "key",
+      "at_ms": 52466.667,
+      "dur_ms": 30.0,
+      "ref": "M"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52583.333,
+      "dur_ms": 30.0,
+      "ref": "."
+    },
+    {
+      "kind": "key",
+      "at_ms": 52783.333,
+      "dur_ms": 30.0,
+      "ref": "P"
+    },
+    {
+      "kind": "key",
+      "at_ms": 52933.333,
+      "dur_ms": 30.0,
+      "ref": "d"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 54833.333,
+      "dur_ms": 45.0,
+      "ref": "#principal_nip"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55133.333,
+      "dur_ms": 30.0,
+      "ref": "1"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55400,
+      "dur_ms": 30.0,
+      "ref": "9"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55533.333,
+      "dur_ms": 30.0,
+      "ref": "7"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55666.667,
+      "dur_ms": 30.0,
+      "ref": "5"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55800,
+      "dur_ms": 30.0,
+      "ref": "0"
+    },
+    {
+      "kind": "key",
+      "at_ms": 55950,
+      "dur_ms": 30.0,
+      "ref": "8"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56050,
+      "dur_ms": 30.0,
+      "ref": "1"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56166.667,
+      "dur_ms": 30.0,
+      "ref": "5"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56283.333,
+      "dur_ms": 30.0,
+      "ref": "1"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56433.333,
+      "dur_ms": 30.0,
+      "ref": "9"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56533.333,
+      "dur_ms": 30.0,
+      "ref": "9"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56666.667,
+      "dur_ms": 30.0,
+      "ref": "8"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56766.667,
+      "dur_ms": 30.0,
+      "ref": "0"
+    },
+    {
+      "kind": "key",
+      "at_ms": 56883.333,
+      "dur_ms": 30.0,
+      "ref": "3"
+    },
+    {
+      "kind": "key",
+      "at_ms": 57033.333,
+      "dur_ms": 30.0,
+      "ref": "2"
+    },
+    {
+      "kind": "key",
+      "at_ms": 57166.667,
+      "dur_ms": 30.0,
+      "ref": "0"
+    },
+    {
+      "kind": "key",
+      "at_ms": 57300,
+      "dur_ms": 30.0,
+      "ref": "0"
+    },
+    {
+      "kind": "key",
+      "at_ms": 57400,
+      "dur_ms": 30.0,
+      "ref": "1"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 59366.667,
+      "dur_ms": 45.0,
+      "ref": "#passing_grade"
+    },
+    {
+      "kind": "key",
+      "at_ms": 59666.667,
+      "dur_ms": 30.0,
+      "ref": "7"
+    },
+    {
+      "kind": "key",
+      "at_ms": 59816.667,
+      "dur_ms": 30.0,
+      "ref": "5"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 63533.333,
+      "dur_ms": 31200.0,
+      "ref": "scene_02_sensor_anti_curang_dan_mode"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 98416.667,
+      "dur_ms": 45.0,
+      "ref": "#max_cheat_warnings"
+    },
+    {
+      "kind": "key",
+      "at_ms": 98716.667,
+      "dur_ms": 30.0,
+      "ref": "3"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 110333.333,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Simpan Perubahan\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 114066.667,
+      "dur_ms": 25440.0,
+      "ref": "scene_03_area_berbahaya_clear_data"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 153616.667,
+      "dur_ms": 30744.0,
+      "ref": "scene_04_manajemen_tahun_ajaran"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 190433.333,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Tahun Ajaran Baru\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 193483.333,
+      "dur_ms": 45.0,
+      "ref": "#name"
+    },
+    {
+      "kind": "key",
+      "at_ms": 193783.333,
+      "dur_ms": 30.0,
+      "ref": "2"
+    },
+    {
+      "kind": "key",
+      "at_ms": 193933.333,
+      "dur_ms": 30.0,
+      "ref": "0"
+    },
+    {
+      "kind": "key",
+      "at_ms": 194050,
+      "dur_ms": 30.0,
+      "ref": "2"
+    },
+    {
+      "kind": "key",
+      "at_ms": 194150,
+      "dur_ms": 30.0,
+      "ref": "6"
+    },
+    {
+      "kind": "key",
+      "at_ms": 194300,
+      "dur_ms": 30.0,
+      "ref": "/"
+    },
+    {
+      "kind": "key",
+      "at_ms": 194433.333,
+      "dur_ms": 30.0,
+      "ref": "2"
+    },
+    {
+      "kind": "key",
+      "at_ms": 194583.333,
+      "dur_ms": 30.0,
+      "ref": "0"
+    },
+    {
+      "kind": "key",
+      "at_ms": 194716.667,
+      "dur_ms": 30.0,
+      "ref": "2"
+    },
+    {
+      "kind": "key",
+      "at_ms": 194816.667,
+      "dur_ms": 30.0,
+      "ref": "7"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 196700,
+      "dur_ms": 45.0,
+      "ref": "#semester"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 199450,
+      "dur_ms": 45.0,
+      "ref": "#is_active"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 202500,
+      "dur_ms": 45.0,
+      "ref": "form button:has-text(\"Tambah Tahun Ajaran\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 208950,
+      "dur_ms": 26952.0,
+      "ref": "scene_05_fitur_ta_switcher"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 238650,
+      "dur_ms": 45.0,
+      "ref": "select[title*=\"Tahun Ajaran\"]"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 246216.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Reset\")"
+    },
+    {
+      "kind": "background_music",
+      "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+      "base_volume": 0.16,
+      "ducking_volume": 0.045,
+      "at_ms": 0.0,
+      "dur_ms": 254266.7,
+      "ref": "bgm"
+    }
+  ]
+}

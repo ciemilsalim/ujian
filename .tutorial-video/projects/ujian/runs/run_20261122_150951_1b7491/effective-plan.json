@@ -1,0 +1,403 @@
+{
+  "version": "4.7.0",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "project_id": "ujian",
+  "title": "Tutorial Siswa ZEXAM-CBT: Panduan Login, Token & Lembar Ujian",
+  "mode": "mobile",
+  "fps": 60,
+  "viewport": {
+    "width": 414,
+    "height": 710
+  },
+  "target_resolution": [
+    1080,
+    1920
+  ],
+  "mobile_viewport": {
+    "width": 414,
+    "height": 710
+  },
+  "mobile_target_resolution": [
+    1080,
+    1920
+  ],
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "music": {
+    "enabled": true,
+    "genre": "upbeat_jazz"
+  },
+  "data_safety": {
+    "isolation_method": "ephemeral_test_tracking",
+    "cleanup_policy": "tracked_created_ids_only",
+    "allow_production_mutations": false
+  },
+  "reaction_delay_ms": 300,
+  "color_scheme": "light",
+  "setup": [
+    {
+      "do": "goto",
+      "url": "http://127.0.0.1:8000/login/siswa"
+    },
+    {
+      "do": "wait_for",
+      "selector": "#username"
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_01_login_siswa",
+      "narration": "Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan aplikasi ZEXAM-CBT versi mobile. Pada video kali ini, kita bersama-sama akan mempelajari alur lengkap mengikuti ujian menggunakan ponsel atau smartphone. Langkah pertama, buka halaman portal login siswa, lalu masukkan nama pengguna atau NISN serta kata sandi akun Anda.",
+      "narration_segments": [
+        {
+          "text": "Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan aplikasi ZEXAM-CBT versi mobile.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Pada video kali ini, kita bersama-sama akan mempelajari alur lengkap mengikuti ujian menggunakan ponsel atau smartphone.",
+          "pause_after_ms": 320
+        },
+        {
+          "text": "Langkah pertama, buka halaman portal login siswa, lalu masukkan nama pengguna atau NISN serta kata sandi akun Anda.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "#username",
+          "budget_ms": 3000
+        },
+        {
+          "do": "type",
+          "target": "#username",
+          "text": "siswa"
+        },
+        {
+          "do": "hold",
+          "ms": 300
+        },
+        {
+          "do": "type",
+          "target": "#password",
+          "text": "password"
+        },
+        {
+          "do": "hold",
+          "ms": 300
+        },
+        {
+          "do": "hover",
+          "target": "button[type=\"submit\"]",
+          "hold_ms": 350
+        },
+        {
+          "do": "click",
+          "target": "button[type=\"submit\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "a[href*=\"/siswa/exams/\"]",
+          "budget_ms": 8000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_02_dashboard_dan_pilih_ujian",
+      "narration": "Bagus, kita telah berhasil masuk ke dashboard siswa. Di sini, Anda dapat melihat seluruh daftar ujian yang sedang aktif dan terjadwal hari ini, lengkap dengan nama sesi dan durasi pengerjaan. Untuk memulai, ketuk tombol Mulai Ujian Sekarang pada kartu ujian yang tersedia.",
+      "narration_segments": [
+        {
+          "text": "Bagus, kita telah berhasil masuk ke dashboard siswa.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Di sini, Anda dapat melihat seluruh daftar ujian yang sedang aktif dan terjadwal hari ini, lengkap dengan nama sesi dan durasi pengerjaan.",
+          "pause_after_ms": 320
+        },
+        {
+          "text": "Untuk memulai, ketuk tombol Mulai Ujian Sekarang pada kartu ujian yang tersedia.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "a[href*=\"/siswa/exams/\"]",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": "a[href*=\"/siswa/exams/\"]",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "a[href*=\"/siswa/exams/\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "input[placeholder=\"MASUKKAN TOKEN\"]",
+          "budget_ms": 8000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_03_masukkan_token_ujian",
+      "narration": "Sekarang kita berada di halaman verifikasi token ujian. Token ini terdiri dari enam karakter huruf kapital unik yang dirilis langsung oleh pengawas ujian di ruangan Anda. Ketikkan token tersebut dengan benar ke dalam kolom yang tersedia, kemudian tekan tombol Mulai Ujian Sekarang.",
+      "narration_segments": [
+        {
+          "text": "Sekarang kita berada di halaman verifikasi token ujian.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Token ini terdiri dari enam karakter huruf kapital unik yang dirilis langsung oleh pengawas ujian di ruangan Anda.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Ketikkan token tersebut dengan benar ke dalam kolom yang tersedia, kemudian tekan tombol Mulai Ujian Sekarang.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "input[placeholder=\"MASUKKAN TOKEN\"]",
+          "budget_ms": 3000
+        },
+        {
+          "do": "type",
+          "target": "input[placeholder=\"MASUKKAN TOKEN\"]",
+          "text": "ZX2026"
+        },
+        {
+          "do": "hold",
+          "ms": 400
+        },
+        {
+          "do": "hover",
+          "target": "button[type=\"submit\"]",
+          "hold_ms": 350
+        },
+        {
+          "do": "click",
+          "target": "button[type=\"submit\"]"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"MULAI KERJAKAN SOAL\")",
+          "budget_ms": 8000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_04_konfirmasi_dan_mulai_soal",
+      "narration": "Sebelum lembar soal terbuka, sistem akan menampilkan ringkasan data peserta dan rincian ujian. Pastikan nama lengkap, mata pelajaran, dan alokasi waktu sudah sesuai dengan data Anda. Jika sudah siap, tekan tombol Mulai Kerjakan Soal.",
+      "narration_segments": [
+        {
+          "text": "Sebelum lembar soal terbuka, sistem akan menampilkan ringkasan data peserta dan rincian ujian.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Pastikan nama lengkap, mata pelajaran, dan alokasi waktu sudah sesuai dengan data Anda.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Jika sudah siap, tekan tombol Mulai Kerjakan Soal.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"MULAI KERJAKAN SOAL\")",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"MULAI KERJAKAN SOAL\")",
+          "hold_ms": 600
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"MULAI KERJAKAN SOAL\")"
+        },
+        {
+          "do": "wait_for",
+          "selector": "button[title=\"Font Besar\"]",
+          "budget_ms": 8000
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_05_antarmuka_cbt_dan_font",
+      "narration": "Luar biasa, lembar ujian CBT kini telah aktif di ponsel Anda. Di bar bagian atas, perhatikan pengatur waktu hitung mundur agar Anda dapat mengalokasikan waktu dengan tepat. Untuk kenyamanan membaca di layar HP, Anda dapat mengubah ukuran teks dengan menekan tombol ukuran font menjadi sedang atau besar.",
+      "narration_segments": [
+        {
+          "text": "Luar biasa, lembar ujian CBT kini telah aktif di ponsel Anda.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Di bar bagian atas, perhatikan pengatur waktu hitung mundur agar Anda dapat mengalokasikan waktu dengan tepat.",
+          "pause_after_ms": 320
+        },
+        {
+          "text": "Untuk kenyamanan membaca di layar HP, Anda dapat mengubah ukuran teks dengan menekan tombol ukuran font menjadi sedang atau besar.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button[title=\"Font Besar\"]",
+          "budget_ms": 3000
+        },
+        {
+          "do": "hover",
+          "target": "button[title=\"Font Besar\"]",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "button[title=\"Font Besar\"]"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "button[title=\"Font Sedang\"]",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "button[title=\"Font Sedang\"]"
+        },
+        {
+          "do": "hold",
+          "ms": 500
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_06_menjawab_dan_navigasi",
+      "narration": "Silakan baca pertanyaan dan stimulus dengan cermat. Untuk memilih jawaban, cukup ketuk salah satu opsi yang tersedia. Setelah selesai menjawab, Anda dapat berpindah ke nomor berikutnya dengan mengetuk tombol panah di bilah navigasi bawah.",
+      "narration_segments": [
+        {
+          "text": "Silakan baca pertanyaan dan stimulus dengan cermat.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Untuk memilih jawaban, cukup ketuk salah satu opsi yang tersedia.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Setelah selesai menjawab, Anda dapat berpindah ke nomor berikutnya dengan mengetuk tombol panah di bilah navigasi bawah.",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "wait_for",
+          "selector": "button:has-text(\"Central Processing Unit (CPU)\")",
+          "budget_ms": 5000
+        },
+        {
+          "do": "hover",
+          "target": "button:has-text(\"Central Processing Unit (CPU)\")",
+          "hold_ms": 500
+        },
+        {
+          "do": "click",
+          "target": "button:has-text(\"Central Processing Unit (CPU)\")"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        },
+        {
+          "do": "hover",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)"
+        },
+        {
+          "do": "hold",
+          "ms": 600
+        }
+      ],
+      "result_hold_ms": 1200
+    },
+    {
+      "scene_id": "scene_07_daftar_soal_dan_penutup",
+      "narration": "Untuk melihat ringkasan seluruh nomor soal, ketuk tombol nomor soal di bagian tengah bawah. Panel drawer akan menampilkan status warna soal yang sudah terisi. Kerjakanlah ujian dengan jujur, teliti, dan penuh percaya diri. Selamat menempuh ujian bersama ZEXAM-CBT!",
+      "narration_segments": [
+        {
+          "text": "Untuk melihat ringkasan seluruh nomor soal, ketuk tombol nomor soal di bagian tengah bawah.",
+          "pause_after_ms": 280
+        },
+        {
+          "text": "Panel drawer akan menampilkan status warna soal yang sudah terisi.",
+          "pause_after_ms": 300
+        },
+        {
+          "text": "Kerjakanlah ujian dengan jujur, teliti, dan penuh percaya diri. Selamat menempuh ujian bersama ZEXAM-CBT!",
+          "pause_after_ms": 250
+        }
+      ],
+      "steps": [
+        {
+          "do": "hover",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-layout-grid)",
+          "hold_ms": 400
+        },
+        {
+          "do": "click",
+          "target": "div.fixed.bottom-0 button:has(svg.lucide-layout-grid)"
+        },
+        {
+          "do": "wait_for",
+          "selector": "h3:has-text(\"Daftar Soal\")",
+          "budget_ms": 4000
+        },
+        {
+          "do": "hover",
+          "target": "h3:has-text(\"Daftar Soal\")",
+          "hold_ms": 800
+        },
+        {
+          "do": "hold",
+          "ms": 1000
+        }
+      ],
+      "result_hold_ms": 1200
+    }
+  ]
+}

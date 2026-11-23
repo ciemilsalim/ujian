@@ -1,0 +1,75 @@
+{
+  "status": "UPLOADED",
+  "video_id": "Py3QURLX0JM",
+  "watch_url": "https://youtu.be/Py3QURLX0JM",
+  "privacy": "public",
+  "is_shorts": false,
+  "thumbnail_uploaded": true,
+  "uploaded_at": "2026-11-23T00:29:25.771097+00:00",
+  "api_response": {
+    "kind": "youtube#video",
+    "etag": "oZNXoR8DRR-_sPe3kmsk8ClhRWA",
+    "id": "Py3QURLX0JM",
+    "snippet": {
+      "publishedAt": "2026-11-23T00:29:01Z",
+      "channelId": "UClcuYT2uyDxc8qnaPtTOVDw",
+      "title": "Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay",
+      "description": "Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Tambah Soal\n00:34 - Konfigurasi Soal Menjodohkan\n01:15 - Konfigurasi Soal Isian Singkat\n01:48 - Konfigurasi Soal Essay Dan Rubrik\n02:18 - Tinjau Daftar Soal Dan Penutup\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Tambah Soal: Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT.\n2. Konfigurasi Soal Menjodohkan: Untuk membuat soal menjodohkan, ubah dropdown Tipe Soal menjadi Menjodohkan.\n3. Konfigurasi Soal Isian Singkat: Selanjutnya, kita beralih ke tipe soal Isian Singkat.\n4. Konfigurasi Soal Essay Dan Rubrik: Untuk soal uraian mendalam, pilih tipe Essay.\n5. Tinjau Daftar Soal Dan Penutup: Seluruh butir soal menjodohkan, isian singkat, dan uraian esai akan tampil terstruktur pada daftar pertanyaan.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/Py3QURLX0JM/default.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/Py3QURLX0JM/mqdefault.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/Py3QURLX0JM/hqdefault.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "zahra developer",
+      "tags": [
+        "essay",
+        "guru",
+        "isian",
+        "konfigurasi soal essay dan rubrik",
+        "konfigurasi soal isian singkat",
+        "konfigurasi soal menjodohkan",
+        "menjodohkan",
+        "navigasi tambah soal",
+        "panduan sistem",
+        "panduan ujian",
+        "pembuatan",
+        "singkat",
+        "soal",
+        "tinjau daftar soal dan penutup",
+        "tutorial",
+        "tutorial aplikasi",
+        "tutorial ujian",
+        "ujian",
+        "zexam-cbt"
+      ],
+      "categoryId": "27",
+      "liveBroadcastContent": "none",
+      "defaultLanguage": "id",
+      "localized": {
+        "title": "Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay",
+        "description": "Tutorial Guru ZEXAM-CBT: Pembuatan Soal Menjodohkan, Isian Singkat & Soal Essay\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Navigasi Tambah Soal\n00:34 - Konfigurasi Soal Menjodohkan\n01:15 - Konfigurasi Soal Isian Singkat\n01:48 - Konfigurasi Soal Essay Dan Rubrik\n02:18 - Tinjau Daftar Soal Dan Penutup\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Navigasi Tambah Soal: Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT.\n2. Konfigurasi Soal Menjodohkan: Untuk membuat soal menjodohkan, ubah dropdown Tipe Soal menjadi Menjodohkan.\n3. Konfigurasi Soal Isian Singkat: Selanjutnya, kita beralih ke tipe soal Isian Singkat.\n4. Konfigurasi Soal Essay Dan Rubrik: Untuk soal uraian mendalam, pilih tipe Essay.\n5. Tinjau Daftar Soal Dan Penutup: Seluruh butir soal menjodohkan, isian singkat, dan uraian esai akan tampil terstruktur pada daftar pertanyaan.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi"
+      },
+      "defaultAudioLanguage": "id"
+    },
+    "status": {
+      "uploadStatus": "uploaded",
+      "privacyStatus": "public",
+      "license": "youtube",
+      "embeddable": true,
+      "publicStatsViewable": true,
+      "selfDeclaredMadeForKids": false
+    }
+  }
+}

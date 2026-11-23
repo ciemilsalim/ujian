@@ -1,0 +1,259 @@
+{
+  "sample_rate": 48000,
+  "source": "recording\\events-mobile.json",
+  "background_music": {
+    "enabled": true,
+    "genre": "upbeat_jazz",
+    "expected_sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa",
+    "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "base_volume": 0.16,
+    "ducking_volume": 0.045,
+    "ducking_attack_ms": 200,
+    "ducking_release_ms": 500,
+    "fade_in_ms": 1200,
+    "fade_out_ms": 2500,
+    "loop": true,
+    "tempo_bpm": 80,
+    "instruments": "rhodes_piano, electric_soul_bass, soul_pocket_drums, brushed_hihat, rhodes_bell_chimes",
+    "license": "Royalty-Free Deterministic Procedural Composition (Skill app-tutorial-video)",
+    "file_rel": "resources\\audio\\music\\upbeat-jazz-v1.wav",
+    "sha256_verified": true,
+    "sha256": "cab3b56caf103af4dd402d50265c0bc9ccc2c15bab76be5e7ff4f2d74396abaa"
+  },
+  "bgm_acoustics": {
+    "bgm_present": true,
+    "ducked_bgm_rms_dbfs": -45.9,
+    "pause_bgm_rms_dbfs": -35.08,
+    "speech_master_rms_dbfs": -18.2,
+    "measured_voice_advantage_db": 27.7,
+    "measured_ducking_attenuation_db": 10.82,
+    "audible": false
+  },
+  "placements": [
+    {
+      "kind": "narration",
+      "at_ms": 200,
+      "dur_ms": 21332.0,
+      "ref": "scene_01_login_siswa"
+    },
+    {
+      "kind": "key",
+      "at_ms": 22616.667,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 22750,
+      "dur_ms": 30.0,
+      "ref": "i"
+    },
+    {
+      "kind": "key",
+      "at_ms": 22900,
+      "dur_ms": 30.0,
+      "ref": "s"
+    },
+    {
+      "kind": "key",
+      "at_ms": 23050,
+      "dur_ms": 30.0,
+      "ref": "w"
+    },
+    {
+      "kind": "key",
+      "at_ms": 23166.667,
+      "dur_ms": 30.0,
+      "ref": "a"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 24533.333,
+      "dur_ms": 45.0,
+      "ref": "#password"
+    },
+    {
+      "kind": "key",
+      "at_ms": 24900,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 25050,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 25183.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 25283.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 25433.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 25533.333,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 25666.667,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 25816.667,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 28633.333,
+      "dur_ms": 45.0,
+      "ref": "button[type=\"submit\"]"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 31933.333,
+      "dur_ms": 17976.0,
+      "ref": "scene_02_dashboard_dan_pilih_ujian"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 52233.333,
+      "dur_ms": 45.0,
+      "ref": "a[href*=\"/siswa/exams/\"]"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 55533.333,
+      "dur_ms": 16684.0,
+      "ref": "scene_03_masukkan_token_ujian"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73316.667,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73416.667,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73516.667,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73666.667,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73800,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "key",
+      "at_ms": 73916.667,
+      "dur_ms": 30.0,
+      "ref": "*"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 75733.333,
+      "dur_ms": 45.0,
+      "ref": "button[type=\"submit\"]"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 79033.333,
+      "dur_ms": 16660.0,
+      "ref": "scene_04_konfirmasi_dan_mulai_soal"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 98116.667,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"MULAI KERJAKAN SOAL\")"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 101416.667,
+      "dur_ms": 19248.0,
+      "ref": "scene_05_antarmuka_cbt_dan_font"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 124083.333,
+      "dur_ms": 45.0,
+      "ref": "button[title=\"Font Besar\"]"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 126016.667,
+      "dur_ms": 45.0,
+      "ref": "button[title=\"Font Sedang\"]"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 128666.667,
+      "dur_ms": 15388.0,
+      "ref": "scene_06_menjawab_dan_navigasi"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 146383.333,
+      "dur_ms": 45.0,
+      "ref": "button:has-text(\"Central Processing Unit (CPU)\")"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 149283.333,
+      "dur_ms": 45.0,
+      "ref": "div.fixed.bottom-0 button:has(svg.lucide-chevron-right)"
+    },
+    {
+      "kind": "narration",
+      "at_ms": 152033.333,
+      "dur_ms": 18820.0,
+      "ref": "scene_07_daftar_soal_dan_penutup"
+    },
+    {
+      "kind": "tap",
+      "at_ms": 172350,
+      "dur_ms": 45.0,
+      "ref": "div.fixed.bottom-0 button:has(svg.lucide-layout-grid)"
+    },
+    {
+      "kind": "background_music",
+      "file": "C:\\Users\\WIND11\\.gemini\\config\\skills\\app-tutorial-video\\resources\\audio\\music\\upbeat-jazz-v1.wav",
+      "base_volume": 0.16,
+      "ducking_volume": 0.045,
+      "at_ms": 0.0,
+      "dur_ms": 177800.0,
+      "ref": "bgm"
+    }
+  ]
+}

@@ -1,0 +1,1504 @@
+{
+  "fps": 60,
+  "frame_ms": 16.666666666666668,
+  "dsf": 1,
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1440,
+    810
+  ],
+  "mode": "desktop",
+  "scenes": [
+    {
+      "scene_id": "scene_01_navigasi_tambah_soal",
+      "start_ms": 0,
+      "narration_start_ms": 200,
+      "narration_end_ms": 23646,
+      "action_start_ms": 23950,
+      "action_end_ms": 33583.333,
+      "end_ms": 34783.333
+    },
+    {
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan",
+      "start_ms": 34783.333,
+      "narration_start_ms": 34983.333,
+      "narration_end_ms": 57085.333,
+      "action_start_ms": 57400,
+      "action_end_ms": 74383.333,
+      "end_ms": 75583.333
+    },
+    {
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat",
+      "start_ms": 75583.333,
+      "narration_start_ms": 75783.333,
+      "narration_end_ms": 97223.333,
+      "action_start_ms": 97533.333,
+      "action_end_ms": 106966.667,
+      "end_ms": 108166.667
+    },
+    {
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik",
+      "start_ms": 108166.667,
+      "narration_start_ms": 108366.667,
+      "narration_end_ms": 127664.667,
+      "action_start_ms": 127966.667,
+      "action_end_ms": 137650,
+      "end_ms": 138850
+    },
+    {
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup",
+      "start_ms": 138850,
+      "narration_start_ms": 139050,
+      "narration_end_ms": 162688,
+      "action_start_ms": 163000,
+      "action_end_ms": 169066.667,
+      "end_ms": 170566.667
+    }
+  ],
+  "events": [
+    {
+      "type": "scene_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_tambah_soal"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 0,
+      "frame": 0,
+      "scene_id": "scene_01_navigasi_tambah_soal",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_01_navigasi_tambah_soal.wav",
+      "duration_ms": 23446,
+      "at_ms": 200
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 23650,
+      "frame": 1419,
+      "scene_id": "scene_01_navigasi_tambah_soal"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 23950,
+      "frame": 1437,
+      "scene_id": "scene_01_navigasi_tambah_soal"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 23950,
+      "frame": 1437,
+      "from": [
+        892.8,
+        502.2
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 823.2,
+      "move_ms": 1148.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 25283.333,
+      "frame": 1517,
+      "at": [
+        127.5,
+        199
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 25883.333,
+      "frame": 1553,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        127.5,
+        199
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 25966.667,
+      "frame": 1558,
+      "at": [
+        127.5,
+        199
+      ],
+      "label": ".hidden.lg\\:block a:has-text(\"Banks Soal\")",
+      "bbox": [
+        16,
+        179,
+        223,
+        40
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 26100,
+      "frame": 1566,
+      "selector": "#btn-bank-detail-1",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 27150,
+      "frame": 1629,
+      "from": [
+        127.5,
+        199
+      ],
+      "to": [
+        1138.9609375,
+        416.5
+      ],
+      "dist_px": 1034.6,
+      "move_ms": 1150,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 28483.333,
+      "frame": 1709,
+      "at": [
+        1138.9609375,
+        416.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 29083.333,
+      "frame": 1745,
+      "from": [
+        1138.9609375,
+        416.5
+      ],
+      "to": [
+        1138.9609375,
+        416.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 29166.667,
+      "frame": 1750,
+      "at": [
+        1138.9609375,
+        416.5
+      ],
+      "label": "#btn-bank-detail-1",
+      "bbox": [
+        1099.265625,
+        408,
+        79.390625,
+        17
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 29300,
+      "frame": 1758,
+      "selector": "#btn-tambah-soal",
+      "budget_ms": 5000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 30450,
+      "frame": 1827,
+      "from": [
+        1138.9609375,
+        416.5
+      ],
+      "to": [
+        1355.609375,
+        114
+      ],
+      "dist_px": 372.1,
+      "move_ms": 967.4,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 31616.667,
+      "frame": 1897,
+      "at": [
+        1355.609375,
+        114
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 32216.667,
+      "frame": 1933,
+      "from": [
+        1355.609375,
+        114
+      ],
+      "to": [
+        1355.609375,
+        114
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 32300,
+      "frame": 1938,
+      "at": [
+        1355.609375,
+        114
+      ],
+      "label": "#btn-tambah-soal",
+      "bbox": [
+        1303.21875,
+        96,
+        104.78125,
+        36
+      ]
+    },
+    {
+      "type": "wait_for",
+      "vt_ms": 32433.333,
+      "frame": 1946,
+      "selector": "#type",
+      "budget_ms": 4000,
+      "satisfied": true,
+      "extended_ms": 0,
+      "duration_ms": 550
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 33583.333,
+      "frame": 2015,
+      "scene_id": "scene_01_navigasi_tambah_soal"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 34783.333,
+      "frame": 2087,
+      "scene_id": "scene_01_navigasi_tambah_soal"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 34783.333,
+      "frame": 2087,
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 34783.333,
+      "frame": 2087,
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_02_konfigurasi_soal_menjodohkan.wav",
+      "duration_ms": 22102,
+      "at_ms": 34983.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 57100,
+      "frame": 3426,
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 57400,
+      "frame": 3444,
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 57400,
+      "frame": 3444,
+      "from": [
+        1355.609375,
+        114
+      ],
+      "to": [
+        720,
+        76
+      ],
+      "dist_px": 636.7,
+      "move_ms": 1089.2,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 58683.333,
+      "frame": 3521,
+      "at": [
+        720,
+        76
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 59283.333,
+      "frame": 3557,
+      "from": [
+        720,
+        76
+      ],
+      "to": [
+        720,
+        76
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 59366.667,
+      "frame": 3562,
+      "at": [
+        720,
+        76
+      ],
+      "label": "#type",
+      "bbox": null
+    },
+    {
+      "type": "dropdown_open",
+      "vt_ms": 59500,
+      "frame": 3570,
+      "options": 6
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 60133.333,
+      "frame": 3608,
+      "from": [
+        720,
+        76
+      ],
+      "to": [
+        172,
+        496.296875
+      ],
+      "dist_px": 690.6,
+      "move_ms": 1107.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 61433.333,
+      "frame": 3686,
+      "at": [
+        172,
+        496.296875
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 61516.667,
+      "frame": 3691,
+      "at": [
+        172,
+        496.296875
+      ],
+      "label": "option:menjodohkan",
+      "bbox": null
+    },
+    {
+      "type": "select_commit",
+      "vt_ms": 61516.667,
+      "frame": 3691,
+      "value": "menjodohkan"
+    },
+    {
+      "type": "dropdown_close",
+      "vt_ms": 61966.667,
+      "frame": 3718
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 62566.667,
+      "frame": 3754,
+      "from": [
+        172,
+        496.296875
+      ],
+      "to": [
+        720,
+        178.5
+      ],
+      "dist_px": 633.5,
+      "move_ms": 1088,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 63850,
+      "frame": 3831,
+      "at": [
+        720,
+        178.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 64350,
+      "frame": 3861,
+      "from": [
+        720,
+        178.5
+      ],
+      "to": [
+        595.2,
+        178.5
+      ],
+      "dist_px": 124.8,
+      "move_ms": 734.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 65283.333,
+      "frame": 3917,
+      "at": [
+        595.2,
+        178.5
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 65366.667,
+      "frame": 3922,
+      "at": [
+        595.2,
+        178.5
+      ],
+      "label": "#question_text",
+      "bbox": [
+        408,
+        121.5,
+        624,
+        114
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 65666.667,
+      "frame": 3940,
+      "target": "#question_text",
+      "text_len": 59,
+      "bbox": [
+        408,
+        121.5,
+        624,
+        114
+      ],
+      "end_vt_ms": 73583.333
+    },
+    {
+      "type": "key",
+      "vt_ms": 65666.667,
+      "frame": 3940,
+      "ch": "J",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 65800,
+      "frame": 3948,
+      "ch": "o",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 65916.667,
+      "frame": 3955,
+      "ch": "d",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 66216.667,
+      "frame": 3973,
+      "ch": "o",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 66316.667,
+      "frame": 3979,
+      "ch": "h",
+      "i": 4
+    },
+    {
+      "type": "key",
+      "vt_ms": 66433.333,
+      "frame": 3986,
+      "ch": "k",
+      "i": 5
+    },
+    {
+      "type": "key",
+      "vt_ms": 66550,
+      "frame": 3993,
+      "ch": "a",
+      "i": 6
+    },
+    {
+      "type": "key",
+      "vt_ms": 66683.333,
+      "frame": 4001,
+      "ch": "n",
+      "i": 7
+    },
+    {
+      "type": "key",
+      "vt_ms": 66966.667,
+      "frame": 4018,
+      "ch": " ",
+      "i": 8
+    },
+    {
+      "type": "key",
+      "vt_ms": 67133.333,
+      "frame": 4028,
+      "ch": "i",
+      "i": 9
+    },
+    {
+      "type": "key",
+      "vt_ms": 67283.333,
+      "frame": 4037,
+      "ch": "s",
+      "i": 10
+    },
+    {
+      "type": "key",
+      "vt_ms": 67366.667,
+      "frame": 4042,
+      "ch": "t",
+      "i": 11
+    },
+    {
+      "type": "key",
+      "vt_ms": 67483.333,
+      "frame": 4049,
+      "ch": "i",
+      "i": 12
+    },
+    {
+      "type": "key",
+      "vt_ms": 67583.333,
+      "frame": 4055,
+      "ch": "l",
+      "i": 13
+    },
+    {
+      "type": "key",
+      "vt_ms": 67666.667,
+      "frame": 4060,
+      "ch": "a",
+      "i": 14
+    },
+    {
+      "type": "key",
+      "vt_ms": 67816.667,
+      "frame": 4069,
+      "ch": "h",
+      "i": 15
+    },
+    {
+      "type": "key",
+      "vt_ms": 67933.333,
+      "frame": 4076,
+      "ch": " ",
+      "i": 16
+    },
+    {
+      "type": "key",
+      "vt_ms": 68133.333,
+      "frame": 4088,
+      "ch": "k",
+      "i": 17
+    },
+    {
+      "type": "key",
+      "vt_ms": 68233.333,
+      "frame": 4094,
+      "ch": "o",
+      "i": 18
+    },
+    {
+      "type": "key",
+      "vt_ms": 68383.333,
+      "frame": 4103,
+      "ch": "m",
+      "i": 19
+    },
+    {
+      "type": "key",
+      "vt_ms": 68483.333,
+      "frame": 4109,
+      "ch": "p",
+      "i": 20
+    },
+    {
+      "type": "key",
+      "vt_ms": 68583.333,
+      "frame": 4115,
+      "ch": "o",
+      "i": 21
+    },
+    {
+      "type": "key",
+      "vt_ms": 68683.333,
+      "frame": 4121,
+      "ch": "n",
+      "i": 22
+    },
+    {
+      "type": "key",
+      "vt_ms": 68816.667,
+      "frame": 4129,
+      "ch": "e",
+      "i": 23
+    },
+    {
+      "type": "key",
+      "vt_ms": 68916.667,
+      "frame": 4135,
+      "ch": "n",
+      "i": 24
+    },
+    {
+      "type": "key",
+      "vt_ms": 69050,
+      "frame": 4143,
+      "ch": " ",
+      "i": 25
+    },
+    {
+      "type": "key",
+      "vt_ms": 69233.333,
+      "frame": 4154,
+      "ch": "p",
+      "i": 26
+    },
+    {
+      "type": "key",
+      "vt_ms": 69350,
+      "frame": 4161,
+      "ch": "e",
+      "i": 27
+    },
+    {
+      "type": "key",
+      "vt_ms": 69500,
+      "frame": 4170,
+      "ch": "r",
+      "i": 28
+    },
+    {
+      "type": "key",
+      "vt_ms": 69616.667,
+      "frame": 4177,
+      "ch": "a",
+      "i": 29
+    },
+    {
+      "type": "key",
+      "vt_ms": 69766.667,
+      "frame": 4186,
+      "ch": "n",
+      "i": 30
+    },
+    {
+      "type": "key",
+      "vt_ms": 69900,
+      "frame": 4194,
+      "ch": "g",
+      "i": 31
+    },
+    {
+      "type": "key",
+      "vt_ms": 70033.333,
+      "frame": 4202,
+      "ch": "k",
+      "i": 32
+    },
+    {
+      "type": "key",
+      "vt_ms": 70116.667,
+      "frame": 4207,
+      "ch": "a",
+      "i": 33
+    },
+    {
+      "type": "key",
+      "vt_ms": 70416.667,
+      "frame": 4225,
+      "ch": "t",
+      "i": 34
+    },
+    {
+      "type": "key",
+      "vt_ms": 70533.333,
+      "frame": 4232,
+      "ch": " ",
+      "i": 35
+    },
+    {
+      "type": "key",
+      "vt_ms": 70683.333,
+      "frame": 4241,
+      "ch": "k",
+      "i": 36
+    },
+    {
+      "type": "key",
+      "vt_ms": 70800,
+      "frame": 4248,
+      "ch": "e",
+      "i": 37
+    },
+    {
+      "type": "key",
+      "vt_ms": 70916.667,
+      "frame": 4255,
+      "ch": "r",
+      "i": 38
+    },
+    {
+      "type": "key",
+      "vt_ms": 71033.333,
+      "frame": 4262,
+      "ch": "a",
+      "i": 39
+    },
+    {
+      "type": "key",
+      "vt_ms": 71133.333,
+      "frame": 4268,
+      "ch": "s",
+      "i": 40
+    },
+    {
+      "type": "key",
+      "vt_ms": 71266.667,
+      "frame": 4276,
+      "ch": " ",
+      "i": 41
+    },
+    {
+      "type": "key",
+      "vt_ms": 71433.333,
+      "frame": 4286,
+      "ch": "d",
+      "i": 42
+    },
+    {
+      "type": "key",
+      "vt_ms": 71516.667,
+      "frame": 4291,
+      "ch": "e",
+      "i": 43
+    },
+    {
+      "type": "key",
+      "vt_ms": 71633.333,
+      "frame": 4298,
+      "ch": "n",
+      "i": 44
+    },
+    {
+      "type": "key",
+      "vt_ms": 71750,
+      "frame": 4305,
+      "ch": "g",
+      "i": 45
+    },
+    {
+      "type": "key",
+      "vt_ms": 71883.333,
+      "frame": 4313,
+      "ch": "a",
+      "i": 46
+    },
+    {
+      "type": "key",
+      "vt_ms": 72016.667,
+      "frame": 4321,
+      "ch": "n",
+      "i": 47
+    },
+    {
+      "type": "key",
+      "vt_ms": 72116.667,
+      "frame": 4327,
+      "ch": " ",
+      "i": 48
+    },
+    {
+      "type": "key",
+      "vt_ms": 72300,
+      "frame": 4338,
+      "ch": "f",
+      "i": 49
+    },
+    {
+      "type": "key",
+      "vt_ms": 72416.667,
+      "frame": 4345,
+      "ch": "u",
+      "i": 50
+    },
+    {
+      "type": "key",
+      "vt_ms": 72533.333,
+      "frame": 4352,
+      "ch": "n",
+      "i": 51
+    },
+    {
+      "type": "key",
+      "vt_ms": 72666.667,
+      "frame": 4360,
+      "ch": "g",
+      "i": 52
+    },
+    {
+      "type": "key",
+      "vt_ms": 72766.667,
+      "frame": 4366,
+      "ch": "s",
+      "i": 53
+    },
+    {
+      "type": "key",
+      "vt_ms": 72866.667,
+      "frame": 4372,
+      "ch": "i",
+      "i": 54
+    },
+    {
+      "type": "key",
+      "vt_ms": 72983.333,
+      "frame": 4379,
+      "ch": "n",
+      "i": 55
+    },
+    {
+      "type": "key",
+      "vt_ms": 73083.333,
+      "frame": 4385,
+      "ch": "y",
+      "i": 56
+    },
+    {
+      "type": "key",
+      "vt_ms": 73333.333,
+      "frame": 4400,
+      "ch": "a",
+      "i": 57
+    },
+    {
+      "type": "key",
+      "vt_ms": 73450,
+      "frame": 4407,
+      "ch": ":",
+      "i": 58
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 73583.333,
+      "frame": 4415,
+      "target": "#question_text"
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 74383.333,
+      "frame": 4463,
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 75583.333,
+      "frame": 4535,
+      "scene_id": "scene_02_konfigurasi_soal_menjodohkan"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 75583.333,
+      "frame": 4535,
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 75583.333,
+      "frame": 4535,
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_03_konfigurasi_soal_isian_singkat.wav",
+      "duration_ms": 21440,
+      "at_ms": 75783.333
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 97233.333,
+      "frame": 5834,
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 97533.333,
+      "frame": 5852,
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 97533.333,
+      "frame": 5852,
+      "from": [
+        595.2,
+        178.5
+      ],
+      "to": [
+        720,
+        60.5
+      ],
+      "dist_px": 171.8,
+      "move_ms": 799.6,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 98516.667,
+      "frame": 5911,
+      "at": [
+        720,
+        60.5
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 99116.667,
+      "frame": 5947,
+      "from": [
+        720,
+        60.5
+      ],
+      "to": [
+        720,
+        60.5
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 99200,
+      "frame": 5952,
+      "at": [
+        720,
+        60.5
+      ],
+      "label": "#type",
+      "bbox": null
+    },
+    {
+      "type": "dropdown_open",
+      "vt_ms": 99333.333,
+      "frame": 5960,
+      "options": 6
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 99966.667,
+      "frame": 5998,
+      "from": [
+        720,
+        60.5
+      ],
+      "to": [
+        172,
+        448.296875
+      ],
+      "dist_px": 671.3,
+      "move_ms": 1101.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 101266.667,
+      "frame": 6076,
+      "at": [
+        172,
+        448.296875
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 101350,
+      "frame": 6081,
+      "at": [
+        172,
+        448.296875
+      ],
+      "label": "option:isian_singkat",
+      "bbox": null
+    },
+    {
+      "type": "select_commit",
+      "vt_ms": 101350,
+      "frame": 6081,
+      "value": "isian_singkat"
+    },
+    {
+      "type": "dropdown_close",
+      "vt_ms": 101800,
+      "frame": 6108
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 102400,
+      "frame": 6144,
+      "from": [
+        172,
+        448.296875
+      ],
+      "to": [
+        720,
+        475
+      ],
+      "dist_px": 548.7,
+      "move_ms": 1055.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 103650,
+      "frame": 6219,
+      "at": [
+        720,
+        475
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 104150,
+      "frame": 6249,
+      "from": [
+        720,
+        475
+      ],
+      "to": [
+        595.2,
+        475
+      ],
+      "dist_px": 124.8,
+      "move_ms": 734.3,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 105083.333,
+      "frame": 6305,
+      "at": [
+        595.2,
+        475
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 105166.667,
+      "frame": 6310,
+      "at": [
+        595.2,
+        475
+      ],
+      "label": "#answer_key",
+      "bbox": [
+        408,
+        454,
+        624,
+        42
+      ]
+    },
+    {
+      "type": "type_start",
+      "vt_ms": 105466.667,
+      "frame": 6328,
+      "target": "#answer_key",
+      "text_len": 5,
+      "bbox": [
+        408,
+        454,
+        624,
+        42
+      ],
+      "end_vt_ms": 106166.667
+    },
+    {
+      "type": "key",
+      "vt_ms": 105466.667,
+      "frame": 6328,
+      "ch": "*",
+      "i": 0
+    },
+    {
+      "type": "key",
+      "vt_ms": 105616.667,
+      "frame": 6337,
+      "ch": "*",
+      "i": 1
+    },
+    {
+      "type": "key",
+      "vt_ms": 105766.667,
+      "frame": 6346,
+      "ch": "*",
+      "i": 2
+    },
+    {
+      "type": "key",
+      "vt_ms": 105916.667,
+      "frame": 6355,
+      "ch": "*",
+      "i": 3
+    },
+    {
+      "type": "key",
+      "vt_ms": 106066.667,
+      "frame": 6364,
+      "ch": "*",
+      "i": 4
+    },
+    {
+      "type": "type_end",
+      "vt_ms": 106166.667,
+      "frame": 6370,
+      "target": "#answer_key"
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 106966.667,
+      "frame": 6418,
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 108166.667,
+      "frame": 6490,
+      "scene_id": "scene_03_konfigurasi_soal_isian_singkat"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 108166.667,
+      "frame": 6490,
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 108166.667,
+      "frame": 6490,
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_04_konfigurasi_soal_essay_dan_rubrik.wav",
+      "duration_ms": 19298,
+      "at_ms": 108366.667
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 127666.667,
+      "frame": 7660,
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 127966.667,
+      "frame": 7678,
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik"
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 127966.667,
+      "frame": 7678,
+      "from": [
+        595.2,
+        475
+      ],
+      "to": [
+        720,
+        239
+      ],
+      "dist_px": 267,
+      "move_ms": 894,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 129050,
+      "frame": 7743,
+      "at": [
+        720,
+        239
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 129650,
+      "frame": 7779,
+      "from": [
+        720,
+        239
+      ],
+      "to": [
+        720,
+        239
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 129733.333,
+      "frame": 7784,
+      "at": [
+        720,
+        239
+      ],
+      "label": "#type",
+      "bbox": null
+    },
+    {
+      "type": "dropdown_open",
+      "vt_ms": 129866.667,
+      "frame": 7792,
+      "options": 6
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 130500,
+      "frame": 7830,
+      "from": [
+        720,
+        239
+      ],
+      "to": [
+        172,
+        544.296875
+      ],
+      "dist_px": 627.3,
+      "move_ms": 1085.8,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 131783.333,
+      "frame": 7907,
+      "at": [
+        172,
+        544.296875
+      ]
+    },
+    {
+      "type": "tap",
+      "vt_ms": 131866.667,
+      "frame": 7912,
+      "at": [
+        172,
+        544.296875
+      ],
+      "label": "option:essay",
+      "bbox": null
+    },
+    {
+      "type": "select_commit",
+      "vt_ms": 131866.667,
+      "frame": 7912,
+      "value": "essay"
+    },
+    {
+      "type": "dropdown_close",
+      "vt_ms": 132316.667,
+      "frame": 7939
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 132916.667,
+      "frame": 7975,
+      "from": [
+        172,
+        544.296875
+      ],
+      "to": [
+        720,
+        557
+      ],
+      "dist_px": 548.1,
+      "move_ms": 1054.9,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 134166.667,
+      "frame": 8050,
+      "at": [
+        720,
+        557
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 135266.667,
+      "frame": 8116,
+      "from": [
+        720,
+        557
+      ],
+      "to": [
+        854.609375,
+        619
+      ],
+      "dist_px": 148.2,
+      "move_ms": 769.1,
+      "settle_ms": 180
+    },
+    {
+      "type": "move_end",
+      "vt_ms": 136233.333,
+      "frame": 8174,
+      "at": [
+        854.609375,
+        619
+      ]
+    },
+    {
+      "type": "move_start",
+      "vt_ms": 136833.333,
+      "frame": 8210,
+      "from": [
+        854.609375,
+        619
+      ],
+      "to": [
+        854.609375,
+        619
+      ],
+      "dist_px": 0
+    },
+    {
+      "type": "tap",
+      "vt_ms": 136916.667,
+      "frame": 8215,
+      "at": [
+        854.609375,
+        619
+      ],
+      "label": "button:has-text(\"Batal\")",
+      "bbox": [
+        816.53125,
+        602,
+        76.15625,
+        34
+      ]
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 137650,
+      "frame": 8259,
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 138850,
+      "frame": 8331,
+      "scene_id": "scene_04_konfigurasi_soal_essay_dan_rubrik"
+    },
+    {
+      "type": "scene_start",
+      "vt_ms": 138850,
+      "frame": 8331,
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup"
+    },
+    {
+      "type": "narration_start",
+      "vt_ms": 138850,
+      "frame": 8331,
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_05_tinjau_daftar_soal_dan_penutup.wav",
+      "duration_ms": 23638,
+      "at_ms": 139050
+    },
+    {
+      "type": "narration_end",
+      "vt_ms": 162700,
+      "frame": 9762,
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup"
+    },
+    {
+      "type": "action_start",
+      "vt_ms": 163000,
+      "frame": 9780,
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup"
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 163000,
+      "frame": 9780,
+      "from_y": 0,
+      "to_y": 400,
+      "dur_ms": 820
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 163850,
+      "frame": 9831,
+      "y": 400
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 164850,
+      "frame": 9891,
+      "from_y": 400,
+      "to_y": 800,
+      "dur_ms": 820
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 165700,
+      "frame": 9942,
+      "y": 800
+    },
+    {
+      "type": "scroll_start",
+      "vt_ms": 166900,
+      "frame": 10014,
+      "from_y": 800,
+      "to_y": 0,
+      "dur_ms": 1150
+    },
+    {
+      "type": "scroll_end",
+      "vt_ms": 168066.667,
+      "frame": 10084,
+      "y": 0
+    },
+    {
+      "type": "action_end",
+      "vt_ms": 169066.667,
+      "frame": 10144,
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup"
+    },
+    {
+      "type": "scene_end",
+      "vt_ms": 170566.667,
+      "frame": 10234,
+      "scene_id": "scene_05_tinjau_daftar_soal_dan_penutup"
+    }
+  ]
+}

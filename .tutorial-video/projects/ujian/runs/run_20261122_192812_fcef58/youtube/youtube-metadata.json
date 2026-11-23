@@ -1,0 +1,45 @@
+{
+  "snippet": {
+    "title": "Tutorial Siswa ZEXAM-CBT: Panduan Lengkap Login & Ujian di HP",
+    "description": "Tutorial ZEXAM-CBT\n\nVideo panduan resmi cara penggunaan fitur pada aplikasi UJIAN. Ikuti langkah-langkah mudah di bawah ini untuk memahami alur penggunaan secara lengkap.\n\n🕒 DAFTAR ISI & TIMESTAMPS:\n00:00 - Login Siswa\n00:38 - Dashboard Dan Pilih Ujian\n01:06 - Masukkan Token Ujian\n01:35 - Konfirmasi Dan Mulai Soal\n01:58 - Antarmuka Cbt Dan Font\n02:27 - Menjawab Dan Navigasi\n02:51 - Daftar Soal Dan Penutup\n\n📌 RINGKASAN LANGKAH-LANGKAH:\n1. Login Siswa: Halo Rekan-Rekan Siswa Peserta Ujian, selamat datang di panduan aplikasi ZEXAM-CBT versi mobile.\n2. Dashboard Dan Pilih Ujian: Bagus, kita telah berhasil masuk ke dashboard siswa.\n3. Masukkan Token Ujian: Sekarang kita berada di halaman verifikasi token ujian.\n4. Konfirmasi Dan Mulai Soal: Sebelum lembar soal terbuka, sistem akan menampilkan ringkasan data peserta dan rincian ujian.\n5. Antarmuka Cbt Dan Font: Luar biasa, lembar ujian CBT kini telah aktif di ponsel Anda.\n6. Menjawab Dan Navigasi: Silakan baca pertanyaan dan stimulus dengan cermat.\n7. Daftar Soal Dan Penutup: Untuk melihat ringkasan seluruh nomor soal, ketuk tombol nomor soal di bagian tengah bawah.\n\n✨ FITUR UTAMA & KEUNGGULAN:\n- Panduan interaktif visual beresolusi tinggi (60 FPS).\n- Navigasi responsif dan ramah pengguna.\n- Terintegrasi langsung dengan database sistem.\n\n🌐 Akses Sistem: http://localhost:8000\nJangan lupa Like, Comment, dan Subscribe untuk mendapatkan panduan fitur terbaru lainnya!\n\n#UJIAN #TutorialAplikasi",
+    "tags": [
+      "ujian",
+      "tutorial ujian",
+      "panduan ujian",
+      "tutorial aplikasi",
+      "panduan sistem",
+      "tutorial",
+      "zexam-cbt",
+      "login siswa",
+      "dashboard dan pilih ujian",
+      "masukkan token ujian",
+      "konfirmasi dan mulai soal",
+      "antarmuka cbt dan font",
+      "menjawab dan navigasi",
+      "daftar soal dan penutup",
+      "tutorial siswa",
+      "siswa cbt",
+      "ujian online hp",
+      "zexam-cbt mobile",
+      "panduan siswa"
+    ],
+    "categoryId": "27",
+    "defaultLanguage": "id",
+    "defaultAudioLanguage": "id"
+  },
+  "status": {
+    "privacyStatus": "public",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "license": "youtube"
+  },
+  "_metadata": {
+    "project_id": "ujian",
+    "video_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_192812_fcef58\\final\\final-tutorial-mobile.mp4",
+    "duration_sec": 197.07,
+    "is_shorts": false,
+    "aspect_ratio": "9:16",
+    "thumbnail_path": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261122_192812_fcef58\\youtube\\thumbnail.png",
+    "generated_at": "2026-11-22T21:41:39.237716+00:00"
+  }
+}

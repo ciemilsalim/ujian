@@ -1,0 +1,296 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Karaoke,Segoe UI,28,&H00F9F5F1,&H000000FF,&H00000000,&HA0000000,-1,0,0,0,100,100,0,0,1,1.8,1.2,2,110,110,405,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.31,0:00:00.54,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Halo{\rKaraoke} Rekan-Rekan Siswa Peserta Ujian selamat datang
+Dialogue: 0,0:00:00.54,0:00:01.00,Karaoke,,0,0,0,,Halo {\fs40\b1\c&H8af0fe&}Rekan-Rekan{\rKaraoke} Siswa Peserta Ujian selamat datang
+Dialogue: 0,0:00:01.00,0:00:01.30,Karaoke,,0,0,0,,Halo Rekan-Rekan {\fs40\b1\c&H8af0fe&}Siswa{\rKaraoke} Peserta Ujian selamat datang
+Dialogue: 0,0:00:01.30,0:00:01.61,Karaoke,,0,0,0,,Halo Rekan-Rekan Siswa {\fs40\b1\c&H8af0fe&}Peserta{\rKaraoke} Ujian selamat datang
+Dialogue: 0,0:00:01.61,0:00:02.20,Karaoke,,0,0,0,,Halo Rekan-Rekan Siswa Peserta {\fs40\b1\c&H8af0fe&}Ujian{\rKaraoke} selamat datang
+Dialogue: 0,0:00:02.49,0:00:02.81,Karaoke,,0,0,0,,Halo Rekan-Rekan Siswa Peserta Ujian {\fs40\b1\c&H8af0fe&}selamat{\rKaraoke} datang
+Dialogue: 0,0:00:02.81,0:00:03.12,Karaoke,,0,0,0,,Halo Rekan-Rekan Siswa Peserta Ujian selamat {\fs40\b1\c&H8af0fe&}datang{\rKaraoke}
+Dialogue: 0,0:00:03.12,0:00:03.20,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}di{\rKaraoke} panduan aplikasi ZEXAM-CBT versi mobile Pada
+Dialogue: 0,0:00:03.20,0:00:03.54,Karaoke,,0,0,0,,di {\fs40\b1\c&H8af0fe&}panduan{\rKaraoke} aplikasi ZEXAM-CBT versi mobile Pada
+Dialogue: 0,0:00:03.54,0:00:04.02,Karaoke,,0,0,0,,di panduan {\fs40\b1\c&H8af0fe&}aplikasi{\rKaraoke} ZEXAM-CBT versi mobile Pada
+Dialogue: 0,0:00:04.02,0:00:04.79,Karaoke,,0,0,0,,di panduan aplikasi {\fs40\b1\c&H8af0fe&}ZEXAM-CBT{\rKaraoke} versi mobile Pada
+Dialogue: 0,0:00:04.79,0:00:05.09,Karaoke,,0,0,0,,di panduan aplikasi ZEXAM-CBT {\fs40\b1\c&H8af0fe&}versi{\rKaraoke} mobile Pada
+Dialogue: 0,0:00:05.09,0:00:05.68,Karaoke,,0,0,0,,di panduan aplikasi ZEXAM-CBT versi {\fs40\b1\c&H8af0fe&}mobile{\rKaraoke} Pada
+Dialogue: 0,0:00:06.92,0:00:07.14,Karaoke,,0,0,0,,di panduan aplikasi ZEXAM-CBT versi mobile {\fs40\b1\c&H8af0fe&}Pada{\rKaraoke}
+Dialogue: 0,0:00:07.14,0:00:07.40,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}video{\rKaraoke} kali ini kita bersama-sama akan mempelajari
+Dialogue: 0,0:00:07.40,0:00:07.57,Karaoke,,0,0,0,,video {\fs40\b1\c&H8af0fe&}kali{\rKaraoke} ini kita bersama-sama akan mempelajari
+Dialogue: 0,0:00:07.57,0:00:08.01,Karaoke,,0,0,0,,video kali {\fs40\b1\c&H8af0fe&}ini{\rKaraoke} kita bersama-sama akan mempelajari
+Dialogue: 0,0:00:08.32,0:00:08.55,Karaoke,,0,0,0,,video kali ini {\fs40\b1\c&H8af0fe&}kita{\rKaraoke} bersama-sama akan mempelajari
+Dialogue: 0,0:00:08.55,0:00:09.17,Karaoke,,0,0,0,,video kali ini kita {\fs40\b1\c&H8af0fe&}bersama-sama{\rKaraoke} akan mempelajari
+Dialogue: 0,0:00:09.17,0:00:09.36,Karaoke,,0,0,0,,video kali ini kita bersama-sama {\fs40\b1\c&H8af0fe&}akan{\rKaraoke} mempelajari
+Dialogue: 0,0:00:09.36,0:00:09.82,Karaoke,,0,0,0,,video kali ini kita bersama-sama akan {\fs40\b1\c&H8af0fe&}mempelajari{\rKaraoke}
+Dialogue: 0,0:00:09.82,0:00:10.10,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}alur{\rKaraoke} lengkap mengikuti ujian menggunakan ponsel atau
+Dialogue: 0,0:00:10.10,0:00:10.41,Karaoke,,0,0,0,,alur {\fs40\b1\c&H8af0fe&}lengkap{\rKaraoke} mengikuti ujian menggunakan ponsel atau
+Dialogue: 0,0:00:10.41,0:00:10.76,Karaoke,,0,0,0,,alur lengkap {\fs40\b1\c&H8af0fe&}mengikuti{\rKaraoke} ujian menggunakan ponsel atau
+Dialogue: 0,0:00:10.76,0:00:11.11,Karaoke,,0,0,0,,alur lengkap mengikuti {\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} menggunakan ponsel atau
+Dialogue: 0,0:00:11.11,0:00:11.56,Karaoke,,0,0,0,,alur lengkap mengikuti ujian {\fs40\b1\c&H8af0fe&}menggunakan{\rKaraoke} ponsel atau
+Dialogue: 0,0:00:11.56,0:00:11.99,Karaoke,,0,0,0,,alur lengkap mengikuti ujian menggunakan {\fs40\b1\c&H8af0fe&}ponsel{\rKaraoke} atau
+Dialogue: 0,0:00:11.99,0:00:12.29,Karaoke,,0,0,0,,alur lengkap mengikuti ujian menggunakan ponsel {\fs40\b1\c&H8af0fe&}atau{\rKaraoke}
+Dialogue: 0,0:00:12.29,0:00:12.99,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}smartphone{\rKaraoke} Langkah pertama buka halaman portal login
+Dialogue: 0,0:00:14.28,0:00:14.54,Karaoke,,0,0,0,,smartphone {\fs40\b1\c&H8af0fe&}Langkah{\rKaraoke} pertama buka halaman portal login
+Dialogue: 0,0:00:14.54,0:00:15.15,Karaoke,,0,0,0,,smartphone Langkah {\fs40\b1\c&H8af0fe&}pertama{\rKaraoke} buka halaman portal login
+Dialogue: 0,0:00:15.41,0:00:15.68,Karaoke,,0,0,0,,smartphone Langkah pertama {\fs40\b1\c&H8af0fe&}buka{\rKaraoke} halaman portal login
+Dialogue: 0,0:00:15.68,0:00:15.99,Karaoke,,0,0,0,,smartphone Langkah pertama buka {\fs40\b1\c&H8af0fe&}halaman{\rKaraoke} portal login
+Dialogue: 0,0:00:15.99,0:00:16.28,Karaoke,,0,0,0,,smartphone Langkah pertama buka halaman {\fs40\b1\c&H8af0fe&}portal{\rKaraoke} login
+Dialogue: 0,0:00:16.28,0:00:16.51,Karaoke,,0,0,0,,smartphone Langkah pertama buka halaman portal {\fs40\b1\c&H8af0fe&}login{\rKaraoke}
+Dialogue: 0,0:00:16.51,0:00:17.10,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}siswa{\rKaraoke} lalu masukkan nama pengguna atau NISN
+Dialogue: 0,0:00:17.39,0:00:17.61,Karaoke,,0,0,0,,siswa {\fs40\b1\c&H8af0fe&}lalu{\rKaraoke} masukkan nama pengguna atau NISN
+Dialogue: 0,0:00:17.61,0:00:18.00,Karaoke,,0,0,0,,siswa lalu {\fs40\b1\c&H8af0fe&}masukkan{\rKaraoke} nama pengguna atau NISN
+Dialogue: 0,0:00:18.00,0:00:18.16,Karaoke,,0,0,0,,siswa lalu masukkan {\fs40\b1\c&H8af0fe&}nama{\rKaraoke} pengguna atau NISN
+Dialogue: 0,0:00:18.16,0:00:18.58,Karaoke,,0,0,0,,siswa lalu masukkan nama {\fs40\b1\c&H8af0fe&}pengguna{\rKaraoke} atau NISN
+Dialogue: 0,0:00:18.58,0:00:18.80,Karaoke,,0,0,0,,siswa lalu masukkan nama pengguna {\fs40\b1\c&H8af0fe&}atau{\rKaraoke} NISN
+Dialogue: 0,0:00:18.80,0:00:19.11,Karaoke,,0,0,0,,siswa lalu masukkan nama pengguna atau {\fs40\b1\c&H8af0fe&}NISN{\rKaraoke}
+Dialogue: 0,0:00:19.11,0:00:19.41,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}serta{\rKaraoke} kata sandi akun Anda
+Dialogue: 0,0:00:19.41,0:00:19.63,Karaoke,,0,0,0,,serta {\fs40\b1\c&H8af0fe&}kata{\rKaraoke} sandi akun Anda
+Dialogue: 0,0:00:19.63,0:00:19.95,Karaoke,,0,0,0,,serta kata {\fs40\b1\c&H8af0fe&}sandi{\rKaraoke} akun Anda
+Dialogue: 0,0:00:19.95,0:00:20.19,Karaoke,,0,0,0,,serta kata sandi {\fs40\b1\c&H8af0fe&}akun{\rKaraoke} Anda
+Dialogue: 0,0:00:20.19,0:00:20.68,Karaoke,,0,0,0,,serta kata sandi akun {\fs40\b1\c&H8af0fe&}Anda{\rKaraoke}
+Dialogue: 0,0:00:32.03,0:00:32.68,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Bagus{\rKaraoke} kita telah berhasil masuk ke dashboard
+Dialogue: 0,0:00:32.94,0:00:33.17,Karaoke,,0,0,0,,Bagus {\fs40\b1\c&H8af0fe&}kita{\rKaraoke} telah berhasil masuk ke dashboard
+Dialogue: 0,0:00:33.17,0:00:33.37,Karaoke,,0,0,0,,Bagus kita {\fs40\b1\c&H8af0fe&}telah{\rKaraoke} berhasil masuk ke dashboard
+Dialogue: 0,0:00:33.37,0:00:33.74,Karaoke,,0,0,0,,Bagus kita telah {\fs40\b1\c&H8af0fe&}berhasil{\rKaraoke} masuk ke dashboard
+Dialogue: 0,0:00:33.74,0:00:34.04,Karaoke,,0,0,0,,Bagus kita telah berhasil {\fs40\b1\c&H8af0fe&}masuk{\rKaraoke} ke dashboard
+Dialogue: 0,0:00:34.04,0:00:34.11,Karaoke,,0,0,0,,Bagus kita telah berhasil masuk {\fs40\b1\c&H8af0fe&}ke{\rKaraoke} dashboard
+Dialogue: 0,0:00:34.11,0:00:34.57,Karaoke,,0,0,0,,Bagus kita telah berhasil masuk ke {\fs40\b1\c&H8af0fe&}dashboard{\rKaraoke}
+Dialogue: 0,0:00:34.57,0:00:35.14,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}siswa{\rKaraoke} Di sini Anda dapat melihat seluruh
+Dialogue: 0,0:00:36.38,0:00:36.52,Karaoke,,0,0,0,,siswa {\fs40\b1\c&H8af0fe&}Di{\rKaraoke} sini Anda dapat melihat seluruh
+Dialogue: 0,0:00:36.52,0:00:37.02,Karaoke,,0,0,0,,siswa Di {\fs40\b1\c&H8af0fe&}sini{\rKaraoke} Anda dapat melihat seluruh
+Dialogue: 0,0:00:37.33,0:00:37.58,Karaoke,,0,0,0,,siswa Di sini {\fs40\b1\c&H8af0fe&}Anda{\rKaraoke} dapat melihat seluruh
+Dialogue: 0,0:00:37.58,0:00:37.81,Karaoke,,0,0,0,,siswa Di sini Anda {\fs40\b1\c&H8af0fe&}dapat{\rKaraoke} melihat seluruh
+Dialogue: 0,0:00:37.81,0:00:38.09,Karaoke,,0,0,0,,siswa Di sini Anda dapat {\fs40\b1\c&H8af0fe&}melihat{\rKaraoke} seluruh
+Dialogue: 0,0:00:38.09,0:00:38.37,Karaoke,,0,0,0,,siswa Di sini Anda dapat melihat {\fs40\b1\c&H8af0fe&}seluruh{\rKaraoke}
+Dialogue: 0,0:00:38.37,0:00:38.66,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}daftar{\rKaraoke} ujian yang sedang aktif dan terjadwal
+Dialogue: 0,0:00:38.66,0:00:39.03,Karaoke,,0,0,0,,daftar {\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} yang sedang aktif dan terjadwal
+Dialogue: 0,0:00:39.03,0:00:39.16,Karaoke,,0,0,0,,daftar ujian {\fs40\b1\c&H8af0fe&}yang{\rKaraoke} sedang aktif dan terjadwal
+Dialogue: 0,0:00:39.16,0:00:39.39,Karaoke,,0,0,0,,daftar ujian yang {\fs40\b1\c&H8af0fe&}sedang{\rKaraoke} aktif dan terjadwal
+Dialogue: 0,0:00:39.39,0:00:39.77,Karaoke,,0,0,0,,daftar ujian yang sedang {\fs40\b1\c&H8af0fe&}aktif{\rKaraoke} dan terjadwal
+Dialogue: 0,0:00:39.77,0:00:39.93,Karaoke,,0,0,0,,daftar ujian yang sedang aktif {\fs40\b1\c&H8af0fe&}dan{\rKaraoke} terjadwal
+Dialogue: 0,0:00:39.93,0:00:40.39,Karaoke,,0,0,0,,daftar ujian yang sedang aktif dan {\fs40\b1\c&H8af0fe&}terjadwal{\rKaraoke}
+Dialogue: 0,0:00:40.39,0:00:40.54,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}hari{\rKaraoke} ini lengkap dengan nama sesi dan
+Dialogue: 0,0:00:40.54,0:00:40.97,Karaoke,,0,0,0,,hari {\fs40\b1\c&H8af0fe&}ini{\rKaraoke} lengkap dengan nama sesi dan
+Dialogue: 0,0:00:41.27,0:00:41.59,Karaoke,,0,0,0,,hari ini {\fs40\b1\c&H8af0fe&}lengkap{\rKaraoke} dengan nama sesi dan
+Dialogue: 0,0:00:41.59,0:00:41.81,Karaoke,,0,0,0,,hari ini lengkap {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} nama sesi dan
+Dialogue: 0,0:00:41.81,0:00:41.97,Karaoke,,0,0,0,,hari ini lengkap dengan {\fs40\b1\c&H8af0fe&}nama{\rKaraoke} sesi dan
+Dialogue: 0,0:00:41.97,0:00:42.36,Karaoke,,0,0,0,,hari ini lengkap dengan nama {\fs40\b1\c&H8af0fe&}sesi{\rKaraoke} dan
+Dialogue: 0,0:00:42.36,0:00:42.53,Karaoke,,0,0,0,,hari ini lengkap dengan nama sesi {\fs40\b1\c&H8af0fe&}dan{\rKaraoke}
+Dialogue: 0,0:00:42.53,0:00:42.83,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}durasi{\rKaraoke} pengerjaan Untuk memulai ketuk tombol Mulai
+Dialogue: 0,0:00:42.83,0:00:43.59,Karaoke,,0,0,0,,durasi {\fs40\b1\c&H8af0fe&}pengerjaan{\rKaraoke} Untuk memulai ketuk tombol Mulai
+Dialogue: 0,0:00:44.88,0:00:45.12,Karaoke,,0,0,0,,durasi pengerjaan {\fs40\b1\c&H8af0fe&}Untuk{\rKaraoke} memulai ketuk tombol Mulai
+Dialogue: 0,0:00:45.12,0:00:45.72,Karaoke,,0,0,0,,durasi pengerjaan Untuk {\fs40\b1\c&H8af0fe&}memulai{\rKaraoke} ketuk tombol Mulai
+Dialogue: 0,0:00:45.99,0:00:46.24,Karaoke,,0,0,0,,durasi pengerjaan Untuk memulai {\fs40\b1\c&H8af0fe&}ketuk{\rKaraoke} tombol Mulai
+Dialogue: 0,0:00:46.24,0:00:46.55,Karaoke,,0,0,0,,durasi pengerjaan Untuk memulai ketuk {\fs40\b1\c&H8af0fe&}tombol{\rKaraoke} Mulai
+Dialogue: 0,0:00:46.55,0:00:46.75,Karaoke,,0,0,0,,durasi pengerjaan Untuk memulai ketuk tombol {\fs40\b1\c&H8af0fe&}Mulai{\rKaraoke}
+Dialogue: 0,0:00:46.75,0:00:47.06,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Ujian{\rKaraoke} Sekarang pada kartu ujian yang tersedia
+Dialogue: 0,0:00:47.06,0:00:47.48,Karaoke,,0,0,0,,Ujian {\fs40\b1\c&H8af0fe&}Sekarang{\rKaraoke} pada kartu ujian yang tersedia
+Dialogue: 0,0:00:47.48,0:00:47.68,Karaoke,,0,0,0,,Ujian Sekarang {\fs40\b1\c&H8af0fe&}pada{\rKaraoke} kartu ujian yang tersedia
+Dialogue: 0,0:00:47.68,0:00:47.94,Karaoke,,0,0,0,,Ujian Sekarang pada {\fs40\b1\c&H8af0fe&}kartu{\rKaraoke} ujian yang tersedia
+Dialogue: 0,0:00:47.94,0:00:48.31,Karaoke,,0,0,0,,Ujian Sekarang pada kartu {\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} yang tersedia
+Dialogue: 0,0:00:48.31,0:00:48.44,Karaoke,,0,0,0,,Ujian Sekarang pada kartu ujian {\fs40\b1\c&H8af0fe&}yang{\rKaraoke} tersedia
+Dialogue: 0,0:00:48.44,0:00:49.07,Karaoke,,0,0,0,,Ujian Sekarang pada kartu ujian yang {\fs40\b1\c&H8af0fe&}tersedia{\rKaraoke}
+Dialogue: 0,0:00:55.63,0:00:56.07,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Sekarang{\rKaraoke} kita berada di halaman verifikasi token
+Dialogue: 0,0:00:56.07,0:00:56.28,Karaoke,,0,0,0,,Sekarang {\fs40\b1\c&H8af0fe&}kita{\rKaraoke} berada di halaman verifikasi token
+Dialogue: 0,0:00:56.28,0:00:56.61,Karaoke,,0,0,0,,Sekarang kita {\fs40\b1\c&H8af0fe&}berada{\rKaraoke} di halaman verifikasi token
+Dialogue: 0,0:00:56.61,0:00:56.70,Karaoke,,0,0,0,,Sekarang kita berada {\fs40\b1\c&H8af0fe&}di{\rKaraoke} halaman verifikasi token
+Dialogue: 0,0:00:56.70,0:00:57.04,Karaoke,,0,0,0,,Sekarang kita berada di {\fs40\b1\c&H8af0fe&}halaman{\rKaraoke} verifikasi token
+Dialogue: 0,0:00:57.04,0:00:57.66,Karaoke,,0,0,0,,Sekarang kita berada di halaman {\fs40\b1\c&H8af0fe&}verifikasi{\rKaraoke} token
+Dialogue: 0,0:00:57.66,0:00:57.92,Karaoke,,0,0,0,,Sekarang kita berada di halaman verifikasi {\fs40\b1\c&H8af0fe&}token{\rKaraoke}
+Dialogue: 0,0:00:57.92,0:00:58.53,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} Token ini terdiri dari enam karakter
+Dialogue: 0,0:00:59.75,0:00:59.99,Karaoke,,0,0,0,,ujian {\fs40\b1\c&H8af0fe&}Token{\rKaraoke} ini terdiri dari enam karakter
+Dialogue: 0,0:00:59.99,0:01:00.24,Karaoke,,0,0,0,,ujian Token {\fs40\b1\c&H8af0fe&}ini{\rKaraoke} terdiri dari enam karakter
+Dialogue: 0,0:01:00.24,0:01:00.62,Karaoke,,0,0,0,,ujian Token ini {\fs40\b1\c&H8af0fe&}terdiri{\rKaraoke} dari enam karakter
+Dialogue: 0,0:01:00.62,0:01:00.79,Karaoke,,0,0,0,,ujian Token ini terdiri {\fs40\b1\c&H8af0fe&}dari{\rKaraoke} enam karakter
+Dialogue: 0,0:01:00.79,0:01:01.04,Karaoke,,0,0,0,,ujian Token ini terdiri dari {\fs40\b1\c&H8af0fe&}enam{\rKaraoke} karakter
+Dialogue: 0,0:01:01.04,0:01:01.35,Karaoke,,0,0,0,,ujian Token ini terdiri dari enam {\fs40\b1\c&H8af0fe&}karakter{\rKaraoke}
+Dialogue: 0,0:01:01.35,0:01:01.60,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}huruf{\rKaraoke} kapital unik yang dirilis langsung oleh
+Dialogue: 0,0:01:01.60,0:01:01.93,Karaoke,,0,0,0,,huruf {\fs40\b1\c&H8af0fe&}kapital{\rKaraoke} unik yang dirilis langsung oleh
+Dialogue: 0,0:01:01.93,0:01:02.23,Karaoke,,0,0,0,,huruf kapital {\fs40\b1\c&H8af0fe&}unik{\rKaraoke} yang dirilis langsung oleh
+Dialogue: 0,0:01:02.23,0:01:02.36,Karaoke,,0,0,0,,huruf kapital unik {\fs40\b1\c&H8af0fe&}yang{\rKaraoke} dirilis langsung oleh
+Dialogue: 0,0:01:02.36,0:01:02.69,Karaoke,,0,0,0,,huruf kapital unik yang {\fs40\b1\c&H8af0fe&}dirilis{\rKaraoke} langsung oleh
+Dialogue: 0,0:01:02.69,0:01:03.08,Karaoke,,0,0,0,,huruf kapital unik yang dirilis {\fs40\b1\c&H8af0fe&}langsung{\rKaraoke} oleh
+Dialogue: 0,0:01:03.08,0:01:03.26,Karaoke,,0,0,0,,huruf kapital unik yang dirilis langsung {\fs40\b1\c&H8af0fe&}oleh{\rKaraoke}
+Dialogue: 0,0:01:03.26,0:01:03.59,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}pengawas{\rKaraoke} ujian di ruangan Anda Ketikkan token
+Dialogue: 0,0:01:03.59,0:01:03.99,Karaoke,,0,0,0,,pengawas {\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} di ruangan Anda Ketikkan token
+Dialogue: 0,0:01:03.99,0:01:04.08,Karaoke,,0,0,0,,pengawas ujian {\fs40\b1\c&H8af0fe&}di{\rKaraoke} ruangan Anda Ketikkan token
+Dialogue: 0,0:01:04.08,0:01:04.35,Karaoke,,0,0,0,,pengawas ujian di {\fs40\b1\c&H8af0fe&}ruangan{\rKaraoke} Anda Ketikkan token
+Dialogue: 0,0:01:04.35,0:01:04.85,Karaoke,,0,0,0,,pengawas ujian di ruangan {\fs40\b1\c&H8af0fe&}Anda{\rKaraoke} Ketikkan token
+Dialogue: 0,0:01:06.11,0:01:06.49,Karaoke,,0,0,0,,pengawas ujian di ruangan Anda {\fs40\b1\c&H8af0fe&}Ketikkan{\rKaraoke} token
+Dialogue: 0,0:01:06.49,0:01:06.70,Karaoke,,0,0,0,,pengawas ujian di ruangan Anda Ketikkan {\fs40\b1\c&H8af0fe&}token{\rKaraoke}
+Dialogue: 0,0:01:06.70,0:01:07.08,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}tersebut{\rKaraoke} dengan benar ke dalam kolom yang
+Dialogue: 0,0:01:07.08,0:01:07.30,Karaoke,,0,0,0,,tersebut {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} benar ke dalam kolom yang
+Dialogue: 0,0:01:07.30,0:01:07.56,Karaoke,,0,0,0,,tersebut dengan {\fs40\b1\c&H8af0fe&}benar{\rKaraoke} ke dalam kolom yang
+Dialogue: 0,0:01:07.56,0:01:07.68,Karaoke,,0,0,0,,tersebut dengan benar {\fs40\b1\c&H8af0fe&}ke{\rKaraoke} dalam kolom yang
+Dialogue: 0,0:01:07.68,0:01:07.91,Karaoke,,0,0,0,,tersebut dengan benar ke {\fs40\b1\c&H8af0fe&}dalam{\rKaraoke} kolom yang
+Dialogue: 0,0:01:07.91,0:01:08.16,Karaoke,,0,0,0,,tersebut dengan benar ke dalam {\fs40\b1\c&H8af0fe&}kolom{\rKaraoke} yang
+Dialogue: 0,0:01:08.16,0:01:08.28,Karaoke,,0,0,0,,tersebut dengan benar ke dalam kolom {\fs40\b1\c&H8af0fe&}yang{\rKaraoke}
+Dialogue: 0,0:01:08.28,0:01:08.93,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}tersedia{\rKaraoke} kemudian tekan tombol Mulai Ujian Sekarang
+Dialogue: 0,0:01:09.21,0:01:09.60,Karaoke,,0,0,0,,tersedia {\fs40\b1\c&H8af0fe&}kemudian{\rKaraoke} tekan tombol Mulai Ujian Sekarang
+Dialogue: 0,0:01:09.60,0:01:09.84,Karaoke,,0,0,0,,tersedia kemudian {\fs40\b1\c&H8af0fe&}tekan{\rKaraoke} tombol Mulai Ujian Sekarang
+Dialogue: 0,0:01:09.84,0:01:10.20,Karaoke,,0,0,0,,tersedia kemudian tekan {\fs40\b1\c&H8af0fe&}tombol{\rKaraoke} Mulai Ujian Sekarang
+Dialogue: 0,0:01:10.20,0:01:10.44,Karaoke,,0,0,0,,tersedia kemudian tekan tombol {\fs40\b1\c&H8af0fe&}Mulai{\rKaraoke} Ujian Sekarang
+Dialogue: 0,0:01:10.44,0:01:10.78,Karaoke,,0,0,0,,tersedia kemudian tekan tombol Mulai {\fs40\b1\c&H8af0fe&}Ujian{\rKaraoke} Sekarang
+Dialogue: 0,0:01:10.78,0:01:11.38,Karaoke,,0,0,0,,tersedia kemudian tekan tombol Mulai Ujian {\fs40\b1\c&H8af0fe&}Sekarang{\rKaraoke}
+Dialogue: 0,0:01:19.14,0:01:19.48,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Sebelum{\rKaraoke} lembar soal terbuka sistem akan menampilkan
+Dialogue: 0,0:01:19.48,0:01:19.77,Karaoke,,0,0,0,,Sebelum {\fs40\b1\c&H8af0fe&}lembar{\rKaraoke} soal terbuka sistem akan menampilkan
+Dialogue: 0,0:01:19.77,0:01:20.02,Karaoke,,0,0,0,,Sebelum lembar {\fs40\b1\c&H8af0fe&}soal{\rKaraoke} terbuka sistem akan menampilkan
+Dialogue: 0,0:01:20.02,0:01:20.66,Karaoke,,0,0,0,,Sebelum lembar soal {\fs40\b1\c&H8af0fe&}terbuka{\rKaraoke} sistem akan menampilkan
+Dialogue: 0,0:01:20.96,0:01:21.33,Karaoke,,0,0,0,,Sebelum lembar soal terbuka {\fs40\b1\c&H8af0fe&}sistem{\rKaraoke} akan menampilkan
+Dialogue: 0,0:01:21.33,0:01:21.52,Karaoke,,0,0,0,,Sebelum lembar soal terbuka sistem {\fs40\b1\c&H8af0fe&}akan{\rKaraoke} menampilkan
+Dialogue: 0,0:01:21.52,0:01:22.03,Karaoke,,0,0,0,,Sebelum lembar soal terbuka sistem akan {\fs40\b1\c&H8af0fe&}menampilkan{\rKaraoke}
+Dialogue: 0,0:01:22.03,0:01:22.43,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}ringkasan{\rKaraoke} data peserta dan rincian ujian Pastikan
+Dialogue: 0,0:01:22.43,0:01:22.62,Karaoke,,0,0,0,,ringkasan {\fs40\b1\c&H8af0fe&}data{\rKaraoke} peserta dan rincian ujian Pastikan
+Dialogue: 0,0:01:22.62,0:01:23.10,Karaoke,,0,0,0,,ringkasan data {\fs40\b1\c&H8af0fe&}peserta{\rKaraoke} dan rincian ujian Pastikan
+Dialogue: 0,0:01:23.10,0:01:23.31,Karaoke,,0,0,0,,ringkasan data peserta {\fs40\b1\c&H8af0fe&}dan{\rKaraoke} rincian ujian Pastikan
+Dialogue: 0,0:01:23.31,0:01:23.66,Karaoke,,0,0,0,,ringkasan data peserta dan {\fs40\b1\c&H8af0fe&}rincian{\rKaraoke} ujian Pastikan
+Dialogue: 0,0:01:23.66,0:01:24.26,Karaoke,,0,0,0,,ringkasan data peserta dan rincian {\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} Pastikan
+Dialogue: 0,0:01:25.50,0:01:25.94,Karaoke,,0,0,0,,ringkasan data peserta dan rincian ujian {\fs40\b1\c&H8af0fe&}Pastikan{\rKaraoke}
+Dialogue: 0,0:01:25.94,0:01:26.12,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}nama{\rKaraoke} lengkap mata pelajaran dan alokasi waktu
+Dialogue: 0,0:01:26.12,0:01:26.66,Karaoke,,0,0,0,,nama {\fs40\b1\c&H8af0fe&}lengkap{\rKaraoke} mata pelajaran dan alokasi waktu
+Dialogue: 0,0:01:26.90,0:01:27.14,Karaoke,,0,0,0,,nama lengkap {\fs40\b1\c&H8af0fe&}mata{\rKaraoke} pelajaran dan alokasi waktu
+Dialogue: 0,0:01:27.14,0:01:27.82,Karaoke,,0,0,0,,nama lengkap mata {\fs40\b1\c&H8af0fe&}pelajaran{\rKaraoke} dan alokasi waktu
+Dialogue: 0,0:01:28.14,0:01:28.36,Karaoke,,0,0,0,,nama lengkap mata pelajaran {\fs40\b1\c&H8af0fe&}dan{\rKaraoke} alokasi waktu
+Dialogue: 0,0:01:28.36,0:01:28.76,Karaoke,,0,0,0,,nama lengkap mata pelajaran dan {\fs40\b1\c&H8af0fe&}alokasi{\rKaraoke} waktu
+Dialogue: 0,0:01:28.76,0:01:29.10,Karaoke,,0,0,0,,nama lengkap mata pelajaran dan alokasi {\fs40\b1\c&H8af0fe&}waktu{\rKaraoke}
+Dialogue: 0,0:01:29.10,0:01:29.34,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}sudah{\rKaraoke} sesuai dengan data Anda Jika sudah
+Dialogue: 0,0:01:29.34,0:01:29.68,Karaoke,,0,0,0,,sudah {\fs40\b1\c&H8af0fe&}sesuai{\rKaraoke} dengan data Anda Jika sudah
+Dialogue: 0,0:01:29.68,0:01:29.94,Karaoke,,0,0,0,,sudah sesuai {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} data Anda Jika sudah
+Dialogue: 0,0:01:29.94,0:01:30.15,Karaoke,,0,0,0,,sudah sesuai dengan {\fs40\b1\c&H8af0fe&}data{\rKaraoke} Anda Jika sudah
+Dialogue: 0,0:01:30.15,0:01:30.64,Karaoke,,0,0,0,,sudah sesuai dengan data {\fs40\b1\c&H8af0fe&}Anda{\rKaraoke} Jika sudah
+Dialogue: 0,0:01:31.88,0:01:32.17,Karaoke,,0,0,0,,sudah sesuai dengan data Anda {\fs40\b1\c&H8af0fe&}Jika{\rKaraoke} sudah
+Dialogue: 0,0:01:32.17,0:01:32.39,Karaoke,,0,0,0,,sudah sesuai dengan data Anda Jika {\fs40\b1\c&H8af0fe&}sudah{\rKaraoke}
+Dialogue: 0,0:01:32.39,0:01:32.86,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}siap{\rKaraoke} tekan tombol Mulai Kerjakan Soal
+Dialogue: 0,0:01:33.11,0:01:33.38,Karaoke,,0,0,0,,siap {\fs40\b1\c&H8af0fe&}tekan{\rKaraoke} tombol Mulai Kerjakan Soal
+Dialogue: 0,0:01:33.38,0:01:33.69,Karaoke,,0,0,0,,siap tekan {\fs40\b1\c&H8af0fe&}tombol{\rKaraoke} Mulai Kerjakan Soal
+Dialogue: 0,0:01:33.69,0:01:33.91,Karaoke,,0,0,0,,siap tekan tombol {\fs40\b1\c&H8af0fe&}Mulai{\rKaraoke} Kerjakan Soal
+Dialogue: 0,0:01:33.91,0:01:34.34,Karaoke,,0,0,0,,siap tekan tombol Mulai {\fs40\b1\c&H8af0fe&}Kerjakan{\rKaraoke} Soal
+Dialogue: 0,0:01:34.34,0:01:34.84,Karaoke,,0,0,0,,siap tekan tombol Mulai Kerjakan {\fs40\b1\c&H8af0fe&}Soal{\rKaraoke}
+Dialogue: 0,0:01:41.52,0:01:41.75,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Luar{\rKaraoke} biasa lembar ujian CBT kini telah
+Dialogue: 0,0:01:41.75,0:01:42.35,Karaoke,,0,0,0,,Luar {\fs40\b1\c&H8af0fe&}biasa{\rKaraoke} lembar ujian CBT kini telah
+Dialogue: 0,0:01:42.64,0:01:42.92,Karaoke,,0,0,0,,Luar biasa {\fs40\b1\c&H8af0fe&}lembar{\rKaraoke} ujian CBT kini telah
+Dialogue: 0,0:01:42.92,0:01:43.23,Karaoke,,0,0,0,,Luar biasa lembar {\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} CBT kini telah
+Dialogue: 0,0:01:43.23,0:01:43.55,Karaoke,,0,0,0,,Luar biasa lembar ujian {\fs40\b1\c&H8af0fe&}CBT{\rKaraoke} kini telah
+Dialogue: 0,0:01:43.55,0:01:43.83,Karaoke,,0,0,0,,Luar biasa lembar ujian CBT {\fs40\b1\c&H8af0fe&}kini{\rKaraoke} telah
+Dialogue: 0,0:01:43.83,0:01:44.03,Karaoke,,0,0,0,,Luar biasa lembar ujian CBT kini {\fs40\b1\c&H8af0fe&}telah{\rKaraoke}
+Dialogue: 0,0:01:44.03,0:01:44.38,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}aktif{\rKaraoke} di ponsel Anda Di bar bagian
+Dialogue: 0,0:01:44.38,0:01:44.47,Karaoke,,0,0,0,,aktif {\fs40\b1\c&H8af0fe&}di{\rKaraoke} ponsel Anda Di bar bagian
+Dialogue: 0,0:01:44.47,0:01:44.83,Karaoke,,0,0,0,,aktif di {\fs40\b1\c&H8af0fe&}ponsel{\rKaraoke} Anda Di bar bagian
+Dialogue: 0,0:01:44.83,0:01:45.33,Karaoke,,0,0,0,,aktif di ponsel {\fs40\b1\c&H8af0fe&}Anda{\rKaraoke} Di bar bagian
+Dialogue: 0,0:01:46.56,0:01:46.70,Karaoke,,0,0,0,,aktif di ponsel Anda {\fs40\b1\c&H8af0fe&}Di{\rKaraoke} bar bagian
+Dialogue: 0,0:01:46.70,0:01:46.84,Karaoke,,0,0,0,,aktif di ponsel Anda Di {\fs40\b1\c&H8af0fe&}bar{\rKaraoke} bagian
+Dialogue: 0,0:01:46.84,0:01:47.16,Karaoke,,0,0,0,,aktif di ponsel Anda Di bar {\fs40\b1\c&H8af0fe&}bagian{\rKaraoke}
+Dialogue: 0,0:01:47.16,0:01:47.70,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}atas{\rKaraoke} perhatikan pengatur waktu hitung mundur agar
+Dialogue: 0,0:01:47.99,0:01:48.49,Karaoke,,0,0,0,,atas {\fs40\b1\c&H8af0fe&}perhatikan{\rKaraoke} pengatur waktu hitung mundur agar
+Dialogue: 0,0:01:48.49,0:01:48.81,Karaoke,,0,0,0,,atas perhatikan {\fs40\b1\c&H8af0fe&}pengatur{\rKaraoke} waktu hitung mundur agar
+Dialogue: 0,0:01:48.81,0:01:49.07,Karaoke,,0,0,0,,atas perhatikan pengatur {\fs40\b1\c&H8af0fe&}waktu{\rKaraoke} hitung mundur agar
+Dialogue: 0,0:01:49.07,0:01:49.31,Karaoke,,0,0,0,,atas perhatikan pengatur waktu {\fs40\b1\c&H8af0fe&}hitung{\rKaraoke} mundur agar
+Dialogue: 0,0:01:49.31,0:01:49.65,Karaoke,,0,0,0,,atas perhatikan pengatur waktu hitung {\fs40\b1\c&H8af0fe&}mundur{\rKaraoke} agar
+Dialogue: 0,0:01:49.65,0:01:49.95,Karaoke,,0,0,0,,atas perhatikan pengatur waktu hitung mundur {\fs40\b1\c&H8af0fe&}agar{\rKaraoke}
+Dialogue: 0,0:01:49.95,0:01:50.29,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Anda{\rKaraoke} dapat mengalokasikan waktu dengan tepat Untuk
+Dialogue: 0,0:01:50.29,0:01:50.59,Karaoke,,0,0,0,,Anda {\fs40\b1\c&H8af0fe&}dapat{\rKaraoke} mengalokasikan waktu dengan tepat Untuk
+Dialogue: 0,0:01:50.59,0:01:51.20,Karaoke,,0,0,0,,Anda dapat {\fs40\b1\c&H8af0fe&}mengalokasikan{\rKaraoke} waktu dengan tepat Untuk
+Dialogue: 0,0:01:51.20,0:01:51.50,Karaoke,,0,0,0,,Anda dapat mengalokasikan {\fs40\b1\c&H8af0fe&}waktu{\rKaraoke} dengan tepat Untuk
+Dialogue: 0,0:01:51.50,0:01:51.74,Karaoke,,0,0,0,,Anda dapat mengalokasikan waktu {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} tepat Untuk
+Dialogue: 0,0:01:51.74,0:01:52.12,Karaoke,,0,0,0,,Anda dapat mengalokasikan waktu dengan {\fs40\b1\c&H8af0fe&}tepat{\rKaraoke} Untuk
+Dialogue: 0,0:01:53.41,0:01:53.65,Karaoke,,0,0,0,,Anda dapat mengalokasikan waktu dengan tepat {\fs40\b1\c&H8af0fe&}Untuk{\rKaraoke}
+Dialogue: 0,0:01:53.65,0:01:54.05,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}kenyamanan{\rKaraoke} membaca di layar HP Anda dapat
+Dialogue: 0,0:01:54.05,0:01:54.42,Karaoke,,0,0,0,,kenyamanan {\fs40\b1\c&H8af0fe&}membaca{\rKaraoke} di layar HP Anda dapat
+Dialogue: 0,0:01:54.42,0:01:54.51,Karaoke,,0,0,0,,kenyamanan membaca {\fs40\b1\c&H8af0fe&}di{\rKaraoke} layar HP Anda dapat
+Dialogue: 0,0:01:54.51,0:01:54.75,Karaoke,,0,0,0,,kenyamanan membaca di {\fs40\b1\c&H8af0fe&}layar{\rKaraoke} HP Anda dapat
+Dialogue: 0,0:01:54.75,0:01:55.28,Karaoke,,0,0,0,,kenyamanan membaca di layar {\fs40\b1\c&H8af0fe&}HP{\rKaraoke} Anda dapat
+Dialogue: 0,0:01:55.63,0:01:55.88,Karaoke,,0,0,0,,kenyamanan membaca di layar HP {\fs40\b1\c&H8af0fe&}Anda{\rKaraoke} dapat
+Dialogue: 0,0:01:55.88,0:01:56.13,Karaoke,,0,0,0,,kenyamanan membaca di layar HP Anda {\fs40\b1\c&H8af0fe&}dapat{\rKaraoke}
+Dialogue: 0,0:01:56.13,0:01:56.42,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}mengubah{\rKaraoke} ukuran teks dengan menekan tombol ukuran
+Dialogue: 0,0:01:56.42,0:01:56.72,Karaoke,,0,0,0,,mengubah {\fs40\b1\c&H8af0fe&}ukuran{\rKaraoke} teks dengan menekan tombol ukuran
+Dialogue: 0,0:01:56.72,0:01:57.01,Karaoke,,0,0,0,,mengubah ukuran {\fs40\b1\c&H8af0fe&}teks{\rKaraoke} dengan menekan tombol ukuran
+Dialogue: 0,0:01:57.01,0:01:57.22,Karaoke,,0,0,0,,mengubah ukuran teks {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} menekan tombol ukuran
+Dialogue: 0,0:01:57.22,0:01:57.55,Karaoke,,0,0,0,,mengubah ukuran teks dengan {\fs40\b1\c&H8af0fe&}menekan{\rKaraoke} tombol ukuran
+Dialogue: 0,0:01:57.55,0:01:57.83,Karaoke,,0,0,0,,mengubah ukuran teks dengan menekan {\fs40\b1\c&H8af0fe&}tombol{\rKaraoke} ukuran
+Dialogue: 0,0:01:57.83,0:01:58.13,Karaoke,,0,0,0,,mengubah ukuran teks dengan menekan tombol {\fs40\b1\c&H8af0fe&}ukuran{\rKaraoke}
+Dialogue: 0,0:01:58.13,0:01:58.46,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}font{\rKaraoke} menjadi sedang atau besar
+Dialogue: 0,0:01:58.46,0:01:58.78,Karaoke,,0,0,0,,font {\fs40\b1\c&H8af0fe&}menjadi{\rKaraoke} sedang atau besar
+Dialogue: 0,0:01:58.78,0:01:59.10,Karaoke,,0,0,0,,font menjadi {\fs40\b1\c&H8af0fe&}sedang{\rKaraoke} atau besar
+Dialogue: 0,0:01:59.10,0:01:59.31,Karaoke,,0,0,0,,font menjadi sedang {\fs40\b1\c&H8af0fe&}atau{\rKaraoke} besar
+Dialogue: 0,0:01:59.31,0:01:59.82,Karaoke,,0,0,0,,font menjadi sedang atau {\fs40\b1\c&H8af0fe&}besar{\rKaraoke}
+Dialogue: 0,0:02:08.77,0:02:09.23,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Silakan{\rKaraoke} baca pertanyaan dan stimulus dengan cermat
+Dialogue: 0,0:02:09.23,0:02:09.44,Karaoke,,0,0,0,,Silakan {\fs40\b1\c&H8af0fe&}baca{\rKaraoke} pertanyaan dan stimulus dengan cermat
+Dialogue: 0,0:02:09.44,0:02:10.04,Karaoke,,0,0,0,,Silakan baca {\fs40\b1\c&H8af0fe&}pertanyaan{\rKaraoke} dan stimulus dengan cermat
+Dialogue: 0,0:02:10.04,0:02:10.19,Karaoke,,0,0,0,,Silakan baca pertanyaan {\fs40\b1\c&H8af0fe&}dan{\rKaraoke} stimulus dengan cermat
+Dialogue: 0,0:02:10.19,0:02:10.70,Karaoke,,0,0,0,,Silakan baca pertanyaan dan {\fs40\b1\c&H8af0fe&}stimulus{\rKaraoke} dengan cermat
+Dialogue: 0,0:02:10.70,0:02:10.93,Karaoke,,0,0,0,,Silakan baca pertanyaan dan stimulus {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} cermat
+Dialogue: 0,0:02:10.93,0:02:11.44,Karaoke,,0,0,0,,Silakan baca pertanyaan dan stimulus dengan {\fs40\b1\c&H8af0fe&}cermat{\rKaraoke}
+Dialogue: 0,0:02:12.68,0:02:12.94,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Untuk{\rKaraoke} memilih jawaban cukup ketuk salah satu
+Dialogue: 0,0:02:12.94,0:02:13.23,Karaoke,,0,0,0,,Untuk {\fs40\b1\c&H8af0fe&}memilih{\rKaraoke} jawaban cukup ketuk salah satu
+Dialogue: 0,0:02:13.23,0:02:13.90,Karaoke,,0,0,0,,Untuk memilih {\fs40\b1\c&H8af0fe&}jawaban{\rKaraoke} cukup ketuk salah satu
+Dialogue: 0,0:02:14.20,0:02:14.47,Karaoke,,0,0,0,,Untuk memilih jawaban {\fs40\b1\c&H8af0fe&}cukup{\rKaraoke} ketuk salah satu
+Dialogue: 0,0:02:14.47,0:02:14.70,Karaoke,,0,0,0,,Untuk memilih jawaban cukup {\fs40\b1\c&H8af0fe&}ketuk{\rKaraoke} salah satu
+Dialogue: 0,0:02:14.70,0:02:14.90,Karaoke,,0,0,0,,Untuk memilih jawaban cukup ketuk {\fs40\b1\c&H8af0fe&}salah{\rKaraoke} satu
+Dialogue: 0,0:02:14.90,0:02:15.10,Karaoke,,0,0,0,,Untuk memilih jawaban cukup ketuk salah {\fs40\b1\c&H8af0fe&}satu{\rKaraoke}
+Dialogue: 0,0:02:15.10,0:02:15.37,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}opsi{\rKaraoke} yang tersedia Setelah selesai menjawab Anda
+Dialogue: 0,0:02:15.37,0:02:15.48,Karaoke,,0,0,0,,opsi {\fs40\b1\c&H8af0fe&}yang{\rKaraoke} tersedia Setelah selesai menjawab Anda
+Dialogue: 0,0:02:15.48,0:02:16.12,Karaoke,,0,0,0,,opsi yang {\fs40\b1\c&H8af0fe&}tersedia{\rKaraoke} Setelah selesai menjawab Anda
+Dialogue: 0,0:02:17.38,0:02:17.71,Karaoke,,0,0,0,,opsi yang tersedia {\fs40\b1\c&H8af0fe&}Setelah{\rKaraoke} selesai menjawab Anda
+Dialogue: 0,0:02:17.71,0:02:18.05,Karaoke,,0,0,0,,opsi yang tersedia Setelah {\fs40\b1\c&H8af0fe&}selesai{\rKaraoke} menjawab Anda
+Dialogue: 0,0:02:18.05,0:02:18.70,Karaoke,,0,0,0,,opsi yang tersedia Setelah selesai {\fs40\b1\c&H8af0fe&}menjawab{\rKaraoke} Anda
+Dialogue: 0,0:02:19.04,0:02:19.28,Karaoke,,0,0,0,,opsi yang tersedia Setelah selesai menjawab {\fs40\b1\c&H8af0fe&}Anda{\rKaraoke}
+Dialogue: 0,0:02:19.28,0:02:19.49,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}dapat{\rKaraoke} berpindah ke nomor berikutnya dengan mengetuk
+Dialogue: 0,0:02:19.49,0:02:19.89,Karaoke,,0,0,0,,dapat {\fs40\b1\c&H8af0fe&}berpindah{\rKaraoke} ke nomor berikutnya dengan mengetuk
+Dialogue: 0,0:02:19.89,0:02:19.96,Karaoke,,0,0,0,,dapat berpindah {\fs40\b1\c&H8af0fe&}ke{\rKaraoke} nomor berikutnya dengan mengetuk
+Dialogue: 0,0:02:19.96,0:02:20.18,Karaoke,,0,0,0,,dapat berpindah ke {\fs40\b1\c&H8af0fe&}nomor{\rKaraoke} berikutnya dengan mengetuk
+Dialogue: 0,0:02:20.18,0:02:20.66,Karaoke,,0,0,0,,dapat berpindah ke nomor {\fs40\b1\c&H8af0fe&}berikutnya{\rKaraoke} dengan mengetuk
+Dialogue: 0,0:02:20.66,0:02:20.90,Karaoke,,0,0,0,,dapat berpindah ke nomor berikutnya {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} mengetuk
+Dialogue: 0,0:02:20.90,0:02:21.20,Karaoke,,0,0,0,,dapat berpindah ke nomor berikutnya dengan {\fs40\b1\c&H8af0fe&}mengetuk{\rKaraoke}
+Dialogue: 0,0:02:21.20,0:02:21.48,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}tombol{\rKaraoke} panah di bilah navigasi bawah
+Dialogue: 0,0:02:21.48,0:02:21.89,Karaoke,,0,0,0,,tombol {\fs40\b1\c&H8af0fe&}panah{\rKaraoke} di bilah navigasi bawah
+Dialogue: 0,0:02:21.89,0:02:22.00,Karaoke,,0,0,0,,tombol panah {\fs40\b1\c&H8af0fe&}di{\rKaraoke} bilah navigasi bawah
+Dialogue: 0,0:02:22.00,0:02:22.24,Karaoke,,0,0,0,,tombol panah di {\fs40\b1\c&H8af0fe&}bilah{\rKaraoke} navigasi bawah
+Dialogue: 0,0:02:22.24,0:02:22.69,Karaoke,,0,0,0,,tombol panah di bilah {\fs40\b1\c&H8af0fe&}navigasi{\rKaraoke} bawah
+Dialogue: 0,0:02:22.69,0:02:23.20,Karaoke,,0,0,0,,tombol panah di bilah navigasi {\fs40\b1\c&H8af0fe&}bawah{\rKaraoke}
+Dialogue: 0,0:02:32.14,0:02:32.41,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Untuk{\rKaraoke} melihat ringkasan seluruh nomor soal ketuk
+Dialogue: 0,0:02:32.41,0:02:32.70,Karaoke,,0,0,0,,Untuk {\fs40\b1\c&H8af0fe&}melihat{\rKaraoke} ringkasan seluruh nomor soal ketuk
+Dialogue: 0,0:02:32.70,0:02:33.11,Karaoke,,0,0,0,,Untuk melihat {\fs40\b1\c&H8af0fe&}ringkasan{\rKaraoke} seluruh nomor soal ketuk
+Dialogue: 0,0:02:33.11,0:02:33.42,Karaoke,,0,0,0,,Untuk melihat ringkasan {\fs40\b1\c&H8af0fe&}seluruh{\rKaraoke} nomor soal ketuk
+Dialogue: 0,0:02:33.42,0:02:33.62,Karaoke,,0,0,0,,Untuk melihat ringkasan seluruh {\fs40\b1\c&H8af0fe&}nomor{\rKaraoke} soal ketuk
+Dialogue: 0,0:02:33.62,0:02:34.14,Karaoke,,0,0,0,,Untuk melihat ringkasan seluruh nomor {\fs40\b1\c&H8af0fe&}soal{\rKaraoke} ketuk
+Dialogue: 0,0:02:34.43,0:02:34.67,Karaoke,,0,0,0,,Untuk melihat ringkasan seluruh nomor soal {\fs40\b1\c&H8af0fe&}ketuk{\rKaraoke}
+Dialogue: 0,0:02:34.67,0:02:34.93,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}tombol{\rKaraoke} nomor soal di bagian tengah bawah
+Dialogue: 0,0:02:34.93,0:02:35.21,Karaoke,,0,0,0,,tombol {\fs40\b1\c&H8af0fe&}nomor{\rKaraoke} soal di bagian tengah bawah
+Dialogue: 0,0:02:35.21,0:02:35.52,Karaoke,,0,0,0,,tombol nomor {\fs40\b1\c&H8af0fe&}soal{\rKaraoke} di bagian tengah bawah
+Dialogue: 0,0:02:35.52,0:02:35.61,Karaoke,,0,0,0,,tombol nomor soal {\fs40\b1\c&H8af0fe&}di{\rKaraoke} bagian tengah bawah
+Dialogue: 0,0:02:35.61,0:02:35.97,Karaoke,,0,0,0,,tombol nomor soal di {\fs40\b1\c&H8af0fe&}bagian{\rKaraoke} tengah bawah
+Dialogue: 0,0:02:35.97,0:02:36.20,Karaoke,,0,0,0,,tombol nomor soal di bagian {\fs40\b1\c&H8af0fe&}tengah{\rKaraoke} bawah
+Dialogue: 0,0:02:36.20,0:02:36.72,Karaoke,,0,0,0,,tombol nomor soal di bagian tengah {\fs40\b1\c&H8af0fe&}bawah{\rKaraoke}
+Dialogue: 0,0:02:37.96,0:02:38.26,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}Panel{\rKaraoke} drawer akan menampilkan status warna soal
+Dialogue: 0,0:02:38.26,0:02:38.64,Karaoke,,0,0,0,,Panel {\fs40\b1\c&H8af0fe&}drawer{\rKaraoke} akan menampilkan status warna soal
+Dialogue: 0,0:02:38.64,0:02:38.84,Karaoke,,0,0,0,,Panel drawer {\fs40\b1\c&H8af0fe&}akan{\rKaraoke} menampilkan status warna soal
+Dialogue: 0,0:02:38.84,0:02:39.36,Karaoke,,0,0,0,,Panel drawer akan {\fs40\b1\c&H8af0fe&}menampilkan{\rKaraoke} status warna soal
+Dialogue: 0,0:02:39.36,0:02:39.73,Karaoke,,0,0,0,,Panel drawer akan menampilkan {\fs40\b1\c&H8af0fe&}status{\rKaraoke} warna soal
+Dialogue: 0,0:02:39.73,0:02:40.04,Karaoke,,0,0,0,,Panel drawer akan menampilkan status {\fs40\b1\c&H8af0fe&}warna{\rKaraoke} soal
+Dialogue: 0,0:02:40.04,0:02:40.39,Karaoke,,0,0,0,,Panel drawer akan menampilkan status warna {\fs40\b1\c&H8af0fe&}soal{\rKaraoke}
+Dialogue: 0,0:02:40.39,0:02:40.53,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}yang{\rKaraoke} sudah terisi Kerjakanlah ujian dengan jujur
+Dialogue: 0,0:02:40.53,0:02:40.79,Karaoke,,0,0,0,,yang {\fs40\b1\c&H8af0fe&}sudah{\rKaraoke} terisi Kerjakanlah ujian dengan jujur
+Dialogue: 0,0:02:40.79,0:02:41.36,Karaoke,,0,0,0,,yang sudah {\fs40\b1\c&H8af0fe&}terisi{\rKaraoke} Kerjakanlah ujian dengan jujur
+Dialogue: 0,0:02:42.60,0:02:43.18,Karaoke,,0,0,0,,yang sudah terisi {\fs40\b1\c&H8af0fe&}Kerjakanlah{\rKaraoke} ujian dengan jujur
+Dialogue: 0,0:02:43.18,0:02:43.54,Karaoke,,0,0,0,,yang sudah terisi Kerjakanlah {\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} dengan jujur
+Dialogue: 0,0:02:43.54,0:02:43.78,Karaoke,,0,0,0,,yang sudah terisi Kerjakanlah ujian {\fs40\b1\c&H8af0fe&}dengan{\rKaraoke} jujur
+Dialogue: 0,0:02:43.78,0:02:44.30,Karaoke,,0,0,0,,yang sudah terisi Kerjakanlah ujian dengan {\fs40\b1\c&H8af0fe&}jujur{\rKaraoke}
+Dialogue: 0,0:02:44.55,0:02:45.15,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}teliti{\rKaraoke} dan penuh percaya diri Selamat menempuh
+Dialogue: 0,0:02:45.40,0:02:45.64,Karaoke,,0,0,0,,teliti {\fs40\b1\c&H8af0fe&}dan{\rKaraoke} penuh percaya diri Selamat menempuh
+Dialogue: 0,0:02:45.64,0:02:45.86,Karaoke,,0,0,0,,teliti dan {\fs40\b1\c&H8af0fe&}penuh{\rKaraoke} percaya diri Selamat menempuh
+Dialogue: 0,0:02:45.86,0:02:46.25,Karaoke,,0,0,0,,teliti dan penuh {\fs40\b1\c&H8af0fe&}percaya{\rKaraoke} diri Selamat menempuh
+Dialogue: 0,0:02:46.25,0:02:46.70,Karaoke,,0,0,0,,teliti dan penuh percaya {\fs40\b1\c&H8af0fe&}diri{\rKaraoke} Selamat menempuh
+Dialogue: 0,0:02:47.54,0:02:47.96,Karaoke,,0,0,0,,teliti dan penuh percaya diri {\fs40\b1\c&H8af0fe&}Selamat{\rKaraoke} menempuh
+Dialogue: 0,0:02:47.96,0:02:48.25,Karaoke,,0,0,0,,teliti dan penuh percaya diri Selamat {\fs40\b1\c&H8af0fe&}menempuh{\rKaraoke}
+Dialogue: 0,0:02:48.25,0:02:48.65,Karaoke,,0,0,0,,{\fs40\b1\c&H8af0fe&}ujian{\rKaraoke} bersama ZEXAM-CBT
+Dialogue: 0,0:02:48.65,0:02:49.03,Karaoke,,0,0,0,,ujian {\fs40\b1\c&H8af0fe&}bersama{\rKaraoke} ZEXAM-CBT
+Dialogue: 0,0:02:49.03,0:02:50.01,Karaoke,,0,0,0,,ujian bersama {\fs40\b1\c&H8af0fe&}ZEXAM-CBT{\rKaraoke}

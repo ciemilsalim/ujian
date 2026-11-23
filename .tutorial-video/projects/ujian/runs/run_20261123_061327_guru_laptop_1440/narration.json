@@ -1,0 +1,1239 @@
+{
+  "voice": {
+    "name": "id-ID-ArdiNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz"
+  },
+  "scenes": {
+    "scene_01_navigasi_tambah_soal": {
+      "text": "Halo Bapak dan Ibu Guru serta Tim Pengajar ZEXAM-CBT. Pada tutorial kali ini, kita akan mempelajari panduan lengkap pembuatan tipe soal interaktif tingkat lanjut, yaitu tipe Menjodohkan atau Matching Pairs, Isian Singkat, serta Soal Uraian atau Essay. Mari kita mulai dengan membuka modul Banks Soal, memilih bank soal yang aktif, lalu menekan tombol Tambah Soal di kanan atas.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_01_navigasi_tambah_soal.wav",
+      "duration_ms": 23446.0,
+      "words": [
+        {
+          "w": "Halo",
+          "s": 100.0,
+          "e": 375.0
+        },
+        {
+          "w": "Bapak",
+          "s": 375.0,
+          "e": 687.5
+        },
+        {
+          "w": "dan",
+          "s": 687.5,
+          "e": 825.0
+        },
+        {
+          "w": "Ibu",
+          "s": 825.0,
+          "e": 1025.0
+        },
+        {
+          "w": "Guru",
+          "s": 1025.0,
+          "e": 1300.0
+        },
+        {
+          "w": "serta",
+          "s": 1300.0,
+          "e": 1612.5
+        },
+        {
+          "w": "Tim",
+          "s": 1612.5,
+          "e": 1850.0
+        },
+        {
+          "w": "Pengajar",
+          "s": 1850.0,
+          "e": 2275.0
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 2275.0,
+          "e": 3262.5
+        },
+        {
+          "w": "Pada",
+          "s": 4466.5,
+          "e": 4666.5
+        },
+        {
+          "w": "tutorial",
+          "s": 4666.5,
+          "e": 5041.5
+        },
+        {
+          "w": "kali",
+          "s": 5041.5,
+          "e": 5216.5
+        },
+        {
+          "w": "ini",
+          "s": 5216.5,
+          "e": 5654.0
+        },
+        {
+          "w": "kita",
+          "s": 5916.5,
+          "e": 6116.5
+        },
+        {
+          "w": "akan",
+          "s": 6116.5,
+          "e": 6304.0
+        },
+        {
+          "w": "mempelajari",
+          "s": 6304.0,
+          "e": 6704.0
+        },
+        {
+          "w": "panduan",
+          "s": 6704.0,
+          "e": 7041.5
+        },
+        {
+          "w": "lengkap",
+          "s": 7041.5,
+          "e": 7316.5
+        },
+        {
+          "w": "pembuatan",
+          "s": 7316.5,
+          "e": 7716.5
+        },
+        {
+          "w": "tipe",
+          "s": 7716.5,
+          "e": 8004.0
+        },
+        {
+          "w": "soal",
+          "s": 8004.0,
+          "e": 8229.0
+        },
+        {
+          "w": "interaktif",
+          "s": 8229.0,
+          "e": 8666.5
+        },
+        {
+          "w": "tingkat",
+          "s": 8666.5,
+          "e": 8966.5
+        },
+        {
+          "w": "lanjut",
+          "s": 8966.5,
+          "e": 9504.0
+        },
+        {
+          "w": "yaitu",
+          "s": 9779.0,
+          "e": 10104.0
+        },
+        {
+          "w": "tipe",
+          "s": 10104.0,
+          "e": 10316.5
+        },
+        {
+          "w": "Menjodohkan",
+          "s": 10316.5,
+          "e": 10879.0
+        },
+        {
+          "w": "atau",
+          "s": 10879.0,
+          "e": 11041.5
+        },
+        {
+          "w": "Matching",
+          "s": 11041.5,
+          "e": 11329.0
+        },
+        {
+          "w": "Pairs",
+          "s": 11329.0,
+          "e": 11866.5
+        },
+        {
+          "w": "Isian",
+          "s": 12066.5,
+          "e": 12391.5
+        },
+        {
+          "w": "Singkat",
+          "s": 12391.5,
+          "e": 12916.5
+        },
+        {
+          "w": "serta",
+          "s": 13141.5,
+          "e": 13454.0
+        },
+        {
+          "w": "Soal",
+          "s": 13454.0,
+          "e": 13666.5
+        },
+        {
+          "w": "Uraian",
+          "s": 13666.5,
+          "e": 14091.5
+        },
+        {
+          "w": "atau",
+          "s": 14091.5,
+          "e": 14341.5
+        },
+        {
+          "w": "Essay",
+          "s": 14341.5,
+          "e": 14904.0
+        },
+        {
+          "w": "Mari",
+          "s": 16166.5,
+          "e": 16379.0
+        },
+        {
+          "w": "kita",
+          "s": 16379.0,
+          "e": 16554.0
+        },
+        {
+          "w": "mulai",
+          "s": 16554.0,
+          "e": 16804.0
+        },
+        {
+          "w": "dengan",
+          "s": 16804.0,
+          "e": 17029.0
+        },
+        {
+          "w": "membuka",
+          "s": 17029.0,
+          "e": 17341.5
+        },
+        {
+          "w": "modul",
+          "s": 17341.5,
+          "e": 17604.0
+        },
+        {
+          "w": "Banks",
+          "s": 17604.0,
+          "e": 17841.5
+        },
+        {
+          "w": "Soal",
+          "s": 17841.5,
+          "e": 18341.5
+        },
+        {
+          "w": "memilih",
+          "s": 18579.0,
+          "e": 18904.0
+        },
+        {
+          "w": "bank",
+          "s": 18904.0,
+          "e": 19116.5
+        },
+        {
+          "w": "soal",
+          "s": 19116.5,
+          "e": 19354.0
+        },
+        {
+          "w": "yang",
+          "s": 19354.0,
+          "e": 19479.0
+        },
+        {
+          "w": "aktif",
+          "s": 19479.0,
+          "e": 20016.5
+        },
+        {
+          "w": "lalu",
+          "s": 20266.5,
+          "e": 20491.5
+        },
+        {
+          "w": "menekan",
+          "s": 20491.5,
+          "e": 20816.5
+        },
+        {
+          "w": "tombol",
+          "s": 20816.5,
+          "e": 21091.5
+        },
+        {
+          "w": "Tambah",
+          "s": 21091.5,
+          "e": 21416.5
+        },
+        {
+          "w": "Soal",
+          "s": 21416.5,
+          "e": 21716.5
+        },
+        {
+          "w": "di",
+          "s": 21716.5,
+          "e": 21804.0
+        },
+        {
+          "w": "kanan",
+          "s": 21804.0,
+          "e": 22054.0
+        },
+        {
+          "w": "atas",
+          "s": 22054.0,
+          "e": 22591.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "f73ff54985c242b9c5817b80fc2d181cfd6d0656965dc6c3e6510ea00d1c1dc4"
+    },
+    "scene_02_konfigurasi_soal_menjodohkan": {
+      "text": "Untuk membuat soal menjodohkan, ubah dropdown Tipe Soal menjadi Menjodohkan. Masukkan instruksi pertanyaan pada kolom teks, kemudian isikan pasangan premis di sebelah kiri dan respon jawaban di sebelah kanan. Sistem ZEXAM-CBT secara otomatis memvalidasi pasangan horizontal sebagai kunci jawaban dan akan mengacak opsi jawaban saat siswa mengerjakan ujian.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_02_konfigurasi_soal_menjodohkan.wav",
+      "duration_ms": 22102.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 112.5,
+          "e": 362.5
+        },
+        {
+          "w": "membuat",
+          "s": 362.5,
+          "e": 662.5
+        },
+        {
+          "w": "soal",
+          "s": 662.5,
+          "e": 862.5
+        },
+        {
+          "w": "menjodohkan",
+          "s": 862.5,
+          "e": 1675.0
+        },
+        {
+          "w": "ubah",
+          "s": 1975.0,
+          "e": 2237.5
+        },
+        {
+          "w": "dropdown",
+          "s": 2237.5,
+          "e": 2687.5
+        },
+        {
+          "w": "Tipe",
+          "s": 2687.5,
+          "e": 3000.0
+        },
+        {
+          "w": "Soal",
+          "s": 3000.0,
+          "e": 3300.0
+        },
+        {
+          "w": "menjadi",
+          "s": 3300.0,
+          "e": 3675.0
+        },
+        {
+          "w": "Menjodohkan",
+          "s": 3675.0,
+          "e": 4537.5
+        },
+        {
+          "w": "Masukkan",
+          "s": 5738.5,
+          "e": 6151.0
+        },
+        {
+          "w": "instruksi",
+          "s": 6151.0,
+          "e": 6588.5
+        },
+        {
+          "w": "pertanyaan",
+          "s": 6588.5,
+          "e": 7138.5
+        },
+        {
+          "w": "pada",
+          "s": 7138.5,
+          "e": 7338.5
+        },
+        {
+          "w": "kolom",
+          "s": 7338.5,
+          "e": 7601.0
+        },
+        {
+          "w": "teks",
+          "s": 7601.0,
+          "e": 8051.0
+        },
+        {
+          "w": "kemudian",
+          "s": 8313.5,
+          "e": 8676.0
+        },
+        {
+          "w": "isikan",
+          "s": 8676.0,
+          "e": 9038.5
+        },
+        {
+          "w": "pasangan",
+          "s": 9038.5,
+          "e": 9401.0
+        },
+        {
+          "w": "premis",
+          "s": 9401.0,
+          "e": 9776.0
+        },
+        {
+          "w": "di",
+          "s": 9776.0,
+          "e": 9838.5
+        },
+        {
+          "w": "sebelah",
+          "s": 9838.5,
+          "e": 10126.0
+        },
+        {
+          "w": "kiri",
+          "s": 10126.0,
+          "e": 10438.5
+        },
+        {
+          "w": "dan",
+          "s": 10438.5,
+          "e": 10626.0
+        },
+        {
+          "w": "respon",
+          "s": 10626.0,
+          "e": 10938.5
+        },
+        {
+          "w": "jawaban",
+          "s": 10938.5,
+          "e": 11413.5
+        },
+        {
+          "w": "di",
+          "s": 11413.5,
+          "e": 11476.0
+        },
+        {
+          "w": "sebelah",
+          "s": 11476.0,
+          "e": 11813.5
+        },
+        {
+          "w": "kanan",
+          "s": 11813.5,
+          "e": 12301.0
+        },
+        {
+          "w": "Sistem",
+          "s": 13538.0,
+          "e": 13950.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 13950.5,
+          "e": 14675.5
+        },
+        {
+          "w": "secara",
+          "s": 14675.5,
+          "e": 14975.5
+        },
+        {
+          "w": "otomatis",
+          "s": 14975.5,
+          "e": 15463.0
+        },
+        {
+          "w": "memvalidasi",
+          "s": 15463.0,
+          "e": 16025.5
+        },
+        {
+          "w": "pasangan",
+          "s": 16025.5,
+          "e": 16388.0
+        },
+        {
+          "w": "horizontal",
+          "s": 16388.0,
+          "e": 16975.5
+        },
+        {
+          "w": "sebagai",
+          "s": 16975.5,
+          "e": 17300.5
+        },
+        {
+          "w": "kunci",
+          "s": 17300.5,
+          "e": 17563.0
+        },
+        {
+          "w": "jawaban",
+          "s": 17563.0,
+          "e": 18138.0
+        },
+        {
+          "w": "dan",
+          "s": 18138.0,
+          "e": 18325.5
+        },
+        {
+          "w": "akan",
+          "s": 18325.5,
+          "e": 18538.0
+        },
+        {
+          "w": "mengacak",
+          "s": 18538.0,
+          "e": 18850.5
+        },
+        {
+          "w": "opsi",
+          "s": 18850.5,
+          "e": 19100.5
+        },
+        {
+          "w": "jawaban",
+          "s": 19100.5,
+          "e": 19600.5
+        },
+        {
+          "w": "saat",
+          "s": 19600.5,
+          "e": 19838.0
+        },
+        {
+          "w": "siswa",
+          "s": 19838.0,
+          "e": 20150.5
+        },
+        {
+          "w": "mengerjakan",
+          "s": 20150.5,
+          "e": 20650.5
+        },
+        {
+          "w": "ujian",
+          "s": 20650.5,
+          "e": 21250.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "da602c39e449b713fa8650a552e735fbc021ddac16feec298233f1a6a06b9e43"
+    },
+    "scene_03_konfigurasi_soal_isian_singkat": {
+      "text": "Selanjutnya, kita beralih ke tipe soal Isian Singkat. Ubah dropdown Tipe Soal menjadi Isian Singkat. Masukkan pertanyaan atau kalimat rumpang yang harus dilengkapi siswa, lalu tentukan kata kunci jawaban benar pada kolom Kunci Jawaban. Sistem dilengkapi pencocokan cerdas yang fleksibel terhadap variasi huruf besar dan kecil.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_03_konfigurasi_soal_isian_singkat.wav",
+      "duration_ms": 21440.0,
+      "words": [
+        {
+          "w": "Selanjutnya",
+          "s": 100.0,
+          "e": 937.5
+        },
+        {
+          "w": "kita",
+          "s": 1212.5,
+          "e": 1450.0
+        },
+        {
+          "w": "beralih",
+          "s": 1450.0,
+          "e": 1762.5
+        },
+        {
+          "w": "ke",
+          "s": 1762.5,
+          "e": 1825.0
+        },
+        {
+          "w": "tipe",
+          "s": 1825.0,
+          "e": 2075.0
+        },
+        {
+          "w": "soal",
+          "s": 2075.0,
+          "e": 2312.5
+        },
+        {
+          "w": "Isian",
+          "s": 2312.5,
+          "e": 2625.0
+        },
+        {
+          "w": "Singkat",
+          "s": 2625.0,
+          "e": 3187.5
+        },
+        {
+          "w": "Ubah",
+          "s": 4382.0,
+          "e": 4707.0
+        },
+        {
+          "w": "dropdown",
+          "s": 4707.0,
+          "e": 5144.5
+        },
+        {
+          "w": "Tipe",
+          "s": 5144.5,
+          "e": 5507.0
+        },
+        {
+          "w": "Soal",
+          "s": 5507.0,
+          "e": 5807.0
+        },
+        {
+          "w": "menjadi",
+          "s": 5807.0,
+          "e": 6169.5
+        },
+        {
+          "w": "Isian",
+          "s": 6169.5,
+          "e": 6469.5
+        },
+        {
+          "w": "Singkat",
+          "s": 6469.5,
+          "e": 7057.0
+        },
+        {
+          "w": "Masukkan",
+          "s": 8268.5,
+          "e": 8668.5
+        },
+        {
+          "w": "pertanyaan",
+          "s": 8668.5,
+          "e": 9193.5
+        },
+        {
+          "w": "atau",
+          "s": 9193.5,
+          "e": 9381.0
+        },
+        {
+          "w": "kalimat",
+          "s": 9381.0,
+          "e": 9693.5
+        },
+        {
+          "w": "rumpang",
+          "s": 9693.5,
+          "e": 10018.5
+        },
+        {
+          "w": "yang",
+          "s": 10018.5,
+          "e": 10156.0
+        },
+        {
+          "w": "harus",
+          "s": 10156.0,
+          "e": 10406.0
+        },
+        {
+          "w": "dilengkapi",
+          "s": 10406.0,
+          "e": 10781.0
+        },
+        {
+          "w": "siswa",
+          "s": 10781.0,
+          "e": 11368.5
+        },
+        {
+          "w": "lalu",
+          "s": 11668.5,
+          "e": 11893.5
+        },
+        {
+          "w": "tentukan",
+          "s": 11893.5,
+          "e": 12331.0
+        },
+        {
+          "w": "kata",
+          "s": 12331.0,
+          "e": 12518.5
+        },
+        {
+          "w": "kunci",
+          "s": 12518.5,
+          "e": 12806.0
+        },
+        {
+          "w": "jawaban",
+          "s": 12806.0,
+          "e": 13206.0
+        },
+        {
+          "w": "benar",
+          "s": 13206.0,
+          "e": 13493.5
+        },
+        {
+          "w": "pada",
+          "s": 13493.5,
+          "e": 13718.5
+        },
+        {
+          "w": "kolom",
+          "s": 13718.5,
+          "e": 13968.5
+        },
+        {
+          "w": "Kunci",
+          "s": 13968.5,
+          "e": 14256.0
+        },
+        {
+          "w": "Jawaban",
+          "s": 14256.0,
+          "e": 14943.5
+        },
+        {
+          "w": "Sistem",
+          "s": 16188.0,
+          "e": 16588.0
+        },
+        {
+          "w": "dilengkapi",
+          "s": 16588.0,
+          "e": 16988.0
+        },
+        {
+          "w": "pencocokan",
+          "s": 16988.0,
+          "e": 17500.5
+        },
+        {
+          "w": "cerdas",
+          "s": 17500.5,
+          "e": 17913.0
+        },
+        {
+          "w": "yang",
+          "s": 17913.0,
+          "e": 18038.0
+        },
+        {
+          "w": "fleksibel",
+          "s": 18038.0,
+          "e": 18575.5
+        },
+        {
+          "w": "terhadap",
+          "s": 18575.5,
+          "e": 18913.0
+        },
+        {
+          "w": "variasi",
+          "s": 18913.0,
+          "e": 19313.0
+        },
+        {
+          "w": "huruf",
+          "s": 19313.0,
+          "e": 19525.5
+        },
+        {
+          "w": "besar",
+          "s": 19525.5,
+          "e": 19875.5
+        },
+        {
+          "w": "dan",
+          "s": 19875.5,
+          "e": 20063.0
+        },
+        {
+          "w": "kecil",
+          "s": 20063.0,
+          "e": 20588.0
+        }
+      ],
+      "segments_count": 4,
+      "sha256": "b0d687bc1b16beb2a4f201486a555f1cd5a64f09fda86f179a05a49e53d9e82f"
+    },
+    "scene_04_konfigurasi_soal_essay_dan_rubrik": {
+      "text": "Untuk soal uraian mendalam, pilih tipe Essay. Pada tipe ini, guru dapat menyusun pertanyaan terbuka berbasis penalaran atau studi kasus. Pada kolom Kunci Jawaban, masukkan rubrik penilaian atau poin-poin penting yang harus dijawab siswa sebagai panduan saat guru melakukan koreksi nilai manual nantinya.",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_04_konfigurasi_soal_essay_dan_rubrik.wav",
+      "duration_ms": 19298.0,
+      "words": [
+        {
+          "w": "Untuk",
+          "s": 100.0,
+          "e": 387.5
+        },
+        {
+          "w": "soal",
+          "s": 387.5,
+          "e": 600.0
+        },
+        {
+          "w": "uraian",
+          "s": 600.0,
+          "e": 925.0
+        },
+        {
+          "w": "mendalam",
+          "s": 925.0,
+          "e": 1512.5
+        },
+        {
+          "w": "pilih",
+          "s": 1787.5,
+          "e": 2087.5
+        },
+        {
+          "w": "tipe",
+          "s": 2087.5,
+          "e": 2312.5
+        },
+        {
+          "w": "Essay",
+          "s": 2312.5,
+          "e": 2875.0
+        },
+        {
+          "w": "Pada",
+          "s": 4082.5,
+          "e": 4270.0
+        },
+        {
+          "w": "tipe",
+          "s": 4270.0,
+          "e": 4445.0
+        },
+        {
+          "w": "ini",
+          "s": 4445.0,
+          "e": 4895.0
+        },
+        {
+          "w": "guru",
+          "s": 5195.0,
+          "e": 5470.0
+        },
+        {
+          "w": "dapat",
+          "s": 5470.0,
+          "e": 5732.5
+        },
+        {
+          "w": "menyusun",
+          "s": 5732.5,
+          "e": 6082.5
+        },
+        {
+          "w": "pertanyaan",
+          "s": 6082.5,
+          "e": 6570.0
+        },
+        {
+          "w": "terbuka",
+          "s": 6570.0,
+          "e": 6932.5
+        },
+        {
+          "w": "berbasis",
+          "s": 6932.5,
+          "e": 7382.5
+        },
+        {
+          "w": "penalaran",
+          "s": 7382.5,
+          "e": 7870.0
+        },
+        {
+          "w": "atau",
+          "s": 7870.0,
+          "e": 8157.5
+        },
+        {
+          "w": "studi",
+          "s": 8157.5,
+          "e": 8457.5
+        },
+        {
+          "w": "kasus",
+          "s": 8457.5,
+          "e": 9045.0
+        },
+        {
+          "w": "Pada",
+          "s": 10290.5,
+          "e": 10503.0
+        },
+        {
+          "w": "kolom",
+          "s": 10503.0,
+          "e": 10740.5
+        },
+        {
+          "w": "Kunci",
+          "s": 10740.5,
+          "e": 10990.5
+        },
+        {
+          "w": "Jawaban",
+          "s": 10990.5,
+          "e": 11628.0
+        },
+        {
+          "w": "masukkan",
+          "s": 11940.5,
+          "e": 12365.5
+        },
+        {
+          "w": "rubrik",
+          "s": 12365.5,
+          "e": 12628.0
+        },
+        {
+          "w": "penilaian",
+          "s": 12628.0,
+          "e": 13140.5
+        },
+        {
+          "w": "atau",
+          "s": 13140.5,
+          "e": 13365.5
+        },
+        {
+          "w": "poin-poin",
+          "s": 13365.5,
+          "e": 13778.0
+        },
+        {
+          "w": "penting",
+          "s": 13778.0,
+          "e": 14115.5
+        },
+        {
+          "w": "yang",
+          "s": 14115.5,
+          "e": 14253.0
+        },
+        {
+          "w": "harus",
+          "s": 14253.0,
+          "e": 14478.0
+        },
+        {
+          "w": "dijawab",
+          "s": 14478.0,
+          "e": 14853.0
+        },
+        {
+          "w": "siswa",
+          "s": 14853.0,
+          "e": 15215.5
+        },
+        {
+          "w": "sebagai",
+          "s": 15215.5,
+          "e": 15528.0
+        },
+        {
+          "w": "panduan",
+          "s": 15528.0,
+          "e": 15990.5
+        },
+        {
+          "w": "saat",
+          "s": 15990.5,
+          "e": 16240.5
+        },
+        {
+          "w": "guru",
+          "s": 16240.5,
+          "e": 16453.0
+        },
+        {
+          "w": "melakukan",
+          "s": 16453.0,
+          "e": 16865.5
+        },
+        {
+          "w": "koreksi",
+          "s": 16865.5,
+          "e": 17253.0
+        },
+        {
+          "w": "nilai",
+          "s": 17253.0,
+          "e": 17515.5
+        },
+        {
+          "w": "manual",
+          "s": 17515.5,
+          "e": 17828.0
+        },
+        {
+          "w": "nantinya",
+          "s": 17828.0,
+          "e": 18440.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "477c87cf38b029802173a5508051941839f1fd38f209f4ed23f6ce979aba4921"
+    },
+    "scene_05_tinjau_daftar_soal_dan_penutup": {
+      "text": "Seluruh butir soal menjodohkan, isian singkat, dan uraian esai akan tampil terstruktur pada daftar pertanyaan. Lengkap dengan lencana tipe soal, premis pasangan, kata kunci, serta bobot skor masing-masing. Sangat lengkap, fleksibel, dan memudahkan asesmen pembelajaran. Selamat mencoba dan semoga sukses bersama ZEXAM-CBT!",
+      "audio": "D:\\laragon\\www\\ujian\\.tutorial-video\\projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\audio\\scene_05_tinjau_daftar_soal_dan_penutup.wav",
+      "duration_ms": 23638.0,
+      "words": [
+        {
+          "w": "Seluruh",
+          "s": 112.5,
+          "e": 437.5
+        },
+        {
+          "w": "butir",
+          "s": 437.5,
+          "e": 750.0
+        },
+        {
+          "w": "soal",
+          "s": 750.0,
+          "e": 975.0
+        },
+        {
+          "w": "menjodohkan",
+          "s": 975.0,
+          "e": 1750.0
+        },
+        {
+          "w": "isian",
+          "s": 2025.0,
+          "e": 2362.5
+        },
+        {
+          "w": "singkat",
+          "s": 2362.5,
+          "e": 2862.5
+        },
+        {
+          "w": "dan",
+          "s": 3137.5,
+          "e": 3337.5
+        },
+        {
+          "w": "uraian",
+          "s": 3337.5,
+          "e": 3650.0
+        },
+        {
+          "w": "esai",
+          "s": 3650.0,
+          "e": 4000.0
+        },
+        {
+          "w": "akan",
+          "s": 4000.0,
+          "e": 4237.5
+        },
+        {
+          "w": "tampil",
+          "s": 4237.5,
+          "e": 4512.5
+        },
+        {
+          "w": "terstruktur",
+          "s": 4512.5,
+          "e": 5050.0
+        },
+        {
+          "w": "pada",
+          "s": 5050.0,
+          "e": 5275.0
+        },
+        {
+          "w": "daftar",
+          "s": 5275.0,
+          "e": 5625.0
+        },
+        {
+          "w": "pertanyaan",
+          "s": 5625.0,
+          "e": 6375.0
+        },
+        {
+          "w": "Lengkap",
+          "s": 7616.5,
+          "e": 7941.5
+        },
+        {
+          "w": "dengan",
+          "s": 7941.5,
+          "e": 8154.0
+        },
+        {
+          "w": "lencana",
+          "s": 8154.0,
+          "e": 8479.0
+        },
+        {
+          "w": "tipe",
+          "s": 8479.0,
+          "e": 8666.5
+        },
+        {
+          "w": "soal",
+          "s": 8666.5,
+          "e": 9204.0
+        },
+        {
+          "w": "premis",
+          "s": 9479.0,
+          "e": 9766.5
+        },
+        {
+          "w": "pasangan",
+          "s": 9766.5,
+          "e": 10391.5
+        },
+        {
+          "w": "kata",
+          "s": 10666.5,
+          "e": 10904.0
+        },
+        {
+          "w": "kunci",
+          "s": 10904.0,
+          "e": 11466.5
+        },
+        {
+          "w": "serta",
+          "s": 11729.0,
+          "e": 12054.0
+        },
+        {
+          "w": "bobot",
+          "s": 12054.0,
+          "e": 12354.0
+        },
+        {
+          "w": "skor",
+          "s": 12354.0,
+          "e": 12616.5
+        },
+        {
+          "w": "masing-masing",
+          "s": 12616.5,
+          "e": 13404.0
+        },
+        {
+          "w": "Sangat",
+          "s": 14618.0,
+          "e": 14968.0
+        },
+        {
+          "w": "lengkap",
+          "s": 14968.0,
+          "e": 15505.5
+        },
+        {
+          "w": "fleksibel",
+          "s": 15718.0,
+          "e": 16505.5
+        },
+        {
+          "w": "dan",
+          "s": 16768.0,
+          "e": 16980.5
+        },
+        {
+          "w": "memudahkan",
+          "s": 16980.5,
+          "e": 17480.5
+        },
+        {
+          "w": "asesmen",
+          "s": 17480.5,
+          "e": 17943.0
+        },
+        {
+          "w": "pembelajaran",
+          "s": 17943.0,
+          "e": 18755.5
+        },
+        {
+          "w": "Selamat",
+          "s": 19593.0,
+          "e": 19980.5
+        },
+        {
+          "w": "mencoba",
+          "s": 19980.5,
+          "e": 20480.5
+        },
+        {
+          "w": "dan",
+          "s": 20480.5,
+          "e": 20643.0
+        },
+        {
+          "w": "semoga",
+          "s": 20643.0,
+          "e": 20968.0
+        },
+        {
+          "w": "sukses",
+          "s": 20968.0,
+          "e": 21405.5
+        },
+        {
+          "w": "bersama",
+          "s": 21405.5,
+          "e": 21780.5
+        },
+        {
+          "w": "ZEXAM-CBT",
+          "s": 21780.5,
+          "e": 22780.5
+        }
+      ],
+      "segments_count": 3,
+      "sha256": "b3e5fe68e4baa65aae66bc12007f64af491449a5dfeede213b105d72c668cd76"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "project_id": "ujian",
+  "run_id": "run_20261123_061327_guru_laptop_1440",
+  "engine": "TRUE_CONTINUOUS_BROWSER_VIDEO_V4",
+  "created_at": "2026-11-23T06:40:15.057292",
+  "git_commit": "untracked",
+  "plan": {
+    "path": "projects\\ujian\\runs\\run_20261123_061327_guru_laptop_1440\\effective-plan.json",
+    "sha256": "1353bfcef829c466572a1a8cbd716e828e9f6a302b7f67db1386a2e906ba7116"
+  },
+  "profile": {
+    "path": null,
+    "sha256": null
+  },
+  "background_music": null,
+  "artifacts": {
+    "final_video": {
+      "path": "final\\final-tutorial.mp4",
+      "sha256": "429b12518aff26e80882da5cddbc04ca51f913ab030510097e0d789b6597b26f"
+    },
+    "raw_recording": {
+      "path": null,
+      "sha256": null
+    },
+    "audio_master": {
+      "path": "audio\\audio-master.wav",
+      "sha256": "d02cc87a2090f2f96ecbd402f8afb168d5ff043a207275fab3bcf1f65c0ac852"
+    },
+    "recorded_events": {
+      "path": "recording\\events.json",
+      "sha256": "ff6206d77aebf67e7a952a0642c649abcbf379732c6e65211c491c3fe9cc607a"
+    },
+    "final_video_desktop": {
+      "path": "final\\final-tutorial-desktop.mp4",
+      "sha256": "429b12518aff26e80882da5cddbc04ca51f913ab030510097e0d789b6597b26f"
+    },
+    "audio_master_desktop": {
+      "path": "audio\\audio-master-desktop.wav",
+      "sha256": "d02cc87a2090f2f96ecbd402f8afb168d5ff043a207275fab3bcf1f65c0ac852"
+    }
+  },
+  "isolation_verified": true,
+  "data_safety": {
+    "status": "VERIFIED",
+    "isolation_method": "TRACKED_EPHEMERAL_TEST_DATA",
+    "production_mutations_allowed": false,
+    "cleanliness_policy": "tracked_created_ids_only"
+  }
+}

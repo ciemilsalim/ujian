@@ -25,6 +25,7 @@
     "provider": "gemini",
     "model": "gemini-3.1-flash-tts-preview",
     "name": "Charon",
+    "studio_url": "https://aistudio.google.com/generate-speech?model=gemini-3.1-flash-tts-preview",
     "rate": "+0%",
     "pitch": "+0Hz"
   },
