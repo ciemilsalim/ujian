@@ -43,11 +43,18 @@ class ExamController extends Controller
             return redirect()->route('siswa.dashboard')->with('error', 'Maaf, batas waktu untuk memulai ujian ini telah berakhir.');
         }
 
-        // Initialize session record for user if not exists
-        $examUser = \App\Models\ExamSessionUser::with(['user.classroom'])->firstOrCreate(
-            ['exam_session_id' => $id, 'user_id' => auth()->id()],
-            ['status' => 'working']
-        );
+        // Initialize session record for user if not exists (safe against concurrent requests)
+        try {
+            $examUser = \App\Models\ExamSessionUser::with(['user.classroom'])->firstOrCreate(
+                ['exam_session_id' => $id, 'user_id' => auth()->id()],
+                ['status' => 'working']
+            );
+        } catch (\Illuminate\Database\UniqueConstraintViolationException $e) {
+            $examUser = \App\Models\ExamSessionUser::with(['user.classroom'])
+                ->where('exam_session_id', $id)
+                ->where('user_id', auth()->id())
+                ->firstOrFail();
+        }
 
         // Clear Information for Finished Exams
         if ($examUser->status === 'finished') {
@@ -55,10 +62,10 @@ class ExamController extends Controller
                 'session' => [
                     'id' => $session->id,
                     'name' => $session->name,
-                    'exam' => ['title' => $session->exam->title]
+                    'exam' => ['title' => $session->exam?->title ?? 'Ujian']
                 ],
                 'examUser' => $examUser,
-                'maxCheatWarnings' => (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3),
+                'maxCheatWarnings' => (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->value('value') ?? 3),
             ]);
         }
 
@@ -71,13 +78,13 @@ class ExamController extends Controller
                 'session' => [
                     'id' => $session->id,
                     'name' => $session->name,
-                    'exam' => ['title' => $session->exam->title]
+                    'exam' => ['title' => $session->exam?->title ?? 'Ujian']
                 ]
             ]);
         }
 
         // Randomize questions if enabled
-        if ($session->exam->random_question) {
+        if ($session->exam?->random_question && $session->exam?->questionBank?->questions) {
             $userId = auth()->id();
             $sessionId = $session->id;
             
@@ -110,22 +117,25 @@ class ExamController extends Controller
                 auth()->user()->name,
                 'working'
             );
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             // Broadcast failed, but continue with exam
             \Log::warning('Broadcast failed: ' . $e->getMessage());
         }
 
         // Initialize started_at if null to start the absolute timer
         if (!$examUser->started_at) {
-            $examUser->update(['started_at' => now()]);
+            $nowStarted = now();
+            $examUser->update(['started_at' => $nowStarted]);
+            $examUser->started_at = $nowStarted;
         }
 
         // Calculate absolute time left in seconds
-        $durationInSeconds = ($session->exam->duration ?? 0) * 60;
-        $elapsedSeconds = $examUser->started_at->diffInSeconds(now());
+        $durationInSeconds = ($session->exam?->duration ?? 0) * 60;
+        $startedAt = $examUser->started_at ? \Carbon\Carbon::parse($examUser->started_at) : now();
+        $elapsedSeconds = $startedAt->diffInSeconds(now());
         $timeLeft = max(0, $durationInSeconds - $elapsedSeconds);
 
-        if ($timeLeft <= 0 && $examUser->status !== 'finished') {
+        if ($durationInSeconds > 0 && $timeLeft <= 0 && $examUser->status !== 'finished') {
             $examUser->update(['status' => 'finished', 'finished_at' => now()]);
             return redirect()->route('siswa.dashboard')->with('error', 'Waktu ujian Anda telah habis.');
         }
@@ -156,7 +166,7 @@ class ExamController extends Controller
     public function history()
     {
         $user = auth()->user();
-        $passingGrade = (int) (\App\Models\Setting::where('key', 'passing_grade')->first()->value ?? 70);
+        $passingGrade = (int) (\App\Models\Setting::where('key', 'passing_grade')->value('value') ?? 70);
 
         $examHistory = \App\Models\ExamSessionUser::with(['examSession.exam', 'examSession.classroom'])
             ->where('user_id', $user->id)
@@ -172,7 +182,7 @@ class ExamController extends Controller
         return \Inertia\Inertia::render('Siswa/History', [
             'examHistory' => $examHistory,
             'passingGrade' => $passingGrade,
-            'maxCheatWarnings' => (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3),
+            'maxCheatWarnings' => (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->value('value') ?? 3),
         ]);
     }
 
@@ -200,12 +210,25 @@ class ExamController extends Controller
     {
         $request->validate([
             'exam_session_id' => 'required|exists:exam_sessions,id',
-            'type' => 'required|string',
+            'type' => 'required|string|max:100',
         ]);
 
-        $examSessionUser = \App\Models\ExamSessionUser::where('exam_session_id', $request->exam_session_id)
-            ->where('user_id', auth()->id())
-            ->firstOrFail();
+        try {
+            $examSessionUser = \App\Models\ExamSessionUser::firstOrCreate(
+                [
+                    'exam_session_id' => $request->exam_session_id,
+                    'user_id' => auth()->id(),
+                ],
+                [
+                    'status' => 'working',
+                    'started_at' => now(),
+                ]
+            );
+        } catch (\Illuminate\Database\UniqueConstraintViolationException $e) {
+            $examSessionUser = \App\Models\ExamSessionUser::where('exam_session_id', $request->exam_session_id)
+                ->where('user_id', auth()->id())
+                ->firstOrFail();
+        }
 
         // Mode Latihan: tidak ada pencatatan kecurangan
         $session = \App\Models\ExamSession::with('exam')->find($request->exam_session_id);
@@ -228,13 +251,13 @@ class ExamController extends Controller
                 auth()->user()->name,
                 $request->type . ' (Peringatan ke-' . $examSessionUser->cheat_warnings . ')'
             );
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             // Broadcast failed, but continue with cheat detection
             \Log::warning('Broadcast failed: ' . $e->getMessage());
         }
 
         // Auto Disqualification based on max_cheat_warnings setting
-        $maxWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->first()->value ?? 3);
+        $maxWarnings = (int) (\App\Models\Setting::where('key', 'max_cheat_warnings')->value('value') ?? 3);
 
         if ($examSessionUser->cheat_warnings >= $maxWarnings) {
             $examSessionUser->update([
@@ -250,7 +273,7 @@ class ExamController extends Controller
                     auth()->user()->name,
                     'finished'
                 );
-            } catch (\Exception $e) {
+            } catch (\Throwable $e) {
                 // Broadcast failed, but continue with disqualification
                 \Log::warning('Broadcast failed: ' . $e->getMessage());
             }
@@ -268,75 +291,139 @@ class ExamController extends Controller
     {
         $request->validate([
             'exam_session_id' => 'required|exists:exam_sessions,id',
-            'answers' => 'required|array',
+            'answers' => 'present|array',
         ]);
 
-        $examSessionUser = \App\Models\ExamSessionUser::where('exam_session_id', $request->exam_session_id)
-            ->where('user_id', auth()->id())
-            ->firstOrFail();
+        // Load session & exam once to avoid duplicate queries
+        $session = \App\Models\ExamSession::with('exam')->find($request->exam_session_id);
+        if (!$session || !$session->is_active) {
+            if ($request->expectsJson() && !$request->header('X-Inertia')) {
+                return response()->json(['status' => 'session_inactive', 'message' => 'Sesi ujian sudah tidak aktif. Hubungi Proktor.'], 403);
+            }
+            return redirect()->route('siswa.dashboard')->with('error', 'Sesi ujian sudah tidak aktif.');
+        }
+
+        // Resilience: Ensure ExamSessionUser exists even if student was added late or record was missing
+        try {
+            $examSessionUser = \App\Models\ExamSessionUser::firstOrCreate(
+                [
+                    'exam_session_id' => $request->exam_session_id,
+                    'user_id' => auth()->id(),
+                ],
+                [
+                    'status' => 'working',
+                    'started_at' => now(),
+                ]
+            );
+        } catch (\Illuminate\Database\UniqueConstraintViolationException $e) {
+            $examSessionUser = \App\Models\ExamSessionUser::where('exam_session_id', $request->exam_session_id)
+                ->where('user_id', auth()->id())
+                ->firstOrFail();
+        }
 
         // Guard: Jangan proses apapun jika ujian siswa sudah selesai
         if ($examSessionUser->status === 'finished') {
-            if ($request->expectsJson()) {
+            if ($request->expectsJson() && !$request->header('X-Inertia')) {
                 return response()->json(['status' => 'already_finished']);
             }
             return redirect()->route('siswa.dashboard');
         }
 
+        // Ensure started_at is initialized if null
+        if (!$examSessionUser->started_at) {
+            $nowStarted = now();
+            $examSessionUser->update(['started_at' => $nowStarted]);
+            $examSessionUser->started_at = $nowStarted;
+        }
+
         // Server-side time check
-        if ($examSessionUser->started_at) {
-            $durationInSeconds = ($examSessionUser->examSession->exam->duration ?? 0) * 60;
-            $elapsedSeconds = $examSessionUser->started_at->diffInSeconds(now());
+        $durationInSeconds = ($session->exam?->duration ?? 0) * 60;
+        if ($durationInSeconds > 0 && $examSessionUser->started_at) {
+            $startedAt = \Carbon\Carbon::parse($examSessionUser->started_at);
+            $elapsedSeconds = $startedAt->diffInSeconds(now());
             if ($elapsedSeconds > $durationInSeconds + 30) { // Beri toleransi 30 detik untuk network lag
                 $examSessionUser->update(['status' => 'finished', 'finished_at' => now()]);
-                if ($request->expectsJson()) {
+                if ($request->expectsJson() && !$request->header('X-Inertia')) {
                     return response()->json(['status' => 'time_up', 'message' => 'Waktu ujian telah habis.']);
                 }
                 return redirect()->route('siswa.dashboard')->with('error', 'Waktu ujian telah habis.');
             }
         }
 
-        // Validasi sesi masih aktif sebelum menyimpan jawaban
-        $session = \App\Models\ExamSession::find($request->exam_session_id);
-        if (!$session || !$session->is_active) {
-            if ($request->expectsJson()) {
-                return response()->json(['status' => 'session_inactive', 'message' => 'Sesi ujian sudah tidak aktif. Hubungi Proktor.'], 403);
+        // Batch upsert answers with deadlock/lock retry for 300+ concurrent students
+        $rawAnswers = is_array($request->answers) ? $request->answers : [];
+        $nowTimestamp = now();
+        $upsertRows = [];
+
+        foreach ($rawAnswers as $questionId => $answer) {
+            if (!is_numeric($questionId) || (int) $questionId <= 0) {
+                continue;
             }
-            return redirect()->route('siswa.dashboard')->with('error', 'Sesi ujian sudah tidak aktif.');
+            $normalizedAnswer = is_array($answer)
+                ? json_encode($answer)
+                : ($answer === null ? null : (string) $answer);
+
+            $upsertRows[] = [
+                'exam_session_user_id' => $examSessionUser->id,
+                'question_id' => (int) $questionId,
+                'answer_text' => $normalizedAnswer,
+                'created_at' => $nowTimestamp,
+                'updated_at' => $nowTimestamp,
+            ];
         }
 
-        foreach ($request->answers as $questionId => $answer) {
-            \App\Models\StudentAnswer::updateOrCreate(
-                ['exam_session_user_id' => $examSessionUser->id, 'question_id' => $questionId],
-                ['answer_text' => $answer]
-            );
-        }
+        $isFinishing = $request->boolean('finish');
 
-        $isFinishing = $request->has('finish') && $request->finish;
-        $examSessionUser->update(['status' => $isFinishing ? 'finished' : 'working']);
+        \Illuminate\Support\Facades\DB::transaction(function () use ($upsertRows, $examSessionUser, $isFinishing) {
+            if (!empty($upsertRows)) {
+                \App\Models\StudentAnswer::upsert(
+                    $upsertRows,
+                    ['exam_session_user_id', 'question_id'],
+                    ['answer_text', 'updated_at']
+                );
+            }
+
+            if ($isFinishing) {
+                $examSessionUser->update([
+                    'status' => 'finished',
+                    'finished_at' => now(),
+                ]);
+            } elseif ($examSessionUser->status !== 'working') {
+                $examSessionUser->update(['status' => 'working']);
+            }
+        }, 3);
 
         if ($isFinishing) {
-            $examSessionUser->update(['finished_at' => now()]);
-
             // === Mode Latihan: Reset sesi agar bisa diulang, tidak simpan skor ===
-            $isLatihan = $examSessionUser->examSession->exam->is_practice ?? false;
+            $isLatihan = (bool) ($session->exam?->is_practice ?? false);
             if ($isLatihan) {
-                // Hapus semua jawaban
-                \App\Models\StudentAnswer::where('exam_session_user_id', $examSessionUser->id)->delete();
-                // Reset status ke waiting agar siswa bisa mengikuti lagi
-                $examSessionUser->update([
-                    'status' => 'waiting',
-                    'started_at' => null,
-                    'finished_at' => null,
-                    'score' => null,
-                    'cheat_warnings' => 0,
-                    'session_id' => null,
-                ]);
+                \Illuminate\Support\Facades\DB::transaction(function () use ($examSessionUser) {
+                    // Hapus semua jawaban
+                    \App\Models\StudentAnswer::where('exam_session_user_id', $examSessionUser->id)->delete();
+                    // Reset status ke waiting agar siswa bisa mengikuti lagi
+                    $examSessionUser->update([
+                        'status' => 'waiting',
+                        'started_at' => null,
+                        'finished_at' => null,
+                        'score' => null,
+                        'cheat_warnings' => 0,
+                        'session_id' => null,
+                    ]);
+                }, 3);
+
+                if ($request->expectsJson() && !$request->header('X-Inertia')) {
+                    return response()->json([
+                        'status' => 'practice_finished',
+                        'redirect' => route('siswa.dashboard'),
+                    ]);
+                }
                 return redirect()->route('siswa.dashboard')->with('success', 'Sesi latihan selesai! Hasil tidak disimpan. Anda bisa mengulang kapan saja.');
             }
 
             // === Auto-Scoring untuk Pilihan Ganda (ujian resmi) ===
-            $this->calculateScore($examSessionUser);
+            \Illuminate\Support\Facades\DB::transaction(function () use ($examSessionUser) {
+                $this->calculateScore($examSessionUser);
+            }, 3);
 
             try {
                 \App\Events\StudentExamUpdated::dispatch(
@@ -345,12 +432,28 @@ class ExamController extends Controller
                     auth()->user()->name,
                     'finished'
                 );
-            } catch (\Exception $e) {
+            } catch (\Throwable $e) {
                 // Broadcast failed, but continue with exam submission
                 \Log::warning('Broadcast failed: ' . $e->getMessage());
             }
 
+            if ($request->expectsJson() && !$request->header('X-Inertia')) {
+                return response()->json([
+                    'status' => 'finished',
+                    'score' => $examSessionUser->score,
+                    'redirect' => route('siswa.dashboard'),
+                ]);
+            }
+
             return redirect()->route('siswa.dashboard')->with('success', 'Ujian telah diselesaikan.');
+        }
+
+        // For pure AJAX auto-save (Axios/JSON), avoid broadcasting on every keystroke and return lightweight JSON
+        if ($request->expectsJson() && !$request->header('X-Inertia')) {
+            return response()->json([
+                'status' => 'saved',
+                'saved_count' => count($upsertRows),
+            ]);
         }
 
         try {
@@ -360,7 +463,7 @@ class ExamController extends Controller
                 auth()->user()->name,
                 'working'
             );
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             // Broadcast failed, but continue with answer submission
             \Log::warning('Broadcast failed: ' . $e->getMessage());
         }

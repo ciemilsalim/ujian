@@ -192,3 +192,83 @@ it('handles essay questions without auto-scoring', function () {
     // Essay should not be auto-scored
     expect($essayAnswer->is_correct)->toBeNull();
 });
+
+it('auto-saves answers via JSON request without 500 error even when ExamSessionUser record was not pre-created', function () {
+    // Delete pre-created ExamSessionUser to simulate a student added late or uninitialized record
+    ExamSessionUser::where('exam_session_id', $this->session->id)
+        ->where('user_id', $this->siswa->id)
+        ->delete();
+
+    $response = $this->actingAs($this->siswa)->postJson(route('siswa.exams.submit'), [
+        'exam_session_id' => $this->session->id,
+        'answers' => [
+            $this->questions[0]->id => 'A',
+            $this->questions[1]->id => 'B',
+        ],
+    ]);
+
+    $response->assertStatus(200)
+        ->assertJson([
+            'status' => 'saved',
+            'saved_count' => 2,
+        ]);
+
+    $examUser = ExamSessionUser::where('exam_session_id', $this->session->id)
+        ->where('user_id', $this->siswa->id)
+        ->first();
+
+    expect($examUser)->not->toBeNull();
+    expect($examUser->status)->toBe('working');
+    expect($examUser->started_at)->not->toBeNull();
+
+    // Subsequent delta auto-save updates existing answer without creating duplicates
+    $response2 = $this->actingAs($this->siswa)->postJson(route('siswa.exams.submit'), [
+        'exam_session_id' => $this->session->id,
+        'answers' => [
+            $this->questions[0]->id => 'C',
+        ],
+    ]);
+
+    $response2->assertStatus(200)
+        ->assertJson([
+            'status' => 'saved',
+            'saved_count' => 1,
+        ]);
+
+    $answers = \App\Models\StudentAnswer::where('exam_session_user_id', $examUser->id)->get();
+    expect($answers)->toHaveCount(2);
+    expect($answers->where('question_id', $this->questions[0]->id)->first()->answer_text)->toBe('C');
+    expect($answers->where('question_id', $this->questions[1]->id)->first()->answer_text)->toBe('B');
+});
+
+it('handles reportCheat without 500 error even when ExamSessionUser was missing or settings table is empty', function () {
+    ExamSessionUser::where('exam_session_id', $this->session->id)
+        ->where('user_id', $this->siswa->id)
+        ->delete();
+
+    $response = $this->actingAs($this->siswa)->postJson(route('siswa.exams.report-cheat'), [
+        'exam_session_id' => $this->session->id,
+        'type' => 'tab_switch',
+    ]);
+
+    $response->assertStatus(200)
+        ->assertJson([
+            'status' => 'success',
+            'warnings' => 1,
+        ]);
+});
+
+it('prevents non-siswa roles and guests from submitting exam answers', function () {
+    $guestResponse = $this->postJson(route('siswa.exams.submit'), [
+        'exam_session_id' => $this->session->id,
+        'answers' => [$this->questions[0]->id => 'A'],
+    ]);
+    $guestResponse->assertStatus(401);
+
+    $guruResponse = $this->actingAs($this->guru)->post(route('siswa.exams.submit'), [
+        'exam_session_id' => $this->session->id,
+        'answers' => [$this->questions[0]->id => 'A'],
+    ]);
+    $guruResponse->assertStatus(403);
+});
+

@@ -77,9 +77,14 @@ export default function ExamEngine({
         return result;
     }, [currentQuestion, session.id]);
 
-    const { data, setData, post, processing } = useForm({
+    const { data, setData } = useForm({
         answers: existingAnswers || {} as Record<string, string>, // question_id: answer
     });
+
+    // Refs untuk menyimpan jawaban terbaru dan delta jawaban yang belum tersimpan ke server
+    const latestAnswersRef = useRef<Record<string, string>>(existingAnswers || {});
+    const pendingAnswersRef = useRef<Record<string, string>>({});
+    const isSaveInFlightRef = useRef<boolean>(false);
 
     // Debounce timer ref untuk auto-save agar tidak spam request per klik/karakter
     const autoSaveDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -106,10 +111,13 @@ export default function ExamEngine({
             setTimeLeft((prev) => {
                 if (prev <= 1) {
                     clearInterval(timer);
-                    // Trigger auto submit when time's up using global router since useForm might be rendering
+                    if (autoSaveDebounceRef.current) {
+                        clearTimeout(autoSaveDebounceRef.current);
+                    }
+                    // Trigger auto submit when time's up using latestAnswersRef to prevent stale closure loss
                     router.post(route('siswa.exams.submit'), {
                         exam_session_id: session.id,
-                        answers: data.answers,
+                        answers: latestAnswersRef.current,
                         finish: true
                     }, {
                         preserveScroll: true,
@@ -263,6 +271,9 @@ export default function ExamEngine({
 
         return () => {
             clearInterval(timer);
+            if (autoSaveDebounceRef.current) {
+                clearTimeout(autoSaveDebounceRef.current);
+            }
             document.removeEventListener('visibilitychange', handleVisibilityChange);
             window.removeEventListener('blur', handleBlur);
             document.removeEventListener('contextmenu', handleContextMenu);
@@ -282,45 +293,81 @@ export default function ExamEngine({
         return `${h > 0 ? h + ':' : ''}${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
     };
 
+    const flushPendingAnswers = async () => {
+        if (isSaveInFlightRef.current) return;
+        const deltaToSave = { ...pendingAnswersRef.current };
+        if (Object.keys(deltaToSave).length === 0) {
+            setIsSaving(false);
+            return;
+        }
+
+        // Kosongkan antrian delta yang sedang dikirim
+        pendingAnswersRef.current = {};
+        isSaveInFlightRef.current = true;
+        setIsSaving(true);
+
+        try {
+            const response = await axios.post(route('siswa.exams.submit'), {
+                exam_session_id: session.id,
+                answers: deltaToSave,
+            }, {
+                headers: { Accept: 'application/json' },
+                timeout: 15000,
+            });
+
+            if (response.data?.status === 'time_up' || response.data?.status === 'already_finished' || response.data?.status === 'session_inactive') {
+                window.location.href = route('siswa.dashboard');
+                return;
+            }
+        } catch (err: any) {
+            // Kembalikan delta yang gagal disimpan jika belum ditimpa ketikan baru
+            pendingAnswersRef.current = {
+                ...deltaToSave,
+                ...pendingAnswersRef.current,
+            };
+            if (err?.response?.status === 403 && err?.response?.data?.status === 'session_inactive') {
+                toast.error('Sesi Tidak Aktif', { description: err.response.data.message || 'Sesi ujian telah dinonaktifkan.' });
+            }
+        } finally {
+            isSaveInFlightRef.current = false;
+            // Jika ada ketikan baru selama request berlangsung, jadwalkan flush berikutnya
+            if (Object.keys(pendingAnswersRef.current).length > 0) {
+                if (autoSaveDebounceRef.current) clearTimeout(autoSaveDebounceRef.current);
+                autoSaveDebounceRef.current = setTimeout(() => {
+                    flushPendingAnswers();
+                }, 600);
+            } else {
+                setIsSaving(false);
+            }
+        }
+    };
+
     const handleAnswer = (questionId: number, answer: string) => {
-        // console.log(`[DEBUG] handleAnswer called for question ${questionId}. currentQuestionIndex is ${currentQuestionIndex}`);
-        const newAnswers = { ...data.answers, [questionId]: answer };
+        const newAnswers = { ...latestAnswersRef.current, [questionId]: answer };
+        latestAnswersRef.current = newAnswers;
+        pendingAnswersRef.current[questionId] = answer;
         setData('answers', newAnswers);
 
-        // Debounce auto-save: 500ms untuk PG, 1000ms untuk essay
+        // Debounce auto-save via lightweight JSON endpoint (tanpa Inertia redirect / full page re-render):
+        // 500ms untuk PG, 1000ms untuk essay/isian
         if (autoSaveDebounceRef.current) clearTimeout(autoSaveDebounceRef.current);
-        const delay = currentQuestion?.type === 'essay' ? 1000 : 500;
+        const delay = (currentQuestion?.type === 'essay' || currentQuestion?.type === 'isian_singkat') ? 1000 : 500;
         
         setIsSaving(true);
         autoSaveDebounceRef.current = setTimeout(() => {
-            // console.log(`[DEBUG] Debounce auto-save triggered. Sending to server. answers count: ${Object.keys(newAnswers).length}`);
-            router.post(route('siswa.exams.submit'), {
-                exam_session_id: session.id,
-                answers: newAnswers
-            }, {
-                preserveScroll: true,
-                preserveState: true,
-                only: [],
-                onStart: () => {
-                    // console.log('[DEBUG] Auto-save request started');
-                },
-                onFinish: () => {
-                    // console.log('[DEBUG] Auto-save request finished');
-                    setIsSaving(false);
-                },
-                onError: () => {
-                    // Sesi sudah tidak aktif atau sudah finished — tidak perlu lakukan apapun
-                    setIsSaving(false);
-                }
-            });
+            flushPendingAnswers();
         }, delay);
     };
 
     const handleFinishConfirmed = () => {
+        if (autoSaveDebounceRef.current) {
+            clearTimeout(autoSaveDebounceRef.current);
+        }
+        pendingAnswersRef.current = {};
         setIsSubmitting(true);
         router.post(route('siswa.exams.submit'), {
             exam_session_id: session.id,
-            answers: data.answers,
+            answers: latestAnswersRef.current,
             finish: true
         }, {
             onSuccess: () => {
